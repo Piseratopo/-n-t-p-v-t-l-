@@ -5,18 +5,42 @@
 Chắc các bạn đọc từng nghe ngạn ngữ Anh: ``Một bức hình thì giá trị bằng cả ngàn câu từ'', và thực tế, chúng ta không thể phủ nhận tính súc tích và dễ hiểu của một tranh minh họa được đặt đúng vị trí. Các phương trình toán học cũng như vậy. Hãy so sánh hai cách biểu diễn, cho cùng một định luật quen thuộc:
 
 \begin{table}[H]
-    \centering
-    \caption{So sánh định luật biểu diễn bằng lời và bằng phương trình toán}
-    \begin{tblr}{
-        colspec = {Q[m,l,8cm] Q[m,c,5cm]}, % Q là cột thông minh
-        % m: căn giữa dọc, l: căn trái ngang, c: căn giữa ngang
-        hlines, vlines, % Kẻ bảng cực nhanh
-        rows = {1.5ex}, % Độ cao dòng
-        hline{2} = {1.5pt}, 
-        vline{2} = {1.5pt}
-    }
-        \textbf{Biểu diễn bằng lời} & \textbf{Biểu diễn bằng phương trình} \\
-        Gia tốc của một chất điểm thì tỉ lệ thuận với lực tác động lên vật và tỉ lệ nghịch với khối lượng của vật. & 
-        $\vec{a} = \frac{\vec{F}}{m}$. \\
-    \end{tblr}
+   \centering
+   \caption{So sánh cách biểu diễn bằng lời và bằng phương trình toán}
+   \begin{tblr}{
+      colspec = {Q[m,l,8cm] Q[m,c,5cm]}, % Q là cột thông minh
+      % m: căn giữa dọc, l: căn trái ngang, c: căn giữa ngang
+      hlines, vlines, % Kẻ bảng cực nhanh
+      rows = {1.5ex}, % Độ cao dòng
+      hline{2} = {1.5pt}, 
+      vline{2} = {1.5pt}
+   }
+      \textbf{Biểu diễn bằng lời} & \textbf{Biểu diễn bằng phương trình} \\
+      Gia tốc của một vật thì tỉ lệ thuận với lực tác động lên vật đó và tỉ lệ nghịch với khối lượng của nó. & 
+      $\vec{a} = \frac{\vec{F}}{m}$. \\
+      Độ dịch chuyển của vật bằng tổng của tích vận tốc ban đầu với thời gian và một nửa tích của gia tốc với bình phương thời gian. & $\Delta x = v_0 \cdot t + \frac{a \cdot t^2}2$.
+   \end{tblr}
+\end{table}
+
+Có thể thấy rằng, phương trình toán đạt một sự xúc tích, ngắn gọn, và mạch lạc hơn so với viết bằng lời. Có thể bạn đọc sẽ phản biện rằng tác giả đã bỏ qua phần giải thích kí hiệu. Nếu có chúng, phương pháp biểu diễn bằng toán học sẽ không còn ngắn gọn nữa. Chúng ta hãy cùng kiểm chứng điều đó.
+
+\begin{table}[H]
+   \centering
+   \caption{So sánh cách biểu diễn bằng lời và bằng phương trình toán có giải thích}
+   \begin{tblr}{
+      colspec = {Q[m,l,7cm] Q[m,c,7cm]}, % Q là cột thông minh
+      % m: căn giữa dọc, l: căn trái ngang, c: căn giữa ngang
+      hlines, vlines, % Kẻ bảng
+      % rows = {1.5ex}, % Độ cao dòng
+      hline{2} = {1.5pt}, 
+      vline{2} = {1.5pt}
+   }
+      \textbf{Biểu diễn bằng lời} & \textbf{Biểu diễn bằng phương trình} \\
+      Độ dịch chuyển của vật bằng tổng của tích vận tốc ban đầu với thời gian và một nửa tích của gia tốc với bình phương thời gian. & $\Delta x = v_0 \cdot t + \frac{a \cdot t^2}2$, trong đó \begin{itemize}
+         \item $\Delta x$: độ dịch chuyển của vật,
+         \item $v_0$: vận tốc đầu của vật,
+         \item $t$: thời gian chuyển động,
+         \item $a$: độ lớn của gia tốc. 
+      \end{itemize}.
+   \end{tblr}
 \end{table}
