@@ -1,4 +1,4 @@
-\section{Hình ảnh và biểu đồ, công cụ để biểu diễn khoa học}
+\section{Hình ảnh, công cụ để biểu diễn khoa học}
 
 \ 
 
@@ -29,3 +29,34 @@ Tuy nhiên, đây cũng có thể là một hạn chế của tranh ảnh, khi p
    \item ``Kiến trúc thượng tầng là toàn bộ những quan điểm, tư tưởng xã hội với những thiết chế xã hội tương ứng cùng những quan hệ nội tại của thượng tầng hình thành trên một cơ sở hạ tầng nhất định.''.
 \end{itemize}
 Đây là định nghĩa tác giả trích từ \cite{djc2024giao}. Kể cả khi bạn đọc chưa hiểu rõ về hai khái niệm này, tác giả đoán rằng bạn đọc đã có một chút định hướng, và nếu tìm hiểu sâu thêm, có thể bạn đọc sẽ có sự thông hiểu cần thiết và góc nhìn sâu sắc để phát hiện tính biện chứng giữa chúng. Trái lại, liệu có khả thi không để vẽ ra một bức tranh về các khái niệm này, mà vẫn đảm bảo được ý nghĩa? Theo quan điểm chủ quan của tác giả, có lẽ nhiệm vụ này là quá khó, nếu không khẳng định là không thể. Do đó, chúng ta thấy được hạn chế của hình ảnh, thể hiện rõ nhất khi có những khái niệm trừu tượng mà chúng ta khó có thể hình dung ra được. 
+
+\begin{table}[H]
+   \centering
+   \begin{tblr}{
+   % Định nghĩa 4 cột với độ rộng cố định, tự động xuống dòng khi text quá dài
+   colspec = {Q[l,2.2cm,font=\bfseries] Q[l,4cm] Q[l,4cm] Q[l,4cm]},
+   % Thiết lập dòng tiêu đề: nền xanh đậm, chữ trắng, font đậm
+   row{1} = {bg=colorEmphasisCyan, fg=white, font=\bfseries, halign=c},
+   % Cấu hình đường kẻ bảng bằng màu xám dịu mờ
+   hlines,
+   vlines,
+   hline{2} = {1.5pt}, 
+   vline{2} = {1.5pt},
+   cell{1}{1} = {halign=l}, % Riêng ô tiêu đề đầu tiên căn lề trái cho cân đối
+   vbalance, % Cân bằng chiều cao các ô trong cùng một hàng
+   }
+   Đặc tính & Từ ngữ / Văn bản & Phương trình & Hình ảnh \\
+   
+   Độ chính xác & \textbf{Trung bình đến thấp.} Dễ bị diễn giải sai do sự mơ hồ của ngôn ngữ. & \textbf{Cao.} Rõ ràng trong một hệ tiên đề được định nghĩa trước. & \textbf{Cao về định tính / Thấp về định lượng.} Thể hiện rõ tính chất của sự vật, nhưng khó biểu diễn giá trị cụ thể. \\
+   
+   Mật độ Thông tin & \textbf{Thấp đến Trung bình.} Cần nhiều câu chữ để giải thích các hệ thống phức tạp hoặc tập dữ liệu lớn. & \textbf{Cực kỳ Cao.} Một phương trình ngắn có thể biểu diễn vô số khả năng vật lý (Ví dụ: $E=mc^2$). & \textbf{Rất Cao.} ``Một bức ảnh đáng giá ngàn lời nói'' – ghi lại chi tiết cấu trúc khổng lồ ngay lập tức. \\
+   
+   Tải trọng Nhận thức & \textbf{Trung bình.} Đòi hỏi đọc tuần tự và tổng hợp tư duy để nắm bắt bức tranh toàn cảnh. & \textbf{Cao.} Đòi hỏi kiến thức chuyên môn, tư duy trừu tượng và trí nhớ làm việc (working memory). & \textbf{Thấp.} Được xử lý một cách tổng thể và nhanh chóng bởi vỏ não thị giác. \\
+   
+   Mức độ Trừu tượng & \textbf{Từ Cụ thể đến Trừu tượng.} Có thể xử lý các khái niệm ẩn dụ hoặc phi vật lý một cách dễ dàng. & \textbf{Thuần túy Trừu tượng.} Lược bỏ thực tế vật lý để tập trung hoàn toàn vào các thuộc tính cấu trúc. & \textbf{Cụ thể đến Bán trừu tượng.} Bị giới hạn trong những thực thể có thể sơ đồ hóa hoặc lập bản đồ thị giác. \\
+   
+   Phù hợp Nhất cho & $\bullet$ Cung cấp lịch sử/bối cảnh\newline $\bullet$ Giải thích lý do ``tại sao'' hoặc ``nếu như''\newline $\bullet$ Thiết lập định nghĩa và điều kiện & $\bullet$ Tính toán kết quả chính xác\newline $\bullet$ Chứng minh tính nhất quán logic\newline $\bullet$ Khái quát hóa các quy luật vật lý & $\bullet$ Hiển thị kiến trúc vật lý\newline $\bullet$ Biểu diễn xu hướng dữ liệu (đồ thị)\newline $\bullet$ Sơ đồ tư duy và luồng hệ thống \\
+   
+   Hạn chế Lớn & Gặp khó khăn khi mô tả các hình dạng phức tạp, dữ liệu khổng lồ hoặc logic đa biến chính xác. & Hoàn toàn thiếu bối cảnh cảm xúc, sắc thái lịch sử hoặc trực giác vật lý nếu đứng độc lập. & Có thể đơn giản hóa quá mức các logic phức tạp, dễ gây định kiến thị giác và thiếu lời giải thích ``tại sao''. \\
+   \end{tblr}
+\end{table}
