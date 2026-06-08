@@ -33,30 +33,25 @@ Tuy nhiên, đây cũng có thể là một hạn chế của tranh ảnh, khi p
 \begin{table}[H]
    \centering
    \begin{tblr}{
-   % Định nghĩa 4 cột với độ rộng cố định, tự động xuống dòng khi text quá dài
-   colspec = {Q[l,2.2cm,font=\bfseries] Q[l,4cm] Q[l,4cm] Q[l,4cm]},
-   % Thiết lập dòng tiêu đề: nền xanh đậm, chữ trắng, font đậm
+   colspec = {Q[m,l,2.5cm,font=\bfseries] Q[l,4cm] Q[l,4cm] Q[l,4cm]},
    row{1} = {bg=colorEmphasisCyan, fg=white, font=\bfseries, halign=c},
-   % Cấu hình đường kẻ bảng bằng màu xám dịu mờ
    hlines,
    vlines,
    hline{2} = {1.5pt}, 
-   vline{2} = {1.5pt},
-   cell{1}{1} = {halign=l}, % Riêng ô tiêu đề đầu tiên căn lề trái cho cân đối
-   vbalance, % Cân bằng chiều cao các ô trong cùng một hàng
+   vline{2} = {1.5pt}
    }
    Đặc tính & Từ ngữ / Văn bản & Phương trình & Hình ảnh \\
    
    Độ chính xác & \textbf{Trung bình đến thấp.} Dễ bị diễn giải sai do sự mơ hồ của ngôn ngữ. & \textbf{Cao.} Rõ ràng trong một hệ tiên đề được định nghĩa trước. & \textbf{Cao về định tính / Thấp về định lượng.} Thể hiện rõ tính chất của sự vật, nhưng khó biểu diễn giá trị cụ thể. \\
    
-   Mật độ Thông tin & \textbf{Thấp đến Trung bình.} Cần nhiều câu chữ để giải thích các hệ thống phức tạp hoặc tập dữ liệu lớn. & \textbf{Cực kỳ Cao.} Một phương trình ngắn có thể biểu diễn vô số khả năng vật lý (Ví dụ: $E=mc^2$). & \textbf{Rất Cao.} ``Một bức ảnh đáng giá ngàn lời nói'' – ghi lại chi tiết cấu trúc khổng lồ ngay lập tức. \\
+   Mật độ thông tin & \textbf{Trung bình đến thấp.} & \textbf{Cao.} & \textbf{Rất cao.} \\
    
-   Tải trọng Nhận thức & \textbf{Trung bình.} Đòi hỏi đọc tuần tự và tổng hợp tư duy để nắm bắt bức tranh toàn cảnh. & \textbf{Cao.} Đòi hỏi kiến thức chuyên môn, tư duy trừu tượng và trí nhớ làm việc (working memory). & \textbf{Thấp.} Được xử lý một cách tổng thể và nhanh chóng bởi vỏ não thị giác. \\
+   Tải trọng nhận thức & \textbf{Trung bình.} Đòi hỏi đọc tuần tự và tổng hợp tư duy để nắm bắt bức tranh toàn cảnh. & \textbf{Cao.} Đòi hỏi kiến thức chuyên môn và tư duy trừu tượng. & \textbf{Thấp.} Được xử lý một cách tổng thể và nhanh chóng bởi vỏ não thị giác. \\
    
    Mức độ Trừu tượng & \textbf{Từ Cụ thể đến Trừu tượng.} Có thể xử lý các khái niệm ẩn dụ hoặc phi vật lý một cách dễ dàng. & \textbf{Thuần túy Trừu tượng.} Lược bỏ thực tế vật lý để tập trung hoàn toàn vào các thuộc tính cấu trúc. & \textbf{Cụ thể đến Bán trừu tượng.} Bị giới hạn trong những thực thể có thể sơ đồ hóa hoặc lập bản đồ thị giác. \\
    
    Phù hợp Nhất cho & $\bullet$ Cung cấp lịch sử/bối cảnh\newline $\bullet$ Giải thích lý do ``tại sao'' hoặc ``nếu như''\newline $\bullet$ Thiết lập định nghĩa và điều kiện & $\bullet$ Tính toán kết quả chính xác\newline $\bullet$ Chứng minh tính nhất quán logic\newline $\bullet$ Khái quát hóa các quy luật vật lý & $\bullet$ Hiển thị kiến trúc vật lý\newline $\bullet$ Biểu diễn xu hướng dữ liệu (đồ thị)\newline $\bullet$ Sơ đồ tư duy và luồng hệ thống \\
    
-   Hạn chế Lớn & Gặp khó khăn khi mô tả các hình dạng phức tạp, dữ liệu khổng lồ hoặc logic đa biến chính xác. & Hoàn toàn thiếu bối cảnh cảm xúc, sắc thái lịch sử hoặc trực giác vật lý nếu đứng độc lập. & Có thể đơn giản hóa quá mức các logic phức tạp, dễ gây định kiến thị giác và thiếu lời giải thích ``tại sao''. \\
+   Hạn chế Lớn & Gặp khó khăn khi mô tả các hình dạng phức tạp, dữ liệu khổng lồ hoặc logic đa biến chính xác. & Hoàn toàn thiếu bối cảnh cảm xúc, sắc thái lịch sử hoặc trực giác vật lý nếu đứng độc lập. & Có thể đơn giản hóa quá mức các logic phức tạp, dễ gây định kiến thị giác và thiếu lời giải thích ``tại sao''. 
    \end{tblr}
 \end{table}
