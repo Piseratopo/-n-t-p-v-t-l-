@@ -7,6 +7,52 @@ $$
     \defMath{\forall x, \exists y, \forall z, \left( z \in x \implies \left( z \in y \iff \textbf{\cauF}(z) \right) \right)}.
 $$
 
+\begin{figure}[H]
+    \begin{center}
+    \begin{tikzpicture}[>=stealth]
+
+    \draw[thick] (-3,0) ellipse (2.2cm and 2.8cm);
+    \node at (-3, 3.2) {Tập hợp $x$};
+
+    \node[circle, fill=colorEmphasisCyan, inner sep=\pointSize, label=left:$z_1$] (z1_left) at (-3.7, 0.8) {};
+    \node[circle, fill=colorEmphasisCyan, inner sep=\pointSize, label=left:$z_3$] (z3_left) at (-2.5, -0.5) {};
+
+    \node[circle, inner sep=\pointSize, label=left:{$z_2$}] (z2_left) at (-2, 0.8) {};
+    \node[circle, inner sep=\pointSize, label=left:{$z_4$}] (z4_left) at (-3.8, -1.2) {};
+
+    \draw[dashed, colorEmphasisCyan, thin] plot [smooth cycle, tension=1] coordinates {
+        (-4.6, 0.5)
+        (-3.5, 1.8)
+        (-3, 0.4)
+        (-2, -0.2)
+        (-2.5, -1.2) 
+    };
+    \node at (-3.1, 2.1) {$\textcolor{colorEmphasisCyan}{\cauF(}z\textcolor{colorEmphasisCyan}{)}$};
+
+
+    \draw[->, ultra thick, colorEmphasis] (0,0) -- (2,0) 
+        node[midway, above, align=center] {Tách bởi\\ $\textcolor{colorEmphasisCyan}{\cauF(}z\textcolor{colorEmphasisCyan}{)}$};
+
+
+    \draw[thick] (4.5,0) ellipse (1.5cm and 2.2cm);
+    \node at (4.5, 2.6) {$\{z \in x \mid \textcolor{colorEmphasisCyan}{\cauF(}z\textcolor{colorEmphasisCyan}{)}\}$};
+
+    % Chỉ các phần tử thỏa mãn mới xuất hiện ở đây
+    \node[circle, fill=colorEmphasisCyan, inner sep=1.5pt, label=right:$z_1$] (z1_right) at (4.2, 0.8) {};
+    \node[circle, fill=colorEmphasisCyan, inner sep=1.5pt, label=right:$z_3$] (z3_right) at (4.8, -0.5) {};
+
+
+    \draw[->, thick, colorEmphasisCyan, shorten >= 5pt, shorten <= 5pt, dashed] 
+        (z1_left) to[bend left=20] (z1_right);
+
+    \draw[->, thick, colorEmphasisCyan, shorten >= 5pt, shorten <= 5pt, dashed] 
+        (z3_left) to[bend right=15] (z3_right);
+
+    \end{tikzpicture}
+    \end{center}
+    \caption{Minh họa tiên đề tách (các phần tử của $x$ thỏa mãn tính chất $\textcolor{colorEmphasisCyan}{\cauF(}z\textcolor{colorEmphasisCyan}{)}$ được tách ra).}
+\end{figure}
+
 Tiên đề ngoại diên khẳng định tập hợp $y$ là duy nhất. Thực vậy, giả sử tồn tại hai tập hợp $y_1$ và $y_2$ thỏa mãn điều kiện của tiên đề tách với cùng tập hợp $x$ và vị từ $\cauF$. Khi đó, với mọi $z \in x$, điều kiện của tiên đề cho chúng ta
 \begin{equation*}
     \begin{cases}
@@ -82,13 +128,14 @@ Ngược lại, giả sử $z \in x \cap y$. Khi này, $z \in x$ và $z \in y$. 
 Kết hợp hai kết quả, chúng ta có $\bigcap \{x; y\} = x \cap y$, theo cách nói khác, điều phải chứng minh.
 
 \exercise Cho $A$, $B$, $C$ là các tập hợp. Chứng minh rằng
-
-\begin{enumerate}
-   \item $\bigcap {A} = A$;
-   \item $\bigcap \emptyset = \emptyset$
-   \item $A \cap B \subseteq A$;
-   \item $A \cap B = A \iff A \subseteq B$;
-   \item $\bigcap (A; B) = \{A\}$
-   \item $A \cup B = B \cup A$;
-   \item $(A \cup B) \cup C = A \cup (B \cup C) = \bigcup \{A; B; C\}$;
-\end{enumerate}
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $\bigcap {A} = A$;
+        \item $\bigcap \emptyset = \emptyset$
+        \item $A \cap B \subseteq A$;
+        \item $A \cap B = A \iff A \subseteq B$;
+        \item $\bigcap (A; B) = \{A\}$
+        \item $A \cup B = B \cup A$;
+        \item $(A \cup B) \cup C = A \cup (B \cup C) = \bigcup \{A; B; C\}$;
+    \end{enumerate}
+\end{multicols}
