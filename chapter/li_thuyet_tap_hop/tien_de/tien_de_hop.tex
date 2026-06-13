@@ -108,6 +108,7 @@ Chúng ta đặt $S$ bởi một kí hiệu quen thuộc hơn là $\{A; B; C\}$.
       \item $\bigcup \emptyset = \emptyset$;
       \item $A \cup B \supseteq A$;
       \item $A \cup B = B \iff A \subseteq B$;
+      \item $A \cup B = B \cup A$;
       \item $\bigcup (A; B) = \{A; B\}$;
       \item $A \subseteq B \implies \bigcup A \subseteq \bigcup B$;
       \item $A \subseteq B \implies A \cup C \subseteq B \cup C$;
@@ -158,6 +159,10 @@ Chúng ta giờ chứng minh theo chiều ngược lại. Giả sử $A \subsete
 Từ hai điều trên, suy ra $A \cup B = B$.
 
 Kết hợp hai chiều, chúng ta nhận được $A \cup B = B \iff A \subseteq B$. Điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Từ định nghĩa, dễ dàng có được điều phải chứng minh do
+$$ x \cup y = \bigcup \{x; y\} = \bigcup \{y; x\} = y \cup x.$$
 
 \stepcounter{subexercise}
 \arabic{subexercise}. Trước tiên, nhắc lại định nghĩa đôi có thứ tự: $(A; B) = \big\{ \{A\}; \{A; B\} \big\}$. Lấy tùy ý $x \in \bigcup (A; B)$. Theo định nghĩa của hợp, tồn tại tập hợp $y \in \big\{ \{A\}; \{A; B\} \big\}$ sao cho $x \in y$. Do đó, $y = \{A\}$ hoặc $y = \{A; B\}$.
