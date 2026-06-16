@@ -8,7 +8,7 @@
 \usepackage[a4paper]{geometry}
 \usepackage[explicit]{titlesec}
 \usepackage[backend=biber, style=numeric, maxbibnames=99]{biblatex}
-\usepackage{amsmath, amssymb, blindtext, bm, calc, caption, enumitem, float, hyperref, icomma, lmodern, longtable, makecell, multicol, multirow, pgfplots, siunitx, steinmetz, tabularray, tikz, tikz-3dplot, varwidth, wrapfig2, xcolor, xparse, xeCJK}
+\usepackage{amsmath, amssymb, blindtext, bm, calc, caption, enumitem, fancyhdr, float, hyperref, icomma, lmodern, longtable, makecell, multicol, multirow, pgfplots, siunitx, steinmetz, tabularray, tikz, tikz-3dplot, varwidth, wrapfig2, xcolor, xparse, xeCJK}
 
 % Tài liệu tham khảo
 \DeclareDelimFormat{multinamedelim}{\addcomma\space}
@@ -36,6 +36,20 @@
 % Căn lề và khoảng cách
 \geometry{bindingoffset=0.5cm, inner=2cm, outer=2cm, top=2cm, bottom=2cm}
 
+% Chỉnh đầu và cuối trang
+\pagestyle{fancy}
+\fancyhf{} % Clear all
+
+\fancyhead[LO]{\textcolor{colorEmphasisCyan}{\nouppercase{\leftmark}}} % Chapter on even pages
+\fancyhead[RE]{\textcolor{colorEmphasisCyan}{\nouppercase{\rightmark}}} % Section on odd pages
+\fancyhead[RO,LE]{\textcolor{colorEmphasisCyan}{\thepage}} % Page numbers
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{colorEmphasisCyan}\hrule width\headwidth height\headrulewidth} % Colored header line
+\renewcommand{\footrulewidth}{0pt}
+
+% \setlength{\headheight}{12pt}
+\setlength{\headsep}{0.5cm}
 
 % Thêm khoảng cách giữa các đoạn trong minipage
 \newlength{\recordparindent}
