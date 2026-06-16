@@ -130,12 +130,26 @@ Kết hợp hai kết quả, chúng ta có $\bigcap \{x; y\} = x \cap y$, theo c
 \exercise Cho $A$, $B$, $C$ là các tập hợp. Chứng minh rằng
 \begin{multicols}{2}
     \begin{enumerate}
-        \item $\bigcap {A} = A$;
+        \item $\bigcap \{A\} = A$;
         \item $\bigcap \emptyset = \emptyset$
         \item $A \cap B \subseteq A$;
         \item $A \cap B = A \iff A \subseteq B$;
-        \item $\bigcap (A; B) = \{A\}$
-        \item $A \cup B = B \cup A$;
-        \item $(A \cup B) \cup C = A \cup (B \cup C) = \bigcup \{A; B; C\}$.
+        \item $A \cap B = B \cap A$;
+        \item $\bigcap (A; B) = \{A\}$;
+        \item $A \subseteq B \implies \bigcap A \supseteq \bigcap B$;
+        \item $A \subseteq B \implies A \cap C \subseteq B \cap C$;
+        \item $A = B \implies \begin{cases}
+                  \bigcap A = \bigcap B \\
+                  A \cap C = B \cap C
+               \end{cases}$; 
+        \item $(A \cap B) \cap C = A \cap (B \cap C) = \bigcap \{A; B; C\}$.
     \end{enumerate}
 \end{multicols}
+
+\solution
+
+\setcounter{exercise}{1}
+\arabic{exercise}. Từ định nghĩa,
+\begin{align*}
+   \bigcap \{A\} = \left\{z \in \bigcup \{A\}\;\middle|\;\forall a \in \{A\}, z\in a\right\}
+\end{align*}
