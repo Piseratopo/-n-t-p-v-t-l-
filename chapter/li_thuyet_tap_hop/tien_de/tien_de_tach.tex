@@ -4,7 +4,7 @@
 
 Giả sử $x$ là một tập hợp và $\cauF()$ nhận các phần tử của $x$ làm đối số. Khi đó, tiên đề tách khẳng định rằng tồn tại một tập hợp $y$ bao gồm tất cả các phần tử $z \in x$ thỏa mãn $\cauF(z)$ và chỉ những phần tử đó. Nói cách khác,
 $$
-    \defMath{\forall x, \exists y, \forall z, \left( z \in x \implies \left( z \in y \iff \textbf{\cauF}(z) \right) \right)}.
+    \defMath{\forall x, \exists y, \forall z, \left( z \in y \iff z \in x \land \textbf{\cauF}(z) \right)}.
 $$
 
 \begin{figure}[H]
@@ -53,18 +53,18 @@ $$
     \caption{Minh họa tiên đề tách (các phần tử của $x$ thỏa mãn tính chất $\textcolor{colorEmphasisCyan}{\cauF(}z\textcolor{colorEmphasisCyan}{)}$ được tách ra).}
 \end{figure}
 
-Tiên đề ngoại diên khẳng định tập hợp $y$ là duy nhất. Thực vậy, giả sử tồn tại hai tập hợp $y_1$ và $y_2$ thỏa mãn điều kiện của tiên đề tách với cùng tập hợp $x$ và vị từ $\cauF$. Khi đó, với mọi $z \in x$, điều kiện của tiên đề cho chúng ta
+Tiên đề ngoại diên khẳng định tập hợp $y$ là duy nhất. Thực vậy, giả sử tồn tại hai tập hợp $y_1$ và $y_2$ thỏa mãn điều kiện của tiên đề tách với cùng tập hợp $x$ và vị từ $\cauF$. Xét một $z$ bất kì. Khi đó, định nghĩa theo tiên đề cho chúng ta
 \begin{equation*}
     \begin{cases}
-        z \in y_1 \iff \cauF(z) \\
-        z \in y_2 \iff \cauF(z)
+        z \in y_1 \iff z \in x \land \cauF(z) \\
+        z \in y_2 \iff z \in x \land \cauF(z)
     \end{cases}.
 \end{equation*}
-Theo tính bắc cầu của phép đẳng giá, chúng ta thu được $z \in y_1 \iff z \in y_2$. Trong khi đó, nếu $z \notin x$, vì cả $y_1$ lẫn $y_2$ đều chỉ bao gồm các phần tử của $x$, chúng ta có $z \notin y_1$ và $z \notin y_2$. Lúc này $z \in y_1 \iff z \in y_2$ hiển nhiên đúng. Từ hai trường hợp trên,
+Theo tính bắc cầu của phép đẳng giá, chúng ta thu được
 \begin{equation*}
     \forall z, \left( z \in y_1 \iff z \in y_2 \right).
 \end{equation*}
-Theo tiên đề ngoại diên, $y_1 = y_2$.
+Theo tiên đề ngoại diên, $y_1 = y_2$. Gọi tập hợp đó là $y$. Một hệ quả khá hiển nhiên chính là $y \subseteq x$, bởi vì rõ ràng rằng, nếu $z \in y$, theo tiên đề tách, chúng ta phải có $z \in x$.
 
 Trước khi đi vào những vấn đề khác, chúng ta sẽ trình bày về một cách viết tắt các mệnh đề trong giải tích vị từ bậc nhất. Bạn đọc có thể để ý, trong định nghĩa, chúng ta có một mệnh đề dạng
 $$
@@ -85,8 +85,8 @@ Từ cách nói đó, chúng ta có cách viết rút gọn với định nghĩa
 
 Quay trở lại với tập hợp $y$ trong tiên đề tách, chúng ta không thể kí hiệu bằng việc thêm một kí tự duy nhất như trước được nữa, mà do mỗi tập $y$ đều cần được xác định từ một vị từ $\cauF$, vì thế, chúng ta sẽ kí hiệu tập hợp $y$ như sau:
 \begin{align*}
-    y &= \defMath{\{ z \in x \mid \cauF(z) \}} = \defMath{\{ z \in x : \cauF(z) \}} \\
-    &= \defMath{\{z \mid z \in x \land \cauF(x)\}}.
+   y &= \defMath{\{z \mid z \in x \land \cauF(x)\}}\\
+    &= \defMath{\{ z \in x \mid \cauF(z) \}} = \defMath{\{ z \in x : \cauF(z) \}}.
 \end{align*}
 
 Liệu bạn đọc còn nhớ về nghịch lý Rất-xen, liên quan đến một tập bao gồm tất cả các tập hợp không chứa chính nó. Có một cách đơn giản để đi vòng qua vấn đề này. Đó chính là không cho nó tồn tại. Để làm như vậy, chúng ta sẽ chứng minh không tồn tại tập hợp $\Omega$ sao cho $\forall x, x \in \Omega$. Thực vậy, giả sử tồn tại tập hợp $\Omega$ như vậy. Khi đó, theo tiên đề tách, tồn tại tập hợp $y = \{x \in \Omega \mid x \notin x \}$. Đặt câu hỏi, $y$ có thuộc $y$ không?
@@ -129,21 +129,21 @@ Kết hợp hai kết quả, chúng ta có $\bigcap \{x; y\} = x \cap y$, theo c
 
 \exercise Cho $A$, $B$, $C$ là các tập hợp. Chứng minh rằng
 \begin{multicols}{2}
-    \begin{enumerate}
-        \item $\bigcap \{A\} = A$;
-        \item $\bigcap \emptyset = \emptyset$
-        \item $A \cap B \subseteq A$;
-        \item $A \cap B = A \iff A \subseteq B$;
-        \item $A \cap B = B \cap A$;
-        \item $\bigcap (A; B) = \{A\}$;
-        \item $A \subseteq B \implies \bigcap A \supseteq \bigcap B$;
-        \item $A \subseteq B \implies A \cap C \subseteq B \cap C$;
-        \item $A = B \implies \begin{cases}
-                  \bigcap A = \bigcap B \\
-                  A \cap C = B \cap C
-               \end{cases}$; 
-        \item $(A \cap B) \cap C = A \cap (B \cap C) = \bigcap \{A; B; C\}$.
-    \end{enumerate}
+   \begin{enumerate}
+      \item $\bigcap \{A\} = A$;
+      \item $\bigcap \emptyset = \emptyset$
+      \item $A \cap B \subseteq A$;
+      \item $A \cap B = A \iff A \subseteq B$;
+      \item $A \cap B = B \cap A$;
+      \item $\bigcap (A; B) = \{A\}$;
+      \item $A \subseteq B \implies \bigcap A \supseteq \bigcap B$;
+      \item $A \subseteq B \implies A \cap C \subseteq B \cap C$;
+      \item $A = B \implies \begin{cases}
+               \bigcap A = \bigcap B \\
+               A \cap C = B \cap C
+            \end{cases}$; 
+      \item $(A \cap B) \cap C = A \cap (B \cap C) = \bigcap \{A; B; C\}$.
+   \end{enumerate}
 \end{multicols}
 
 \solution
@@ -151,5 +151,22 @@ Kết hợp hai kết quả, chúng ta có $\bigcap \{x; y\} = x \cap y$, theo c
 \setcounter{exercise}{1}
 \arabic{exercise}. Từ định nghĩa,
 \begin{align*}
-   \bigcap \{A\} = \left\{z \in \bigcup \{A\}\;\middle|\;\forall a \in \{A\}, z\in a\right\}
+   \bigcap \{A\} &= \left\{z \in \bigcup \{A\} \;\middle|\; \forall a \in \{A\}, z\in a\right\} \\
+      &= \left\{z \in A \mid \forall a \in \{A\}, z \in a\right\}.
 \end{align*}
+Để ý rằng, nếu giả sử $z \in A$, để $a \in \{A\}$ thì $a$ phải bằng $A$, và dẫn đến sự hiển nhiên $z \in a$. Do vậy,
+\begin{equation*}
+   \forall z, \left(z \in A \implies \forall a \in \{A\}, z \in a\right).
+\end{equation*}
+Ngoài ra, giả sử $\forall a \in \{A\}, z \in a$. Nhắc lại, $A \in \{A\}$, do đó $z \in A$. Điều này có nghĩa
+\begin{equation*}
+   \forall z, \left(\forall a \in \{A\}, (z \in a) \implies z \in A\right).
+\end{equation*}
+Dẫn đến $\forall z, \left(\forall a \in \{A\}, (z \in a) \iff z \in A\right).$ và qua đó $\bigcap \{A\} = \{z \in A \mid z \in A\}$. 
+
+Sử dụng ``$z \in A$'' là một vị từ theo hạng thức $z$, từ tiên đề tách, tồn tại tập $y$ để $\forall z, (z \in y \iff z \in y \land z \in A)$. Vậy $y$ có thể là tập nào? Tập $A$ là một ví dụ, do $\forall z, (z \in A \iff z \in A \land z \in A)$. Nhưng vì tính duy nhất của tập xác định từ tiên đề tách, dẫn đến
+\begin{equation*}
+   \{z \in A \mid z \in A\} = A.
+\end{equation*}
+
+Theo tính chất bắc cầu, chúng ta có $\bigcap \{A\} = A$, điều phải chứng minh.
