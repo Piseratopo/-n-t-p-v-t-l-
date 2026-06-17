@@ -96,11 +96,11 @@ Liệu bạn đọc còn nhớ về nghịch lý Rất-xen, liên quan đến m�
 \end{itemize}
 Nhìn chung, cả hai trường hợp đều đưa ra một điều vô lí. Sử dụng chứng minh bằng phản chứng, chúng ta có thể kết luận rằng không tồn tại tập hợp $\Omega$ sao cho $x \in \Omega$ với mọi $x$.
 
-Giờ là lúc để làm một số ví dụ. Giả sử $x$ và $y$ là hai tập hợp. Nhận thấy rằng, $z \in y$ là một vị từ theo hạng thức $z$. Áp dụng tiên đề tách, chúng ta có tập
+Giờ là lúc để làm một số ví dụ. Giả sử $x$ và $y$ là hai tập hợp. Nhận thấy rằng, ``$z \in y$'' là một vị từ theo hạng thức $z$. Áp dụng tiên đề tách, chúng ta có tập
 \begin{equation*}
     \defMath{\{ z \in x \mid z \in y \}}.
 \end{equation*}
-Đây được gọi là \defText{giao} của $x$ và $y$, kí hiệu $\defMath{x \cap y}$. Nếu $\defMath{x \cap y} = \emptyset$, thì $x$ và $y$ được gọi là \defText{rời nhau}. Ngoài ra, có $z \in y$, thì chúng ta cũng có thể có $z \notin y$, điều đó tự nhiên dẫn đến \defText{hiệu} giữa $x$ và $y$ như sau:
+Đây được gọi là \defText{giao} của $x$ và $y$, kí hiệu $\defMath{x \cap y}$. Nếu $x \cap y = \emptyset$, thì $x$ và $y$ được gọi là \defText{rời nhau}. Ngoài ra, có $z \in y$, thì chúng ta cũng có thể có $z \notin y$, điều đó tự nhiên dẫn đến \defText{hiệu} giữa $x$ và $y$ như sau:
 \begin{equation*}
     \defMath{x \setminus y = x - y = \{ z \in x \mid z \notin y \}}.
 \end{equation*}
@@ -182,3 +182,18 @@ Do đó, với mọi $z$, để $z \in \bigcap \emptyset$ thì trước hết, $
    \forall z, z \notin \bigcap \emptyset.
 \end{equation*}
 Vậy, từ tiên đề tập rỗng, $\bigcap \emptyset = \emptyset$.
+
+\stepcounter{exercise}
+\arabic{exercise}. Nhắc lại, $A \cap B$ là tập hợp được lấy ra từ tiên đề tách với tập ban đầu là $A$ và vị từ theo hạng thức $x$ là $x \in B$. Do đó, theo hệ quả đã có, $A \cap B \subseteq A$. Điều phải chứng minh.
+
+\stepcounter{exercise}
+\arabic{exercise}. Giả sử $A \cap B = A$. Xét một phần tử $x \in A$ bất kì. Khi đó, $x \in A \cap B$, và theo định nghĩa của giao, dẫn đến $x \in B$. Do đó, $A \subseteq B$.
+
+Giả sử chiều ngược lại, $A \subseteq B$. Với mọi $x$, nếu $x$ nằm trong $A$ thì $x$ cũng trong $B$, cho chúng ta
+$$
+\forall x, (x \in A \implies x \in A \land x \in B).
+$$
+Hiển nhiên có $\forall x, (x \in A \land x \in B \implies x \in A)$. Do vậy, $\forall x, (x \in A \iff x \in A \land x \in B)$. Từ tiên đề tách, có thể thấy $A$ là tập được tách ra từ $A$ với vị từ $x \in B$, nhưng đây cũng là định nghĩa của $A \cap B$. Do đó, $A \cap B = A$.
+
+Kết hợp hai chiều, chúng ta có $A \cap B = A \iff A \subseteq B$, điều phải chứng minh.
+
