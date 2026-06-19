@@ -109,8 +109,93 @@ $x \setminus y$ còn được gọi là \defText{phần bù tưởng đối} c�
 {
     \boldmath 
     $$\bigcap x = \bigcap_{a\in x} a = \left\{z \in \bigcup x \;\middle|\; \forall a \in x, z \in a \right\}$$
-}
+}%
 và gọi nó là giao của các phần tử trong $x$. Bạn đọc cần phải chú ý một điều, để không xảy ra mâu thuẫn, định nghĩa mới phải tương thích với định nghĩa cũ. May mắn thay, $\bigcap \{x; y\} = x \cap y$.
+
+Một phép toán nữa, khá ít dùng, được gọi là \defText{hiệu đối xứng}. Với hai tập hợp $x$ và $y$, hiệu đối xứng của chúng được định nghĩa là
+\begin{equation*}
+    \defMath{x \vartriangle y = (x \setminus y) \cup (y \setminus x)}.
+\end{equation*}
+
+Để kết thúc phần này, tác giả sẽ giới thiệu về cách biểu diễn tập hợp bằng sơ đồ Ven\footnote{John Venn (1834 -- 1923).}. Với hai tập hợp $x$ và $y$, chúng ta có thể biểu diễn chúng bằng hai hình chồng lên nhau, trong đó kết quả của các phép tính trên chúng được tô màu, với một sự minh hoạ cụ thể ở hình \ref{fig:li_thuyet_tap_hop:tien_de:tien_de_tach:ven_phep_tinh}.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{scope}[shift={(0,0)}]
+            % Tô màu cả 2 hình tròn
+            \fill[color = colorEmphasis] (0,0) circle (0.7);
+            \fill[color = colorEmphasis] (0.8,0) circle (0.7);
+            
+            % % Vẽ đường viền
+            \draw (0,0) circle (0.7);
+            \draw (0.8,0) circle (0.7);
+            
+            % Nhãn tên tập hợp (màu trắng)
+            \node[above left] at (-0.4, 0.4) {$x$};
+            \node[above right] at (1.2, 0.4) {$y$};
+            
+            % Nhãn phép toán
+            \node[below] at (0.4, -0.9) {$x \cup y$};
+        \end{scope}
+
+        \begin{scope}[shift={(4,0)}]
+            \begin{scope}
+                \clip (0,0) circle (0.7);
+                \fill[color = colorEmphasis] (0.8,0) circle (0.7);
+            \end{scope}
+            
+            % Vẽ đường viền
+            \draw (0,0) circle (0.7);
+            \draw (0.8,0) circle (0.7);
+            
+            % Nhãn
+            \node[above left] at (-0.4, 0.4) {$x$};
+            \node[above right] at (1.2, 0.4) {$y$};
+            \node[below] at (0.4, -0.9) {$x \cap y$};
+        \end{scope}
+
+        \begin{scope}[shift={(8, 0)}]
+            % Tô màu tập x nhưng bỏ đi phần giao với y
+            \begin{scope}
+                \clip (0,0) circle (0.7);
+                \fill[white] (0.8,0) circle (0.7); % Xóa phần giao bằng nền
+            \end{scope}
+            % Phủ lại pattern lên phần còn lại của x
+            \begin{scope}
+                \clip (0,0) circle (0.7);
+                \draw (0.8,0) circle (0.7); 
+                % Thủ thuật đảo ngược để tô phần x \ y
+                \fill[color = colorEmphasis, even odd rule] (0,0) circle (0.7) (0.8,0) circle (0.7);
+            \end{scope}
+            
+            % Vẽ đường viền
+            \draw (0,0) circle (0.7);
+            \draw (0.8,0) circle (0.7);
+            
+            % Nhãn
+            \node[above left] at (-0.4, 0.4) {$x$};
+            \node[above right] at (1.2, 0.4) {$y$};
+            \node[below] at (0.4, -0.9) {$x \setminus y$};
+        \end{scope}
+
+        \begin{scope}[shift={(12,0)}]
+            \fill[color = colorEmphasis, even odd rule] (0,0) circle (0.7) (0.8,0) circle (0.7);
+            
+            % Vẽ đường viền
+            \draw (0,0) circle (0.7);
+            \draw (0.8,0) circle (0.7);
+            
+            % Nhãn
+            \node[above left] at (-0.4, 0.4) {$x$};
+            \node[above right] at (1.2, 0.4) {$y$};
+            \node[below] at (0.4, -0.9) {$x \vartriangle y$};
+        \end{scope}
+
+    \end{tikzpicture}
+    \caption{Biểu diễn các phép toán tập hợp bằng sơ đồ Ven.}
+    \label{fig:li_thuyet_tap_hop:tien_de:tien_de_tach:ven_phep_tinh}
+\end{figure}
 
 \exercise Chứng minh rằng, với mọi tập hợp $x$ và $y$, $\bigcap \{x; y\} = x \cap y$.
 
@@ -196,3 +281,23 @@ Hiển nhiên có $\forall x, (x \in A \land x \in B \implies x \in A)$. Do vậ
 
 Kết hợp hai chiều, chúng ta có $A \cap B = A \iff A \subseteq B$, điều phải chứng minh.
 
+\stepcounter{exercise}
+\arabic{exercise}. Từ tiên đề tách và định nghĩa của giao,
+\begin{equation*}
+    \forall z, \left(z \in A \cap B \iff z \in A \land z \in B\right).
+\end{equation*}
+Tương tự, chúng ta cũng có
+\begin{equation*}
+    \forall z, \left(z \in B \cap A \iff z \in B \land z \in A\right).
+\end{equation*}
+Theo tính chất bắc cầu của phép đẳng giá, $\forall z, (z \in A \cap B \iff z \in B \cap A)$, và từ tiên đề ngoại diên, $A \cap B = B \cap A$. Điều phải chứng minh.
+
+\stepcounter{exercise}
+\arabic{exercise}. Nhớ lại, $(A; B) = \{\{A\}; \{A; B\}\}$, dẫn đến $\bigcap (A; B) = \{A\} \cap \{A; B\}$.
+
+Nhận thấy rằng với mọi $w$, để $w$ thuộc $\bigcap (A; B)$ thì $w$ phải thuộc cả $\{A\}$ và $\{A; B\}$. Điều này tương đương với $w = A$. Do vậy, $$\forall w, \left(w \in \bigcap (A; B) \iff w = A\right).$$
+
+Như một kết quả của tiên đề cặp và tiên đề ngoại diên, chỉ tồn tại duy nhất một tập $z$ sao cho $\forall w, (w \in z \iff w = A)$. Do vậy, $\bigcap (A; B) = \{A\}$ và chúng ta có điều phải chứng minh.
+
+\stepcounter{exercise}
+\arabic{exercise}. Giả sử $A \subseteq B$. Xét $z$ là một phần tử thuộc $\bigcap B$. Khi đó, $z \in b$ với mọi $b \in B$. Do $A \subseteq B$, mọi phần tử $a \in A$ cũng là một phần tử của $B$, dẫn đến $z \in a$ với mọi $a \in A$. Theo định nghĩa, $z \in \bigcap A$. Vậy, $\bigcap B \subseteq \bigcap A$, cũng khá dễ dàng để có điều phải chứng minh.
