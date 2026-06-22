@@ -300,4 +300,11 @@ Nhận thấy rằng với mọi $w$, để $w$ thuộc $\bigcap (A; B)$ thì $w
 Như một kết quả của tiên đề cặp và tiên đề ngoại diên, chỉ tồn tại duy nhất một tập $z$ sao cho $\forall w, (w \in z \iff w = A)$. Do vậy, $\bigcap (A; B) = \{A\}$ và chúng ta có điều phải chứng minh.
 
 \stepcounter{exercise}
-\arabic{exercise}. Giả sử $A \subseteq B$. Xét $z$ là một phần tử thuộc $\bigcap B$. Khi đó, $z \in b$ với mọi $b \in B$. Do $A \subseteq B$, mọi phần tử $a \in A$ cũng là một phần tử của $B$, dẫn đến $z \in a$ với mọi $a \in A$. Theo định nghĩa, $z \in \bigcap A$. Vậy, $\bigcap B \subseteq \bigcap A$, cũng khá dễ dàng để có điều phải chứng minh.
+\arabic{exercise}. Giả sử $A \subseteq B$. Xét $z$ là một phần tử thuộc $\bigcap B$. Khi đó, $z \in b$ với mọi $b \in B$. Do $A \subseteq B$, mọi phần tử $a \in A$ cũng là một phần tử của $B$. Dẫn đến, viết lại các mệnh đề để có
+\begin{equation*}
+    \begin{cases}
+        \forall z \in \bigcap B, \forall b, (b \in B \implies z \in b) \\
+        \forall a, (a \in A \implies a \in B)
+    \end{cases}.
+\end{equation*}
+
