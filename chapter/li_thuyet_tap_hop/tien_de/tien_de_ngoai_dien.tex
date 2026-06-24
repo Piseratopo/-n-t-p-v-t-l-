@@ -163,11 +163,17 @@ Và qua đó,
 \end{equation*}
 Đây là tính chất còn lại, \defText{tính bắc cầu}.
 
+Phép bằng nhau cũng cho phép định nghĩa được một lượng từ mới. Gọi $V()$ là một vị từ, mệnh đề ``\defText{tồn tại duy nhất} $x$ thỏa mãn $V(x)$'' là tương đương với
+\begin{equation*}
+   \defMath{\exists x, \left(V(x) \land \forall y, (V(y) \implies y = x)\right)},
+\end{equation*}
+và được kí hiệu ngắn gọn là $\defMath{\exists ! x, V(x)}$.
+
 Cuối cùng, khi tác giả dùng từ ``phép'' bằng nhau, tác giả đã ngầm hiểu đây không chỉ là kí hiệu của một vị từ mà cũng là một phép toán, giống như các phép $\land$ hay $\lor$ đã được làm quen từ trước. Thực tế, chúng ta có thể thêm các định nghĩa để có thể biến câu sau thành mệnh đề có nghĩa:
 \begin{equation*}
     \exists w, \exists x, \exists y, \exists z, \big((w = x) = (y = z)\big).
 \end{equation*}
-Nhưng, để bám sát với thực tế, tác giả sẽ bỏ qua việc xây dựng các định nghĩa bậc cao hơn. Điều đó cũng cho phép chúng ta lạm dụng kí hiệu. Chẳng hạn, chúng ta có thể viết $x = y = z$ với nghĩa $x = y \land y = z$, chứ không phải $(x = y) = z$ hay $x = (y = z)$.
+Nhưng, để đơn giản hóa, tác giả sẽ bỏ qua việc xây dựng các định nghĩa bậc cao hơn. Điều đó cũng cho phép chúng ta lạm dụng kí hiệu. Chẳng hạn, chúng ta có thể viết $x = y = z$ với nghĩa $x = y \land y = z$, chứ không phải $(x = y) = z$ hay $x = (y = z)$.
 
 \exercise Cho $A$, $B$ và $C$ là các tập hợp. Chứng minh rằng
 \begin{enumerate}
