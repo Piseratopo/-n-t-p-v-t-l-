@@ -39,19 +39,21 @@ Có nhiều kiểu lập luận lô-gích khác nhau, nhưng chủ yếu đều 
 
 \begin{table}[H]
    \centering
-   \caption{Ví dụ cho lô-gích quy nạp.}
+   \caption{Ví dụ về lô-gích quy nạp.}
    \label{tab:nen_tang_lo_gich:giai_tich_menh_de:menh_de:vd_logic_quy_nap}
-   \begin{tabular}{|c|c|}
-      \hline
-      Quan sát & Kết luận \\
-      \headerDivider
+   \begin{tblr}{
+      colspec = {Q[m,l,7.5cm] Q[m,l,7.5cm]}, % Q là cột thông minh
+      % m: căn giữa dọc, l: căn trái ngang, c: căn giữa ngang
+      hlines, vlines,
+      rows = {1.5ex}, % Độ cao dòng
+      hline{2} = {1.5pt}, 
+      vline{2} = {1.5pt}
+   }
+      \centering\textbf{Quan sát} & \centering \textbf{Kết luận} \\
       Mỗi sáng mặt trời đều mọc ở hướng Đông. & Mặt trời luôn mọc ở hướng Đông. \\
-      \hline
       Nhiều kim loại (sắt, đồng, nhôm) đều nở ra khi nóng lên. & Kim loại nói chung sẽ nở ra khi nóng. \\
-      \hline
-      Một nhóm học sinh chăm chỉ đạt điểm cao. & Học sinh chăm chỉ thường sẽ đạt kết quả tốt. \\
-      \hline
-   \end{tabular}
+      Một nhóm học sinh chăm chỉ đạt điểm cao. & Học sinh chăm chỉ thường sẽ đạt kết quả tốt.
+   \end{tblr}
 \end{table}
 
 Các lập luận này có lí hay không dựa vào sức thuyết phục của quá trình quan sát. Đây là nền tảng quan trọng trong khoa học, triết học, và nghiên cứu thực nghiệm. Tuy nhiên, lô-gích quy nạp không đảm bảo tuyệt đối đúng. Việc dựa vào một số lượng quan sát hạn chế có thể dẫn đến những kết luận sai lầm hoặc phiến diện, đặc biệt khi các quan sát đó không đại diện cho toàn bộ hiện tượng. Ví dụ, chúng ta không thể đưa ra kết luận ``mọi học sinh đều 6 tuổi'' bằng sự quan sát của một lớp học hay của một khối lớp\footnote{Việc chỉ lấy những quan sát thuận lợi cho mình mà bỏ qua những dẫn chứng bất lợi còn được gọi là ``chọn lọc thiên vị''.}.
@@ -60,28 +62,30 @@ Loại lập luận theo lô-gích quy nạp theo xu hướng suy luận từ c�
 
 \begin{table}[H]
    \centering
-   \caption{Ví dụ cho lô-gích diễn dịch.}
+   \caption{Ví dụ về lô-gích diễn dịch.}
    \label{tab:nen_tang_lo_gich:giai_tich_menh_de:menh_de:vd_logic_dien_dich}
-   \begin{tabular}{|l|c|}
-      \hline 
-      \multicolumn{1}{|c|}{Giả thiết} & Kết luận \\
-      \headerDivider
+   \begin{tblr}{
+      colspec = {Q[m,l,9cm] Q[m,l,6cm]}, % Q là cột thông minh
+      % m: căn giữa dọc, l: căn trái ngang, c: căn giữa ngang
+      hlines, vlines,
+      rows = {1.5ex}, % Độ cao dòng
+      hline{2} = {1.5pt}, 
+      vline{2} = {1.5pt}
+   }
+      \centering\textbf{Giả thiết} & \centering \textbf{Kết luận} \\
       $\begin{cases}
          \text{Tất cả các số chia hết cho $2$ đều là số chẵn;} \\
          \text{$8$ là một số chia hết cho $2$.}
       \end{cases}$ & $8$ là một số chẵn. \\ 
-      \hline
       $\begin{cases}
          \text{Mọi hành vi trộm cắp đều vi phạm pháp luật;} \\
          \text{$A$ đã thực hiện hành vi trộm cắp.}
       \end{cases}$ & Vậy $A$ đã vi phạm pháp luật.\\ 
-      \hline
       $\begin{cases}
          \text{Nếu một người là bác sĩ, thì người đó đã học y khoa;} \\
          \text{$L$ là bác sĩ.}
-      \end{cases}$ & Do đó, $L$ đã học y khoa.\\  
-      \hline
-   \end{tabular}
+      \end{cases}$ & Do đó, $L$ đã học y khoa.
+   \end{tblr}
 \end{table}
 
 Xây dựng các quy tắc và thực hiện chúng để suy luận trên các mệnh đề bằng phương pháp lập luận diễn dịch, đó là phạm trù của \defText{giải tích mệnh đề}.
