@@ -4,67 +4,69 @@ from itertools import product
 
 
 def evaluate_postfix_logic_expression_with_steps(postfix_expression, variables_values):
-    stack = []
-    processing_values = [False] * len(postfix_expression)
+   stack = []
+   processing_values = [False] * len(postfix_expression)
 
-    def add_to_stack(_id, value):
-        stack.append((_id, value))
-        processing_values[_id] = value
+   def add_to_stack(_id, value):
+      stack.append((_id, value))
+      processing_values[_id] = value
 
-    for _id, token in postfix_expression:
-        if token in operations:
-            operation = operations[token]
-            if operation.input_count == 1:  # Unary operation like NOT
-                if stack:
-                    operand = stack.pop()[1]
-                    result = operation.compute(operand)
-                    add_to_stack(_id, result)
-            elif operation.input_count == 2:  # Binary operations
-                if len(stack) >= 2:
-                    b = stack.pop()[1]
-                    a = stack.pop()[1]
-                    result = operation.compute(a, b)
-                    add_to_stack(_id, result)
-        else:
-            clean_token = token.lstrip("(").rstrip(")")
-            add_to_stack(_id, variables_values.get(clean_token, False))
-    return stack[0] if stack else False, processing_values
+   for _id, token in postfix_expression:
+      if token in operations:
+         operation = operations[token]
+         if operation.input_count == 1:  # Unary operation like NOT
+               if stack:
+                  operand = stack.pop()[1]
+                  result = operation.compute(operand)
+                  add_to_stack(_id, result)
+         elif operation.input_count == 2:  # Binary operations
+               if len(stack) >= 2:
+                  b = stack.pop()[1]
+                  a = stack.pop()[1]
+                  result = operation.compute(a, b)
+                  add_to_stack(_id, result)
+      else:
+         clean_token = token.lstrip("(").rstrip(")")
+         add_to_stack(_id, variables_values.get(clean_token, False))
+   return stack[0] if stack else False, processing_values
 
 def write_logic_table_latex(file, expression, variables=None):
-    with open(file, "w", encoding="utf-8") as f:
-        write_line(f, r"\begin{table}[H]")
-        write_line(f, r"\centering", 1)
-        write_line(f, r"\caption{Bảng giá trị chân lí của $" + convert_expression_to_latex(expression) + r"$}", 1)
+   with open(file, "w", encoding="utf-8") as f:
+      write_line(f, r"\begin{table}[H]")
+      write_line(f, r"\centering", 1)
+      write_line(f, r"\caption{Bảng giá trị chân lí của $" + convert_expression_to_latex(expression) + r"$.}", 1)
 
-        postfix_expression = convert_expression_to_postfix(expression)
-        if not variables:
-            variables = sorted(list(set([token for _id, token in postfix_expression if token not in list(operations.keys()) + ["(", ")"]])))
-        else:
-            variables = sorted(list(set(variables.strip())))
-        column_format = "|" + "|".join("c" for _ in variables) + "|" + "c" * len(postfix_expression) + "|"
-        write_line(f, r"\begin{tabular}{" + column_format + "}", 1)
-        write_line(f, r"\hline", 2)
-        header_line = " & ".join([f"${v}$" for v in variables]) + " & " + " & ".join([token for token in convert_tokens_to_latex([token for _, token in parse_expression_with_parentheses(expression)], need_math_mode=True)]) + " \\\\"
-        write_line(f, header_line, 2)
-        write_line(f, r"\headerDivider", 2)
-        for comb in product([True, False], repeat=len(variables)):
-            variables_values = dict(zip(variables, comb))
-            def convert_bool_to_vietnamese(value):
-                return "Đ" if value else "S"
-            
-            row_values = [convert_bool_to_vietnamese(v) for v in comb]
-            line_content = " & ".join(row_values) + " & "
-            
-            result, processing_values = evaluate_postfix_logic_expression_with_steps(postfix_expression, variables_values)
-            for _id, v in enumerate(processing_values):
-                if _id == result[0]:
-                    line_content += r"\emphcolor{" + convert_bool_to_vietnamese(v) + "} & "
-                else:
-                    line_content += f"{convert_bool_to_vietnamese(v)} & "
-            
-            line_content = line_content.rstrip(" & ") + " \\\\"
-            write_line(f, line_content, 2)
-        write_line(f, r"\hline", 2)
-        write_line(f, r"\end{tabular}", 1)
-        write_line(f, r"\end{table}")
+      postfix_expression = convert_expression_to_postfix(expression)
+      if not variables:
+         variables = sorted(list(set([token for _id, token in postfix_expression if token not in list(operations.keys()) + ["(", ")"]])))
+      else:
+         variables = sorted(list(set(variables.strip())))
+      column_format = "|" + "|".join("c" for _ in variables) + "|" + "c" * len(postfix_expression) + "|"
+      write_line(f, r"\begin{tblr}{", 1)
+      write_line(f, r"colspec = {" + column_format + "}", 2)
+      write_line(f, "}", 1)
+      write_line(f, r"\hline", 2)
+      header_line = " & ".join([f"${v}$" for v in variables]) + " & " + " & ".join([token for token in convert_tokens_to_latex([token for _, token in parse_expression_with_parentheses(expression)], need_math_mode=True)]) + " \\\\"
+      write_line(f, header_line, 2)
+      write_line(f, r"\hline[1.5pt]", 2)
+      for comb in product([True, False], repeat=len(variables)):
+         variables_values = dict(zip(variables, comb))
+         def convert_bool_to_vietnamese(value):
+               return "Đ" if value else "S"
+         
+         row_values = [convert_bool_to_vietnamese(v) for v in comb]
+         line_content = " & ".join(row_values) + " & "
+         
+         result, processing_values = evaluate_postfix_logic_expression_with_steps(postfix_expression, variables_values)
+         for _id, v in enumerate(processing_values):
+               if _id == result[0]:
+                  line_content += r"\emphcolor{" + convert_bool_to_vietnamese(v) + "} & "
+               else:
+                  line_content += f"{convert_bool_to_vietnamese(v)} & "
+         
+         line_content = line_content.rstrip(" & ") + " \\\\"
+         write_line(f, line_content, 2)
+      write_line(f, r"\hline", 2)
+      write_line(f, r"\end{tblr}", 1)
+      write_line(f, r"\end{table}")
         

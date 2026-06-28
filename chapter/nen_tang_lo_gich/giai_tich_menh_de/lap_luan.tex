@@ -146,15 +146,13 @@ chúng ta có điều phải chứng minh.
 
 \ % Lùi đầu dòng
 
-Nếu như mỗi lần chứng minh, chúng ta phải lôi bảng giá trị chân lí thì sẽ gặp vấn đề khi một mệnh đề lớn có quá nhiều mệnh đề con cấu thành. Trong tương lai, chúng ta sẽ xây dựng các kiến trúc toán học cơ bản. Để làm được điều đó, chúng ta sẽ cần rất nhiều các định nghĩa và tiên đề. Chúng ta cần một hệ thống quy tắc để lập luận hoặc chứng minh.
+Nếu như mỗi lần chứng minh, chúng ta phải lôi bảng giá trị chân lí thì sẽ gặp vấn đề khi một mệnh đề lớn có quá nhiều mệnh đề con cấu thành. Trong tương lai, chúng ta sẽ xây dựng các kiến trúc toán học cơ bản. Để làm được điều đó, chúng ta sẽ cần rất nhiều các định nghĩa và tiên đề. Và để nhanh chóng xây dựng các kết quả từ những định nghĩa và tiên đề đó, chúng ta cần một hệ thống quy tắc để lập luận hoặc chứng minh.
 
 \begin{itemize}
-    \item 
-    \textcolor{colorEmphasisCyan}{Quy tắc thứ nhất}: Cho $A \implies B$. Khi thay đồng thời các mệnh đề $A$ trong $\lonF$ bởi $(B)$ để có được mệnh đề $\lonG$ thì có được $\lonF \implies \lonG$ hay $\lonF$ chứng minh $\lonG$.
-    \item
-    \textcolor{colorEmphasis}{Quy tắc thứ hai}: Cho $A \iff B$. Khi thay đồng thời các mệnh đề $A$ trong $\lonF$ bởi $(B)$ để có được mệnh đề $\lonG$ thì có được $\lonF \iff \lonG$.
-    \item    
-    \textcolor{colorEmphasisGreen}{Quy tắc thứ ba}: Cho $\chungF$ có mệnh đề $A$ làm mệnh đề con. Nếu $\chungF$ đúng không phụ thuộc vào giá trị chân lí của $A$ thì mệnh đề $\chungF$ vẫn đúng khi thay đồng thời tất cả các mệnh đề $A$ trong $\chungF$ bằng mệnh đề $(B)$ bất kì.
+   \item
+   \textcolor{colorEmphasisCyan}{Quy tắc thứ nhất}: Cho $A \iff B$. Khi thay đồng thời các mệnh đề $A$ trong $\lonF$ bởi $(B)$ để có được mệnh đề $\lonG$ thì có được $\lonF \iff \lonG$.
+   \item    
+   \textcolor{colorEmphasis}{Quy tắc thứ hai}: Cho $\chungF$ có mệnh đề $A$ làm mệnh đề con. Nếu $\chungF$ đúng không phụ thuộc vào giá trị chân lí của $A$ thì mệnh đề $\chungF$ vẫn đúng khi thay đồng thời tất cả các mệnh đề $A$ trong $\chungF$ bằng mệnh đề $(B)$ bất kì.
 \end{itemize}
 
 Để thuận tiện cho việc lập luận, sẽ sử dụng các kết quả đã có của bài \ref{ex:nen_tang_lo_gich:giai_tich_menh_de:menh_de_phuc_hop:tc_giai_tich_menh_de} ở trang \pageref{ex:nen_tang_lo_gich:giai_tich_menh_de:menh_de_phuc_hop:tc_giai_tich_menh_de}.
@@ -197,7 +195,7 @@ Chúng ta có bộ giả thiết -- kết luận như sau:
 \end{center}
 Viết lại dưới dạng kí hiệu, chúng ta cần chứng minh rằng
 $$(L \lor A) \land (S \implies \neg L) \implies (\neg A \implies \neg S).$$
-Trước hết, để ý rằng $A \implies \neg \neg A$ (theo tính chất phủ định kép) nên $$L \lor A \iff L \lor \neg (\neg A).$$
+Trước hết, để ý rằng $A \iff \neg \neg A$ (theo tính chất phủ định kép) nên $$L \lor A \iff L \lor \neg (\neg A).$$
 Do tính chất giao hoán của phép tuyển, $$L \lor \neg(\neg A) \iff \neg(\neg A) \lor L.$$
 Theo định nghĩa phép kéo theo, $\neg P \lor Q \iff (P \implies Q)$ với mọi $P$ và $Q$ nên $$\neg(\neg A) \lor L \iff (\neg A \implies L).$$
 Kết hợp lại ba mệnh đề tương đương này, chúng ta có $$L \lor A \iff (\neg A \implies L).$$
@@ -207,8 +205,10 @@ Kết hợp với tính chất phủ định kép, $$(S \implies \neg L) \iff (L
 
 Qua đó, xét vế giả thiết của mệnh đề cần chứng minh:
 $$(L \lor A) \land (S \implies \neg L) \iff (\neg A \implies L) \land (L \implies \neg S).$$
-Ngoài ra, theo tính chất bắc cầu, $$(\neg A \implies L) \land (L \implies \neg S) \iff (\neg A \implies \neg S).$$
-Do vậy, $$(L \lor A) \land (S \implies \neg L) \iff (\neg A \implies \neg S).$$ Điều phải chứng minh.
+Áp dụng định nghĩa của phép đẳng giá và tính chất rút gọn để có:
+$$(L \lor A) \land (S \implies \neg L) \implies (\neg A \implies L) \land (L \implies \neg S).$$
+Ngoài ra, theo tính chất bắc cầu, $$(\neg A \implies L) \land (L \implies \neg S) \implies (\neg A \implies \neg S).$$
+Do vậy, theo tính chất bắc cầu một lần nữa, $$(L \lor A) \land (S \implies \neg L) \iff (\neg A \implies \neg S).$$ Điều phải chứng minh.
 
 \exercise Xác định xem các kết luận sau có thể được chứng minh từ các giả thiết được cho sử dụng lập luận diễn dịch hay không.
 \begin{enumerate}
@@ -314,7 +314,7 @@ Kí hiệu hóa:
 Do tính chất kết hợp của phép hội nên
 $$(R \lor B) \land (H \implies \neg B) \land H \iff (R \lor B) \land ((H \implies \neg B) \land H).$$
 
-Có $(H \implies \neg B) \land H \implies \neg B$ ($(P \implies Q) \land P \implies Q $) nên 
+Có $(H \implies \neg B) \land H \implies \neg B$ (bởi vì $(P \implies Q) \land P \implies Q $) nên theo tính chất bắc cầu
 $$(R \lor B) \land ((H \implies \neg B) \land H) \implies (R \lor B) \land \neg B.$$
 
 Từ tính chất phân phối, chúng ta có
@@ -373,9 +373,9 @@ Chỉ có một trường hợp khiến cho phép lập luận thất bại:
         \hline
     \end{tabular}.
 \end{center}
-Nhưng chỉ cần một trường hợp là đủ để chứng minh không còn hợp lệ.
+Nhưng chỉ cần một trường hợp là đủ để chứng minh không còn hợp lệ. 
 
-Cũng có thể nhìn câu này theo một hướng khác. Lập luận này chỉ hợp lệ nếu có điều kiện đi kèm. Nếu như chúng ta không sử dụng lịch thông thường mà sử dụng một loại lịch đặc biệt mà trước tháng 12 lại có một tháng 11A thì sao? Bài tập này càng nhấn mạnh cần phải có một ``nền tảng'' chung trong việc giải quyết vấn đề trước khi đề cập đến những yếu tố chi tiết.
+Lập luận này muốn được hợp lệ cần phải có điều kiện đi kèm. Nếu như chúng ta không sử dụng lịch thông thường mà sử dụng một loại lịch đặc biệt mà trước tháng 12 lại có một tháng 11A thì sao? Do đó, bài tập này càng nhấn mạnh cần phải có một ``nền tảng'' chung trong việc giải quyết vấn đề trước khi đề cập đến những yếu tố chi tiết.
 
 \stepcounter{subexercise}
 \arabic{subexercise}. Đặt biến các mệnh đề:
@@ -414,7 +414,9 @@ Viết tắt $(L \land P \implies N) \land (N \lor I \implies \neg R) \land (\ne
     M & \implies P \equationexplanation{tính chất phủ định kép}.
 \end{align*}
 
-Qua đó, chúng ta có điều phải chứng minh. Bạn đọc cũng có thể thực hiện bài tập này thông qua bảng giá trị chân lí, nhưng khi đó, bạn đọc sẽ phải xét\dots\ mà thôi, bạn đọc có thể kiểm tra lại bảng \ref{ex:nen_tang_lo_gich:giai_tich_menh_de:lap_luan:bai_2_phan_4} để trải nghiệm cảm giác của tác giả lúc viết đáp án. Thêm vào đó, cần phải để ý rằng, khi càng tăng nhiều biến thì số trường hợp cần phải kiểm tra cũng tăng theo cấp số nhân. Ngoài ra, bạn đọc cũng sẽ mất đi cơ hội được thường thức nghệ thuật của sự lập luận do bị thay thế bởi sự cơ học của phương pháp.
+Qua đó, chúng ta có điều phải chứng minh. Bạn đọc cũng có thể thực hiện bài tập này thông qua bảng giá trị chân lí, nhưng khi đó, bạn đọc sẽ phải xét\dots\ mà thôi, bạn đọc có thể tự làm và kiểm tra lại với lời giải của tác giả ở bảng \ref{ex:nen_tang_lo_gich:giai_tich_menh_de:lap_luan:bai_2_phan_4}. 
+
+Bảng giá trị chân lí chỉ là một công cụ, một phương pháp, không phải là kinh thánh hay thuốc tiên. Cần phải để ý rằng, khi càng tăng nhiều biến thì số trường hợp cần phải kiểm tra cũng tăng theo cấp số nhân. Mệnh đề càng về sau càng phức tạp, số biến có thể nhiều đến mức mà máy tính giải không xong. Ngoài ra, nếu chỉ ``chày cối'' thực hiện cơ học thuật toán, bạn đọc cũng sẽ mất đi cơ hội được thường thức tính nghệ thuật và sự thông minh đến từ sự lập luận.
 
 \begin{table}[H]
     \centering
@@ -611,7 +613,7 @@ Vậy, giả thiết không chứng minh được kết luận.
 
 Từ một số giả thiết cho trước, chúng ta có thể chứng minh các mệnh đề khác, nhưng không có nghĩa là nó thực sự ``đúng''. Hãy tưởng tượng rằng bạn đọc đang đi xem ảo thuật. Ảo thuật gia dẫn dắt bạn đọc thông qua một câu chuyện của một quả bóng mà trong đó có những hành động được miêu tả rất chi tiết. Chiếc cốc úp vào quả bóng, di chuyển trên bàn trực tiếp dưới con mắt của bạn đọc. Bạn đọc nửa tin vào lời của ảo thuật gia, nửa tin vào thị giác của mình rằng quả bóng vẫn ở dưới cái cốc, nhưng cuối cùng, kết quả là quả bóng lại biến mất mà lại xuất hiện trong tay của nhà ảo thuật gia. Đúng là kết luận bạn đọc đưa ra --- quả bóng nằm dưới cái cốc --- là hợp lí từ câu chuyện của nhà ảo thuật gia, nhưng nó chỉ ``đúng'' nếu như ảo thuật gia thực hiện hành động thật như lời nói mà không có sử dụng kĩ thuật tay. Nói cách khác, các giả thiết mà nhà ảo thuật gia đưa ra chứng minh được kết luận của bạn đọc, nhưng kết luận chỉ thật sự hợp lí nếu như giả thiết là không có mâu thuẫn.
 
-\defText{Mâu thuẫn} được định nghĩa là khi giả thiết không thể nhận giá trị chân lí đúng. Viết dưới dạng kí hiệu, $X$ bị mâu thuẫn nếu $X \implies \mathbf{M}$ với $M$ là một mệnh đề sai nào đó. Chúng ta không bao giờ muốn làm việc với giả thiết có mâu thuẫn, do nó có thể chứng minh mọi thứ. Thật vậy, gọi $Y$ là mệnh đề bất kì. Do $X$ luôn sai nên $X \implies Y$ luôn đúng do định nghĩa của phép kéo theo. Vậy $X$ chứng minh $Y$.
+\defText{Mâu thuẫn} được định nghĩa là khi giả thiết không thể nhận giá trị chân lí đúng. Viết dưới dạng kí hiệu, $X$ bị mâu thuẫn nếu $X \implies \mathbf{M}$ với $M$ là một mệnh đề sai nào đó. Chúng ta không bao giờ muốn làm việc với giả thiết có mâu thuẫn, do nó có thể chứng minh mọi thứ. Thật vậy, gọi $X$ là một mâu thuẫn và $Y$ là mệnh đề bất kì. Do $X$ luôn sai nên $X \implies Y$ luôn đúng do định nghĩa của phép kéo theo. Vậy $X$ chứng minh $Y$.
 
 ``Thế không phải mong ước của con người là khám phá mọi thứ, chứng minh mọi thứ hay sao?'' --- Bạn đọc có thể hỏi. Đúng là như vậy, nhưng sẽ khá vô dụng nếu chúng ta chứng minh được một mệnh đề và cả phủ định của nó nữa. Để ý rằng lập luận trong chứng minh trên không phụ thuộc vào $Y$. Do đó, chúng ta hoàn toàn có thể có $X \implies \neg Y$. Điều này không có nghĩa $Y \land \neg Y$, chỉ là khẳng định rằng phép chứng minh là không có giá trị nếu như điều kiện đầu vào đã sai.
 
@@ -780,7 +782,7 @@ Giả thiết thứ hai cho chúng ta $X \land \neg Y$ có mâu thuẫn. Do vậ
     X \land (X \land \neg Y) &\implies (X \land Y) \lor \mathbf{M}; \\
     X \land (X \land \neg Y) &\implies X \land Y.
 \end{align*}
-Có $X \land Y \implies Y$, qua đó có được điều phải chứng minh.
+Có $X \land Y \implies Y$ theo tính rút gọn, kết hợp với tính chất bắc cầu để qua đó có được điều phải chứng minh.
 
 \exercise Sử dụng phản chứng, khẳng định sự đúng đắn của kết luận sau từ giả thiết đã cho:
 \begin{center}
@@ -806,18 +808,18 @@ Do vậy, theo phương pháp phản chứng, giả sử ban đầu sai, hay $\n
 \solution
 Giả sử ngược lại rằng ``Có thể rằng\dots'' có thể biểu diễn dưới dạng phép nối mệnh đề lô-gích. Đây là phép nối đơn ngôi, cho nên chúng ta có thể kí hiệu là ``$\diamondsuit P$'' với $P$ là mệnh đề thành phần.
 
-Gọi $P$ là mệnh đề ``Ngày mai trời mưa.''. Mệnh đề phức hợp:
+Gọi $Q$ là mệnh đề ``Ngày mai trời mưa.''. Mệnh đề phức hợp:
 \begin{center}
-    $\diamondsuit P$: ``Có thể rằng ngày mai trời mưa.''
+    $\diamondsuit Q$: ``Có thể rằng ngày mai trời mưa.''
 \end{center}
 là đúng dưới bất cứ cách trình bày trung thực nào. Tương tự với
 \begin{center}
-    $\diamondsuit \overline{P}$: ``Có thể rằng ngày mai trời không mưa.''.
+    $\diamondsuit \overline{Q}$: ``Có thể rằng ngày mai trời không mưa.''.
 \end{center}
 
 Tuy nhiên, nếu chúng ta đưa một câu luôn sai vào làm mệnh đề con, ví dụ:
 \begin{center}
-    $\diamondsuit \mathbf{M}$: ``Có thể rằng Việt Nam đã không thống nhất vào năm 1975.'',
+    $\diamondsuit \mathbf{M}$: ``Có thể rằng cuộc Tổng tiến công và nổi dậy mùa Xuân đã không xảy ra vào năm 1975.'',
 \end{center}
 thì mệnh đề phức hợp này sẽ luôn sai. Kẻ bảng \ref{tab:nen_tang_lo_gich:giai_tich_menh_de:lap_luan:co_the_cho} cho phép nối ``Có thể rằng\dots''.
 
@@ -827,7 +829,7 @@ thì mệnh đề phức hợp này sẽ luôn sai. Kẻ bảng \ref{tab:nen_tan
     \label{tab:nen_tang_lo_gich:giai_tich_menh_de:lap_luan:co_the_cho}
     \begin{tabular}{|c|c|c|c|c|c|}
         \hline
-        $P$ & $\mathbf{M}$ &$\overline{P}$ & $\diamondsuit P$ & $\diamondsuit \overline{P}$ & $\diamondsuit \mathbf{M}$ \\
+        $Q$ & $\mathbf{M}$ &$\overline{Q}$ & $\diamondsuit Q$ & $\diamondsuit \overline{Q}$ & $\diamondsuit \mathbf{M}$ \\
         \headerDivider
         Đ & S & S & Đ & Đ & S \\
         S & S & Đ & Đ & Đ & S \\
@@ -835,4 +837,6 @@ thì mệnh đề phức hợp này sẽ luôn sai. Kẻ bảng \ref{tab:nen_tan
     \end{tabular}
 \end{table}
 
-Từ sự phân tích giá trị chân lí của phép nối với $P$, chúng ta nhận thấy rằng cấu trúc $\diamondsuit P$ là luôn đúng. Tuy nhiên, điều này mâu thuẫn với mệnh đề $\diamondsuit \mathbf{M}$ luôn sai. Do đó, giả sử ban đầu sai, và ``Có thể rằng\dots'' không thể biểu diễn dưới dạng phép nối mệnh đề lô-gích.
+Từ sự phân tích đó, chúng ta thấy được $\diamondsuit P$ không xác định được tính đúng sai, kể cả khi biết được giá trị chân lí của $P$. Hay nói cách khác, $\diamondsuit P$ trở thành không phải là mệnh đề. Mâu thuẫn.\footnote{``Thế nếu mình biết cụ thể $P$ là gì thì $\diamondsuit P$ vẫn có thể được xác định, vậy nó vẫn có thể được coi là phép nối chứ?'' --- Bạn đọc có thể nghi vấn. Trong lô-gích diễn dịch, lập luận chỉ phụ thuộc vào hình thức hoặc cấu trúc của chính nó, chứ không phụ thuộc vào nội dung thực tế của mệnh đề. Bạn đọc có thể phản biện: ``Nhưng trong một số tài liệu khoa học, người ta vẫn dùng từ ``có thể'' mà. Chẳng lẽ những nhà khoa học lại viết theo kiểu mập mờ, thiếu lô-gích hay sao?''. Thực vậy, việc sử dụng từ ``có thể'' trong văn phong khoa học không phải là biểu hiện của sự thiếu năng lực diễn đạt, mà trái lại, đó là một công cụ ngôn ngữ khách quan được gọi là ngôn ngữ giảm nhẹ. Xin được nhắc lại rằng khoa học không chỉ dùng lô-gích diễn dịch mà còn cả lô-gích quy nạp, nơi luôn tồn tại những yếu tố khách quan và chủ quan chưa được kiểm soát. Dẫn đến, việc dùng ngôn ngữ ``nói giảm nói tránh'' kiểu này giúp lập luận trở nên chặt chẽ và an toàn hơn trước những phản biện, đảm bảo sự trong sáng của kết quả được công bố.}
+
+Do đó, ``Có thể rằng\dots'' không thể biểu diễn dưới dạng phép nối mệnh đề lô-gích và chúng ta có điều phải chứng minh.
