@@ -399,4 +399,22 @@ Có $x = y \iff (x \subseteq y) \land (x \supseteq y)$ đúng với mọi tập 
 Điểu phải chứng minh.
    
 \stepcounter{exercise}
-\arabic{exercise}. 
+\arabic{exercise}. Trước hết, chúng ta sẽ chứng minh $(A \cap B) \cap C = A \cap (B \cap C)$. Thật vậy, với mọi $x$, sử dụng liên tục định nghĩa giao hai tập hợp, chúng ta có
+\begin{align*}
+    x \in (A \cap B) \cap C &\iff \begin{cases}
+        x \in A \cap B \\
+        x \in C
+    \end{cases}; \\
+    x \in (A \cap B) \cap C &\iff \begin{cases}
+        x \in A \\
+        x \in B \\
+        x \in C
+    \end{cases}; \\
+    x \in (A \cap B) \cap C &\iff \begin{cases}
+        x \in A \\
+        x \in B \cap C
+    \end{cases}; \\
+    x \in (A \cap B) \cap C &\iff x \in A \cap (B \cap C).
+\end{align*}
+
+Tiếp theo, chúng ta sẽ cần phải khẳng định rằng $(A \cap B) \cap C = \bigcap \{A; B; C\}$. 
