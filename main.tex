@@ -72,6 +72,7 @@
 
 % Hàm định dạng
 
+\newcommand{\coloringRed}[1]{\textcolor{colorEmphasis}{#1}}
 \newcommand{\emphcolor}[1]{\textcolor{colorEmphasis}{\emph{#1}}}
 \newcommand{\emphcyanbf}[1]{\textcolor{colorEmphasisCyan}{\textbf{#1}}}
 
@@ -81,6 +82,11 @@
    AutoFakeSlant=0.2,
    AutoFakeBold=2.0
 ]{DFKai-SB}
+\newfontfamily{\emojifont}{Segoe UI Emoji}
+\newfontfamily{\symbolfont}{Segoe UI Symbol}
+
+\newcommand{\myemoji}[1]{{\emojifont #1}}
+\newcommand{\mysymbol}[1]{{\symbolfont #1}}
 
 % Chỉnh sửa kết cấu bảng
 \setcellgapes{4pt}
@@ -100,6 +106,14 @@
 \newcommand{\leF}{\textit{禮}}
 \newcommand{\lonF}{\textit{穌}}
 \newcommand{\lonG}{\textit{吝}}
+
+\newcommand{\vietnamoutline}{%
+\begin{tikzpicture}[baseline=0.2ex]
+   \draw[colorEmphasis, thick] (0,0) rectangle (1.2em,0.8em);
+   
+   \node[fill=colorEmphasis, star, star points=5, star point height=0.06em, minimum size=0.25em, draw=colorEmphasis, thick, inner sep=0pt] at (0.6em,0.4em) {};
+\end{tikzpicture}%
+}
 
 \DeclareMathOperator{\Arg}{Arg}
 
@@ -284,8 +298,8 @@
 % \input{chapter/loi_gioi_thieu.tex}
 % \input{chapter/kiem_tra.tex}
 % \input{chapter/khoa_hoc.tex}
-% \input{chapter/nen_tang_lo_gich.tex}
-\input{chapter/li_thuyet_tap_hop.tex}
+\input{chapter/nen_tang_lo_gich.tex}
+% \input{chapter/li_thuyet_tap_hop.tex}
 % \input{chapter/co_ban_xu_li_so_lieu.tex}
 % \input{chapter/chuyen_dong.tex}
 

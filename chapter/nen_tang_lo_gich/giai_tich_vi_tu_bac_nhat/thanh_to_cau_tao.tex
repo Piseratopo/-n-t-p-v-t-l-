@@ -93,21 +93,21 @@ Ngoài ra, có thể kết hợp nhiều lượng từ trong một mệnh đề:
     \exists x, \forall y, x\text{ yêu }y.    
 \end{equation*}
 
-\subsection{Quy tắc xây dựng công thức}
+% \subsection{Quy tắc xây dựng công thức}
 
-\ 
+% \ 
 
-Việc mở rộng thêm các bộ phận mới cho phép định nghĩa lại mệnh đề theo một cách chặt chẽ hơn. Nhưng trước khi đi đến với phương pháp xây dựng mệnh đề, chúng ta sẽ tìm hiểu một khái niệm yếu hơn --- \emph{công thức}.
+% Việc mở rộng thêm các bộ phận mới cho phép định nghĩa lại mệnh đề theo một cách chặt chẽ hơn. Nhưng trước khi đi đến với phương pháp xây dựng mệnh đề, chúng ta sẽ tìm hiểu một khái niệm yếu hơn --- \emph{công thức}.
 
-Một \defText{công thức nguyên tử} là một vị từ đi kèm với đầy đủ những hạng thức cần thiết. Do vậy, ``$R(x)$'', ``$a + b = c$'', ``bông hoa $h$ có màu đỏ'' đều là các công thức nguyên tử. Từ đó, chúng ta có định nghĩa \defText{công thức} theo các quy tắc truy hồi như sau:
-\begin{enumerate}
-    \item Mọi công thức nguyên tử đều là công thức;
-    \item Với mọi công thức $P$, $\neg (P)$ đều là công thức;
-    \item Với mọi công thức $P$ và $Q$, $(P) \land (Q)$, $(P) \lor (Q)$, $(P) \implies (Q)$, $(P) \iff (Q)$, $(P) \uparrow (Q)$, $(P) \downarrow (Q)$, $(P) \impliedby (Q)$, $(P) \nRightarrow (Q)$, $(P) \nLeftarrow (Q)$, $(P) \nLeftrightarrow (Q)$, $(P) \oplus (Q)$, $(P) \odot (Q)$ đều là công thức;
-    \item Với mọi công thức $P$ và hạng thức $x$, $\forall x, (P)$ và $\exists x, (P)$ đều là công thức;
-    \item Những biểu thức khác không thể được lập từ sự kết hợp các quy tắc ở trên không là công thức.
-\end{enumerate}
-Định nghĩa này đã cho phép chuẩn hóa các cảm nhận mà chúng ta đã coi như là hiển nhiên từ trước\footnote{Định nghĩa này được viết theo kiểu định nghĩa hay được đưa ra ở trong nhiều tài liệu (mà có thể kể đến một số ví dụ như trong\cite{suppes2012introduction} và\cite{cunningham2012logical}). Tuy nhiên, không có một nhóm các quy tắc nào có thể thực sự chặt chẽ định nghĩa thế nào là công thức, bởi vì cần phải có một tập hợp các vị từ và hạng thức sơ cấp đầy đủ phản ánh toàn bộ yêu cầu phản ánh ngôn ngữ, nhưng tập này là vô cùng.}. Và qua định nghĩa, chúng ta có thể phân biệt giữa những mệnh đề có nghĩa và những mệnh đề vô nghĩa như ``$X \land \impliedby Y Z\odot$''.
+% Một \defText{công thức nguyên tử} là một vị từ đi kèm với đầy đủ những hạng thức cần thiết. Do vậy, ``$R(x)$'', ``$a + b = c$'', ``bông hoa $h$ có màu đỏ'' đều là các công thức nguyên tử. Từ đó, chúng ta có định nghĩa \defText{công thức} theo các quy tắc truy hồi như sau:
+% \begin{enumerate}
+%     \item Mọi công thức nguyên tử đều là công thức;
+%     \item Với mọi công thức $P$, $\neg (P)$ đều là công thức;
+%     \item Với mọi công thức $P$ và $Q$, $(P) \land (Q)$, $(P) \lor (Q)$, $(P) \implies (Q)$, $(P) \iff (Q)$, $(P) \uparrow (Q)$, $(P) \downarrow (Q)$, $(P) \impliedby (Q)$, $(P) \nRightarrow (Q)$, $(P) \nLeftarrow (Q)$, $(P) \nLeftrightarrow (Q)$, $(P) \oplus (Q)$, $(P) \odot (Q)$ đều là công thức;
+%     \item Với mọi công thức $P$ và hạng thức $x$, $\forall x, (P)$ và $\exists x, (P)$ đều là công thức;
+%     \item Những biểu thức khác không thể được lập từ sự kết hợp các quy tắc ở trên không là công thức.
+% \end{enumerate}
+% Định nghĩa này đã cho phép chuẩn hóa các cảm nhận mà chúng ta đã coi như là hiển nhiên từ trước\footnote{Định nghĩa này được viết theo kiểu định nghĩa hay được đưa ra ở trong nhiều tài liệu (mà có thể kể đến một số ví dụ như trong\cite{suppes2012introduction} và\cite{cunningham2012logical}). Tuy nhiên, không có một nhóm các quy tắc nào có thể thực sự chặt chẽ định nghĩa thế nào là công thức, bởi vì cần phải có một tập hợp các vị từ và hạng thức sơ cấp đầy đủ phản ánh toàn bộ yêu cầu phản ánh ngôn ngữ, nhưng tập này là vô cùng.}. Và qua định nghĩa, chúng ta có thể phân biệt giữa những mệnh đề có nghĩa và những mệnh đề vô nghĩa như ``$X \land \impliedby Y Z\odot$''.
 
 \subsection{Tự do hay phụ thuộc?}
 

@@ -1,0 +1,43 @@
+\section{Xây dựng ngôn ngữ hình thức}
+
+\ 
+
+Sau khi chúng ta đã tìm hiểu một cách ``ngây thơ'' các kí hiệu cơ bản, đến lúc để chúng ta thực hiện xây dựng một ngôn ngữ thật sự chặt chẽ để thực hiện lập luận. Tác giả sử dụng ``xây dựng ngôn ngữ'' vì đúng là như vậy, chúng ta sẽ tạo ra một hệ thống các sự vật trừu tượng để giúp chúng ta giao tiếp trong lô-gích nói riêng và các ngành khoa học nói chung. Điều khác biệt cơ bản nhất giữa ngôn ngữ nói thông thường và ngôn ngữ hình thức là, trong khi cú pháp của ngôn ngữ tự nhiên như tiếng Việt, tiếng Anh, tiếng Trung, hay tiếng Pháp là rất phức tạp thì ngôn ngữ hình thức lại có cấu trúc đơn giản và chỉ dựa trên một số quy luật nhất định. Dựa trên tiếng Việt làm nền tảng (có thể được gọi là siêu ngôn ngữ), chúng ta sẽ đưa ra những đối tượng trong ngôn ngữ hình thức này và quy tắc kết hợp chúng. Và đầu tiên, chúng ta cần một số từ lí thuyết tập hợp.
+
+\subsection{Đối tượng của lí thuyết tập hợp}
+
+\
+
+Từ cái tên, chúng ta cũng đã biết lí thuyết tập hợp sẽ tìm hiểu về tính chất của các \defText{tập hợp} (hay \defText{tập}). Chúng ta không định nghĩa tập hợp mà mặc nhiên cho nó tự tồn tại. Thêm vào đó, chúng ta cấp vị từ $\defMath{\in}\hspace{-0.25em}()$ nhận hạng thức là hai tập hợp $x$ và $y$ bất kì. Điều này có nghĩa $\defMath{\in}\hspace{-0.25em}\defMath{(x; y)}$ hay $\defMath{x \in y}$ là một mệnh đề có thể đúng hoặc sai. Nếu sai, chúng ta kí hiệu $\defMath{x \notin y}$. Nếu $x \in y$, chúng ta viết bằng lời ``$x$ thuộc $y$'' hay ``$x$ là một \defText{phần tử} của $y$''. Ngược lại, chúng ta viết ``$x$ không thuộc $y$''.
+
+Nếu bạn đọc không thích kí hiệu xuôi, bạn đọc có thể viết là $\defMath{y \ni x}$ hay $\defMath{y \not}\hspace{0.05em}\defMath{\ni x}$\footnote{Tác giả chưa bao giờ thấy một tài liệu nào có kiểu viết ngược như thế này. Bạn đọc chỉ nên viết như thế này nếu như nghi vấn rằng người đọc sẽ cầm ngược cuốn sách.} và phát biểu bằng lời lần lượt là ``$y$ chứa phần tử $x$'' hay ``$y$ không chứa phần tử $x$''.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw[set boundary] (0,0) ellipse (1.5cm and 2cm);
+        \node[above=2.1cm] at (0,0) {Tập hợp $y$};
+
+        \node[element, label=left:$x$] (x_in) at (-0.3, 0.5) {};
+
+        \node[element] at (0.5, -0.8) {};
+        \node[element] at (-0.2, -1.2) {};
+        \node[element alert, label={[colorEmphasis]left:$z$}] (x_out) at (3.5, 1.5) {};
+        \draw[thick, colorEmphasis, dashed] (x_out) to[bend left=135] (2.5, 0);
+        \draw[guide arrow, colorEmphasis, dashed] (2.5, 0) to[bend left=-45] (1.5, 0);
+    \end{tikzpicture}
+    \caption{Minh họa quan hệ thuộc --- $x \in y$ --- và không thuộc --- $z \notin y$.}
+\end{figure}
+
+\subsection{Xây dựng bảng chữ cái}
+
+\
+
+\defText{Bảng chữ cái} là một tập hợp chứa các \defText{chữ cái}. Các chữ cái có thể là 
+\begin{center}
+    \coloringRed{a}, \coloringRed{B}, \coloringRed{3}, \coloringRed{\$}, \coloringRed{$\displaystyle \int$}, \coloringRed{彑}, \coloringRed{\mysymbol{☭}}, \vietnamoutline, \coloringRed{\myemoji{🍞}}, hoặc \coloringRed{chữ}, \coloringRed{h4C\&8\#}, \coloringRed{$\displaystyle \iint _d^f$}, \coloringRed{$\frac{\text{\myemoji{↕♻}}}{\text{\mysymbol{♛}\myemoji{♠}}}$}.
+\end{center}
+Việc chữ cái có thuộc vào bảng chữ cái hay không thì còn thuộc vào người dùng của ngôn ngữ. Ngôn ngữ nào cũng có một bảng chữ cái với số lượng chữ cái nhất định, có thể chỉ có chưa đến $30$ giống như tiếng Việt, hoặc đến hàng nghìn như tiếng Trung hoặc tiếng Nhật. Trong ngôn ngữ hình thức phục vụ cho giải tích vị từ bậc nhất, chúng ta sẽ đưa các chữ cái sau vào bảng
+\begin{enumerate}
+    \item 
+\end{enumerate}
