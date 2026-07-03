@@ -177,9 +177,10 @@ Nhưng, để đơn giản hóa, tác giả sẽ bỏ qua việc xây dựng cá
 
 \exercise Cho $A$, $B$ và $C$ là các tập hợp. Chứng minh rằng
 \begin{enumerate}
-    \item $A = B \iff A \subseteq B \land B \subseteq A$;
-    \item $A \neq B \iff \exists z, (z \in A \land z \notin B) \lor (z \notin A \land z \in B)$.
-    \item $A \subseteq B \land B \subseteq C \implies A \subseteq C$.
+   \item $A = B \iff A \subseteq B \land B \subseteq A$;
+   \item $A \neq B \iff \exists z, (z \in A \land z \notin B) \lor (z \notin A \land z \in B)$.
+   \item $A \subseteq B \land B \subseteq C \implies A \subseteq C$;
+   \item $\forall x, \forall y, ((y = A \implies x \in y) \iff x \in A)$.
 \end{enumerate}
 
 \solution
@@ -187,43 +188,55 @@ Nhưng, để đơn giản hóa, tác giả sẽ bỏ qua việc xây dựng cá
 \setcounter{subexercise}{1}
 \arabic{subexercise}. Theo định nghĩa tập con,
 \begin{equation*}
-    \begin{cases}
-        A \subseteq B \iff \forall z, (z \in A \implies z \in B) \\
-        B \subseteq A \iff \forall z, (z \in B \implies z \in A)
-    \end{cases}.
+   \begin{cases}
+      A \subseteq B \iff \forall z, (z \in A \implies z \in B) \\
+      B \subseteq A \iff \forall z, (z \in B \implies z \in A)
+   \end{cases}.
 \end{equation*}
 Do đó,
 \begin{align*}
-    A \subseteq B \land B \subseteq A & \iff \forall z, (z \in A \implies z \in B) \land \forall z, (z \in B \implies z \in A);    \\
-    A \subseteq B \land B \subseteq A & \iff \forall z, \left( (z \in A \implies z \in B) \land (z \in B \implies z \in A)\right); \\
-    A \subseteq B \land B \subseteq A & \iff \forall z, \left(z \in A \iff z \in B\right);                                         \\
-    A \subseteq B \land B \subseteq A & \iff A = B.
+   A \subseteq B \land B \subseteq A & \iff \forall z, (z \in A \implies z \in B) \land \forall z, (z \in B \implies z \in A);    \\
+   A \subseteq B \land B \subseteq A & \iff \forall z, \left( (z \in A \implies z \in B) \land (z \in B \implies z \in A)\right); \\
+   A \subseteq B \land B \subseteq A & \iff \forall z, \left(z \in A \iff z \in B\right);                                         \\
+   A \subseteq B \land B \subseteq A & \iff A = B.
 \end{align*}
 Điều phải chứng minh.
 
 \stepcounter{subexercise}
 \arabic{subexercise}. Khi biết $\overline{P \iff Q} \iff (P \land \neg Q) \lor (\neg P \land Q)$, biến đổi cơ bản cho chúng ta:
 \begin{align*}
-    A \neq B & \iff \overline{A = B};                                                                                \\
-    A \neq B & \iff \overline{\forall z, z \in A \iff z \in B};                                                      \\
-    A \neq B & \iff \exists z, \overline{z \in A \iff z \in B};                                                      \\
-    A \neq B & \iff \exists z, \left( z \in A \land z \notin B \right) \lor \left( z \notin A \land z \in B \right).
+   A \neq B & \iff \overline{A = B};                                                                                \\
+   A \neq B & \iff \overline{\forall z, z \in A \iff z \in B};                                                      \\
+   A \neq B & \iff \exists z, \overline{z \in A \iff z \in B};                                                      \\
+   A \neq B & \iff \exists z, \left( z \in A \land z \notin B \right) \lor \left( z \notin A \land z \in B \right).
 \end{align*}
 Điều phải chứng minh.
 
 \stepcounter{subexercise}
 \arabic{subexercise}.
 \begin{equation*}
-    \begin{cases}
-        A \subseteq B \iff \forall z, (z \in A \implies z \in B) \\
-        B \subseteq C \iff \forall z, (z \in B \implies z \in C)
-    \end{cases}.
+   \begin{cases}
+      A \subseteq B \iff \forall z, (z \in A \implies z \in B) \\
+      B \subseteq C \iff \forall z, (z \in B \implies z \in C)
+   \end{cases}.
 \end{equation*}
 Do đó,
 \begin{align*}
-    A \subseteq B \land B \subseteq C & \iff \forall z, (z \in A \implies z \in B) \land \forall z, (z \in B \implies z \in C);    \\
-    A \subseteq B \land B \subseteq C & \iff \forall z, \left( (z \in A \implies z \in B) \land (z \in B \implies z \in C)\right); \\
-    A \subseteq B \land B \subseteq C & \implies \forall z, \left(z \in A \implies z \in C\right);                                 \\
-    A \subseteq B \land B \subseteq C & \implies A \subseteq C.
+   A \subseteq B \land B \subseteq C & \iff \forall z, (z \in A \implies z \in B) \land \forall z, (z \in B \implies z \in C);    \\
+   A \subseteq B \land B \subseteq C & \iff \forall z, \left( (z \in A \implies z \in B) \land (z \in B \implies z \in C)\right); \\
+   A \subseteq B \land B \subseteq C & \implies \forall z, \left(z \in A \implies z \in C\right);                                 \\
+   A \subseteq B \land B \subseteq C & \implies A \subseteq C.
 \end{align*}
 Điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Chúng ta sẽ chứng minh thông qua hai chiều. Đầu tiên, giả sử $y = A \implies x \in y$ với mọi $x$ và $y$. Cụ thể hóa $y$ để có
+\begin{equation*}
+   A = A \implies x \in A.
+\end{equation*} 
+
+Có $A = A$ luôn đúng do tính đối xứng của phép bằng nhau, cho nên phải có $x \in A$. Chiều thuận này được chứng minh.
+
+Tiếp theo, chúng ta giả sử ngược lại $x \in A$. Nếu $y = A$, theo tiên đề ngoại diên, mọi phần tử trong $y$ đều trong $A$. Cụ thể hóa thành phần tử $x$, nếu $x \in A$ thì $x \in y$. Theo lập luận đó, $y = A \implies x \in y$.
+
+Chiều ngược cũng đã được thể hiện rõ. Theo định nghĩa phép đẳng giá, qua đó, điều phải chứng minh.

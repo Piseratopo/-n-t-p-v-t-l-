@@ -417,4 +417,25 @@ Có $x = y \iff (x \subseteq y) \land (x \supseteq y)$ đúng với mọi tập 
     x \in (A \cap B) \cap C &\iff x \in A \cap (B \cap C).
 \end{align*}
 
-Tiếp theo, chúng ta sẽ cần phải khẳng định rằng $(A \cap B) \cap C = \bigcap \{A; B; C\}$. 
+Tiếp theo, chúng ta sẽ cần phải khẳng định rằng $(A \cap B) \cap C = \bigcap \{A; B; C\}$. Giả sử $x \in \bigcap\{A; B; C\}$, điều này tương đương với $x \in \bigcup \{A; B; C\}$ và $\forall y \in \{A; B; C\}, x \in y$. Mà, dễ nhận thấy rằng $\forall y \in \{A; B; C\}, x \in y \implies x \in \bigcup \{A; B; C\}$, cho nên
+\begin{equation*}
+   x \in \bigcap\{A; B; C\} \iff \forall y \in \{A; B; C\}, x \in y.
+\end{equation*}
+
+$\{A; B; C\}$ là tập duy nhất thỏa mãn với mọi $y$, $\left[\begin{array}{l}
+   y = A \\
+   y = B \\
+   y = C   
+\end{array}\right.$. Do vậy, với mọi $x$,
+\begin{align*}
+   \forall y \in \{A; B; C\}, x \in y &\iff \forall y, \left(\left[\begin{array}{l}
+   y = A \\
+   y = B \\
+   y = C   
+\end{array} \implies x \in y\right.\right), \\
+\forall y \in \{A; B; C\}, x \in y &\iff \forall y, \begin{cases}
+   y = A \implies x \in y \\
+   y = B \implies x \in y \\
+   y = C \implies x \in y 
+\end{cases}, \equationexplanation{quy tắc chia trường hợp}
+\end{align*}

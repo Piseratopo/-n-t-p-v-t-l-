@@ -945,6 +945,7 @@ Ví dụ như ở bảng \ref{tab:nen_tang_lo_gich:giai_tich_menh_de:menh_de_phu
 \begin{table}[H]
    \centering
    \caption{Bảng giá trị chân lí của $\left(P \land Q\right) \land R \iff P \land (Q \land R)$.}
+   \label{tab:nen_tang_lo_gich:giai_tich_menh_de:menh_de_phuc_hop:ket_hop_hoi}
    \begin{tabular}{|c|c|c|ccccccccccc!{\vrule width 1.5pt}c|}
       \hline
       $P$ & $Q$ & $R$ & $(P$ & $\land$ & $Q)$ & $\land$ & $R$ & $\iff$ & $P$ & $\land$ & $(Q$ & $\land$ & $R)$ & $\left(P \land Q\right) \land R \iff P \land (Q \land R)$\\
@@ -960,6 +961,7 @@ Ví dụ như ở bảng \ref{tab:nen_tang_lo_gich:giai_tich_menh_de:menh_de_phu
 \begin{table}[H]
    \centering
    \caption{Bảng giá trị chân lí của $\left(P \lor Q\right) \lor R \iff P \lor (Q \lor R)$.}
+   \label{tab:nen_tang_lo_gich:giai_tich_menh_de:menh_de_phuc_hop:ket_hop_tuyen}
    \begin{tabular}{|c|c|c|ccccccccccc!{\vrule width 1.5pt}c|}
       \hline
       $P$ & $Q$ & $R$ & $(P$ & $\lor$ & $Q)$ & $\lor$ & $R$ & $\iff$ & $P$ & $\lor$ & $(Q$ & $\lor$ & $R)$ & $\left(P \lor Q\right) \lor R \iff P \lor (Q \lor R)$\\
@@ -971,6 +973,26 @@ Ví dụ như ở bảng \ref{tab:nen_tang_lo_gich:giai_tich_menh_de:menh_de_phu
       \hline
    \end{tabular}
 \end{table}
+
+Hai bảng \ref{tab:nen_tang_lo_gich:giai_tich_menh_de:menh_de_phuc_hop:ket_hop_hoi} và \ref{tab:nen_tang_lo_gich:giai_tich_menh_de:menh_de_phuc_hop:ket_hop_tuyen} cho phép chúng ta viết $P \land Q \land R$ và $P \lor Q \lor R$ mà không phải lo lắng về thứ tự các phép tính. Điều này có thể mở rộng lên nhiều biến hơn, dẫn đến chúng ta có thể viết 
+\begin{equation*}
+   \left\{ \begin{array}{c}
+      P_1 \implies R \\
+      P_2 \implies R \\
+      \vdots \\
+      P_n \implies R
+   \end{array} \right. \text{ hoặc } P_1 \land P_2 \land \cdots \land P_n
+\end{equation*}
+và 
+\begin{equation*}
+   \left[\begin{array}{c}
+      P_1 \\
+      P_2 \\
+      \vdots\\
+      P_n
+   \end{array}\right. \text{ hoặc } P_1 \lor P_2 \lor \cdots \lor P_n
+\end{equation*}
+mà cũng không phải quan tâm tới thứ tự tính toán.
 
 \begin{table}[H]
 	\centering
@@ -1004,6 +1026,8 @@ Ví dụ như ở bảng \ref{tab:nen_tang_lo_gich:giai_tich_menh_de:menh_de_phu
 		\hline
 	\end{tabular}
 \end{table}
+
+Tương tự như trước, chúng ta có thể viết $P \iff Q \iff R$, nhưng đừng.
 
 \begin{table}[H]
 	\centering
@@ -1192,3 +1216,20 @@ Ví dụ như ở bảng \ref{tab:nen_tang_lo_gich:giai_tich_menh_de:menh_de_phu
 		\hline
 	\end{tabular}
 \end{table}
+
+
+Quy tắc này có thể được mở rộng lên nhiều mệnh đề hơn:\begin{equation*}
+   \left\{ \begin{array}{c}
+      P_1 \implies R \\
+      P_2 \implies R \\
+      \vdots \\
+      P_n \implies R
+   \end{array} \right. \iff \left(\left[\begin{array}{c}
+      P_1 \\
+      P_2 \\
+      \vdots \\
+      P_n
+   \end{array} \implies R\right.\right).
+\end{equation*}
+
+Chúng ta sẽ coi như mệnh đề này đã được chứng minh sử dụng bảng giá trị chân lí với $n$ là một số đã biết trước.
