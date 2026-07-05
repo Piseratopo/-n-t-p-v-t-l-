@@ -6,7 +6,7 @@ Tài liệu "Ôn tập Vật Lí" cần được viết theo quy chuẩn chính 
 
 - Văn bản đúng quy tắc chính tả và ngữ pháp Việt Nam hiện hành.
 - Sử dụng ``` `` ``` và `''` để viết dấu ngoặc kép.
-- Đảm bảo kí hiệu thống nhất trong tài liệu, trong đó bao gồm tên, kiểu hoa/thường, kiểu phông, kích cỡ, v.v. Tốt nhất, định nghĩa định dạng trong `main.tex` và sử dụng từ đó.
+- Đảm bảo kí hiệu thống nhất trong tài liệu, trong đó bao gồm tên, kiểu hoa/thường, kiểu phông, kích cỡ, vân vân. Tốt nhất, định nghĩa định dạng trong `main.tex` và sử dụng từ đó.
 - Đại từ nhân xưng: Khi dùng ngôi thứ nhất mà không chỉ bạn đọc, dùng "tác giả". Khi dùng ngôi thứ hai, dùng "bạn đọc". Khi dùng ngôi thứ nhất số nhiều mà bao gồm cả người đọc, dùng "chúng ta".
 - Chú thích tên bảng và tên hình cần phải có dấu chấm cuối câu.
 

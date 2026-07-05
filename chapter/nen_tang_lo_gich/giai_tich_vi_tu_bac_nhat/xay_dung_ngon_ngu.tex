@@ -8,36 +8,68 @@ Sau khi chúng ta đã tìm hiểu một cách ``ngây thơ'' các kí hiệu c�
 
 \
 
-Từ cái tên, chúng ta cũng đã biết lí thuyết tập hợp sẽ tìm hiểu về tính chất của các \defText{tập hợp} (hay \defText{tập}). Chúng ta không định nghĩa tập hợp mà mặc nhiên cho nó tự tồn tại. Thêm vào đó, chúng ta cấp vị từ $\defMath{\in}\hspace{-0.25em}()$ nhận hạng thức là hai tập hợp $x$ và $y$ bất kì. Điều này có nghĩa $\defMath{\in}\hspace{-0.25em}\defMath{(x; y)}$ hay $\defMath{x \in y}$ là một mệnh đề có thể đúng hoặc sai. Nếu sai, chúng ta kí hiệu $\defMath{x \notin y}$. Nếu $x \in y$, chúng ta viết bằng lời ``$x$ thuộc $y$'' hay ``$x$ là một \defText{phần tử} của $y$''. Ngược lại, chúng ta viết ``$x$ không thuộc $y$''.
+Từ cái tên, chúng ta cũng đã biết lí thuyết tập hợp sẽ tìm hiểu về tính chất của các \defText{tập hợp} (hay \defText{tập}). Thêm vào đó, chúng ta cấp vị từ $\defMath{\in}\hspace{-0.25em}()$ nhận hạng thức là hai tập hợp $x$ và $y$ bất kì. Điều này có nghĩa $\defMath{\in}\hspace{-0.25em}\defMath{(x; y)}$ hay $\defMath{x \in y}$ là một mệnh đề có thể đúng hoặc sai. Nếu sai, chúng ta kí hiệu $\defMath{x \notin y}$. Nếu $x \in y$, chúng ta viết bằng lời ``$x$ thuộc $y$'' hay ``$x$ là một \defText{phần tử} của $y$''. Ngược lại, chúng ta viết ``$x$ không thuộc $y$''.
 
 Nếu bạn đọc không thích kí hiệu xuôi, bạn đọc có thể viết là $\defMath{y \ni x}$ hay $\defMath{y \not}\hspace{0.05em}\defMath{\ni x}$\footnote{Tác giả chưa bao giờ thấy một tài liệu nào có kiểu viết ngược như thế này. Bạn đọc chỉ nên viết như thế này nếu như nghi vấn rằng người đọc sẽ cầm ngược cuốn sách.} và phát biểu bằng lời lần lượt là ``$y$ chứa phần tử $x$'' hay ``$y$ không chứa phần tử $x$''.
 
 \begin{figure}[H]
-    \centering
-    \begin{tikzpicture}
-        \draw[set boundary] (0,0) ellipse (1.5cm and 2cm);
-        \node[above=2.1cm] at (0,0) {Tập hợp $y$};
+   \centering
+   \begin{tikzpicture}
+      \draw[set boundary] (0,0) ellipse (1.5cm and 2cm);
+      \node[above=2.1cm] at (0,0) {Tập hợp $y$};
 
-        \node[element, label=left:$x$] (x_in) at (-0.3, 0.5) {};
+      \node[element, label=left:$x$] (x_in) at (-0.3, 0.5) {};
 
-        \node[element] at (0.5, -0.8) {};
-        \node[element] at (-0.2, -1.2) {};
-        \node[element alert, label={[colorEmphasis]left:$z$}] (x_out) at (3.5, 1.5) {};
-        \draw[thick, colorEmphasis, dashed] (x_out) to[bend left=135] (2.5, 0);
-        \draw[guide arrow, colorEmphasis, dashed] (2.5, 0) to[bend left=-45] (1.5, 0);
-    \end{tikzpicture}
-    \caption{Minh họa quan hệ thuộc --- $x \in y$ --- và không thuộc --- $z \notin y$.}
+      \node[element] at (0.5, -0.8) {};
+      \node[element] at (-0.2, -1.2) {};
+      \node[element alert, label={[colorEmphasis]left:$z$}] (x_out) at (3.5, 1.5) {};
+      \draw[thick, colorEmphasis, dashed] (x_out) to[bend left=135] (2.5, 0);
+      \draw[guide arrow, colorEmphasis, dashed] (2.5, 0) to[bend left=-45] (1.5, 0);
+   \end{tikzpicture}
+   \caption{Minh họa quan hệ thuộc --- $x \in y$ --- và không thuộc --- $z \notin y$.}
 \end{figure}
+
+Chúng ta sẽ mặc nhiên cho một số tập hợp, phần tử, và quan hệ ``$\in$'' giữa chúng tự tồn tại. Hiểu theo cách khác, chúng ta sẽ coi như có thể xây dựng được một số tập hợp và liệt kê được các phần tử của chúng mà không cần phải chứng minh.
 
 \subsection{Xây dựng bảng chữ cái}
 
 \
 
-\defText{Bảng chữ cái} là một tập hợp chứa các \defText{chữ cái}. Các chữ cái có thể là 
+\defText{Bảng chữ cái} là một tập hợp chứa các \defText{chữ cái}. Các chữ cái có thể là bất cứ kí hiệu nào. Các ví dụ dưới đây đều là chữ cái:
 \begin{center}
-    \coloringRed{a}, \coloringRed{B}, \coloringRed{3}, \coloringRed{\$}, \coloringRed{$\displaystyle \int$}, \coloringRed{彑}, \coloringRed{\mysymbol{☭}}, \vietnamoutline, \coloringRed{\myemoji{🍞}}, hoặc \coloringRed{chữ}, \coloringRed{h4C\&8\#}, \coloringRed{$\displaystyle \iint _d^f$}, \coloringRed{$\frac{\text{\myemoji{↕♻}}}{\text{\mysymbol{♛}\myemoji{♠}}}$}.
+   \coloringCrimson{a}, \coloringCrimson{B}, \coloringCrimson{3}, \coloringCrimson{\$}, \coloringCrimson{$\displaystyle \int$}, \coloringCrimson{彑}, \coloringCrimson{\mysymbol{☭}}, \vietnamoutline, \coloringCrimson{\myemoji{🍞}}, hoặc \coloringCrimson{chữ}, \coloringCrimson{h4C\&8\#}, \coloringCrimson{$\displaystyle \iint _d^f$}, \coloringCrimson{$\frac{\text{\myemoji{↕♻}}}{\text{\mysymbol{♛}\myemoji{♠}}}$}\footnote{Các chữ cái trong ví dụ được viết bằng \coloringCrimson{màu này} để dễ phân biệt với các bộ phận kết nối câu thông thường. Tác giả không phân biệt các chữ cái bởi màu sắc, nhưng bạn đọc hoàn toàn được làm như vậy nếu như bạn đọc có nhu cầu xây dựng một bảng chữ cái mới.}.
 \end{center}
-Việc chữ cái có thuộc vào bảng chữ cái hay không thì còn thuộc vào người dùng của ngôn ngữ. Ngôn ngữ nào cũng có một bảng chữ cái với số lượng chữ cái nhất định, có thể chỉ có chưa đến $30$ giống như tiếng Việt, hoặc đến hàng nghìn như tiếng Trung hoặc tiếng Nhật. Trong ngôn ngữ hình thức phục vụ cho giải tích vị từ bậc nhất, chúng ta sẽ đưa các chữ cái sau vào bảng
-\begin{enumerate}
-    \item 
-\end{enumerate}
+Hai chữ cái được coi là như nhau nếu chúng không thể được phân biệt về mặt thị giác. Việc chữ cái có thuộc vào bảng chữ cái hay không thì còn thuộc vào người dùng của ngôn ngữ. Ngôn ngữ nào cũng có một bảng chữ cái với số lượng chữ cái nhất định, có thể chỉ có chưa đến $30$ giống như tiếng Việt, hoặc đến hàng nghìn như tiếng Trung hoặc tiếng Nhật. Trong ngôn ngữ hình thức phục vụ cho giải tích vị từ bậc nhất, chúng ta sẽ đưa các chữ cái sau vào bảng:
+\begin{itemize}
+   \item \coloringDodgerblue{\emph{Hạng thức}}: Một hạng thức (hay biến) là một chữ cái thuộc tập hợp $\{\coloringCrimson{h_0}; \coloringCrimson{h_1}; \coloringCrimson{h_2}; \cdots\}$. Thông thường, chúng ta cho phép một chút sự cẩu thả và viết $a, b, c, x_1, y_2, z_3, \dots$ thay cho tên thật của các hạng thức. Đối tượng mà hạng thức thay thế cho phụ thuộc vào mô hình chúng ta nghiên cứu. Lưu ý, hai hạng thức bất kì trong tập hợp thì khác nhau, nhưng khi sử dụng kí hiệu thay thế thì điều đó không còn chắc chắn nữa. Cụ thể, khi lấy hai hạng thức $h_{1000}$ và $h_{2026}$ từ tập hợp, chúng ta sẽ hiểu chúng đang biểu diễn hai đối tượng khác nhau. Nhưng trừ khi được chỉ rõ là hai hạng thức khác nhau, các cách viết rút gọn hạng thức có thể cùng biểu diễn cho cùng một đối tượng. Chẳng hạn, $x$ và $y$ có thể cùng biểu diễn $h_{6789}$\footnote{Đợi một chút! Nếu như những gì chúng ta đang làm là xây dựng ngôn ngữ nền tảng nhất, tại sao lại dùng số tự nhiên thế này? Hiểu một cách trực tiếp và đơn giản nhất, bạn đọc có thể coi như các chữ số từ $0$ đến $9$ là các chữ số vô nghĩa, chỉ có tác dụng để phân biệt các hạng thức với nhau là được. Ngoài ra, tuy tác giả có dùng ``$\cdots$'' nhưng không có nghĩa là tác giả sẽ lấy vô tận hạng thức (và chúng ta chưa đủ công cụ để xây dựng khái niệm ``vô hạn''). Mọi lập luận lô-gích để có thể được kiểm chứng thì cần phải có giới hạn nhất định về độ dài, và do đó sẽ không thể nào có một lập luận dùng vô hạn các hạng thức khác nhau được. Cho nên, $\{\coloringCrimson{h_0}; \coloringCrimson{h_1}; \coloringCrimson{h_2}; \cdots\}$ cần được hiểu là một tập hợp hữu hạn, được liệt kê giản lược. Số lượng số hạng thức cần thiết sẽ ``ứng biến khi cần''.}.
+   \item \coloringDodgerblue{\emph{Phép nối mệnh đề}}: Đây là những phép đã được đề cập ở giải tích mệnh đề, bao gồm: \begin{center}$\coloringCrimson{\lnot}, \coloringCrimson{\lor}, \coloringCrimson{\land}, \coloringCrimson{\implies}, \coloringCrimson{\impliedby}, \coloringCrimson{\iff}, \coloringCrimson{\uparrow}, \coloringCrimson{\downarrow}, \dots\footnotemark.$\footnotetext[\value{footnote}]{Thực ra, chỉ cần phủ định hội --- $\coloringCrimson{\uparrow}$ --- hoặc phủ định tuyển --- $\coloringCrimson{\downarrow}$ --- là đủ để xây dựng lại toàn bộ các phép nối khác.}\end{center}
+   \item \coloringDodgerblue{\emph{Lượng từ}}: Chúng ta sẽ bổ sung thêm lượng từ phổ quát --- $\coloringCrimson{\forall}$, lượng từ tồn tại --- $\coloringCrimson{\exists}$, và lượng từ phủ định tồn tại --- $\coloringCrimson{\nexists}$ --- vào trong bảng chữ cái\footnote{Giống như với phép nối mệnh đề, chỉ cần một lượng từ để có thể biểu diễn các lượng từ còn lại. Đặc biệt là, bất cứ lượng từ nào cũng có thể làm điểm khởi đầu để suy ra các lượng từ khác được.}.
+   \item \coloringDodgerblue{\emph{Dấu câu}}: $\coloringCrimson{(}, \coloringCrimson{)}, \coloringCrimson{,}, \coloringCrimson{;}$ được bổ sung để tăng khả năng nhận diện của các biểu thức toán.
+\end{itemize}
+
+Ngoài ra, tác giả cũng sẽ bổ sung thêm những kí tự mà một số người cho rằng nằm ngoài lô-gích vị từ bậc nhất, nhưng vẫn được cho là quan trọng:
+\begin{itemize}
+   \item \coloringDodgerblue{\emph{Hằng số}}: Bảng chữ cái sẽ được bổ sung một số kí hiệu cho những hạng thức không đổi. Giống như với hạng thức, chúng ta viết $a, b, c, x_1, y_2, z_3, \dots$ để thay thế cho tên thật của hạng thức, trừ khi chúng ta đã có sẵn một số kí tự ``chuẩn'' như $\coloringCrimson{0}, \coloringCrimson{\emptyset}, \coloringCrimson{\varnothing}$.
+   \item \coloringDodgerblue{\emph{Vị từ}}: Chúng ta có thể thêm một số vị từ mà mỗi vị từ có thể nhận một số lượng hạng thức nhất định. Chẳng hạn, $\coloringCrimson{>}$ là một vị từ nhận hai hạng thức quen thuộc.
+   \item \coloringDodgerblue{\emph{Hàm}}: Việc thêm hàm là cần thiết để dễ dàng gọi ra các đối tượng có tính chất cụ thể mà không phải vòng qua việc phải sử dụng vị từ và lượng từ. Kể đến một ví dụ mà bạn đọc có thể chưa biết, hàm kẹp, kí hiệu là $\coloringCrimson{\text{kẹp}}$ hoặc $\coloringCrimson{\text{clamp}}$, là một hàm nhận vào ba hạng thức bao gồm: $x$, một giới hạn dưới $m$, và một giới hạn trên $M$; hàm này sẽ giữ cho giá trị $x$ luôn nằm trong khoảng từ $m$ đến $M$ bằng cách trả về $m$ nếu $x$ nhỏ hơn $m$, trả về $M$ nếu $x$ lớn hơn $M$, và trả về chính nó nếu $x$ đã nằm sẵn trong khoảng giữa hai giới hạn đó.
+\end{itemize}
+
+Để tiện cho việc phân biệt với bảng chữ cái nói chung, gọi bảng chữ cái vừa được xây dựng này là $\mathscr{B}$. Giống như ngôn ngữ tự nhiên, chúng ta sẽ liên tục bổ sung và phát triển $\mathscr{B}$ khi mà nhu cầu sử dụng của chúng ta ngày các phức tạp hơn.
+
+\subsection{Xây dựng thuật ngữ}
+
+\
+
+Từ bảng chữ cái, chúng ta sẽ viết được nhiều từ. Ngôn ngữ lô-gích hình thức cũng có khái niệm về ``từ'' (chuyên ngành hơn sẽ gọi là ``thuật ngữ''). Về mặt hình thức, một thuật ngữ là một \defText{xâu} (hoặc \defText{chuỗi}) --- một nhóm các chữ cái viết theo một trật tự nhất định. Định nghĩa hai chuỗi giống nhau y hệt như định nghĩa hai chữ cái giống nhau. Cụ thể, $\equiv(X; C)$ (hay viết $X \equiv C$) khi và chỉ khi $X$ và $C$ là không thể phân biệt được về mặt thị giác. Nếu $X$ khác $C$, chúng ta sẽ kí hiệu là $X \not \equiv C$\footnote{``Tác giả sẽ chỉ sử dụng $\equiv$'' và ``$\not \equiv$'' cho mục đích so sánh hai xâu.}. Bổ sung vào đó, ``một nhóm các chữ cái'' có thể không có chữ cái nào, khi này chúng ta có \defText{xâu rỗng}, kí hiệu là $\defMath{\Lambda}$. 
+
+Một câu hỏi rất tự nhiên có thể được đặt ra: ``Thế làm sao để phân biệt giữa một thuật ngữ với một xâu vô nghĩa?''. Ngôn ngữ tự nhiên tạo sự phân biệt qua ngữ nghĩa mà con người đem lại cho từ. Chúng ta cũng có thể làm tương tự, nhưng như thế sẽ có quá nhiều khái niệm cần phải định nghĩa. Bên cạnh đó, chúng ta sẽ làm mất những mối liên kết giữa các thuật ngữ giống nhau như ``$1 + 1$'', ``$1 + 2$'' và ``$1 \times 1$''. Vì vậy, chúng ta sẽ định nghĩa thuật ngữ một cách truy hồi như sau:
+\begin{quotation}
+   Tập hợp những \defText{thuật ngữ} bao gồm các xâu sử dụng các chữ cái trong $\mathscr{B}$ được xây dựng theo hai quy tắc sau:
+   \begin{enumerate}
+      \item Mọi hạng thức và hằng số đều là thuật ngữ;
+      \item Nếu $f$ là hàm có thể nhận lần lượt các thuật ngữ $t_1, t_2, \dots, t_n$ làm tham số, thì xâu $f(t_1; t_2; \cdots; t_n)$\footnote{Tương tự như ở bảng chữ cái, mặc dù $f(t_1; t_2; \cdots; t_n)$ là kí hiệu theo định nghĩa, nhưng bạn đọc có thể linh động và viết theo những hình thức khác mà bạn đọc muốn.} cũng là thuật ngữ.
+   \end{enumerate}
+   Những xâu không thể được xây dựng từ hai quy tắc trên không là thuật ngữ.
+\end{quotation}
+
+Có hai vấn đề mà bạn đọc có thể đề ra khi đọc định nghĩa này. Thứ nhất, 

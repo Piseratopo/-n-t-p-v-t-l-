@@ -8,7 +8,7 @@
 \usepackage[a4paper]{geometry}
 \usepackage[explicit]{titlesec}
 \usepackage[backend=biber, style=numeric, maxbibnames=99]{biblatex}
-\usepackage{amsmath, amssymb, blindtext, bm, calc, caption, enumitem, fancyhdr, float, hyperref, icomma, lmodern, longtable, makecell, multicol, multirow, pgfplots, siunitx, steinmetz, tabularray, tikz, tikz-3dplot, varwidth, wrapfig2, xcolor, xparse, xeCJK}
+\usepackage{amsmath, amssymb, blindtext, bm, calc, caption, enumitem, fancyhdr, float, hyperref, icomma, lmodern, longtable, makecell, mathrsfs, multicol, multirow, pgfplots, siunitx, steinmetz, tabularray, tikz, tikz-3dplot, varwidth, wrapfig2, xcolor, xparse, xeCJK}
 
 % Tài liệu tham khảo
 \DeclareDelimFormat{multinamedelim}{\addcomma\space}
@@ -65,6 +65,9 @@
 \allowdisplaybreaks
 
 % Định nghĩa tông màu
+\definecolor{colorCrimson}{RGB}{220, 24, 78}
+\definecolor{colorDodgerblue}{RGB}{0, 120, 255}
+
 \definecolor{colorEmphasis}{RGB}{220, 24, 78}
 \definecolor{colorEmphasisCyan}{RGB}{0, 120, 255}
 \definecolor{colorEmphasisGreen}{RGB}{0, 171, 77}
@@ -72,7 +75,8 @@
 
 % Hàm định dạng
 
-\newcommand{\coloringRed}[1]{\textcolor{colorEmphasis}{#1}}
+\newcommand{\coloringCrimson}[1]{\textcolor{colorCrimson}{#1}}
+\newcommand{\coloringDodgerblue}[1]{\textcolor{colorDodgerblue}{#1}}
 \newcommand{\emphcolor}[1]{\textcolor{colorEmphasis}{\emph{#1}}}
 \newcommand{\emphcyanbf}[1]{\textcolor{colorEmphasisCyan}{\textbf{#1}}}
 
