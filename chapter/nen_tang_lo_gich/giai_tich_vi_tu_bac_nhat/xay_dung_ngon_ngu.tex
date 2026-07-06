@@ -54,7 +54,7 @@ Ngoài ra, tác giả cũng sẽ bổ sung thêm những kí tự mà một số
    \item \coloringDodgerblue{\emph{Hàm}}: Việc thêm hàm là cần thiết để dễ dàng gọi ra các đối tượng có tính chất cụ thể mà không phải vòng qua việc phải sử dụng vị từ và lượng từ. Kể đến một ví dụ mà bạn đọc có thể chưa biết, hàm kẹp, kí hiệu là $\coloringCrimson{\text{kẹp}}$ hoặc $\coloringCrimson{\text{clamp}}$, là một hàm nhận vào ba hạng thức bao gồm: $x$, một giới hạn dưới $m$, và một giới hạn trên $M$; hàm này sẽ giữ cho giá trị $x$ luôn nằm trong khoảng từ $m$ đến $M$ bằng cách trả về $m$ nếu $x$ nhỏ hơn $m$, trả về $M$ nếu $x$ lớn hơn $M$, và trả về chính nó nếu $x$ đã nằm sẵn trong khoảng giữa hai giới hạn đó.
 \end{itemize}
 
-Để tiện cho việc phân biệt với bảng chữ cái nói chung, gọi bảng chữ cái vừa được xây dựng này là $\mathscr{B}$. Giống như ngôn ngữ tự nhiên, chúng ta sẽ liên tục bổ sung và phát triển $\mathscr{B}$ khi mà nhu cầu sử dụng của chúng ta ngày các phức tạp hơn.
+Để tiện cho việc phân biệt với bảng chữ cái nói chung, gọi bảng chữ cái vừa được xây dựng này là $\mathscr{B}$. Giống như ngôn ngữ tự nhiên, chúng ta sẽ liên tục bổ sung và phát triển $\mathscr{B}$ khi mà nhu cầu sử dụng của chúng ta ngày càng phức tạp hơn.
 
 \subsection{Xây dựng thuật ngữ}
 
@@ -67,9 +67,151 @@ Một câu hỏi rất tự nhiên có thể được đặt ra: ``Thế làm sa
    Tập hợp những \defText{thuật ngữ} bao gồm các xâu sử dụng các chữ cái trong $\mathscr{B}$ được xây dựng theo hai quy tắc sau:
    \begin{enumerate}
       \item Mọi hạng thức và hằng số đều là thuật ngữ;
-      \item Nếu $f$ là hàm có thể nhận lần lượt các thuật ngữ $t_1, t_2, \dots, t_n$ làm tham số, thì xâu $f(t_1; t_2; \cdots; t_n)$\footnote{Tương tự như ở bảng chữ cái, mặc dù $f(t_1; t_2; \cdots; t_n)$ là kí hiệu theo định nghĩa, nhưng bạn đọc có thể linh động và viết theo những hình thức khác mà bạn đọc muốn.} cũng là thuật ngữ.
+      \item Nếu $\coloringDodgerblue{f}$ là hàm có thể nhận lần lượt các thuật ngữ $\coloringDodgerblue{t_1}, \coloringDodgerblue{t_2}, \dots, \coloringDodgerblue{t_n}$ làm tham số, thì xâu $\coloringDodgerblue{f}\coloringCrimson{(}\coloringDodgerblue{t_1}\coloringCrimson{;} \coloringDodgerblue{t_2}\coloringCrimson{;} \cdots\coloringCrimson{;} \coloringDodgerblue{t_n}\coloringCrimson{)}$\footnote{Tương tự như ở bảng chữ cái, mặc dù $\coloringDodgerblue{f}\coloringCrimson{(}\coloringDodgerblue{t_1}\coloringCrimson{;} \coloringDodgerblue{t_2}\coloringCrimson{;} \cdots\coloringCrimson{;} \coloringDodgerblue{t_n}\coloringCrimson{)}$ là kí hiệu theo định nghĩa, nhưng bạn đọc có thể linh động và viết theo những hình thức khác mà bạn đọc muốn.} cũng là thuật ngữ.
    \end{enumerate}
    Những xâu không thể được xây dựng từ hai quy tắc trên không là thuật ngữ.
 \end{quotation}
 
-Có hai vấn đề mà bạn đọc có thể đề ra khi đọc định nghĩa này. Thứ nhất, 
+\subsection{Xây dựng công thức}
+
+\
+
+Trước khi đến với định nghĩa của công thức nói chung, chúng ta cần phải có định nghĩa của công thức nguyên tử. Định nghĩa này cũng khá đơn giản:
+\begin{quotation}
+   \defText{Công thức nguyên tử} là xâu $V(t_1; t_2; \cdots; t_n)$ với $V()$ là một vị từ thuộc $\mathscr{B}$ và $t_1; t_2; \dots; t_n$ là các hạng thức cũng thuộc $\mathscr{B}$.
+\end{quotation}
+Từ đó, chúng ta có tập hợp các \defText{công thức}, bao gồm các xâu được xây dựng từ bảng chữ cái $\mathscr{B}$ theo ba quy tắc:
+\begin{enumerate}
+   \item Tất cả công thức nguyên tử là công thức;
+   \item Nếu $\coloringDodgerblue{P}$ và $\coloringDodgerblue{Q}$ là hai công thức, thì 
+      $\coloringCrimson{\neg}\coloringCrimson{(}\coloringDodgerblue{P}\coloringCrimson{)}$, 
+      $\coloringCrimson{(}\coloringDodgerblue{P}\coloringCrimson{)} \coloringCrimson{\land} \coloringCrimson{(}\coloringDodgerblue{Q}\coloringCrimson{)}$, 
+      $\coloringCrimson{(}\coloringDodgerblue{P}\coloringCrimson{)} \coloringCrimson{\lor} \coloringCrimson{(}\coloringDodgerblue{Q}\coloringCrimson{)}$, 
+      $\coloringCrimson{(}\coloringDodgerblue{P}\coloringCrimson{)} \coloringCrimson{\implies} \coloringCrimson{(}\coloringDodgerblue{Q}\coloringCrimson{)}$, 
+      $\coloringCrimson{(}\coloringDodgerblue{P}\coloringCrimson{)} \coloringCrimson{\iff} \coloringCrimson{(}\coloringDodgerblue{Q}\coloringCrimson{)}$, 
+      $\coloringCrimson{(}\coloringDodgerblue{P}\coloringCrimson{)} \coloringCrimson{\uparrow} \coloringCrimson{(}\coloringDodgerblue{Q}\coloringCrimson{)}$, 
+      $\coloringCrimson{(}\coloringDodgerblue{P}\coloringCrimson{)} \coloringCrimson{\downarrow} \coloringCrimson{(}\coloringDodgerblue{Q}\coloringCrimson{)}$, 
+      $\coloringCrimson{(}\coloringDodgerblue{P}\coloringCrimson{)} \coloringCrimson{\impliedby} \coloringCrimson{(}\coloringDodgerblue{Q}\coloringCrimson{)}$, 
+      $\coloringCrimson{(}\coloringDodgerblue{P}\coloringCrimson{)} \coloringCrimson{\nRightarrow} \coloringCrimson{(}\coloringDodgerblue{Q}\coloringCrimson{)}$, 
+      $\coloringCrimson{(}\coloringDodgerblue{P}\coloringCrimson{)} \coloringCrimson{\nLeftarrow} \coloringCrimson{(}\coloringDodgerblue{Q}\coloringCrimson{)}$, 
+      $\coloringCrimson{(}\coloringDodgerblue{P}\coloringCrimson{)} \coloringCrimson{\nLeftrightarrow} \coloringCrimson{(}\coloringDodgerblue{Q}\coloringCrimson{)}$, 
+      $\coloringCrimson{(}\coloringDodgerblue{P}\coloringCrimson{)} \coloringCrimson{\oplus} \coloringCrimson{(}\coloringDodgerblue{Q}\coloringCrimson{)}$, 
+      $\coloringCrimson{(}\coloringDodgerblue{P}\coloringCrimson{)} \coloringCrimson{\odot} \coloringCrimson{(}\coloringDodgerblue{Q}\coloringCrimson{)}$ cũng là công thức;
+
+   \item Với $\coloringDodgerblue{P}$ là công thức và $\coloringDodgerblue{x}$ là hạng thức, 
+      $\coloringCrimson{\forall}\coloringDodgerblue{x}\coloringCrimson{,} \coloringCrimson{(}\coloringDodgerblue{P}\coloringCrimson{)}$, 
+      $\coloringCrimson{\exists}\coloringDodgerblue{x}\coloringCrimson{,} \coloringCrimson{(}\coloringDodgerblue{P}\coloringCrimson{)}$, 
+      $\coloringCrimson{\nexists}\coloringDodgerblue{x}\coloringCrimson{,} \coloringCrimson{(}\coloringDodgerblue{P}\coloringCrimson{)}$ cũng đều là công thức.
+\end{enumerate}
+Những biểu thức khác không thể được lập từ sự kết hợp các quy tắc ở trên không là công thức.
+
+Bạn đọc có thể nhận thấy rằng, quy tắc không cho phép kết hợp các lượng từ với vị từ hay hàm. Điều đó khiến cho ngôn ngữ này có tính \emph{bậc nhất}.
+
+\subsection{Tự do hay phụ thuộc?}
+
+\ 
+
+Như quy tắc thực hiện thứ tự các phép nối mệnh đề, chúng ta có một số quy tắc để tối giản việc viết những công thức.
+
+Trước hết, chúng ta đến với khái niệm \defText{tầm ảnh hưởng} của lượng từ. Theo một cách cơ học nhất có thể, tầm ảnh hưởng của một lượng từ là lượng từ đi kèm với công thức \emph{đầy đủ} nhỏ nhất liền sau lượng từ đó. Để hiểu thế nào là công thức đầy đủ, chúng ta đưa ra một vài ví dụ về tầm ảnh hưởng của $\exists x$:
+\begin{itemize}
+    \item $\forall y, \underbrace{\exists x, (x \neq y \land \forall z, z \text{ là một người bạn tốt})}_{\text{tầm ảnh hưởng}}$,
+    \item $\forall y, \underbrace{\exists x, x \neq y}_{\text{tầm ảnh hưởng}} \land \forall z, z \text{ là một người bạn tốt}$.
+\end{itemize}
+Mặc dù trong cả hai ví dụ được đưa ra, công thức $x \neq y$ đều thỏa mãn là công thức nhỏ nhất liền sau $\exists x$, ở ví dụ thứ nhất, công thức này không được coi là đầy đủ do bị đặt trong dấu ngoặc đơn.
+
+Lượng từ có tầm ảnh hưởng đến hạng thức, có nghĩa là hạng thức bị phụ thuộc vào lượng từ. Hiểu theo cách cụ thể hơn, tại một vị trí nhất định, hạng thức \defText{bị phụ thuộc} vào lượng từ khi và chỉ khi chúng nằm trong tầm ảnh hưởng của lượng từ có sử dụng hạng thức đó. Hạng thức tại một vị trí được gọi là \defText{tự do} nếu và chỉ nếu chúng không bị phụ thuộc bởi bất cứ lượng từ nào. Chẳng hạn, trong công thức
+\begin{equation*}
+    \exists x, x \neq y, 
+\end{equation*}
+$x$ phụ thuộc vào lượng từ $\exists x$ và $y$ là hạng thức tự do.
+
+Tác giả sử dụng cụm từ ``tại một vị trí'' bởi vì một hạng thức có thể vừa tự do, vừa phụ thuộc tại các vị trí khác nhau trong công thức, như trong
+\begin{equation*}
+    v > 0 \land \forall v, v^2 > 0.
+\end{equation*}
+
+Sau khi chúng ta có thể phân biệt được sự tự do và phụ thuộc của hạng thức, chúng ta có cách định nghĩa về mặt cú pháp cho mệnh đề:
+\begin{quotation}
+    Một \defText{mệnh đề} là một công thức không có hạng thức tự do tại bất cứ vị trí nào trong công thức đó.
+\end{quotation}
+Định nghĩa này không chỉ đảm bảo tính chất vốn có của mệnh đề được đưa ra bởi định nghĩa cũ --- chỉ đúng hoặc sai --- mà còn thể hiện sự khác biệt cơ bản giữa mệnh đề và công thức.
+
+\exercise
+Phiên dịch các mệnh đề sau thành dưới dạng kí hiệu. Trình bày rõ các kí hiệu dành cho các hạng thức, vị từ và mệnh đề con nếu có.
+\begin{enumerate}
+    \item ``Tất cả những người hay khoe mẽ thì không đẹp.'';
+    \item ``Một số sinh viên nam ở trường đại học Trăm khoa đồng tính nam.'';
+    \item ``Có sinh viên năm nhất và năm tư đều phải học lại môn Giải tích.'';
+    \item ``Không có việc gì khó, chỉ sợ lòng không bền.'';
+    \item ``Đào núi và lấp biển, quyết chí ắt làm nên.''.
+\end{enumerate}
+
+\solution
+
+Cần lưu ý rằng, lời giải được đưa ra mang tính chất tham khảo. Kết quả sau khi phiên dịch của bạn đọc có thể khác với tác giả, và điều đó cũng không sao, miễn là bạn đọc có thể giải thích và trình bày rõ ràng được ý tưởng đằng sau sự phiên dịch đó.
+
+\setcounter{subexercise}{1}
+\arabic{subexercise}. Gọi $n$ kí hiệu cho hạng thức ``người''. Kí hiệu các vị từ:
+\begin{itemize}
+    \item $K()$: ``(người) hay khoe mẽ'',
+    \item $D()$: ``(người) đẹp''.
+\end{itemize}
+Để phục vụ việc chuyển đổi sang dạng kí hiệu, viết lại câu thành
+\begin{center}
+    ``Với tất cả mọi người, nếu người đó hay khoe mẽ thì người đó không đẹp.''.
+\end{center}
+Kí hiệu hóa:
+\begin{equation}
+   \forall n, (K(n) \implies \neg D(n)). \label{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:thanh_to_cau_tao:ex-1}
+\end{equation}
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Gọi $l$ kí hiệu cho hạng thức ``sinh viên nam ở trường đại học Trăm khoa''. Chỉ có một vị từ là $N()$: ``(\dots) đồng tính nam''.
+
+Cụm từ ``một số'' tương đương với từ ``tồn tại'', do vậy, có kí hiệu hóa mệnh đề như sau:
+\begin{equation*}
+    \exists l, N(l).
+\end{equation*}
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Gọi $m$ và $b$ kí hiệu cho ``sinh viên năm nhất'' và ``sinh viên năm tư''. Vị từ ``phải học lại môn Giải tích'' kí hiệu là $G()$. Viết lại câu:
+\begin{center}
+    ``Tồn tại sinh viên năm nhất và tồn tại sinh viên năm tư sao cho sinh viên năm nhất và sinh viên năm tư này đều phải học lại môn Giải tích.''.
+\end{center}
+Kí hiệu hóa:
+\begin{equation*}
+    \exists m, \exists b, (G(m) \land G(b)).
+\end{equation*}
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Viết lại câu:
+\begin{center}
+    ``Nếu có lòng bền bỉ, thì không tồn tại bất kỳ việc gì là khó cả.''.
+\end{center}
+Kí hiệu:
+\begin{itemize}
+    \item Mệnh đề ``lòng bền bỉ'': $B$,
+    \item Hạng thức ``việc'': $v$,
+    \item Vị từ ``(việc) khó'': $K()$.
+\end{itemize}
+Kí hiệu hóa là
+\begin{equation*}
+    B \implies \neg \big(\exists v, K(v)\big).
+\end{equation*}
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Viết lại câu:
+\begin{center}
+    ``Với mọi việc, nếu quyết chí thì làm nên việc đó.''.
+\end{center}
+Kí hiệu:
+\begin{itemize}
+    \item Mệnh đề ``quyết chí'': $Q$,
+    \item Hạng thức ``việc'': $v$,
+    \item Vị từ ``làm nên (việc)'': $L()$.
+\end{itemize}
+Kí hiệu hóa mệnh đề ban đầu là
+\begin{equation*}
+    \forall v, (Q \implies L(v)).
+\end{equation*}

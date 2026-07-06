@@ -7,7 +7,13 @@
 \usepackage{fontspec}
 \usepackage[a4paper]{geometry}
 \usepackage[explicit]{titlesec}
-\usepackage[backend=biber, style=numeric, maxbibnames=99]{biblatex}
+\usepackage[
+   backend=biber,
+   style=numeric,
+   maxbibnames=99,
+   sorting=nty,
+   defernumbers=true
+]{biblatex}
 \usepackage{amsmath, amssymb, blindtext, bm, calc, caption, enumitem, fancyhdr, float, hyperref, icomma, lmodern, longtable, makecell, mathrsfs, multicol, multirow, pgfplots, siunitx, steinmetz, tabularray, tikz, tikz-3dplot, varwidth, wrapfig2, xcolor, xparse, xeCJK}
 
 % Tài liệu tham khảo
@@ -264,6 +270,19 @@
    {0pt}
    {\textcolor{colorEmphasisCyan}{\thesubsection} \quad #1}
 
+\defbibheading{mycustomsubheading}[\refname]{%
+   \setlength{\fboxrule}{2pt}% Border thickness
+   \setlength{\fboxsep}{1.6em}% Padding
+   \noindent
+   \fcolorbox{colorEmphasisCyan}{white}{%
+      \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+         \normalfont\Large\bfseries #1% Chỉ in tiêu đề, không có số thứ tự
+      }%
+   }%
+   \vspace{1em}% Khoảng cách nhỏ dưới khung
+   \addcontentsline{toc}{section}{#1}% Vẫn đưa vào mục lục nếu muốn
+}
+
 % Chỉnh màu của mục lục
 \makeatletter
 \patchcmd{\@tocline}
@@ -308,8 +327,10 @@
 % \input{chapter/chuyen_dong.tex}
 
 \nocite{*}
-\printbibliography[heading=bibintoc]
-
+% \printbibliography[heading=bibintoc]
+\printbibheading[heading=bibintoc, title={Tài liệu tham khảo}]
+\printbibliography[heading=mycustomsubheading, title={Toán học}, keyword=math]
+\printbibliography[heading=mycustomsubheading, title={Tài liệu khác}, keyword=misc]
 
 \end{document}
 
