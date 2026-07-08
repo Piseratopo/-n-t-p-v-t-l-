@@ -401,20 +401,20 @@ Có $x = y \iff (x \subseteq y) \land (x \supseteq y)$ đúng với mọi tập 
 \stepcounter{exercise}
 \arabic{exercise}. Trước hết, chúng ta sẽ chứng minh $(A \cap B) \cap C = A \cap (B \cap C)$. Thật vậy, với mọi $x$, sử dụng liên tục định nghĩa giao hai tập hợp, chúng ta có
 \begin{align*}
-    x \in (A \cap B) \cap C &\iff \begin{cases}
-        x \in A \cap B \\
-        x \in C
-    \end{cases}; \\
-    x \in (A \cap B) \cap C &\iff \begin{cases}
-        x \in A \\
-        x \in B \\
-        x \in C
-    \end{cases}; \\
-    x \in (A \cap B) \cap C &\iff \begin{cases}
-        x \in A \\
-        x \in B \cap C
-    \end{cases}; \\
-    x \in (A \cap B) \cap C &\iff x \in A \cap (B \cap C).
+   x \in (A \cap B) \cap C &\iff \begin{cases}
+      x \in A \cap B \\
+      x \in C
+   \end{cases}; \\
+   x \in (A \cap B) \cap C &\iff \begin{cases}
+      x \in A \\
+      x \in B \\
+      x \in C
+   \end{cases}; \\
+   x \in (A \cap B) \cap C &\iff \begin{cases}
+      x \in A \\
+      x \in B \cap C
+   \end{cases}; \\
+   x \in (A \cap B) \cap C &\iff x \in A \cap (B \cap C).
 \end{align*}
 
 Tiếp theo, chúng ta sẽ cần phải khẳng định rằng $(A \cap B) \cap C = \bigcap \{A; B; C\}$. Giả sử $x \in \bigcap\{A; B; C\}$, điều này tương đương với $x \in \bigcup \{A; B; C\}$ và $\forall y \in \{A; B; C\}, x \in y$. Mà, dễ nhận thấy rằng $\forall y \in \{A; B; C\}, x \in y \implies x \in \bigcup \{A; B; C\}$, cho nên
@@ -432,10 +432,51 @@ $\{A; B; C\}$ là tập duy nhất thỏa mãn với mọi $y$, $\left[\begin{ar
    y = A \\
    y = B \\
    y = C   
-\end{array} \implies x \in y\right.\right), \\
+\end{array} \implies x \in y\right.\right); \\
 \forall y \in \{A; B; C\}, x \in y &\iff \forall y, \begin{cases}
    y = A \implies x \in y \\
    y = B \implies x \in y \\
    y = C \implies x \in y 
-\end{cases}, \equationexplanation{quy tắc chia trường hợp}
+\end{cases} \equationexplanation{quy tắc chia trường hợp}; \\
+\forall y \in \{A; B; C\}, x \in y &\iff \forall y, \begin{cases}
+   x \in A \\
+   x \in B \\
+   x \in C
+\end{cases}.
 \end{align*}
+Bỏ lượng từ rỗng $\forall y$ đi để được $\forall y \in \{A; B; C\}, x \in y \iff \begin{cases}
+   x \in A \\
+   x \in B \\
+   x \in C
+\end{cases}$. Đã có $x \in (A \cap B) \cap C \iff \begin{cases}
+   x \in A \\
+   x \in B \\
+   x \in C
+\end{cases}$, cho nên bắc cầu để có $$\forall x, x \in \bigcap\{A; B; C\} \iff x \in (A \cap B) \cap C.$$
+Do vậy $\bigcap\{A; B; C\} = (A \cap B) \cap C$. Từ đây, theo tính chất bắc cầu của ``='', dễ thấy điều phải chứng minh.
+
+\exercise Cho $A, B, C, D, E$ là các tập hợp. Chứng minh rằng
+\begin{enumerate}
+   \item $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$;
+   \item $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$;
+   \item $A \cup B = A \cap C \iff \begin{cases}
+      B \subseteq A \\
+      A \subseteq C
+   \end{cases}$;
+   \item $A \cap (B \cup (A \cap C)) = A \cap (B \cup C)$;
+   \item $A \cup (B \cap (A \cup C)) = A \cup (B \cap C)$;
+   \item $A \cap B = C \cap D \implies (A \cup (B \cap C)) \cap (A \cup (B \cap D)) = A$;
+   \item $\begin{cases}
+      A \cap B = C\cap D\\
+      C \cup D = E \\
+      C \subseteq A \\
+      D \subseteq B
+   \end{cases} \implies \begin{cases}
+      C = A\\
+      D = B
+   \end{cases}$.
+\end{enumerate}
+\solution
+
+\setcounter{subexercise}{1}
+\arabic{subexercise}. 
