@@ -83,23 +83,23 @@ Lấy tùy ý $x \in S$. Theo định nghĩa của hợp, tồn tại tập hợ
 \end{itemize}
 Cả hai trường hợp đều cho kết quả $x = A$ hoặc $x = B$ hoặc $x = C$. Do đó, $\forall x, (x \in S \implies x = A \lor x = B \lor x = C)$.
 
-Ngược lại, lấy tùy ý $x$ sao cho $\left[\begin{array}{l}
-      x = A \\
-      x = B \\
-      x = C
+Ngược lại, lấy tùy ý $z$ sao cho $\left[\begin{array}{l}
+      z = A \\
+      z = B \\
+      z = C
    \end{array}\right.$. Xét ba trường hợp:
 \begin{itemize}
-   \item \textcolor{colorEmphasis}{Trường hợp $x = A$}: Chúng ta có $A \in \{A; B\}$. Ngoài ra, $\{A; B\} \in \big\{\{A; B\}; \{C\}\big\}$, dẫn đến $A \in \bigcup \big\{\{A; B\}; \{C\}\big\}$. Suy ra $x \in S$.
-   \item \textcolor{colorEmphasisCyan}{Trường hợp $x = B$}: Tương tự với trường hợp trước, chúng ta cũng có $x \in S$.
-   \item \textcolor{colorEmphasisGreen}{Trường hợp $x = C$}: Chúng ta có $C \in \{C\}$ và $\{C\} \in \big\{\{A; B\}; \{C\}\big\}$, dẫn đến $C \in \bigcup \big\{\{A; B\}; \{C\}\big\}$. Suy ra $x \in S$.
+   \item \textcolor{colorEmphasis}{Trường hợp $z = A$}: Chúng ta có $A \in \{A; B\}$. Ngoài ra, $\{A; B\} \in \big\{\{A; B\}; \{C\}\big\}$, dẫn đến $A \in \bigcup \big\{\{A; B\}; \{C\}\big\}$. Suy ra $z \in S$.
+   \item \textcolor{colorEmphasisCyan}{Trường hợp $z = B$}: Tương tự với trường hợp trước, chúng ta cũng có $z \in S$.
+   \item \textcolor{colorEmphasisGreen}{Trường hợp $z = C$}: Chúng ta có $C \in \{C\}$ và $\{C\} \in \big\{\{A; B\}; \{C\}\big\}$, dẫn đến $C \in \bigcup \big\{\{A; B\}; \{C\}\big\}$. Suy ra $z \in S$.
 \end{itemize}
-Tất cả ba trường hợp đều cho kết quả $x \in S$. Do đó, $\forall x, (x = A \lor x = B \lor x = C \implies x \in S)$.
+Tất cả ba trường hợp đều cho kết quả $z \in S$. Do đó, $\forall z, (z = A \lor z = B \lor z = C \implies z \in S)$.
 
 Từ hai điều trên, chúng ta được $\forall x, (x \in S \iff x = A \lor x = B \lor x = C)$.
 
 Tiếp theo, giả sử tồn tại một tập hợp $S'$ khác cũng có tính chất $\forall x, (x \in S' \iff x = A \lor x = B \lor x = C)$. Từ đó suy ra $\forall x, (x \in S \iff x \in S')$, dẫn đến $S = S'$. Điều này chứng tỏ $S$ là tập duy nhất. Chúng ta có điều phải chứng minh.
 
-Chúng ta đặt $S$ bởi một kí hiệu quen thuộc hơn là $\{A; B; C\}$. Ngoài ra, chúng ta có thể mở rộng định nghĩa này cho nhiều phần tử hơn. Cụ thể, giả sử chúng ta có một tập $\{A_1; A_2; \ldots; A_n\}$. Chúng ta có thể thêm một phần tử vào tập này bằng cách đặt $$\defMath{\{A_1; A_2; \ldots; A_n; A_{n+1}\} = \bigcup \left\{\{A_1; A_2; \ldots; A_n\}; \{A_{n+1}\}\right\}}.$$
+Chúng ta đặt $S$ bởi một kí hiệu quen thuộc hơn là $\{A; B; C\}$. Ngoài ra, chúng ta có thể mở rộng định nghĩa này cho nhiều phần tử hơn. Cụ thể, giả sử chúng ta có một tập $\{A_1; A_2; \cdots; A_n\}$. Chúng ta có thể thêm một phần tử vào tập này bằng cách đặt $$\defMath{\{A_1; A_2; \cdots; A_n; A_{n+1}\} = \bigcup \left\{\{A_1; A_2; \cdots; A_n\}; \{A_{n+1}\}\right\}}.$$
 
 \exercise Cho $A$, $B$, $C$ là các tập hợp. Chứng minh rằng
 \begin{multicols}{2}
@@ -138,7 +138,7 @@ Tuy nhiên, $\{A\}$ là một tập hợp chỉ có một phần tử duy nhất
 Từ hai điều trên, chúng ta có điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}. Chúng ta chứng minh bằng phương pháp phản chứng. Giả sử $\bigcup \emptyset \neq \emptyset$, mà $x \notin \emptyset$ với mọi $x$, khi đó phải tồn tại ít nhất một phần tử $x \in \bigcup \emptyset$. Theo định nghĩa của hợp, sẽ tồn tại một $y \in \emptyset$ sao cho $x \in y$. Tuy nhiên điều này là vô lý, vì tập hợp rỗng $\emptyset$ không có chứa phần tử nào. Sự mâu thuẫn này chứng tỏ giả thiết phản chứng là sai. Vậy $\bigcup \emptyset = \emptyset$. Chúng ta có điều phải chứng minh.
+\arabic{subexercise}. Chúng ta chứng minh bằng phương pháp phản chứng. Giả sử $\bigcup \emptyset \neq \emptyset$, đã có $x \notin \emptyset$ với mọi $x$, cho nên phải tồn tại ít nhất một phần tử $x \in \bigcup \emptyset$. Theo định nghĩa của hợp, sẽ tồn tại một $y \in \emptyset$ sao cho $x \in y$. Tuy nhiên điều này là vô lý, vì tập hợp rỗng $\emptyset$ không có chứa phần tử nào. Sự mâu thuẫn này chứng tỏ giả thiết phản chứng là sai. Vậy $\bigcup \emptyset = \emptyset$. Chúng ta có điều phải chứng minh.
 
 \stepcounter{subexercise}
 \arabic{subexercise}. Gọi $x \in A$. Nhắc lại rằng, $A \cup B = \bigcup \{A; B\}$. Khi đó, có $A \in \{A; B\}$ và giả sử ban đầu của $x$ để có $x \in A \cup B$ với mọi $x$. Vậy $A \cup B \supseteq A$. Điều phải chứng minh.
@@ -148,13 +148,13 @@ Từ hai điều trên, chúng ta có điều phải chứng minh.
 
 Chúng ta giờ chứng minh theo chiều ngược lại. Giả sử $A \subseteq B$.
 \begin{itemize}
-   \item Lấy tùy ý $x \in A \cup B$. Theo định nghĩa, $x \in A$ hoặc $x \in B$.
+   \item Lấy tùy ý $a \in A \cup B$. Theo định nghĩa, $a \in A$ hoặc $a \in B$.
          \begin{itemize}
-            \item \textcolor{colorEmphasis}{Trường hợp $x \in A$}: Vì $A \subseteq B$ theo giả thiết, $x \in B$.
-            \item \textcolor{colorEmphasisCyan}{Trường hợp $x \in B$}: Trực tiếp có được $x \in B$.
+            \item \textcolor{colorEmphasis}{Trường hợp $a \in A$}: Vì $A \subseteq B$ theo giả thiết, $a \in B$.
+            \item \textcolor{colorEmphasisCyan}{Trường hợp $a \in B$}: Trực tiếp có được $a \in B$.
          \end{itemize}
-         Cả hai trường hợp đều cho kết quả $x \in B$. Do đó, $A \cup B \subseteq B$.
-   \item Lấy tùy ý $x \in B$, mà $B \subseteq A \cup B$ theo câu trước, suy ra $x \in A \cup B$. Do đó $B \subseteq A \cup B$.
+         Cả hai trường hợp đều cho kết quả $a \in B$. Do đó, $A \cup B \subseteq B$.
+   \item Lấy tùy ý $b \in B$, mà $B \subseteq A \cup B$ dễ dàng có được từ phần trước của bài tập này, suy ra $b \in A \cup B$. Do đó $B \subseteq A \cup B$.
 \end{itemize}
 Từ hai điều trên, suy ra $A \cup B = B$.
 
@@ -162,17 +162,17 @@ Kết hợp hai chiều, chúng ta nhận được $A \cup B = B \iff A \subsete
 
 \stepcounter{subexercise}
 \arabic{subexercise}. Từ định nghĩa, dễ dàng có được điều phải chứng minh do
-$$ x \cup y = \bigcup \{x; y\} = \bigcup \{y; x\} = y \cup x.$$
+$$ A \cup B = \bigcup \{A; B\} = \bigcup \{B; A\} = B \cup A.$$
 
 \stepcounter{subexercise}
-\arabic{subexercise}. Trước tiên, nhắc lại định nghĩa đôi có thứ tự: $(A; B) = \big\{ \{A\}; \{A; B\} \big\}$. Lấy tùy ý $x \in \bigcup (A; B)$. Theo định nghĩa của hợp, tồn tại tập hợp $y \in \big\{ \{A\}; \{A; B\} \big\}$ sao cho $x \in y$. Do đó, $y = \{A\}$ hoặc $y = \{A; B\}$.
+\arabic{subexercise}. Trước tiên, nhắc lại định nghĩa đôi có thứ tự: $(A; B) = \big\{ \{A\}; \{A; B\} \big\}$. Lấy $x \in \bigcup (A; B)$. Theo định nghĩa của hợp, tồn tại tập hợp $y \in \big\{ \{A\}; \{A; B\} \big\}$ sao cho $x \in y$. Do đó, $y = \{A\}$ hoặc $y = \{A; B\}$.
 \begin{itemize}
    \item \textcolor{colorEmphasis}{Trường hợp $y = \{A\}$}: Chúng ta có $x \in \{A\}$ kéo theo $x = A$. Dẫn đến $x \in \{A; B\}$.
    \item \textcolor{colorEmphasisCyan}{Trường hợp $y = \{A; B\}$}: Chúng ta có ngay $x \in \{A; B\}$.
 \end{itemize}
 Cả hai trường hợp đều cho $\bigcup (A; B) \subseteq \{A; B\}$.
 
-Ngược lại, lấy tùy ý $x \in \{A; B\}$. Có $\{A; B\} \in \big\{\{A\}; \{A; B\}\big\}$, nên $x \in \bigcup (A; B)$. Do vậy, $\{A; B\} \subseteq \bigcup (A; B)$.
+Ngược lại, giả sử $z \in \{A; B\}$. Có $\{A; B\} \in \big\{\{A\}; \{A; B\}\big\}$, nên $z \in \bigcup (A; B)$. Do vậy, $\{A; B\} \subseteq \bigcup (A; B)$.
 
 Từ hai điều trên, chúng ta có điều phải chứng minh.
 
@@ -193,7 +193,7 @@ Cả hai trường hợp đều cho kết quả $x \in B \cup C$. Do đó, $A \c
 Vậy $A \subseteq B \implies A \cup C \subseteq B \cup C$. Điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}. Phần bài tập chỉ mang tính chất bổ sung cho đầy đủ kiến thức. Nếu như bạn đọc đã chứng minh được hai câu trước thì bạn đọc sẽ cảm nhận rằng câu này là một điều hiển nhiên. Có $A = B \iff A \subseteq B \land B \subseteq A$. Từ hai câu trước, chúng ta có
+\arabic{subexercise}. Phần bài tập chỉ mang tính chất bổ sung cho đầy đủ kiến thức. Nếu như bạn đọc đã chứng minh được hai phần trước thì bạn đọc sẽ cảm nhận rằng phần này là một điều hiển nhiên. Có $A = B \iff A \subseteq B \land B \subseteq A$. Từ hai phần trước, chúng ta có
 \begin{equation*}
    A \subseteq B \implies \begin{cases}
       \bigcup A \subseteq \bigcup B \\
@@ -220,19 +220,19 @@ Kết hợp hai điều trên, chúng ta có
 \stepcounter{subexercise}
 \arabic{subexercise}. Trước tiên, chúng ta đi chứng minh $(A \cup B) \cup C = \bigcup \{A; B; C\}$.
 
-Lấy tùy ý $x \in (A \cup B) \cup C$. Theo định nghĩa, $x \in A \cup B$ hoặc $x \in C$. Nếu $x \in A \cup B$, thì tiếp tục áp dụng định nghĩa để có $x \in A$ hoặc $x \in B$. Tóm lại, $x \in A$, $x \in B$ hoặc $x \in C$; có nghĩa là tồn tại tập hợp $y \in \{A; B; C\}$ sao cho $x \in y$. Điều này chứng tỏ $x \in \bigcup \{A; B; C\}$, và kéo theo $(A \cup B) \cup C \subseteq \bigcup \{A; B; C\}$.
+Giả sử $x \in (A \cup B) \cup C$. Theo định nghĩa, $x \in A \cup B$ hoặc $x \in C$. Nếu $x \in A \cup B$, thì tiếp tục áp dụng định nghĩa để có $x \in A$ hoặc $x \in B$. Tóm lại, $x \in A$, $x \in B$ hoặc $x \in C$; có nghĩa là tồn tại tập hợp $y \in \{A; B; C\}$ sao cho $x \in y$. Điều này chứng tỏ $x \in \bigcup \{A; B; C\}$, và kéo theo $(A \cup B) \cup C \subseteq \bigcup \{A; B; C\}$.
 
-Ngược lại, lấy tùy ý $x \in \bigcup \{A; B; C\}$. Theo định nghĩa, tồn tại tập hợp $y \in \{A; B; C\}$ sao cho $x \in y$. Khi này, $\left[\begin{array}{l}
-      y = A \\
-      y = B \\
-      y = C
+Ngược lại, lấy tùy ý $z \in \bigcup \{A; B; C\}$. Theo định nghĩa, tồn tại tập hợp $w \in \{A; B; C\}$ sao cho $z \in w$. Khi đó, $\left[\begin{array}{l}
+      w = A \\
+      w = B \\
+   w = C
    \end{array}\right.$. Xét ba trường hợp:
 \begin{itemize}
-   \item \textcolor{colorEmphasis}{Trường hợp $y = A$}: Chúng ta có $x \in A$. Từ đó suy ra $x \in A \cup B$, dẫn đến $x \in (A \cup B) \cup C$.
-   \item \textcolor{colorEmphasisCyan}{Trường hợp $y = B$}: Chúng ta có $x \in B$. Tương tự, cũng có $x \in A \cup B$, kéo theo $x \in (A \cup B) \cup C$.
-   \item \textcolor{colorEmphasisGreen}{Trường hợp $y = C$}: Chúng ta có $x \in C$. Từ đó trực tiếp suy ra $x \in (A \cup B) \cup C$.
+   \item \textcolor{colorEmphasis}{Trường hợp $w = A$}: Chúng ta có $z \in A$. Từ đó suy ra $z \in A \cup B$, dẫn đến $z \in (A \cup B) \cup C$.
+   \item \textcolor{colorEmphasisCyan}{Trường hợp $w = B$}: Chúng ta có $z \in B$. Tương tự, cũng có $z \in A \cup B$, kéo theo $z \in (A \cup B) \cup C$.
+   \item \textcolor{colorEmphasisGreen}{Trường hợp $w = C$}: Chúng ta có $z \in C$. Từ đó trực tiếp suy ra $z \in (A \cup B) \cup C$.
 \end{itemize}
-Tất cả ba trường hợp đều cho kết quả $x \in (A \cup B) \cup C$. Do đó, $\bigcup \{A; B; C\} \subseteq (A \cup B) \cup C$.
+Tất cả ba trường hợp đều cho kết quả $z \in (A \cup B) \cup C$. Do đó, $\bigcup \{A; B; C\} \subseteq (A \cup B) \cup C$.
 
 Từ hai điều trên, suy ra $(A \cup B) \cup C = \bigcup \{A; B; C\}$.
 

@@ -1,0 +1,198 @@
+\chapter*{Véc-tơ}
+
+\section{Bài tập tại lớp}
+
+\ 
+
+\exercise Cho một điện tích $q > 0$ chuyển động trong vùng có từ trường $\vec{B}(0, 0, B)$ với vận tốc $\vec{v}(v_x, v_y, v_z)$. Xác định lực Lo-ren-xơ tác dụng lên điện tích $q$. Biết công thức lực Lo-ren-xơ là 
+$$
+\vec{F}_L = q(\vec{v} \wedge \vec{B}).
+$$
+
+\solution
+
+\begin{align*}
+   \vec{F}_L &= q(\vec{v} \wedge \vec{B}) \\
+   &= q\left(\left(v_x \vec{i} + v_y \vec{j} + v_z \vec{k}\right) \wedge \left(B\vec{k}\right)\right) \\
+   &= q\left(v_x B \left(\vec{i} \wedge \vec{k}\right) + v_y B \left(\vec{j} \wedge \vec{k}\right) + v_z B \left(\vec{k} \wedge \vec{k}\right)\right) \\
+   &= q\left(v_x B \left(-\vec{j}\right) + v_y B \vec{i} + v_z B \vec{0}\right) \\
+   &= q v_y B \vec{i} - q v_x B \vec{j}.
+\end{align*}
+
+\exercise Một vật có khối lượng $m = \qty{2}{\kg}$ được đặt đứng yên trên một mặt phẳng nghiêng nhám có hệ số ma sát $\mu = \num{0,4}$. 
+
+\begin{enumerate}
+   \item Ban đầu góc nghiêng $\alpha$ nhỏ nên vật vẫn cân bằng. Hỏi tăng chậm dần góc $\alpha$ đến giá trị $\alpha_0$ bằng bao nhiêu thì vật bắt đầu trượt?
+   \item Cho góc nghiêng $\alpha = 30^\circ$. Vật trượt trên mặt phẳng nghiêng một đoạn bằng \qty{5}{m}. Xác định công của từng ngoại lực tác dụng lên vật.
+\end{enumerate}
+
+\solution
+
+\begin{figure}[H]
+   \centering
+   \begin{tikzpicture}[>=latex]
+      % Đổi tên biến góc thành \goc để tránh đè lên lệnh \alpha của hệ thống
+      \def\goc{22}
+      
+      % Vẽ mặt đất (nằm ngang)
+      \draw[thick] (-0.5, 0) -- (6, 0);
+      
+      % Vẽ mặt phẳng nghiêng
+      \draw[thick] (0, 0) -- (\goc:5.8);
+      
+      % Vẽ ký hiệu góc alpha (hiện chữ alpha thay vì số 22)
+      \draw[thick] (1, 0) arc (0:\goc:1);
+      \node at ({\goc/2}:1.3) {$\alpha$};
+      
+      % Vẽ vật và các lực tác dụng
+      \begin{scope}[shift={(\goc:3)}, rotate=\goc]
+         % Khối hộp
+         \draw[very thick, fill=white] (-0.6, 0) rectangle (0.6, 0.8);
+         
+         % Tâm vật
+         \coordinate (CoM) at (0, 0.4);
+         
+         \draw[dashed, colorDodgerblue, ->] (-2.2, 0.4) -- (1.6, 0.4) node[right] {$x$};
+         % Trục Oy hướng vuông góc lên trên mặt phẳng nghiêng
+         \draw[dashed, colorDodgerblue, ->] (0, -1.0) -- (0, 2.2) node[above] {$y$};
+         % Ký hiệu gốc tọa độ O
+         \node[above right, colorDodgerblue, scale=0.8] at (CoM) {$O$};
+
+         % Lực ma sát nghỉ
+         \draw[colorCrimson, very thick, ->] (0, 0) -- (0.8, 0) node[below right] {$\vec{F}_{\text{ms}}$};
+         
+         % Phản lực N
+         \draw[colorCrimson, very thick, ->] (CoM) -- (0, 1.6) node[above left] {$\vec{N}$};
+         
+         % Trọng lực P hướng thẳng đứng xuống dưới
+         \draw[colorCrimson, very thick, ->] (CoM) -- ++({-90-\goc}:1.6) node[below] {$\vec{P}$};
+      \end{scope}
+   \end{tikzpicture}
+\end{figure}
+
+\setcounter{subexercise}{1}
+\arabic{subexercise}. Khi vật đứng yên cân bằng trên mặt phẳng nghiêng,  hợp lực tác dụng lên vật bằng $\vec{0}$:
+$$\vec{P} + \vec{N} + \vec{F}_{\text{ms}} = \vec{0}.$$
+
+Chiếu lên hai trục tọa độ $Ox$ và $Oy$, ta lại có
+\begin{equation*}
+   \begin{cases}
+      \vec{P} = - P \cdot \sin\alpha \vec{i} -  P \cdot \cos\alpha \vec{j} = - 10m\sin\alpha \vec{i} -  10m\cos\alpha \vec{j} \\
+      \vec{N} = N \vec{j} \\
+      \vec{F}_{\text{ms}} = F_{\text{ms}} \vec{i}
+   \end{cases}.
+\end{equation*}
+Thay vào phương trình cân bằng để có:
+\begin{align*}
+   - 10m\sin\alpha \vec{i} -  10m\cos\alpha \vec{j} + N \vec{j} + F_{\text{ms}} \vec{i} &= \vec{0}; \\
+   \left(F_{\text{ms}} - 10m\sin\alpha\right) \vec{i} + (N - 10m\cos\alpha) \vec{j} &= 0\vec{i} + 0\vec{j}.
+\end{align*}
+Cân bằng hệ số:
+\begin{align*}
+& \begin{cases}
+N - (10 \cdot m)\cos\alpha = 0 \\
+F_{\text{ms}} - 10 \cdot m\sin\alpha = 0
+\end{cases} \\
+& \begin{cases}
+N = 10m \cdot \cos\alpha \\
+F_{\text{ms}} = 10m \cdot \sin\alpha
+\end{cases}.
+\end{align*}
+Mà ta lại có để vật không bị trượt thì:
+\begin{equation*}
+F_{\text{ms}} \le \mu \cdot N,
+\end{equation*}
+do vậy
+\begin{align*}
+10m \cdot \sin\alpha &\le \mu \cdot 10m \cdot \cos\alpha \\
+\tan\alpha &\le \mu \\
+\alpha &\le \arctan\mu \\
+\alpha &\le \num{21.8}^\circ.
+\end{align*}
+Vậy góc tới hạn để vật không trượt là \boxed{\alpha_0 = \num{21.8}^\circ}.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Khi góc nghiêng $\alpha = 30^\circ > \alpha_0$, vật trượt xuống dưới dọc theo mặt phẳng nghiêng. Vì chiều dương của trục $Ox$ hướng lên trên nên
+độ dịch chuyển $\vec{s}$ ngược chiều với vectơ đơn vị $\vec{i}$:
+$$\vec{s} = -5 \vec{i}.$$
+
+Biểu diễn các lực:
+\begin{equation*} \begin{cases} \vec{P} = - 10m\sin\alpha \vec{i}
+   - 10m\cos\alpha \vec{j} = -10 \vec{i} - 10\sqrt{3} \vec{j} \\ 
+   \vec{N} = 10m\cos\alpha \vec{j} = 10\sqrt{3} \vec{j}\\ 
+   \vec{F}_{\text{ms}}
+   = \mu N \vec{i} = 10\mu m\cos\alpha \vec{i} = 4\sqrt{3} \vec{i}
+   \end{cases}. 
+\end{equation*}
+
+Công của từng ngoại lực tác dụng lên vật: 
+\begin{itemize} 
+   \item Công của trọng lực $\vec{P}$: 
+   \begin{equation*} 
+      A_P = \vec{P} \cdot \vec{s} = \left(-10 \vec{i} - 10\sqrt{3} \vec{j}\right) \cdot \left(-5 \vec{i}\right) = (-10) \cdot (-5) = \boxed{\qty{50}{J}}. 
+   \end{equation*}
+
+   \item Công của phản lực $\vec{N}$: 
+   \begin{equation*} 
+      A_N = \vec{N} \cdot \vec{s} = \left(10\sqrt{3} \vec{j}\right) \cdot \left(-5 \vec{i}\right) = \boxed{\qty{0}{J}}. 
+   \end{equation*}
+
+   \item Công của lực ma sát trượt $\vec{F}_{\text{ms}}$: 
+   \begin{equation*} 
+      A_{\text{ms}} = \vec{F}_{\text{ms}} \cdot \vec{s} = \left(4\sqrt{3} \vec{i}\right) \cdot \left(-5 \vec{i}\right) = -20\sqrt{3} \text{ J} \approx \boxed{\qty{-34.6}{ J}}. 
+   \end{equation*} 
+\end{itemize}
+
+\exercise Biết $F_1 = \qty{20}{N}$, $F_2 = \qty{30}{N}$, $F_3 = \qty{40}{N}$. Tìm độ lớn hợp lực $$\vec{F} = \vec{F}_1 + \vec{F}_2 + \vec{F}_3.$$
+
+\solution
+\begin{figure}[H]
+   \centering
+   \begin{tikzpicture}[>=latex]
+      % Gốc tọa độ O của hệ quy chiếu phụ (góc trên bên trái)
+      \draw[dashed, color=colorDodgerblue, ->] (-2.5, 1.2) -- (-1.8, 1.2) node[below] {$x$};
+      \draw[dashed, color=colorDodgerblue, ->] (-2.5, 1.2) -- (-2.5, 1.9) node[left] {$y$};
+      \node[color=colorDodgerblue, below left] at (-2.5, 1.2) {$O$};
+
+      % Điểm đồng quy
+      \coordinate (O) at (0, 0);
+      \fill (O) circle (\pointSize);
+
+      % Trục nằm ngang nét đứt
+      \draw[dashed] (-2.2, 0) -- (2.2, 0);
+
+      % Vẽ các vectơ lực (độ dài vẽ tỉ lệ thuận với độ lớn thực tế)
+      % F1 = 20 N (vẽ dài 1 cm), F2 = 30 N (vẽ dài 1.5 cm), F3 = 40 N (vẽ dài 2.0 cm)
+      \draw[very thick, ->] (O) -- (90:1.0) node[right] {$\vec{F}_1$};
+      \draw[very thick, ->] (O) -- (330:1.5) node[right] {$\vec{F}_2$};
+      \draw[very thick, ->] (O) -- (210:2.0) node[below left] {$\vec{F}_3$};
+
+      % Vẽ các cung góc 120 độ
+      % Góc giữa F1 và F2
+      \draw (90:0.4) arc (90:-30:0.4);
+      \node at (30:0.6) {$120^\circ$};
+
+      % Góc giữa F2 và F3
+      \draw (330:0.4) arc (330:210:0.4);
+      \node at (270:0.6) {$120^\circ$};
+
+      % Góc giữa F3 và F1
+      \draw (210:0.4) arc (210:90:0.4);
+      \node at (150:0.6) {$120^\circ$};
+   \end{tikzpicture}
+\end{figure}
+
+
+Chọn hệ trục tọa độ vuông góc $Oxy$ như hình vẽ.
+
+\begin{align*}
+   \vec{F} &= \vec{F}_1 + \vec{F}_2 + \vec{F}_3 \\
+   &= F_1 \vec{j} + F_2 \cos(30^\circ) \vec{i} + F_2 \sin(30^\circ) \vec{j} + F_3 \cos(210^\circ) \vec{i} + F_3 \sin(210^\circ) \vec{j} \\
+   &= 20 \vec{j} + 30 \cdot \frac{\sqrt{3}}{2} \vec{i} + 30 \cdot \frac{1}{2} \vec{j} + 40 \cdot \left(-\frac{\sqrt{3}}{2}\right) \vec{i} + 40 \cdot \left(-\frac{1}{2}\right) \vec{j} \\
+   &= -5\sqrt{3} \vec{i} + 15 \vec{j}.
+\end{align*}
+
+Vậy, độ lớn hợp lực là:
+\begin{equation*}
+   \left|\vec{F}\right| = \sqrt{(-5\sqrt{3})^2 + 15^2} = 10\sqrt{3} \approx \boxed{\qty{17.3}{N}}.
+\end{equation*}

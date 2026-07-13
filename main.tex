@@ -15,6 +15,7 @@
    defernumbers=true
 ]{biblatex}
 \usepackage{amsmath, amssymb, blindtext, bm, calc, caption, enumitem, fancyhdr, float, hyperref, icomma, lmodern, longtable, makecell, mathrsfs, multicol, multirow, pgfplots, siunitx, steinmetz, tabularray, tikz, tikz-3dplot, varwidth, wrapfig2, xcolor, xparse, xeCJK}
+\usepackage{bookmark}
 
 % Tài liệu tham khảo
 \DeclareDelimFormat{multinamedelim}{\addcomma\space}
@@ -45,6 +46,14 @@
 % Chỉnh đầu và cuối trang
 \pagestyle{fancy}
 \fancyhf{} % Clear all
+
+% Định nghĩa lại kiểu trang plain cho các trang đầu chương/phần
+\fancypagestyle{plain}{%
+   \fancyhf{} % Xóa sạch đầu trang và chân trang cũ
+   \fancyfoot[C]{\textcolor{colorEmphasisCyan}{\thepage}} % Đặt số trang màu xanh ở giữa bên dưới
+   \renewcommand{\headrulewidth}{0pt} % Không có đường kẻ ở đầu trang
+   \renewcommand{\footrulewidth}{0pt} % Không có đường kẻ ở chân trang
+}
 
 \fancyhead[LO]{\textcolor{colorEmphasisCyan}{\nouppercase{\leftmark}}} % Chapter on even pages
 \fancyhead[RE]{\textcolor{colorEmphasisCyan}{\nouppercase{\rightmark}}} % Section on odd pages
@@ -177,7 +186,7 @@
 
 % Phục vụ viết biểu thức
 \newcommand{\refeq}[1]{(\ref{#1})}
-\newcommand{\equationexplanation}[1]{\qquad \textcolor{colorEmphasis}{\left(\text{#1}\right)}}
+\newcommand{\equationexplanation}[1]{&& \textcolor{colorEmphasis}{\left(\text{#1}\right)}}
 
 % Định nghĩa kích thước các bộ phận của đồ thị
 \def \pointSize {2pt}
@@ -270,7 +279,7 @@
    {0pt}
    {\textcolor{colorEmphasisCyan}{\thesubsection} \quad #1}
 
-\defbibheading{mycustomsubheading}[\refname]{%
+\defbibheading{referencesubheading}[\refname]{%
    \setlength{\fboxrule}{2pt}% Border thickness
    \setlength{\fboxsep}{1.6em}% Padding
    \noindent
@@ -329,8 +338,8 @@
 \nocite{*}
 % \printbibliography[heading=bibintoc]
 \printbibheading[heading=bibintoc, title={Tài liệu tham khảo}]
-\printbibliography[heading=mycustomsubheading, title={Toán học}, keyword=math]
-\printbibliography[heading=mycustomsubheading, title={Tài liệu khác}, keyword=misc]
+\printbibliography[heading=referencesubheading, title={Toán học}, keyword=math]
+\printbibliography[heading=referencesubheading, title={Tài liệu khác}, keyword=misc]
 
 \end{document}
 
