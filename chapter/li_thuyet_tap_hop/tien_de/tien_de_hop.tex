@@ -105,7 +105,7 @@ Chúng ta đặt $S$ bởi một kí hiệu quen thuộc hơn là $\{A; B; C\}$.
 \begin{multicols}{2}
    \begin{enumerate}
       \item $\bigcup \{A\} = A$;
-      \item $\bigcup \emptyset = \emptyset$;
+      \item $\bigcup \varnothing = \varnothing$;
       \item $A \cup B \supseteq A$;
       \item $A \cup B = B \iff A \subseteq B$;
       \item $A \cup B = B \cup A$;
@@ -138,7 +138,7 @@ Tuy nhiên, $\{A\}$ là một tập hợp chỉ có một phần tử duy nhất
 Từ hai điều trên, chúng ta có điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}. Chúng ta chứng minh bằng phương pháp phản chứng. Giả sử $\bigcup \emptyset \neq \emptyset$, đã có $x \notin \emptyset$ với mọi $x$, cho nên phải tồn tại ít nhất một phần tử $x \in \bigcup \emptyset$. Theo định nghĩa của hợp, sẽ tồn tại một $y \in \emptyset$ sao cho $x \in y$. Tuy nhiên điều này là vô lý, vì tập hợp rỗng $\emptyset$ không có chứa phần tử nào. Sự mâu thuẫn này chứng tỏ giả thiết phản chứng là sai. Vậy $\bigcup \emptyset = \emptyset$. Chúng ta có điều phải chứng minh.
+\arabic{subexercise}. Chúng ta chứng minh bằng phương pháp phản chứng. Giả sử $\bigcup \varnothing \neq \varnothing$, đã có $x \notin \varnothing$ với mọi $x$, cho nên phải tồn tại ít nhất một phần tử $x \in \bigcup \varnothing$. Theo định nghĩa của hợp, sẽ tồn tại một $y \in \varnothing$ sao cho $x \in y$. Tuy nhiên điều này là vô lí, vì tập hợp rỗng $\varnothing$ không có chứa phần tử nào. Sự mâu thuẫn này chứng tỏ giả thiết phản chứng là sai. Vậy $\bigcup \varnothing = \varnothing$. Chúng ta có điều phải chứng minh.
 
 \stepcounter{subexercise}
 \arabic{subexercise}. Gọi $x \in A$. Nhắc lại rằng, $A \cup B = \bigcup \{A; B\}$. Khi đó, có $A \in \{A; B\}$ và giả sử ban đầu của $x$ để có $x \in A \cup B$ với mọi $x$. Vậy $A \cup B \supseteq A$. Điều phải chứng minh.

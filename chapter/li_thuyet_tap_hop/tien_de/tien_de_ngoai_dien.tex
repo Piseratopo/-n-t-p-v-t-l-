@@ -177,6 +177,7 @@ Nhưng, để đơn giản hóa, tác giả sẽ bỏ qua việc xây dựng cá
 
 \exercise Cho $A$, $B$ và $C$ là các tập hợp. Chứng minh rằng
 \begin{enumerate}
+   \item $A \subseteq A$;
    \item $A = B \iff A \subseteq B \land B \subseteq A$;
    \item $A \neq B \iff \exists z, (z \in A \land z \notin B) \lor (z \notin A \land z \in B)$.
    \item $A \subseteq B \land B \subseteq C \implies A \subseteq C$;
@@ -186,6 +187,9 @@ Nhưng, để đơn giản hóa, tác giả sẽ bỏ qua việc xây dựng cá
 \solution
 
 \setcounter{subexercise}{1}
+\arabic{subexercise}. Có $\forall z, (z \in A \implies z \in A)$ hiển nhiên đúng. Do vậy, theo định nghĩa, $A \subseteq A$. Điều phải chứng minh.
+
+\stepcounter{subexercise}
 \arabic{subexercise}. Theo định nghĩa tập con,
 \begin{equation*}
    \begin{cases}
@@ -235,7 +239,7 @@ Do đó,
    A = A \implies x \in A.
 \end{equation*} 
 
-Có $A = A$ luôn đúng do tính đối xứng của phép bằng nhau, cho nên phải có $x \in A$. Chiều thuận này được chứng minh.
+Có $A = A$ luôn đúng do tính phản xạ của phép bằng nhau, cho nên phải có $x \in A$. Chiều thuận này được chứng minh.
 
 Tiếp theo, chúng ta giả sử ngược lại $x \in A$. Nếu $y = A$, theo tiên đề ngoại diên, mọi phần tử trong $y$ đều trong $A$. Cụ thể hóa thành phần tử $x$, nếu $x \in A$ thì $x \in y$. Theo lập luận đó, $y = A \implies x \in y$.
 

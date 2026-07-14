@@ -321,6 +321,34 @@
       \true{nocite}
       \keyw{misc}
     \endentry
+    \entry{pinter2014book}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=ffe310efe7726e6ce5455107cac1e721}{%
+           family={Pinter},
+           familyi={P\bibinitperiod},
+           given={Charles\bibnamedelima C},
+           giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Courier Corporation}%
+      }
+      \strng{namehash}{ffe310efe7726e6ce5455107cac1e721}
+      \strng{fullhash}{ffe310efe7726e6ce5455107cac1e721}
+      \strng{fullhashraw}{ffe310efe7726e6ce5455107cac1e721}
+      \strng{bibnamehash}{ffe310efe7726e6ce5455107cac1e721}
+      \strng{authorbibnamehash}{ffe310efe7726e6ce5455107cac1e721}
+      \strng{authornamehash}{ffe310efe7726e6ce5455107cac1e721}
+      \strng{authorfullhash}{ffe310efe7726e6ce5455107cac1e721}
+      \strng{authorfullhashraw}{ffe310efe7726e6ce5455107cac1e721}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A book of set theory}
+      \field{year}{2014}
+      \true{nocite}
+      \keyw{math}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

@@ -7,7 +7,7 @@ Tiên đề này cho phép chúng ta tạo ra một tập hợp mới từ hai t
     \defMath{\forall x, \forall y, \exists z, \forall w \left( w \in z \iff (w = x \lor w = y) \right)}.
 \end{equation*}
 
-Có thể thấy chỉ tồn tại một $z$ duy nhất theo tiên đề ngoại diên như khi chúng ta đã chứng minh về tính duy nhất của $\emptyset$. Giả sử tồn tại $z_1$ và $z_2$ thỏa mãn tiên đề cặp, theo chính tiên đề này:
+Có thể thấy chỉ tồn tại một $z$ duy nhất theo tiên đề ngoại diên như khi chúng ta đã chứng minh về tính duy nhất của $\varnothing$. Giả sử tồn tại $z_1$ và $z_2$ thỏa mãn tiên đề cặp. Theo chính tiên đề này:
 \begin{equation*}
     \begin{cases}
         a \in z_1 \iff (a = x \lor a = y) \\
@@ -27,7 +27,7 @@ Ku-ra-tốp-xki không phải là người đầu tiên đưa định nghĩa v�
 \begin{quotation}
     Với mọi tập hợp $x$, $y$, $u$, $v$, có $(x; y) = (u; v)$ nếu và chỉ nếu $x = u$ và $y = v$.
 \end{quotation}
-Để chứng minh điều này\footnote{Bắt đầu từ chứng minh này, tác giả sẽ lược bớt các lập luận thuần yếu tố lô-gích và lời giải thích chỉ dùng những tính chất cơ bản để tránh dài dòng.}, chúng ta chia làm ba trường hợp:
+Để chứng minh điều này, chúng ta chia làm ba trường hợp:
 
 \textcolor{colorEmphasisCyan}{Trường hợp 1 --- $x = y$}: Khi này, $$(x; y) = (x; x) = \{\{x; x\}; \{x\}\} = \{\{x\}; \{x\}\} = \{\{x\}\}.$$
 Ngoài ra, còn có $(x; y) = (u; v)$ và định nghĩa $(u; v) = \{\{u; v\}; \{u\}\}$. Điều này dẫn đến 
@@ -38,8 +38,73 @@ Tiên đề ngoại diên cho $\{x\} = \{u; v\}$. Sử dụng tiên đề ngoạ
 
 \textcolor{colorEmphasis}{Trường hợp 2 --- $u = v$}: Lập luận tương tự như trường hợp 1 để có điều tương đương.
 
-\textcolor{colorEmphasisGreen}{Trường hợp 3 --- $x \neq y$ và $u \neq v$}: Do ${x} \in (u; v)$, cho nên ${x} = {u; v}$ hoặc ${x} = {u}$. Tuy nhiên, ${x} = {u; v}$ dẫn đến $x = u = v$, mâu thuẫn với giả thiết $u \neq v$. Vậy ${x} = {u}$, tức là $x = u$ theo tiên đề ngoại diên.
+\textcolor{colorEmphasisGreen}{Trường hợp 3 --- $x \neq y$ và $u \neq v$}: Do $\{x\} \in \{\{u; v\}; \{u\}\}$, cho nên $\{x\} = \{u; v\}$ hoặc $\{x\} = \{u\}$ theo tiên đề hợp. Tuy nhiên, $\{x\} = \{u; v\}$ dẫn đến $x = u = v$, mâu thuẫn với giả thiết $u \neq v$. Vậy $\{x\} = \{u\}$, tức là $x = u$ theo tiên đề ngoại diên.
 
-$(x; y) = (u; v)$ cũng cho chúng ta $\{x; y\} \in (u; v)$, hay $\{x; y\} = \{u; v\}$ hoặc $\{x; y\} = \{u\}$. Nhưng nếu $\{x; y\} = \{u\}$, thì, tương tự, $x = y = u$, mâu thuẫn với giả thiết $x \neq y$. Vậy $\{x; y\} = \{u; v\}$, tức là $y = u$ hoặc $y = v$. Nhưng nếu $y = u$ thì $x = y = u$, mâu thuẫn. Vậy $y = v$. 
+$(x; y) = (u; v)$ cũng cho chúng ta $\{x; y\} \in (u; v)$, hay $\{x; y\} = \{u; v\}$ hoặc $\{x; y\} = \{u\}$. Nhưng nếu $\{x; y\} = \{u\}$, thì, sử dụng tiên đề ngoại diên, $x = y = u$, mâu thuẫn với giả thiết $x \neq y$. Vậy $\{x; y\} = \{u; v\}$, tức là $y = u$ hoặc $y = v$; nhưng nếu $y = u$ thì $x = y = u$, mâu thuẫn. Vậy $y = v$. 
 
 Kết hợp ba trường hợp, chúng ta có điều phải chứng minh.
+
+\exercise Chứng minh các mệnh đề sau:
+\begin{multicols}{2}
+   \begin{enumerate}
+      \item $\forall x, \forall y, \left(x = \{y\} \implies x \ni y\right)$;
+      \item $\forall x, \forall y, \left(x = y \iff \{x\} = \{y\}\right)$;
+      \item $\forall x, \forall y, \left(x \in y \iff \{x\} \subseteq y\right)$;
+      \item $\forall x, \forall y, \left(\{x; y\} = \{x\} \iff x = y \right)$.
+   \end{enumerate}
+\end{multicols}
+
+\solution
+
+\setcounter{subexercise}{1}
+\arabic{subexercise}. Giả sử $x = \{y\}$. Theo tính phản xạ của phép bằng nhau, $y = y$ với mọi $y$. Do vậy, $y \in \{y\}$. Chúng ta sử dụng kết quả
+\begin{equation*}
+   \forall a, \forall b, \forall c, \left((b = c \implies a \in b) \iff a \in c\right)
+\end{equation*}
+đã chứng minh từ trước. Cụ thể hóa $a$, $b$, $c$ lần lượt là $y$, $x$, và $\{y\}$. Chúng ta có $x = \{y\} \implies y \in \{y\}$ (đúng do cả hai vế đều độc lập đúng), cho nên $y \in x$.
+
+Do đó, với mọi $x$ và $y$, $x = \{y\} \implies x \ni y$. Điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Trước hết, coi $x = y$ là đúng. Với mọi $z$, theo định nghĩa và tiên đề hợp thì
+\begin{equation*}
+   z \in \{x\} \iff z = x.
+\end{equation*}
+Tương tự, $z \in \{y\} \iff z = y$. Khi chúng ta kèm theo $x = y$, cần phải có $z = x \iff z = y$. Theo tính chất bắc cầu,
+\begin{equation*}
+   \forall z, z \in \{x\} \iff z \in \{y\}.
+\end{equation*}
+Vậy, $\forall x, \forall y, \left(x = y \implies \{x\} = \{y\}\right)$.
+
+Ngược lại, coi $\{x\} = \{y\}$ đúng, dẫn đến $\forall w, \left(w \in \{x\} \iff w \in \{y\}\right)$. Ngoài ra, tương tự như trước, chúng ta cũng có khẳng định sau đúng với mọi $w$:
+\begin{equation*}
+   \begin{cases}
+      w \in \{x\} \iff w = x \\
+      w \in \{y\} \iff w = y
+   \end{cases}.
+\end{equation*}
+Bắc cầu để được $\forall w, (w = x \iff w = y)$. Cụ thể hóa $w$ bởi $x$, chúng ta được $x = x \iff x = y$. Mà $x = x$ luôn đúng do tính phản xạ nên $x = y$. Vậy
+\begin{equation*}
+   \forall x, \forall y, \left(\{x\} = \{y\} \implies x = y\right).
+\end{equation*}
+
+Kết hợp hai chiều, điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Thứ nhất, xét trường hợp đã có $\{x\} \subseteq y$. Khi này, theo định nghĩa tập con,
+\begin{equation*}
+   \forall w, \left(w \in \{x\} \implies w \in y\right).\\
+\end{equation*}
+Đổi $w$ bởi $x$, chúng ta có
+\begin{equation*}
+   x \in \{x\} \implies x \in y.
+\end{equation*}
+Mà $x \in \{x\}$ là hiển nhiên, nên $x \in y$.
+
+Thứ hai, xét khi chúng ta có $x \in y$. Xét một phần tử $v$ thuộc $\{x\}$ bất kì. Dễ thấy $v = x$, và do đó $v \in y$. Vậy,
+\begin{equation*}
+   \forall v, v \in \{x\} \implies v \in y.
+\end{equation*}
+Dẫn đến, $\{x\} \subseteq y$.
+
+Chúng ta đã chứng minh hai chiều --- $x \in y \impliedby \{x\} \subseteq y$ và $x \in y \implies \{x\} \subseteq y$ --- với mọi $x$ và $y$. Từ định nghĩa phép đẳng giá, chúng ta có điều phải chứng minh.
