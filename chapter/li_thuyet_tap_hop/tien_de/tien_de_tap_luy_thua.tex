@@ -19,12 +19,19 @@ Từ đó, có được ngay, $\forall y, (y \in \mathfrak{P}(x) \iff y \in \mat
 
 \exercise Cho $X$ và $Y$ là hai tập hợp. Chứng minh rằng,
 \begin{multicols}{2}
-    \begin{enumerate}
-        \item $\varnothing \in \mathfrak{P}(X)$;
-        \item $\mathfrak{P}(\{X; Y\}) = \{\varnothing; \{X\}; \{Y\}; \{X; Y\}\}$;
-        \item $X \subseteq Y \implies \mathfrak{P}(X) \subseteq \mathfrak{P}(Y)$;
-        \item $\mathfrak{P}(X \cup Y) \supseteq \mathfrak{P}(X) \cup \mathfrak{P}(Y)$.
-    \end{enumerate}
+   \begin{enumerate}
+      \item $\varnothing \in \mathfrak{P}(X)$;
+      \item $\bigcup \mathfrak{P}(X) = X$;
+      \item $X \subseteq \mathfrak{P}\left(\bigcup X\right)$;
+      \item $\mathfrak{P}(\{X; Y\}) = \{\varnothing; \{X\}; \{Y\}; \{X; Y\}\}$;
+      \item $X \subseteq Y \iff \mathfrak{P}(X) \subseteq \mathfrak{P}(Y)$;
+      \item $X = Y \iff \mathfrak{P}(X) = \mathfrak{P}(Y)$;
+      \item $\mathfrak{P}(X \cup Y) \supseteq \mathfrak{P}(X) \cup \mathfrak{P}(Y)$;
+      \item $\mathfrak{P}(X \cup Y) = \mathfrak{P}(X) \cup \mathfrak{P}(Y) \iff \left[\begin{array}{l}
+         X \subseteq Y \\ X \supseteq Y
+      \end{array}\right.$;
+      \item $X = \mathfrak{P}\left(\bigcup X\right) \iff \exists y, X = \mathfrak{P}(y)$.
+   \end{enumerate}
 \end{multicols}
 
 \solution
@@ -36,6 +43,21 @@ Một hệ quả tự nhiên của tính chất này đó là tập lũy thừa 
 $$
     \forall w, \mathfrak{P}(w) \neq \varnothing.
 $$
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Với mọi $x$,
+\begin{align*}
+   x \in \bigcup \mathfrak{P}(X) &\iff \exists y, \left(x \in y \land y \in \mathfrak{P}(X) \right); \\
+   x \in \bigcup \mathfrak{P}(X) &\iff \exists y, \left(x \in y \land y \subseteq X\right). \\
+\end{align*}
+Ngoài ra, $y \subseteq X$ tương đương với mọi phần tử trong $y$ đều trong $X$, dẫn đến
+\begin{equation*}
+   x \in \bigcup \mathfrak{P}(X) \iff x \in X.
+\end{equation*}
+Từ đó, $\bigcup \mathfrak{P}(X) = X$. Điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Gọi $x$ là một phần tử bất kì thuộc $X$. Theo định nghĩa, mọi phần tử $y \in x$ đều thuộc $\bigcup X$. Dẫn đến $x \subseteq \bigcup X$ theo định nghĩa của tập con. Theo định nghĩa của tập lũy thừa, $x \in \mathfrak{P} \left(\bigcup X\right)$ với mọi $x \in X$. Do vậy, $X \subseteq \mathfrak{P} \left(\bigcup X\right)$. Điều phải chứng minh.
 
 \stepcounter{subexercise}
 \arabic{subexercise}. Tập rỗng là tập con của mọi tập hợp, nên $\varnothing \subseteq \{X; Y\}$, dẫn đến $\varnothing \in \mathfrak{P}(\{X; Y\})$.
@@ -118,9 +140,21 @@ Kết hợp hai kết quả bao hàm, suy ra $\mathfrak{P}(\{X; Y\}) = \{\varnot
 
 
 \stepcounter{subexercise}
-\arabic{subexercise}. Giả sử $X \subseteq Y$. Gọi $w \in \mathfrak{P}(X)$. Theo định nghĩa, $w \subseteq X$. Theo tính chất bắc cầu của quan hệ bao hàm, có $w \subseteq Y$. Do đó, $w \in \mathfrak{P}(Y)$.
+\arabic{subexercise}. Trước hết, giả sử \coloringCrimson{$X \subseteq Y$}. Gọi $w \in \mathfrak{P}(X)$. Theo định nghĩa, $w \subseteq X$. Theo tính chất bắc cầu của quan hệ bao hàm, có $w \subseteq Y$. Do đó, $w \in \mathfrak{P}(Y)$.
 
-Từ đó, có $X \subseteq Y \implies \mathfrak{P}(X) \subseteq \mathfrak{P}(Y)$. Điều phải chứng minh.
+Từ đó, có $X \subseteq Y \implies \mathfrak{P}(X) \subseteq \mathfrak{P}(Y)$. Ngược lại, giả sử \coloringDodgerblue{$\mathfrak{P}(X) \subseteq \mathfrak{P}(Y)$}. Hiển nhiên rằng $X \subseteq X$, cho nên $X \in \mathfrak{P}(X)$. Do $\mathfrak{P}(X)$ là tập con của $\mathfrak{P}(Y)$, $X$ cũng thuộc $\mathfrak{P}(Y)$. Từ định nghĩa tập lũy thừa, dẫn đến $X \subseteq Y$.
+
+Vì vậy, $X \subseteq Y \iff \mathfrak{P}(X) \subseteq \mathfrak{P}(Y)$. Điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Chứng minh được $X \subseteq Y \iff \mathfrak{P}(X) \subseteq \mathfrak{P}(Y)$ thì chứng minh \begin{equation*}
+   X \supseteq Y \iff \mathfrak{P}(X) \supseteq \mathfrak{P}(Y)
+\end{equation*}
+cũng tương tự. Từ đó, dễ thấy 
+\begin{equation*}
+   X \subseteq Y \land X \supseteq Y \iff \mathfrak{P}(X) \subseteq \mathfrak{P}(Y) \land \mathfrak{P}(X) \supseteq \mathfrak{P}(Y)
+\end{equation*}
+và qua đó $X = Y \iff \mathfrak{P}(X) = \mathfrak{P}(Y)$ theo định nghĩa phép đẳng giá. Điều phải chứng minh.
 
 \stepcounter{subexercise}
 \arabic{subexercise}. Gọi $w$ là một phần tử bất kì thuộc $\mathfrak{P}(X) \cup \mathfrak{P}(Y)$. Theo định nghĩa của phép hợp, có $w \in \mathfrak{P}(X)$ hoặc $w \in \mathfrak{P}(Y)$.
@@ -129,4 +163,22 @@ Nếu $w \in \mathfrak{P}(X)$, theo định nghĩa tập lũy thừa, $w \subset
 Vậy, nhìn chung, chúng ta có
 $$\forall w, \left( w \in \mathfrak{P}(X) \cup \mathfrak{P}(Y) \implies w \in \mathfrak{P}(X \cup Y) \right)$$
 và do đó $\mathfrak{P}(X \cup Y) \supseteq \mathfrak{P}(X) \cup \mathfrak{P}(Y)$. Điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Nếu \coloringCrimson{$X \subseteq Y$}, chúng ta có $X \cup Y = Y$ và $\mathfrak{P}(X) \subseteq \mathfrak{P}(Y)$. Khi đó $$\mathfrak{P}(X \cup Y) = \mathfrak{P}(X) \cup \mathfrak{P}(Y)$$ vì cùng bằng $\mathfrak{P}(Y)$. Tương tự với \coloringCrimson{$Y \subseteq X$}.
+
+Cho trước \coloringDodgerblue{$\mathfrak{P}(X \cup Y) = \mathfrak{P}(X) \cup \mathfrak{P}(Y)$}. Giả sử phản chứng $X \not\subseteq Y$ và $Y \not\subseteq X$. Khi đó, cần phải tồn tại $x$ và $y$ sao cho $x \in X \land x \notin Y$ và $y \in Y \land y \notin X$.
+Xét tập hợp $S = \{x; y\}$ xây dựng được từ tiên đề cặp. Chúng ta thấy:
+\begin{itemize}
+   \item $S \subseteq X \cup Y$ dẫn ra $S \in \mathfrak{P}(X \cup Y)$.
+   \item $S \not\subseteq X$ vì $y \notin X$ và $S \not\subseteq Y$ vì $x \notin Y$. Do đó $S$ vừa không thuộc $\mathfrak{P}(X)$, vừa không thuộc $\mathfrak{P}(Y)$, và $S \notin \mathfrak{P}(X) \cup \mathfrak{P}(Y)$ là một hệ quả tất yếu.
+\end{itemize}
+Suy ra $$S \in \mathfrak{P}(X \cup Y) \nLeftrightarrow S \in \mathfrak{P}(X) \cup \mathfrak{P}(Y),$$ hay tồn tại phần tử trong $\mathfrak{P}(X \cup Y)$ mà không thuộc $\mathfrak{P}(X) \cup \mathfrak{P}(Y)$. Điều này mâu thuẫn với điều kiện cho trước ban đầu. Vì vậy, theo chứng minh bằng phản chứng, có $X \subseteq Y$ hoặc $Y \subseteq X$.
+
+Kết hợp hai chiều, chúng ta có điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Nếu như chúng ta có \coloringCrimson{$X = \mathfrak{P}\left(\bigcup X\right)$} thì hiển nhiên $\exists y, X = \mathfrak{P}(y)$ đúng với hạng thức $y$ được thay thế bởi $\bigcup X$. Trong một trường hợp khác, nếu như chúng ta đã có \coloringDodgerblue{$\exists y, X = \mathfrak{P}(y)$}. Với mọi $d$, để $d \in \bigcup X$ thì cần tồn tại $e$ thỏa mãn $e \in X$ và $d \in e$. Nhưng, $e \in \mathfrak{P}(y)$ tất yếu sẽ giúp suy luận ra $e$ phải là tập con của $y$. Vì vậy, $d \in y$ với mọi $d \in \bigcup X$. Do đó, $$y \supseteq \bigcup X.$$ Sử dụng các phần trước như hệ quả, $\mathfrak{P}(y) \supseteq \mathfrak{P}\left(\bigcup X\right)$. Tuy nhiên, các phần trước cũng có cho chúng ta $X \subseteq \mathfrak{P}\left(\bigcup X\right)$, do vậy, $X = \mathfrak{P}\left(\bigcup X\right)$.
+
+Từ những kết quả đó, điều phải chứng minh là hiển nhiên.
 

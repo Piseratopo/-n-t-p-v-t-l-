@@ -123,7 +123,7 @@ và gọi nó là giao của các phần tử trong $x$. Bạn đọc cần ph�
 
 Một phép toán nữa, khá ít dùng, được gọi là \defText{hiệu đối xứng}. Với hai tập hợp $x$ và $y$, hiệu đối xứng của chúng được định nghĩa là
 \begin{equation*}
-    \defMath{x \vartriangle y = (x \setminus y) \cup (y \setminus x)}.
+   \defMath{x \vartriangle y = x + y = (x \setminus y) \cup (y \setminus x)}.
 \end{equation*}
 
 Để kết thúc phần này, tác giả sẽ giới thiệu về cách biểu diễn tập hợp bằng sơ đồ Ven\footnote{John Venn (1834 -- 1923).}. Với hai tập hợp $x$ và $y$, chúng ta có thể biểu diễn chúng bằng hai hình chồng lên nhau, trong đó kết quả của các phép tính trên chúng được tô màu, với một sự minh hoạ cụ thể ở hình \ref{fig:li_thuyet_tap_hop:tien_de:tien_de_tach:ven_phep_tinh}.
@@ -224,7 +224,7 @@ Kết hợp hai kết quả, chúng ta có $\bigcap \{x; y\} = x \cap y$, theo c
 \begin{multicols}{2}
    \begin{enumerate}
       \item $\bigcap \{A\} = A$;
-      \item $\bigcap \varnothing = \varnothing$
+      \item $\bigcap \varnothing = \varnothing$;
       \item $A \cap B \subseteq A$;
       \item $A \cap B = A \iff A \subseteq B$;
       \item $A \cap B = B \cap A$;
@@ -243,7 +243,7 @@ Kết hợp hai kết quả, chúng ta có $\bigcap \{x; y\} = x \cap y$, theo c
 \solution
 
 \setcounter{subexercise}{1}
-\arabic{subexercise}.Từ định nghĩa,
+\arabic{subexercise}. Từ định nghĩa,
 \begin{align*}
    \bigcap \{A\} &= \left\{z \in \bigcup \{A\} \;\middle|\; \forall a \in \{A\}, z\in a\right\} \\
       &= \left\{z \in A \mid \forall a \in \{A\}, z \in a\right\}.
@@ -266,7 +266,7 @@ Sử dụng ``$(z) \in A$'' là một vị từ theo hạng thức $z$, từ ti�
 Theo tính chất bắc cầu, chúng ta có $\bigcap \{A\} = A$, điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}
+\arabic{subexercise}. 
 \begin{align*}
    \bigcap \varnothing &= \left\{z \in \bigcup \varnothing \;\middle|\; \forall a \in \varnothing, z\in a\right\} \\ 
    &= \left\{z \in \varnothing \;\middle|\; \forall a \in \varnothing, z\in a\right\}.
@@ -278,12 +278,12 @@ Do đó, với mọi $z$, để $z \in \bigcap \varnothing$ thì trước hết,
 Vậy, từ tiên đề tập rỗng, $\bigcap \varnothing = \varnothing$.
 
 \stepcounter{subexercise}
-\arabic{subexercise}.Nhắc lại, $A \cap B$ là tập hợp được lấy ra từ tiên đề tách với tập ban đầu là $A$ và vị từ là ``$() \in B$''. Do đó, theo hệ quả \refeq{eq:li_thuyet_tap_hop:tien_de:tien_de_tach:he_qua_tap_con} đã có ở trang \pageref{eq:li_thuyet_tap_hop:tien_de:tien_de_tach:he_qua_tap_con}, $A \cap B \subseteq A$. Điều phải chứng minh.
+\arabic{subexercise}. Nhắc lại, $A \cap B$ là tập hợp được lấy ra từ tiên đề tách với tập ban đầu là $A$ và vị từ là ``$() \in B$''. Do đó, theo hệ quả \refeq{eq:li_thuyet_tap_hop:tien_de:tien_de_tach:he_qua_tap_con} đã có ở trang \pageref{eq:li_thuyet_tap_hop:tien_de:tien_de_tach:he_qua_tap_con}, $A \cap B \subseteq A$. Điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}.Giả sử $A \cap B = A$. Xét một phần tử $x \in A$ bất kì. Khi đó, $x \in A \cap B$, và theo định nghĩa của giao, dẫn đến $x \in B$. Do đó, $A \subseteq B$.
+\arabic{subexercise}. Giả sử \coloringCrimson{$A \cap B = A$}. Xét một phần tử $x \in A$ bất kì. Khi đó, $x \in A \cap B$, và theo định nghĩa của giao, dẫn đến $x \in B$. Do đó, $A \subseteq B$.
 
-Giả sử chiều ngược lại, $A \subseteq B$. Với mọi $e$, nếu $e$ nằm trong $A$ thì $E$ cũng trong $B$, cho chúng ta
+Giả sử chiều ngược lại, \coloringDodgerblue{$A \subseteq B$}. Với mọi $e$, nếu $e$ nằm trong $A$ thì $e$ cũng trong $B$, cho chúng ta
 $$
 \forall e, (e \in A \implies e \in A \land e \in B).
 $$
@@ -292,7 +292,7 @@ Hiển nhiên có $\forall x, (x \in A \land x \in B \implies x \in A)$. Do vậ
 Kết hợp hai chiều, chúng ta có $A \cap B = A \iff A \subseteq B$, điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}.Từ tiên đề tách và định nghĩa của giao,
+\arabic{subexercise}. Từ tiên đề tách và định nghĩa của giao,
 \begin{equation*}
     \forall z, \left(z \in A \cap B \iff z \in A \land z \in B\right).
 \end{equation*}
@@ -303,14 +303,14 @@ Tương tự, chúng ta cũng có
 Theo tính chất bắc cầu của phép đẳng giá, $\forall z, (z \in A \cap B \iff z \in B \cap A)$, và từ tiên đề ngoại diên, $A \cap B = B \cap A$. Điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}.Nhớ lại, $(A; B) = \{\{A\}; \{A; B\}\}$, dẫn đến $\bigcap (A; B) = \{A\} \cap \{A; B\}$.
+\arabic{subexercise}. Nhớ lại, $(A; B) = \{\{A\}; \{A; B\}\}$, dẫn đến $\bigcap (A; B) = \{A\} \cap \{A; B\}$.
 
 Nhận thấy rằng với mọi $w$, để $w$ thuộc $\bigcap (A; B)$ thì $w$ phải thuộc cả $\{A\}$ và $\{A; B\}$. Điều này tương đương với $w = A$. Do vậy, $$\forall w, \left(w \in \bigcap (A; B) \iff w = A\right).$$
 
 Như một kết quả của tiên đề cặp và tiên đề ngoại diên, chỉ tồn tại duy nhất một tập $z$ sao cho $\forall w, (w \in z \iff w = A)$. Do vậy, $\bigcap (A; B) = \{A\}$ và chúng ta có điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}.Giả sử $A \subseteq B$. Xét $z$ là một phần tử thuộc $\bigcap B$. Khi đó, $z \in b$ với mọi $b \in B$. Do $A \subseteq B$, mọi phần tử $x \in A$ cũng là một phần tử của $B$. Dẫn đến, viết lại các mệnh đề để có
+\arabic{subexercise}. Giả sử $A \subseteq B$. Xét $z$ là một phần tử thuộc $\bigcap B$. Khi đó, $z \in b$ với mọi $b \in B$. Do $A \subseteq B$, mọi phần tử $x \in A$ cũng là một phần tử của $B$. Dẫn đến, viết lại các mệnh đề để có
 \begin{equation*}
     \begin{cases}
         \forall z \in \bigcap B, \forall b, (b \in B \implies z \in b) \\
@@ -397,7 +397,7 @@ Có $x = y \iff (x \subseteq y) \land (x \supseteq y)$ đúng với mọi tập 
                A \cap C = B \cap C
             \end{cases}.
 \end{equation*}
-Điểu phải chứng minh.
+Điều phải chứng minh.
    
 \stepcounter{subexercise}
 \arabic{subexercise}. Trước hết, chúng ta sẽ chứng minh $(A \cap B) \cap C = A \cap (B \cap C)$. Thật vậy, với mọi $x$, sử dụng liên tục định nghĩa giao hai tập hợp, chúng ta có
@@ -457,7 +457,7 @@ Bỏ lượng từ rỗng $\forall y$ đi để được $\forall y \in \{A; B; 
 Do vậy $\bigcap\{A; B; C\} = (A \cap B) \cap C$. Từ đây, theo tính chất bắc cầu của \coloringCrimson{=}, dễ thấy điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}. Vọi mọi $x$,
+\arabic{subexercise}. Với mọi $x$,
 \begin{align*}
    x \in \mathfrak{P}(A \cap B) &\iff x \subseteq A \cap B \equationexplanation{định nghĩa tập lũy thừa}; \\
    x \in \mathfrak{P}(A \cap B) &\iff \forall y, (y \in x \implies y \in A \cap B) \equationexplanation{định nghĩa tập con}; \\
@@ -640,23 +640,23 @@ Với lập luận tương đương, chúng ta cũng có thể suy ra $D = B$. K
 \arabic{subexercise}. Có $A \setminus B = \{x \in A \mid x \notin B\}$. Theo hệ quả của tiên đề tách \refeq{eq:li_thuyet_tap_hop:tien_de:tien_de_tach:he_qua_tap_con}, $A \setminus B \subseteq A$. Điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}. Đầu tiên, giả sử $A \setminus B = A$. Xét một phần tử $x$.
+\arabic{subexercise}. Đầu tiên, giả sử \coloringCrimson{$A \setminus B = A$}. Xét một phần tử $x$.
 \begin{itemize}
    \item Nếu $x \notin A$, hiển nhiên $x \notin A \cap B$;
    \item Nếu $x \in A$, do $A = A \setminus B$ nên $x \notin B$. Qua đó, $x \notin A \cap B$.
 \end{itemize}
 Do $x$ chỉ có thể thuộc hoặc không thuộc $A$, cho nên chúng ta có thể suy ra rằng $\forall x, x \notin A \cap B$. Định nghĩa của tập rỗng cũng có biểu thức tương tự. Chỉ có một tập rỗng nên $A \cap B = \varnothing$.
 
-Chứng minh chiều ngược lại, cho $A \cap B = \varnothing$. Gọi $y$ là một phần tử bất kì thuộc $A$. Do $y \notin A \cap B$ (tính chất tập rỗng) nên không thể xảy ra đồng thời $y \in A$ và $y \in B$. Mà $y \in A$ theo giả thiết, dẫn đến $y \notin B$. Qua đó, $y \in A \setminus B$ với mọi $y$ trong $A$, suy ra $A \subseteq A\setminus B$.
+Chứng minh chiều ngược lại, cho \coloringDodgerblue{$A \cap B = \varnothing$}. Gọi $y$ là một phần tử bất kì thuộc $A$. Do $y \notin A \cap B$ (tính chất tập rỗng) nên không thể xảy ra đồng thời $y \in A$ và $y \in B$. Mà $y \in A$ theo giả thiết, dẫn đến $y \notin B$. Qua đó, $y \in A \setminus B$ với mọi $y$ trong $A$, suy ra $A \subseteq A\setminus B$.
 
 Từ phần trước của bài tập này, chúng ta có $A\setminus B \subseteq A$, nên phải có $A = A \setminus B$. 
 
 Kết hợp hai chiều, chúng ta có điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}. Giả sử $A \setminus B = \varnothing$. Lấy $x \in A$ bất kì. Nếu $x \notin B$, sẽ dẫn đến $x \in A \setminus B$. Nhưng, theo tiên đề tập rỗng, do $A \setminus B = \varnothing$ nên $\forall x, x \notin A \setminus B$, mâu thuẫn. Do vậy, $x \in B$. Chúng ta đã chứng minh, $$\forall x \in A, x \in B$$ hay $A \subseteq B$ trong trường hợp này.
+\arabic{subexercise}. Giả sử \coloringCrimson{$A \setminus B = \varnothing$}. Lấy $x \in A$ bất kì. Nếu $x \notin B$, sẽ dẫn đến $x \in A \setminus B$. Nhưng, theo tiên đề tập rỗng, do $A \setminus B = \varnothing$ nên $\forall x, x \notin A \setminus B$, mâu thuẫn. Do vậy, $x \in B$. Chúng ta đã chứng minh, $$\forall x \in A, x \in B$$ hay $A \subseteq B$ trong trường hợp này.
 
-Trường hợp còn lại, giả sử $A \subseteq B$. Xét một phần tử $y$ bất kì.
+Trường hợp còn lại, giả sử \coloringDodgerblue{$A \subseteq B$}. Xét một phần tử $y$ bất kì.
 \begin{itemize}
    \item Nếu $y \notin A$, hiển nhiên $y \notin A \setminus B$;
    \item Nếu $y \in A$, dễ thấy $y$ cũng phải thuộc $B$. Qua đó, $y \notin A \setminus B$.
@@ -713,8 +713,7 @@ Vì $A \subseteq B$ và $x \in A$, nên
 $ x \in B. $
 Từ đó, có đồng thời:
 \[ x \in B \land x \notin C. \]
-Theo định nghĩa của phép hiệu, điều này có nghĩa là $ x \in B \setminus C $
-Vì mọi phần tử $x \in A \setminus C$ đều thuộc $B \setminus C$, kết luận được
+Theo định nghĩa của phép hiệu, điều này có nghĩa là $ x \in B \setminus C $. Vì mọi phần tử $x \in A \setminus C$ đều thuộc $B \setminus C$, kết luận được
 \[ A \setminus C \subseteq B \setminus C. \]
 
 Lấy một phần tử $y$ bất kì thuộc vào tập hợp $C \setminus B$. Chúng ta có $ y \in C \land y \notin B $. Cần chứng minh rằng $y \notin A$. Giả sử ngược lại rằng $y \in A$. Vì $A \subseteq B$, nếu $y \in A$ thì ta bắt buộc phải có $y \in B$. Điều này mâu thuẫn trực tiếp với điều kiện ban đầu là $y \notin B$.
@@ -892,12 +891,12 @@ Kết hợp hai chiều, chúng ta có điều phải chứng minh.
       \item $A \vartriangle B = B \vartriangle A$;
       \item $A \vartriangle B = A \iff B = \varnothing$;
       \item $A \vartriangle B = \varnothing \iff B = A$;
+      \item $A = B \iff A \vartriangle C = B \vartriangle C$;
+      \item $(A \vartriangle B) \vartriangle C = A \vartriangle (B \vartriangle C)$;
       \item $A \vartriangle B = C \implies \begin{cases}
          B \vartriangle C = A \\
          C \vartriangle A = B
-      \end{cases}$;
-      \item $A = B \implies A \vartriangle C = B \vartriangle C$;
-      \item $(A \vartriangle B) \vartriangle C = A \vartriangle (B \vartriangle C)$.
+      \end{cases}$.
    \end{enumerate}
 \end{multicols}
 
@@ -930,3 +929,105 @@ Từ hai hướng, kết hợp chúng lại để có điều phải chứng min
       &= (B \setminus A) \cup (A \setminus B) \\
       &= B \vartriangle A.
 \end{align*}
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Hãy chứng minh chiều đơn giản hơn trước. Giả sử $B = \varnothing$. Khi này
+\begin{align*}
+   A \vartriangle B &= A \vartriangle \varnothing \\
+      &= (A \cup \varnothing) \setminus (A \cap \varnothing) \\
+      &= A \setminus \varnothing \equationexplanation{$\varnothing \subseteq A \implies \begin{cases}
+         A \cup \varnothing = A \\
+         A \cap \varnothing = \varnothing
+      \end{cases}$} \\
+      &= A \equationexplanation{$A \setminus \varnothing = A \iff A \cap \varnothing = \varnothing$}.
+\end{align*}
+
+Ngược lại, giả sử $A \vartriangle B = A$. Chúng ta có 
+\begin{equation}
+   A = (A \cup B) \setminus (A \cap B)
+   \label{eq:li_thuyet_tap_hop:tien_de:tien_de_tach:bthdx_3}
+\end{equation}
+theo một cách định nghĩa tương đương của hiệu đối xứng mà chúng ta đã chứng minh từ trước. Với mọi $x \in A$, nhận thấy rằng cần phải có $x \notin A \cap B$ do \refeq{eq:li_thuyet_tap_hop:tien_de:tien_de_tach:bthdx_3}, và từ đó, chúng ta có thể suy ra được $x \notin B$ do $x \in A$. Vì vậy, không thể tồn tại một phần tử vừa thuộc cả $A$ và $B$, hay hiểu theo một cách khác,
+\begin{equation*}
+   A \cap B = \varnothing.
+\end{equation*}
+Dẫn đến, từ \refeq{eq:li_thuyet_tap_hop:tien_de:tien_de_tach:bthdx_3},
+\begin{align*}
+   A &= (A \cup B) \setminus \varnothing \\
+    &= A \cup B.
+\end{align*}
+Suy ra $B \subseteq A$. Nếu tồn tại phần tử $y \in B$, $y$ cũng phải thuộc $A$ do định nghĩa tập con, khiến cho $y \in A \cap B$, mâu thuẫn với $A \cap B = \varnothing$. Do đó, không thể có $y \in B$. Chúng ta có thể suy luận ra được $B = \emptyset$.
+
+Có $\begin{cases}
+   B = \varnothing \implies A \vartriangle B = A \\
+   A \vartriangle B = A \implies B = \varnothing
+\end{cases}$ nên $A \vartriangle B = A \iff B = \varnothing$. Điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Nếu \coloringCrimson{$A \vartriangle B = \varnothing$}, từ định nghĩa hiệu đối xứng hai tập hợp,
+\begin{equation*}
+   (A \setminus B) \cup (B \setminus A) = \varnothing.
+\end{equation*}
+Vì $A \setminus B$ và $B \setminus A$ đều là tập con của $(A \setminus B) \cup (B \setminus A)$ nên $\begin{cases}
+   A \setminus B \subseteq \varnothing \\
+   B \setminus A \subseteq \varnothing
+\end{cases}$. Cũng có $\varnothing$ là tập con của mọi tập hợp nên dễ thấy
+\begin{equation*}
+   A \setminus B = B \setminus A = \varnothing.
+\end{equation*}
+Từ những kết quả đã có, có thể suy luận $A \subseteq B$ và $B \subseteq A$, và $A = B$.
+
+Nếu \coloringDodgerblue{$A = B$}, có
+\begin{align*}
+   A \vartriangle B &= (A \setminus B) \cup (B \setminus A) \\
+      &= (A \setminus A) \cup (A \setminus A) \\
+      &= \varnothing \cup \varnothing \\
+      &= \varnothing.
+\end{align*}
+
+Từ việc khẳng định từng chiều, chúng ta có điều phải chứng minh. 
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Chứng minh chiều thuận, giả thiết rằng \coloringCrimson{$A = B$}. Từ giả thiết đó, $\begin{cases}
+   A \setminus C = B \setminus C \\
+   C \setminus A = C \setminus A
+\end{cases}$. Khá hiển nhiên, chúng ta cũng có 
+\begin{equation*}
+   (A \setminus C) \cup (C \setminus A) = (B \setminus C) \cup (C \setminus A)
+\end{equation*}
+và từ đó, $A \vartriangle C = B \vartriangle C$.
+
+Chứng minh chiều ngược lại, bắt đầu với điều kiện \coloringDodgerblue{$A \vartriangle C = B \vartriangle C$}. Giả sử $A \neq B$. Khi đó, tồn tại $x$ sao cho $x \in A$ và $x \notin B$ hoặc $x \in B$ và $x \notin A$. 
+\begin{itemize}
+   \item Xét trường hợp khi $x \in A$ và $x \notin B$. Từ đây, chúng ta có thể tự đặt câu hỏi ``$x$ có thuộc $C$ không?''. Nếu $x$ nằm trong $C$, chúng ta có $\begin{cases}
+      x \in A \cap C \\
+      x \in B \cup C \\
+      x \notin B \cap C
+   \end{cases}$. Và từ định nghĩa tương đương $$\begin{cases}
+      A \vartriangle C = (A \cup C) \setminus (A \cap C) \\
+      B \vartriangle C = (B \cup C) \setminus (B \cap C)
+   \end{cases},$$ chúng ta suy ra được $
+      \begin{cases}
+         x \notin A \vartriangle C \\
+         x \in B \vartriangle C
+      \end{cases}$.
+
+   Nếu $x$ không nằm trong $C$, trái lại, chúng ta sẽ có $\begin{cases}
+      x \in A \cup C \\
+      x \notin A \cap C \\
+      x \notin B \cup C
+   \end{cases}$. Do đó, $\begin{cases}
+      x \in A \vartriangle C \\
+      x \notin B \vartriangle C 
+   \end{cases}$.
+
+   Vậy, luôn tồn tại phần tử $x$ không thỏa mãn $x \in A \vartriangle C \iff x \notin B \vartriangle C$. Tuy nhiên, điều này mâu thuẫn với $A \vartriangle C = B \vartriangle C$.
+   \item Xét trường hợp khi $x \in B$ và $x \notin A$. Với lập luận tương tự, chúng ta cũng sẽ có mâu thuẫn như trên.
+\end{itemize}
+
+Vì mâu thuẫn là không thể tránh khỏi, cần phải có $\neg A \neq B$, hay $A = B$.
+
+Từ đó, chúng ta có thể kết hợp hai chiều và suy ra điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. 

@@ -116,7 +116,8 @@ Chúng ta đặt $S$ bởi một kí hiệu quen thuộc hơn là $\{A; B; C\}$.
                   \bigcup A = \bigcup B \\
                   A \cup C = B \cup C
                \end{cases}$;
-      \item $(A \cup B) \cup C = A \cup (B \cup C) = \bigcup \{A; B; C\}$.
+      \item $(A \cup B) \cup C = A \cup (B \cup C) = \bigcup \{A; B; C\}$;
+      \item $\bigcup A \cup \bigcup B = \bigcup(A \cup B)$.
    \end{enumerate}
 \end{multicols}
 
@@ -237,3 +238,32 @@ Tất cả ba trường hợp đều cho kết quả $z \in (A \cup B) \cup C$. 
 Từ hai điều trên, suy ra $(A \cup B) \cup C = \bigcup \{A; B; C\}$.
 
 Áp dụng lập luận biến đổi hoàn toàn tương tự, chúng ta cũng có được $A \cup (B \cup C) = \bigcup \{A; B; C\}$. Do đó, kéo theo $(A \cup B) \cup C = A \cup (B \cup C) = \bigcup \{A; B; C\}$. Chúng ta có điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Với mọi $x$, 
+\begin{align*}
+   x \in \bigcup A \cup \bigcup B &\iff x \in \bigcup A \lor x \in \bigcup B; \\
+   x \in \bigcup A \cup \bigcup B &\iff \left[\begin{array}{l}
+      \exists z, (z \in A \land x \in z) \\
+      \exists z, (z \in B \land x \in z)
+   \end{array}\right. \equationexplanation{tiên đề hợp}; \\
+   x \in \bigcup A \cup \bigcup B &\iff \exists z, (z \in A \land x \in z \lor z \in B \land x \in z); \\
+   x \in \bigcup A \cup \bigcup B &\iff \exists z, \left((z \in A \lor z \in B) \land x \in z\right); \\
+   x \in \bigcup A \cup \bigcup B &\iff \exists z, (z \in A \cup B \land x \in z); \\
+   x \in \bigcup A \cup \bigcup B &\iff x \in \bigcup (A \cup B).
+\end{align*}
+Vậy $\bigcup A \cup \bigcup B = \bigcup (A \cup B)$. Điều phải chứng minh.
+
+\exercise Cho tập hợp $x$ thỏa mãn $A \cup x = A$ với mọi tập hợp $A$. Chứng minh rằng $x = \varnothing$.
+
+\solution
+
+Cụ thể hóa mệnh đề $\forall A, A \cup x = A$ bằng việc thay $A$ bởi $\varnothing$, chúng ta có
+\begin{equation*}
+   \varnothing \cup x = \varnothing.
+\end{equation*}
+Do $\varnothing \subseteq x$ nên $\varnothing \cup x = x$. Vì vậy, 
+\begin{equation*}
+   x = \varnothing.
+\end{equation*}
+Điều phải chứng minh.
