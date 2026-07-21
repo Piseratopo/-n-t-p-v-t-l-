@@ -1,0 +1,19 @@
+\section{Quan hệ}
+
+\ 
+
+Mỗi người đều có nhiều mối quan hệ --- thứ mà mọi sự vật hiện tượng trong thế giới vật lí cũng có --- riêng biệt nhưng đôi khi lại có sự tương tác với nhau. Do tính phổ biến của quan hệ, toán học cũng xây dựng khái niệm cho quan hệ, hình thành một cách chặt chẽ từ tích Đề-các\footnote{René Descartes (1596 -- 1650).} của hai tập hợp. Cụ thể, \defText{tích Đề-các}\footnote{Đề-các không đề xuất khái niệm này, do thời đó khái niệm ``tập hợp'' còn chưa sinh ra. Việc đặt tên như vậy là để tôn vinh người đã khai sinh ra hình học giải tích.} của hai tập hợp $A$ và $B$ được định nghĩa từ tiên đề tách như sau:
+\begin{equation*}
+   \defMath{A \times B = \{x \in \mathfrak{P}(\mathfrak{P}(A \cup B)) \mid \exists a, \exists b, (a \in A \land b \in B \land x = (a; b))\}}.
+\end{equation*}
+
+Một \defText{quan hệ} $R$ trên $A \times B$ được định nghĩa đơn giản là một tập con nào đó của $A \times B$. Thông thường, chúng ta viết $a R b$ nếu $(a; b) \in R$. Dễ thấy rằng không phải mọi phần tử trong $A$ sẽ có phần tử quan hệ tương ứng trong $B$ và ngược lại cũng như vậy. Do đó, chúng ta sẽ định nghĩa thêm những giá trị có thể có quan hệ. Cụ thể, định nghĩa \defText{tập xác định} là
+\begin{equation*}
+   \defMath{\{a \in A \mid \exists b \in B, a R b\}}
+\end{equation*}
+và định nghĩa \defText{tập giá trị} là
+\begin{equation*}
+   \defMath{\{b \in B \mid \exists a \in A, a R b\}}.
+\end{equation*}
+
+Hãy lấy một vài ví dụ. Nếu $A$ là tập hợp thì $\in_A = \{x \in A \times \mathfrak{P}(A) \mid \exists b \in B, x = (b; B)\}$ là một quan hệ trên $A \times \mathfrak{P}(A)$.

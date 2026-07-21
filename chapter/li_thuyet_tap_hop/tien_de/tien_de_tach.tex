@@ -72,11 +72,11 @@ $$
 $$
 Dưới dạng ngôn ngữ, chúng ta sẽ nói:
 \begin{center}
-   ``Với mọi, nếu $z$ thuộc $x$ thì $V(z)$.'',
+   ``Với mọi $z$, nếu $z$ thuộc $x$ thì $V(z)$.'',
 \end{center}
 nhưng một cách phát biểu tự nhiên hơn sẽ là:
 \begin{center}
-   ``Với mọi $z$ thuộc $x$, $V(z)$.''
+   ``Với mọi $z$ thuộc $x$, $V(z)$.''.
 \end{center}
 Từ cách nói đó, chúng ta có cách viết rút gọn với mọi tập hợp $x$ và vị từ $V()$ như sau:
 \begin{equation*}
@@ -211,7 +211,7 @@ Một phép toán nữa, khá ít dùng, được gọi là \defText{hiệu đ�
 \solution 
 
 Gọi $z$ là một phần tử trong $\bigcap \{x; y\}$. Khi đó, theo định nghĩa $$\forall a \in \{x; y\}, z \in a.$$
-Có $x \in \{x; y\}$ nên $z \in x$, $y \in \{x; y\}$ nên $z \in y$. Do đó, $z \in x \land z \in y$, dẫn đến $z \in x \cup y$. Vậy, $\bigcap \{x; y\} \subseteq x \cap y$.
+Có $x \in \{x; y\}$ nên $z \in x$, $y \in \{x; y\}$ nên $z \in y$. Do đó, $z \in x \land z \in y$, dẫn đến $z \in x \cap y$. Vậy, $\bigcap \{x; y\} \subseteq x \cap y$.
 
 Ngược lại, giả sử $w \in x \cap y$. Khi này, $w \in x$ và $w \in y$. Nhắc lại rằng $\forall b, b \in \{x; y\} \iff \left[\begin{array}{l}
    b = x \\
@@ -236,7 +236,7 @@ Kết hợp hai kết quả, chúng ta có $\bigcap \{x; y\} = x \cap y$, theo c
                A \cap C = B \cap C
             \end{cases}$; 
       \item $(A \cap B) \cap C = A \cap (B \cap C) = \bigcap \{A; B; C\}$;
-      \item $\mathfrak{P}(A \cap B) = \mathfrak{P}(A) \cap \mathfrak{P}(B)$.
+      \item $\left(\bigcap A\right) \cap \left(\bigcap B\right) = \bigcap (A \cup B)$.
    \end{enumerate} 
 \end{multicols}
 
@@ -457,58 +457,52 @@ Bỏ lượng từ rỗng $\forall y$ đi để được $\forall y \in \{A; B; 
 Do vậy $\bigcap\{A; B; C\} = (A \cap B) \cap C$. Từ đây, theo tính chất bắc cầu của \coloringCrimson{=}, dễ thấy điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}. Với mọi $x$,
+\arabic{subexercise}. Với mọi $x$, 
 \begin{align*}
-   x \in \mathfrak{P}(A \cap B) &\iff x \subseteq A \cap B \equationexplanation{định nghĩa tập lũy thừa}; \\
-   x \in \mathfrak{P}(A \cap B) &\iff \forall y, (y \in x \implies y \in A \cap B) \equationexplanation{định nghĩa tập con}; \\
-   x \in \mathfrak{P}(A \cap B) &\iff \forall y, (y \in x \implies y \in A \land y \in B) \equationexplanation{định nghĩa giao hai tập hợp}; \\
-   x \in \mathfrak{P}(A \cap B) &\iff \forall y, \begin{cases}
-      y \in x \implies y \in A \\
-      y \in x \implies y \in B
-   \end{cases} \equationexplanation{$(P \implies (Q \land R)) \iff \begin{cases}
-      P \implies Q \\
-      P \implies R
-   \end{cases}$}; \\
-   x \in \mathfrak{P}(A \cap B) &\iff \begin{cases}
-      \forall y, y \in x \implies y \in A \\
-      \forall y, y \in x \implies y \in B
-   \end{cases} \equationexplanation{\begin{tabular}{l}
-      tính chất phân phối của lượng từ \\
-      phổ quát với phép hội
-   \end{tabular}}; \\
-   x \in \mathfrak{P}(A \cap B) &\iff x \subseteq A \land x \subseteq B \equationexplanation{định nghĩa tập con}; \\
-   x \in \mathfrak{P}(A \cap B) &\iff x \in \mathfrak{P}(A) \land x \in \mathfrak{P}(B) \equationexplanation{định nghĩa tập lũy thừa}; \\
-   x \in \mathfrak{P}(A \cap B) &\iff x \in \mathfrak{P}(A) \cap \mathfrak{P}(B) \equationexplanation{định nghĩa giao hai tập hợp}.
-\end{align*} 
-Và từ đó, $\mathfrak{P}(A \cap B) = \mathfrak{P}(A) \cap \mathfrak{P}(B)$. Điều phải chứng minh.
+   x \in \left(\bigcap A\right) \cap \left(\bigcap B\right) &\iff x \in \bigcap A \land x \in \bigcap B; \\
+   x \in \left(\bigcap A\right) \cap \left(\bigcap B\right) &\iff \forall y \in A, x \in y \land \forall y \in B, x \in y; \\
+   x \in \left(\bigcap A\right) \cap \left(\bigcap B\right) &\iff \forall y, \left((y \in A \implies x \in y) \land (y \in B \implies x \in y)\right); \\
+   x \in \left(\bigcap A\right) \cap \left(\bigcap B\right) &\iff \forall y, \left((y \in A \lor y \in B) \implies x \in y\right) \equationexplanation{quy tắc chia trường hợp}; \\
+   x \in \left(\bigcap A\right) \cap \left(\bigcap B\right) &\iff \forall y, (y \in A \cup B \implies x \in y); \\
+   x \in \left(\bigcap A\right) \cap \left(\bigcap B\right) &\iff x \in \bigcap (A \cup B).
+\end{align*}
+Dễ thấy điều phải chứng minh.
 
 \exercise Cho $A, B, C, D, E$ là các tập hợp. Chứng minh rằng
-\begin{enumerate}
-   \item $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$;
-   \item $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$;
-   \item $A \cup B = A \cap C \iff \begin{cases}
-      B \subseteq A \\
-      A \subseteq C
-   \end{cases}$;
-   \item $\begin{cases}
-      A \cap B = A \cap C \\
-      A \cup B = A \cup C
-   \end{cases} \iff B = C$;
-   \item $A \cap (B \cup (A \cap C)) = A \cap (B \cup C)$;
-   \item $A \cup (B \cap (A \cup C)) = A \cup (B \cap C)$;
-   \item $A \cap B = C \cap D \implies (A \cup (B \cap C)) \cap (A \cup (B \cap D)) = A$;
-   \item $\begin{cases}
-      A \cap B = C\cap D\\
-      C \cup D = E \\
-      C \subseteq A \\
-      D \subseteq B \\
-      A \subseteq E \\
-      B \subseteq E
-   \end{cases} \implies \begin{cases}
-      C = A\\
-      D = B
-   \end{cases}$.
-\end{enumerate}
+\begin{multicols}{2}
+   \begin{enumerate}
+      \item $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$;
+      \item $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$;
+      \item $A \cup B = A \cap C \iff \begin{cases}
+         B \subseteq A \\
+         A \subseteq C
+      \end{cases}$;
+      \item $\begin{cases}
+         A \cap B = A \cap C \\
+         A \cup B = A \cup C
+      \end{cases} \iff B = C$;
+      \item $A \cap (B \cup (A \cap C)) = A \cap (B \cup C)$;
+      \item $A \cup (B \cap (A \cup C)) = A \cup (B \cap C)$;
+      \item $\begin{array}{l}
+         A \cap B = C \cap D \implies \\
+         (A \cup (B \cap C)) \cap (A \cup (B \cap D)) = A;
+      \end{array}$
+      \item $\begin{cases}
+         A \cap B = C\cap D\\
+         C \cup D = E \\
+         C \subseteq A \\
+         D \subseteq B \\
+         A \subseteq E \\
+         B \subseteq E
+      \end{cases} \implies \begin{cases}
+         C = A\\
+         D = B
+      \end{cases}$;
+      \item $\mathfrak{P}(A \cap B) = \mathfrak{P}(A) \cap \mathfrak{P}(B)$;
+      \item $\forall a, \left(a \in \mathfrak{P}\left(\bigcap A\right) \iff \forall y \in A, a \in \mathfrak{P}(y)\right)$.
+   \end{enumerate}
+\end{multicols}
+
 \solution
 
 \setcounter{subexercise}{1}
@@ -607,6 +601,68 @@ Sử dụng phương pháp chứng minh bằng phản chứng, cần phải có 
 
 Với lập luận tương đương, chúng ta cũng có thể suy ra $D = B$. Kết hợp lại để có được điều phải chứng minh.
 
+\stepcounter{subexercise}
+\arabic{subexercise}. Với mọi $x$,
+\begin{align*}
+   x \in \mathfrak{P}(A \cap B) &\iff x \subseteq A \cap B \equationexplanation{định nghĩa tập lũy thừa}; \\
+   x \in \mathfrak{P}(A \cap B) &\iff \forall y, (y \in x \implies y \in A \cap B) \equationexplanation{định nghĩa tập con}; \\
+   x \in \mathfrak{P}(A \cap B) &\iff \forall y, (y \in x \implies y \in A \land y \in B) \equationexplanation{định nghĩa giao hai tập hợp}; \\
+   x \in \mathfrak{P}(A \cap B) &\iff \forall y, \begin{cases}
+      y \in x \implies y \in A \\
+      y \in x \implies y \in B
+   \end{cases} \equationexplanation{$(P \implies (Q \land R)) \iff \begin{cases}
+      P \implies Q \\
+      P \implies R
+   \end{cases}$}; \\
+   x \in \mathfrak{P}(A \cap B) &\iff \begin{cases}
+      \forall y, y \in x \implies y \in A \\
+      \forall y, y \in x \implies y \in B
+   \end{cases} \equationexplanation{\begin{tabular}{l}
+      tính chất phân phối của lượng từ \\
+      phổ quát với phép hội
+   \end{tabular}}; \\
+   x \in \mathfrak{P}(A \cap B) &\iff x \subseteq A \land x \subseteq B \equationexplanation{định nghĩa tập con}; \\
+   x \in \mathfrak{P}(A \cap B) &\iff x \in \mathfrak{P}(A) \land x \in \mathfrak{P}(B) \equationexplanation{định nghĩa tập lũy thừa}; \\
+   x \in \mathfrak{P}(A \cap B) &\iff x \in \mathfrak{P}(A) \cap \mathfrak{P}(B) \equationexplanation{định nghĩa giao hai tập hợp}.
+\end{align*} 
+Và từ đó, $\mathfrak{P}(A \cap B) = \mathfrak{P}(A) \cap \mathfrak{P}(B)$. Điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Lấy phần tử $a$ bất kì thuộc $\mathfrak{P}\left(\bigcap A\right)$. Theo định nghĩa tập lũy thừa, $$a \subseteq \bigcap A.$$
+Điều này tương đương với khẳng định với mọi $x \in a$, $x \in \bigcap A$. Theo định nghĩa của giao, $x$ khi này sẽ thỏa mãn hai mệnh đề --- $x \in \bigcup A$ và $\forall y \in A, x \in y$. Hai mệnh đề này có thể rút gọn thành một mệnh đề tương đương $\forall y \in A, x \in y$ do $$\forall y \in A, x \in y \implies x \in \bigcup A$$ như đã chứng minh từ trước. Như vậy,
+\begin{equation*}
+   \forall x \in a, \forall y \in A, x \in y.
+\end{equation*}
+Biến đổi tương đương mệnh đề này sử dụng các tính chất của lô-gích diễn dịch,
+\begin{align*}
+   \forall x \in a, \forall y \in A, x \in y &\iff \forall x, \left(x \in a \implies \forall y, (y \in A \implies x \in y)\right); \\
+   \forall x \in a, \forall y \in A, x \in y &\iff \forall x, \left(\neg x \in a \lor \forall y, (y \in A \implies x \in y)\right) \equationexplanation{$(P \implies Q) \iff (\neg P \lor Q)$}; \\
+   \forall x \in a, \forall y \in A, x \in y &\iff \forall x, \overline{x \in a \land \neg \forall y, (y \in A \implies x \in y)} \equationexplanation{định luật Đờ Moóc-gan}; \\
+   \forall x \in a, \forall y \in A, x \in y &\iff \forall x, \overline{x \in a \land \exists y, \overline{y \in A \implies x \in y}} \equationexplanation{phủ định lượng từ phổ quát}; \\
+   \forall x \in a, \forall y \in A, x \in y &\iff \forall x, \overline{x \in a \land \overline{z \in A \implies x \in z}} \equationexplanation{cụ thể hóa $y$ bởi $z$}; \\
+   \forall x \in a, \forall y \in A, x \in y &\iff \forall x, \overline{\exists y, \left(x \in a \land \overline{y \in A \implies x \in y}\right)} \equationexplanation{tồn tại hóa $z$ trở lại $y$}; \\
+   \forall x \in a, \forall y \in A, x \in y &\iff \forall x, \forall y, \left(\neg x \in a \land (y \in A \implies x \in y)\right); \\
+   \forall x \in a, \forall y \in A, x \in y &\iff \forall x, \forall y, \left(x \in a \implies (y \in A \implies x \in y)\right).
+\end{align*}
+Tương đương, chúng ta cũng có
+\begin{align*}
+   \forall y \in A, \forall x \in a, x \in y \iff \forall y, \forall x, \left(y \in A \implies (x \in a \implies x \in y)\right).
+\end{align*}
+Ngoài ra, có được rằng
+\begin{align*}
+   \forall x, \forall y, \left(x \in a \implies (y \in A \implies x \in y)\right) &\iff \forall y, \forall x, \left(x \in a \implies (y \in A \implies x \in y)\right)\\
+   & \coloringCrimson{\left(\text{tính chất giao hoán lượng từ phổ quát}\right)}; \\
+   \forall x, \forall y, \left(x \in a \implies (y \in A \implies x \in y)\right) &\iff \forall y, \forall x, \left(y \in A \implies (x \in a \implies x \in y)\right)\\
+   & \coloringCrimson{\left((P \implies (Q \implies R)) \iff (Q \implies (P \implies R))\right)}.
+\end{align*}
+Do vậy, theo tính chất bắc cầu của phép đẳng giá,
+\begin{align*}
+   \forall x \in a, \forall y \in A, x \in y &\iff \forall y \in A, \forall x \in a, x \in y \\
+   a \in \mathfrak{P}\left(\bigcap A\right) &\iff \forall y \in A, a \subseteq y \\
+   a \in \mathfrak{P}\left(\bigcap A\right) &\iff \forall y \in A, a \in \mathfrak{P}(y). \\
+\end{align*}
+Qua đó, điều phải chứng minh.
+
 \exercise Cho $A, B, C$ là các tập hợp. Chứng minh rằng
 \begin{multicols}{2}
    \begin{enumerate}
@@ -630,9 +686,19 @@ Với lập luận tương đương, chúng ta cũng có thể suy ra $D = B$. K
       \item $A \subseteq B \iff \begin{cases}
          A \cap C \subseteq B \cap C \\
          A \setminus C \subseteq B \setminus C
-      \end{cases}$.
+      \end{cases}$;
+      \item $\mathfrak{P}(A \setminus B) \setminus \{\varnothing\} \subseteq \mathfrak{P}(A) \setminus \mathfrak{P}(B)$;
+      \setcounter{subexercise}{\value{enumi}}
    \end{enumerate}
 \end{multicols}
+
+\begin{enumerate}
+   \setcounter{enumi}{\value{subexercise}}
+   \item $\mathfrak{P}(A \setminus B) \setminus \{\varnothing\} = \mathfrak{P}(A) \setminus \mathfrak{P}(B) \iff \left[\begin{array}{l}
+      A \cap B = \varnothing \\
+      A \subseteq B
+   \end{array}\right.$.
+\end{enumerate}
 
 \solution
 
@@ -697,10 +763,10 @@ Do đó,
 
 Lấy một phần tử $y \in (A \setminus B) \cup (A \cap B)$. Theo định nghĩa phép hợp,
 \begin{itemize}
-   \item $x \in A \setminus B$. Theo định nghĩa phép hiệu, $x \in A$ (và $x \notin B$);  
-   \item Hoặc $x \in A \cap B$. Theo định nghĩa phép giao, $x \in A$ (và $x \in B$).
+   \item $y \in A \setminus B$. Theo định nghĩa phép hiệu, $y \in A$ (và $y \notin B$);  
+   \item Hoặc $y \in A \cap B$. Theo định nghĩa phép giao, $y \in A$ (và $y \in B$).
 \end{itemize}
-Trong cả hai trường hợp, chúng ta đều có $x \in A$.\\
+Trong cả hai trường hợp, chúng ta đều có $y \in A$.\\
 Vì vậy,
 \[ (A \setminus B) \cup (A \cap B) \subseteq A. \]
 
@@ -884,6 +950,98 @@ Do mọi trường hợp đều ra mâu thuẫn, nên điều giả sử ban đ�
 
 Kết hợp hai chiều, chúng ta có điều phải chứng minh.
 
+\stepcounter{subexercise}
+\arabic{subexercise}. Với mọi tập hợp $x \neq \varnothing$, nếu $x \in \mathfrak{P}(A \setminus B)$ thì $x \subseteq A \setminus B$. 
+
+Trước hết, cần phải thấy rằng $A \setminus B \subseteq A$ nên $x \subseteq A$ hay $x \in \mathfrak{P}(A)$. Ngoài ra, phải tồn tại $y$ để $y\in x$. Nếu $y$ này cũng thỏa mãn $y \in B$ thì dễ thấy được rằng $y \notin A \setminus B$ và mâu thuẫn với $x \subseteq A \setminus B$. Do đó, $y \notin B$, dẫn đến $x \not \subseteq B$, hiểu theo cách khác, $x \notin \mathfrak{P}(B)$.
+
+Vậy, $x \in \mathfrak{P}(A) \setminus \mathfrak{P}(B)$. Tổng hợp lại, chúng ta có
+\begin{align*}
+   \forall x, &\left( \begin{cases}
+      x \in \mathfrak{P}(A \setminus B) \\
+      x \neq \varnothing
+   \end{cases} \implies x \in \mathfrak{P}(A) \setminus \mathfrak{P}(B) \right),\text{~hay} \\
+   \forall x, &\left( x \in \mathfrak{P}(A \setminus B) \setminus \{\varnothing\} \implies x \in \mathfrak{P}(A) \setminus \mathfrak{P}(B) \right).
+\end{align*}
+Từ đó, theo định nghĩa tập con, chúng ta có điều cần phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Đặt $\vetrai = \mathfrak{P}(A \setminus B) \setminus \{\varnothing\}$ và $\vephai = \mathfrak{P}(A) \setminus \mathfrak{P}(B)$.
+
+Đầu tiên, giả sử \coloringCrimson{$\left[\begin{array}{l}
+      A \cap B = \varnothing \\
+      A \subseteq B
+   \end{array}\right.$}. Xét hai trường hợp:
+\begin{itemize}
+   \item Trường hợp 1 --- \coloringCrimson{$A \cap B = \varnothing$}. Chúng ta có $A \setminus B = A$. Cho nên, \begin{equation*}
+      \vetrai = \mathfrak{P}(A) \setminus \{\varnothing\}.
+   \end{equation*}
+   Giả sử tồn tại phần tử $x$ khác $\varnothing$ sao cho $x \in \mathfrak{P}(A)$ và $x \in \mathfrak{P}(B)$. Khi này, $x \subseteq A$ và $x \subseteq B$. Do $x$ không rỗng nên tồn tại $y \in x$. Dẫn đến $y$ thuộc cả $A$ và $B$, nhưng như thế $A \cap B \neq \varnothing$, mâu thuẫn. Vì vậy, mọi $x \neq \varnothing$ thì không thuộc $\mathfrak{P}(A) \cap \mathfrak{P}(B)$. Thêm vào $\varnothing \in \mathfrak{P}(A)$ và $\varnothing \in \mathfrak{P}(B)$ đã chứng minh trước đó,
+   \begin{align*}
+      \mathfrak{P}(A) \cap \mathfrak{P}(B) = \{\varnothing\}. 
+   \end{align*}
+   Do đó,
+   \begin{align*}
+      \vephai &= \mathfrak{P}(A) \setminus (\mathfrak{P}(A) \cap \mathfrak{P}(B)) \\
+         &= \mathfrak{P}(A) \setminus \{\varnothing\} \\
+         &= \vetrai.
+   \end{align*}
+   \item Trường hợp 2 --- \coloringDodgerblue{$A \subseteq B$}, khi này, $\begin{cases}
+      A \setminus B = \varnothing \\
+      A \subseteq B 
+   \end{cases}$. Do đó, 
+   \begin{align*}
+      \vetrai &= \mathfrak{P}(\varnothing) \setminus \{\varnothing\} \\
+         &= \{\varnothing\} \setminus \{\varnothing\} \\
+         &= \varnothing;
+   \end{align*} và $\mathfrak{P}(A) \subseteq \mathfrak{P}(B)$ để có
+   \begin{align*}
+      \vephai = \mathfrak{P}(A) \setminus \mathfrak{P}(B) = \varnothing. 
+   \end{align*}
+   Và từ đó, $\vetrai = \vephai$.
+\end{itemize}
+
+Theo quy tắc chia trường hợp, chúng ta có 
+\begin{equation*}
+   \left[\begin{array}{l}
+      A \cap B = \varnothing \\
+      A \subseteq B
+   \end{array}\right. \implies \mathfrak{P}(A \setminus B) \setminus \{\varnothing\} = \mathfrak{P}(A) \setminus \mathfrak{P}(B).
+\end{equation*}
+
+Ngược lại, giả sử $\left[\begin{array}{l}
+   A \cap B = \varnothing \\
+   A \subseteq B
+\end{array}\right.$ không xảy ra, hay hiểu theo cách khác, chúng ta cho rằng \coloringDodgerblue{$\begin{cases}
+   A \cap B \neq \varnothing \\
+   A \not\subseteq B
+\end{cases}$}. Điều này cho chúng ta rằng hai tập $A \cap B$ và $A \setminus B$ đều phải khác rỗng. Phải tồn tại hai phần tử $u \in A \cap B$ và $v \in A \setminus B$. Từ tiên đề hợp, được phép đặt $S = \{u; v\}$. Chúng ta tự đặt câu hỏi: ``$S$ có thuộc tập hợp nào trong $\vephai$ và $\vetrai$?''.
+
+Có $u \notin A \setminus B$ do $u \in B$, nên $S \not\subseteq A \setminus B$. Vì vậy, $S \notin \mathfrak{P}(A \setminus B)$. Cũng suy ra được $S \notin \mathfrak{P}(A \setminus B) \setminus \{\varnothing\}$ hay $S \notin \vetrai$. 
+
+Nhưng, có thể thấy $S \subseteq A$ do $u$ và $v$ đồng thời thuộc $A$, nhưng $S \not\subseteq B$ do $v \notin B$, nên theo định nghĩa tập lũy thừa
+$$\begin{cases}
+   S \in \mathfrak{P}(A) \\
+   S \notin \mathfrak{P}(B)
+\end{cases}$$ và từ đó chúng ta suy ra $S \in \vephai$.
+
+Vì tồn tại một phần tử không thuộc $\vetrai$ nhưng lại nằm trong $\vephai$ nên $\vetrai \neq \vephai$. Từ đó, chúng ta có được
+\begin{equation*}
+   \begin{cases}
+      A \cap B \neq \varnothing \\
+      A \not\subseteq B
+   \end{cases} \implies \vetrai \neq \vephai.
+\end{equation*}
+Mệnh đề này tương đương với 
+\begin{equation*}
+   \mathfrak{P}(A \setminus B) \setminus \{\varnothing\} = \mathfrak{P}(A) \setminus \mathfrak{P}(B) \implies \left[\begin{array}{l}
+      A \cap B = \varnothing \\
+      A \subseteq B
+   \end{array}\right. .
+\end{equation*}
+
+Từ hai chiều, chúng ta có điều phải chứng minh.
+
 \exercise Cho $A, B, C$ là các tập hợp. Chứng minh rằng
 \begin{multicols}{2}
    \begin{enumerate}
@@ -956,7 +1114,7 @@ Dẫn đến, từ \refeq{eq:li_thuyet_tap_hop:tien_de:tien_de_tach:bthdx_3},
    A &= (A \cup B) \setminus \varnothing \\
     &= A \cup B.
 \end{align*}
-Suy ra $B \subseteq A$. Nếu tồn tại phần tử $y \in B$, $y$ cũng phải thuộc $A$ do định nghĩa tập con, khiến cho $y \in A \cap B$, mâu thuẫn với $A \cap B = \varnothing$. Do đó, không thể có $y \in B$. Chúng ta có thể suy luận ra được $B = \emptyset$.
+Suy ra $B \subseteq A$. Nếu tồn tại phần tử $y \in B$, $y$ cũng phải thuộc $A$ do định nghĩa tập con, khiến cho $y \in A \cap B$, mâu thuẫn với $A \cap B = \varnothing$. Do đó, không thể có $y \in B$. Chúng ta có thể suy luận ra được $B = \varnothing$.
 
 Có $\begin{cases}
    B = \varnothing \implies A \vartriangle B = A \\
@@ -1027,7 +1185,50 @@ Chứng minh chiều ngược lại, bắt đầu với điều kiện \coloring
 
 Vì mâu thuẫn là không thể tránh khỏi, cần phải có $\neg A \neq B$, hay $A = B$.
 
-Từ đó, chúng ta có thể kết hợp hai chiều và suy ra điều phải chứng minh.
+Từ đó, chúng ta có thể kết hợp hai chiều và suy ra điều phải chứng minh. 
 
 \stepcounter{subexercise}
-\arabic{subexercise}. 
+\arabic{subexercise}. Trước khi đi vào bài toán, chúng ta sẽ chứng minh một tính chất cơ bản trước, $$\forall x, \left(x \in P \vartriangle Q \iff x \in P \oplus x \in Q\right)$$ với $P$ và $Q$ là hai tập hợp.
+
+Thật vậy, chúng ta có
+\begin{align*}
+   \forall x, &\left(x \in P \vartriangle Q \iff x \in (P \setminus Q) \lor (Q \setminus P)\right); \\
+   \forall x, &\left(x \in P \vartriangle Q \iff x \in P \setminus Q \lor x \in P \setminus Q\right) ; \\
+   \forall x, &\left(x \in P \vartriangle Q \iff x \in P \land x \notin Q \lor x \notin P \land x \in Q\right) ; \\
+   \forall x, &\left(x \in P \vartriangle Q \iff x \in P \oplus x \in Q\right) \equationexplanation{$P \land \neg Q \lor \neg P \land Q \iff P \oplus Q$}.
+\end{align*}
+
+Từ kết quả đó, chúng ta dễ dàng có được
+\begin{align*}
+   \forall &x, \begin{cases}
+      x \in (A \vartriangle B) \vartriangle C \iff x \in A \vartriangle B \oplus x \in C \\
+      x \in A \vartriangle (B \vartriangle C) \iff x \in A \oplus x \in B \vartriangle C 
+   \end{cases}; \\
+   \forall &x, \begin{cases}
+      x \in (A \vartriangle B) \vartriangle C \iff (x \in A \oplus x \in B) \oplus x \in C \\
+      x \in A \vartriangle (B \vartriangle C) \iff x \in A \oplus (x \in B \oplus x \in C) 
+   \end{cases}.
+\end{align*}
+Ngoài ra, do $(P \oplus Q) \oplus R \iff P \oplus (Q \oplus R)$ với mọi mệnh đề $P$, $Q$, $R$ nên 
+\begin{equation*}
+   \forall x, (x \in (A \vartriangle B) \vartriangle C \iff x \in A \vartriangle (B \vartriangle C)).
+\end{equation*}
+Và từ đó, điều phải chứng minh là hiển nhiên.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Giả sử $A \vartriangle B = C$. Biến đổi biểu thức này dùng những kết quả đã có
+\begin{align*}
+   (A \vartriangle B) \vartriangle C &= C \vartriangle C; \\
+   A \vartriangle (B \vartriangle C) &= \varnothing; \\
+   A \vartriangle (A \vartriangle (B \vartriangle C)) &= A \vartriangle \varnothing; \\
+   (A \vartriangle A) \vartriangle (B \vartriangle C) &= A; \\
+   B \vartriangle C &= A.
+\end{align*}
+Do đó, $A \vartriangle B = C \implies B \vartriangle C = A$. Sử dụng kết quả này, chúng ta cũng có $B \vartriangle C = A \implies C \vartriangle A = B$. Từ tính chất bắc cầu, có được
+\begin{equation*}
+   A \vartriangle B = C \implies \begin{cases}
+      B \vartriangle C = A \\
+      C \vartriangle A = B
+   \end{cases}.
+\end{equation*}
+Điều phải chứng minh.

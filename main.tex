@@ -1,81 +1,51 @@
-% !TeX program = xelatex
-% !TeX BIB program = biber
-% !TeX encoding = UTF-8
-
 \documentclass[a4paper, titlepage, openany]{book}
+
+% ==========================================
+% 1. GÓI LỆNH NỀN TẢNG & NGÔN NGỮ
+% ==========================================
 \usepackage[vietnamese]{babel}
 \usepackage{fontspec}
+\usepackage{xeCJK}
 \usepackage[a4paper]{geometry}
-\usepackage[explicit]{titlesec}
-\usepackage[
-   backend=biber,
-   style=numeric,
-   maxbibnames=99,
-   sorting=nty,
-   defernumbers=true
-]{biblatex}
-\usepackage{amsmath, amssymb, blindtext, bm, calc, caption, enumitem, fancyhdr, float, hyperref, icomma, lmodern, longtable, makecell, mathrsfs, multicol, multirow, pgfplots, siunitx, steinmetz, tabularray, tikz, tikz-3dplot, varwidth, wrapfig2, xcolor, xparse, xeCJK}
 \usepackage{bookmark}
+\usepackage{hyperref} % Nên load gần cuối hoặc trước các gói chỉnh tiêu đề
 
-% Tài liệu tham khảo
-\DeclareDelimFormat{multinamedelim}{\addcomma\space}
-\DeclareDelimFormat{finalnamedelim}{\space và\space}
-\renewbibmacro{in:}{\addsemicolon\space}
+% ==========================================
+% 2. PHÔNG CHỮ & KÝ TỰ ĐẶC BIỆT
+% ==========================================
+\setCJKmainfont[
+   Path= fonts/,
+   AutoFakeSlant=0.2,
+   AutoFakeBold=2.0
+]{DFKai-SB}
 
-\DeclareFieldFormat{pages}{#1}
+\newfontfamily{\emojifont}{Segoe UI Emoji}
+\newfontfamily{\symbolfont}{Segoe UI Symbol}
 
-\DeclareFieldFormat{volume}{\textbf{#1}}
-\DeclareFieldFormat{number}{(#1)}
-\renewbibmacro*{volume+number+eid}{%
-  \printfield{volume}%
-  \printfield{number}%
-  \setunit{\addcomma\space}%
-}
+\newcommand{\myemoji}[1]{{\emojifont #1}}
+\newcommand{\mysymbol}[1]{{\symbolfont #1}}
 
-
-\addbibresource{references.bib}
-
-% Tinh chỉnh Tikz
-\pgfplotsset{compat=1.18}
-
-\usetikzlibrary{arrows.meta, calc, decorations.pathmorphing, intersections, positioning, pgfplots.fillbetween, shadings, shapes.geometric}
-
-% Căn lề và khoảng cách
-\geometry{bindingoffset=0.5cm, inner=2cm, outer=2cm, top=2cm, bottom=2cm}
-
-% Chỉnh kiểu đầu và cuối trang
-\pagestyle{fancy}
-\fancyhf{} % Clear all
-
-% Định nghĩa lại kiểu trang plain cho các trang đầu chương/phần
-\assignpagestyle{\chapter}{fancy}
-\assignpagestyle{\part}{fancy}
-
-\fancyhead[LO]{\textcolor{colorEmphasisCyan}{\nouppercase{\leftmark}}} % Chapter on even pages
-\fancyhead[RE]{\textcolor{colorEmphasisCyan}{\nouppercase{\rightmark}}} % Section on odd pages
-\fancyhead[RO,LE]{\textcolor{colorEmphasisCyan}{\thepage}} % Page numbers
-
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\headrule}{\color{colorEmphasisCyan}\hrule width\headwidth height\headrulewidth} % Colored header line
-\renewcommand{\footrulewidth}{0pt}
-
-% \setlength{\headheight}{12pt}
-\setlength{\headsep}{0.5cm}
-
-% Thêm khoảng cách giữa các đoạn trong minipage
-\newlength{\recordparindent}
-\newenvironment{minipageindent}[1]{
-   \setlength{\recordparindent}{\parindent}
-   \setlength{\parindent}{0em}
-   \begin{minipage}{#1}
-   \setlength{\parindent}{\recordparindent}
-}{
-   \end{minipage}
-   \setlength{\parindent}{\recordparindent}
-}
+% ==========================================
+% 3. TOÁN HỌC - ĐỒ HỌA - BẢNG BIỂU
+% ==========================================
+% Toán học
+\usepackage{amsmath, amssymb, bm, mathrsfs, icomma, steinmetz}
 \allowdisplaybreaks
 
-% Định nghĩa tông màu
+% Đồ họa & Hình ảnh
+\usepackage{float, wrapfig2, caption}
+\usepackage{tikz, tikz-3dplot, pgfplots}
+
+% Bảng biểu & Danh sách
+\usepackage{longtable, makecell, tabularray, multicol, multirow}
+\usepackage{enumitem, calc, varwidth}
+
+% Tiện ích khác
+\usepackage{blindtext, xcolor, xparse}
+
+% ==========================================
+% 4. ĐỊNH NGHĨA TÔNG MÀU
+% ==========================================
 \definecolor{colorCrimson}{RGB}{220, 24, 78}
 \definecolor{colorDodgerblue}{RGB}{0, 120, 255}
 
@@ -84,140 +54,25 @@
 \definecolor{colorEmphasisGreen}{RGB}{0, 171, 77}
 \definecolor{colorEmphasisPurple}{RGB}{139, 66, 141}
 
-% Hàm định dạng
+% ==========================================
+% 5. CẤU HÌNH CÁC GÓI LỆNH (SETUP)
+% ==========================================
+% Cấu hình Hình học (Margins)
+\geometry{bindingoffset=0.5cm, inner=2cm, outer=2cm, top=2cm, bottom=2cm}
 
-\newcommand{\coloringCrimson}[1]{\textcolor{colorCrimson}{#1}}
-\newcommand{\coloringDodgerblue}[1]{\textcolor{colorDodgerblue}{#1}}
-\newcommand{\emphcolor}[1]{\textcolor{colorEmphasis}{\emph{#1}}}
-\newcommand{\emphcyanbf}[1]{\textcolor{colorEmphasisCyan}{\textbf{#1}}}
+% Cấu hình Đồ thị PGFPlots & TikZ
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, calc, decorations.pathmorphing, intersections, positioning, pgfplots.fillbetween, shadings, shapes.geometric}
 
-% Chỉnh phông chữ
-\setCJKmainfont[
-   Path= fonts/,
-   AutoFakeSlant=0.2,
-   AutoFakeBold=2.0
-]{DFKai-SB}
-\newfontfamily{\emojifont}{Segoe UI Emoji}
-\newfontfamily{\symbolfont}{Segoe UI Symbol}
-
-\newcommand{\myemoji}[1]{{\emojifont #1}}
-\newcommand{\mysymbol}[1]{{\symbolfont #1}}
-
-% Chỉnh sửa kết cấu bảng
-\setcellgapes{4pt}
-\makegapedcells
-\newcommand{\headerDivider}{\noalign{\hrule height 1.5pt}}
-
-% Đánh dấu định nghĩa
-\newcommand{\defText}[1]{\textbf{#1}}
-\newcommand{\defMath}[1]{\bm{#1}}
-
-\newcommand{\totalpartial}{\textit{ð}}
-
-\newcommand{\cauF}{\textit{勾}}
-\newcommand{\chungF}{\textit{壿}}
-\newcommand{\theF}{\textit{世}}
-\newcommand{\chanF}{\textit{振}}
-\newcommand{\leF}{\textit{禮}}
-\newcommand{\lonF}{\textit{穌}}
-\newcommand{\lonG}{\textit{吝}}
-
-\newcommand{\vietnamoutline}{%
-\begin{tikzpicture}[baseline=0.2ex]
-   \draw[colorEmphasis, thick] (0,0) rectangle (1.2em,0.8em);
-   
-   \node[fill=colorEmphasis, star, star points=5, star point height=0.06em, minimum size=0.25em, draw=colorEmphasis, thick, inner sep=0pt] at (0.6em,0.4em) {};
-\end{tikzpicture}%
-}
-
-\DeclareMathOperator{\Arg}{Arg}
-
-% Thông tin tài liệu
-\title{{\fontsize{72}{84}\selectfont \emphcyanbf{PFÉIV} \\ \huge La \emphcyanbf{P}hysique \emphcyanbf{F}ondamentale pour les \emphcyanbf{É}tudiants \emphcyanbf{I}diots au \emphcyanbf{V}ietnam}}
-
-\author{Bùi Nhật Minh}
-
-% Định dạng số
-\sisetup{
-    output-decimal-marker = {,}, % Dấu phẩy thập phân (kiểu VN/Pháp)
-    group-minimum-digits = 4,     % Chỉ phân cách khi có từ 4 chữ số trở lên
-    list-final-separator = { và },
-    range-phrase = { đến }
-}
-
-\newcommand{\rmnum}[1]{\romannumeral #1}
-\newcommand{\Rmnum}[1]{\uppercase\expandafter{\romannumeral #1}}
-% Xử lí số đếm của bài tập
-\newcounter{exercise}
-
-\NewDocumentCommand{\exercise}{o}{
-   \refstepcounter{exercise}
-   \noindent\textbf{\textcolor{colorEmphasisCyan}{Bài \arabic{exercise}:}}
-   \IfNoValueTF{#1}
-      {\label{ex:ex\arabic{exercise}}}
-      {\label{#1}}
-}
-
-% Xử lí số đếm lời giải
-\newcounter{solution}
-
-\NewDocumentCommand{\solution}{o}{
-   \refstepcounter{solution}
-   \IfNoValueTF{#1}
-      {\noindent\textbf{Lời giải bài~\ref{ex:ex\arabic{exercise}}:}}
-      {\noindent\textbf{Lời giải bài~\ref{#1}}:}
-   \IfNoValueTF{#1}
-      {\label{sol\arabic{solution}}}
-      {\label{sol-#1}}
-}
-
-% Xử lí đánh số
-\newcommand\dblquote[1]{\textquotedblleft #1\textquotedblright}
-\renewcommand{\thefigure}{\thechapter.\arabic{figure}}
-\renewcommand{\thetable}{\thechapter.\arabic{table}}
-\numberwithin{equation}{chapter}
-
-\newcounter{subexercise}
-\setcounter{subexercise}{1}
-
-% Phục vụ viết biểu thức
-\newcommand{\refeq}[1]{(\ref{#1})}
-\newcommand{\equationexplanation}[1]{&& \textcolor{colorEmphasis}{\left(\text{#1}\right)}}
-
-% Định nghĩa kích thước các bộ phận của đồ thị
 \def \pointSize {2pt}
-\pgfkeys{
-   /tikz/graph thickness/.style={
-      very thick,
-      smooth
-   }
-}
-
 \def \guideLineLength {0.4}
+
 \pgfkeys{
-   /tikz/guideline/.style={
-      very thin
-   }
-}
-\pgfkeys{
-   /tikz/measuring arrow/.style={
-      <->, 
-      >=latex 
-      % shorten >= \pointSize, 
-      % shorten <= \pointSize
-   }
-}
-\pgfkeys{
-   /tikz/single measuring arrow/.style={
-      ->, 
-      >=latex
-   }
-}
-\pgfkeys{
-   /tikz/hollow point/.style={
-      graph thickness,
-      fill=white
-   }
+   /tikz/graph thickness/.style={very thick, smooth},
+   /tikz/guideline/.style={very thin},
+   /tikz/measuring arrow/.style={<->, >=latex},
+   /tikz/single measuring arrow/.style={->, >=latex},
+   /tikz/hollow point/.style={graph thickness, fill=white}
 }
 \tikzset{
    snake it/.style={decorate, decoration=snake, very thin},
@@ -228,9 +83,153 @@
    label style/.style={font=\small\sffamily}
 }
 
-% Làm đẹp tiêu đề
-% \titleclass{\part}{straight}
+% Cấu hình Định dạng Số
+\usepackage{siunitx}
+\sisetup{
+   output-decimal-marker = {,}, 
+   group-minimum-digits = 4,     
+   list-final-separator = { và },
+   range-phrase = { đến }
+}
 
+\usepackage{etoolbox}
+\newcommand{\Rmnum}[1]{\uppercase{\romannumeral #1}}
+
+% Cấu hình Bảng biểu
+\setcellgapes{4pt}
+\makegapedcells
+\newcommand{\headerDivider}{\noalign{\hrule height 1.5pt}}
+
+% Cấu hình Tài liệu tham khảo (BibLaTeX)
+\usepackage[
+   backend=biber,
+   style=numeric,
+   maxbibnames=99,
+   sorting=nty,
+   defernumbers=true
+]{biblatex}
+\addbibresource{references.bib}
+
+\DeclareDelimFormat{multinamedelim}{\addcomma\space}
+\DeclareDelimFormat{finalnamedelim}{\space và\space}
+\renewbibmacro{in:}{\addsemicolon\space}
+\DeclareFieldFormat{pages}{#1}
+\DeclareFieldFormat{volume}{\textbf{#1}}
+\DeclareFieldFormat{number}{(#1)}
+\renewbibmacro*{volume+number+eid}{%
+  \printfield{volume}%
+  \printfield{number}%
+  \setunit{\addcomma\space}%
+}
+
+% ==========================================
+% 6. ĐỊNH DẠNG ĐẦU VÀ CUỐI TRANG (HEADER/FOOTER)
+% ==========================================
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} 
+
+\usepackage[explicit]{titlesec}
+\assignpagestyle{\chapter}{fancy}
+\assignpagestyle{\part}{fancy}
+
+\fancyhead[LO]{\textcolor{colorEmphasisCyan}{\nouppercase{\leftmark}}} 
+\fancyhead[RE]{\textcolor{colorEmphasisCyan}{\nouppercase{\rightmark}}} 
+\fancyhead[RO,LE]{\textcolor{colorEmphasisCyan}{\thepage}} 
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{colorEmphasisCyan}\hrule width\headwidth height\headrulewidth} 
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\headsep}{0.5cm}
+
+% ==========================================
+% 7. CÁC BỘ ĐẾM (COUNTERS) & ĐÁNH SỐ
+% ==========================================
+\renewcommand{\thetable}{\thechapter.\arabic{table}}
+\numberwithin{equation}{chapter}
+
+% Bộ đếm bài tập & lời giải
+\newcounter{exercise}
+\NewDocumentCommand{\exercise}{o}{
+   \refstepcounter{exercise}
+   \noindent\textbf{\textcolor{colorEmphasisCyan}{Bài \arabic{exercise}:}}
+   \IfNoValueTF{#1}
+      {\label{ex:ex\arabic{exercise}}}
+      {\label{#1}}
+}
+
+\newcounter{solution}
+\NewDocumentCommand{\solution}{o}{
+   \refstepcounter{solution}
+   \IfNoValueTF{#1}
+      {\noindent\textbf{Lời giải bài~\ref{ex:ex\arabic{exercise}}:}}
+      {\noindent\textbf{Lời giải bài~\ref{#1}}:}
+   \IfNoValueTF{#1}
+      {\label{sol\arabic{solution}}}
+      {\label{sol-#1}}
+}
+
+\newcounter{subexercise}
+\setcounter{subexercise}{1}
+
+% ==========================================
+% 8. LỆNH TỰ ĐỊNH NGHĨA (MACROS & LỆNH VIẾT TẮT)
+% ==========================================
+% Định dạng chữ
+\newcommand{\coloringCrimson}[1]{\textcolor{colorCrimson}{#1}}
+\newcommand{\coloringDodgerblue}[1]{\textcolor{colorDodgerblue}{#1}}
+\newcommand{\emphcolor}[1]{\textcolor{colorEmphasis}{\emph{#1}}}
+\newcommand{\emphcyanbf}[1]{\textcolor{colorEmphasisCyan}{\textbf{#1}}}
+\newcommand{\defText}[1]{\textbf{#1}}
+\newcommand{\defMath}[1]{\bm{#1}}
+\newcommand{\dblquote}[1]{\textquotedblleft #1\textquotedblright}
+
+% Ký hiệu đặc biệt
+\newcommand{\totalpartial}{\textit{ð}}
+\newcommand{\cauF}{\textit{勾}}
+\newcommand{\chungF}{\textit{壿}}
+\newcommand{\theF}{\textit{世}}
+\newcommand{\chanF}{\textit{振}}
+\newcommand{\leF}{\textit{禮}}
+\newcommand{\lonF}{\textit{穌}}
+\newcommand{\lonG}{\textit{吝}}
+\newcommand{\vetrai}{\textit{債}}
+\newcommand{\vephai}{\textit{拜}}
+
+% Toán học mở rộng
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\ptln}{ptln}
+\DeclareMathOperator{\ptnn}{ptnn}
+\DeclareMathOperator{\Max}{Max}
+\DeclareMathOperator{\Min}{Min}
+\DeclareMathOperator{\Inf}{Inf}
+\DeclareMathOperator{\Sup}{Sup}
+\newcommand{\refeq}[1]{(\ref{#1})}
+\newcommand{\equationexplanation}[1]{&& \textcolor{colorEmphasis}{\left(\text{#1}\right)}}
+
+% Môi trường đặc biệt
+\newlength{\recordparindent}
+\newenvironment{minipageindent}[1]{
+   \setlength{\recordparindent}{\parindent}
+   \setlength{\parindent}{0em}
+   \begin{minipage}{#1}
+   \setlength{\parindent}{\recordparindent}
+}{
+   \end{minipage}
+   \setlength{\parindent}{\recordparindent}
+}
+
+% Đồ họa nhỏ
+\newcommand{\vietnamoutline}{%
+\begin{tikzpicture}[baseline=0.2ex]
+   \draw[colorEmphasis, thick] (0,0) rectangle (1.2em,0.8em);
+   \node[fill=colorEmphasis, star, star points=5, star point height=0.06em, minimum size=0.25em, draw=colorEmphasis, thick, inner sep=0pt] at (0.6em,0.4em) {};
+\end{tikzpicture}%
+}
+
+% ==========================================
+% 9. THIẾT KẾ TIÊU ĐỀ & MỤC LỤC (TITLES & TOC)
+% ==========================================
 \titleformat{\part}
    {\normalfont\Huge\bfseries}
    {}
@@ -260,9 +259,9 @@
    {}
    {0pt}
    {%
-      \setlength{\fboxrule}{2pt}% Border thickness
-      \setlength{\fboxsep}{1em}% Padding
-      \fcolorbox{colorEmphasisCyan}{white}{% Border color and fill color
+      \setlength{\fboxrule}{2pt}%
+      \setlength{\fboxsep}{1em}%
+      \fcolorbox{colorEmphasisCyan}{white}{%
          \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
          \textcolor{colorEmphasisCyan}{\thesection}\quad #1
          }%
@@ -275,48 +274,39 @@
    {0pt}
    {\textcolor{colorEmphasisCyan}{\thesubsection} \quad #1}
 
-\defbibheading{referencesubheading}[\refname]{%
-   \setlength{\fboxrule}{2pt}% Border thickness
-   \setlength{\fboxsep}{1.6em}% Padding
+\defbibheading{referencesubheading}[]{%
+   \setlength{\fboxrule}{2pt}%
+   \setlength{\fboxsep}{1.6em}%
    \noindent
    \fcolorbox{colorEmphasisCyan}{white}{%
       \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
-         \normalfont\Large\bfseries #1% Chỉ in tiêu đề, không có số thứ tự
+         \normalfont\Large\bfseries #1%
       }%
    }%
-   \vspace{1em}% Khoảng cách nhỏ dưới khung
-   \addcontentsline{toc}{section}{#1}% Vẫn đưa vào mục lục nếu muốn
+   \vspace{1em}%
+   \addcontentsline{toc}{section}{#1}%
 }
 
 % Chỉnh màu của mục lục
 \makeatletter
-\patchcmd{\@tocline}
-   {\numberline}
-   {\color{colorEmphasisCyan}\numberline}
-   {}{}
-\patchcmd{\l@chapter}
-   {\bfseries}
-   {\color{colorEmphasisCyan}\bfseries}
-   {}{}
-\patchcmd{\l@part}
-   {\bfseries}
-   {\color{colorEmphasisCyan}\bfseries}
-   {}{}
+\patchcmd{\@tocline}{\numberline}{\color{colorEmphasisCyan}\numberline}{}{}
+\patchcmd{\l@chapter}{\bfseries}{\color{colorEmphasisCyan}\bfseries}{}{}
+\patchcmd{\l@part}{\bfseries}{\color{colorEmphasisCyan}\bfseries}{}{}
 \makeatother
 
 \makeatletter
 \renewcommand{\numberline}[1]{\textcolor{colorEmphasisCyan}{#1}\hspace{1em}}
 \makeatother
 
-% Hàm/phép tính đặc biệt
+% ==========================================
+% 10. THÔNG TIN TÀI LIỆU (METADATA)
+% ==========================================
+\title{{\fontsize{72}{84}\selectfont \emphcyanbf{PFÉIV} \\ \huge La \emphcyanbf{P}hysique \emphcyanbf{F}ondamentale pour les \emphcyanbf{É}tudiants \emphcyanbf{I}diots au \emphcyanbf{V}ietnam}}
+\author{Bùi Nhật Minh}
 
-\DeclareMathOperator{\ptln}{ptln}
-\DeclareMathOperator{\ptnn}{ptnn}
-\DeclareMathOperator{\Max}{Max}
-\DeclareMathOperator{\Min}{Min}
-\DeclareMathOperator{\Inf}{Inf}
-\DeclareMathOperator{\Sup}{Sup}
-
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
 \begin{document}
 
 \pagenumbering{gobble} % Tắt đánh số trang cho trang tiêu đề

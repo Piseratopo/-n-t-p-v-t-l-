@@ -32,7 +32,7 @@ Như đã khẳng định, nếu $x$ là một tập hợp thì bên trong $x$ c
          % --- MŨI TÊN CHUYỂN ĐỔI ---
          \draw[->, ultra thick, colorEmphasis] (0,0) -- (2,0) node[midway, above] {$\bigcup x$};
 
-         % --- VẾ PHẢI: TẬP HỢP \bigcup A ---
+         % --- VẾ PHẢI: TẬP HỢP \left(\bigcup A\right) ---
          % Vẽ tập hợp kết quả
          \draw[thick] (4.5,0) ellipse (2cm and 2.8cm);
          \node at (4.5, 3.2) {Tập hợp $\bigcup x$};
@@ -117,7 +117,7 @@ Chúng ta đặt $S$ bởi một kí hiệu quen thuộc hơn là $\{A; B; C\}$.
                   A \cup C = B \cup C
                \end{cases}$;
       \item $(A \cup B) \cup C = A \cup (B \cup C) = \bigcup \{A; B; C\}$;
-      \item $\bigcup A \cup \bigcup B = \bigcup(A \cup B)$.
+      \item $\left(\bigcup A\right) \cup \left(\bigcup B\right) = \bigcup(A \cup B)$.
    \end{enumerate}
 \end{multicols}
 
@@ -208,11 +208,11 @@ Tương tự, $B \subseteq A \implies \begin{cases}
 Kết hợp hai điều trên, chúng ta có
 \begin{align*}
    A \subseteq B \land B \subseteq A & \implies \begin{cases}
-                                                   \bigcup A \subseteq \bigcup B \land \bigcup B \subseteq \bigcup A \\
+                                                   \bigcup A \subseteq \left(\bigcup B\right) \land \left(\bigcup B\right) \subseteq \bigcup A \\
                                                    A \cup C \subseteq B \cup C \land B \cup C \subseteq A \cup C
                                                 \end{cases} \\
    A = B                             & \implies \begin{cases}
-                                                   \bigcup A = \bigcup B \\
+                                                   \bigcup A = \left(\bigcup B\right) \\
                                                    A \cup C = B \cup C
                                                 \end{cases}.
 \end{align*}
@@ -242,17 +242,17 @@ Từ hai điều trên, suy ra $(A \cup B) \cup C = \bigcup \{A; B; C\}$.
 \stepcounter{subexercise}
 \arabic{subexercise}. Với mọi $x$, 
 \begin{align*}
-   x \in \bigcup A \cup \bigcup B &\iff x \in \bigcup A \lor x \in \bigcup B; \\
-   x \in \bigcup A \cup \bigcup B &\iff \left[\begin{array}{l}
+   x \in \left(\bigcup A\right) \cup \left(\bigcup B\right) &\iff x \in \bigcup A \lor x \in \bigcup B; \\
+   x \in \left(\bigcup A\right) \cup \left(\bigcup B\right) &\iff \left[\begin{array}{l}
       \exists z, (z \in A \land x \in z) \\
       \exists z, (z \in B \land x \in z)
    \end{array}\right. \equationexplanation{tiên đề hợp}; \\
-   x \in \bigcup A \cup \bigcup B &\iff \exists z, (z \in A \land x \in z \lor z \in B \land x \in z); \\
-   x \in \bigcup A \cup \bigcup B &\iff \exists z, \left((z \in A \lor z \in B) \land x \in z\right); \\
-   x \in \bigcup A \cup \bigcup B &\iff \exists z, (z \in A \cup B \land x \in z); \\
-   x \in \bigcup A \cup \bigcup B &\iff x \in \bigcup (A \cup B).
+   x \in \left(\bigcup A\right) \cup \left(\bigcup B\right) &\iff \exists z, (z \in A \land x \in z \lor z \in B \land x \in z); \\
+   x \in \left(\bigcup A\right) \cup \left(\bigcup B\right) &\iff \exists z, \left((z \in A \lor z \in B) \land x \in z\right); \\
+   x \in \left(\bigcup A\right) \cup \left(\bigcup B\right) &\iff \exists z, (z \in A \cup B \land x \in z); \\
+   x \in \left(\bigcup A\right) \cup \left(\bigcup B\right) &\iff x \in \bigcup (A \cup B).
 \end{align*}
-Vậy $\bigcup A \cup \bigcup B = \bigcup (A \cup B)$. Điều phải chứng minh.
+Vậy $\left(\bigcup A\right) \cup \left(\bigcup B\right) = \bigcup (A \cup B)$. Điều phải chứng minh.
 
 \exercise Cho tập hợp $x$ thỏa mãn $A \cup x = A$ với mọi tập hợp $A$. Chứng minh rằng $x = \varnothing$.
 

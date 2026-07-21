@@ -1,20 +1,20 @@
 \begin{table}[H]
 	\centering
-	\caption{Bảng giá trị chân lí của $P \implies Q \iff R$.}
+	\caption{Bảng giá trị chân lí của $( P \implies ( Q \implies R ) ) \iff ( Q \implies ( P \implies R ) )$.}
 	\begin{tblr}{
-		colspec = {|c|c|c|ccccc|}
+		colspec = {|c|c|c|ccccccccccc|}
 	}
 		\hline
-		$P$ & $Q$ & $R$ & $P$ & $\implies$ & $Q$ & $\iff$ & $R$ \\
+		$P$ & $Q$ & $R$ & $(P$ & $\implies$ & $(Q$ & $\implies$ & $R))$ & $\iff$ & $(Q$ & $\implies$ & $(P$ & $\implies$ & $R))$ \\
 		\hline[1.5pt]
-		Đ & Đ & Đ & Đ & Đ & Đ & \emphcolor{Đ} & Đ \\
-		Đ & Đ & S & Đ & Đ & Đ & \emphcolor{S} & S \\
-		Đ & S & Đ & Đ & S & S & \emphcolor{S} & Đ \\
-		Đ & S & S & Đ & S & S & \emphcolor{Đ} & S \\
-		S & Đ & Đ & S & Đ & Đ & \emphcolor{Đ} & Đ \\
-		S & Đ & S & S & Đ & Đ & \emphcolor{S} & S \\
-		S & S & Đ & S & Đ & S & \emphcolor{Đ} & Đ \\
-		S & S & S & S & Đ & S & \emphcolor{S} & S \\
+		Đ & Đ & Đ & Đ & Đ & Đ & Đ & Đ & \emphcolor{Đ} & Đ & Đ & Đ & Đ & Đ \\
+		Đ & Đ & S & Đ & S & Đ & S & S & \emphcolor{Đ} & Đ & S & Đ & S & S \\
+		Đ & S & Đ & Đ & Đ & S & Đ & Đ & \emphcolor{Đ} & S & Đ & Đ & Đ & Đ \\
+		Đ & S & S & Đ & Đ & S & Đ & S & \emphcolor{Đ} & S & Đ & Đ & S & S \\
+		S & Đ & Đ & S & Đ & Đ & Đ & Đ & \emphcolor{Đ} & Đ & Đ & S & Đ & Đ \\
+		S & Đ & S & S & Đ & Đ & S & S & \emphcolor{Đ} & Đ & Đ & S & Đ & S \\
+		S & S & Đ & S & Đ & S & Đ & Đ & \emphcolor{Đ} & S & Đ & S & Đ & Đ \\
+		S & S & S & S & Đ & S & Đ & S & \emphcolor{Đ} & S & Đ & S & Đ & S \\
 		\hline
 	\end{tblr}
 \end{table}
