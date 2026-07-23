@@ -4,53 +4,53 @@
 
 Giả sử $x$ là một tập hợp và $\cauF()$ có nghĩa với toàn bộ các phần tử của $x$. Khi đó, tiên đề tách khẳng định rằng tồn tại một tập hợp $y$ bao gồm tất cả các phần tử $z \in x$ thỏa mãn $\cauF(z)$ và chỉ những phần tử đó. Nói cách khác,
 $$
-    \defMath{\forall x, \exists y, \forall z, \left( z \in y \iff z \in x \land \textbf{\cauF}(z) \right)}.
+   \defMath{\forall x, \exists y, \forall z, \left( z \in y \iff z \in x \land \textbf{\cauF}(z) \right)}.
 $$
 
 \begin{figure}[H]
-    \begin{center}
-    \begin{tikzpicture}[>=stealth]
+   \begin{center}
+   \begin{tikzpicture}
 
-    \draw[thick] (-3,0) ellipse (2.2cm and 2.8cm);
-    \node at (-3, 3.2) {Tập hợp $x$};
+   \draw[thick] (-3,0) ellipse (2.2cm and 2.8cm);
+   \node at (-3, 3.2) {Tập hợp $x$};
 
-    \node[circle, fill=colorEmphasisCyan, inner sep=\pointSize, label=left:$z_1$] (z1_left) at (-3.7, 0.8) {};
-    \node[circle, fill=colorEmphasisCyan, inner sep=\pointSize, label=left:$z_3$] (z3_left) at (-2.5, -0.5) {};
+   \node[element, fill=colorEmphasisCyan, label=left:$z_1$] (z1_left) at (-3.7, 0.8) {};
+   \node[element, fill=colorEmphasisCyan, label=left:$z_3$] (z3_left) at (-2.5, -0.5) {};
 
-    \node[circle, inner sep=\pointSize, label=left:{$z_2$}] (z2_left) at (-2, 0.8) {};
-    \node[circle, inner sep=\pointSize, label=left:{$z_4$}] (z4_left) at (-3.8, -1.2) {};
+   \node[element, label=left:{$z_2$}] (z2_left) at (-2, 0.8) {};
+   \node[element, label=left:{$z_4$}] (z4_left) at (-3.8, -1.2) {};
 
-    \draw[dashed, colorEmphasisCyan, thin] plot [smooth cycle, tension=1] coordinates {
-        (-4.6, 0.5)
-        (-3.5, 1.8)
-        (-3, 0.4)
-        (-2, -0.2)
-        (-2.5, -1.2) 
-    };
-    \node at (-3.1, 2.1) {$\textcolor{colorEmphasisCyan}{\cauF(}z\textcolor{colorEmphasisCyan}{)}$};
-
-
-    \draw[->, ultra thick, colorEmphasis] (0,0) -- (2,0) 
-        node[midway, above, align=center] {Tách bởi\\ $\textcolor{colorEmphasisCyan}{\cauF(}z\textcolor{colorEmphasisCyan}{)}$};
+   \draw[dashed, colorEmphasisCyan, thin] plot [smooth cycle, tension=1] coordinates {
+      (-4.6, 0.5)
+      (-3.5, 1.8)
+      (-3, 0.4)
+      (-2, -0.2)
+      (-2.5, -1.2) 
+   };
+   \node at (-3.1, 2.1) {$\textcolor{colorEmphasisCyan}{\cauF(}z\textcolor{colorEmphasisCyan}{)}$};
 
 
-    \draw[thick] (4.5,0) ellipse (1.5cm and 2.2cm);
-    \node at (4.5, 2.6) {$\{z \in x \mid \textcolor{colorEmphasisCyan}{\cauF(}z\textcolor{colorEmphasisCyan}{)}\}$};
-
-    % Chỉ các phần tử thỏa mãn mới xuất hiện ở đây
-    \node[circle, fill=colorEmphasisCyan, inner sep=1.5pt, label=right:$z_1$] (z1_right) at (4.2, 0.8) {};
-    \node[circle, fill=colorEmphasisCyan, inner sep=1.5pt, label=right:$z_3$] (z3_right) at (4.8, -0.5) {};
+   \draw[direction arrow, ultra thick, colorEmphasis] (-0.5,0) -- (2.5,0) 
+      node[midway, above, align=center] {Tách bởi\\ $\textcolor{colorEmphasisCyan}{\cauF(}z\textcolor{colorEmphasisCyan}{)}$};
 
 
-    \draw[->, thick, colorEmphasisCyan, shorten >= 5pt, shorten <= 5pt, dashed] 
-        (z1_left) to[bend left=20] (z1_right);
+   \draw[thick] (4.5,0) ellipse (1.5cm and 2.2cm);
+   \node at (4.5, 2.6) {$\{z \in x \mid \textcolor{colorEmphasisCyan}{\cauF(}z\textcolor{colorEmphasisCyan}{)}\}$};
 
-    \draw[->, thick, colorEmphasisCyan, shorten >= 5pt, shorten <= 5pt, dashed] 
-        (z3_left) to[bend right=15] (z3_right);
+   % Chỉ các phần tử thỏa mãn mới xuất hiện ở đây
+   \node[element, fill=colorEmphasisCyan, label=right:$z_1$] (z1_right) at (4.2, 0.8) {};
+   \node[element, fill=colorEmphasisCyan, label=right:$z_3$] (z3_right) at (4.8, -0.5) {};
 
-    \end{tikzpicture}
-    \end{center}
-    \caption{Minh họa tiên đề tách (các phần tử của $x$ thỏa mãn tính chất $\textcolor{colorEmphasisCyan}{\cauF(}z\textcolor{colorEmphasisCyan}{)}$ được tách ra).}
+
+   \draw[guide arrow, colorEmphasisCyan, dashed] 
+      (z1_left) to[bend left=20] (z1_right);
+
+   \draw[guide arrow, colorEmphasisCyan, dashed] 
+      (z3_left) to[bend right=15] (z3_right);
+
+   \end{tikzpicture}
+   \end{center}
+   \caption{Minh họa tiên đề tách (các phần tử của $x$ thỏa mãn tính chất $\textcolor{colorEmphasisCyan}{\cauF(}z\textcolor{colorEmphasisCyan}{)}$ được tách ra).}
 \end{figure}
 
 Tiên đề ngoại diên khẳng định tập hợp $y$ là duy nhất. Thực vậy, giả sử tồn tại hai tập hợp $y_1$ và $y_2$ thỏa mãn điều kiện của tiên đề tách với cùng tập hợp $x$ và vị từ $\cauF()$. Xét một $z$ bất kì. Khi đó, định nghĩa theo tiên đề cho chúng ta
@@ -327,9 +327,7 @@ Ngoài ra, định nghĩa cho chúng ta
 $\bigcap A = \{z \in \bigcup A \mid \forall x \in A, z \in x\}$, suy ra \begin{equation*}
     \forall z, \left(z \in \bigcap A \iff z \in \bigcup A \land \forall x \in A, z \in x\right).
 \end{equation*}
-Nhưng, nhận thấy rằng, với mọi $z$, $\forall x \in A, z \in x \implies \exists x \in A, z \in x$\footnote{Một số người có thể sẽ không chấp nhận cách diễn đạt này với phản biện rằng: ``$A$ có thể là tập rỗng, dẫn đến không tồn tại $x \in A$, và do đó, không thể có $x \in A$ để xét $z \in x$.''. Hãy nhớ lại rằng, theo các khái niệm mà tác giả đã đưa ra, đây chỉ là cách viết tắt. Biểu diễn đầy đủ của mệnh đề đó sẽ là $$
-\forall x, (x \in A \implies z \in x) \implies \exists x, (x \in A \implies z \in x)
-$$ và điều này thì hoàn toàn đúng.}, dẫn đến $\forall x \in A, z \in x \implies z \in \bigcup A$ là đúng với mọi $z$. Và vì vậy,
+Nhưng, nhận thấy rằng, với mọi $z$, $\forall x \in A, z \in x \implies \exists x, (x \in A \implies z \in x)$, dẫn đến $\forall x \in A, z \in x \implies z \in \bigcup A$ là đúng với mọi $z$. Và vì vậy,
 \begin{equation}
    \forall z, \begin{cases}
       z \in \bigcap A \iff z \in \bigcup A \land \forall x \in A, z \in x \\

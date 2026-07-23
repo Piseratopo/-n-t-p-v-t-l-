@@ -321,32 +321,38 @@
       \true{nocite}
       \keyw{misc}
     \endentry
-    \entry{pinter2014book}{book}{}{}
+    \entry{Sigler1976}{book}{}{}
       \name{author}{1}{}{%
-        {{hash=ffe310efe7726e6ce5455107cac1e721}{%
-           family={Pinter},
-           familyi={P\bibinitperiod},
-           given={Charles\bibnamedelima C},
-           giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=7c3e37f0eb46ade07fa5be9f455964bc}{%
+           family={Sigler},
+           familyi={S\bibinitperiod},
+           given={L.\bibnamedelimi E.},
+           giveni={L\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
       }
       \list{publisher}{1}{%
-        {Courier Corporation}%
+        {Springer-Verlag}%
       }
-      \strng{namehash}{ffe310efe7726e6ce5455107cac1e721}
-      \strng{fullhash}{ffe310efe7726e6ce5455107cac1e721}
-      \strng{fullhashraw}{ffe310efe7726e6ce5455107cac1e721}
-      \strng{bibnamehash}{ffe310efe7726e6ce5455107cac1e721}
-      \strng{authorbibnamehash}{ffe310efe7726e6ce5455107cac1e721}
-      \strng{authornamehash}{ffe310efe7726e6ce5455107cac1e721}
-      \strng{authorfullhash}{ffe310efe7726e6ce5455107cac1e721}
-      \strng{authorfullhashraw}{ffe310efe7726e6ce5455107cac1e721}
-      \field{sortinit}{P}
-      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \strng{namehash}{7c3e37f0eb46ade07fa5be9f455964bc}
+      \strng{fullhash}{7c3e37f0eb46ade07fa5be9f455964bc}
+      \strng{fullhashraw}{7c3e37f0eb46ade07fa5be9f455964bc}
+      \strng{bibnamehash}{7c3e37f0eb46ade07fa5be9f455964bc}
+      \strng{authorbibnamehash}{7c3e37f0eb46ade07fa5be9f455964bc}
+      \strng{authornamehash}{7c3e37f0eb46ade07fa5be9f455964bc}
+      \strng{authorfullhash}{7c3e37f0eb46ade07fa5be9f455964bc}
+      \strng{authorfullhashraw}{7c3e37f0eb46ade07fa5be9f455964bc}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{A book of set theory}
-      \field{year}{2014}
+      \field{isbn}{978-0-387-90193-0}
+      \field{title}{Exercises in Set Theory}
+      \field{year}{1976}
       \true{nocite}
+      \field{pages}{134}
+      \range{pages}{1}
       \keyw{math}
     \endentry
   \enddatalist

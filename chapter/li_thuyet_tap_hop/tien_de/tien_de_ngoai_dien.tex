@@ -18,19 +18,19 @@ Nếu không bằng nhau, kí hiệu $\defMath{x \neq y}$ được phát biểu 
             \node at (2, 2.4) {Tập hợp $y$};
 
             % Các phần tử trong tập x
-            \node[circle, fill, inner sep=1.2pt, label=left:$z_1$] (x1) at (-2, 1) {};
-            \node[circle, fill, inner sep=1.2pt, label=left:$z_2$] (x2) at (-2, 0) {};
-            \node[circle, fill, inner sep=1.2pt, label=left:$z_3$] (x3) at (-2, -1) {};
+            \node[element, label=left:$z_1$] (x1) at (-2, 1) {};
+            \node[element, label=left:$z_2$] (x2) at (-2, 0) {};
+            \node[element, label=left:$z_3$] (x3) at (-2, -1) {};
 
             % Các phần tử trong tập y
-            \node[circle, fill, inner sep=1.2pt, label=right:$z_1$] (y1) at (2, 1) {};
-            \node[circle, fill, inner sep=1.2pt, label=right:$z_3$] (y2) at (2, 0) {};
-            \node[circle, fill, inner sep=1.2pt, label=right:$z_2$] (y3) at (2, -1) {};
+            \node[element, label=right:$z_1$] (y1) at (2, 1) {};
+            \node[element, label=right:$z_3$] (y2) at (2, 0) {};
+            \node[element, label=right:$z_2$] (y3) at (2, -1) {};
 
             % Nối mũi tên hai chiều
-            \draw[<->, thick, shorten >= 3pt, shorten <= 3pt] (x1) to[bend left=20] (y1);
-            \draw[<->, thick, shorten >= 3pt, shorten <= 3pt] (x2) to (y3);
-            \draw[<->, thick, shorten >= 3pt, shorten <= 3pt] (x3) to[bend left=10] (y2);
+            \draw[guide double arrow] (x1) to[bend left=20] (y1);
+            \draw[guide double arrow] (x2) to (y3);
+            \draw[guide double arrow] (x3) to[bend left=10] (y2);
         \end{tikzpicture}
     \end{center}
     \caption{Minh họa hai tập hợp bằng nhau $x = y = \{z_1; z_2; z_3\}$.}
@@ -53,21 +53,21 @@ $$
             \node at (2.5, 2.8) {Tập hợp $y$};
 
             % Các phần tử trong tập x
-            \node[circle, fill, inner sep=1.2pt, label=left:$z_1$] (x1) at (-2, 1) {};
-            \node[circle, fill, inner sep=1.2pt, label=left:$z_2$] (x2) at (-2, 0) {};
-            \node[circle, fill, inner sep=1.2pt, label=left:$z_3$] (x3) at (-2, -1) {};
+            \node[element, label=left:$z_1$] (x1) at (-2, 1) {};
+            \node[element, label=left:$z_2$] (x2) at (-2, 0) {};
+            \node[element, label=left:$z_3$] (x3) at (-2, -1) {};
 
             % Các phần tử trong tập y (nhiều phần tử hơn, phân bố bên trong elip nghiêng)
-            \node[circle, fill, inner sep=1.2pt, label=right:$z_1$] (y1) at (1.8, 1) {};
-            \node[circle, fill, inner sep=1.2pt, label=right:$z_2$] (y2) at (1.8, -0.2) {};
-            \node[circle, fill, inner sep=1.2pt, label=right:$z_3$] (y3) at (2.5, -1.2) {};
-            \node[circle, fill, inner sep=1.2pt, label=right:$z_4$] (y4) at (3.2, 0.5) {};
-            \node[circle, fill, inner sep=1.2pt, label=right:$z_5$] (y5) at (2.8, 1.6) {};
+            \node[element, label=right:$z_1$] (y1) at (1.8, 1) {};
+            \node[element, label=right:$z_2$] (y2) at (1.8, -0.2) {};
+            \node[element, label=right:$z_3$] (y3) at (2.5, -1.2) {};
+            \node[element, label=right:$z_4$] (y4) at (3.2, 0.5) {};
+            \node[element, label=right:$z_5$] (y5) at (2.8, 1.6) {};
 
             % Nối mũi tên một chiều từ x sang y
-            \draw[->, thick, shorten >= 3pt, shorten <= 3pt] (x1) to[bend left=15] (y1);
-            \draw[->, thick, shorten >= 3pt, shorten <= 3pt] (x2) to (y2);
-            \draw[->, thick, shorten >= 3pt, shorten <= 3pt] (x3) to[bend right=15] (y3);
+            \draw[guide arrow] (x1) to[bend left=15] (y1);
+            \draw[guide arrow] (x2) to (y2);
+            \draw[guide arrow] (x3) to[bend right=15] (y3);
         \end{tikzpicture}
     \end{center}
     \caption{Minh họa tập con $x \subseteq y$ hay $y \supseteq x$.}
@@ -85,43 +85,43 @@ Nếu $x$ không phải là tập con của $y$ thì sao? Chúng ta có biến �
 \begin{align*}
     x \not \subseteq y & \iff \overline{\forall z, \left( z \in x \implies z \in y \right)}; \\
     x \not \subseteq y & \iff \exists z, \overline{\left( z \in x \implies z \in y \right)}; \\
-    x \not \subseteq y & \iff \exists z, \left( z \in x \land z \not \in y \right).
+    x \not \subseteq y & \iff \exists z, \left( z \in x \land z \notin y \right).
 \end{align*}
 Tương tự với định nghĩa $\supseteq$, chúng ta cũng có $\forall x, \forall y, (x \not \supseteq y \iff y \not \subseteq x)$. Hình \ref{fig:li_thuyet_tap_hop:tien_de:khong_la_tap_con} minh họa cho $x \not \subseteq y$.
 
 \begin{figure}[H]
-    \begin{center}
-        \begin{tikzpicture}[>=stealth]
-            % Vẽ tập hợp x
-            \draw[thick] (-2,0) ellipse (1.2cm and 2cm);
-            \node at (-2, 2.4) {Tập hợp $x$};
+   \begin{center}
+      \begin{tikzpicture}[>=stealth]
+         % Vẽ tập hợp x
+         \draw[thick] (-2,0) ellipse (1.2cm and 2cm);
+         \node at (-2, 2.4) {Tập hợp $x$};
 
-            % Vẽ tập hợp y
-            \draw[thick, rotate around={20:(2.5,0)}] (2.5,0) ellipse (1.6cm and 2.5cm);
-            \node at (2.5, 2.8) {Tập hợp $y$};
+         % Vẽ tập hợp y
+         \draw[thick, rotate around={20:(2.5,0)}] (2.5,0) ellipse (1.6cm and 2.5cm);
+         \node at (2.5, 2.8) {Tập hợp $y$};
 
-            % Các phần tử trong tập x
-            \node[circle, fill, inner sep=1.2pt, label=left:$z_1$] (x1) at (-2, 1) {};
-            \node[circle, fill, inner sep=1.2pt, label=left:$z_2$] (x2) at (-2, 0) {};
-            \node[circle, fill=colorEmphasis, inner sep=1.5pt, label={[colorEmphasis]left:$z_3$}] (x3) at (-2, -1) {};
+         % Các phần tử trong tập x
+         \node[element, label=left:$z_1$] (x1) at (-2, 1) {};
+         \node[element, label=left:$z_2$] (x2) at (-2, 0) {};
+         \node[element emphasis, label={[colorEmphasis]left:$z_3$}] (x3) at (-2, -1) {};
 
-            % Các phần tử trong tập y
-            \node[circle, fill, inner sep=1.2pt, label=right:$z_1$] (y1) at (1.8, 1) {};
-            \node[circle, fill, inner sep=1.2pt, label=right:$z_4$] (y2) at (1.8, 0) {};
-            \node[circle, fill, inner sep=1.2pt, label=right:$z_2$] (y4) at (3.2, 0.5) {};
-            \node[circle, fill, inner sep=1.2pt, label=right:$z_5$] (y5) at (2.8, -1.0) {};
+         % Các phần tử trong tập y
+         \node[element, label=right:$z_1$] (y1) at (1.8, 1) {};
+         \node[element, label=right:$z_4$] (y2) at (1.8, 0) {};
+         \node[element, label=right:$z_2$] (y4) at (3.2, 0.5) {};
+         \node[element, label=right:$z_5$] (y5) at (2.8, -1.0) {};
 
-            % Nối mũi tên một chiều từ x sang y cho z_1, z_2
-            \draw[->, thick, shorten >= 3pt, shorten <= 3pt] (x1) to[bend left=15] (y1);
-            \draw[->, thick, shorten >= 3pt, shorten <= 3pt] (x2) to[bend left=15] (y4);
+         % Nối mũi tên một chiều từ x sang y cho z_1, z_2
+         \draw[guide arrow] (x1) to[bend left=15] (y1);
+         \draw[guide arrow] (x2) to[bend left=15] (y4);
 
-            % Làm nổi bật rằng z không có tương ứng trong y
-            \node[colorEmphasis] (text) at (0.25, -1) {$z_3 \notin y$};
-            \draw[->, thick, colorEmphasis, densely dashed, shorten >= 2pt] (x3) -- (text);
-        \end{tikzpicture}
-    \end{center}
-    \caption{Minh họa $x \not \subseteq y$ (tồn tại $z_3 \in x$ nhưng $z_3 \notin y$).}
-    \label{fig:li_thuyet_tap_hop:tien_de:khong_la_tap_con}
+         % Làm nổi bật rằng z không có tương ứng trong y
+         \node[colorEmphasis] (text) at (0.25, -1) {$z_3 \notin y$};
+         \draw[guide arrow, colorEmphasis, densely dashed] (x3) -- (text);
+      \end{tikzpicture}
+   \end{center}
+   \caption{Minh họa $x \not \subseteq y$ (tồn tại $z_3 \in x$ nhưng $z_3 \notin y$).}
+   \label{fig:li_thuyet_tap_hop:tien_de:khong_la_tap_con}
 \end{figure}
 
 Trước khi đi đến với những tiên đề tiếp theo, chúng ta sẽ cùng tìm hiểu về các tính chất của phép bằng nhau. Thứ nhất, để ý rằng, do $A \iff A$ đúng với mọi $A$ từ giải tích vị từ cho nên, với

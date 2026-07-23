@@ -29,7 +29,7 @@
 % 3. TOÁN HỌC - ĐỒ HỌA - BẢNG BIỂU
 % ==========================================
 % Toán học
-\usepackage{amsmath, amssymb, bm, mathrsfs, icomma, steinmetz}
+\usepackage{amsmath, amssymb, bm, cancel, centernot, mathrsfs, steinmetz}
 \allowdisplaybreaks
 
 % Đồ họa & Hình ảnh
@@ -62,7 +62,7 @@
 
 % Cấu hình Đồ thị PGFPlots & TikZ
 \pgfplotsset{compat=1.18}
-\usetikzlibrary{arrows.meta, calc, decorations.pathmorphing, intersections, positioning, pgfplots.fillbetween, shadings, shapes.geometric}
+\usetikzlibrary{arrows.meta, calc, decorations.pathmorphing, fadings, intersections, positioning, pgfplots.fillbetween, shadings, shapes.geometric}
 
 \def \pointSize {2pt}
 \def \guideLineLength {0.4}
@@ -74,12 +74,31 @@
    /tikz/single measuring arrow/.style={->, >=latex},
    /tikz/hollow point/.style={graph thickness, fill=white}
 }
+\begin{tikzfadingfrompicture}[name=arrowGradient]
+  \shade[left color=colorCrimson, right color=colorDodgerblue] (0,0) rectangle (2,2);
+\end{tikzfadingfrompicture}
+
 \tikzset{
    snake it/.style={decorate, decoration=snake, very thin},
    set boundary/.style={thick, draw=black},
    element/.style={circle, fill=black, inner sep=1.2pt},
-   element alert/.style={circle, fill=colorEmphasis, inner sep=1.5pt},
-   guide arrow/.style={->, >=stealth, thick, shorten >=3pt, shorten <=3pt},
+   element emphasis/.style={circle, fill=colorEmphasis, inner sep=1.5pt},
+   direction arrow/.style={->, >={Stealth[scale=0.75]}},
+   guide arrow/.style={->, >={Stealth[scale=1.5]}, thick, shorten >= 3pt, shorten <= 3pt},
+   guide double arrow/.style={<->, >={Stealth[scale=1.5]}, thick, shorten >= 3pt, shorten <= 3pt},
+   gradient arrow/.style={
+      ->,
+      >={Stealth[scale=1.5]}, 
+      thick,
+      shorten >= 3pt,
+      shorten <= 3pt,
+      path fading=west,
+      draw=colorDodgerblue, % Màu nền ở đuôi
+      postaction={
+         draw=colorCrimson,
+         path fading=east, % Màu nền ở đầu
+      }
+   },
    label style/.style={font=\small\sffamily}
 }
 
@@ -289,13 +308,10 @@
 
 % Chỉnh màu của mục lục
 \makeatletter
-\patchcmd{\@tocline}{\numberline}{\color{colorEmphasisCyan}\numberline}{}{}
-\patchcmd{\l@chapter}{\bfseries}{\color{colorEmphasisCyan}\bfseries}{}{}
 \patchcmd{\l@part}{\bfseries}{\color{colorEmphasisCyan}\bfseries}{}{}
-\makeatother
-
-\makeatletter
-\renewcommand{\numberline}[1]{\textcolor{colorEmphasisCyan}{#1}\hspace{1em}}
+\patchcmd{\l@chapter}{\bfseries}{\color{colorEmphasisCyan}\bfseries}{}{}
+\patchcmd{\l@section}{\numberline}{\textcolor{colorEmphasisCyan}{\numberline}}{}{}
+\patchcmd{\l@subsection}{\numberline}{\textcolor{colorEmphasisCyan}{\numberline}}{}{}
 \makeatother
 
 % ==========================================

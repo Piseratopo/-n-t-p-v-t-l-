@@ -1,19 +1,215 @@
 \section{Quan hệ}
 
+\subsection{Tích Đề-các hai tập hợp}
+
 \ 
 
-Mỗi người đều có nhiều mối quan hệ --- thứ mà mọi sự vật hiện tượng trong thế giới vật lí cũng có --- riêng biệt nhưng đôi khi lại có sự tương tác với nhau. Do tính phổ biến của quan hệ, toán học cũng xây dựng khái niệm cho quan hệ, hình thành một cách chặt chẽ từ tích Đề-các\footnote{René Descartes (1596 -- 1650).} của hai tập hợp. Cụ thể, \defText{tích Đề-các}\footnote{Đề-các không đề xuất khái niệm này, do thời đó khái niệm ``tập hợp'' còn chưa sinh ra. Việc đặt tên như vậy là để tôn vinh người đã khai sinh ra hình học giải tích.} của hai tập hợp $A$ và $B$ được định nghĩa từ tiên đề tách như sau:
+Mỗi người đều có nhiều mối quan hệ --- thứ mà mọi sự vật hiện tượng trong thế giới vật lí cũng có --- riêng biệt nhưng đôi khi lại có sự tương tác với nhau. Do tính phổ biến của quan hệ, toán học cũng xây dựng khái niệm cho quan hệ, hình thành một cách chặt chẽ từ tích Đề-các\footnote{René Descartes (1596 -- 1650).} của hai tập hợp. Cụ thể, \defText{tích Đề-các}\footnote{Đề-các không đề xuất khái niệm này, do thời đó khái niệm ``tập hợp'' còn chưa sinh ra. Việc đặt tên như vậy là để tôn vinh người đã khai sinh ra hình học giải tích.} của hai tập hợp $x$ và $y$ được định nghĩa từ tiên đề tách như sau:
 \begin{equation*}
-   \defMath{A \times B = \{x \in \mathfrak{P}(\mathfrak{P}(A \cup B)) \mid \exists a, \exists b, (a \in A \land b \in B \land x = (a; b))\}}.
+   \defMath{\forall x, \forall y, x \times y = \{c \in \mathfrak{P}(\mathfrak{P}(x \cup y)) \mid \exists a \in x, \exists b \in y, c = (a; b)\}}.
 \end{equation*}
 
-Một \defText{quan hệ} $R$ trên $A \times B$ được định nghĩa đơn giản là một tập con nào đó của $A \times B$. Thông thường, chúng ta viết $a R b$ nếu $(a; b) \in R$. Dễ thấy rằng không phải mọi phần tử trong $A$ sẽ có phần tử quan hệ tương ứng trong $B$ và ngược lại cũng như vậy. Do đó, chúng ta sẽ định nghĩa thêm những giá trị có thể có quan hệ. Cụ thể, định nghĩa \defText{tập xác định} là
+Xét một cặp có thứ tự $(a; b)$ với $a \in x$ và $b \in y$. Có $a$ và $b$ cùng thuộc $x \cup y$ và từ đó dễ thấy $$\begin{cases}
+   \{a\} \subseteq x \cup y \\
+   \{a; b\} \subseteq x \cup y
+\end{cases}.$$ Theo định nghĩa của tập lũy thừa, \begin{equation*}
+   \begin{cases}
+      \{a\} \in \mathfrak{P}(x \cup y) \\
+      \{a; b\} \in \mathfrak{P}(x \cup y)
+   \end{cases},
+\end{equation*}
+suy ra $\left\{\{a\}; \{a; b\}\right\} \subseteq \mathfrak{P}(x \cup y)$. Nhắc lại rằng $(a; b) = \left\{\{a\}; \{a; b\}\right\}$, cho nên \begin{equation*}
+   (a; b) \in \mathfrak{P}(\mathfrak{P}(x \cup y)).
+\end{equation*}
+Vì vậy, từ tiên đề tách, chúng ta có thể khẳng định rằng định nghĩa là hợp lí, và ngoài ra được kết quả sau,
 \begin{equation*}
-   \defMath{\{a \in A \mid \exists b \in B, a R b\}}
+   \forall a \in x, \forall b \in y, (a; b) \in x \times y.
+\end{equation*}
+Ngoài ra, chúng ta đã sử dụng khá nhiều ``$\forall a \in x, \forall b \in y,\dots$'' trong phần này và các phần trước đó. Sử dụng tích Đề-các, chúng ta cũng có thể kí hiệu một cách tương đương là $$\defMath{\forall (a; b) \in x \times y},\dots.$$ Tương tự với lượng từ tồn tại. Thêm vào đó, nếu hai tập cấu thành lên tích Đề-các là bằng nhau như $x \times x$, có thể kí hiệu nó lại là $x^2$. Nhìn về phía trước, giả sử gọi $a$ và $b$ là hai số thực, người ta có thể kí hiệu là ``$\forall (a; b) \in \mathbb{R}^2, \dots$'', nhưng thông thường, họ thường viết là ``$\forall a, b \in \mathbb{R},\dots$''.
+
+\exercise Cho $A$, $B$, $C$, $D$ là các tập hợp. Chứng minh rằng
+\begin{multicols}{2}
+   \begin{enumerate}
+      \item $A \times B = \varnothing \iff \left[\begin{array}{l}
+         A = \varnothing \\
+         B = \varnothing
+      \end{array}\right.$;
+      \item $A \times B = B \times A \iff \left[\begin{array}{l}
+         A = \varnothing \\
+         B = \varnothing \\
+         A = B
+      \end{array}\right.$;
+      \item $(A \times B) \cup (A \times C) = A \times (B \cup C)$;
+      \item $(B \times A) \cup (C \times A) = (B \cup C) \times A$;
+      \item $(A \times B) \cap (A \times C) = A \times (B \cap C)$;
+      \item $(B \times A) \cap (C \times A) = (B \cap C) \times A$;
+      \item $A \times (B \setminus C) = (A \times B) \setminus (A \times C)$;
+      \item $(B \setminus C) \times A = (B \times A) \setminus (C \times A)$;
+      \item $(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)$.
+   \end{enumerate}
+\end{multicols}
+
+\subsection{Định nghĩa quan hệ}
+
+\ 
+
+Một \defText{quan hệ} $R$ trên $x \times y$ được định nghĩa đơn giản là một tập con nào đó của $x \times y$. Thông thường, chúng ta viết $a R b$ nếu $(a; b) \in R$. Dễ thấy rằng không phải mọi phần tử trong $x$ sẽ có phần tử quan hệ tương ứng trong $y$ và ngược lại cũng như vậy. Do đó, chúng ta sẽ định nghĩa thêm những giá trị có thể có quan hệ. Cụ thể, định nghĩa \defText{tập nguồn} là $x$, \defText{tập đích} là y, \defText{tập xác định} là
+\begin{equation*}
+   \defMath{\{a \in x \mid \exists b \in y, a R b\}}
 \end{equation*}
 và định nghĩa \defText{tập giá trị} là
 \begin{equation*}
-   \defMath{\{b \in B \mid \exists a \in A, a R b\}}.
+   \defMath{\{b \in y \mid \exists a \in x, a R b\}}.
 \end{equation*}
 
-Hãy lấy một vài ví dụ. Nếu $A$ là tập hợp thì $\in_A = \{x \in A \times \mathfrak{P}(A) \mid \exists b \in B, x = (b; B)\}$ là một quan hệ trên $A \times \mathfrak{P}(A)$.
+\begin{figure}[H]
+   \begin{center}
+      \begin{tikzpicture}[>=stealth]
+         % Vẽ hai tập hợp dưới dạng hình chữ nhật bo góc
+         \draw[thick, rounded corners=12pt] (-3, -1.8) rectangle (-1, 1.8);
+         \node at (-2, 2.2) {Tập nguồn $x$};
+
+         \draw[thick, rounded corners=12pt] (1, -2.8) rectangle (3, 1.8);
+         \node at (2, 2.2) {Tập đích $y$};
+
+         % Các phần tử trong tập x
+         \node[element, label=left:$a_1$] (x1) at (-2, 1) {};
+         \node[element, label=left:$a_2$] (x2) at (-2, 0) {};
+         \node[element, label=left:$a_3$] (x3) at (-2, -1) {};
+
+         % Các phần tử trong tập y
+         \node[element, label=right:$b_1$] (y1) at (2, 1) {};
+         \node[element, label=right:$b_2$] (y2) at (2, 0) {};
+         \node[element, label=right:$b_3$] (y3) at (2, -1) {};
+         \node[element, label=right:$b_4$] (y4) at (2, -2) {};
+
+         % Mũi tên ánh xạ quan hệ R (một chiều từ x sang y)
+         \draw[guide arrow] (x1) -- (y1) node[midway, above, font=\small] {$R$};
+         \draw[guide arrow] (x1) -- (y2);
+         \draw[guide arrow] (x3) -- (y3);
+      \end{tikzpicture}
+   \end{center}
+   \caption{Minh họa quan hệ $R \subseteq x \times y$ với các cặp $(a_1; b_1), (a_1; b_2), (a_3; b_3)$ thuộc $R$.}
+\end{figure}
+Cần phải phân biệt được tập nguồn với tập xác định, tập đích với tập giá trị. Tập xác định chỉ chứa những phần tử từ tập nguồn mà có giá trị quan hệ tương ứng ở tập đích. Tương tự, tập giá trị chỉ có những phần tử trong tập đích mà có giá trị quan hệ tương ứng ở tập nguồn.
+
+Hãy lấy một vài ví dụ. Nếu $A$ là tập hợp thì $\in_A = \{x \in A \times \mathfrak{P}(A) \mid \exists B\in \mathfrak{P}(A), \exists b\in B, x = (b; B)\}$ là một quan hệ trên $A \times \mathfrak{P}(A)$. Có thể nhìn ra được rằng $\in_A$ có giá trị tương đương với $\in$ trên một phạm vi bé hơn, nhưng $\in$ không được coi là một quan hệ còn $\in_A$ thì có. Vì sao? Bởi vì, để $\in$ có thể là một quan hệ, cần tồn tại một $A$ là tập chứa tất cả các tập hợp và từ đó $\in$ sẽ là một tập con của $A$, nhưng tập này không tồn tại.
+
+Với mọi tập $x$ và $y$, nếu $R$ là một quan hệ trên $x \times y$, thì định nghĩa \defText{quan hệ phủ định} của $R$ như sau:
+\begin{equation*}
+   \defMath{\cancel{R} = \centernot{R} = \overline{R} = \{c \in x \times y \mid c \notin R\}}
+\end{equation*}
+và \defText{quan hệ ngược} $R^{-1}$ sao cho
+\begin{equation*}
+   \defMath{\forall (a; b) \in x \times y, \big(y\ R^{-1}\ x \iff x\ R\ y\big)}.
+\end{equation*}
+
+Vì nhiều lí do mà trong đó một sẽ được trình bày, \defText{đồ thị} của $R$ chính là tập $R$. Bạn đọc chắc sẽ không tin tác giả rằng định nghĩa này là đúng (đến tác giả nhiều lúc còn không tin), nhưng thực chất người ta đã định nghĩa đồ thị là như vậy. Lời giải thích thường được đưa ra nhất thường là: hình học được định nghĩa dựa trên đại số. Cụ thể trong đó, đồ thị hình học của $R$ chính là tập hợp các điểm $(a; b)$ thuộc $R$, hay hiểu theo cách khác, các phần tử của $R$. Vì vậy, đồ thị của $R$ là $R$.
+
+Các quan hệ có thể lồng lên nhau, tạo thành \defText{quan hệ hợp} hoặc \defText{quan hệ tích}, thỏa mãn:
+\begin{equation*}
+   \defMath{\forall (a; c) \in x \times z, \big(x\ S\circ R\ z\iff (\exists b \in y, x\ R\ y \land y\ S\ z)\big)}
+\end{equation*}
+với mọi $x$, $y$, $z$, $R$ là quan hệ trên $x \times y$, và $S$ là quan hệ trên $y \times z$. 
+
+\begin{figure}[H]
+   \begin{center}
+      \begin{tikzpicture}[>=stealth]
+         \draw[thick, rounded corners=12pt] (-6, -1.8) rectangle (-4.4, 1.8); 
+         \node at (-5.2, 2.2) {Tập hợp $x$};
+
+         \draw[thick, rounded corners=12pt] (-0.8, -2.5) rectangle (0.8, 2.2); 
+         \node at (0, 2.6) {Tập hợp $y$};
+         
+         \draw[thick, rounded corners=12pt] (4.4, -1.8) rectangle (6, 1.8);   
+         \node at (5.2, 2.2) {Tập hợp $z$};
+
+         \node at (-2.6, -0.5) {$R$};
+         \node at (2.6, 0.45) {$S$};
+
+         \node[element, label=left:$a_1$] (alpha) at (-5.2, 1.2) {};
+         \node[element, label=left:$a_2$]  (beta)  at (-5.2, 0.4) {};
+         \node[element, label=left:$a_3$] (gamma) at (-5.2, -0.4) {};
+         \node[element, label=left:$a_4$] (delta) at (-5.2, -1.2) {};
+
+         \node[element, label=above:$b_1$] (f1) at (0, 1.3) {};
+         \node[element, label=above:$b_2$] (f2) at (0, 0.5) {};
+         \node[element, label=above:$b_3$] (f3) at (0, -0.3) {};
+         \node[element, label=above:$b_4$] (f4) at (0, -1.1) {};
+         \node[element, label=above:$b_5$] (f5) at (0, -1.9) {};
+
+         \node[element, label=right:$c_1$] (g_a) at (5.2, 1.2) {};
+         \node[element, label=right:$c_2$] (g_b) at (5.2, 0.4) {};
+         \node[element, label=right:$c_3$] (g_c) at (5.2, -0.4) {};
+         \node[element, label=right:$c_4$] (g_d) at (5.2, -1.2) {};
+
+         % Mũi tên của quan hệ R (E -> F)
+         \draw[guide arrow] (beta) -- (f1);
+         \draw[guide arrow, color=colorCrimson] (beta) -- (f2);
+         \draw[guide arrow, color=colorCrimson] (gamma) -- (f2);
+         \draw[guide arrow, color=colorCrimson] (delta) -- (f4);
+
+         % Mũi tên của quan hệ S (F -> G)
+         \draw[guide arrow, color=colorDodgerblue] (f2) -- (g_a);
+         \draw[guide arrow] (f3) -- (g_b);
+         \draw[guide arrow, color=colorDodgerblue] (f4) -- (g_b);
+         \draw[guide arrow, color=colorDodgerblue] (f4) -- (g_c);
+
+
+         % --- Hình 2: Biểu diễn quan hệ hợp S o R từ E đến G ---
+         \begin{scope}[yshift=-5.2cm]
+            \draw[thick, rounded corners=12pt] (-6, -1.8) rectangle (-4.4, 1.8);
+            \node at (-5.2, 2.2) {Tập nguồn $x$};
+
+            \draw[thick, rounded corners=12pt] (4.4, -1.8) rectangle (6, 1.8);
+            \node at (5.2, 2.2) {Tập đích $z$};
+
+            \node at (0, 1.4) {$S \circ R$};
+
+            \node[element, label=left:$a_1$] (a_1) at (-5.2, 1.2) {};
+            \node[element, label=left:$a_2$] (a_2)  at (-5.2, 0.4) {};
+            \node[element, label=left:$a_3$] (a_3) at (-5.2, -0.4) {};
+            \node[element, label=left:$a_4$] (a_4) at (-5.2, -1.2) {};
+
+            \node[element, label=right:$c_1$] (c_1) at (5.2, 1.2) {};
+            \node[element, label=right:$c_2$] (c_2) at (5.2, 0.4) {};
+            \node[element, label=right:$c_3$] (c_3) at (5.2, -0.4) {};
+            \node[element, label=right:$c_4$] (c_4) at (5.2, -1.2) {};
+
+            % Mũi tên của quan hệ hợp S o R (E -> G)
+            \draw[gradient arrow] (a_2) -- (c_1);
+            \draw[gradient arrow] (a_3) -- (c_1);
+            \draw[gradient arrow] (a_4) -- (c_2);
+            \draw[gradient arrow] (a_4) -- (c_3);
+         \end{scope}
+
+      \end{tikzpicture}
+   \end{center}
+   \caption{Ví dụ quan hệ tích (hợp) $S \circ R$ giữa các tập hợp $x, y, z$.}
+\end{figure}
+
+\subsection{Quan hệ hai ngôi}
+
+Quan hệ $R$ trên tập $x \times y$ là \defText{quan hệ hai ngôi} khi và chỉ khi $x = y$. $R$ khi đó được gọi là quan hệ hai ngôi trong $x$. Nếu $z$ là một tập con của $x$, một quan hệ hai ngôi trong $z$ được xác định bởi
+\begin{equation*}
+   \defMath{\forall (a; b) \in z^2, \big(a\ R_z\ b \iff a\ R\ b\big)}  
+\end{equation*}
+có tên là \defText{quan hệ sinh} bởi $R$ trong $x$.
+
+Dấu bằng như đã trình bày có một vài tính chất như tính phản xạ, đối xứng và bắc cầu. Tương tự, một quan hệ hai ngôi $R$ trên $x$ được gọi là
+\begin{itemize}
+   \item \defText{phản xạ} khi và chỉ khi $$
+      \defMath{\forall a \in x, a\ R\ a};
+   $$
+   \item \defText{đối xứng} khi và chỉ khi \begin{equation*}
+      \defMath{\forall (a; b) \in x^2, (a\ R\ b \implies b\ R\ a)};
+   \end{equation*}
+   \item \defText{phản đối xứng} khi và chỉ khi \begin{equation*}
+      \defMath{\forall (a; b) \in x^2, (a\ R\ b \land b\ R\ a \implies a = b)};
+   \end{equation*}
+   \item \defText{bắc cầu} khi và chỉ khi \begin{equation*}
+      \defMath{\forall a \in x, \forall b \in x, \forall c \in x, (a\ R\ b \land b\ R\ c \implies a\ R\ c)}.
+   \end{equation*}
+\end{itemize}
+Trong trường hợp $R$ có đồng thời tính phản xạ, đối xứng và bắc cầu thì $R$ có thêm cái tên mới là mối \defText{quan hệ tương đương}.
+
