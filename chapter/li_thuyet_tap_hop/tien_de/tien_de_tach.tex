@@ -87,6 +87,17 @@ Tương tự, với lượng từ tồn tại, chúng ta cũng có cách viết 
    \defMath{\exists z \in x, V(z)} \iff \exists z, \left(z \in x \land V(z)\right).
 \end{equation*}
 
+Xét phủ định của $\forall z \in x, V(z)$, chúng ta có
+\begin{align*}
+   \overline{\forall z \in x, V(z)} &\iff \overline{\forall z, (z \in x \implies V(z))} \equationexplanation{định nghĩa}; \\
+   \overline{\forall z \in x, V(z)} &\iff \exists z, \overline{z \in x \implies V(z)} \equationexplanation{phủ định lượng từ phổ quát}; \\
+   \overline{\forall z \in x, V(z)} &\iff \exists z, z \in x \land \neg V(z) \equationexplanation{tính chất phủ định của phép kéo theo}; \\
+   \overline{\forall z \in x, V(z)} &\iff \exists z \in x, \neg V(z) \equationexplanation{định nghĩa}.
+\end{align*}
+Tương tự, chúng ta cũng có $$
+   \overline{\exists z \in x, V(z)} \iff \forall z \in x, \neg V(z).
+$$ Bạn đọc có thể thấy được tính chất này giống hệt tính chất phủ định thông thường trên các lượng từ.  
+
 Quay trở lại với tập hợp $y$ trong tiên đề tách, chúng ta không thể kí hiệu bằng việc thêm một kí tự duy nhất như trước được nữa, mà do mỗi tập $y$ đều cần được xác định từ một vị từ $\cauF$, vì thế, chúng ta sẽ kí hiệu tập hợp $y$ như sau:
 \begin{equation*}
    y = \defMath{\{ z \in x \mid \cauF(z) \}} = \defMath{\{ z \in x : \cauF(z) \}}.

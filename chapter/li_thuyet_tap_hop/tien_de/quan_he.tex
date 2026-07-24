@@ -22,9 +22,10 @@ suy ra $\left\{\{a\}; \{a; b\}\right\} \subseteq \mathfrak{P}(x \cup y)$. Nhắc
    (a; b) \in \mathfrak{P}(\mathfrak{P}(x \cup y)).
 \end{equation*}
 Vì vậy, từ tiên đề tách, chúng ta có thể khẳng định rằng định nghĩa là hợp lí, và ngoài ra được kết quả sau,
-\begin{equation*}
+\begin{equation}
    \forall a \in x, \forall b \in y, (a; b) \in x \times y.
-\end{equation*}
+   \label{eq:li_thuyet_tap_hop:tien_de:quan_he:dieu_kien_thuoc_tich}
+\end{equation}
 Ngoài ra, chúng ta đã sử dụng khá nhiều ``$\forall a \in x, \forall b \in y,\dots$'' trong phần này và các phần trước đó. Sử dụng tích Đề-các, chúng ta cũng có thể kí hiệu một cách tương đương là $$\defMath{\forall (a; b) \in x \times y},\dots.$$ Tương tự với lượng từ tồn tại. Thêm vào đó, nếu hai tập cấu thành lên tích Đề-các là bằng nhau như $x \times x$, có thể kí hiệu nó lại là $x^2$. Nhìn về phía trước, giả sử gọi $a$ và $b$ là hai số thực, người ta có thể kí hiệu là ``$\forall (a; b) \in \mathbb{R}^2, \dots$'', nhưng thông thường, họ thường viết là ``$\forall a, b \in \mathbb{R},\dots$''.
 
 \exercise Cho $A$, $B$, $C$, $D$ là các tập hợp. Chứng minh rằng
@@ -39,6 +40,17 @@ Ngoài ra, chúng ta đã sử dụng khá nhiều ``$\forall a \in x, \forall b
          B = \varnothing \\
          A = B
       \end{array}\right.$;
+      \item $A \subseteq B \implies \begin{cases}
+         A \times C \subseteq B \times C \\
+         C \times A \subseteq C \times B
+      \end{cases}$;
+      \item $\begin{cases}
+         \left[\begin{array}{l}
+            A \times C \subseteq B \times C \\
+            C \times A \subseteq C \times B
+         \end{array}\right. \\
+         C \neq \varnothing
+      \end{cases} \implies A \subseteq B$.
       \item $(A \times B) \cup (A \times C) = A \times (B \cup C)$;
       \item $(B \times A) \cup (C \times A) = (B \cup C) \times A$;
       \item $(A \times B) \cap (A \times C) = A \times (B \cap C)$;
@@ -48,6 +60,54 @@ Ngoài ra, chúng ta đã sử dụng khá nhiều ``$\forall a \in x, \forall b
       \item $(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)$.
    \end{enumerate}
 \end{multicols}
+
+\solution
+
+\setcounter{subexercise}{1}
+\arabic{subexercise}. Giả sử $A = \varnothing$ hoặc $B = \varnothing$. Để $z$ có thể thuộc $A \times B$, theo định nghĩa tích Đề-các, $z$ cần phải có dạng $(x; y)$ với $x \in A$ và $y \in B$, nhưng không thể tồn tại phần tử $z$ này do tối thiểu một trong hai tập $A$ và $B$ rỗng. Do đó, $A \times B = \varnothing$.
+
+Ngoài ra, nếu $A$ và $B$ đều không phải là tập rỗng. Khi đó, gọi $a$ và $b$ là hai phần tử nằm trong lần lượt tập hợp $A$ và $B$. Chúng ta có thể xây dựng $(a; b)$ và do \refeq{eq:li_thuyet_tap_hop:tien_de:quan_he:dieu_kien_thuoc_tich}, $A \times B$ tồn tại một phần tử và cho nên khác rỗng.
+
+$\begin{cases}
+   \left[\begin{array}{l}
+      A = \varnothing \\ 
+      B = \varnothing
+   \end{array}\right. \implies A \times B = \varnothing \\
+   \begin{cases}
+      A \neq \varnothing \\
+      B \neq \varnothing
+   \end{cases} \implies A \times B \neq \varnothing
+\end{cases}$ tương đương với mệnh đề $A \times B = \varnothing \iff \left[\begin{array}{l}
+      A = \varnothing \\ 
+      B = \varnothing
+   \end{array}\right.$ theo giải tích mệnh đề. Qua đó, điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Giả sử $\left[\begin{array}{l}
+   A = \varnothing \\ B = \varnothing \\ 
+   A = B
+\end{array}\right.$. Trong trường hợp \coloringCrimson{$A = \varnothing$} hay \coloringDodgerblue{$B = \varnothing$}, từ phần trước, chúng ta có $A \times B = B \times A = \varnothing$. Còn nếu trường hợp \coloringJade{$A = B$}, khi đó
+\begin{equation*}
+   \forall x, x \in A \times B \iff \forall x, \exists y \in A, \exists z \in B, x = (y; z).
+\end{equation*}
+Do $A = B$ nên chúng ta dễ dàng suy ra được
+\begin{align*}
+   \forall x, x \in A \times B &\iff \forall x, \exists y \in B, \exists z \in A, x = (y; z); \\
+   \forall x, x \in A \times B &\iff \forall x, x\in B \times A.
+\end{align*}
+Qua đó, $A \times B = B \times A$.
+
+Để chứng minh chiều ngược, đơn giản nhất là chúng ta giả thiết rằng $\left[\begin{array}{l}
+   A = \varnothing \\ B = \varnothing \\ 
+   A = B
+\end{array}\right.$ sai, hay $\begin{cases}
+   A \neq \varnothing \\
+   B \neq \varnothing \\
+   A \neq B
+\end{cases}$. Do $A \neq B$ nên tồn tại một phần tử $w$ để $w \in A \nLeftrightarrow w \in B$, hiểu theo một nghĩa tương đương, $w \in A \land w \notin B$ hoặc $w \notin A \land w \in B$. Chúng ta xét hai trường hợp:
+\begin{itemize}
+   \item $w \in A \land w \notin B$. Do $B \neq \varnothing$ nên tồn tại $v$ trong $B$.
+\end{itemize}
 
 \subsection{Định nghĩa quan hệ}
 

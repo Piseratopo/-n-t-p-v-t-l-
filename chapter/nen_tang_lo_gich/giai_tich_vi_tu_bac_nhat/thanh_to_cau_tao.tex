@@ -56,7 +56,7 @@ V(x_1;x_2;x_3;\dots) \text{ hoặc } V(x_1,x_2,x_3,\dots).
 $$
 Nếu như vị từ không có hạng thức thì sao? Nó sẽ trở thành một trạng thái của tồn tại hay một tính chất bao trùm lên mọi khái niệm, và có kí hiệu là $N()$ hoặc $N$ giống như một mệnh đề.
 
-Tượng tự với vị từ, chúng ta cũng có khái niệm \defText{hàm}. Khác so với vị từ, trong khi vị từ quan tâm đến thuộc tính của hạng thức, thì hàm lại biến đổi từ hạng thức con thành một hạng thức khác. Ví dụ:
+Tương tự với vị từ, chúng ta cũng có khái niệm \defText{hàm}. Khác so với vị từ, trong khi vị từ quan tâm đến thuộc tính của hạng thức, thì hàm lại biến đổi từ hạng thức con thành một hạng thức khác. Ví dụ:
 \begin{itemize}
    \item ``Bố của In-pha-nô'' có thể được viết lại là $B(\text{In-pha-nô})$ với $B(c)$ có nghĩa là ``Bố của (người con $c$)'';
    \item Nếu gọi $N_v(t)$ là ``nhân vật nữ chính của (bộ truyện $t$)'' và đặt hạng thức $t$ là Đô-rê-mon thì hàm sẽ trả ra Xu-ka.
@@ -86,11 +86,11 @@ Có mệnh đề sau với hạng thức $x$:
 \end{equation*}
 hoặc
 \begin{equation*}
-    (\forall x)(T(x)). 
+   (\forall x)(T(x)). 
 \end{equation*}
 \defText{Lượng từ tồn tại} có phạm vi ảnh hưởng cụ thể, kí hiệu là $\defMath{\exists}$. Mệnh đề ``tồn tại'' được viết lại là:
 \begin{center}
-    $\exists x, T(x)$.
+   $\exists x, T(x)$.
 \end{center}
 Chúng ta cũng hay nói ``không tồn tại''. Để biểu diễn dưới dạng kí hiệu, chúng ta dùng $\defMath{\nexists}$. Đây được gọi là \defText{lượng từ phủ định tồn tại}, được định nghĩa là
 \begin{equation*}
@@ -98,6 +98,21 @@ Chúng ta cũng hay nói ``không tồn tại''. Để biểu diễn dưới d�
 \end{equation*}
 Ngoài ra, có thể kết hợp nhiều lượng từ trong một mệnh đề:
 \begin{equation*}
-    \exists x, \forall y, x\text{ yêu }y.    
+   \exists x, \forall y, x\text{ yêu }y.    
 \end{equation*}
 
+\subsection{Phép đồng nhất}
+
+\ 
+
+Trong đời sống hằng ngày, để chỉ cùng một vật chất, chúng ta có thể dùng nhiều cái tên khác nhau. Chẳng hạn,
+\begin{center}
+   Hồ Chí Minh là chủ tịch nước đầu tiên của nước Việt Nam Dân chủ Cộng hòa.
+\end{center}
+Ở đây, bạn đọc có thể thấy rằng dù gọi ``Hồ Chí Minh'' hay gọi ``chủ tịch nước đầu tiên của nước Việt Nam Dân chủ Cộng hòa'' thì cũng đều chỉ vị lãnh tụ vĩ đại của dân tộc, hay hiểu theo một hướng khác, hai cách gọi này là đồng nhất. Do đó, về mặt lô-gích, chúng ta có thể viết
+\begin{center}
+   ``Hồ Chí Minh $\defMath{=}$ chủ tịch nước đầu tiên của nước Việt Nam Dân chủ Cộng hòa''.
+\end{center}
+Dấu ``$=$'' có tên gọi là \defText{phép đồng nhất} hoặc \defText{phép bằng nhau}. Khác với các phép nối lô-gích mà chúng ta đã đề cập, phép đồng nhất không có bảng giá trị chân lí. Tính đúng sai của một mệnh đề có phép đồng nhất phụ thuộc vào ngữ nghĩa đặt cho dấu bằng.
+
+Dưới một góc độ nhất định, các vế có phép đồng nhất có thể thay thế bằng vị từ, nhưng do tính hữu dụng rất cao của phép này nên dấu ``$=$'' và một số tính chất cần thiết của nó mà sau này sẽ được nghiên cứu sẽ đều được thêm vào.

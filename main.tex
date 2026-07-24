@@ -48,11 +48,16 @@
 % ==========================================
 \definecolor{colorCrimson}{RGB}{220, 24, 78}
 \definecolor{colorDodgerblue}{RGB}{0, 120, 255}
+\definecolor{colorJade}{RGB}{0, 171, 77}
 
 \definecolor{colorEmphasis}{RGB}{220, 24, 78}
 \definecolor{colorEmphasisCyan}{RGB}{0, 120, 255}
 \definecolor{colorEmphasisGreen}{RGB}{0, 171, 77}
 \definecolor{colorEmphasisPurple}{RGB}{139, 66, 141}
+
+\newcommand{\coloringCrimson}[1]{\textcolor{colorCrimson}{#1}}
+\newcommand{\coloringDodgerblue}[1]{\textcolor{colorDodgerblue}{#1}}
+\newcommand{\coloringJade}[1]{\textcolor{colorJade}{#1}}
 
 % ==========================================
 % 5. CẤU HÌNH CÁC GÓI LỆNH (SETUP)
@@ -195,8 +200,6 @@
 % 8. LỆNH TỰ ĐỊNH NGHĨA (MACROS & LỆNH VIẾT TẮT)
 % ==========================================
 % Định dạng chữ
-\newcommand{\coloringCrimson}[1]{\textcolor{colorCrimson}{#1}}
-\newcommand{\coloringDodgerblue}[1]{\textcolor{colorDodgerblue}{#1}}
 \newcommand{\emphcolor}[1]{\textcolor{colorEmphasis}{\emph{#1}}}
 \newcommand{\emphcyanbf}[1]{\textcolor{colorEmphasisCyan}{\textbf{#1}}}
 \newcommand{\defText}[1]{\textbf{#1}}

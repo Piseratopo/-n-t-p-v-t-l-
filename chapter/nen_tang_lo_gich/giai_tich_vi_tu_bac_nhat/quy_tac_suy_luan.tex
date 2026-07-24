@@ -2,7 +2,7 @@
 
 \
 
-Khi làm quen với giải tích mệnh đề, chúng ta đã sử dụng bảng giá trị chân lí và một vài quy tắc thay thế để lập luận. Những phương pháp này hoạt động hiệu quả do chúng ta chỉ có hữu hạn trường hợp để xem xét. Nhưng đối với giải tích vị từ, cần phải mở rộng công cụ dùng để lập luận do bảng giá trị chân lí không còn có khả năng quét hết toàn bộ trường hợp được nữa.
+Khi làm quen với giải tích mệnh đề, chúng ta đã sử dụng bảng giá trị chân lí và một vài quy tắc thay thế để lập luận. Những phương pháp này hoạt động hiệu quả do chúng ta chỉ có hữu hạn trường hợp để xem xét. Nhưng đối với ngôn ngữ giải tích vị từ vừa được xây dựng, cần phải mở rộng công cụ dùng để lập luận do bảng giá trị chân lí không còn có khả năng quét hết toàn bộ trường hợp được nữa.
 
 \subsection{Quy tắc đổi tên biến ràng buộc}
 
@@ -168,6 +168,16 @@ Như vậy, chúng ta cũng có một phép phủ định tương đương với
 \begin{equation*}
     \defMath{\overline{\exists x, A(x)}\iff \forall x, \neg A(x)}.
 \end{equation*}
+
+\subsection{Nguyên lí về tính không thể phân biệt của các đối tượng đồng nhất}
+
+\ 
+
+Không biết bạn đọc còn nhớ đến phép đồng nhất không. Hãy nhắc lại về ví dụ, ``Hồ Chí Minh'' là đồng nhất với ``chủ tịch nước đầu tiên của Việt Nam''. Do đó, mọi câu có cụm ``Hồ Chí Minh'' đều có thể thay với cụm từ tương đương ``chủ tịch nước đầu tiên của Việt Nam'' mà ngữ nghĩa không thay đổi. Tổng quát và chuẩn tắc hóa, chúng ta cần đưa ra quy tắc cho phép đồng nhất giống như quy tắc thay thế từ giải tích mệnh đề. Do giới hạn của giải tích vị từ bậc nhất, chúng ta sẽ chỉ xét một cách tổng quát hóa. Cụ thể, chúng ta có
+\begin{equation*}
+   \defMath{\forall x, \forall y, (x = y \implies (P(x) \iff P(y)))}
+\end{equation*}
+với mọi vị từ $P()$.
 
 \exercise Cho hai vị từ $A()$ và $B()$. Chứng minh rằng, 
 \begin{enumerate}

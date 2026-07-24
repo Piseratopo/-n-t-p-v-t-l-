@@ -2,11 +2,11 @@
 
 \
 
-Mặc dù cái tên có vẻ lạ, ý nghĩa của nó là một tính chất vô cùng quen thuộc của tập hợp: hai tập hợp cùng phần tử thì \defText{bằng nhau}. Chúng ta phát biểu nó như sau:
+Mặc dù cái tên có vẻ lạ, ý nghĩa của nó là một tính chất vô cùng quen thuộc của tập hợp: hai tập hợp cùng phần tử thì bằng nhau. Chúng ta phát biểu nó như sau:
 $$
     \defMath{\forall x, \forall y, \left( x = y \iff  \forall z, \left( z \in x \iff z \in y \right) \right)}.
 $$
-Nếu không bằng nhau, kí hiệu $\defMath{x \neq y}$ được phát biểu là ``$x$ không bằng $y$''.
+Nếu hai tập không bằng nhau, kí hiệu quan hệ này là $\defMath{x \neq y}$ và phát biểu nó là ``$x$ không bằng $y$''.
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}[>=stealth]
@@ -180,8 +180,7 @@ Nhưng, để đơn giản hóa, tác giả sẽ bỏ qua việc xây dựng cá
    \item $A \subseteq A$;
    \item $A = B \iff A \subseteq B \land B \subseteq A$;
    \item $A \neq B \iff \exists z, (z \in A \land z \notin B) \lor (z \notin A \land z \in B)$.
-   \item $A \subseteq B \land B \subseteq C \implies A \subseteq C$;
-   \item $\forall x, \forall y, ((y = A \implies x \in y) \iff x \in A)$.
+   \item $A \subseteq B \land B \subseteq C \implies A \subseteq C$.
 \end{enumerate}
 
 \solution
@@ -232,15 +231,3 @@ Do đó,
    A \subseteq B \land B \subseteq C & \implies A \subseteq C.
 \end{align*}
 Điều phải chứng minh.
-
-\stepcounter{subexercise}
-\arabic{subexercise}. Chúng ta sẽ chứng minh thông qua hai chiều. Đầu tiên, giả sử $y = A \implies x \in y$ với mọi $x$ và $y$. Cụ thể hóa $y$ để có
-\begin{equation*}
-   A = A \implies x \in A.
-\end{equation*} 
-
-Có $A = A$ luôn đúng do tính phản xạ của phép bằng nhau, cho nên phải có $x \in A$. Chiều thuận này được chứng minh.
-
-Tiếp theo, chúng ta giả sử ngược lại $x \in A$. Nếu $y = A$, theo tiên đề ngoại diên, mọi phần tử trong $y$ đều trong $A$. Cụ thể hóa thành phần tử $x$, nếu $x \in A$ thì $x \in y$. Theo lập luận đó, $y = A \implies x \in y$.
-
-Chiều ngược cũng đã được thể hiện rõ. Theo định nghĩa phép đẳng giá, qua đó, điều phải chứng minh.
