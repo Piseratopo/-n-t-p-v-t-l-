@@ -104,10 +104,107 @@ Qua đó, $A \times B = B \times A$.
    A \neq \varnothing \\
    B \neq \varnothing \\
    A \neq B
-\end{cases}$. Do $A \neq B$ nên tồn tại một phần tử $w$ để $w \in A \nLeftrightarrow w \in B$, hiểu theo một nghĩa tương đương, $w \in A \land w \notin B$ hoặc $w \notin A \land w \in B$. Chúng ta xét hai trường hợp:
+\end{cases}$. Do $A \neq B$ nên tồn tại một phần tử $w$ để $w \in A \nLeftrightarrow w \in B$, hiểu theo một nghĩa tương đương, $w \in A \land w \notin B$ hoặc $w \notin A \land w \in B$. Chúng ta xét hai trường hợp với trường hợp đầu tiên là $w \in A \land w \notin B$. Do $B \neq \varnothing$ nên tồn tại $v$ trong $B$. Xây dựng đôi có thứ tự $(w; v)$. Dễ thấy $(w; v) \in A \times B$, nhưng lại không thuộc $B \times A$ do $w \notin B$. Vì thế, $A \times B \neq B \times A$.
+
+Với lập luận tương tự, chúng ta cũng chứng minh được trường hợp còn lại. Và từ việc kết hợp các kết quả, chúng ta hiển nhiên có được điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Coi như đã có $A \subseteq B$. Với mọi phần tử $e \in A \times C$, để $e$ có thể ở trong tập hợp này thì cần phải có một bộ $(x; y)$ với $x \in A$ và $y \in C$ sao cho $e = (x; y)$. Do $A \subseteq B$ nên có được $x \in B$. Từ đó, chúng ta có được $(x; y) \in B \times C$ hay $e \in B\times C$.
+
+Tương tự, với mọi $f \in C \times A$, có thể viết $f = (u; v)$ với $u \in C$ và $v \in A$ mà cũng là $v \in B$. Do vậy, $f \in C \times B$.
+
+Từ hai đoạn lập luận nhỏ, chúng ta có được $A \subseteq B \implies \begin{cases}
+   A \times C \subseteq B \times C \\
+   C \times A \subseteq C \times B
+\end{cases}$. Điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Giả sử có $\begin{cases}
+   \left[\begin{array}{l}
+      A \times C \subseteq B \times C \\
+      C \times A \subseteq C \times B
+   \end{array}\right. \\
+   C \neq \varnothing
+\end{cases}$. Có thể thấy rằng tồn tại phần tử $c \in C$ nào đó. Với mọi $x$ trong $A$, dựng đôi có thứ tự $(x; c)$ và $(c; x)$ lần lượt thuộc $A \times C$ và $C \times A$.
+
+Để có $\left[\begin{array}{l}
+   A \times C \subseteq B \times C \\
+   C \times A \subseteq C \times B
+\end{array}\right.$ thì $A \times C \subseteq B \times C$ hoặc $C \times A \subseteq C \times B$ phải xảy ra. Xét trường hợp \coloringCrimson{$A \times C \subseteq B \times C$}, chúng ta có $(x; c) \in A \times C$ nên $(x; c) \in B \times C$. Theo định nghĩa của tích Đề-các, $x \in B$. Trong trường hợp còn lại --- \coloringDodgerblue{$C \times A \subseteq C \times B$}, chúng ta lấy $(c; x) \in C \times A$ để có $(c; x) \in C \times B$. Từ đó, $x \in B$.
+
+Từ cả hai trường hợp, chúng ta luôn có $x \in B$ từ $x \in A$. Kết quả này đúng với mọi $x$ nên $A \subseteq B$. Chúng ta có thể dễ dàng kết luận được điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Giả sử có $z$ thuộc vào tập hợp $(A \times B) \cup (A \times C)$. Theo định nghĩa của phép hợp, điều này tương đương với việc $z$ phải thuộc vào ít nhất một trong hai tập hợp thành phần:
+$$\left[\begin{array}{l}
+z \in A \times B \\
+z \in A \times C
+\end{array}\right..$$
 \begin{itemize}
-   \item $w \in A \land w \notin B$. Do $B \neq \varnothing$ nên tồn tại $v$ trong $B$.
+   \item Trường hợp \coloringCrimson{$z \in A \times B$}. Tồn tại $x \in A$ và $y \in B$ sao cho $z = (x; y)$. Khi đó, $y \in B \cup C$ do $B \subseteq B \times C$ và vì vậy $z \in A \times (B \cup C)$.
+   \item Trường hợp \coloringDodgerblue{$z \in A \times C$}. Với một lập luận tương đương, chúng ta cũng có $z \in A \times (B \cup C)$.
 \end{itemize}
+Cả hai trường hợp đều cho chúng ta $z \in A \times (B \cup C)$. Do vậy, $(A \times B) \cup (A \times C) \subseteq A \times (B \cup C)$.
+
+Gọi $w \in A \times (B \cup C)$. Tồn tại $u \in A$ và $v \in B\cup C$ sao cho $w = (u; v)$. $v \in B \cup C$ sẽ cho ra $v \in B$ hoặc $v \in C$. Từ đó, chúng ta sẽ có lần lượt hoặc $(u; v) \in A \times B$ hoặc $(u; v) \in A \times C$. Điều đó cho phép viết $z \in (A \times B) \cup (A \times C)$. Vì đó, $A \times (B \cup C) \subseteq (A \times B) \cup (A \times C)$.
+
+Kết hợp hai chiều, chúng ta có điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Giả sử có $z \in (B \times A) \cup (C \times A)$. Theo định nghĩa của phép hợp, điều này tương đương với
+$$\left[\begin{array}{l}
+z \in B \times A \\
+z \in C \times A
+\end{array}\right..$$
+\begin{itemize}
+   \item Trường hợp \coloringCrimson{$z \in B \times A$}. Tồn tại $x \in A$ và $y \in B$ sao cho $z = (x; y)$. Khi đó, $y \in B \cup C$ do $B \subseteq B \times C$ và vì vậy $z \in A \times (B \cup C)$.
+   \item Trường hợp \coloringDodgerblue{$z \in C \times A$}. Với một lập luận tương đương, chúng ta cũng có $z \in (B \cup C) \times A$.
+\end{itemize}
+Cả hai trường hợp đều cho chúng ta $(B \times A) \cup (C \times A) \subseteq (B \cup C) \times A$.
+
+Chứng minh chiều ngược lại, gọi $w \in (B \cup C) \times A$. Khi đó,
+\begin{align*}
+   w \in (B \cup C) \times A &\iff \exists u \in B \cup C, \exists v \in A, w = (u; v); \\
+   w \in (B \cup C) \times A &\iff \exists u \in B \cup C, \exists v \in A, w = (u; v); \\
+   w \in (B \cup C) \times A &\iff \exists u,  \left[\begin{array}{l}
+      u \in B \\
+      u \in C
+   \end{array}\right. \land \exists v \in A, w = (u; v); \\
+   w \in (B \cup C) \times A &\iff \exists u, \left[\begin{array}{l}
+      u \in B \land \exists v \in A, w = (u; v)\\
+      u \in C \land \exists v \in A, w = (u; v)
+   \end{array}\right.\equationexplanation{tính chất phân phối}; \\
+   w \in (B \cup C) \times A &\iff \left[\begin{array}{l}
+      \exists u, u \in B \land \exists v \in A, w = (u; v)\\
+      \exists u, u \in C \land \exists v \in A, w = (u; v)
+   \end{array}\right. \equationexplanation{$\begin{array}{l}
+      \text{tính chất phân phối} \\
+      \text{của lượng từ tồn tại}
+   \end{array}$}; \\ 
+   w \in (B \cup C) \times A &\iff \left[\begin{array}{l}
+      \exists u\in B \land \exists v \in A, w = (u; v)\\
+      \exists u\in C \land \exists v \in A, w = (u; v)
+   \end{array}\right.; \\
+   w \in (B \cup C) \times A &\iff w \in B \times A \lor w \in C \times A; \\
+   w \in (B \cup C) \times A &\iff w \in (B \times A) \cup (C \times A).
+\end{align*}
+
+Từ đó, chúng ta có $(B \cup C) \times A \subseteq (B \times A) \cup (C \times A)$. Kết hợp hai chiều, chúng ta có $$(B \times A) \cup (C \times A) = (B \cup C) \times A,$$
+điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Lấy $x$ bất kì thuộc $(A \times B) \cap (A \times C)$. Khì này, $x \in A \times B$ và $x \in A \times C$. Từ $x \in A \times B$, chúng ta có thể lấy $y$ thuộc $A$ và $z$ thuộc $B$ sao cho $x = (y; z)$. Tương tự, từ $x \in A \times C$, tồn tại $\yHan \in A$ và $\zHan \in C$ để $x = \left(\yHan; \zHan\right)$. Theo tính chất bắc cầu, chúng ta có $$(y; z) = \left(\yHan; \zHan\right).$$ Để hai đôi có thứ tự này bằng nhau thì $y = \yHan$ và $z = \zHan$, dẫn đến $z \in C$. Có $z \in B \land z \in C$ nên $z \in B \cap C$. Bổ sung thêm $y \in A$ để có $(y; z) \in A \times (B \cap C)$ hay $x \in A \times (B \cap C)$. Do lập luận trên đúng với mọi $x$ nên \begin{equation*}
+   (A \times B) \cap (A \times C) \subseteq A \times (B \cap C).
+\end{equation*}
+
+Xét $w$ thuộc $A \times (B \cap C)$. Tồn tại $u$ và $v$ sao cho $\begin{cases}
+   u \in A \\
+   v \in B \cap C
+\end{cases}$ và $w = (u; v)$. Có $v \in B \cap C$ nên $v \in B \land v \in C$. Khi đó, $u \in A \land v \in B$ cho chúng ta $w \in A \times B$, $u \in A \land v \in C$ cho $w \in A \times C$. Kết hợp lại, có được $w \in (A \times B) \cap (A \times C)$. Kết quả này có được với mọi $w$ nên \begin{equation*}
+   A \times (B \cap C) \subseteq (A \times B) \cap (A \times C).
+\end{equation*}  
+
+Vì vậy, dễ dàng có được điều phải chứng minh.
 
 \subsection{Định nghĩa quan hệ}
 
@@ -115,11 +212,11 @@ Qua đó, $A \times B = B \times A$.
 
 Một \defText{quan hệ} $R$ trên $x \times y$ được định nghĩa đơn giản là một tập con nào đó của $x \times y$. Thông thường, chúng ta viết $a R b$ nếu $(a; b) \in R$. Dễ thấy rằng không phải mọi phần tử trong $x$ sẽ có phần tử quan hệ tương ứng trong $y$ và ngược lại cũng như vậy. Do đó, chúng ta sẽ định nghĩa thêm những giá trị có thể có quan hệ. Cụ thể, định nghĩa \defText{tập nguồn} là $x$, \defText{tập đích} là y, \defText{tập xác định} là
 \begin{equation*}
-   \defMath{\{a \in x \mid \exists b \in y, a R b\}}
+   \defMath{\{a \in x \mid \exists b \in y, a\ R\ b\}}
 \end{equation*}
 và định nghĩa \defText{tập giá trị} là
 \begin{equation*}
-   \defMath{\{b \in y \mid \exists a \in x, a R b\}}.
+   \defMath{\{b \in y \mid \exists a \in x, a\ R\ b\}}.
 \end{equation*}
 
 \begin{figure}[H]
