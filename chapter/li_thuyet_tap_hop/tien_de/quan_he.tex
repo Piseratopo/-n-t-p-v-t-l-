@@ -218,7 +218,14 @@ Với mọi $w \in (B \times C) \cap A$, tồn tại $u \in B \cap C$ và $v \in
 Từ những khẳng định đã có, kết luận được $$(B \cap C) \times A = (B \times A) \cap (C \times A).$$ Điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}.
+\arabic{subexercise}. Gọi một $x$ thuộc $A \times (B \setminus C)$. Tồn tại $y$ và $z$ để $y \in A$, $z \in B \setminus C$ và $x = (y; z)$. Vì $z \in B \setminus C$ nên $z \in B$ và $z \notin C$, dẫn đến $$\begin{cases}
+   (y; z) \in A \times B \\
+   (y; z) \notin A \times C
+\end{cases}$$. Do đó, $x \in (A \times B) \setminus (A \times C)$. Vậy, $A \times (B \setminus C) \subseteq (A \times B) \setminus (A \times C)$.
+
+Lấy $u \in (A \times B) \setminus (A \times C)$. Có $u \in A \times B$ nên $u$ có dạng $(v; w)$ với $v \in A$ và $w \in B$. Để $u \notin A \times C$ thì hiển nhiên cần phải có $w \notin C$. Cho nên, $w \in B \setminus C$, và do vậy, $u \in A \times (B \setminus C)$. Vì thế, $$(A \times B) \setminus (A \times C) \subseteq A \times (B \setminus C).$$
+
+
 
 \subsection{Định nghĩa quan hệ}
 
