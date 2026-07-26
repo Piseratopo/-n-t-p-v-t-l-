@@ -165,28 +165,29 @@ Cả hai trường hợp đều cho chúng ta $(B \times A) \cup (C \times A) \s
 Chứng minh chiều ngược lại, gọi $w \in (B \cup C) \times A$. Khi đó,
 \begin{align*}
    w \in (B \cup C) \times A &\iff \exists u \in B \cup C, \exists v \in A, w = (u; v); \\
-   w \in (B \cup C) \times A &\iff \exists u \in B \cup C, \exists v \in A, w = (u; v); \\
-   w \in (B \cup C) \times A &\iff \exists u,  \left[\begin{array}{l}
+   w \in (B \cup C) \times A &\iff \exists u, \left(u \in B \cup C \land \exists v \in A, w = (u; v)\right); \\
+   w \in (B \cup C) \times A &\iff \exists u, \left(\left[\begin{array}{l}
       u \in B \\
       u \in C
-   \end{array}\right. \land \exists v \in A, w = (u; v); \\
+   \end{array}\right. \land \exists v \in A, w = (u; v)\right); \\
    w \in (B \cup C) \times A &\iff \exists u, \left[\begin{array}{l}
       u \in B \land \exists v \in A, w = (u; v)\\
       u \in C \land \exists v \in A, w = (u; v)
    \end{array}\right.\equationexplanation{tính chất phân phối}; \\
-   w \in (B \cup C) \times A &\iff \left[\begin{array}{l}
-      \exists u, u \in B \land \exists v \in A, w = (u; v)\\
-      \exists u, u \in C \land \exists v \in A, w = (u; v)
-   \end{array}\right. \equationexplanation{$\begin{array}{l}
-      \text{tính chất phân phối} \\
-      \text{của lượng từ tồn tại}
-   \end{array}$}; \\ 
-   w \in (B \cup C) \times A &\iff \left[\begin{array}{l}
-      \exists u\in B \land \exists v \in A, w = (u; v)\\
-      \exists u\in C \land \exists v \in A, w = (u; v)
+   w \in (B \cup C) \times A &\implies \left[\begin{array}{l}
+      u^* \in B \land \exists v, \left(v \in A \land w = (u^*; v)\right)\\
+      u^* \in C \land \exists v, \left(v \in A \land w = (u^*; v)\right)
+   \end{array}\right. \equationexplanation{cụ thể hóa $u$}.\\ 
+   w \in (B \cup C) \times A &\implies \left[\begin{array}{l}
+      u^* \in B \land v^* \in A \land w = (u^*; v^*)\\
+      u^* \in C \land V^* \in A \land w = (u^*; V^*)
+   \end{array}\right. \equationexplanation{cụ thể hóa thêm $v$}; \\ 
+   w \in (B \cup C) \times A &\implies \left[\begin{array}{l}
+      (u^*; v^*) \in B \times A \land w = (u^*; v^*)\\
+      (u^*; V^*) \in C \times A \land w = (u^*; V^*)
    \end{array}\right.; \\
-   w \in (B \cup C) \times A &\iff w \in B \times A \lor w \in C \times A; \\
-   w \in (B \cup C) \times A &\iff w \in (B \times A) \cup (C \times A).
+   w \in (B \cup C) \times A &\implies w \in B \times A \lor w \in C \times A; \\
+   w \in (B \cup C) \times A &\implies w \in (B \times A) \cup (C \times A).
 \end{align*}
 
 Từ đó, chúng ta có $(B \cup C) \times A \subseteq (B \times A) \cup (C \times A)$. Kết hợp hai chiều, chúng ta có $$(B \times A) \cup (C \times A) = (B \cup C) \times A,$$
@@ -205,6 +206,19 @@ Xét $w$ thuộc $A \times (B \cap C)$. Tồn tại $u$ và $v$ sao cho $\begin{
 \end{equation*}  
 
 Vì vậy, dễ dàng có được điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Với mọi $x$, $x \in (B \times A) \cap (C \times A)$, hay $x$ thuộc đồng thời $B \times A$ và $C \times A$. Tồn tại $y \in B$ và $z \in A$ để $x = (y; z)$. Ngoài ra, tồn tại $\yHan \in C$ và $\zHan \in A$ để $x = \left(\yHan; \zHan\right).$ Với một lập luận tương tự như phần trước, chúng ta có $y = \yHan$ và $y \in C$. Khi đó, $\begin{cases}
+   y \in B \cap C \\
+   z \in A
+\end{cases}$ cho được $x \in (B \cap C) \times A$. Chúng ta có $$\forall x, \left(x \in (B \times A) \cap (C \times A) \implies x \in (B \cap C) \times A\right).$$ Vì vậy, $(B \times A) \cap (C \times A) \subseteq (B \cap C) \times A$.
+
+Với mọi $w \in (B \times C) \cap A$, tồn tại $u \in B \cap C$ và $v \in A$ sao cho $w = (u; v)$. Có $u \in B \cap C$ nên $u \in B$ và $u \in C$. Khi đó, $v \in A$ cho chúng ta $w \in B \times A$ và $w \in C \times A$. Kết hợp lại, có được $w \in (B \times A) \cap (C \times A)$. Do vậy, $(B \cap C) \times A \subseteq (B \times A) \cap (C \times A)$.
+
+Từ những khẳng định đã có, kết luận được $$(B \cap C) \times A = (B \times A) \cap (C \times A).$$ Điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}.
 
 \subsection{Định nghĩa quan hệ}
 
