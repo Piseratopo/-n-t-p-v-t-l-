@@ -186,7 +186,6 @@
       \field{isbn}{978-0-306-45567-4}
       \field{title}{In Search of Planet Vulcan: The Ghost in Newton's Clockwork Universe}
       \field{year}{1997}
-      \true{nocite}
       \verb{doi}
       \verb 10.1007/978-1-4899-6100-6
       \endverb
@@ -252,7 +251,6 @@
       \field{labeltitlesource}{title}
       \field{title}{Giáo trình Triết học Mác - Lênin}
       \field{year}{2024}
-      \true{nocite}
       \keyw{misc}
     \endentry
     \entry{korn2000mathematical}{book}{}{}
@@ -318,7 +316,6 @@
       \field{isbn}{978-604-338-113-9}
       \field{title}{Từ điển tiếng Việt}
       \field{year}{2021}
-      \true{nocite}
       \keyw{misc}
     \endentry
     \entry{Sigler1976}{book}{}{}

@@ -541,13 +541,15 @@ với mọi $x$, $y$, $z$, $R$ là quan hệ trên $x \times y$, và $S$ là qua
    \caption{Ví dụ quan hệ tích (hợp) $S \circ R$ giữa các tập hợp $x, y, z$.}
 \end{figure}
 
+
+
 \subsection{Quan hệ hai ngôi}
 
 Quan hệ $R$ trên tập $x \times y$ là \defText{quan hệ hai ngôi} khi và chỉ khi $x = y$. $R$ khi đó được gọi là quan hệ hai ngôi trong $x$. Nếu $z$ là một tập con của $x$, một quan hệ hai ngôi trong $z$ được xác định bởi
 \begin{equation*}
    \defMath{\forall (a; b) \in z^2, \big(a\ R_z\ b \iff a\ R\ b\big)}  
 \end{equation*}
-có tên là \defText{quan hệ sinh} bởi $R$ trong $x$.
+có tên là \defText{quan hệ sinh} bởi $R$ trong $x$ trên $z$.
 
 Dấu bằng như đã trình bày có một vài tính chất như tính phản xạ, đối xứng và bắc cầu. Tương tự, một quan hệ hai ngôi $R$ trên $x$ được gọi là
 \begin{itemize}
@@ -564,5 +566,12 @@ Dấu bằng như đã trình bày có một vài tính chất như tính phản
       \defMath{\forall a \in x, \forall b \in x, \forall c \in x, (a\ R\ b \land b\ R\ c \implies a\ R\ c)}.
    \end{equation*}
 \end{itemize}
-Trong trường hợp $R$ có đồng thời tính phản xạ, đối xứng và bắc cầu thì $R$ có thêm cái tên mới là mối \defText{quan hệ tương đương}.
+Trong trường hợp $R$ có đồng thời tính phản xạ, đối xứng và bắc cầu thì $R$ có thêm cái tên mới là mối \defText{quan hệ tương đương}. Từ một mối quan hệ $R$ tương đương trên $x$, chúng ta có thể xây dựng \defText{lớp tương đương mô-đun} \defMath{$R$} với mọi phần tử $a \in x$, định nghĩa là:
+\begin{equation*}
+   \forall a \in x, \defMath{[a]_R = \cl_R(a) = \Cl_R(a) = \left\{ 
+      y \in x \mid x\ R\ y
+   \right\}}.
+\end{equation*}
+
+
 
