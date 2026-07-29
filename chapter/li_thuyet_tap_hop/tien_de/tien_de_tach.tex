@@ -224,10 +224,10 @@ Một phép toán nữa, khá ít dùng, được gọi là \defText{hiệu đ�
 Gọi $z$ là một phần tử trong $\bigcap \{x; y\}$. Khi đó, theo định nghĩa $$\forall a \in \{x; y\}, z \in a.$$
 Có $x \in \{x; y\}$ nên $z \in x$, $y \in \{x; y\}$ nên $z \in y$. Do đó, $z \in x \land z \in y$, dẫn đến $z \in x \cap y$. Vậy, $\bigcap \{x; y\} \subseteq x \cap y$.
 
-Ngược lại, giả sử $w \in x \cap y$. Khi này, $w \in x$ và $w \in y$. Nhắc lại rằng $\forall b, b \in \{x; y\} \iff \left[\begin{array}{l}
-   b = x \\
-   b = y
-\end{array}\right.$. Trong cả hai trường hợp đó, $w \in b$. Do vậy, $\forall b \in \{x; y\}, w \in b$. Theo định nghĩa $w \in \bigcap \{x; y\}$. Vậy, $x \cap y \subseteq \bigcap \{x; y\}$.
+Ngược lại, giả sử $w \in x \cap y$. Khi này, $w \in x$ và $w \in y$. Nhắc lại rằng $\forall b, b \in \{x; y\} \iff \left[\begin{aligned}
+   b &= x \\
+   b &= y
+\end{aligned}\right.$. Trong cả hai trường hợp đó, $w \in b$. Do vậy, $\forall b \in \{x; y\}, w \in b$. Theo định nghĩa $w \in \bigcap \{x; y\}$. Vậy, $x \cap y \subseteq \bigcap \{x; y\}$.
 
 Kết hợp hai kết quả, chúng ta có $\bigcap \{x; y\} = x \cap y$, theo cách nói khác, điều phải chứng minh.
 
@@ -432,17 +432,17 @@ Tiếp theo, chúng ta sẽ cần phải khẳng định rằng $(A \cap B) \cap
    z \in \bigcap\{A; B; C\} \iff \forall y \in \{A; B; C\}, z \in y.
 \end{equation*}
 
-$\{A; B; C\}$ là tập duy nhất thỏa mãn với mọi $y$, $\left[\begin{array}{l}
-   y = A \\
-   y = B \\
-   y = C   
-\end{array}\right.$. Do vậy, với mọi $z$,
+$\{A; B; C\}$ là tập duy nhất thỏa mãn với mọi $y$, $\left[\begin{aligned}
+   y &= A \\
+   y &= B \\
+   y &= C   
+\end{aligned}\right.$. Do vậy, với mọi $z$,
 \begin{align*}
-   \forall y \in \{A; B; C\}, z \in y &\iff \forall y, \left(\left[\begin{array}{l}
-   y = A \\
-   y = B \\
-   y = C   
-\end{array} \implies z\in y\right.\right); \\
+   \forall y \in \{A; B; C\}, z \in y &\iff \forall y, \left(\left[\begin{aligned}
+   y &= A \\
+   y &= B \\
+   y &= C   
+\end{aligned} \implies z\in y\right.\right); \\
 \forall y \in \{A; B; C\}, z \in y &\iff \forall y, \begin{cases}
    y = A \implies z \in y \\
    y = B \implies z \in y \\
@@ -492,25 +492,26 @@ Dễ thấy điều phải chứng minh.
       \end{cases} \iff B = C$;
       \item $A \cap (B \cup (A \cap C)) = A \cap (B \cup C)$;
       \item $A \cup (B \cap (A \cup C)) = A \cup (B \cap C)$;
-      \item $\begin{array}{l}
-         A \cap B = C \cap D \implies \\
-         (A \cup (B \cap C)) \cap (A \cup (B \cap D)) = A;
-      \end{array}$
-      \item $\begin{cases}
-         A \cap B = C\cap D\\
-         C \cup D = E \\
-         C \subseteq A \\
-         D \subseteq B \\
-         A \subseteq E \\
-         B \subseteq E
-      \end{cases} \implies \begin{cases}
-         C = A\\
-         D = B
-      \end{cases}$;
-      \item $\mathfrak{P}(A \cap B) = \mathfrak{P}(A) \cap \mathfrak{P}(B)$;
-      \item $\forall a, \left(a \in \mathfrak{P}\left(\bigcap A\right) \iff \forall y \in A, a \in \mathfrak{P}(y)\right)$.
+      \setcounter{subexercise}{\value{enumi}}
    \end{enumerate}
 \end{multicols}
+\begin{enumerate}
+   \setcounter{enumi}{\value{subexercise}}
+   \item $A \cap B = C \cap D \implies (A \cup (B \cap C)) \cap (A \cup (B \cap D)) = A$;
+   \item $\begin{cases}
+      A \cap B = C\cap D\\
+      C \cup D = E \\
+      C \subseteq A \\
+      D \subseteq B \\
+      A \subseteq E \\
+      B \subseteq E
+   \end{cases} \implies \begin{cases}
+      C = A\\
+      D = B
+   \end{cases}$;
+   \item $\mathfrak{P}(A \cap B) = \mathfrak{P}(A) \cap \mathfrak{P}(B)$;
+   \item $\forall a, \left(a \in \mathfrak{P}\left(\bigcap A\right) \iff \forall y \in A, a \in \mathfrak{P}(y)\right)$.
+\end{enumerate}
 
 \solution
 
@@ -638,7 +639,7 @@ Và từ đó, $\mathfrak{P}(A \cap B) = \mathfrak{P}(A) \cap \mathfrak{P}(B)$. 
 
 \stepcounter{subexercise}
 \arabic{subexercise}. Lấy phần tử $a$ bất kì thuộc $\mathfrak{P}\left(\bigcap A\right)$. Theo định nghĩa tập lũy thừa, $$a \subseteq \bigcap A.$$
-Điều này tương đương với khẳng định với mọi $x \in a$, $x \in \bigcap A$. Theo định nghĩa của giao, $x$ khi này sẽ thỏa mãn hai mệnh đề --- $x \in \bigcup A$ và $\forall y \in A, x \in y$. Hai mệnh đề này có thể rút gọn thành một mệnh đề tương đương $\forall y \in A, x \in y$ do $$\forall y \in A, x \in y \implies x \in \bigcup A$$ như đã chứng minh từ trước. Như vậy,
+Điều này tương đương với khẳng định với mọi $x \in a$, $x \in \bigcap A$. Theo định nghĩa của giao, $x$ khi này sẽ thỏa mãn hai mệnh đề --- $x \in \bigcup A$ và $\forall y \in A, x \in y$. Hai mệnh đề này có thể rút gọn thành một mệnh đề tương đương $\forall y \in A, x \in y$ do dễ thấy rằng $$\forall y \in A, \left(x \in y \implies x \in \bigcup A\right).$$ Như vậy,
 \begin{equation*}
    \forall x \in a, \forall y \in A, x \in y.
 \end{equation*}
@@ -703,10 +704,10 @@ Qua đó, điều phải chứng minh.
 
 \begin{enumerate}
    \setcounter{enumi}{\value{subexercise}}
-   \item $\mathfrak{P}(A \setminus B) \setminus \{\varnothing\} = \mathfrak{P}(A) \setminus \mathfrak{P}(B) \iff \left[\begin{array}{l}
-      A \cap B = \varnothing \\
-      A \subseteq B
-   \end{array}\right.$.
+   \item $\mathfrak{P}(A \setminus B) \setminus \{\varnothing\} = \mathfrak{P}(A) \setminus \mathfrak{P}(B) \iff \left[\begin{aligned}
+      &A \cap B = \varnothing \\
+      &A \subseteq B
+   \end{aligned}\right.$.
 \end{enumerate}
 
 \solution
@@ -977,10 +978,10 @@ Từ đó, theo định nghĩa tập con, chúng ta có điều cần phải ch�
 \stepcounter{subexercise}
 \arabic{subexercise}. Đặt $\vetrai = \mathfrak{P}(A \setminus B) \setminus \{\varnothing\}$ và $\vephai = \mathfrak{P}(A) \setminus \mathfrak{P}(B)$.
 
-Đầu tiên, giả sử \coloringCrimson{$\left[\begin{array}{l}
-      A \cap B = \varnothing \\
-      A \subseteq B
-   \end{array}\right.$}. Xét hai trường hợp:
+Đầu tiên, giả sử \coloringCrimson{$\left[\begin{aligned}
+      &A \cap B = \varnothing \\
+      &A \subseteq B
+   \end{aligned}\right.$}. Xét hai trường hợp:
 \begin{itemize}
    \item Trường hợp 1 --- \coloringCrimson{$A \cap B = \varnothing$}. Chúng ta có $A \setminus B = A$. Cho nên, \begin{equation*}
       \vetrai = \mathfrak{P}(A) \setminus \{\varnothing\}.
@@ -1012,18 +1013,18 @@ Từ đó, theo định nghĩa tập con, chúng ta có điều cần phải ch�
 
 Theo quy tắc chia trường hợp, chúng ta có 
 \begin{equation*}
-   \left[\begin{array}{l}
-      A \cap B = \varnothing \\
-      A \subseteq B
-   \end{array}\right. \implies \mathfrak{P}(A \setminus B) \setminus \{\varnothing\} = \mathfrak{P}(A) \setminus \mathfrak{P}(B).
+   \left[\begin{aligned}
+      &A \cap B = \varnothing \\
+      &A \subseteq B
+   \end{aligned}\right. \implies \mathfrak{P}(A \setminus B) \setminus \{\varnothing\} = \mathfrak{P}(A) \setminus \mathfrak{P}(B).
 \end{equation*}
 
-Ngược lại, giả sử $\left[\begin{array}{l}
-   A \cap B = \varnothing \\
-   A \subseteq B
-\end{array}\right.$ không xảy ra, hay hiểu theo cách khác, chúng ta cho rằng \coloringDodgerblue{$\begin{cases}
-   A \cap B \neq \varnothing \\
-   A \not\subseteq B
+Ngược lại, giả sử $\left[\begin{aligned}
+   &A \cap B = \varnothing \\
+   &A \subseteq B
+\end{aligned}\right.$ không xảy ra, hay hiểu theo cách khác, chúng ta cho rằng \coloringDodgerblue{$\begin{cases}
+A \cap B \neq \varnothing \\
+A \not\subseteq B
 \end{cases}$}. Điều này cho chúng ta rằng hai tập $A \cap B$ và $A \setminus B$ đều phải khác rỗng. Phải tồn tại hai phần tử $u \in A \cap B$ và $v \in A \setminus B$. Từ tiên đề hợp, được phép đặt $S = \{u; v\}$. Chúng ta tự đặt câu hỏi: ``$S$ có thuộc tập hợp nào trong $\vephai$ và $\vetrai$?''.
 
 Có $u \notin A \setminus B$ do $u \in B$, nên $S \not\subseteq A \setminus B$. Vì vậy, $S \notin \mathfrak{P}(A \setminus B)$. Cũng suy ra được $S \notin \mathfrak{P}(A \setminus B) \setminus \{\varnothing\}$ hay $S \notin \vetrai$. 
@@ -1042,14 +1043,12 @@ Vì tồn tại một phần tử không thuộc $\vetrai$ nhưng lại nằm tr
    \end{cases} \implies \vetrai \neq \vephai.
 \end{equation*}
 Mệnh đề này tương đương với 
-\begin{equation*}
-   \mathfrak{P}(A \setminus B) \setminus \{\varnothing\} = \mathfrak{P}(A) \setminus \mathfrak{P}(B) \implies \left[\begin{array}{l}
-      A \cap B = \varnothing \\
-      A \subseteq B
-   \end{array}\right. .
-\end{equation*}
-
-Từ hai chiều, chúng ta có điều phải chứng minh.
+$
+   \mathfrak{P}(A \setminus B) \setminus \{\varnothing\} = \mathfrak{P}(A) \setminus \mathfrak{P}(B) \implies \left[\begin{aligned}
+      &A \cap B = \varnothing \\
+      &A \subseteq B
+   \end{aligned}\right. .
+$ Qua đó, từ kết quả có được sau hai chiều lập luận, chúng ta có điều phải chứng minh.
 
 \exercise Cho $A, B, C$ là các tập hợp. Chứng minh rằng
 \begin{multicols}{2}
@@ -1202,7 +1201,7 @@ Từ đó, chúng ta có thể kết hợp hai chiều và suy ra điều phải
 Thật vậy, chúng ta có
 \begin{align*}
    \forall x, &\left(x \in P \vartriangle Q \iff x \in (P \setminus Q) \lor (Q \setminus P)\right); \\
-   \forall x, &\left(x \in P \vartriangle Q \iff x \in P \setminus Q \lor x \in P \setminus Q\right) ; \\
+   \forall x, &\left(x \in P \vartriangle Q \iff x \in P \setminus Q \lor x \in Q \setminus P\right) ; \\
    \forall x, &\left(x \in P \vartriangle Q \iff x \in P \land x \notin Q \lor x \notin P \land x \in Q\right) ; \\
    \forall x, &\left(x \in P \vartriangle Q \iff x \in P \oplus x \in Q\right) \equationexplanation{$P \land \neg Q \lor \neg P \land Q \iff P \oplus Q$}.
 \end{align*}
@@ -1241,3 +1240,90 @@ Do đó, $A \vartriangle B = C \implies B \vartriangle C = A$. Sử dụng kết
    \end{cases}.
 \end{equation*}
 Điều phải chứng minh.
+
+\exercise Cho $\mathcal{U}$ là tập hợp và $X$, $Y$, $Z$, $\xNom$, $\yNom$, $\zNom$ là các tập hợp con của $\mathcal{U}$ sao cho
+\begin{equation*}
+   \begin{cases}
+      \bigcup \{X; Y; Z\} = \mathcal{U} \\
+      X \cap Y = \xNom \cap \yNom \\
+      Y \cap Z = \yNom \cap \zNom \\
+      Z \cap X = \zNom \cap \xNom \\
+      X \subseteq \xNom \\
+      Y \subseteq \yNom \\
+      Z \subseteq \zNom
+   \end{cases}.
+\end{equation*}
+Chứng minh rằng $X = \xNom$, $Y = \yNom$, $Z = \zNom$.
+
+\solution
+
+Thực hiện biến đổi, 
+\begin{align*}
+   \xNom &= \xNom \cap \mathcal{U} \equationexplanation{$\xNom \subseteq \mathcal{U}$} \\
+      &= \xNom \cap \bigcup\{X; Y; Z\} \equationexplanation{$\mathcal{U} = \bigcup\{X; Y; Z\}$} \\
+      &= \xNom \cap (X \cup (Y \cup Z)) \equationexplanation{$\bigcup\{X; Y; Z\} = X \cup (Y \cup Z)$}\\
+      &= \left(\xNom \cap X\right) \cup \left(\xNom \cap (Y \cup Z)\right) \\
+      &= \left(\xNom \cap X\right) \cup \left(\left(\xNom \cap Y\right) \cup \left(\xNom \cap Z\right)\right). \\
+\end{align*}
+Có $\begin{cases}
+   \xNom \cap X \subseteq X \\
+   \xNom \cap Y \subseteq \xNom \cap \yNom \\
+   \xNom \cap Z \subseteq \xNom \cap \zNom
+\end{cases}$ từ $\begin{cases}
+   Y \subseteq \yNom \\
+   Z \subseteq \zNom
+\end{cases}$, cho nên 
+\begin{align*}
+   \xNom &\subseteq X \cup \left(\left(\xNom \cap \yNom\right) \cup \left(\xNom \cap \zNom\right)\right); \\
+   \xNom &\subseteq X \cup \left(\left(X \cap Y\right) \cup \left(X \cap Z\right)\right) \equationexplanation{$\begin{cases}
+      \xNom \cap \yNom = X \cap Y \\
+      \xNom \cap \zNom = X \cap Z
+   \end{cases}$}; \\
+   \xNom &\subseteq X \cup (X \cap (Y \cup Z)); \\
+   \xNom &\subseteq X \equationexplanation{$X \cap (Y \cup Z) \subseteq X$}.
+\end{align*}
+Kết hợp với $X \subseteq \xNom$, suy ra $X = \xNom$.
+
+Lập luận tương tự, chúng ta cũng có $\begin{cases}
+   Y = \yNom \\
+   Z = \zNom
+\end{cases}$. Điều phải chứng minh.
+
+% \exercise Cho $A$ và $B$ là hai tập hợp. Với mỗi phần, tìm tất cả các tập hợp $x$ sao cho khẳng định được cho là đúng\footnote{Với những bài tập yêu cầu \emph{tìm} giá trị của một hoặc nhiều hạng thức (hay còn được gọi tắt là \emph{tìm nghiệm}), thông thường, chúng ta cần phải liệt kê các giá trị thỏa mãn hoặc chỉ ra phương pháp để có thể \emph{``dễ dàng''} xây dựng nên các nghiệm đáp ứng điều kiện đã cho. Không có một định nghĩa khách quan để giải nghĩa thế nào là ``dễ dàng''. Chẳng hạn, với câu hỏi tìm $x$ để $x \cup A = B$, chúng ta có thể trả lời là:
+% \begin{center}
+%    ``Tập $x$ thỏa mãn là những tập có tính chất $x \cup A = B$.''
+% \end{center} nhưng trả lời như vậy thì rõ ràng là không thỏa đáng. Một câu trả lời phải có giá trị toán học hoặc ứng dụng ở một mức độ nào đó. Theo quan niệm của tác giả, khi giải một bài toán tìm nghiệm, cần phải chỉ ra một thủ tục tính toán, sử dụng các giá trị cho trước và phép tính đã định nghĩa để xây dựng được các giá trị thỏa mãn. Trong đó, liệt kê là một thủ tục có thể sử dụng khi có ít nghiệm hợp lệ.}:
+% \begin{multicols}{2}
+%    \begin{enumerate}
+%       \item $x \cup A = B $;
+%       \item $x \cap A = B $;
+%       \item $x \setminus A = B$;
+%       \item $A \setminus x = B$;
+%       \item $x \vartriangle A = B$.
+%    \end{enumerate}
+% \end{multicols}
+
+% \solution
+
+% Trước khi đi vào lời giải, chúng ta sẽ bổ sung thêm một số thuật ngữ:
+% \begin{itemize}
+%    \item $x$ là giá trị cần phải tìm, thường được gọi là \defText{ẩn số} hay \defText{biến số};
+%    \item $A$ và $B$ là các tập đã cho trước mà chúng ta có thể dùng để biểu diễn $x$ theo chúng, gọi là \defText{tham số}.
+% \end{itemize}
+
+% \setcounter{subexercise}{1}
+% \arabic{subexercise}. Trước hết, giả sử tồn tại $x$ thỏa mãn $x \cup A = B$. 
+
+% Nếu $A$ và $B$ cho trước thỏa mãn \coloringCrimson{$A \centernot{\subseteq} B$}, điều này sẽ cho chúng ta mâu thuẫn do $x \cup A = B \implies A \subseteq B$ với mọi $x$. Do đó, trong trường hợp này, không tồn tại $x$ thỏa mãn yêu cầu đề bài.
+
+% Ngược lại, nếu $A \subseteq B$. Lấy một phần tử $e \in B \setminus A$ bất kì. Có $e \in B$ nên $e \in x \cup A$, tương đương với $e \in x \lor e \in A$. Nhưng $e\notin A$ bởi $e \in B \setminus A$, do đó $e \in x$. Vì thế, 
+% \begin{equation*}
+%    B \setminus A \subseteq x.
+% \end{equation*}
+% Do đó, $(B \setminus A) \cup x = x$. Vậy, $$\exists y, (B \setminus A) \cup y = x.$$
+
+% Vì $x \subseteq x \cup A$ và $x \cup A = B$,
+% \begin{equation}
+%    x \subseteq B.
+%    \label{eq:li_thuyet_tap_hop:tien_de:tien_de_tach:1.1}
+% \end{equation}

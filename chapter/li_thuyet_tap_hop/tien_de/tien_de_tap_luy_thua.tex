@@ -27,9 +27,10 @@ Từ đó, có được ngay, $\forall y, (y \in \mathfrak{P}(x) \iff y \in \mat
       \item $X \subseteq Y \iff \mathfrak{P}(X) \subseteq \mathfrak{P}(Y)$;
       \item $X = Y \iff \mathfrak{P}(X) = \mathfrak{P}(Y)$;
       \item $\mathfrak{P}(X \cup Y) \supseteq \mathfrak{P}(X) \cup \mathfrak{P}(Y)$;
-      \item $\mathfrak{P}(X \cup Y) = \mathfrak{P}(X) \cup \mathfrak{P}(Y) \iff \left[\begin{array}{l}
-         X \subseteq Y \\ X \supseteq Y
-      \end{array}\right.$;
+      \item $\mathfrak{P}(X \cup Y) = \mathfrak{P}(X) \cup \mathfrak{P}(Y) \iff \left[\begin{aligned}
+         X &\subseteq Y \\ 
+         X &\supseteq Y
+      \end{aligned}\right.$;
       \item $X = \mathfrak{P}\left(\bigcup X\right) \iff \exists y, X = \mathfrak{P}(y)$.
    \end{enumerate}
 \end{multicols}
@@ -72,11 +73,11 @@ Mặt khác, với mọi $y \in \mathfrak{P}(\{X; Y\})$, theo định nghĩa có
 
 \begin{itemize}
     \item \textcolor{colorEmphasis}{$X \in y$ và $Y \in y$}. Điều này cho chúng ta $\{X; Y\} \subseteq y$. Suy ra, $y = \{X; Y\}$.
-    \item \textcolor{colorEmphasisCyan}{$X \in y$ và $Y \notin y$}. Gọi $w$ là một phần tử thuộc $y$. Có $\left[\begin{array}{l} w = X \\ w = Y \end{array}\right.$. Nhưng do $Y \notin y$ nên $w \neq Y$. Vậy $w = X$. Tóm lại, chúng ta có
+    \item \textcolor{colorEmphasisCyan}{$X \in y$ và $Y \notin y$}. Gọi $w$ là một phần tử thuộc $y$. Có $\left[\begin{aligned} w = X \\ w = Y \end{aligned}\right.$. Nhưng do $Y \notin y$ nên $w \neq Y$. Vậy $w = X$. Tóm lại, chúng ta có
           $$\forall w, \left(w \in y \iff w = X\right)$$
           và điều này cho $y = \{X\}$.
     \item \textcolor{colorEmphasisGreen}{$X \notin y$ và $Y \in y$}. Tương tự, có thể kết luận $y = \{Y\}$.
-    \item \textcolor{colorEmphasisPurple}{$X \notin y$ và $Y \notin y$}. Giả sử tồn tại $w \in y$. Khi đó, cần phải có $w = X \lor w = Y$. Nhưng do $X \notin y$ và $Y \notin y$, nên điều này là vô lí. Vậy, $\forall w, w \notin y$. Suy ra, $y = \varnothing$ theo định nghĩa tập rỗng.
+    \item \coloringWisteria{$X \notin y$ và $Y \notin y$}. Giả sử tồn tại $w \in y$. Khi đó, cần phải có $w = X \lor w = Y$. Nhưng do $X \notin y$ và $Y \notin y$, nên điều này là vô lí. Vậy, $\forall w, w \notin y$. Suy ra, $y = \varnothing$ theo định nghĩa tập rỗng.
 \end{itemize}
 
 Qua bốn trường hợp, có $y \in \{\varnothing; \{X\}; \{Y\}; \{X; Y\}\}$. Do đó, $\mathfrak{P}(\{X; Y\}) \subseteq \{\varnothing; \{X\}; \{Y\}; \{X; Y\}\}$.
@@ -101,8 +102,8 @@ Kết hợp hai kết quả bao hàm, suy ra $\mathfrak{P}(\{X; Y\}) = \{\varnot
             \draw[thick, dashed, colorEmphasisGreen] (-2.5, -1.2) ellipse (0.4cm and 0.5cm);
             \node[colorEmphasisGreen] at (-1.8, -1.2) {$\{b\}$};
 
-            \draw[thick, dashed, colorEmphasisPurple, rotate around={50:(-3.15,-0.45)}] (-3.15, -0.45) ellipse (1cm and 2cm);
-            \node[colorEmphasisPurple] at (-4.2, -1.45) {$\{a; b\}$};
+            \draw[thick, dashed, colorWisteria, rotate around={50:(-3.15,-0.45)}] (-3.15, -0.45) ellipse (1cm and 2cm);
+            \node[colorWisteria] at (-4.2, -1.45) {$\{a; b\}$};
 
             \draw[direction arrow, ultra thick] (-0.5, 0) -- (1.9, 0) node[midway, above] {$\mathfrak{P}\left(\{a; b\}\right)$};
 
@@ -127,11 +128,11 @@ Kết hợp hai kết quả bao hàm, suy ra $\mathfrak{P}(\{X; Y\}) = \{\varnot
             \draw[guide arrow, colorEmphasisGreen, dashed] (-2.5, -1.6) to[out=-60, in=180] (6.8, -0.1);
 
             % Tập {a, b}
-            \draw[thick, colorEmphasisPurple, rotate around={-40:(5.5, -2)}] (5.5, -2) ellipse (1.2cm and 0.8cm);
+            \draw[thick, colorWisteria, rotate around={-40:(5.5, -2)}] (5.5, -2) ellipse (1.2cm and 0.8cm);
             \node[element, label=left:$a$] (a_right2) at (5.1, -1.7) {};
             \node[element, label=right:$b$] (b_right2) at (5.9, -2.3) {};
-            \node[colorEmphasisPurple] at (6.5, -1.2) {$\{a; b\}$};
-            \draw[guide arrow, colorEmphasisPurple, dashed] (-1.6, -0.9) to[out=50, in=-150] (5.1, -2.6);
+            \node[colorWisteria] at (6.5, -1.2) {$\{a; b\}$};
+            \draw[guide arrow, colorWisteria, dashed] (-1.6, -0.9) to[out=50, in=-150] (5.1, -2.6);
 
         \end{tikzpicture}
     \end{center}

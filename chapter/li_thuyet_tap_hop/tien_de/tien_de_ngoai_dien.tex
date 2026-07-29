@@ -41,6 +41,7 @@ $$
     \defMath{\forall x, \forall y, \left( x \subseteq y \iff  \forall z, \left( z \in x \implies z \in y \right) \right)}.
 $$
 
+
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}[>=stealth]
@@ -72,13 +73,17 @@ $$
     \end{center}
     \caption{Minh họa tập con $x \subseteq y$ hay $y \supseteq x$.}
 \end{figure}
-Ngoài kí hiệu $\subseteq$, chúng ta còn có các định nghĩa sau: Với mọi tập hợp $x$ và $y$,
+Ngoài định nghĩa cho phép $\subseteq$, chúng ta còn có các định nghĩa sau: Với mọi tập hợp $x$ và $y$,
 \begin{itemize}
-    \item $\defMath{x \supseteq y \iff y \subseteq x}$,
-    \item $\defMath{x \subset y \iff x \subseteq y \land x \neq y}$\footnote{Trong nhiều tài liệu, $\subset$ có ý nghĩa tương đương với $\subseteq$.},
-    \item $\defMath{x \subsetneq y \iff x \subset y}$,
-    \item $\defMath{x \supset y \iff x \supseteq y \land x \neq y}$,
-    \item $\defMath{x \supsetneq y \iff x \supset y}$.
+   \item $\defMath{x \subseteqq y \iff x \subseteq y}$,
+   \item $\defMath{x \supseteq y \iff y \subseteq x}$,
+   \item $\defMath{x \supseteqq y \iff x \supseteq y}$,
+   \item $\defMath{x \subset y \iff x \subseteq y \land x \neq y}$\footnote{Trong nhiều tài liệu, $\subset$ có ý nghĩa tương đương với $\subseteq$.},
+   \item $\defMath{x \subsetneq y \iff x \subset y}$,
+   \item $\defMath{x \subsetneqq y \iff x \subsetneq y}$,
+   \item $\defMath{x \supset y \iff x \supseteq y \land x \neq y}$,
+   \item $\defMath{x \supsetneq y \iff x \supset y}$,
+   \item $\defMath{x \supsetneqq y \iff x \supsetneq y}$.
 \end{itemize}
 
 Nếu $x$ không phải là tập con của $y$ thì sao? Chúng ta có biến đổi như sau: Với mọi tập hợp $x$ và $y$,

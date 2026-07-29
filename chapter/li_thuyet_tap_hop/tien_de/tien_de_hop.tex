@@ -73,21 +73,21 @@ Tập hợp này được gọi là \defText{hợp} của $x$ và kí hiệu là
 
 Áp dụng liên tiếp tiên đề cặp, chúng ta có thể xây dựng được tập $\big\{\{A; B\}; \{C\}\big\}$. Thêm tiên đề hợp, chúng ta có $\bigcup \big\{\{A; B\}; \{C\}\big\}$. Chúng ta sẽ chứng minh $$S = \bigcup \big\{\{A; B\}; \{C\}\big\}$$ và đây là tập duy nhất thỏa mãn.
 
-Lấy tùy ý $x \in S$. Theo định nghĩa của hợp, tồn tại tập hợp $y \in \big\{\{A; B\}; \{C\}\big\}$ sao cho $x \in y$. Khi này, $\left[\begin{array}{l}
-      y = \{A; B\} \\
-      y = \{C\}
-   \end{array}\right.$. Xét hai trường hợp:
+Lấy tùy ý $x \in S$. Theo định nghĩa của hợp, tồn tại tập hợp $y \in \big\{\{A; B\}; \{C\}\big\}$ sao cho $x \in y$. Khi này, $\left[\begin{aligned}
+      y &= \{A; B\} \\
+      y &= \{C\}
+   \end{aligned}\right.$. Xét hai trường hợp:
 \begin{itemize}
    \item \textcolor{colorEmphasis}{Trường hợp $y = \{A; B\}$}: Chúng ta có $x \in \{A; B\}$, dẫn đến $x = A$ hoặc $x = B$.
    \item \textcolor{colorEmphasisCyan}{Trường hợp $y = \{C\}$}: Chúng ta có $x \in \{C\}$, dẫn đến $x = C$.
 \end{itemize}
 Cả hai trường hợp đều cho kết quả $x = A$ hoặc $x = B$ hoặc $x = C$. Do đó, $\forall x, (x \in S \implies x = A \lor x = B \lor x = C)$.
 
-Ngược lại, lấy tùy ý $z$ sao cho $\left[\begin{array}{l}
-      z = A \\
-      z = B \\
-      z = C
-   \end{array}\right.$. Xét ba trường hợp:
+Ngược lại, lấy tùy ý $z$ sao cho $\left[\begin{aligned}
+      z &= A \\
+      z &= B \\
+      z &= C
+   \end{aligned}\right.$. Xét ba trường hợp:
 \begin{itemize}
    \item \textcolor{colorEmphasis}{Trường hợp $z = A$}: Chúng ta có $A \in \{A; B\}$. Ngoài ra, $\{A; B\} \in \big\{\{A; B\}; \{C\}\big\}$, dẫn đến $A \in \bigcup \big\{\{A; B\}; \{C\}\big\}$. Suy ra $z \in S$.
    \item \textcolor{colorEmphasisCyan}{Trường hợp $z = B$}: Tương tự với trường hợp trước, chúng ta cũng có $z \in S$.
@@ -181,10 +181,10 @@ Từ hai điều trên, chúng ta có điều phải chứng minh.
 \arabic{subexercise}. Giả sử $A \subseteq B$. Lấy tùy ý $x \in \bigcup A$. Theo định nghĩa, tồn tại $y \in A$ sao cho $x \in y$. Vì $A \subseteq B$, nên $y \in B$. Kết hợp với $x \in y$, chúng ta có $\exists z, (z \in B \land x \in z)$, dẫn đến $x \in \bigcup B$. Vậy $\bigcup A \subseteq \bigcup B$. Điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}. Một lần nữa, giả sử $A \subseteq B$. Lấy tùy ý $x \in A \cup C$, theo định nghĩa, tồn tại tập hợp $y \in \{A; C\}$ sao cho $x \in y$. Khi này, $\left[\begin{array}{l}
-      y = A \\
-      y = C
-   \end{array}\right.$.
+\arabic{subexercise}. Một lần nữa, giả sử $A \subseteq B$. Lấy tùy ý $x \in A \cup C$, theo định nghĩa, tồn tại tập hợp $y \in \{A; C\}$ sao cho $x \in y$. Khi này, $\left[\begin{aligned}
+      y &= A \\
+      y &= C
+   \end{aligned}\right.$.
 \begin{itemize}
    \item \textcolor{colorEmphasis}{Trường hợp $y = A$}: Chúng ta có $x \in A$. Vì $A \subseteq B$, suy ra $x \in B$. Lại có $B \in \{B; C\}$, nên kéo theo $x$ là một phần tử của $B \cup C$.
    \item \textcolor{colorEmphasisCyan}{Trường hợp $y = C$}: Chúng ta có $x \in C$. Tương tự, có $x \in B \cup C$.
@@ -223,11 +223,11 @@ Kết hợp hai điều trên, chúng ta có
 
 Giả sử $x \in (A \cup B) \cup C$. Theo định nghĩa, $x \in A \cup B$ hoặc $x \in C$. Nếu $x \in A \cup B$, thì tiếp tục áp dụng định nghĩa để có $x \in A$ hoặc $x \in B$. Tóm lại, $x \in A$, $x \in B$ hoặc $x \in C$; có nghĩa là tồn tại tập hợp $y \in \{A; B; C\}$ sao cho $x \in y$. Điều này chứng tỏ $x \in \bigcup \{A; B; C\}$, và kéo theo $(A \cup B) \cup C \subseteq \bigcup \{A; B; C\}$.
 
-Ngược lại, lấy tùy ý $z \in \bigcup \{A; B; C\}$. Theo định nghĩa, tồn tại tập hợp $w \in \{A; B; C\}$ sao cho $z \in w$. Khi đó, $\left[\begin{array}{l}
-      w = A \\
-      w = B \\
-   w = C
-   \end{array}\right.$. Xét ba trường hợp:
+Ngược lại, lấy tùy ý $z \in \bigcup \{A; B; C\}$. Theo định nghĩa, tồn tại tập hợp $w \in \{A; B; C\}$ sao cho $z \in w$. Khi đó, $\left[\begin{aligned}
+   w &= A \\
+   w &= B \\
+   w &= C
+   \end{aligned}\right.$. Xét ba trường hợp:
 \begin{itemize}
    \item \textcolor{colorEmphasis}{Trường hợp $w = A$}: Chúng ta có $z \in A$. Từ đó suy ra $z \in A \cup B$, dẫn đến $z \in (A \cup B) \cup C$.
    \item \textcolor{colorEmphasisCyan}{Trường hợp $w = B$}: Chúng ta có $z \in B$. Tương tự, cũng có $z \in A \cup B$, kéo theo $z \in (A \cup B) \cup C$.
@@ -243,10 +243,10 @@ Từ hai điều trên, suy ra $(A \cup B) \cup C = \bigcup \{A; B; C\}$.
 \arabic{subexercise}. Với mọi $x$, 
 \begin{align*}
    x \in \left(\bigcup A\right) \cup \left(\bigcup B\right) &\iff x \in \bigcup A \lor x \in \bigcup B; \\
-   x \in \left(\bigcup A\right) \cup \left(\bigcup B\right) &\iff \left[\begin{array}{l}
-      \exists z, (z \in A \land x \in z) \\
-      \exists z, (z \in B \land x \in z)
-   \end{array}\right. \equationexplanation{tiên đề hợp}; \\
+   x \in \left(\bigcup A\right) \cup \left(\bigcup B\right) &\iff \left[\begin{aligned}
+      &\exists z, (z \in A \land x \in z) \\
+      &\exists z, (z \in B \land x \in z)
+   \end{aligned}\right. \equationexplanation{tiên đề hợp}; \\
    x \in \left(\bigcup A\right) \cup \left(\bigcup B\right) &\iff \exists z, (z \in A \land x \in z \lor z \in B \land x \in z); \\
    x \in \left(\bigcup A\right) \cup \left(\bigcup B\right) &\iff \exists z, \left((z \in A \lor z \in B) \land x \in z\right); \\
    x \in \left(\bigcup A\right) \cup \left(\bigcup B\right) &\iff \exists z, (z \in A \cup B \land x \in z); \\

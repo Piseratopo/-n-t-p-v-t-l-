@@ -57,9 +57,21 @@ Ngoài ra, chúng ta đã sử dụng khá nhiều ``$\forall a \in x, \forall b
       \item $(B \times A) \cap (C \times A) = (B \cap C) \times A$;
       \item $A \times (B \setminus C) = (A \times B) \setminus (A \times C)$;
       \item $(B \setminus C) \times A = (B \times A) \setminus (C \times A)$;
-      \item $(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)$.
+      \item $(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)$;
+      \item $(A \times B) \cup (C \times D) \subseteq (A \cup C) \times (B \cup D)$;
+      \setcounter{subexercise}{\value{enumi}}
    \end{enumerate}
 \end{multicols}
+
+\begin{enumerate}
+   \setcounter{enumi}{\value{subexercise}}
+   \item $(A \times B) \cup (C \times D) = (A \cup C) \times (B \cup D) \iff \left[\begin{array}{l}
+      A = C \\
+      B = D \\
+      A \subseteq C \land B \subseteq D\\
+      A \supseteq C \land B \supseteq D
+   \end{array}\right.$.
+\end{enumerate}
 
 \solution
 
@@ -194,7 +206,7 @@ Từ đó, chúng ta có $(B \cup C) \times A \subseteq (B \times A) \cup (C \ti
 điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}. Lấy $x$ bất kì thuộc $(A \times B) \cap (A \times C)$. Khì này, $x \in A \times B$ và $x \in A \times C$. Từ $x \in A \times B$, chúng ta có thể lấy $y$ thuộc $A$ và $z$ thuộc $B$ sao cho $x = (y; z)$. Tương tự, từ $x \in A \times C$, tồn tại $\yHan \in A$ và $\zHan \in C$ để $x = \left(\yHan; \zHan\right)$. Theo tính chất bắc cầu, chúng ta có $$(y; z) = \left(\yHan; \zHan\right).$$ Để hai đôi có thứ tự này bằng nhau thì $y = \yHan$ và $z = \zHan$, dẫn đến $z \in C$. Có $z \in B \land z \in C$ nên $z \in B \cap C$. Bổ sung thêm $y \in A$ để có $(y; z) \in A \times (B \cap C)$ hay $x \in A \times (B \cap C)$. Do lập luận trên đúng với mọi $x$ nên \begin{equation*}
+\arabic{subexercise}. Lấy $x$ bất kì thuộc $(A \times B) \cap (A \times C)$. Khì này, $x \in A \times B$ và $x \in A \times C$. Từ $x \in A \times B$, chúng ta có thể lấy $y$ thuộc $A$ và $z$ thuộc $B$ sao cho $x = (y; z)$. Tương tự, từ $x \in A \times C$, tồn tại $\yNom \in A$ và $\zNom \in C$ để $x = \left(\yNom; \zNom\right)$. Theo tính chất bắc cầu, chúng ta có $$(y; z) = \left(\yNom; \zNom\right).$$ Để hai đôi có thứ tự này bằng nhau thì $y = \yNom$ và $z = \zNom$, dẫn đến $z \in C$. Có $z \in B \land z \in C$ nên $z \in B \cap C$. Bổ sung thêm $y \in A$ để có $(y; z) \in A \times (B \cap C)$ hay $x \in A \times (B \cap C)$. Do lập luận trên đúng với mọi $x$ nên \begin{equation*}
    (A \times B) \cap (A \times C) \subseteq A \times (B \cap C).
 \end{equation*}
 
@@ -208,7 +220,7 @@ Xét $w$ thuộc $A \times (B \cap C)$. Tồn tại $u$ và $v$ sao cho $\begin{
 Vì vậy, dễ dàng có được điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}. Với mọi $x$, $x \in (B \times A) \cap (C \times A)$, hay $x$ thuộc đồng thời $B \times A$ và $C \times A$. Tồn tại $y \in B$ và $z \in A$ để $x = (y; z)$. Ngoài ra, tồn tại $\yHan \in C$ và $\zHan \in A$ để $x = \left(\yHan; \zHan\right).$ Với một lập luận tương tự như phần trước, chúng ta có $y = \yHan$ và $y \in C$. Khi đó, $\begin{cases}
+\arabic{subexercise}. Với mọi $x$, $x \in (B \times A) \cap (C \times A)$, hay $x$ thuộc đồng thời $B \times A$ và $C \times A$. Tồn tại $y \in B$ và $z \in A$ để $x = (y; z)$. Ngoài ra, tồn tại $\yNom \in C$ và $\zNom \in A$ để $x = \left(\yNom; \zNom\right).$ Với một lập luận tương tự như phần trước, chúng ta có $y = \yNom$ và $y \in C$. Khi đó, $\begin{cases}
    y \in B \cap C \\
    z \in A
 \end{cases}$ cho được $x \in (B \cap C) \times A$. Chúng ta có $$\forall x, \left(x \in (B \times A) \cap (C \times A) \implies x \in (B \cap C) \times A\right).$$ Vì vậy, $(B \times A) \cap (C \times A) \subseteq (B \cap C) \times A$.
@@ -221,12 +233,175 @@ Từ những khẳng định đã có, kết luận được $$(B \cap C) \times
 \arabic{subexercise}. Gọi một $x$ thuộc $A \times (B \setminus C)$. Tồn tại $y$ và $z$ để $y \in A$, $z \in B \setminus C$ và $x = (y; z)$. Vì $z \in B \setminus C$ nên $z \in B$ và $z \notin C$, dẫn đến $$\begin{cases}
    (y; z) \in A \times B \\
    (y; z) \notin A \times C
-\end{cases}$$. Do đó, $x \in (A \times B) \setminus (A \times C)$. Vậy, $A \times (B \setminus C) \subseteq (A \times B) \setminus (A \times C)$.
+\end{cases}.$$ Do đó, $x \in (A \times B) \setminus (A \times C)$. Vậy, $A \times (B \setminus C) \subseteq (A \times B) \setminus (A \times C)$.
 
-Lấy $u \in (A \times B) \setminus (A \times C)$. Có $u \in A \times B$ nên $u$ có dạng $(v; w)$ với $v \in A$ và $w \in B$. Để $u \notin A \times C$ thì hiển nhiên cần phải có $w \notin C$. Cho nên, $w \in B \setminus C$, và do vậy, $u \in A \times (B \setminus C)$. Vì thế, $$(A \times B) \setminus (A \times C) \subseteq A \times (B \setminus C).$$
+Lấy $u \in (A \times B) \setminus (A \times C)$. Có $u \in A \times B$ nên $u$ có dạng $(v; w)$ với $v \in A$ và $w \in B$. Để $u \notin A \times C$ thì hiển nhiên cần phải có $\overline{v \in A \land w \in C}$ hay $v \notin A \lor w \notin C$, nhưng $v \in A$ là đã có nên $w \notin C$. Cho nên, $w \in B \setminus C$, và do vậy, $u \in A \times (B \setminus C)$. Vì thế, $$(A \times B) \setminus (A \times C) \subseteq A \times (B \setminus C).$$
 
+Kết hợp hai chiều, chúng ta có điều phải chứng minh.
 
+\stepcounter{subexercise}
+\arabic{subexercise}. Gọi $x$ thuộc $(B \setminus C) \times A$. Tồn tại $y \in B \setminus C$ và $z \in A$ sao cho $x = (y; z)$. Tương tự phần trước, từ $y \in B \setminus C$, chúng ta có thể suy ra được $y \in B \land y \notin C$, và từ đó, $$\begin{cases}
+   x \in B \times A \\
+   x \notin C \times A
+\end{cases}.$$ Vì vậy, $(B \setminus C) \times A \subseteq (B \times A) \setminus (C \times A)$.
 
+Lấy $u \in (B \times A) \setminus (C \times A)$. Vì $u \in B \times A$ nên $$\exists v \in B, \exists w \in A, u = (v; w).$$
+Có $u \notin C \times A$, cho nên dễ thấy rằng $v \notin C$. Khi này, $\begin{cases}
+   v \in B \setminus C \\
+   w \in A
+\end{cases}$, và từ đó $(v; w) \in (B \setminus C) \times A$, có nghĩa là $u$ cũng thuộc $(B \setminus C) \times A$. Vì thế, $(B \times A) \setminus (C \times A) \subseteq (B \setminus C) \times A.$
+
+Kết hợp hai kết quả, chúng ta có điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Gọi $x \in (A \times B) \cap (C \times D)$, suy luận được $x \in A \times B$. Tồn tại $y \in A$ và $z \in B$ với $x = (y; z)$. Cũng có $x \in C \times D$ nên $y \in C$ và $z \in D$, dẫn đến
+\begin{equation*}
+   \begin{cases}
+      y \in A \cap C \\
+      z \in B \cap D
+   \end{cases}.
+\end{equation*}
+Với kết quả này, suy ra được $(y; z) \in (A \cap C) \times (B \cap D)$. Vì vậy, $$\forall x, \left(x \in (A \times B) \cap (C \times D) \implies x \in (A \cap C) \times (B \cap D)\right),$$ hay, $(A \times B) \cap (C \times D) \subseteq (A \cap C) \times (B \cap D)$. 
+
+Xét một $w$ bất kì thuộc $(A \cap C) \times (B \cap D)$. Từ định nghĩa, tồn tại $u \in A \cap C$ và $v \in B \cap D$ để có $w = (u; v)$. Điều đó cho chúng ta
+\begin{center}
+   $\begin{cases}
+      u \in A \land v \in B \\
+      u \in C \land v \in D
+   \end{cases}$, dẫn đến $\begin{cases}
+      (u; v) \in A \times B \\
+      (u; v) \in C \times D
+   \end{cases}$. 
+\end{center}
+Và vì vậy, \begin{equation*}
+   \forall w, \left(w \in (A \cap C) \times (B \cap D) \implies w \in (A \times B) \cap (C \times D)\right),
+\end{equation*}
+hay $(A \cap C) \times (B \cap D) \subseteq (A \times B) \cap (C \times D)$.
+
+Và, chúng ta dễ dàng có được điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Lấy một phần tử $x$ bất kì sao cho $x \in (A \times B) \cup (C \times D)$. Theo định nghĩa của phép hợp, chúng ta có hoặc $x \in A \times B$ hoặc $x \in C \times D$.
+\begin{itemize}
+   \item Trường hợp \coloringCrimson{$x \in A \times B$} cho chúng ta một bộ $(y; z) = x$ với $y \in A$ và $z \in B$. Có $$\begin{cases}
+      y \in A \implies y \in A \cup C \\
+      z \in B \implies z \in B \cup D
+   \end{cases}$$ nên $(y; z) \in (A \cup C) \times (B \cup D)$ hay $x \in (A \cup C) \times (B \cup D)$.
+   \item Đối với trường hợp \coloringDodgerblue{$x \in C \times D$}, chúng ta cũng có thể dễ dàng kết luận $x \in (A \cup C) \times (B \cup D)$ với cách làm tương đương.
+\end{itemize}
+Chúng ta có $\forall x, \left(x \in (A \times B) \cup (C \times D) \implies (A \cup C) \times (B \cup D)\right)$, nên $$(A \times B) \cup (C \times D) \subseteq (A \cup C) \times (B \cup D).$$
+Điều phải chứng minh.
+
+\stepcounter{subexercise}
+\arabic{subexercise}. Đặt $$S = \left( (A \cup C) \times (B \cup D) \right) \setminus \left((A \times B) \cup (C \times D)\right) $$ và $$T = \left( (A \setminus C) \times (D \setminus B) \right) \cup \left( (C \setminus A) \times (B \setminus D) \right).$$ Xét một phần tử $x$ bất kì. Nếu $x \in T$, hai trường hợp có thể xảy ra.
+
+Thứ nhất, \coloringCrimson{$x \in (A \setminus C) \times (D \setminus B)$}. Chúng ta có thể viết lại $x$ dưới dạng $x = (y; z)$ với $y$ và $z$ lần lượt thuộc $A \setminus C$ và $D \setminus B$. Có $\begin{cases}
+   A \setminus C \subseteq A \\
+   A \subseteq A \cup C
+\end{cases}$ nên $A \setminus C \subseteq A \cup C$. Từ đó, $y \in A \cup C$. Tương tự, $z \in B \cup D$. Do vậy, $x \in (A \cup C) \times (B \cup D)$. Ngoài ra, $\begin{cases}
+   y \notin C \\
+   z \notin B
+\end{cases}$ do $\begin{cases}
+   y \in A \setminus C \\
+   z \in D \setminus B
+\end{cases}$ nên $x$ không thể thuộc cả hai tập $A \times B$ và $C \times D$. Từ một chút lập luận lô-gích cơ bản, chúng ta cũng có được $x \notin (A \times B) \cup (C \times D)$. Tổng kết lại, từ các kết quả đã có, kết luận được $x \in S$. 
+
+Thứ hai, \coloringDodgerblue{$x \in (C \setminus A) \times (B \setminus D)$}. Cách làm tương tự cũng cho chúng ta $x \in S$. Do cả hai trường hợp đều chung một kết luận nên có mệnh đề $$\forall x, (x \in T \implies x \in S)$$ là luôn đúng. Vì vậy, $T \subseteq S$.
+
+Giả sử $(A \cup C) \times (B \cup D) = (A \times B) \cup (C \times D)$. Điều này cho chúng ta $S = \varnothing$. Tập rỗng thì không có phần tử, và như một hệ quả, có ngay được $T$ cũng không thể có phần tử, hay $T = \varnothing$. Và vì $(A \setminus C) \times (D \setminus B)$ và $(C \setminus A) \times (B \setminus D)$ đều là tập con của $T$, do đó, 
+$$
+\begin{cases}
+   (A \setminus C) \times (D \setminus B) = \varnothing \\
+   (C \setminus A) \times (B \setminus D) = \varnothing
+\end{cases}.
+$$
+Từ kết quả đã chứng minh từ trước, chúng ta có 
+\begin{align*}
+   S = \varnothing &\implies \begin{cases}
+      A \setminus C = \varnothing \lor D \setminus B = \varnothing \\
+      C \setminus A = \varnothing \lor B \setminus D = \varnothing
+   \end{cases}; \\
+   S = \varnothing &\implies \begin{cases}
+      A \subseteq C \lor D \subseteq B \\
+      C \subseteq A \lor B \subseteq D
+   \end{cases}.
+\end{align*}
+Thêm vào đó, với mọi mệnh đề $M$, $N$, $P$, $Q$, \begin{equation*}
+   \begin{cases}
+      M \lor N \\
+      P \lor Q
+   \end{cases} \iff \left[\begin{array}{l}
+      M \land P \\
+      M \land Q \\
+      N \land P \\
+      N \land Q
+   \end{array}\right..
+\end{equation*}
+Sử dụng kết quả đó, 
+\begin{align*}
+   S = \varnothing &\implies \left[\begin{array}{l}
+      A \subseteq C \land C \subseteq A \\
+      A \subseteq C \land B \subseteq D \\
+      D \subseteq B \land C \subseteq A \\
+      D \subseteq B \land B \subseteq D
+   \end{array}\right., \text{~và do đó,} \\
+   (A \cup C) \times (B \cup D) = (A \times B) \cup (C \times D) &\implies \left[\begin{array}{l}
+      A = C \\
+      B = D \\
+      A \subseteq C \land B \subseteq D \\
+      D \subseteq B \land C \subseteq A \\
+   \end{array}\right..
+\end{align*}
+
+Chứng minh chiều ngược lại, giả sử $\left[\begin{array}{l}
+   A = C \\
+   B = D \\
+   A \subseteq C \land B \subseteq D \\
+   D \subseteq B \land C \subseteq A \\
+\end{array}\right.$. Chia làm bốn khả năng khác nhau, cụ thể là:
+\begin{itemize}
+   \item Trường hợp \coloringCrimson{$A = C$}. Chúng ta có $A \cup C = A$. Và từ những khẳng định đã có, dễ dàng suy ra được $$\begin{cases}
+      C \times D = A \times D \\
+      (A \cup C) \times (B \cup D) = A \times (B \cup D)
+   \end{cases}.$$ Suy ra, $$\begin{cases}
+      (A \times B) \cup (C \times D) = (A \times B) \cup (A \times D) \\
+      (A \cup C) \times (B \cup D) = A \times (B \cup D)
+   \end{cases}.$$
+   Đã có $(A \times B) \cup (A \times D) = A \times (B \cup D)$ nên chúng ta có thể kết luận trong trường hợp này
+   $$(A \times B) \cup (C \times D) = (A \cup C) \times (B \cup D).$$
+   \item Trường hợp \coloringDodgerblue{$B = D$}. Chứng minh tương tự, tóm tắt lại như sau:
+   \begin{align*}
+      (A \times B) \cup (C \times D) &= (A \times B) \cup (C \times B) \\
+         &= (A \cup C) \times B \\
+         &= (A \cup C) \times (B \cup D).
+   \end{align*}
+   \item Trường hợp \coloringJade{$A \subseteq C \land B \subseteq D$}. Với mọi $w \in A \times B$, đặt $w = (u; v)$ với $u \in A$ và $v \in B$. Do $\begin{cases}
+      A \subseteq C \\
+      B \subseteq D
+   \end{cases}$ nên $u \in C$ và $v \in D$. Khi đó, $w \in C \times D$. Qua đó, có được $A \times B \subseteq C \times D$, và $$(A \times B) \cup (C \times D) = C \times D.$$
+   Ngoài ra, $\begin{cases}
+      A \subseteq C \\
+      B \subseteq D
+   \end{cases}$ cũng cho chúng ta $\begin{cases}
+      A \cup C = C \\
+      B \cup D = D
+   \end{cases}$, hiển nhiên dẫn ra được $$(A \cup C) \times (B \cup D) = C \times D.$$
+   Theo tính chất bắc cầu của phép đồng nhất, $(A \times B) \cup (C \times D) = (A \cup C) \times (B \cup D)$.
+   \item Trường hợp \coloringWisteria{$C \subseteq A \land D \subseteq B$}. Một cách tương tự, chúng ta cũng có $$(A \times B) \cup (C \times D) = (A \cup C) \times (B \cup D)$$ do cả hai tập đều bằng $A \times B$.
+\end{itemize}
+
+Tổng hợp các kết luận từ các trường hợp, chúng ta có
+\begin{equation*}
+   \left[\begin{aligned}
+      A &= C \\
+      B &= D \\
+      A \subseteq C &\land B \subseteq D \\
+      D \subseteq B &\land C \subseteq A \\
+   \end{aligned}\right. \implies  (A \times B) \cup (C \times D) = (A \cup C) \times (B \cup D).
+\end{equation*}
+
+Kết hợp kết quả từ hai chiều, chúng ta có được điều phải chứng minh.
+   
 \subsection{Định nghĩa quan hệ}
 
 \ 
