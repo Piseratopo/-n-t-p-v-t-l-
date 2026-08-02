@@ -408,11 +408,11 @@ Kết hợp kết quả từ hai chiều, chúng ta có được điều phải 
 
 Một \defText{quan hệ} $R$ trên $x \times y$ được định nghĩa đơn giản là một tập con nào đó của $x \times y$. Thông thường, chúng ta viết $a R b$ nếu $(a; b) \in R$. Dễ thấy rằng không phải mọi phần tử trong $x$ sẽ có phần tử quan hệ tương ứng trong $y$ và ngược lại cũng như vậy. Do đó, chúng ta sẽ định nghĩa thêm những giá trị có thể có quan hệ. Cụ thể, định nghĩa \defText{tập nguồn} là $x$, \defText{tập đích} là y, \defText{tập xác định} là
 \begin{equation*}
-   \defMath{\{a \in x \mid \exists b \in y, a\ R\ b\}}
+   \defMath{\{a \in x \mid \exists b \in y, a\;R\;b\}}
 \end{equation*}
 và định nghĩa \defText{tập giá trị} là
 \begin{equation*}
-   \defMath{\{b \in y \mid \exists a \in x, a\ R\ b\}}.
+   \defMath{\{b \in y \mid \exists a \in x, a\;R\;b\}}.
 \end{equation*}
 
 \begin{figure}[H]
@@ -446,7 +446,7 @@ và định nghĩa \defText{tập giá trị} là
 \end{figure}
 Cần phải phân biệt được tập nguồn với tập xác định, tập đích với tập giá trị. Tập xác định chỉ chứa những phần tử từ tập nguồn mà có giá trị quan hệ tương ứng ở tập đích. Tương tự, tập giá trị chỉ có những phần tử trong tập đích mà có giá trị quan hệ tương ứng ở tập nguồn.
 
-Hãy lấy một vài ví dụ. Nếu $A$ là tập hợp thì $\in_A = \{x \in A \times \mathfrak{P}(A) \mid \exists B\in \mathfrak{P}(A), \exists b\in B, x = (b; B)\}$ là một quan hệ trên $A \times \mathfrak{P}(A)$. Có thể nhìn ra được rằng $\in_A$ có giá trị tương đương với $\in$ trên một phạm vi bé hơn, nhưng $\in$ không được coi là một quan hệ còn $\in_A$ thì có. Vì sao? Bởi vì, để $\in$ có thể là một quan hệ, cần tồn tại một $A$ là tập chứa tất cả các tập hợp và từ đó $\in$ sẽ là một tập con của $A$, nhưng tập này không tồn tại.
+Hãy lấy một ví dụ. Nếu $A$ là tập hợp thì $\in_A = \{x \in A \times \mathfrak{P}(A) \mid \exists B\in \mathfrak{P}(A), \exists b\in B, x = (b; B)\}$ là một quan hệ trên $A \times \mathfrak{P}(A)$. Có thể nhìn ra được rằng $\in_A$ có giá trị tương đương với $\in$ trên một phạm vi bé hơn, nhưng $\in$ không được coi là một quan hệ còn $\in_A$ thì có. Vì sao? Bởi vì, để $\in$ có thể là một quan hệ, cần tồn tại một $A$ là tập chứa tất cả các tập hợp và từ đó $\in$ sẽ là một tập con của $A$, nhưng tập này không tồn tại.
 
 Với mọi tập $x$ và $y$, nếu $R$ là một quan hệ trên $x \times y$, thì định nghĩa \defText{quan hệ phủ định} của $R$ như sau:
 \begin{equation*}
@@ -454,14 +454,14 @@ Với mọi tập $x$ và $y$, nếu $R$ là một quan hệ trên $x \times y$,
 \end{equation*}
 và \defText{quan hệ ngược} $R^{-1}$ sao cho
 \begin{equation*}
-   \defMath{\forall (a; b) \in x \times y, \big(y\ R^{-1}\ x \iff x\ R\ y\big)}.
+   \defMath{\forall (a; b) \in x \times y, \big(y\;R^{-1}\;x \iff x\;R\;y\big)}.
 \end{equation*}
 
 Vì nhiều lí do mà trong đó một sẽ được trình bày, \defText{đồ thị} của $R$ chính là tập $R$. Bạn đọc chắc sẽ không tin tác giả rằng định nghĩa này là đúng (đến tác giả nhiều lúc còn không tin), nhưng thực chất người ta đã định nghĩa đồ thị là như vậy. Lời giải thích thường được đưa ra nhất thường là: hình học được định nghĩa dựa trên đại số. Cụ thể trong đó, đồ thị hình học của $R$ chính là tập hợp các điểm $(a; b)$ thuộc $R$, hay hiểu theo cách khác, các phần tử của $R$. Vì vậy, đồ thị của $R$ là $R$.
 
 Các quan hệ có thể lồng lên nhau, tạo thành \defText{quan hệ hợp} hoặc \defText{quan hệ tích}, thỏa mãn:
 \begin{equation*}
-   \defMath{\forall (a; c) \in x \times z, \big(x\ S\circ R\ z\iff (\exists b \in y, x\ R\ y \land y\ S\ z)\big)}
+   \defMath{\forall (a; c) \in x \times z, \big(x\;S\circ R\;z\iff (\exists b \in y, x\;R\;y \land y\;S\;z)\big)}
 \end{equation*}
 với mọi $x$, $y$, $z$, $R$ là quan hệ trên $x \times y$, và $S$ là quan hệ trên $y \times z$. 
 
@@ -541,37 +541,410 @@ với mọi $x$, $y$, $z$, $R$ là quan hệ trên $x \times y$, và $S$ là qua
    \caption{Ví dụ quan hệ tích (hợp) $S \circ R$ giữa các tập hợp $x, y, z$.}
 \end{figure}
 
-
-
-\subsection{Quan hệ hai ngôi}
-
 Quan hệ $R$ trên tập $x \times y$ là \defText{quan hệ hai ngôi} khi và chỉ khi $x = y$. $R$ khi đó được gọi là quan hệ hai ngôi trong $x$. Nếu $z$ là một tập con của $x$, một quan hệ hai ngôi trong $z$ được xác định bởi
 \begin{equation*}
-   \defMath{\forall (a; b) \in z^2, \big(a\ R_z\ b \iff a\ R\ b\big)}  
+   \defMath{\forall (a; b) \in z^2, \big(a\;R_z\;b \iff a\;R\;b\big)}  
 \end{equation*}
-có tên là \defText{quan hệ sinh} bởi $R$ trong $x$ trên $z$.
+có tên là \defText{quan hệ cảm sinh} (hay \defText{quan hệ sinh}) bởi $R$ trong $x$ trên $z$.
 
 Dấu bằng như đã trình bày có một vài tính chất như tính phản xạ, đối xứng và bắc cầu. Tương tự, một quan hệ hai ngôi $R$ trên $x$ được gọi là
 \begin{itemize}
    \item \defText{phản xạ} khi và chỉ khi $$
-      \defMath{\forall a \in x, a\ R\ a};
+      \defMath{\forall a \in x, a\;R\;a};
    $$
    \item \defText{đối xứng} khi và chỉ khi \begin{equation*}
-      \defMath{\forall (a; b) \in x^2, (a\ R\ b \implies b\ R\ a)};
+      \defMath{\forall (a; b) \in x^2, (a\;R\;b \implies b\;R\;a)};
    \end{equation*}
    \item \defText{phản đối xứng} khi và chỉ khi \begin{equation*}
-      \defMath{\forall (a; b) \in x^2, (a\ R\ b \land b\ R\ a \implies a = b)};
+      \defMath{\forall (a; b) \in x^2, (a\;R\;b \land b\;R\;a \implies a = b)};
    \end{equation*}
    \item \defText{bắc cầu} khi và chỉ khi \begin{equation*}
-      \defMath{\forall a \in x, \forall b \in x, \forall c \in x, (a\ R\ b \land b\ R\ c \implies a\ R\ c)}.
+      \defMath{\forall a \in x, \forall b \in x, \forall c \in x, (a\;R\;b \land b\;R\;c \implies a\;R\;c)}.
    \end{equation*}
 \end{itemize}
 Trong trường hợp $R$ có đồng thời tính phản xạ, đối xứng và bắc cầu thì $R$ có thêm cái tên mới là mối \defText{quan hệ tương đương}. Từ một mối quan hệ $R$ tương đương trên $x$, chúng ta có thể xây dựng \defText{lớp tương đương mô-đun} \defMath{$R$} với mọi phần tử $a \in x$, định nghĩa là:
 \begin{equation*}
-   \forall a \in x, \defMath{[a]_R = \cl_R(a) = \Cl_R(a) = \left\{ 
-      y \in x \mid x\ R\ y
+   \forall a \in x, \defMath{[a]_R = \cl_R(a) = \Cl_R(a) = \mathscr{C}_R(a) = \left\{ 
+      y \in x \mid x\;R\;y
    \right\}}.
 \end{equation*}
+Một phần tử bất kì thuộc $[a]_R$ được gọi là một \defText{đại diện} của lớp tương đương đó.
+
+\exercise Cho $w$, $x$, $y$, $z$ là những tập hợp. Gọi
+\begin{itemize}
+   \item $P$ là quan hệ từ $w$ đến $x$,
+   \item $Q$ là quan hệ từ $x$ đến $y$,
+   \item $R$ là quan hệ từ $y$ đến $z$.
+\end{itemize}
+Chứng minh rằng \begin{equation*}
+   (R\circ Q) \circ P = R \circ (Q \circ P).
+\end{equation*}
+
+\solution
+
+Gọi $e$ là một phần tử bất kì thuộc $(R\circ Q) \circ P$. Dễ thấy rằng tồn tại $c \in w$ và $d \in z$ sao cho $e = (c; d)$. Khi này,
+\begin{align*}
+   c\;(R\circ Q) \circ P\;d &\iff \exists b \in x, \begin{cases}
+      c\;P\;b \\
+      b\;R\circ Q\;d
+   \end{cases};\\
+   c\;(R\circ Q) \circ P\;d &\iff \exists b \in x, \exists a\in y, \begin{cases}
+      c\;P\;b \\
+      b\;Q\;a \\
+      a\;R\;d
+   \end{cases}; \\
+   c\;(R\circ Q) \circ P\;d &\iff \exists a\in y, \begin{cases}
+      c\;(Q\circ P)\;a \\
+      a\;R\;d
+   \end{cases}; \\
+   c\;(R\circ Q) \circ P\;d &\iff c\;R\circ (Q \circ P)\;d.
+\end{align*} 
+Vì vậy, $e \in (R\circ Q) \circ P \implies e \in R\circ (Q \circ P)$ với mọi $e$. Chứng minh tương tự, chúng ta cũng có $\forall e, e \in (R\circ Q) \circ P \impliedby e \in R\circ (Q \circ P)$. Kết hợp hai chiều, suy ra được điều phải chứng minh.
+
+\exercise Cho $x$, $y$, $z$ là những tập hợp. Gọi $A$ và $B$ là quan hệ lần lượt từ $x$ sang $y$ và từ $y$ sang $z$. Chứng minh rằng
+\begin{enumerate}
+   \item $\left(A^{-1}\right)^{-1} = A$;
+   \item $(B \circ A)^{-1} = A^{-1}\circ B^{-1}$.
+\end{enumerate}
+
+\solution
+
+\resetSubexercise Có $A^{-1}$ là một quan hệ từ $y$ sang $x$, và do đó $\left(A^{-1}\right)^{-1}$ là một quan hệ từ $x$ sang $y$. Vì vậy, $e \in \left(A^{-1}\right)^{-1}$ có thể được viết lại là $e = (c; d)$ với $c \in x$ và $d \in y$. Tại thời điểm đó, $c$ và $d$ phải thỏa mãn
+\begin{equation*}
+   c\,\left(A^{-1}\right)^{-1}\,d \iff d\;A^{-1}\;c. 
+\end{equation*}
+Thêm vào đó, $\forall (c;d) \in x \times y, \left(d\;A^{-1}\;c \iff c\;A\;d\right)$. Do vậy, $c\,\left(A^{-1}\right)^{-1}\,d \iff c\;A\;d$. Vì vậy, \begin{equation*}
+   \forall e, \left(e \in \left(A^{-1}\right)^{-1} \iff e \in A\right).
+\end{equation*}
+Dẫn đến $\left(A^{-1}\right)^{-1} = A$. Điều phải chứng minh.
+
+\stepSubexercise Có thể thấy tập nguồn và tập đích của $(B \circ A)^{-1}$ và $A^{-1}\circ B^{-1}$ đều là $z$ và $x$. Gọi $m$ là một phần tử thuộc $(B \circ A)^{-1}$. Khi này, tồn tại $(n; p) \in z \times x$ sao cho $n\;(B \circ A)^{-1}\;p$. Từ đó, có những suy luận sau
+\begin{align*}
+   n\;(B \circ A)^{-1}\;p &\iff p\;B \circ A\;n; \\
+   n\;(B \circ A)^{-1}\;p &\iff \exists q, \begin{cases}
+      p\;A\;q \\
+      q\;B\;n 
+   \end{cases}; \\
+   n\;(B \circ A)^{-1}\;p &\iff \exists q, \begin{cases}
+      q\;A^{-1}\;p \\
+      n\;B^{-1}\;q 
+   \end{cases} \equationexplanation{định nghĩa quan hệ ngược}; \\
+   n\;(B \circ A)^{-1}\;p &\iff n\;A^{-1}\circ B^{-1}\;p.
+\end{align*}
+Do đó, hiển nhiên rằng $(B \circ A)^{-1} = A^{-1}\circ B^{-1}$, điều phải chứng minh.
+
+\exercise Cho $\mathcal{U}$ là một tập hợp và $R$ là một quan hệ phản xạ trên $\mathcal{U}$ sao cho với mọi $x, y, z$ thuộc vào $\mathcal{U}$,\begin{equation*}
+   x\;R\;y \land y\;R\;z \implies z\;R\;x.
+\end{equation*}
+Chứng minh rằng $R$ là một quan hệ tương đương.
+
+\solution
+
+Chúng ta được cho quan hệ $R$ thỏa mãn
+\begin{equation}
+   \forall x \in \mathcal{U}, \forall y \in \mathcal{U}, \forall z \in \mathcal{U}, \left(x\;R\;y \land y\;R\;z \implies z\;R\;x\right).
+   \label{eq:li_thuyet_tap_hop:tien_de:quan_he:qhbc}
+\end{equation}
+Cụ thể hóa hạng thức $z$ bởi $y$, để có
+\begin{equation*}
+   \forall x \in \mathcal{U}, \forall y \in \mathcal{U}, \left(x\;R\;y \land y\;R\;y \implies y\;R\;x\right).
+\end{equation*}
+Ngoài ra, do $R$ có tính phản xạ nên $y\;R\;y$ với mọi $y$ thuộc $\mathcal{U}$. Vì đó,\begin{equation*}
+   \forall x \in \mathcal{U}, \forall y \in \mathcal{U}, \left(x\;R\;y \implies y\;R\;x\right).
+\end{equation*}
+Và vì vậy, $R$ có tính đối xứng. Sử dụng tính chất này của $R$, chúng ta có
+\begin{equation*}
+   \forall x \in \mathcal{U}, \forall z \in \mathcal{U}, (z\; R\;x\implies x\;R\;z).
+\end{equation*}
+Do đó, kết hợp với \refeq{eq:li_thuyet_tap_hop:tien_de:quan_he:qhbc},
+\begin{equation*}
+   \forall x \in \mathcal{U}, \forall y \in \mathcal{U}, \forall z \in \mathcal{U}, \left(x\;R\;y \land y\;R\;z \implies x\;R\;z\right),
+\end{equation*}
+suy ra $R$ có tính bắc cầu.
+
+$R$ vừa có tính phản xạ, tính đối xứng, và tính bắc cầu, dẫn đến $R$ là một quan hệ tương đương, hay điều phải chứng minh.
+
+\exercise Cho $R$ là một quan hệ phản xạ và bắc cầu trên $\mathscr{U}$. $S$ là một quan hệ trên $\mathscr{U}$ được xác định bởi:
+\begin{equation*}
+   \forall (x;y) \in \mathscr{U}^2, \left(x\;S\;y \iff x\;R\;y \land y\;R\;x\right). 
+\end{equation*}
+Chứng minh rằng $S$ là một quan hệ tương đương.
+
+\solution
+
+Do $R$ có tính phản xạ nên $x\;R\;x$ với mọi $x$ (thuộc $\mathscr{U}$). Ngoài ra, từ định nghĩa của $S$, \begin{equation*}
+   x\;S\;x \iff x\;R\;x \land x\;R\;x
+\end{equation*}
+cũng đúng với mọi $x$. Do đó, $\forall x \in \mathscr{U}, x\;S\;x$, hay $S$ có tính phản xạ.
+
+Xét $(u; v) \in S$ với $(u; v) \in \mathscr{U}^2$. Khi này,
+\begin{align*}
+   u\;S\;v &\iff u\;R\;v \land v\;R\;u \equationexplanation{giả thiết};\\
+   u\;S\;v &\iff v\;R\;u \land u\;R\;v \equationexplanation{giao hoán của phép hội};\\
+   u\;S\;v &\iff v\;S\;u \equationexplanation{giả thiết}.
+\end{align*}
+Từ đó, chúng ta dễ thấy được tính đối xứng của $S$.
+
+Ngoài ra, giả sử có $(a; b)$ và $(b; c)$ (trong $\mathscr{U}^2$) cùng thuộc $S$. Chúng ta có:
+\begin{align*}
+   \begin{cases}
+      a\;S\;b\\
+      b\;S\;c
+   \end{cases} &\implies \begin{cases}
+      a\;R\;b \land b\;R\;a \\
+      b\;R\;c \land c\;R\;b
+   \end{cases} \equationexplanation{dễ thấy từ giả thiết};\\
+   \begin{cases}
+      a\;S\;b\\
+      b\;S\;c
+   \end{cases} &\implies \begin{cases}
+      a\;R\;b \land b\;R\;c \\
+      c\;R\;b \land b\;R\;a
+   \end{cases} \equationexplanation{kiểm chứng được từ giải tích mệnh đề};\\
+   \begin{cases}
+      a\;S\;b\\
+      b\;S\;c
+   \end{cases} &\implies \begin{cases}
+      a\;R\;c \\
+      c\;R\;a
+   \end{cases} \equationexplanation{tính bắc cầu của $R$}; \\
+   \begin{cases}
+      a\;S\;b\\
+      b\;S\;c
+   \end{cases} &\implies a\;S\;c;
+\end{align*}
+và vì vậy, $S$ có tính bắc cầu.
+
+Do $S$ đều có tính phản xạ, đối xứng và bắc cầu nên chúng ta có quan hệ tương đương $S$, hay nói theo cách khác, điều phải chứng minh.
 
 
+\subsection{Quan hệ thứ tự}
 
+\ 
+
+So sánh giữa hai sự vật có thể được gọi là một trong những quan hệ phổ biến nhất, có thể thấy trong những câu trò chuyện của các bà mẹ châu Á. Tiêu chí đánh giá của các bà mẹ đó có thể vô cùng phức tạp: nhẹ thì con có học giỏi không, có biết làm việc nhà không, nặng thì thi chứng chỉ tiếng Anh được bao nhiêu hay có mấy giải Toán quốc tế rồi. Để có thể so sánh hai con của những người mang nặng đẻ đau đó, nhìn chung, sẽ cần nhiều tiêu chuẩn phức tạp. 
+
+Toán học thì không như vậy, sắp xếp thứ tự là một khái niệm đơn giản và quen thuộc. Gọi $\preccurlyeq$ là một quan hệ hai ngôi trong $x$. Chúng ta nói $\preccurlyeq$ là một \defText{quan hệ thứ tự} (gọi tắt là \defText{thứ tự}) khi và chỉ khi $\preccurlyeq$ phản xạ, phản đối xứng và bắc cầu. Hai phần tử $y$ và $z$ thuộc $x$ \defText{so sánh được} nếu và chỉ nếu $$\defMath{y \preccurlyeq z \lor z \preccurlyeq y}.$$
+$\preccurlyeq$ là một \defText{quan hệ thứ tự toàn phần} (hoặc \defText{thứ tự toàn phần}) trên $x$ khi và chỉ khi
+\begin{equation*}
+   \defMath{\forall y \in x, \forall z \in x, (y \preccurlyeq z \lor z \preccurlyeq y)}.
+\end{equation*}
+Định nghĩa \defText{thứ tự nghiêm ngặt ứng với $\defMath{\preccurlyeq}$} trên $x$, kí hiệu bởi $\prec$, thông qua khẳng định
+\begin{equation*}
+   \defMath{\forall y \in x, \forall z \in x, (x \prec y \iff x \preccurlyeq y \land x \neq y)}.
+\end{equation*}
+
+Khi một tập hợp $x$ được sắp thứ tự bởi $\preccurlyeq$, chúng ta có thể xác định được một số phần tử có tính chất đặc biệt mà chúng ta thường xuyên dùng. Gọi $A$ là một phần tử thuộc $\mathfrak{P}(x)$ (nói cách khác, $A \subseteq x$), gọi $C \in x$ là một \defText{chặn trên} (hoặc \defText{cận trên}) của $A$ khi và chỉ khi \begin{equation*}
+   \defMath{\forall a \in A, a \preccurlyeq C}.
+\end{equation*}
+Khi này, $A$ được gọi là \defText{bị chặn trên}. Tương tự, $c \in x$ là \defText{chặn dưới} (hoặc \defText{cận dưới}) của $A$ khi và chỉ khi \begin{equation*}
+   \defMath{\forall a \in A, c \preccurlyeq a}.
+\end{equation*} 
+$A$ nếu có chặn dưới thì được gọi là \defText{bị chặn dưới}. Tập hợp các chặn trên của $A$ được kí hiệu là $\defMath{\Maj_{\left(x; \preccurlyeq\right)}(A)}$. Đi kèm với nó là tập hợp các chặn dưới của $A$, là $\defMath{\Min_{\left(x; \preccurlyeq\right)}(A)}$.
+
+Một chặn trên của $C$ của $A$ thì không cần phải thuộc $A$, nhưng nếu $C \in A$ thì $C$ sẽ được gọi là \defText{phần tử lớn nhất} trong $A$, kí hiệu là ${\defMath{\max_{\preccurlyeq}(A)}}$. Định nghĩa tương ứng, nếu chặn dưới $c$ của $A$ thuộc tập hợp $A$ thì $c$ là \defText{phần tử nhỏ nhất} (hay \defText{phần tử bé nhất}) của $A$ và có kí hiệu là $\defMath{\min_{\preccurlyeq}(A)}$.
+
+Trong các chặn trên, nếu chúng ta có thể gọi ra phần tử nhỏ nhất trong chúng thì đó là \defText{biên trên} (hoặc \defText{chặn trên đúng}, \defText{cận trên đúng}). Viết dưới dạng kí hiệu, $\defMath{\sup_{\left(x; \preccurlyeq\right)}(A)} = S$ (cũng có thể viết là $\defMath{\Sup_{\left(x; \preccurlyeq\right)}(A)}$) là biên trên của $A$ tương đương với
+\begin{equation*}
+   \defMath{S \in \Maj_{\left(x; \preccurlyeq\right)}(A) \land \forall C \in \Maj_{\left(x; \preccurlyeq\right)}(A), S \preccurlyeq C}.
+\end{equation*}
+Thêm vào đó, $i$ là \defText{biên dưới} (hoặc \defText{chặn dưới đúng}, \defText{cận dưới đúng}) nếu và chỉ nếu $i$ thỏa mãn
+\begin{equation*}
+   \defMath{i \in \Min_{\left(x; \preccurlyeq\right)}(A) \land \forall c \in \Min_{\left(x; \preccurlyeq\right)}(A), c \preccurlyeq i}.
+\end{equation*}
+Biểu diễn bằng lời, $i$ là phần tử lớn nhất trong $\Min_{\left(x; \preccurlyeq\right)}(A)$. Ngoài ra, kí hiệu thông thường của $i$ là $\defMath{\inf_{\left(x; \preccurlyeq\right)}(A)}$ hoặc đôi khi viết hoa là $\defMath{\Inf_{\left(x; \preccurlyeq\right)}(A)}$. 
+
+Một phần tử $P \in A$ là một \defText{phần tử cực đại} (hoặc \defText{phần tử tối đại}) của $A$ khi và chỉ khi
+\begin{equation*}
+   \defMath{\forall a \in A, (P \preccurlyeq a \implies a = P)}.
+\end{equation*}
+Ngược lại, $p \in A$ là một \defText{phần tử cực tiểu} (hoặc \defText{phần tử tối tiểu}) của $A$ nếu và chỉ nếu
+\begin{equation*}
+   \defMath{\forall a \in A, (a \preccurlyeq p \implies a = p)}.
+\end{equation*}
+
+Để kết thúc phần này, chúng ta hãy bàn một chút về kí hiệu. Trong tương lai, khi xác định được rõ tập nền $x$ và quan hệ thứ tự $\preccurlyeq$, chúng ta sẽ hay lạm dụng kí hiệu và viết tắt như sau:
+\begin{multicols}{2}
+   \begin{itemize}
+      \item $\Maj(A) = \Maj_{\left(x; \preccurlyeq\right)}(A)$;
+      \item $\Min(A) = \Min_{\left(x; \preccurlyeq\right)}(A)$;
+      \item $\max(A) = \max_{\preccurlyeq}(A)$;
+      \item $\min(A) = \min_{\preccurlyeq}(A)$;
+      \item $\sup(A) = \Sup(A) = \sup_{\left(x; \preccurlyeq\right)}(A)$;
+      \item $\inf(A) = \Inf(A) = \inf_{\left(x; \preccurlyeq\right)}(A)$.
+   \end{itemize}
+\end{multicols}
+Hơn thế nữa, để cho tự nhiên, chúng ta sẽ thường xuyên đảo chiều kí hiệu $\preccurlyeq$ để có quan hệ $
+\succcurlyeq$ trên $x$ với định nghĩa là
+$$\forall (y;z) \in x^2, (y \succcurlyeq z \iff z \succcurlyeq y).$$
+
+\exercise Cho tập hợp $\mathscr{E}$ với quan hệ thứ tự $\preccurlyeq$ trên nó. Chứng minh rằng,
+\begin{itemize}
+   \item nếu $\mathscr{E}$ có phần tử lớn nhất thì \begin{equation*}
+      \max_\preccurlyeq(\mathscr{E}) = \inf_{(\mathscr{E}; \preccurlyeq)}(\varnothing),
+   \end{equation*}
+   \item nếu $\mathscr{E}$ có phần tử nhỏ nhất thì \begin{equation*}
+      \min_\preccurlyeq(\mathscr{E}) = \sup_{(\mathscr{E}; \preccurlyeq)}(\varnothing).
+   \end{equation*}
+\end{itemize} 
+
+\solution
+
+Giả sử $\mathscr{E}$ có phần tử lớn nhất. Xét một phần tử bất kì $e \in \mathscr{E}$. Thấy được rằng mọi $e$ đều là chặn dưới của $\varnothing$ do không có phần tử nào trong tập rỗng và khi đó,
+$$
+   \forall d \in \varnothing, e \preccurlyeq d.
+$$  
+Vì vậy, $\mathscr{E} \subseteq \Min_{(\mathscr{E}; \preccurlyeq)}(\varnothing)$. Ngược lại, từ định nghĩa, một phần tử thuộc $\Min_{(\mathscr{E}; \preccurlyeq)}(\varnothing)$ cũng cần phải thuộc $\mathscr{E}$, hay $\Min_{(\mathscr{E}; \preccurlyeq)}(\varnothing) \subseteq \mathscr{E}$. Do đó, 
+\begin{equation*}
+   \mathscr{E} = \Min_{(\mathscr{E}; \preccurlyeq)}(\varnothing).
+\end{equation*}
+
+$\max_\preccurlyeq(\mathscr{E})$ là phần tử lớn nhất trong $\mathscr{E}$, và do $\mathscr{E}$ và $\Min_{(\mathscr{E}; \preccurlyeq)}(\varnothing)$ là hai tập bằng nhau nên $\max_\preccurlyeq(\mathscr{E})$ là phần tử lớn nhất trong $\Min_{(\mathscr{E}; \preccurlyeq)}(\varnothing)$. Từ định nghĩa của biên dưới, \begin{equation*}
+   \max_\preccurlyeq(\mathscr{E}) = \inf_{(\mathscr{E}; \preccurlyeq)}(\varnothing).
+\end{equation*}
+
+Chứng minh mệnh đề còn lại có thể được thực hiện một cách tương tự, cho nên tác giả sẽ tóm tắt phần lập luận. Có $\mathscr{E} = \Max_{(\mathscr{E}; \preccurlyeq)}(\varnothing)$. Nếu như $\mathscr{E}$ có phần tử nhỏ nhất thì phần tử đó cũng nhỏ nhất trong $\Max_{(\mathscr{E}; \preccurlyeq)}(\varnothing)$. Do vậy,
+\begin{equation*}
+   \min_\preccurlyeq(\mathscr{E}) = \sup_{(\mathscr{E}; \preccurlyeq)}(\varnothing).
+\end{equation*}
+Điều phải chứng minh.
+
+\exercise Cho tập hợp $\mathscr{E}$ với quan hệ thứ tự $\preccurlyeq$ trên nó. Giả sử lấy được $A$ và $B$ thuộc $\mathfrak{P}(\mathscr{E})$ sao cho $A \subseteq B$. Chứng minh rằng, nếu $A$ và $B$ đều có biên trên thì \begin{equation*}
+   \sup_{(\mathscr{E}; \preccurlyeq)}(A) \preccurlyeq \sup_{(\mathscr{E}; \preccurlyeq)}(B).
+\end{equation*}
+
+\solution 
+
+Đặt $S_A = \sup_{(\mathscr{E}; \preccurlyeq)}(A)$ và $S_B = \sup_{(\mathscr{E}; \preccurlyeq)}(B)$. Do $A \subseteq B$ nên 
+\begin{equation*}
+   \forall e, (e \in A \implies e \in B).
+\end{equation*} Ngoài ra, từ định nghĩa của biên trên, $S_B \in \Maj_{(\mathscr{E}; \preccurlyeq)}(B)$, có nghĩa là, \begin{equation*}
+   \forall e, (e \in B \implies e \preccurlyeq S_B).
+\end{equation*}
+Bắc cầu hai mệnh đề, có 
+\begin{equation*}
+   \forall e \in A, e \preccurlyeq S_B.
+\end{equation*}
+Do đó, $S_B$ là một chặn trên của $A$. Thêm vào đó, do $S_A$ là biên trên của $A$ nên $S_A \preccurlyeq S_B$. Từ cách đặt ban đầu, chúng ta có điều phải chứng minh.
+
+\exercise Với mỗi phần, lấy ví dụ tập hợp $\mathscr{E}$ đi kèm với quan hệ thứ tự $\preccurlyeq$ và các tập con $A$ và $B$ của $\mathscr{E}$ sao cho $A \subseteq B$ và điều kiện đưa ra trong phần là thỏa mãn. (Các phần độc lập với nhau.)
+\begin{enumerate}
+   \item $A$ có biên trên trong $\mathscr{E}$ và $B$ không có biên trên trong $\mathscr{E}$.
+   \item $B$ có biên trên trong $\mathscr{E}$ và $A$ không có biên trên trong $\mathscr{E}$.
+\end{enumerate}
+Chỉ rõ cách xây dựng ví dụ và chứng minh rằng ví dụ thỏa mãn các điều kiện được cho.
+
+\solution
+
+Gọi các tập hợp $0 = \varnothing$, $1 = \{0\}$, $2 = \{0; 1\}$, $3 = \{0; 1; 2\}$. Do mọi tập ngoại trừ $0$ khác rỗng nên $\begin{cases}
+   1 \neq 0 \\
+   2 \neq 0 \\
+   3 \neq 0 
+\end{cases}$. Do $\begin{cases}
+   1 \in 2 \\
+   1 \in 3
+\end{cases}$ nhưng $1 \notin 1$ nên $\begin{cases}
+   1 \neq 2 \\
+   1 \neq 3
+\end{cases}$. Và, vì $2 \in 3$ mà $2 \notin 2$ nên $2 \neq 3$.
+
+Xét $\mathscr{E} = 3 \cup \{3\}$. Khi này, dễ thấy các phần tử $0$, $1$, $2$, $3$ đều thuộc $\mathscr{E}$. Với sự đảm bảo bởi tiên đề tách thông qua tích Đề-các $\mathscr{E} \times \mathscr{E}$, định nghĩa quan hệ thứ tự $\preccurlyeq$ trên $\mathscr{E}$:
+\begin{equation*}
+   \preccurlyeq\;= \left\{(0; 0); (1; 1); (2; 2); (3; 3); (0, 2); (1; 2); (1; 3)\right\}.
+\end{equation*}
+Dễ dàng kiểm tra quan hệ này thỏa mãn các tính chất của một quan hệ thứ tự, bao gồm tính phản xạ, tính phản đối xứng, và tính bắc cầu. Tập $\mathscr{E}$ và quan hệ thứ tự $\preccurlyeq$ này sẽ được dùng chung cho cả hai phần.
+
+\resetSubexercise Lấy $\begin{cases}
+   A = \{0\} \\
+   B = \{0; 1\}
+\end{cases}$. Có thể thấy được rằng $A \subseteq B$, và 
+\begin{equation*}
+   \begin{cases}
+      \Maj_{(\mathscr{E}; \preccurlyeq)}(A) = \{0; 2; 3\} \\
+      \Maj_{(\mathscr{E}; \preccurlyeq)}(B) = \{2; 3\}
+   \end{cases}.
+\end{equation*}
+Tồn tại giá trị nhỏ nhất của $\Maj_{(\mathscr{E}; \preccurlyeq)}(A)$ là $0$, cho nên $0$ là biên trên của $A$. Tuy nhiên, $\Maj_{(\mathscr{E}; \preccurlyeq)}(B)$ lại không có phần tử nhỏ nhất, do $2$ và $3$ không được định nghĩa thứ tự. Do đó, $B$ không có biên trên. Chúng ta đã có ví dụ như yêu cầu.
+
+\stepSubexercise Lấy $\begin{cases}
+   A = \{0; 1\} \\
+   B = \{0; 1; 2\}
+\end{cases}$. $A \subseteq B$ là hiển nhiên. Từ phần trước, chúng ta đã có kết quả rằng $A$ không có biên trên. Xét $B$. Phần tử duy nhất lớn hơn tất cả các phần tử này là $2$. Do đó, 
+\begin{equation*}
+   \Maj_{(\mathscr{E}; \preccurlyeq)}(B) = \{2\},
+\end{equation*}
+và do đó, biên trên của $B$ là $2$. Đây là một ví dụ thỏa mãn.
+
+\exercise Cho $A$ được sắp xếp thứ tự bởi $\preccurlyeq$. Xác định thứ tự nghiêm ngặt $\prec$ ứng với $\preccurlyeq$. Chứng minh rằng 
+\begin{enumerate}
+   \item $\forall x \in A, \forall y \in A, \forall z \in A, (x \prec y \land y \prec z\implies x \prec z) $;
+   \item $\forall x \in A, \forall y \in A, \overline{x \prec y \land y \prec x}$.
+\end{enumerate}
+
+\solution
+
+\resetSubexercise Giả sử $x \prec y$ và $y \prec z$. Theo định nghĩa của quan hệ thứ tự nghiêm ngặt:
+\begin{itemize}
+   \item $x \prec y \implies x \preccurlyeq y \land x \neq y$;
+   \item $y \prec z \implies y \preccurlyeq z \land y \neq z$.
+\end{itemize}
+
+Từ $x \preccurlyeq y$ và $y \preccurlyeq z$, do quan hệ $\preccurlyeq$ có tính chất bắc cầu, suy ra $x \preccurlyeq z$. Bây giờ, cần chứng minh $x \neq z$. Bằng phương pháp phản chứng, giả sử rằng $x = z$. Khi đó, chúng ta được $z \preccurlyeq y$. Như vậy, đồng thời $y \preccurlyeq z$ và $z \preccurlyeq y$. Do quan hệ $\preccurlyeq$ có tính chất phản đối xứng, $y = z$
+Điều này trực tiếp mâu thuẫn với giả thiết $y \neq z$ ở trên. Do đó, giả sử phản chứng là sai, tức là ta phải có $x \neq z$.
+
+Vì $x \preccurlyeq z$ và $x \neq z$, theo định nghĩa của quan hệ thứ tự nghiêm ngặt, thu được $x \prec z$. Từ đó, dễ có được điều phải chứng minh.
+
+\stepSubexercise Chứng minh bằng phương pháp phản chứng, giả sử tồn tại hai phần tử $x, y \in A$ sao cho mệnh đề $x \prec y \wedge y \prec x$ là đúng. Điều này suy ra:
+\begin{itemize}
+   \item $x \prec y \implies x \preccurlyeq y \land x \neq y$;
+   \item $y \prec x \implies y \preccurlyeq x \land y \neq x$.
+\end{itemize}
+Từ hai quan hệ $x \preccurlyeq y$ và $y \preccurlyeq x$, áp dụng tính chất phản đối xứng của quan hệ thứ tự $\preccurlyeq$, $x = y$ là cần phải có. Tuy nhiên, kết quả này lại mâu thuẫn trực tiếp với điều kiện $x \neq y$ có thể suy ra được từ giả thiết $x \prec y$.
+
+Do đó, giả sử phản chứng là sai. Không thể đồng thời tồn tại $x \prec y$ và $y \prec x$. Hiển nhiên, điều phải chứng minh là cần phải có.
+
+\exercise Cho $X$ và $Y$ là tập con của $A$ được sắp xếp thứ tự bởi $\preccurlyeq$, và $\prec$ là thứ tự nghiêm ngặt ứng với $\preccurlyeq$. Gọi $L$ là một tập con của $(X \times Y)^2$, xác định bởi
+\begin{equation*}
+   \forall (x; y) \in X \times Y, \forall \left(\xNom; \yNom\right) \in X \times Y, \left((x; y)\,L\left(\xNom; \yNom\right) \iff \left[\begin{aligned}
+      &x \prec \xNom \\
+      &x = \xNom \land y \preccurlyeq \yNom
+   \end{aligned}\right.\right).
+\end{equation*}
+\begin{enumerate}
+   \item Chứng minh rằng $L$ xác định một thứ tự trên tập $X \times Y$.
+   \item Chứng minh rằng nếu $\preccurlyeq$ là một thứ tự toàn phần thì $L$ cũng là một thứ tự toàn phần.
+\end{enumerate}
+
+\solution
+
+\resetSubexercise Trước hết, xét tính phản xạ của $L$. Từ giả thiết, có được
+\begin{equation}
+   \forall (x; y) \in X \times Y, \left((x; y)\,L\,(x; y) \iff \left[\begin{aligned}
+      &x \prec x \\
+      &x = x \land y \preccurlyeq y
+   \end{aligned}\right.\right).
+   \label{eq:li_thuyet_tap_hop:tien_de:quan_he:22.1}
+\end{equation}
+Do $X$ và $Y$ cùng là tập con của $A$ nên có được
+\begin{equation*}
+   \forall (x; y) \in X \times Y, \begin{cases}
+      x \in A \\
+      y \in A
+   \end{cases}.
+\end{equation*}
+Do $\preccurlyeq$ là một thứ tự nên $y \preccurlyeq y$. Thêm vào đó, $x = x$ là hiển nhiên. Vì vậy, 
+\begin{equation}
+   \forall (x; y) \in X \times Y, (x = x \land y \preccurlyeq y).
+   \label{eq:li_thuyet_tap_hop:tien_de:quan_he:22.2}
+\end{equation}
+
+Từ \refeq{eq:li_thuyet_tap_hop:tien_de:quan_he:22.1} và \refeq{eq:li_thuyet_tap_hop:tien_de:quan_he:22.2}, 
+$$\forall (x; y) \in X \times Y, (x; y)\,L\,(x; y).$$
+Một $u$ trong $X \times Y$ luôn có thể được viết lại thành $(v; w)$ sao cho $v \in X$ và $w \in Y$, do đó,
+$$\forall u \in X \times Y, u\;L\;u.$$
+Vậy, $L$ có tính phản xạ.
+
+``Bốc'' $a$ và $b$ đều thuộc $X \times Y$ sao cho $\begin{cases}
+   a \; L \; b\\
+   b\;L\;a
+\end{cases}$. Tồn tại $c$ và $C$ trong $X$ và $d$ và $D$ trong $Y$ để $a = (c; d)$ và $b = (C; D)$. 

@@ -201,6 +201,15 @@
 
 \newcounter{subexercise}
 \setcounter{subexercise}{1}
+\newcommand{\resetSubexercise}{
+   \setcounter{subexercise}{1}
+   \arabic{subexercise}.
+}
+
+\newcommand{\stepSubexercise} {
+   \stepcounter{subexercise}
+   \arabic{subexercise}.
+}
 
 % ==========================================
 % 8. LỆNH TỰ ĐỊNH NGHĨA (MACROS & LỆNH VIẾT TẮT)
@@ -233,10 +242,11 @@
 \DeclareMathOperator{\Cl}{Cl}
 \DeclareMathOperator{\ptln}{ptln}
 \DeclareMathOperator{\ptnn}{ptnn}
-\DeclareMathOperator{\Max}{Max}
-\DeclareMathOperator{\Min}{Min}
-\DeclareMathOperator{\Inf}{Inf}
-\DeclareMathOperator{\Sup}{Sup}
+\DeclareMathOperator*{\Maj}{Maj}
+\DeclareMathOperator*{\Max}{Max}
+\DeclareMathOperator*{\Min}{Min}
+\DeclareMathOperator*{\Inf}{Inf}
+\DeclareMathOperator*{\Sup}{Sup}
 \newcommand{\refeq}[1]{(\ref{#1})}
 \newcommand{\equationexplanation}[1]{&& \textcolor{colorEmphasis}{\left(\text{#1}\right)}}
 
