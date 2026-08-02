@@ -947,4 +947,58 @@ Vậy, $L$ có tính phản xạ.
 ``Bốc'' $a$ và $b$ đều thuộc $X \times Y$ sao cho $\begin{cases}
    a \; L \; b\\
    b\;L\;a
-\end{cases}$. Tồn tại $c$ và $C$ trong $X$ và $d$ và $D$ trong $Y$ để $a = (c; d)$ và $b = (C; D)$. 
+\end{cases}$. Tồn tại $c$ và $C$ trong $X$ và $d$ và $D$ trong $Y$ để $a = (c; d)$ và $b = (C; D)$. Ngoài ra, chúng ta cũng có $\begin{cases}
+   (c; d)\,L\,(d; c) \\
+   (d; c)\;L\;(c; d)
+\end{cases}$. Dẫn đến kết quả tương đương:
+\begin{equation*}
+   \left[\begin{aligned}
+      &c \prec C \\
+      &c = C \land d \preccurlyeq D
+   \end{aligned}\right. \land \left[\begin{aligned}
+      &C \prec c \\
+      &C = c \land D \preccurlyeq d
+   \end{aligned}\right..
+\end{equation*}
+Điều này cũng giống với
+\begin{equation*}
+   \left[\begin{aligned}
+      c \prec C &\land C \prec c \\
+      c \prec C &\land (C = c \land D \preccurlyeq d) \\
+      (c = C \land d \preccurlyeq D) &\land C \prec c \\
+      (c = C \land d \preccurlyeq D) &\land (C = c \land D \preccurlyeq d)
+   \end{aligned}\right..
+\end{equation*}
+Hai phần tử có quan hệ $\prec$ thì không thể nào bằng nhau, do đó chỉ có thể xảy ra $(c = C \land d \preccurlyeq D) \land (C = c \land D \preccurlyeq d)$. Từ tính phản đối xứng của $\preccurlyeq$, chúng ta suy ra $d = D$. Kết hợp với $c = C$ để có thể có $(c; d) = (C; D)$ hay $a = b$. Tổng hợp lập luận, chúng ta có $L$ phản đối xứng.
+
+Xét các phần tử đều thuộc $X \times Y$ là $e$, $f$, $g$. Có thể viết lại $e = (h; i)$, $f = (j; k)$, $g = (l; m)$ với $h$, $j$, $l$ là các phần tử của $X$ và $i$, $k$, $m$ là các phần tử của $Y$. Nếu $e\;L\;f$ và $f\;L\;g$, chúng ta có
+$$
+\begin{cases}
+   (h; i)\,L\,(j; k) \\
+   (j; k)\,L\,(l; m)
+\end{cases}.
+$$
+Theo định nghĩa của quan hệ $L$, hệ trên tương đương với
+$$
+\left[ \begin{aligned} &h \prec j \\ &h = j \land i \preccurlyeq k \end{aligned} \right. \land
+\left[ \begin{aligned} &j \prec l \\ &j = l \land k \preccurlyeq m \end{aligned} \right..
+$$
+Như trước, điều này tương đương với 
+$$
+\left[
+   \begin{aligned}
+      h \prec j &\land j \prec l \\
+      h \prec j &\land (j = l \land k \preccurlyeq m) \\
+      (h = j \land i \preccurlyeq k) &\land j \prec l \\
+      (h = j \land i \preccurlyeq k) &\land (j = l \land k \preccurlyeq m)
+   \end{aligned}
+\right..
+$$
+
+$h \prec j \land j \prec l$ cho $h \prec l$ và hệ quả  $(h; i)\,L\,(l; m)$ do tính bắc cầu của $\prec$. Hai trường hợp tiếp theo cũng suy ra $h \prec l$ và hệ quả y hệt do thay thế bằng nhau. Trường hợp cuối cùng, chúng ta có $h = l$ và $i \preccurlyeq m$, đều do tính bắc cầu. Điều này cũng cho $(h; i)\,L\,(l; m)$ theo định nghĩa của $L$. Qua đó, tổng hợp các trường hợp, 
+\begin{equation*}
+   (h; i)\,L\,(l; m),
+\end{equation*}
+hay $L$ có tính bắc cầu là điều tất yếu.
+
+Các tính chất cần thiết cho quan hệ thứ tự $L$ đã được lập luận rõ ràng. Điều phải chứng minh.
