@@ -2,8 +2,6 @@
 
 \subsection{Tích Đề-các hai tập hợp}
 
-\ 
-
 Mỗi người đều có nhiều mối quan hệ --- thứ mà mọi sự vật hiện tượng trong thế giới vật lí cũng có --- riêng biệt nhưng đôi khi lại có sự tương tác với nhau. Do tính phổ biến của quan hệ, toán học cũng xây dựng khái niệm cho quan hệ, hình thành một cách chặt chẽ từ tích Đề-các\footnote{René Descartes (1596 -- 1650).} của hai tập hợp. Cụ thể, \defText{tích Đề-các}\footnote{Đề-các không đề xuất khái niệm này, do thời đó khái niệm ``tập hợp'' còn chưa sinh ra. Việc đặt tên như vậy là để tôn vinh người đã khai sinh ra hình học giải tích.} của hai tập hợp $x$ và $y$ được định nghĩa từ tiên đề tách như sau:
 \begin{equation*}
    \defMath{\forall x, \forall y, x \times y = \{c \in \mathfrak{P}(\mathfrak{P}(x \cup y)) \mid \exists a \in x, \exists b \in y, c = (a; b)\}}.
@@ -153,12 +151,12 @@ z \in A \times B \\
 z \in A \times C
 \end{array}\right..$$
 \begin{itemize}
-   \item Trường hợp \coloringCrimson{$z \in A \times B$}. Tồn tại $x \in A$ và $y \in B$ sao cho $z = (x; y)$. Khi đó, $y \in B \cup C$ do $B \subseteq B \times C$ và vì vậy $z \in A \times (B \cup C)$.
+   \item Trường hợp \coloringCrimson{$z \in A \times B$}. Tồn tại $x \in A$ và $y \in B$ sao cho $z = (x; y)$. Khi đó, $y \in B \cup C$ do $B \subseteq B \cup C$ và vì vậy $z \in A \times (B \cup C)$.
    \item Trường hợp \coloringDodgerblue{$z \in A \times C$}. Với một lập luận tương đương, chúng ta cũng có $z \in A \times (B \cup C)$.
 \end{itemize}
 Cả hai trường hợp đều cho chúng ta $z \in A \times (B \cup C)$. Do vậy, $(A \times B) \cup (A \times C) \subseteq A \times (B \cup C)$.
 
-Gọi $w \in A \times (B \cup C)$. Tồn tại $u \in A$ và $v \in B\cup C$ sao cho $w = (u; v)$. $v \in B \cup C$ sẽ cho ra $v \in B$ hoặc $v \in C$. Từ đó, chúng ta sẽ có lần lượt hoặc $(u; v) \in A \times B$ hoặc $(u; v) \in A \times C$. Điều đó cho phép viết $z \in (A \times B) \cup (A \times C)$. Vì đó, $A \times (B \cup C) \subseteq (A \times B) \cup (A \times C)$.
+Gọi $w \in A \times (B \cup C)$. Tồn tại $u \in A$ và $v \in B\cup C$ sao cho $w = (u; v)$. $v \in B \cup C$ sẽ cho ra $v \in B$ hoặc $v \in C$. Từ đó, chúng ta sẽ có lần lượt hoặc $(u; v) \in A \times B$ hoặc $(u; v) \in A \times C$. Điều đó cho phép viết $w \in (A \times B) \cup (A \times C)$. Vì đó, $A \times (B \cup C) \subseteq (A \times B) \cup (A \times C)$.
 
 Kết hợp hai chiều, chúng ta có điều phải chứng minh.
 
@@ -169,7 +167,7 @@ z \in B \times A \\
 z \in C \times A
 \end{array}\right..$$
 \begin{itemize}
-   \item Trường hợp \coloringCrimson{$z \in B \times A$}. Tồn tại $x \in A$ và $y \in B$ sao cho $z = (x; y)$. Khi đó, $y \in B \cup C$ do $B \subseteq B \times C$ và vì vậy $z \in A \times (B \cup C)$.
+   \item Trường hợp \coloringCrimson{$z \in B \times A$}. Tồn tại $x \in A$ và $y \in B$ sao cho $z = (x; y)$. Khi đó, $y \in B \cup C$ và vì vậy $z \in (B \cup C) \times A$.
    \item Trường hợp \coloringDodgerblue{$z \in C \times A$}. Với một lập luận tương đương, chúng ta cũng có $z \in (B \cup C) \times A$.
 \end{itemize}
 Cả hai trường hợp đều cho chúng ta $(B \times A) \cup (C \times A) \subseteq (B \cup C) \times A$.
@@ -206,7 +204,7 @@ Từ đó, chúng ta có $(B \cup C) \times A \subseteq (B \times A) \cup (C \ti
 điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}. Lấy $x$ bất kì thuộc $(A \times B) \cap (A \times C)$. Khì này, $x \in A \times B$ và $x \in A \times C$. Từ $x \in A \times B$, chúng ta có thể lấy $y$ thuộc $A$ và $z$ thuộc $B$ sao cho $x = (y; z)$. Tương tự, từ $x \in A \times C$, tồn tại $\yNom \in A$ và $\zNom \in C$ để $x = \left(\yNom; \zNom\right)$. Theo tính chất bắc cầu, chúng ta có $$(y; z) = \left(\yNom; \zNom\right).$$ Để hai đôi có thứ tự này bằng nhau thì $y = \yNom$ và $z = \zNom$, dẫn đến $z \in C$. Có $z \in B \land z \in C$ nên $z \in B \cap C$. Bổ sung thêm $y \in A$ để có $(y; z) \in A \times (B \cap C)$ hay $x \in A \times (B \cap C)$. Do lập luận trên đúng với mọi $x$ nên \begin{equation*}
+\arabic{subexercise}. Lấy $x$ bất kì thuộc $(A \times B) \cap (A \times C)$. Khi này, $x \in A \times B$ và $x \in A \times C$. Từ $x \in A \times B$, chúng ta có thể lấy $y$ thuộc $A$ và $z$ thuộc $B$ sao cho $x = (y; z)$. Tương tự, từ $x \in A \times C$, tồn tại $\yNom \in A$ và $\zNom \in C$ để $x = \left(\yNom; \zNom\right)$. Theo tính chất bắc cầu, chúng ta có $$(y; z) = \left(\yNom; \zNom\right).$$ Để hai đôi có thứ tự này bằng nhau thì $y = \yNom$ và $z = \zNom$, dẫn đến $z \in C$. Có $z \in B \land z \in C$ nên $z \in B \cap C$. Bổ sung thêm $y \in A$ để có $(y; z) \in A \times (B \cap C)$ hay $x \in A \times (B \cap C)$. Do lập luận trên đúng với mọi $x$ nên \begin{equation*}
    (A \times B) \cap (A \times C) \subseteq A \times (B \cap C).
 \end{equation*}
 
@@ -225,7 +223,7 @@ Vì vậy, dễ dàng có được điều phải chứng minh.
    z \in A
 \end{cases}$ cho được $x \in (B \cap C) \times A$. Chúng ta có $$\forall x, \left(x \in (B \times A) \cap (C \times A) \implies x \in (B \cap C) \times A\right).$$ Vì vậy, $(B \times A) \cap (C \times A) \subseteq (B \cap C) \times A$.
 
-Với mọi $w \in (B \times C) \cap A$, tồn tại $u \in B \cap C$ và $v \in A$ sao cho $w = (u; v)$. Có $u \in B \cap C$ nên $u \in B$ và $u \in C$. Khi đó, $v \in A$ cho chúng ta $w \in B \times A$ và $w \in C \times A$. Kết hợp lại, có được $w \in (B \times A) \cap (C \times A)$. Do vậy, $(B \cap C) \times A \subseteq (B \times A) \cap (C \times A)$.
+Với mọi $w \in (B \cap C) \times A$, tồn tại $u \in B \cap C$ và $v \in A$ sao cho $w = (u; v)$. Có $u \in B \cap C$ nên $u \in B$ và $u \in C$. Khi đó, $v \in A$ cho chúng ta $w \in B \times A$ và $w \in C \times A$. Kết hợp lại, có được $w \in (B \times A) \cap (C \times A)$. Do vậy, $(B \cap C) \times A \subseteq (B \times A) \cap (C \times A)$.
 
 Từ những khẳng định đã có, kết luận được $$(B \cap C) \times A = (B \times A) \cap (C \times A).$$ Điều phải chứng minh.
 
@@ -404,15 +402,13 @@ Kết hợp kết quả từ hai chiều, chúng ta có được điều phải 
    
 \subsection{Định nghĩa quan hệ}
 
-\ 
-
-Một \defText{quan hệ} $R$ trên $x \times y$ được định nghĩa đơn giản là một tập con nào đó của $x \times y$. Thông thường, chúng ta viết $a R b$ nếu $(a; b) \in R$. Dễ thấy rằng không phải mọi phần tử trong $x$ sẽ có phần tử quan hệ tương ứng trong $y$ và ngược lại cũng như vậy. Do đó, chúng ta sẽ định nghĩa thêm những giá trị có thể có quan hệ. Cụ thể, định nghĩa \defText{tập nguồn} là $x$, \defText{tập đích} là y, \defText{tập xác định} là
+Một \defText{quan hệ} $R$ trên $x \times y$ được định nghĩa đơn giản là một tập con nào đó của $x \times y$. Thông thường, chúng ta viết $a R b$ nếu $(a; b) \in R$. Dễ thấy rằng không phải mọi phần tử trong $x$ sẽ có phần tử quan hệ tương ứng trong $y$ và ngược lại cũng như vậy. Do đó, chúng ta sẽ định nghĩa thêm những giá trị có thể có quan hệ. Cụ thể, định nghĩa \defText{tập nguồn} là $x$, \defText{tập đích} là $y$, \defText{tập xác định} là
 \begin{equation*}
-   \defMath{\{a \in x \mid \exists b \in y, a\;R\;b\}}
+   \defMath{\dom(R) = \Dom(R) = \Def(R) = \mathbf{D}_R = \{a \in x \mid \exists b \in y, a\;R\;b\}}
 \end{equation*}
 và định nghĩa \defText{tập giá trị} là
 \begin{equation*}
-   \defMath{\{b \in y \mid \exists a \in x, a\;R\;b\}}.
+   \defMath{\imf(R) = \Imf(R) = \ran(R) = \Ran(R) = \mathbf{T}_R = \{b \in y \mid \exists a \in x, a\;R\;b\}}.
 \end{equation*}
 
 \begin{figure}[H]
@@ -454,14 +450,14 @@ Với mọi tập $x$ và $y$, nếu $R$ là một quan hệ trên $x \times y$,
 \end{equation*}
 và \defText{quan hệ ngược} $R^{-1}$ sao cho
 \begin{equation*}
-   \defMath{\forall (a; b) \in x \times y, \big(y\;R^{-1}\;x \iff x\;R\;y\big)}.
+   \defMath{\forall (a; b) \in x \times y, \big(b\;R^{-1}\;a \iff a\;R\;b\big)}.
 \end{equation*}
 
 Vì nhiều lí do mà trong đó một sẽ được trình bày, \defText{đồ thị} của $R$ chính là tập $R$. Bạn đọc chắc sẽ không tin tác giả rằng định nghĩa này là đúng (đến tác giả nhiều lúc còn không tin), nhưng thực chất người ta đã định nghĩa đồ thị là như vậy. Lời giải thích thường được đưa ra nhất thường là: hình học được định nghĩa dựa trên đại số. Cụ thể trong đó, đồ thị hình học của $R$ chính là tập hợp các điểm $(a; b)$ thuộc $R$, hay hiểu theo cách khác, các phần tử của $R$. Vì vậy, đồ thị của $R$ là $R$.
 
 Các quan hệ có thể lồng lên nhau, tạo thành \defText{quan hệ hợp} hoặc \defText{quan hệ tích}, thỏa mãn:
 \begin{equation*}
-   \defMath{\forall (a; c) \in x \times z, \big(x\;S\circ R\;z\iff (\exists b \in y, x\;R\;y \land y\;S\;z)\big)}
+   \defMath{\forall (a; c) \in x \times z, \big(a\;S\circ R\;c\iff (\exists b \in y, a\;R\;b \land b\;S\;c)\big)}
 \end{equation*}
 với mọi $x$, $y$, $z$, $R$ là quan hệ trên $x \times y$, và $S$ là quan hệ trên $y \times z$. 
 
@@ -562,11 +558,11 @@ Dấu bằng như đã trình bày có một vài tính chất như tính phản
       \defMath{\forall a \in x, \forall b \in x, \forall c \in x, (a\;R\;b \land b\;R\;c \implies a\;R\;c)}.
    \end{equation*}
 \end{itemize}
-Trong trường hợp $R$ có đồng thời tính phản xạ, đối xứng và bắc cầu thì $R$ có thêm cái tên mới là mối \defText{quan hệ tương đương}. Từ một mối quan hệ $R$ tương đương trên $x$, chúng ta có thể xây dựng \defText{lớp tương đương mô-đun} \defMath{$R$} với mọi phần tử $a \in x$, định nghĩa là:
+Trong trường hợp $R$ có đồng thời tính phản xạ, đối xứng và bắc cầu thì $R$ có thêm cái tên mới là mối \defText{quan hệ tương đương}. Từ một mối quan hệ $R$ tương đương trên $x$, chúng ta có thể xây dựng \defText{lớp tương đương} (\defText{mô-đun} $R$) với mọi phần tử $a \in x$, định nghĩa là:
 \begin{equation*}
-   \forall a \in x, \defMath{[a]_R = \cl_R(a) = \Cl_R(a) = \mathscr{C}_R(a) = \left\{ 
-      y \in x \mid x\;R\;y
-   \right\}}.
+   \forall a \in x, \defMath{[a]_R = \cl_R(a) = \Cl_R(a) = \mathscr{C}_R(a) = \{ 
+      y \in x \mid a\;R\;y
+   \}}.
 \end{equation*}
 Một phần tử bất kì thuộc $[a]_R$ được gọi là một \defText{đại diện} của lớp tương đương đó.
 
@@ -717,10 +713,64 @@ và vì vậy, $S$ có tính bắc cầu.
 
 Do $S$ đều có tính phản xạ, đối xứng và bắc cầu nên chúng ta có quan hệ tương đương $S$, hay nói theo cách khác, điều phải chứng minh.
 
+\exercise Một quan hệ cho trước có thể thiếu một số thuộc tính, do đó, người ta xây dựng quan hệ mới là mở rộng của nó với các tính chất cần thiết. Trong bài tập này, chúng ta sẽ nghiên cứu hai cách mở rộng đơn giản nhất. Gọi $D$ là một quan hệ trên $x$. \defText{Bao đóng phản xạ} của quan hệ $D$ này là 
+$$\defMath{D_f = D \cup \big\{y \in x^2 \;\big|\; \exists z \in x, y = (z; z)\big\}}.$$
+\defText{Bao đóng đối xứng} của $D$ có định nghĩa
+$$\defMath{D_d = D \cup D^{-1}}.$$
+Chứng minh rằng,
+\begin{enumerate}
+   \item $D_f$ phản xạ, và, $D$ phản xạ khi và chỉ khi $D = D_f$;
+   \item $D_d$ đối xứng, và, $D$ đối xứng khi và chỉ khi $D = D_d$.
+\end{enumerate}
+
+\solution
+
+\resetSubexercise Trước hết, chúng ta chứng minh quan hệ $D_f$ có tính chất phản xạ trên tập hợp $x$. Lấy một phần tử $z \in x$ tùy ý. Đặt $
+I_x = \big\{y \in x^2 \;\big|\; \exists z \in x, y = (z; z)\big\}.
+$
+Rõ ràng, cặp có thứ tự $(z; z)$ thuộc vào tập hợp $I_x$. Vì quan hệ $D_f = D \cup I_x$, theo định nghĩa phép hợp: $(z; z) \in D_f.$
+Do điều này đúng với mọi phần tử $z \in x$, quan hệ $D_f$ có tính chất phản xạ.
+
+Tiếp theo, chúng ta chứng minh điều kiện cần và đủ để quan hệ $D$ phản xạ là $D = D_f$:
+\begin{itemize}
+   \item Giả sử quan hệ $D$ có tính chất phản xạ trên $x$. Theo định nghĩa, $\forall w \in x, (w; w) \in D$. Từ đó, tập hợp tất cả các cặp có dạng $(w; w)$ phải là tập con của $D$, hay
+      $$
+      I_x \subseteq D.
+      $$
+      Khi đó,
+      $$
+      D_f = D \cup I_x = D.
+      $$
+   
+   \item Giả sử $D = D_f$. Vì chúng ta đã chứng minh $D_f$ có tính chất phản xạ ở trên, $D = D_f$ kéo theo quan hệ $D$ cũng có tính chất phản xạ.
+\end{itemize}
+
+Qua hai chiều, chúng ta có điều phải chứng minh.
+
+\stepSubexercise Lấy $c$ tùy ý thuộc vào quan hệ $D_d$. Vì $D_d$ là quan hệ từ $x$ sang $y$, tồn tại $a \in x$ và $b \in y$ sao cho $c = (a; b)$. Từ đó, $(a; b) \in D \cup D^{-1}$. Xét hai trường hợp có thể xảy ra:
+\begin{itemize}
+   \item Đầu tiên, nếu \coloringCrimson{$(a; b) \in D$}, theo định nghĩa của quan hệ ngược, điều này dẫn đến $(b; a) \in D^{-1}$. Vì tập hợp $D^{-1}$ là tập con của $D \cup D^{-1} = D_d$, chúng ta suy ra $(b; a) \in D_d$.
+   \item Xét trường hợp còn lại, nếu \coloringDodgerblue{$(a; b) \in D^{-1}$}, điều này kéo theo cặp đảo thứ tự $(b; a)$ phải thuộc vào quan hệ gốc $D$. Vì tập hợp $D$ là tập con của $D \cup D^{-1} = D_d$, chúng ta cũng thu được $(b; a) \in D_d$.
+\end{itemize}
+Như vậy, trong cả hai trường hợp, từ giả thiết $(a; b) \in D_d$ chúng ta luôn chứng minh được $(b; a) \in D_d$. Do đó, quan hệ $D_d$ có tính chất đối xứng.
+
+Chúng ta chứng minh điều kiện cần và đủ để quan hệ $D$ đối xứng là $D = D_d$:
+
+\begin{itemize}
+   \item 
+   Giả sử quan hệ $D$ có tính chất đối xứng trên $x$. Theo định nghĩa, với mọi cặp $d \in D^{-1}$, có $e$ và $f$ để $d = (e; f)$. Có $e\;D^{-1}\;f$ nên $f\;D\;e$. Do $D$ đối xứng, $f\;D\;e \implies e\;D\;f$, suy ra $d \in D$.
+   
+   Vì vậy, $\forall d \in D^{-1}, d \in D$. Điều này đồng nghĩa với việc quan hệ ngược là tập con của quan hệ gốc:
+   $$
+   D^{-1} \subseteq D.
+   $$
+   Do đó $D_d = D \cup D^{-1} = D.$
+   \item Giả sử đẳng thức $D = D_d$ nghiệm đúng. Vì quan hệ $D_d$ đã được chứng minh có tính chất đối xứng ở trên, đẳng thức $D = D_d$ suy ra quan hệ gốc $D$ cũng có tính chất đối xứng.
+\end{itemize}
+   
+Qua các kết quả đã có, dễ thấy điều phải chứng minh.
 
 \subsection{Quan hệ thứ tự}
-
-\ 
 
 So sánh giữa hai sự vật có thể được gọi là một trong những quan hệ phổ biến nhất, có thể thấy trong những câu trò chuyện của các bà mẹ châu Á. Tiêu chí đánh giá của các bà mẹ đó có thể vô cùng phức tạp: nhẹ thì con có học giỏi không, có biết làm việc nhà không, nặng thì thi chứng chỉ tiếng Anh được bao nhiêu hay có mấy giải Toán quốc tế rồi. Để có thể so sánh hai con của những người mang nặng đẻ đau đó, nhìn chung, sẽ cần nhiều tiêu chuẩn phức tạp. 
 
@@ -729,9 +779,9 @@ $\preccurlyeq$ là một \defText{quan hệ thứ tự toàn phần} (hoặc \de
 \begin{equation*}
    \defMath{\forall y \in x, \forall z \in x, (y \preccurlyeq z \lor z \preccurlyeq y)}.
 \end{equation*}
-Định nghĩa \defText{thứ tự nghiêm ngặt ứng với $\defMath{\preccurlyeq}$} trên $x$, kí hiệu bởi $\prec$, thông qua khẳng định
+Định nghĩa \defText{thứ tự nghiêm ngặt} (ứng với $\preccurlyeq$) trên $x$, kí hiệu bởi $\prec$, thông qua khẳng định
 \begin{equation*}
-   \defMath{\forall y \in x, \forall z \in x, (x \prec y \iff x \preccurlyeq y \land x \neq y)}.
+   \defMath{\forall y \in x, \forall z \in x, (y \prec z \iff y \preccurlyeq z \land y \neq z)}.
 \end{equation*}
 
 Khi một tập hợp $x$ được sắp thứ tự bởi $\preccurlyeq$, chúng ta có thể xác định được một số phần tử có tính chất đặc biệt mà chúng ta thường xuyên dùng. Gọi $A$ là một phần tử thuộc $\mathfrak{P}(x)$ (nói cách khác, $A \subseteq x$), gọi $C \in x$ là một \defText{chặn trên} (hoặc \defText{cận trên}) của $A$ khi và chỉ khi \begin{equation*}
@@ -742,17 +792,24 @@ Khi này, $A$ được gọi là \defText{bị chặn trên}. Tương tự, $c \
 \end{equation*} 
 $A$ nếu có chặn dưới thì được gọi là \defText{bị chặn dưới}. Tập hợp các chặn trên của $A$ được kí hiệu là $\defMath{\Maj_{\left(x; \preccurlyeq\right)}(A)}$. Đi kèm với nó là tập hợp các chặn dưới của $A$, là $\defMath{\Min_{\left(x; \preccurlyeq\right)}(A)}$.
 
-Một chặn trên của $C$ của $A$ thì không cần phải thuộc $A$, nhưng nếu $C \in A$ thì $C$ sẽ được gọi là \defText{phần tử lớn nhất} trong $A$, kí hiệu là ${\defMath{\max_{\preccurlyeq}(A)}}$. Định nghĩa tương ứng, nếu chặn dưới $c$ của $A$ thuộc tập hợp $A$ thì $c$ là \defText{phần tử nhỏ nhất} (hay \defText{phần tử bé nhất}) của $A$ và có kí hiệu là $\defMath{\min_{\preccurlyeq}(A)}$.
+Một chặn trên của $C$ của $A$ thì không cần phải thuộc $A$, nhưng nếu $C \in A$ thì $C$ sẽ được gọi là \defText{phần tử lớn nhất} trong $A$. Một tập hợp chỉ có thể có tối đa một phần tử lớn nhất. Thật vậy, giả sử tồn tại hai phần tử $M$ và $M_m$ đều là phần tử lớn nhất của $A$. Theo định nghĩa, $M \in A$, $M_m \in A$ và
+\begin{equation*}
+   \begin{cases}
+      \forall a \in A, a \preccurlyeq M \\
+      \forall a \in A, a \preccurlyeq M_m
+   \end{cases}.
+\end{equation*} 
+Cụ thể hóa các lượng từ phổ quát để có $M_m \preccurlyeq M \land M \preccurlyeq M_m$. Do tính phản đối xứng của $\preccurlyeq$, $M_m = M$. Vì vậy, một tập nếu có phần tử lớn nhất thì cũng chỉ có một. Chúng ta sẽ kí hiệu nó là ${\defMath{\max_{\preccurlyeq}(A)}}$. Tương tự, nếu chặn dưới $c$ của $A$ thuộc tập hợp $A$ thì $c$ là \defText{phần tử nhỏ nhất} (hay \defText{phần tử bé nhất}) của $A$. Chứng minh giống trước, chỉ có tối đa một phần tử nhỏ nhất. Phần tử này thường được kí hiệu là $\defMath{\min_{\preccurlyeq}(A)}$.
 
-Trong các chặn trên, nếu chúng ta có thể gọi ra phần tử nhỏ nhất trong chúng thì đó là \defText{biên trên} (hoặc \defText{chặn trên đúng}, \defText{cận trên đúng}). Viết dưới dạng kí hiệu, $\defMath{\sup_{\left(x; \preccurlyeq\right)}(A)} = S$ (cũng có thể viết là $\defMath{\Sup_{\left(x; \preccurlyeq\right)}(A)}$) là biên trên của $A$ tương đương với
+Trong các chặn trên, nếu chúng ta có thể gọi ra phần tử nhỏ nhất trong chúng thì đó là \defText{biên trên} (hoặc \defText{chặn trên đúng}, \defText{cận trên đúng}). Viết dưới dạng kí hiệu, 
 \begin{equation*}
-   \defMath{S \in \Maj_{\left(x; \preccurlyeq\right)}(A) \land \forall C \in \Maj_{\left(x; \preccurlyeq\right)}(A), S \preccurlyeq C}.
+   \defMath{\sup_{(x; \preccurlyeq)}(A) = \Sup_{(x; \preccurlyeq)}(A) = \min_{\preccurlyeq}\left(\Maj_{\left(x; \preccurlyeq\right)}(A)\right)}.
 \end{equation*}
-Thêm vào đó, $i$ là \defText{biên dưới} (hoặc \defText{chặn dưới đúng}, \defText{cận dưới đúng}) nếu và chỉ nếu $i$ thỏa mãn
+Tương đồng với nó, \defText{biên dưới} (hoặc \defText{chặn dưới đúng}, \defText{cận dưới đúng}) có định nghĩa là
 \begin{equation*}
-   \defMath{i \in \Min_{\left(x; \preccurlyeq\right)}(A) \land \forall c \in \Min_{\left(x; \preccurlyeq\right)}(A), c \preccurlyeq i}.
+   \defMath{\inf_{(x; \preccurlyeq)}(A) = \Inf_{(x; \preccurlyeq)}(A) = \max_{\preccurlyeq}\left(\Min_{\left(x; \preccurlyeq\right)}(A)\right)}.
 \end{equation*}
-Biểu diễn bằng lời, $i$ là phần tử lớn nhất trong $\Min_{\left(x; \preccurlyeq\right)}(A)$. Ngoài ra, kí hiệu thông thường của $i$ là $\defMath{\inf_{\left(x; \preccurlyeq\right)}(A)}$ hoặc đôi khi viết hoa là $\defMath{\Inf_{\left(x; \preccurlyeq\right)}(A)}$. 
+Biểu diễn bằng lời, $\inf_{(x; \preccurlyeq)}(A)$ là phần tử lớn nhất trong $\Min_{\left(x; \preccurlyeq\right)}(A)$.
 
 Một phần tử $P \in A$ là một \defText{phần tử cực đại} (hoặc \defText{phần tử tối đại}) của $A$ khi và chỉ khi
 \begin{equation*}
@@ -850,7 +907,7 @@ Gọi các tập hợp $0 = \varnothing$, $1 = \{0\}$, $2 = \{0; 1\}$, $3 = \{0;
 
 Xét $\mathscr{E} = 3 \cup \{3\}$. Khi này, dễ thấy các phần tử $0$, $1$, $2$, $3$ đều thuộc $\mathscr{E}$. Với sự đảm bảo bởi tiên đề tách thông qua tích Đề-các $\mathscr{E} \times \mathscr{E}$, định nghĩa quan hệ thứ tự $\preccurlyeq$ trên $\mathscr{E}$:
 \begin{equation*}
-   \preccurlyeq\;= \left\{(0; 0); (1; 1); (2; 2); (3; 3); (0, 2); (1; 2); (1; 3)\right\}.
+   \preccurlyeq\;= \left\{(0; 0); (1; 1); (2; 2); (3; 3); (0; 2); (1; 2); (1; 3)\right\}.
 \end{equation*}
 Dễ dàng kiểm tra quan hệ này thỏa mãn các tính chất của một quan hệ thứ tự, bao gồm tính phản xạ, tính phản đối xứng, và tính bắc cầu. Tập $\mathscr{E}$ và quan hệ thứ tự $\preccurlyeq$ này sẽ được dùng chung cho cả hai phần.
 
@@ -864,7 +921,7 @@ Dễ dàng kiểm tra quan hệ này thỏa mãn các tính chất của một q
       \Maj_{(\mathscr{E}; \preccurlyeq)}(B) = \{2; 3\}
    \end{cases}.
 \end{equation*}
-Tồn tại giá trị nhỏ nhất của $\Maj_{(\mathscr{E}; \preccurlyeq)}(A)$ là $0$, cho nên $0$ là biên trên của $A$. Tuy nhiên, $\Maj_{(\mathscr{E}; \preccurlyeq)}(B)$ lại không có phần tử nhỏ nhất, do $2$ và $3$ không được định nghĩa thứ tự. Do đó, $B$ không có biên trên. Chúng ta đã có ví dụ như yêu cầu.
+Tồn tại giá trị nhỏ nhất của $\Maj_{(\mathscr{E}; \preccurlyeq)}(A)$ là $0$, cho nên $0$ là biên trên của $A$. Tuy nhiên, $\Maj_{(\mathscr{E}; \preccurlyeq)}(B)$ lại không có phần tử nhỏ nhất, do $2$ và $3$ không so sánh được theo thứ tự $\preccurlyeq$. Do đó, $B$ không có biên trên. Chúng ta đã có ví dụ như yêu cầu.
 
 \stepSubexercise Lấy $\begin{cases}
    A = \{0; 1\} \\
@@ -889,7 +946,7 @@ và do đó, biên trên của $B$ là $2$. Đây là một ví dụ thỏa mãn
    \item $y \prec z \implies y \preccurlyeq z \land y \neq z$.
 \end{itemize}
 
-Từ $x \preccurlyeq y$ và $y \preccurlyeq z$, do quan hệ $\preccurlyeq$ có tính chất bắc cầu, suy ra $x \preccurlyeq z$. Bây giờ, cần chứng minh $x \neq z$. Bằng phương pháp phản chứng, giả sử rằng $x = z$. Khi đó, chúng ta được $z \preccurlyeq y$. Như vậy, đồng thời $y \preccurlyeq z$ và $z \preccurlyeq y$. Do quan hệ $\preccurlyeq$ có tính chất phản đối xứng, $y = z$
+Từ $x \preccurlyeq y$ và $y \preccurlyeq z$, do quan hệ $\preccurlyeq$ có tính chất bắc cầu, suy ra $x \preccurlyeq z$. Bây giờ, cần chứng minh $x \neq z$. Bằng phương pháp phản chứng, giả sử rằng $x = z$. Khi đó, chúng ta được $z \preccurlyeq y$. Như vậy, đồng thời $y \preccurlyeq z$ và $z \preccurlyeq y$. Do quan hệ $\preccurlyeq$ có tính chất phản đối xứng, $y = z$.
 Điều này trực tiếp mâu thuẫn với giả thiết $y \neq z$ ở trên. Do đó, giả sử phản chứng là sai, tức là ta phải có $x \neq z$.
 
 Vì $x \preccurlyeq z$ và $x \neq z$, theo định nghĩa của quan hệ thứ tự nghiêm ngặt, thu được $x \prec z$. Từ đó, dễ có được điều phải chứng minh.
@@ -948,8 +1005,8 @@ Vậy, $L$ có tính phản xạ.
    a \; L \; b\\
    b\;L\;a
 \end{cases}$. Tồn tại $c$ và $C$ trong $X$ và $d$ và $D$ trong $Y$ để $a = (c; d)$ và $b = (C; D)$. Ngoài ra, chúng ta cũng có $\begin{cases}
-   (c; d)\,L\,(d; c) \\
-   (d; c)\;L\;(c; d)
+   (c; d)\,L\,(C; D) \\
+   (C; D)\,L\,(c; d)
 \end{cases}$. Dẫn đến kết quả tương đương:
 \begin{equation*}
    \left[\begin{aligned}
@@ -1002,3 +1059,62 @@ $h \prec j \land j \prec l$ cho $h \prec l$ và hệ quả  $(h; i)\,L\,(l; m)$ 
 hay $L$ có tính bắc cầu là điều tất yếu.
 
 Các tính chất cần thiết cho quan hệ thứ tự $L$ đã được lập luận rõ ràng. Điều phải chứng minh.
+
+\stepSubexercise Xét $n$ và $o$ cùng thuộc $X \times Y$. Tương tự như trước, đặt $n = (n_X; n_Y)$ và $o = (o_X; o_Y)$ thỏa mãn $n_X$ và $o_X$ thuộc $X$, $n_Y$ và $o_Y$ thuộc $Y$. Với $\preccurlyeq$ là một quan hệ toàn phần, chúng ta cần chứng minh mệnh đề sau đúng mà chúng ta sẽ viết tắt là mệnh đề $M$:
+\begin{equation*}
+   n\;L\;o \lor o\;L\;n.
+\end{equation*}
+
+Vì $\preccurlyeq$ là một quan hệ thứ tự toàn phần trên $A$, và $X$ là tập con của $A$, nên khi so sánh hai phần tử $n_X$ và $o_X$ trong $X$, chúng ta luôn có $n_X \preccurlyeq o_X$ hoặc $o_X \preccurlyeq n_X$. Chúng ta xét ba trường hợp sau:
+
+\begin{itemize}
+   \item Trường hợp \coloringCrimson{$n_X \prec o_X$}. \\
+   Theo định nghĩa của quan hệ $L$, điều này trực tiếp dẫn đến $n\;L\;o$ nghiệm đúng. Do đó, mệnh đề $M$ được thỏa mãn.
+
+   \item Trường hợp \coloringDodgerblue{$o_X \prec n_X$}. \\
+   Theo định nghĩa của quan hệ $L$, điều này dẫn đến $o\;L\;n$ đúng. Vì vậy, có $M$.
+
+   \item Trường hợp \coloringJade{$n_X = o_X$}. \\
+   Trong trường hợp này, chúng ta tiếp tục so sánh hai phần tử $n_Y$ và $o_Y$ thuộc $Y$. Vì $\preccurlyeq$ là quan hệ thứ tự toàn phần trên $A$ và $Y \subseteq A$, chúng ta có các khả năng sau có thể xảy ra:
+   \begin{itemize}
+      \item Nếu $n_Y \preccurlyeq o_Y$: Kết hợp với $n_X = o_X$, theo định nghĩa của quan hệ $L$, chúng ta có $n\;L\;o$ đúng.
+      \item Nếu $o_Y \preccurlyeq n_Y$: Kết hợp với $o_X = n_X$, có $o\;L\;n$ nghiệm đúng.
+   \end{itemize}
+   Như vậy, dù ở khả năng nào của trường hợp này, mệnh đề $M$ vẫn luôn đúng.
+\end{itemize}
+
+Từ các lập luận trên, trong mọi trường hợp, chúng ta luôn có $n\;L\;o$ hoặc $o\;L\;n$ nghiệm đúng. 
+
+Do đó, nếu $\preccurlyeq$ là một quan hệ thứ tự toàn phần thì $L$ cũng là một quan hệ thứ tự toàn phần trên tập hợp $X \times Y$. Đây là điều phải chứng minh.
+
+\exercise Cho $A$ là một tập với quan hệ thứ tự toàn phần $\preccurlyeq$. Giả sử $x$ là phần tử cực đại của một tập con $B$ lấy từ $A$. Chứng minh rằng $x$ là phần tử lớn nhất trong $B$.
+
+\solution 
+
+Lấy một phần tử $y$ tùy ý thuộc tập con $B$. Do $B$ là tập con của $A$ và quan hệ $\preccurlyeq$ là một quan hệ thứ tự toàn phần trên $A$, hai phần tử $x$ và $y$ phải so sánh được với nhau. Do đó, có hai trường hợp xảy ra:
+\begin{itemize}
+   \item Trường hợp \coloringCrimson{$x \preccurlyeq y$}. Vì $x$ là phần tử cực đại của tập con $B$ nên theo định nghĩa của phần tử cực đại, hệ thức $x \preccurlyeq y$ kéo theo đẳng thức $x = y$. Theo tính phản xạ của quan hệ thứ tự, chúng ta cũng có $y \preccurlyeq x$.
+   
+   \item Trường hợp \coloringDodgerblue{$y \preccurlyeq x$}. Hệ thức này hiển nhiên thỏa mãn $y \preccurlyeq x$.
+\end{itemize}
+Như vậy, trong cả hai trường hợp, chúng ta luôn thu được
+$$
+\forall y \in B, y \preccurlyeq x.
+$$
+Theo định nghĩa của phần tử lớn nhất, điều này chứng tỏ $x$ là phần tử lớn nhất trong $B$. Đây là điều phải chứng minh.
+
+\exercise Lấy ví dụ cho một tập được trang bị một quan hệ thứ tự toàn phần, có biên trên nhưng không có phần tử lớn nhất.
+
+\solution
+
+Gọi $\mathscr{E} = \{\varnothing\}$ và $K = \varnothing$. Xét quan hệ
+\begin{equation*}
+   \preccurlyeq\;=\{(\varnothing; \varnothing)\}.
+\end{equation*}
+Dễ dàng kiểm chứng được rằng $\preccurlyeq$ là một quan hệ thứ tự toàn phần trên $\mathscr{E}$, và hiển nhiên rằng $\varnothing$ là phần tử nhỏ nhất trong $\mathscr{E}$. Chúng ta đã chứng minh
+\begin{equation*}
+   \min_{\preccurlyeq} (\mathscr{E}) = \sup_{(\mathscr{E}; \preccurlyeq)} (\varnothing),
+\end{equation*}
+cho nên $\varnothing = \sup_{(\mathscr{E}, \preccurlyeq)} (K)$. Ngoài ra, do $\varnothing$ không có phần tử nào nên $K$  không thể có phần tử lớn nhất.
+
+Vậy, $K$ có biên trên nhưng không có phần tử lớn nhất. Đây là ví dụ chúng ta cần.

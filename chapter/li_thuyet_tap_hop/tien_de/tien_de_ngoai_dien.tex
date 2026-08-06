@@ -6,7 +6,8 @@ Mặc dù cái tên có vẻ lạ, ý nghĩa của nó là một tính chất v�
 $$
     \defMath{\forall x, \forall y, \left( x = y \iff  \forall z, \left( z \in x \iff z \in y \right) \right)}.
 $$
-Nếu hai tập không bằng nhau, kí hiệu quan hệ này là $\defMath{x \neq y}$ và phát biểu nó là ``$x$ không bằng $y$''.
+Hai tập bằng nhau sẽ được thừa hưởng các tính chất cho bởi phép đồng nhất từ giải tích vị từ bậc nhất.
+
 \begin{figure}[H]
     \begin{center}
         \begin{tikzpicture}[>=stealth]
@@ -129,7 +130,7 @@ Tương tự với định nghĩa $\supseteq$, chúng ta cũng có $\forall x, \
    \label{fig:li_thuyet_tap_hop:tien_de:khong_la_tap_con}
 \end{figure}
 
-Trước khi đi đến với những tiên đề tiếp theo, chúng ta sẽ cùng tìm hiểu về các tính chất của phép bằng nhau. Thứ nhất, để ý rằng, do $A \iff A$ đúng với mọi $A$ từ giải tích vị từ cho nên, với
+Trước khi đi đến với những tiên đề tiếp theo, chúng ta sẽ cùng tìm hiểu về các tính chất mới mà phép đồng nhất có được từ tiên đề ngoại diên. Thứ nhất, để ý rằng, do $A \iff A$ đúng với mọi $A$ từ giải tích vị từ cho nên, với
 \begin{equation*}
     \forall z, z \in x \iff z \in x.
 \end{equation*}
@@ -142,7 +143,7 @@ Ngoài ra, phép $=$ cũng có \defText{tính đối xứng}. Để ý rằng, d
 \begin{equation*}
     (\forall z, z \in x \iff z \in y) \iff (\forall z, z \in y \iff z \in x).
 \end{equation*}
-Sử dụng định nghĩa của phép bằng nhau để được
+Sử dụng định nghĩa của phép đồng nhất để được
 \begin{equation*}
     \defMath{\forall x, \forall y, x = y \iff y = x}.
 \end{equation*}
@@ -168,23 +169,11 @@ Và qua đó,
 \end{equation*}
 Đây là tính chất còn lại, \defText{tính bắc cầu}.
 
-Phép bằng nhau cũng cho phép định nghĩa được một lượng từ mới. Gọi $V()$ là một vị từ, mệnh đề ``\defText{tồn tại duy nhất} $x$ thỏa mãn $V(x)$'' là tương đương với
-\begin{equation*}
-   \defMath{\exists x, \left(V(x) \land \forall y, (V(y) \implies y = x)\right)},
-\end{equation*}
-và được kí hiệu ngắn gọn là $\defMath{\exists ! x, V(x)}$.
-
-Cuối cùng, khi tác giả dùng từ ``phép'' bằng nhau, tác giả đã ngầm hiểu đây không chỉ là kí hiệu của một vị từ mà cũng là một phép toán, giống như các phép $\land$ hay $\lor$ đã được làm quen từ trước. Thực tế, chúng ta có thể thêm các định nghĩa để có thể biến câu sau thành mệnh đề có nghĩa:
-\begin{equation*}
-    \exists w, \exists x, \exists y, \exists z, \big((w = x) = (y = z)\big).
-\end{equation*}
-Nhưng, để đơn giản hóa, tác giả sẽ bỏ qua việc xây dựng các định nghĩa bậc cao hơn. Điều đó cũng cho phép chúng ta lạm dụng kí hiệu. Chẳng hạn, chúng ta có thể viết $x = y = z$ với nghĩa $x = y \land y = z$, chứ không phải $(x = y) = z$ hay $x = (y = z)$.
-
 \exercise Cho $A$, $B$ và $C$ là các tập hợp. Chứng minh rằng
 \begin{enumerate}
    \item $A \subseteq A$;
    \item $A = B \iff A \subseteq B \land B \subseteq A$;
-   \item $A \neq B \iff \exists z, (z \in A \land z \notin B) \lor (z \notin A \land z \in B)$.
+   \item $A \neq B \iff \exists z, (z \in A \land z \notin B) \lor (z \notin A \land z \in B)$;
    \item $A \subseteq B \land B \subseteq C \implies A \subseteq C$.
 \end{enumerate}
 

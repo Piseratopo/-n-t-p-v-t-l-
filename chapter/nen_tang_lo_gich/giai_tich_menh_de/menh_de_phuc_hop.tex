@@ -343,9 +343,9 @@ Giống như thứ tự các phép tính số học để tính giá trị các 
    \item $400 + 50 \div 9$ (Rất nhiều người sẽ bảo đáp số là $50$ chứ không phải $405\frac{5}{9}$, nhất là khi biểu thức được đọc ra.),
    \item $9x^2 \div 3x$ (Sẽ không có ai bảo biểu thức này bằng $3x^3$, ngoại trừ\dots\ cố tình.).
 \end{itemize}
-}, để xác định giá trị chân lí của mệnh đề có nhiều phép nối, các phép nối mệnh đề cũng có sắp xếp thứ tự từ mức ưu tiên cao đến ưu tiên thấp như sau:
+}, để xác định giá trị chân lí của mệnh đề có nhiều phép nối, các phép nối mệnh đề cũng có sắp xếp mức ưu tiên cao đến ưu tiên thấp:
 \begin{enumerate}[start=0]
-   \item Thực hiện các phép bên trong cặp dấu ngoặc --- $()$ --- trước, ngoài ngoặc sau
+   \item Thực hiện các phép bên trong cặp dấu ngoặc --- $()$ --- trước, ngoài ngoặc sau. Sau khi đã xác định được vị trí trong ngoài, chúng ta thực hiện các phép theo thứ tự:
    \item Phủ định --- $\neg$ (mức ưu tiên cao nhất);
    \item Nhóm hội --- Phép hội --- $\land$ --- và phép phủ định hội --- $\uparrow$;
    \item Nhóm tuyển --- Phép tuyển --- $\lor$ --- và phép phủ định tuyển --- $\downarrow$;
@@ -356,7 +356,7 @@ Giống như thứ tự các phép tính số học để tính giá trị các 
 \begin{itemize}
    \item nhóm suy luận hai chiều ($\iff$ và $\nLeftrightarrow$) có mức ưu tiên thấp hơn nhóm suy luận một chiều,
    \item các phép kéo theo và phép tương đương có tính chất kết hợp phải.
-\end{itemize} Cho nên, khi viết các mệnh đề phức hợp dưới dạng biểu thức, không nên coi thứ tự được đưa ra ở đây như một chân lí và bỏ qua những dấu ngoặc cần thiết, nhưng cũng không nên lạm dụng dấu ngoặc tránh gây khó đọc.}. Ví dụ:
+\end{itemize} Cho nên, khi viết các mệnh đề phức hợp dưới dạng biểu thức, không nên coi thứ tự được đưa ra ở đây như một chân lí và bỏ qua những dấu ngoặc cần thiết, nhưng cũng không nên dùng thừa dấu gây khó đọc.}. Ví dụ:
 \begin{itemize}
    \item $P \lor Q \land R$ được giải giá trị chân lí như $P \lor (Q \land R)$,
    \item $\neg \neg P$ được giải giá trị chân lí như $\neg (\neg P)$ (giống như $--3 = -(-3)$),
@@ -977,10 +977,10 @@ Ví dụ như ở bảng \ref{tab:nen_tang_lo_gich:giai_tich_menh_de:menh_de_phu
 Hai bảng \ref{tab:nen_tang_lo_gich:giai_tich_menh_de:menh_de_phuc_hop:ket_hop_hoi} và \ref{tab:nen_tang_lo_gich:giai_tich_menh_de:menh_de_phuc_hop:ket_hop_tuyen} cho phép chúng ta viết $P \land Q \land R$ và $P \lor Q \lor R$ mà không phải lo lắng về thứ tự các phép tính. Điều này có thể mở rộng lên nhiều biến hơn, dẫn đến chúng ta có thể viết 
 \begin{equation*}
    \left\{ \begin{array}{c}
-      P_1 \implies R \\
-      P_2 \implies R \\
+      P_1 \\
+      P_2 \\
       \vdots \\
-      P_n \implies R
+      P_n
    \end{array} \right. \text{ hoặc } P_1 \land P_2 \land \cdots \land P_n
 \end{equation*}
 và 

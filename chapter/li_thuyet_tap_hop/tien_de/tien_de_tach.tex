@@ -1,7 +1,5 @@
 \section{Tiên đề tách}
 
-\
-
 Giả sử $x$ là một tập hợp và $\cauF()$ có nghĩa với toàn bộ các phần tử của $x$. Khi đó, tiên đề tách khẳng định rằng tồn tại một tập hợp $y$ bao gồm tất cả các phần tử $z \in x$ thỏa mãn $\cauF(z)$ và chỉ những phần tử đó. Nói cách khác,
 $$
    \defMath{\forall x, \exists y, \forall z, \left( z \in y \iff z \in x \land \textbf{\cauF}(z) \right)}.
@@ -82,10 +80,11 @@ Từ cách nói đó, chúng ta có cách viết rút gọn với mọi tập h�
 \begin{equation*}
    \defMath{\forall z \in x, V(z)} \iff \forall z, \left(z \in x \implies V(z)\right).
 \end{equation*}
-Tương tự, với lượng từ tồn tại, chúng ta cũng có cách viết tắt:
+Với lượng từ tồn tại, chúng ta cũng có cách viết tắt:
 \begin{equation*}
    \defMath{\exists z \in x, V(z)} \iff \exists z, \left(z \in x \land V(z)\right).
 \end{equation*}
+Tuy rằng định nghĩa này nhìn không giống so với định nghĩa đối với lượng từ phổ quát, cách hiểu này là hợp lí với cách dùng ngôn ngữ thông thường. Khi nói ``tồn tại'' thuộc đâu đó, chúng ta luôn mặc định rằng có một đối tượng nằm trong vị trí đó với tính chất đã có, ít khi hiểu theo hướng có một đối tượng \emph{nếu} nằm trong đó thì có tính chất đó.
 
 Xét phủ định của $\forall z \in x, V(z)$, chúng ta có
 \begin{align*}
@@ -240,7 +239,10 @@ Kết hợp hai kết quả, chúng ta có $\bigcap \{x; y\} = x \cap y$, theo c
       \item $A \cap B = A \iff A \subseteq B$;
       \item $A \cap B = B \cap A$;
       \item $\bigcap (A; B) = \{A\}$;
-      \item $A \subseteq B \implies \bigcap A \supseteq \bigcap B$;
+      \item $\begin{cases}
+         A \subseteq B \\
+         A \neq \varnothing
+      \end{cases} \implies \bigcap A \supseteq \bigcap B$;
       \item $A \subseteq B \implies A \cap C \subseteq B \cap C$;
       \item $A = B \implies \begin{cases}
                \bigcap A = \bigcap B \\
@@ -321,7 +323,7 @@ Nhận thấy rằng với mọi $w$, để $w$ thuộc $\bigcap (A; B)$ thì $w
 Như một kết quả của tiên đề cặp và tiên đề ngoại diên, chỉ tồn tại duy nhất một tập $z$ sao cho $\forall w, (w \in z \iff w = A)$. Do vậy, $\bigcap (A; B) = \{A\}$ và chúng ta có điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}. Giả sử $A \subseteq B$. Xét $z$ là một phần tử thuộc $\bigcap B$. Khi đó, $z \in b$ với mọi $b \in B$. Do $A \subseteq B$, mọi phần tử $x \in A$ cũng là một phần tử của $B$. Dẫn đến, viết lại các mệnh đề để có
+\arabic{subexercise}. Giả sử $A \subseteq B$ và $A \neq \varnothing$. Xét $z$ là một phần tử thuộc $\bigcap B$. Khi đó, $z \in b$ với mọi $b \in B$. Do $A \subseteq B$, mọi phần tử $x \in A$ cũng là một phần tử của $B$. Dẫn đến, viết lại các mệnh đề để có
 \begin{equation*}
     \begin{cases}
         \forall z \in \bigcap B, \forall b, (b \in B \implies z \in b) \\
@@ -338,7 +340,9 @@ Ngoài ra, định nghĩa cho chúng ta
 $\bigcap A = \{z \in \bigcup A \mid \forall x \in A, z \in x\}$, suy ra \begin{equation*}
     \forall z, \left(z \in \bigcap A \iff z \in \bigcup A \land \forall x \in A, z \in x\right).
 \end{equation*}
-Nhưng, nhận thấy rằng, với mọi $z$, $\forall x \in A, z \in x \implies \exists x, (x \in A \implies z \in x)$, dẫn đến $\forall x \in A, z \in x \implies z \in \bigcup A$ là đúng với mọi $z$. Và vì vậy,
+Nhưng, nhận thấy rằng, $\forall x \in A, z \in x \implies z \in \bigcup A$ là đúng với mọi $z$. Thật vậy, do $A \neq \varnothing$, tồn tại $x^*$ để $x^* \in A$, dẫn đến $z \in x^*$. Từ tiên đề hợp, chúng ta có $z \in \bigcup A$ từ $x^* \in A \land z \in x^*$ hay $\exists x, x \in A \land z \in x$.
+
+Và vì vậy,
 \begin{equation}
    \forall z, \begin{cases}
       z \in \bigcap A \iff z \in \bigcup A \land \forall x \in A, z \in x \\
@@ -382,7 +386,7 @@ Sử dụng kết quả này để thay thế tương đương, có $\forall z, 
 Tóm lại, $x \in A \cap C \implies x \in B \cap C$ với mọi $x$, cho nên $A \cap C \subseteq B \cap C$. Qua đó, chúng ta có điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}. Chúng ta đã chứng minh:
+\arabic{subexercise}. Nếu \coloringCrimson{$A \neq \varnothing$} thì $B$ cũng khác rỗng do $A = B$. Dưới điều kiện đó, chúng ta đã chứng minh:
 \begin{equation*}
    A \subseteq B \implies
    \begin{cases}
@@ -390,7 +394,7 @@ Tóm lại, $x \in A \cap C \implies x \in B \cap C$ với mọi $x$, cho nên $
       A \cap C \subseteq B \cap C
    \end{cases}.
 \end{equation*}
-Và từ đó, chúng ta cũng sẽ có
+Tương tự, chúng ta cũng sẽ có
 \begin{equation*}
    A \supseteq B \implies
    \begin{cases}
@@ -406,7 +410,19 @@ Có $x = y \iff (x \subseteq y) \land (x \supseteq y)$ đúng với mọi tập 
                A \cap C = B \cap C
             \end{cases}.
 \end{equation*}
-Điều phải chứng minh.
+
+Nếu \coloringDodgerblue{$A = \varnothing$} thì $B$ cũng bằng $\varnothing$. Từ đó, có $\begin{cases}
+   A \subseteq C \\
+   B \subseteq C
+\end{cases}$, và dễ dàng tính được
+\begin{equation*}
+   \begin{cases}
+      \bigcap A = \bigcap B = \varnothing \\
+      A \cap C = B \cap C = \varnothing
+   \end{cases}.
+\end{equation*}
+
+Từ hai trường hợp, có điều phải chứng minh.
    
 \stepcounter{subexercise}
 \arabic{subexercise}. Trước hết, chúng ta sẽ chứng minh $(A \cap B) \cap C = A \cap (B \cap C)$. Thật vậy, với mọi $x$, sử dụng liên tục định nghĩa giao hai tập hợp, chúng ta có
@@ -761,10 +777,10 @@ Vậy, $A \setminus (A \cap B) = A \setminus B$. Điều phải chứng minh.
 \stepcounter{subexercise}
 \arabic{subexercise}. Lấy một phần tử $x$ bất kì thuộc $A$. Xét hai trường hợp xảy ra đối với tập hợp $B$:
 \begin{itemize}
-    \item Nếu $x \in B$, vì $x \in A$ và $x \in B$, ta có $x \in A \cap B$.\\
+    \item Nếu $x \in B$, vì $x \in A$ và $x \in B$, chúng ta có $x \in A \cap B$.\\
     Suy ra $x \in (A \setminus B) \cup (A \cap B)$.
     
-    \item Nếu $x \notin B$, vì $x \in A$ và $x \notin B$, ta có $x \in A \setminus B$.\\
+    \item Nếu $x \notin B$, vì $x \in A$ và $x \notin B$, thì $x \in A \setminus B$.\\
     Suy ra $x \in (A \setminus B) \cup (A \cap B)$.
 \end{itemize}
 Trong cả hai trường hợp, đều có $x \in (A \setminus B) \cup (A \cap B)$.\\
@@ -792,7 +808,7 @@ Từ đó, có đồng thời:
 Theo định nghĩa của phép hiệu, điều này có nghĩa là $ x \in B \setminus C $. Vì mọi phần tử $x \in A \setminus C$ đều thuộc $B \setminus C$, kết luận được
 \[ A \setminus C \subseteq B \setminus C. \]
 
-Lấy một phần tử $y$ bất kì thuộc vào tập hợp $C \setminus B$. Chúng ta có $ y \in C \land y \notin B $. Cần chứng minh rằng $y \notin A$. Giả sử ngược lại rằng $y \in A$. Vì $A \subseteq B$, nếu $y \in A$ thì ta bắt buộc phải có $y \in B$. Điều này mâu thuẫn trực tiếp với điều kiện ban đầu là $y \notin B$.
+Lấy một phần tử $y$ bất kì thuộc vào tập hợp $C \setminus B$. Chúng ta có $ y \in C \land y \notin B $. Cần chứng minh rằng $y \notin A$. Giả sử ngược lại rằng $y \in A$. Vì $A \subseteq B$, nếu $y \in A$ thì bắt buộc phải có $y \in B$. Điều này mâu thuẫn trực tiếp với điều kiện ban đầu là $y \notin B$.
 Do đó, giả thiết phản chứng là sai. Dẫn đến $ y \notin A $. Như vậy, chúng ta có đồng thời
 \[ y \in C \land y \notin A. \]
 Theo định nghĩa của phép hiệu, điều này có nghĩa là $ y \in C \setminus A $. Vậy
@@ -920,7 +936,7 @@ Do đó, $A \setminus (B \setminus C) = (A \setminus B) \cup (A \cap C)$. Điề
    x \in (A \setminus B) \setminus (A \setminus C) &\iff x \in A \land x \notin B \land (x \notin A \lor x \in C); \\
    x \in (A \setminus B) \setminus (A \setminus C) &\iff (x \in A \land x \notin B \land x \notin A) \lor (x \in A \land x \notin B \land x \in C).
 \end{align*}
-Nhận thấy rằng $x \in A \land x \notin A$ là luôn sai để không có mâu thuẫn, cho nên 
+Nhận thấy rằng $x \in A \land x \notin A$ là luôn sai, cho nên 
 \begin{align*}
    x \in (A \setminus B) \setminus (A \setminus C) &\iff x \in A \land x \notin B \land x \in C; \\
    x \in (A \setminus B) \setminus (A \setminus C) &\iff \begin{cases}
@@ -1156,10 +1172,10 @@ Từ việc khẳng định từng chiều, chúng ta có điều phải chứng
 \stepcounter{subexercise}
 \arabic{subexercise}. Chứng minh chiều thuận, giả thiết rằng \coloringCrimson{$A = B$}. Từ giả thiết đó, $\begin{cases}
    A \setminus C = B \setminus C \\
-   C \setminus A = C \setminus A
+   C \setminus A = C \setminus B
 \end{cases}$. Khá hiển nhiên, chúng ta cũng có 
 \begin{equation*}
-   (A \setminus C) \cup (C \setminus A) = (B \setminus C) \cup (C \setminus A)
+   (A \setminus C) \cup (C \setminus A) = (B \setminus C) \cup (C \setminus B)
 \end{equation*}
 và từ đó, $A \vartriangle C = B \vartriangle C$.
 
@@ -1187,7 +1203,7 @@ Chứng minh chiều ngược lại, bắt đầu với điều kiện \coloring
       x \notin B \vartriangle C 
    \end{cases}$.
 
-   Vậy, luôn tồn tại phần tử $x$ không thỏa mãn $x \in A \vartriangle C \iff x \notin B \vartriangle C$. Tuy nhiên, điều này mâu thuẫn với $A \vartriangle C = B \vartriangle C$.
+   Vậy, luôn tồn tại phần tử $x$ không thỏa mãn $x \in A \vartriangle C \iff x \in B \vartriangle C$. Tuy nhiên, điều này mâu thuẫn với $A \vartriangle C = B \vartriangle C$.
    \item Xét trường hợp khi $x \in B$ và $x \notin A$. Với lập luận tương tự, chúng ta cũng sẽ có mâu thuẫn như trên.
 \end{itemize}
 

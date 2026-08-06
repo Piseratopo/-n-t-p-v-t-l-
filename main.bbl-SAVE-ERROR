@@ -48,6 +48,35 @@
       \true{nocite}
       \keyw{math}
     \endentry
+    \entry{monier2000algèbre}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=8d25273ff5d62f4d918082e3b2cd4982}{%
+           family={Monier},
+           familyi={M\bibinitperiod},
+           given={J.M.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Dunod}%
+      }
+      \strng{namehash}{8d25273ff5d62f4d918082e3b2cd4982}
+      \strng{fullhash}{8d25273ff5d62f4d918082e3b2cd4982}
+      \strng{fullhashraw}{8d25273ff5d62f4d918082e3b2cd4982}
+      \strng{bibnamehash}{8d25273ff5d62f4d918082e3b2cd4982}
+      \strng{authorbibnamehash}{8d25273ff5d62f4d918082e3b2cd4982}
+      \strng{authornamehash}{8d25273ff5d62f4d918082e3b2cd4982}
+      \strng{authorfullhash}{8d25273ff5d62f4d918082e3b2cd4982}
+      \strng{authorfullhashraw}{8d25273ff5d62f4d918082e3b2cd4982}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9782100044405}
+      \field{title}{Algèbre I}
+      \field{year}{1996}
+      \true{nocite}
+      \keyw{math}
+    \endentry
     \entry{suppes2012introduction}{book}{}{}
       \name{author}{1}{}{%
         {{hash=3b66681098bdb00813903e279a08ec0d}{%
@@ -186,6 +215,7 @@
       \field{isbn}{978-0-306-45567-4}
       \field{title}{In Search of Planet Vulcan: The Ghost in Newton's Clockwork Universe}
       \field{year}{1997}
+      \true{nocite}
       \verb{doi}
       \verb 10.1007/978-1-4899-6100-6
       \endverb
@@ -251,6 +281,7 @@
       \field{labeltitlesource}{title}
       \field{title}{Giáo trình Triết học Mác - Lênin}
       \field{year}{2024}
+      \true{nocite}
       \keyw{misc}
     \endentry
     \entry{korn2000mathematical}{book}{}{}
@@ -316,6 +347,7 @@
       \field{isbn}{978-604-338-113-9}
       \field{title}{Từ điển tiếng Việt}
       \field{year}{2021}
+      \true{nocite}
       \keyw{misc}
     \endentry
     \entry{Sigler1976}{book}{}{}

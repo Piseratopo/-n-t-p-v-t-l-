@@ -8,7 +8,7 @@ Tài liệu "PFÉIV" cần được viết theo quy chuẩn chính tả như sau
 - Sử dụng ``` `` ``` và `''` để viết dấu ngoặc kép.
 - Đảm bảo kí hiệu thống nhất trong tài liệu, trong đó bao gồm tên, kiểu hoa/thường, kiểu phông, kích cỡ, vân vân. Khi có thể, sử dụng những định dạng đã có trong `main.tex`.
 - Chỉ sử dụng màu đen và những màu đã được định nghĩa sẵn trong `main.tex` để viết và vẽ (ngoài trừ hình ảnh ngoài).
-- Đại từ nhân xưng: Khi cần ngôi thứ nhất, dùng "tác giả". Khi cần ngôi thứ hai, dùng "bạn đọc". Khi cần ngôi thứ nhất số nhiều mà bao gồm cả người đọc, dùng "chúng ta". Trong một ví dụ cụ thể, không viết `Ta có`, mà viết `Chúng ta có`.
+- Đại từ nhân xưng: Khi cần ngôi thứ nhất, dùng "tác giả". Khi cần ngôi thứ hai, dùng "bạn đọc". Khi cần ngôi thứ nhất số nhiều mà bao gồm cả người đọc, dùng "chúng ta". Ví dụ điển hình: không viết `Ta có`, mà viết `Chúng ta có`.
 - Chú thích tên bảng và tên hình cần phải có dấu chấm cuối câu.
 
 ## Toán học
@@ -39,6 +39,8 @@ x &= 3,
 \end{aligned}
 $$
 hoặc sử dụng lời văn ngắn gọn để thay thế.
+- Công thức toán viết liền đoạn hoặc đặt riêng một dòng vẫn là một phần cấu trúc ngữ pháp của câu văn. Do đó, ở cuối công thức trưng bày cần phải có dấu phẩy `,`, dấu chấm phẩy `;` hoặc dấu chấm `.` tùy thuộc vào vai trò của công thức đó trong câu.
+- Không viết chữ nghiêng mặc định của môi trường toán cho các từ ngữ giải thích hoặc tên viết tắt. Cần đưa chúng về phông đứng bằng lệnh `\text{}` hoặc `\mathrm{}`. Ví dụ: viết $x_{\text{max}}$ (`x_{\text{max}}`) hoặc $x_{\mathrm{max}}$ (`x_{\mathrm{max}}`) thay vì viết $x_{max}$ (chữ $max$ bị nghiêng và rời rạc).
 
 ## Lập trình $\LaTeX$
 

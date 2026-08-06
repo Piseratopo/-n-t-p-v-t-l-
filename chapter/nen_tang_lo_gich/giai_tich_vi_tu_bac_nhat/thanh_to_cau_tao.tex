@@ -62,7 +62,7 @@ Tương tự với vị từ, chúng ta cũng có khái niệm \defText{hàm}. K
    \item Nếu gọi $N_v(t)$ là ``nhân vật nữ chính của (bộ truyện $t$)'' và đặt hạng thức $t$ là Đô-rê-mon thì hàm sẽ trả ra Xu-ka.
 \end{itemize}
 
-Thú vị là, giải tích vị từ bậc nhất không cần phải có hàm, vì hàm chỉ là cách viết cao cấp hơn, cụ thể hơn của một hạng thức. Tuy vậy, để đơn giản hóa những sự xây dựng về sau, chúng ta sẽ coi hàm và vị từ là hai khái niệm riêng biệt.
+Thú vị là, giải tích vị từ bậc nhất không cần phải có hàm, vì hàm chỉ là cách viết cao cấp hơn, cụ thể hơn của một hạng thức. Nếu chúng ta cố gắng, chúng ta có thể viết lại hàm dưới mối quan hệ vị từ và lượng từ (mà chúng ta sắp đề cập). Tuy vậy, để đơn giản hóa những sự xây dựng về sau, chúng ta sẽ coi hàm là một khái niệm độc lập.
 
 \subsection{Lượng từ}
 
@@ -111,8 +111,18 @@ Trong đời sống hằng ngày, để chỉ cùng một vật chất, chúng t
 \end{center}
 Ở đây, bạn đọc có thể thấy rằng dù gọi ``Hồ Chí Minh'' hay gọi ``chủ tịch nước đầu tiên của nước Việt Nam Dân chủ Cộng hòa'' thì cũng đều chỉ vị lãnh tụ vĩ đại của dân tộc, hay hiểu theo một hướng khác, hai cách gọi này là đồng nhất. Do đó, về mặt lô-gích, chúng ta có thể viết
 \begin{center}
-   ``Hồ Chí Minh $\defMath{=}$ chủ tịch nước đầu tiên của nước Việt Nam Dân chủ Cộng hòa''.
+   ``Hồ Chí Minh $=$ chủ tịch nước đầu tiên của nước Việt Nam Dân chủ Cộng hòa''.
 \end{center}
-Dấu ``$=$'' có tên gọi là \defText{phép đồng nhất} hoặc \defText{phép bằng nhau}. Khác với các phép nối lô-gích mà chúng ta đã đề cập, phép đồng nhất không có bảng giá trị chân lí. Tính đúng sai của một mệnh đề có phép đồng nhất phụ thuộc vào ngữ nghĩa đặt cho dấu bằng.
+Dấu ``$\defMath{=}$'' có tên gọi là \defText{phép đồng nhất} hoặc \defText{phép bằng nhau}. Mệnh đề ``$x = y$'' được phát biểu là ``$x$ bằng $y$''. Khác với các phép nối lô-gích mà chúng ta đã đề cập, phép đồng nhất không có bảng giá trị chân lí. Tính đúng sai của một mệnh đề có phép đồng nhất phụ thuộc vào ngữ nghĩa đặt cho dấu bằng. 
 
-Dưới một góc độ nhất định, các vế có phép đồng nhất có thể thay thế bằng vị từ, nhưng do tính hữu dụng rất cao của phép này nên dấu ``$=$'' và một số tính chất cần thiết của nó mà sau này sẽ được nghiên cứu sẽ đều được thêm vào.
+Để phủ định của mệnh đề có phép đồng nhất, chúng ta sử dụng ``$\defMath{\neq}$'' --- \defText{phép không đồng nhất} hoặc \defText{phép khác nhau}. Từ định nghĩa, chúng ta luôn có $$\forall x, \forall y, (x \neq y \iff \overline{x = y}).$$ 
+
+Phép bằng nhau cũng cho phép định nghĩa được một lượng từ mới. Gọi $V()$ là một vị từ, mệnh đề ``\defText{tồn tại duy nhất} $x$ thỏa mãn $V(x)$'' là tương đương với
+\begin{equation*}
+   \defMath{\exists x, \left(V(x) \land \forall y, (V(y) \implies y = x)\right)},
+\end{equation*}
+và được kí hiệu ngắn gọn là $\defMath{\exists ! x, V(x)}$.
+
+Dưới một góc độ nhất định, các vế có phép đồng nhất có thể thay thế bằng vị từ, nhưng do tính hữu dụng rất cao của phép này nên dấu ``$=$'' và một số tính chất cần thiết của nó mà sau này chúng ta nghiên cứu sẽ đều được thêm vào.
+
+Cuối cùng, về mặt logic, $(w = x) = (y = z)$ không tương đương với $((w = x) = y) = z$. Nhưng để đơn giản hóa , tác giả sẽ quy ước các dấu bằng xuất hiện liên tiếp trong một chuỗi hệ thức biểu thị những đẳng thức đồng thời xảy ra. Điều đó cũng cho phép chúng ta ``lạm dụng kí hiệu'' như cách viết thường được sử dụng ở trong những tài liệu khác. Chẳng hạn, chúng ta có thể viết $x = y = z$ với nghĩa $x = y \land y = z$, chứ không phải $(x = y) = z$ hay $x = (y = z)$.

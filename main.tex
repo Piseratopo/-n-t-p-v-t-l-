@@ -8,7 +8,7 @@
 \usepackage{xeCJK}
 \usepackage[a4paper]{geometry}
 \usepackage{bookmark}
-\usepackage{hyperref} % Nên load gần cuối hoặc trước các gói chỉnh tiêu đề
+\usepackage{hyperref}
 
 % ==========================================
 % 2. PHÔNG CHỮ & KÝ TỰ ĐẶC BIỆT
@@ -46,7 +46,7 @@
 \usepackage{enumitem, calc, varwidth}
 
 % Tiện ích khác
-\usepackage{blindtext, xcolor, xparse}
+\usepackage{blindtext, indentfirst, xcolor, xparse}
 
 % ==========================================
 % 4. ĐỊNH NGHĨA TÔNG MÀU
@@ -123,7 +123,7 @@
 }
 
 \usepackage{etoolbox}
-\newcommand{\Rmnum}[1]{\uppercase{\romannumeral #1}}
+\newcommand{\Rmnum}[1]{\ExpandArgs{e}\uppercase{\romannumeral #1}}
 
 % Cấu hình Bảng biểu
 \setcellgapes{4pt}
@@ -240,12 +240,19 @@
 \DeclareMathOperator{\Arg}{Arg}
 \DeclareMathOperator{\cl}{cl}
 \DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Def}{Def}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\Dom}{Dom}
 \DeclareMathOperator{\ptln}{ptln}
 \DeclareMathOperator{\ptnn}{ptnn}
 \DeclareMathOperator*{\Maj}{Maj}
 \DeclareMathOperator*{\Max}{Max}
 \DeclareMathOperator*{\Min}{Min}
+\DeclareMathOperator{\Imf}{Im}
+\DeclareMathOperator{\imf}{im}
 \DeclareMathOperator*{\Inf}{Inf}
+\DeclareMathOperator{\Ran}{Ran}
+\DeclareMathOperator{\ran}{ran}
 \DeclareMathOperator*{\Sup}{Sup}
 \newcommand{\refeq}[1]{(\ref{#1})}
 \newcommand{\equationexplanation}[1]{&& \textcolor{colorEmphasis}{\left(\text{#1}\right)}}

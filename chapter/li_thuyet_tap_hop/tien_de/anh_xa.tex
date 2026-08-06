@@ -1,0 +1,21 @@
+\section{Ánh xạ}
+
+Ánh xạ là một tên gọi khác của hàm. Giống như định nghĩa của hàm trong giải tích vị từ bậc nhất, ánh xạ cũng có tính chất cơ bản là ứng với mỗi hạng thức hoặc nhóm hạng thức, ánh xạ sẽ cho ra và chỉ cho ra một đối tượng. Cách hiểu của ánh xạ này là tương đối mới, bởi từ trước thế kỉ \Rmnum{19}, ánh xạ được xem là một đối tượng được xác định bởi một công thức nào đó. Định nghĩa này thì đơn giản hơn và có tính ứng dụng tốt hơn định nghĩa hiện nay, nhưng đi kèm với đó là những sự tranh cãi về giới hạn trong việc mô tả công thức. Ngoài ra, hai ánh xạ có thể có định nghĩa khác nhau nhưng lại có thể hoàn toàn đồng nhất. Định nghĩa cũ vừa có tính dư thừa vừa không đủ bao quát, dẫn đến nhu câu đưa ra định nghĩa mới cho hàm, hay ánh xạ.
+
+Một \defText{ánh xạ} hay \defText{hàm số}\footnote{Cũng có thể gọi là \defText{hàm}, nhưng để tránh bị lặp với hàm tử giải tích vị từ bậc nhất, tác giả sẽ không sử dụng tên ``hàm''.} $f$ từ $x$ đến $y$ là một quan hệ $f$ từ $x$ đến $y$ thỏa mãn \begin{equation*}
+   \defMath{\forall a \in x, \exists ! b \in y, a\;f\;b }.
+\end{equation*}
+Kí hiệu thường xuyên sử dụng thay vì $a\;f\;b$ là $\defMath{b = f(a)}$. $b$ khi này được gọi là \defText{ảnh} của $a$ qua $f$ và $a$ được gọi là $\defText{tạo ảnh}$ của $b$ bởi $f$. Có một điểm cần lưu ý, đó là từ định nghĩa ánh xạ, chúng ta cần phải có tập xác định của $f$ thì phải bằng tập nguồn $x$. 
+
+Từ $x$ và $y$, xây dựng tích đề các $x \times y$. Do mọi quan hệ đơn giản chỉ là tập con của $x \times y$ nên $\mathfrak{P}(x \times y)$ sẽ chứa toàn bộ các quan hệ trên $x \times y$. Và bởi vì mọi hàm số là quan hệ, chúng ta có tập hợp các ánh xạ từ $x$ đến $y$ là
+$$
+   \defMath{y^x = \big\{z \in \mathfrak{P}(x \times y)\;\big|\;z \defText{~là một hàm số}\big\}}.
+$$
+
+Vì ánh xạ là một khái niệm thường xuyên được sử dụng, người ta đã sáng tạo nhiều cách để kí hiệu nó mà chứa nhiều thông tin nhất có thể. Cuối cùng, người ta thống nhất sử dụng kí hiệu hàm số như sau
+\[
+\begin{array}{rcl}
+f: x & \to & y \\
+   z & \mapsto & f(z)
+\end{array}.
+\]
