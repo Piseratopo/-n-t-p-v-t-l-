@@ -2,7 +2,7 @@
 
 Giả sử $x$ là một tập hợp và $\cauF()$ có nghĩa với toàn bộ các phần tử của $x$. Khi đó, tiên đề tách khẳng định rằng tồn tại một tập hợp $y$ bao gồm tất cả các phần tử $z \in x$ thỏa mãn $\cauF(z)$ và chỉ những phần tử đó. Nói cách khác,
 $$
-   \defMath{\forall x, \exists y, \forall z, \left( z \in y \iff z \in x \land \textbf{\cauF}(z) \right)}.
+   \defMath{\forall x, \exists y, \forall z, \left( z \in y \iff z \in x \land \text{\textbf{\cauF}}(z) \right)}.
 $$
 
 \begin{figure}[H]
@@ -99,7 +99,7 @@ $$ Bạn đọc có thể thấy được tính chất này giống hệt tính 
 
 Quay trở lại với tập hợp $y$ trong tiên đề tách, chúng ta không thể kí hiệu bằng việc thêm một kí tự duy nhất như trước được nữa, mà do mỗi tập $y$ đều cần được xác định từ một vị từ $\cauF$, vì thế, chúng ta sẽ kí hiệu tập hợp $y$ như sau:
 \begin{equation*}
-   y = \defMath{\{ z \in x \mid \cauF(z) \}} = \defMath{\{ z \in x : \cauF(z) \}}.
+   y = \defMath{\{ z \in x \mid \text{\textbf{\cauF}}(z) \}} = \defMath{\{ z \in x : \text{\textbf{\cauF}}(z) \}}.
 \end{equation*}
 và hệ quả sẽ được kí hiệu là
 \begin{equation}
@@ -109,8 +109,8 @@ và hệ quả sẽ được kí hiệu là
 
 Liệu bạn đọc còn nhớ về nghịch lí Rất-xen, liên quan đến một tập bao gồm tất cả các tập hợp không chứa chính nó. Có một cách đơn giản để đi vòng qua vấn đề này. Đó chính là không cho nó tồn tại. Để làm như vậy, chúng ta sẽ chứng minh không tồn tại tập hợp $\Omega$ sao cho $\forall x, x \in \Omega$. Thực vậy, giả sử tồn tại tập hợp $\Omega$ như vậy. Khi đó, theo tiên đề tách, tồn tại tập hợp $y = \{x \in \Omega \mid x \notin x \}$. Đặt câu hỏi, $y$ có thuộc $y$ không?
 \begin{itemize}
-    \item Nếu $y \in y$, thì theo định nghĩa của $y$, chúng ta có $y \notin y$, do $y$ chỉ chứa các tập không chứa chính nó, một mâu thuẫn.
-    \item Nếu $y \notin y$, thì tương tự, theo định nghĩa của $y$, chúng ta có $y \in y$, một mâu thuẫn.
+   \item Nếu $y \in y$, thì theo định nghĩa của $y$, chúng ta có $y \notin y$, do $y$ chỉ chứa các tập không chứa chính nó, một mâu thuẫn.
+   \item Nếu $y \notin y$, thì tương tự, theo định nghĩa của $y$, chúng ta có $y \in y$, một mâu thuẫn.
 \end{itemize}
 Nhìn chung, cả hai trường hợp đều đưa ra một điều vô lí. Sử dụng chứng minh bằng phản chứng, chúng ta có thể kết luận rằng không tồn tại tập hợp $\Omega$ sao cho $x \in \Omega$ với mọi $x$.
 
@@ -136,7 +136,7 @@ Một phép toán nữa, khá ít dùng, được gọi là \defText{hiệu đ�
    \defMath{x \vartriangle y = x + y = (x \setminus y) \cup (y \setminus x)}.
 \end{equation*}
 
-Để kết thúc phần này, tác giả sẽ giới thiệu về cách biểu diễn tập hợp bằng sơ đồ Ven\footnote{John Venn (1834 -- 1923).}. Với hai tập hợp $x$ và $y$, chúng ta có thể biểu diễn chúng bằng hai hình chồng lên nhau, trong đó kết quả của các phép tính trên chúng được tô màu, với một sự minh hoạ cụ thể ở hình \ref{fig:li_thuyet_tap_hop:tien_de:tien_de_tach:ven_phep_tinh}.
+Thông thường, để dễ hình dung các phép toán trên tập hợp, tác giả sẽ giới thiệu về cách biểu diễn tập hợp bằng sơ đồ Ven\footnote{John Venn (1834 -- 1923).}. Với hai tập hợp $x$ và $y$, chúng ta có thể biểu diễn chúng bằng hai hình chồng lên nhau, trong đó kết quả của các phép tính trên chúng được tô màu, với một sự minh hoạ cụ thể ở hình \ref{fig:li_thuyet_tap_hop:tien_de:tien_de_tach:ven_phep_tinh}.
 
 \begin{figure}[H]
     \centering
@@ -215,6 +215,15 @@ Một phép toán nữa, khá ít dùng, được gọi là \defText{hiệu đ�
     \caption{Biểu diễn các phép toán tập hợp bằng sơ đồ Ven.}
     \label{fig:li_thuyet_tap_hop:tien_de:tien_de_tach:ven_phep_tinh}
 \end{figure}
+
+Để kết thúc, tác giả sẽ định nghĩa một khái niệm thường xuyên được thấy trong tổ hợp. Với tập hợp $x$, gọi $P \in \mathfrak{P}\left(\mathfrak{P}(x)\right)$. $P$ là \defText{phân hoạch} của $x$ khi và chỉ khi 
+\begin{equation*}
+   \begin{cases}
+      \defMath{\forall p \in P, p \neq \varnothing} \\
+      \defMath{\forall p \in P, \forall q \in P, (p \neq q \implies p \cap q = \varnothing)} \\
+      \defMath{\forall y \in x, \exists p \in P, y \in p}
+   \end{cases}.
+\end{equation*}
 
 \exercise Chứng minh rằng, với mọi tập hợp $x$ và $y$, $\bigcap \{x; y\} = x \cap y$.
 
@@ -1305,41 +1314,63 @@ Lập luận tương tự, chúng ta cũng có $\begin{cases}
    Z = \zNom
 \end{cases}$. Điều phải chứng minh.
 
-% \exercise Cho $A$ và $B$ là hai tập hợp. Với mỗi phần, tìm tất cả các tập hợp $x$ sao cho khẳng định được cho là đúng\footnote{Với những bài tập yêu cầu \emph{tìm} giá trị của một hoặc nhiều hạng thức (hay còn được gọi tắt là \emph{tìm nghiệm}), thông thường, chúng ta cần phải liệt kê các giá trị thỏa mãn hoặc chỉ ra phương pháp để có thể \emph{``dễ dàng''} xây dựng nên các nghiệm đáp ứng điều kiện đã cho. Không có một định nghĩa khách quan để giải nghĩa thế nào là ``dễ dàng''. Chẳng hạn, với câu hỏi tìm $x$ để $x \cup A = B$, chúng ta có thể trả lời là:
-% \begin{center}
-%    ``Tập $x$ thỏa mãn là những tập có tính chất $x \cup A = B$.''
-% \end{center} nhưng trả lời như vậy thì rõ ràng là không thỏa đáng. Một câu trả lời phải có giá trị toán học hoặc ứng dụng ở một mức độ nào đó. Theo quan niệm của tác giả, khi giải một bài toán tìm nghiệm, cần phải chỉ ra một thủ tục tính toán, sử dụng các giá trị cho trước và phép tính đã định nghĩa để xây dựng được các giá trị thỏa mãn. Trong đó, liệt kê là một thủ tục có thể sử dụng khi có ít nghiệm hợp lệ.}:
-% \begin{multicols}{2}
-%    \begin{enumerate}
-%       \item $x \cup A = B $;
-%       \item $x \cap A = B $;
-%       \item $x \setminus A = B$;
-%       \item $A \setminus x = B$;
-%       \item $x \vartriangle A = B$.
-%    \end{enumerate}
-% \end{multicols}
+\exercise Cho $\mathscr{E}$ là một tập hợp, $P$ là một phân hoạch của $\mathscr{E}$, $A$ là một tập con của $P$ và $B = \complement_P(A)$. Đặt $\mathscr{F} = \{x \in \mathscr{E} \mid \exists a \in A, x \in a\}$ và $\mathscr{G} = \{x \in \mathscr{E} \mid \exists b \in B, x \in b\}$.
+\begin{enumerate}
+   \item Chứng minh rằng $A$ là một phân hoạch của $\mathscr{F}$ và $B$ là một phân hoạch của $\mathscr{G}$.
+   \item Chứng minh rằng $\mathscr{F} \cup \mathscr{G} = \mathscr{E}$ và $\mathscr{F} \cap \mathscr{G} = \varnothing$\footnote{Bạn đọc có thể tự hỏi rằng tại sao tác giả không viết ngắn gọn hơn là ``$\{\mathscr{F}; \mathscr{G}\}$ là một phân hoạch của $\mathscr{E}$''. Để một tập có thể là phân hoạch thì các phần tử của nó phải khác rỗng. Trong điều kiện được cho của đề bài, nếu $A$ (hoặc $B$) rỗng thì $\mathscr{F}$ (hoặc tập tương ứng là $\mathscr{G}$) cũng rỗng.}. 
+\end{enumerate}
 
-% \solution
+\solution
 
-% Trước khi đi vào lời giải, chúng ta sẽ bổ sung thêm một số thuật ngữ:
-% \begin{itemize}
-%    \item $x$ là giá trị cần phải tìm, thường được gọi là \defText{ẩn số} hay \defText{biến số};
-%    \item $A$ và $B$ là các tập đã cho trước mà chúng ta có thể dùng để biểu diễn $x$ theo chúng, gọi là \defText{tham số}.
-% \end{itemize}
+\resetSubexercise Có $A$ là tập con của $P$, cho nên với mọi phần tử $a$ thuộc $A$ cũng đều nằm trong $P$. Do đó, $a$ không rỗng. Vậy
+\begin{equation}
+   \forall a \in A, a \neq \varnothing.
+   \label{eq:li_thuyet_tap_hop:tien_de:tien_de_tach:dk_khong_rong}
+\end{equation}
 
-% \setcounter{subexercise}{1}
-% \arabic{subexercise}. Trước hết, giả sử tồn tại $x$ thỏa mãn $x \cup A = B$. 
+Gọi $b$ và $c$ cùng thuộc $A$ sao cho $b \neq c$. Thấy được rằng $b$ và $c$ là hai phần tử khác nhau đều nằm trong $P$, theo định nghĩa của phân hoạch $P$, $b \cap c = \varnothing$. Vì thế,
+\begin{equation}
+   \forall (b; c) \in A^2, (b \neq c \implies b \cap c = \varnothing).
+   \label{eq:li_thuyet_tap_hop:tien_de:tien_de_tach:dk_khong_giao}
+\end{equation}
 
-% Nếu $A$ và $B$ cho trước thỏa mãn \coloringCrimson{$A \centernot{\subseteq} B$}, điều này sẽ cho chúng ta mâu thuẫn do $x \cup A = B \implies A \subseteq B$ với mọi $x$. Do đó, trong trường hợp này, không tồn tại $x$ thỏa mãn yêu cầu đề bài.
+Từ cách đặt của $\mathscr{F}$, chúng ta dễ thấy rằng 
+\begin{equation}
+   \forall d \in \mathscr{F}, \exists e \in A, d \in e.
+   \label{eq:li_thuyet_tap_hop:tien_de:tien_de_tach:dk_thuoc}
+\end{equation}
 
-% Ngược lại, nếu $A \subseteq B$. Lấy một phần tử $e \in B \setminus A$ bất kì. Có $e \in B$ nên $e \in x \cup A$, tương đương với $e \in x \lor e \in A$. Nhưng $e\notin A$ bởi $e \in B \setminus A$, do đó $e \in x$. Vì thế, 
-% \begin{equation*}
-%    B \setminus A \subseteq x.
-% \end{equation*}
-% Do đó, $(B \setminus A) \cup x = x$. Vậy, $$\exists y, (B \setminus A) \cup y = x.$$
+Ngoài ra, lấy $q \in A$ bất kì và $r \in a$ bất kì. Do $A \subseteq P$ nên $q \in P$. Thêm vào đó, $P$ là phân hoạch của $\mathscr{E}$, suy ra $q \subseteq \mathscr{E}$, dẫn đến $r \in \mathscr{E}$. Vì $r \in q$ và $q \in A$, theo định nghĩa của $\mathscr{F}$, có $r \in \mathscr{F}$. Do đó, $\forall r \in q, r \in \mathscr{F}$, hay $q \subseteq \mathscr{F}$, tức là $q \in \mathfrak{P}(\mathscr{F})$. Vì $q \in A$ được lấy tùy ý, chúng ta có
+\begin{equation*}
+   A \subseteq \mathfrak{P}(\mathscr{F}).
+\end{equation*} Kết hợp kết quả vừa có với \refeq{eq:li_thuyet_tap_hop:tien_de:tien_de_tach:dk_khong_rong}, \refeq{eq:li_thuyet_tap_hop:tien_de:tien_de_tach:dk_khong_giao} và \refeq{eq:li_thuyet_tap_hop:tien_de:tien_de_tach:dk_thuoc}, chúng ta đã chứng minh được $A$ là một phân hoạch của $\mathscr{F}$. $B$ là một phân hoạch của $\mathscr{G}$ có thể được chứng minh theo một cách tương tự.
 
-% Vì $x \subseteq x \cup A$ và $x \cup A = B$,
-% \begin{equation}
-%    x \subseteq B.
-%    \label{eq:li_thuyet_tap_hop:tien_de:tien_de_tach:1.1}
-% \end{equation}
+\stepSubexercise Hiển nhiên rằng $\mathscr{F} \cup \mathscr{G} \subseteq \mathscr{E}$ do $\begin{cases}
+   \mathscr{F} \subseteq \mathscr{E}\\
+   \mathscr{G} \subseteq \mathscr{E}
+\end{cases}$. Xét một phần tử $f$ bất kì trong $\mathscr{E}$. Giả sử $f \notin \mathscr{F} \cup \mathscr{G}$, suy ra, 
+\begin{equation*}
+   \begin{cases}
+      \overline{f \in \mathscr{E} \land \exists g \in A, f \in g} \\
+      \overline{f \in \mathscr{E} \land \exists g \in B, f \in g} 
+   \end{cases}.
+\end{equation*}
+Mà, $f \in \mathscr{E}$ nên $\begin{cases}
+   \forall g \in A, f \notin g \\
+   \forall g \in B, f \notin g
+\end{cases}$, có nghĩa là $\forall g, \left((g \in A \implies f \notin g) \land (g \in B \implies f \notin g)\right)$ hay $$
+   \forall g, \left[\begin{aligned}
+      g &\in A \\
+      g &\in B
+   \end{aligned}\right. \implies f \notin g.
+$$ Vì $A \subseteq P$ và $B = \complement_P(A)$ nên $A \cup B = P$, cho chúng ta $\forall g, \left[\begin{aligned}
+   g &\in A \\
+   g &\in B
+\end{aligned}\right. \iff g \in P$. Qua đó, chúng ta có \begin{equation*}
+   \forall g, g \in P \implies f \notin g.
+\end{equation*}
+Tuy nhiên, điều này mâu thuẫn với giả thuyết $P$ là một phân hoạch của $\mathscr{E}$. Chứng minh bằng phản chứng, chúng ta cần phải có $\forall f, (f \in \mathscr{E} \implies f \in \mathscr{F} \cup \mathscr{G})$. Vì vậy, $\mathscr{E} = \mathscr{F} \cup \mathscr{G}$.
+
+Tiếp theo, chúng ta chứng minh rằng $\mathscr{F} \cap \mathscr{G} = \varnothing$. Giả sử ngược lại, tồn tại $h$ sao cho $h$ thuộc đồng thời $\mathscr{F}$ và $\mathscr{G}$, theo cách đặt của hai tập hợp này, tồn tại $i \in A$ và $j \in B$ sao cho $h \in i \land h \in j$. Khi này $i \cap j \neq \varnothing$ do $h \in i \cap j$. Tuy nhiên, nhận ra rằng $i$ và $j$ theo cách gọi đều là phần tử thuộc phân hoạch $P$, nên khi kết hợp với $i \cap j \neq \varnothing$ thì có được $i = j$, khiến cho $A \cap B$ khác rỗng do có $i$ (hay $j$) trong nó. Mặc dù vậy, trong cách gọi của đề bài, $B = \complement_P(A)$ sẽ cho chúng ta $A \cap B = \varnothing$, tạo mâu thuẫn. 
+
+Từ chứng minh bằng phản chứng, chúng ta có $\mathscr{F} \cap \mathscr{G} = \varnothing$. Kết hợp với $\mathscr{F} \cup \mathscr{G} = \mathscr{E}$ chứng minh từ trước, chúng ta có điều phải chứng minh.

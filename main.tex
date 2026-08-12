@@ -34,7 +34,8 @@
 % 3. TOÁN HỌC - ĐỒ HỌA - BẢNG BIỂU
 % ==========================================
 % Toán học
-\usepackage{amsmath, amssymb, bm, cancel, centernot, mathrsfs, steinmetz}
+\usepackage{amsmath, amssymb, bm, cancel, centernot, dsfont, mathrsfs, stmaryrd, steinmetz}
+
 \allowdisplaybreaks
 
 % Đồ họa & Hình ảnh
@@ -69,7 +70,7 @@
 % 5. CẤU HÌNH CÁC GÓI LỆNH (SETUP)
 % ==========================================
 % Cấu hình Hình học (Margins)
-\geometry{bindingoffset=0.5cm, inner=2cm, outer=2cm, top=2cm, bottom=2cm}
+\geometry{bindingoffset=0.5cm, inner=2cm, outer=2cm, top=2cm, bottom=2cm, headheight=15pt}
 
 % Cấu hình Đồ thị PGFPlots & TikZ
 \pgfplotsset{compat=1.18}
@@ -227,6 +228,7 @@
 \newcommand{\chungF}{\textit{終}}
 \newcommand{\theF}{\textit{世}}
 \newcommand{\chanF}{\textit{振}}
+\newcommand{\duongNom}{\textit{蟷}}
 \newcommand{\leF}{\textit{禮}}
 \newcommand{\lonF}{\textit{穌}}
 \newcommand{\lonG}{\textit{吝}}
@@ -248,6 +250,8 @@
 \DeclareMathOperator*{\Maj}{Maj}
 \DeclareMathOperator*{\Max}{Max}
 \DeclareMathOperator*{\Min}{Min}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\Imf}{Im}
 \DeclareMathOperator{\imf}{im}
 \DeclareMathOperator*{\Inf}{Inf}
@@ -343,6 +347,21 @@
 \patchcmd{\l@chapter}{\bfseries}{\color{colorEmphasisCyan}\bfseries}{}{}
 \patchcmd{\l@section}{\numberline}{\textcolor{colorEmphasisCyan}{\numberline}}{}{}
 \patchcmd{\l@subsection}{\numberline}{\textcolor{colorEmphasisCyan}{\numberline}}{}{}
+
+\let\oldchapter\chapter
+\RenewDocumentCommand{\chapter}{s o m}{%
+   \IfBooleanTF{#1}
+      {% Khi dùng \chapter*{...}
+         \oldchapter*{#3}%
+         \addcontentsline{toc}{chapter}{#3}%
+         \markboth{#3}{#3}%
+      }
+      {% Khi dùng \chapter{...} hoặc \chapter[...]{...}
+         \IfValueTF{#2}
+         {\oldchapter[#2]{#3}}
+         {\oldchapter{#3}}%
+      }%
+}
 \makeatother
 
 % ==========================================
@@ -364,6 +383,7 @@
 
 % \input{chapter/loi_gioi_thieu.tex}
 % \input{chapter/kiem_tra.tex}
+% \input{chapter/bai_tap_bo_sung.tex}
 % \input{chapter/khoa_hoc.tex}
 % \input{chapter/nen_tang_lo_gich.tex}
 \input{chapter/li_thuyet_tap_hop.tex}

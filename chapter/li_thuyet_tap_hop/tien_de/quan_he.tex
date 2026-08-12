@@ -48,7 +48,7 @@ Ngoài ra, chúng ta đã sử dụng khá nhiều ``$\forall a \in x, \forall b
             C \times A \subseteq C \times B
          \end{array}\right. \\
          C \neq \varnothing
-      \end{cases} \implies A \subseteq B$.
+      \end{cases} \implies A \subseteq B$;
       \item $(A \times B) \cup (A \times C) = A \times (B \cup C)$;
       \item $(B \times A) \cup (C \times A) = (B \cup C) \times A$;
       \item $(A \times B) \cap (A \times C) = A \times (B \cap C)$;
@@ -167,7 +167,7 @@ z \in B \times A \\
 z \in C \times A
 \end{array}\right..$$
 \begin{itemize}
-   \item Trường hợp \coloringCrimson{$z \in B \times A$}. Tồn tại $x \in A$ và $y \in B$ sao cho $z = (x; y)$. Khi đó, $y \in B \cup C$ và vì vậy $z \in (B \cup C) \times A$.
+   \item Trường hợp \coloringCrimson{$z \in B \times A$}. Tồn tại $x \in B$ và $y \in A$ sao cho $z = (x; y)$. Khi đó, $x \in B \cup C$ và vì vậy $z \in (B \cup C) \times A$.
    \item Trường hợp \coloringDodgerblue{$z \in C \times A$}. Với một lập luận tương đương, chúng ta cũng có $z \in (B \cup C) \times A$.
 \end{itemize}
 Cả hai trường hợp đều cho chúng ta $(B \times A) \cup (C \times A) \subseteq (B \cup C) \times A$.
@@ -187,7 +187,7 @@ Chứng minh chiều ngược lại, gọi $w \in (B \cup C) \times A$. Khi đó
    w \in (B \cup C) \times A &\implies \left[\begin{array}{l}
       u^* \in B \land \exists v, \left(v \in A \land w = (u^*; v)\right)\\
       u^* \in C \land \exists v, \left(v \in A \land w = (u^*; v)\right)
-   \end{array}\right. \equationexplanation{cụ thể hóa $u$}.\\ 
+   \end{array}\right. \equationexplanation{cụ thể hóa $u$};\\ 
    w \in (B \cup C) \times A &\implies \left[\begin{array}{l}
       u^* \in B \land v^* \in A \land w = (u^*; v^*)\\
       u^* \in C \land V^* \in A \land w = (u^*; V^*)
@@ -394,7 +394,7 @@ Tổng hợp các kết luận từ các trường hợp, chúng ta có
       A &= C \\
       B &= D \\
       A \subseteq C &\land B \subseteq D \\
-      D \subseteq B &\land C \subseteq A \\
+      D \subseteq B &\land C \subseteq A 
    \end{aligned}\right. \implies  (A \times B) \cup (C \times D) = (A \cup C) \times (B \cup D).
 \end{equation*}
 
@@ -452,6 +452,11 @@ và \defText{quan hệ ngược} $R^{-1}$ sao cho
 \begin{equation*}
    \defMath{\forall (a; b) \in x \times y, \big(b\;R^{-1}\;a \iff a\;R\;b\big)}.
 \end{equation*}
+Nếu $u$ là một tập con của $x$ và $v$ là tập con của $y$, một quan hệ $R_{uv}$ được xác định bởi
+\begin{equation*}
+   \defMath{\forall (a; b) \in u \times v, \big(a\;R_{uv}\;b \iff a\;R\;b\big)}  
+\end{equation*}
+có tên là \defText{quan hệ cảm sinh} (hay \defText{quan hệ sinh}, \defText{quan hệ thu hẹp}) bởi $R$ từ $x \times y$ xuống $u \times v$. Ngược lại, $R$ được gọi là \defText{quan hệ thác triển} (hay \defText{quan hệ mở rộng}) của $R_{uv}$ từ $u \times v$ lên $x \times y$.
 
 Vì nhiều lí do mà trong đó một sẽ được trình bày, \defText{đồ thị} của $R$ chính là tập $R$. Bạn đọc chắc sẽ không tin tác giả rằng định nghĩa này là đúng (đến tác giả nhiều lúc còn không tin), nhưng thực chất người ta đã định nghĩa đồ thị là như vậy. Lời giải thích thường được đưa ra nhất thường là: hình học được định nghĩa dựa trên đại số. Cụ thể trong đó, đồ thị hình học của $R$ chính là tập hợp các điểm $(a; b)$ thuộc $R$, hay hiểu theo cách khác, các phần tử của $R$. Vì vậy, đồ thị của $R$ là $R$.
 
@@ -537,11 +542,7 @@ với mọi $x$, $y$, $z$, $R$ là quan hệ trên $x \times y$, và $S$ là qua
    \caption{Ví dụ quan hệ tích (hợp) $S \circ R$ giữa các tập hợp $x, y, z$.}
 \end{figure}
 
-Quan hệ $R$ trên tập $x \times y$ là \defText{quan hệ hai ngôi} khi và chỉ khi $x = y$. $R$ khi đó được gọi là quan hệ hai ngôi trong $x$. Nếu $z$ là một tập con của $x$, một quan hệ hai ngôi trong $z$ được xác định bởi
-\begin{equation*}
-   \defMath{\forall (a; b) \in z^2, \big(a\;R_z\;b \iff a\;R\;b\big)}  
-\end{equation*}
-có tên là \defText{quan hệ cảm sinh} (hay \defText{quan hệ sinh}) bởi $R$ trong $x$ trên $z$.
+Quan hệ $R$ trên tập $x \times y$ là \defText{quan hệ hai ngôi} khi và chỉ khi $x = y$. $R$ khi đó được gọi là quan hệ hai ngôi trong $x$. 
 
 Dấu bằng như đã trình bày có một vài tính chất như tính phản xạ, đối xứng và bắc cầu. Tương tự, một quan hệ hai ngôi $R$ trên $x$ được gọi là
 \begin{itemize}
@@ -565,6 +566,10 @@ Trong trường hợp $R$ có đồng thời tính phản xạ, đối xứng v�
    \}}.
 \end{equation*}
 Một phần tử bất kì thuộc $[a]_R$ được gọi là một \defText{đại diện} của lớp tương đương đó.
+
+Có nhân hai tập hợp thì cũng có thể chia hai tập hợp. Nếu $R$ là một quan hệ tương đương trên $x$, chúng ta định nghĩa \defText{tập thương} là tập hợp các lớp tương đương mô-đun $R$, tức \begin{equation*}
+   \defMath{x/R = \frac{x}{R} = \big\{y \in \mathfrak{P}(x)\;\big|\;\exists z \in x, y = [z]_R\big\}}.
+\end{equation*}
 
 \exercise Cho $w$, $x$, $y$, $z$ là những tập hợp. Gọi
 \begin{itemize}
@@ -769,6 +774,71 @@ Chúng ta chứng minh điều kiện cần và đủ để quan hệ $D$ đối
 \end{itemize}
    
 Qua các kết quả đã có, dễ thấy điều phải chứng minh.
+
+\exercise Chứng minh rằng với mọi quan hệ tương đương $\sim$ trên $\mathscr{E}$, tập thương $\frac{\mathscr{E}}{\sim}$ là một phân hoạch của $\mathscr{E}$.
+
+\solution
+
+Nhắc lại về định nghĩa, $\frac{\mathscr{E}}{\sim} = \left\{x \in \mathfrak{P}(\mathscr{E}) \mid \exists y \in \mathscr{E}, x = [y]_\sim\right\}$. Do mọi phần tử trong $\frac{\mathscr{E}}{\sim}$ đều thuộc $\mathfrak{P}(\mathscr{E})$ nên $\frac{\mathscr{E}}{\sim} \subseteq \mathfrak{P}(\mathscr{E})$. Trước hết, có thể thấy rằng mọi phần tử trong $\frac{\mathscr{E}}{\sim}$ thì không rỗng, bởi vì, xét một phần tử $a$ ngẫu nhiên thuộc $\frac{\mathscr{E}}{\sim}$. Theo định nghĩa, tồn tại $b$ để $a = [b]_\sim$, và $[b]_\sim$ không thể rỗng do $b \sim b$, dẫn đến $b \in [b]_\sim$.
+
+Sau đó, hãy giả sử rằng tồn tại $c$ và $d$ cùng thuộc $\frac{\mathscr{E}}{\sim}$ sao cho chúng có phần tử chung là $e$. Khi đó, có $z$ để $d = [z]_\sim$. Gọi $f$ là một phần tử bất kì thuộc $c$, khi đó có $e \sim f$. $z \sim e$ cũng cần phải có do $e$ và $z$ cùng thuộc $[z]_\sim$. Vì thế, theo tính chất đối xứng và bắc cầu của quan hệ tương đương, sẽ cần có $z \sim f$, nghĩa là $f \in [z]_\sim$ hay $f \in d$. Do vậy, $\forall f \in c, f \in d.$ 
+Điều ngược lại --- $\forall f \in d, f\in c$ --- cũng có thể được chứng minh là đúng theo một cách tương tự. Từ đó, $c \cap d = \varnothing \implies c = d$ với mọi $(c; d) \in \left(\frac{\mathscr{E}}{\sim}\right)^2$.
+
+Cuối cùng, xét một phần tử $g$ trong $\mathscr{E}$. Có $g \in [g]_\sim$ và $[g]_\sim \in \frac{\mathscr{E}}{\sim}$, dẫn đến $\forall g \in \mathscr{E}, \exists h \in \frac{\mathscr{E}}{\sim}, g \in h$.
+
+Từ các kết quả đã có, chúng ta chứng minh được tập thương $\frac{\mathscr{E}}{\sim}$ là một phân hoạch của $\mathscr{E}$, hay nói cách khác, điều phải chứng minh.
+
+\exercise Với mọi phân hoạch $P$ của $\mathscr{E}$, xác định quan hệ $\duongNom$ trên $\mathscr{E}$ bởi
+\begin{equation*}
+   \forall (x; y) \in \mathscr{E}^2, \left(x\;\duongNom\;y \iff \exists p \in P, (x \in p \land y \in p)\right).
+\end{equation*}
+Chứng minh rằng $\duongNom$ là một quan hệ tương đương trên $\mathscr{E}$, và $P = \mathscr{E}/\duongNom$.
+
+\solution
+
+Vì $P$ là một phân hoạch của $\mathscr{E}$ nên $\forall x \in \mathscr{E}, \exists p \in P, x \in p$. Biến đổi lô-gích để có \begin{equation*}
+   \forall x \in \mathscr{E}, \exists p \in P, (x \in p \land x \in p).
+\end{equation*}
+Qua đó, chúng ta có $x\;\duongNom\;x$ với mọi $x$ (thuộc $\mathscr{E}$), nên $\duongNom$ phản xạ.
+
+Xét $y$ và $z$ là hai phần tử từ $\mathscr{E}$. Khi đó,
+\begin{align*}
+   y\;\duongNom\;z &\iff \exists p \in P, (y \in p \land z \in p); \\
+   y\;\duongNom\;z &\iff \exists p \in P, (z \in p \land y \in p); \\
+   y\;\duongNom\;z &\iff z\;\duongNom\;y. \\
+\end{align*}
+Cho nên, $\duongNom$ có tính đối xứng.
+
+Sau đó, giả sử $a$, $b$ và $c$ sao cho $a\;\duongNom\;b$ và $b\;\duongNom\;c$. Theo cách đặt $\duongNom$, tồn tại $q$ và $r$ thuộc $P$ sao cho \begin{equation*}
+   \begin{cases}
+      a \in q \land b \in q \\
+      b \in r \land c \in r
+   \end{cases}.
+\end{equation*}
+Có $q \cap r$ không rỗng do có $b$ trong nó, bởi $q$ và $r$ đều là phần tử của phân hoạch $P$ nên $q = r$ là bắt buộc. Do đó, $c \in r \iff c \in q$\footnote{Mỗi lần tác giả sử dụng nguyên lí không thể phân biệt được của các đối tượng đồng nhất là tác giả sẽ nhăn mặt, bởi nhiều tính chất của dấu ``$=$'' có thể chứng minh được mà không cần phải dùng cái này. Mặc dù vậy, tính chất \begin{equation*}
+   \forall x, \forall y, \forall a, \begin{cases}
+      x = y \\
+      a \in x
+   \end{cases} \implies a \in y,
+\end{equation*} vì một lí do nào, né tránh được mọi nỗ lực chứng minh của tác giả.}, suy ra $$
+   a \in q \land c \in q.
+$$
+Và bởi lí do đó, dễ thấy $a\;\duongNom\;c$. Hi vọng bạn đọc thấy được tính bắc cầu của $\duongNom$.
+
+Tóm lại, từ những kết quả đã có, $\duongNom$ là quan hệ tương đương. 
+
+Gọi $D \in E/\duongNom$. Định nghĩa tập thương cho phép chúng ta lấy $d \in \mathscr{E}$ sao cho $D = [d]_{\duongNom}$. Có $s \in P$ để $d \in s$. 
+\begin{itemize}
+   \item Với mọi $e \in s$, có $d \in s \land e \in s$ nên $d\;\duongNom\;e$. Và do đó, $e \in [d]_{\duongNom}$, và chúng ta thấy được $s \subseteq [d]_{\duongNom}$.
+   \item Với mọi $f \in [d]_{\duongNom}$, $d\;\duongNom\;f$. Điều này có nghĩa là có $t \in P$ sao cho $d \in t \land f \in t$. Thêm vào đó, $t$ phải bằng $s$, do $s$ và $t$ đều thuộc phân hoạch $P$ và có phần tử chung là $d$. Vậy, $d \in s$, và qua đó, $[d]_{\duongNom} \subseteq s$.
+\end{itemize}
+Chúng ta chứng minh được $s = [d]_{\duongNom}$. Hệ quả của nó là chúng ta có 
+\begin{equation*}
+   \forall d \in \mathscr{E}, D \in P,
+\end{equation*}
+có nghĩa là $\mathscr{E}/\duongNom \subseteq P$. Ngược lại, lấy $E \in P$. Tồn tại $g \in E$ nên thấy được $E = [g]_{\duongNom}$ như chứng minh trước đó, và từ đó $E \in \mathscr{E}/\duongNom$. Kết luận được $P \subseteq \mathscr{E}/\duongNom$.
+
+Từ $\mathscr{E}/\duongNom \subseteq P$ và $P \subseteq \mathscr{E}/\duongNom$, $P = \mathscr{E}/\duongNom$. Cả hai mệnh đề đều được chứng minh.
 
 \subsection{Quan hệ thứ tự}
 
@@ -1115,6 +1185,6 @@ Dễ dàng kiểm chứng được rằng $\preccurlyeq$ là một quan hệ th�
 \begin{equation*}
    \min_{\preccurlyeq} (\mathscr{E}) = \sup_{(\mathscr{E}; \preccurlyeq)} (\varnothing),
 \end{equation*}
-cho nên $\varnothing = \sup_{(\mathscr{E}, \preccurlyeq)} (K)$. Ngoài ra, do $\varnothing$ không có phần tử nào nên $K$  không thể có phần tử lớn nhất.
+cho nên $\varnothing = \sup_{(\mathscr{E}; \preccurlyeq)} (K)$. Ngoài ra, do $\varnothing$ không có phần tử nào nên $K$  không thể có phần tử lớn nhất.
 
 Vậy, $K$ có biên trên nhưng không có phần tử lớn nhất. Đây là ví dụ chúng ta cần.

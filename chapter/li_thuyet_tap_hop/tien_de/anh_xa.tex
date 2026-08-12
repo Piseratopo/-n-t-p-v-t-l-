@@ -2,20 +2,116 @@
 
 Ánh xạ là một tên gọi khác của hàm. Giống như định nghĩa của hàm trong giải tích vị từ bậc nhất, ánh xạ cũng có tính chất cơ bản là ứng với mỗi hạng thức hoặc nhóm hạng thức, ánh xạ sẽ cho ra và chỉ cho ra một đối tượng. Cách hiểu của ánh xạ này là tương đối mới, bởi từ trước thế kỉ \Rmnum{19}, ánh xạ được xem là một đối tượng được xác định bởi một công thức nào đó. Định nghĩa này thì đơn giản hơn và có tính ứng dụng tốt hơn định nghĩa hiện nay, nhưng đi kèm với đó là những sự tranh cãi về giới hạn trong việc mô tả công thức. Ngoài ra, hai ánh xạ có thể có định nghĩa khác nhau nhưng lại có thể hoàn toàn đồng nhất. Định nghĩa cũ vừa có tính dư thừa vừa không đủ bao quát, dẫn đến nhu câu đưa ra định nghĩa mới cho hàm, hay ánh xạ.
 
-Một \defText{ánh xạ} hay \defText{hàm số}\footnote{Cũng có thể gọi là \defText{hàm}, nhưng để tránh bị lặp với hàm tử giải tích vị từ bậc nhất, tác giả sẽ không sử dụng tên ``hàm''.} $f$ từ $x$ đến $y$ là một quan hệ $f$ từ $x$ đến $y$ thỏa mãn \begin{equation*}
+\subsection{Định nghĩa ánh xạ}
+
+Một \defText{ánh xạ} hay \defText{hàm số}\footnote{Cũng có thể gọi là \defText{hàm}, nhưng để tránh bị lặp với khái niệm hàm tử giải tích vị từ bậc nhất, tác giả sẽ không sử dụng tên ``hàm''.} $f$ từ $x$ đến $y$ là một quan hệ $f$ từ $x$ đến $y$ thỏa mãn \begin{equation}
    \defMath{\forall a \in x, \exists ! b \in y, a\;f\;b }.
-\end{equation*}
-Kí hiệu thường xuyên sử dụng thay vì $a\;f\;b$ là $\defMath{b = f(a)}$. $b$ khi này được gọi là \defText{ảnh} của $a$ qua $f$ và $a$ được gọi là $\defText{tạo ảnh}$ của $b$ bởi $f$. Có một điểm cần lưu ý, đó là từ định nghĩa ánh xạ, chúng ta cần phải có tập xác định của $f$ thì phải bằng tập nguồn $x$. 
+   \label{eq:li_thuyet_tap_hop:tien_de:anh_xa:dinh_nghia}
+\end{equation}
+Kí hiệu thường xuyên sử dụng thay vì $a\;f\;b$ là $\defMath{b = f(a)}$. $b$ khi này được gọi là \defText{ảnh} của $a$ qua $f$ và $a$ được gọi là $\defText{tạo ảnh}$ của $b$ bởi $f$. Có một điểm cần lưu ý, đó là từ định nghĩa ánh xạ, chúng ta cần phải có tập xác định của $f$ thì phải bằng tập nguồn $x$. Ngoài ra, nếu chiếu theo định nghĩa này thì tập nguồn $x$ có thể rỗng, bởi khi đó $\forall a, \neg a \in x$ khiến cho \refeq{eq:li_thuyet_tap_hop:tien_de:anh_xa:dinh_nghia} luôn đúng. Tác giả sẽ chấp nhận tập nguồn rỗng, nhưng không phải tài liệu nào cũng sẽ đồng tình với tác giả.
 
-Từ $x$ và $y$, xây dựng tích đề các $x \times y$. Do mọi quan hệ đơn giản chỉ là tập con của $x \times y$ nên $\mathfrak{P}(x \times y)$ sẽ chứa toàn bộ các quan hệ trên $x \times y$. Và bởi vì mọi hàm số là quan hệ, chúng ta có tập hợp các ánh xạ từ $x$ đến $y$ là
+Từ $x$ và $y$, xây dựng tích đề các $x \times y$. Do mọi quan hệ đơn giản chỉ là tập con của $x \times y$ nên $\mathfrak{P}(x \times y)$ sẽ chứa toàn bộ các quan hệ trên $x \times y$. Và bởi vì mọi ánh xạ là quan hệ, chúng ta có tập hợp các ánh xạ từ $x$ đến $y$ là
 $$
-   \defMath{y^x = \big\{z \in \mathfrak{P}(x \times y)\;\big|\;z \defText{~là một hàm số}\big\}}.
+   \defMath{y^x = \big\{z \in \mathfrak{P}(x \times y)\;\big|\;z \text{\defText{~là một ánh xạ}} \big\}}.
 $$
 
-Vì ánh xạ là một khái niệm thường xuyên được sử dụng, người ta đã sáng tạo nhiều cách để kí hiệu nó mà chứa nhiều thông tin nhất có thể. Cuối cùng, người ta thống nhất sử dụng kí hiệu hàm số như sau
+Vì ánh xạ là một khái niệm thường xuyên được sử dụng, người ta đã sáng tạo nhiều cách để kí hiệu nó mà chứa nhiều thông tin nhất có thể. Đây là một trong những cách kí hiệu thường dùng:
 \[
 \begin{array}{rcl}
-f: x & \to & y \\
-   z & \mapsto & f(z)
+\defMath{f: x} & \defMath{\to} & \defMath{y} \\
+   \defMath{z} & \defMath{\mapsto} & \defMath{f(z)}
 \end{array}.
 \]
+
+Lấy một số ví dụ về ánh xạ:
+\begin{itemize}
+   \item Với tập hợp $A$ bất kì, kí hiệu $\begin{array}[t]{rcl}
+\defMath{\mathds{1}_A: A} & \defMath{\to} & \defMath{A} \\
+   \defMath{z} & \defMath{\mapsto} & \defMath{z}
+\end{array}$ là \defText{ánh xạ đồng nhất} của $A$. Ánh xạ này đôi khi còn được kí hiệu là $\defMath{\Id_A}$ hoặc $\defMath{\id_A}$.
+   \item Cho $A$ là một tập hợp và $E \in \mathfrak{P}(A)$. \defText{Ánh xạ nhúng chính tắc} từ $E$ vào $A$ là ánh xạ xác định bởi:\begin{equation*}
+      \begin{array}[t]{rcl}
+      \defMath{\mathbf{i}_{E; A}: E} & \defMath{\to} & \defMath{A} \\
+         \defMath{z} & \defMath{\mapsto} & \defMath{z}
+      \end{array}.
+   \end{equation*}
+   \item Cho $A$ và $E$ là hai tập hợp và hạng $x \in E$. \defText{Ánh xạ hằng} $x$ là ánh xạ, thường được kí hiệu trùng với hạng thức, có định nghĩa $\begin{array}[t]{rcl}
+      \defMath{x: A} & \defMath{\to} & \defMath{E} \\
+         \defMath{z} & \defMath{\mapsto} & \defMath{x}
+      \end{array}.$
+\end{itemize}
+
+Cho một ánh xạ $f: x \to y$, $A$ là một tập con của $x$. Gọi $g$ là quan hệ từ $A$ đến $y$ thỏa mãn $a\;g\;b \iff f(a) = b$. Với mỗi $a$, $b = f(a)$ tồn tại và là duy nhất theo định nghĩa ánh xạ, do đó $g$ cũng xác định một ánh xạ. Một cách cảm quan, nếu $a \in A$ thì $f(a) = g(a)$. Có thể thấy, $g$ là một \defText{ánh xạ cảm sinh} (hay \defText{ánh xạ thu hẹp}) từ $x$ xuống $A$, và ngược lại, $f$ là một \defText{ánh xạ thác triển} (hay \defText{ánh xạ mở rộng}) từ $A$ ra $x$.
+
+Cuối cùng, xét $y$ là một tập con của $x$ và một ánh xạ $f: x \to x$. $y$ được gọi là \defText{ổn định} đối với $f$ khi và chỉ khi \begin{equation*}
+   \defMath{\forall z \in y, f(z) \in y}.
+\end{equation*}
+Tính chất ổn định có thể được mở rộng ra thành các khái niệm đối xứng, thể hiện tập hợp các điểm trong $y$ vẫn giữ nguyên tính chất vật lí khi thực hiện phép biến đổi này.
+
+\exercise Cho $A$ và $B$ là hai tập hợp. $C$ có định nghĩa là
+\begin{equation*}
+   C = \left\{x \in \mathfrak{P}(A) \times (A \times B)\;\middle|\;\exists y \in \mathfrak{P}(A), \exists z, \left(z \text{~là hàm số từ~}y\text{~sang~}B \land x = (y; z)\right)\right\}.
+\end{equation*}
+Định nghĩa trong $C$ quan hệ $R$ sao cho với mọi đôi có thứ tự $(c; d)$ và $(c'; d')$ trong $C$,
+\begin{equation*}
+   (c; d)\;R\;(c'; d') \iff \begin{cases}
+      c \subseteq c' \\
+      \forall e \in c, d(e) = d'(e) 
+   \end{cases}.
+\end{equation*}
+
+\begin{enumerate}
+   \item Chứng minh rằng $R$ là một quan hệ thứ tự trên $C$.
+   \item Xác định\footnote{Với những bài tập yêu cầu \emph{xác định} hay \emph{tìm} giá trị của một hoặc nhiều đối tượng (hay còn được gọi tắt là \emph{tìm nghiệm}), thông thường, chúng ta cần phải liệt kê các giá trị thỏa mãn hoặc chỉ ra phương pháp để có thể \emph{dễ dàng} xây dựng nên các nghiệm đáp ứng điều kiện đã cho. Không có một định nghĩa khách quan để giải nghĩa thế nào là ``dễ dàng''. Chẳng hạn, với câu hỏi tìm $x$ để $x \cup A = B$, chúng ta có thể trả lời là:
+\begin{center}
+   ``Tập $x$ thỏa mãn là những tập có tính chất $x \cup A = B$.''
+\end{center} nhưng trả lời như vậy thì rõ ràng là không thỏa đáng. Một câu trả lời phải có giá trị toán học hoặc ứng dụng ở một mức độ nào đó. Theo quan niệm của tác giả, khi giải một bài toán tìm nghiệm, cần phải chỉ ra một thủ tục tính toán, sử dụng các giá trị cho trước và phép tính đã định nghĩa để xây dựng được các giá trị thỏa mãn. Trong đó, liệt kê là một thủ tục có thể sử dụng khi có ít nghiệm hợp lệ.} các phần tử cực đại và cực tiểu của $C$ (theo quan hệ $R$).
+\end{enumerate}
+
+\solution
+
+\resetSubexercise Khẳng định 
+\begin{equation*}
+   \begin{cases}
+      c \subseteq c \\
+      \forall e \in c, d(e) = d(e)
+   \end{cases}
+\end{equation*}
+là hiển nhiên. Do đó, $(c; d)\; R \; (c; d)$ luôn đúng với mọi $f = (c; d)$ trong $C$, hay $\forall f \in C, f\;R\;f$. $R$ là một quan hệ có tính phản xạ.
+
+Xét $g$ và $h$ thuộc $C$ sao cho $g\;R\;h$ và $h\;R\;g$. Tồn tại $a_g$, $a_h$ thuộc $A$, $b_g$, $b_h$ thuộc $B$ sao cho $g = (a_g; b_g)$ và $h = (a_h; b_h)$. Có
+$$\left(g\;R\;h \iff \begin{cases}
+   a_g \subseteq a_h \\
+   \forall e \in a_g, b_g(e) = b_h(e)
+\end{cases}\right) \land 
+\left(h\;R\;g \iff \begin{cases}
+   a_h \subseteq a_g \\
+   \forall e \in a_h, b_h(e) = b_g(e)
+\end{cases} \right)$$
+nên suy ra $a_g = a_h$. Lấy $p_g = (i_g; o_g)$ với $p_g \in b_g$ bất kì. Do $\forall e \in a_g, b_g(e) = b_h(e)$, \begin{equation*}
+   b_g(i_g) = b_h(i_g),
+\end{equation*} hay $o_g = b_h(i_g)$. Điều này tương đương với $p_g \in b_h$, và vì thế $b_g \subseteq b_h$. Quan hệ bao hàm ngược lại $b_g \supseteq b_h$ cũng hiển nhiên. Do đó $b_g = b_h$. Vì thế, $(a_g; b_g) = (a_h; b_h)$ hay $g = h$. Chúng ta thấy $R$ phản đối xứng.
+
+Xét $\xNom$, $\yNom$ và $\zNom$ trong $C$ để $\xNom\;R\;\yNom$ và $\yNom\;R\;\zNom$. Theo định nghĩa của $R$, chúng ta có $\xNom = (m; n)$, $\yNom = (p; q)$, và $\zNom = (s; t)$ thỏa mãn
+\begin{center}
+   $\begin{cases}
+      m \subseteq p \\
+      \forall e \in m, n(e) = q(e)
+   \end{cases}$ và $\begin{cases}
+      p \subseteq s \\
+      \forall e \in p, q(e) = t(e)
+   \end{cases}$.
+\end{center}
+Theo tính chất bắc cầu của $\subseteq$, $m \subseteq s$. Ngoài ra, $m \subseteq p \implies \forall e \in m, e \in p$. Kết hợp với $\forall e \in p, q(e) = t(e)$, do $\implies$ cũng có tính bắc cầu nên
+\begin{equation*}
+   \forall e \in m, q(e) = t(e).
+\end{equation*}
+Đã có $\forall e \in m, n(e) = q(e)$, dễ thấy rằng \begin{equation*}
+   \forall e \in m, n(e) = t(e).
+\end{equation*}
+
+Vì $m \subseteq s$ và $\forall e \in m, n(e) = t(e)$, theo định nghĩa $R$, $\xNom\;R\;\zNom$. Do $\xNom$, $\yNom$ và $\zNom$ được lấy bất kì, chúng ta khẳng định được rằng $R$ có tính chất bắc cầu.
+
+Ba tính chất cần thiết của một quan hệ thứ tự đã được chứng minh, tức là, điều phải chứng minh.
+
+\stepSubexercise 
