@@ -48,6 +48,87 @@ Cuối cùng, xét $y$ là một tập con của $x$ và một ánh xạ $f: x \
 \end{equation*}
 Tính chất ổn định có thể được mở rộng ra thành các khái niệm đối xứng, thể hiện tập hợp các điểm trong $y$ vẫn giữ nguyên tính chất vật lí khi thực hiện phép biến đổi này.
 
+\exercise Cho $A$ và $B$ là hai tập hợp sao cho tồn tại ánh xạ $f: A \to B$.
+\begin{enumerate}
+   \item Chứng minh rằng nếu $B = \varnothing$ thì $A = \varnothing$.
+   \item Chứng minh rằng nếu $\left[\begin{aligned}
+      A = \varnothing \\ B = \varnothing
+   \end{aligned}\right.$ thì $f = \varnothing$.
+\end{enumerate}
+
+\solution
+
+\resetSubexercise Giả sử $A \neq \varnothing$, nghĩa là tồn tại $x \in A$. Khi này, do tồn tại ánh xạ $f$, theo định nghĩa ánh xạ, tồn tại duy nhất một $y \in B$ sao cho $x\;f\;y$. Tồn tại duy nhất một phần tử để thỏa mãn điều kiện gì đó có nghĩa là trước hết phần tử đó phải tồn tại. Do đó, $B$ không rỗng.
+
+Vì nếu $A \neq \varnothing$ thì $B \neq \varnothing$, nên, chúng ta cũng có mệnh đề tương đương
+\begin{equation*}
+   B = \varnothing \implies A = \varnothing.
+\end{equation*}
+Điều phải chứng minh.
+
+\stepSubexercise $\begin{cases}
+   B = \varnothing \implies A = \varnothing \\
+   A = \varnothing \implies A = \varnothing
+\end{cases}$ nên $\left[\begin{aligned}
+   A = \varnothing \\ B = \varnothing
+\end{aligned}\right. \implies A = \varnothing$. 
+
+\exercise Cho $A$ và $B$ là hai tập hợp (và $B$ khác rỗng) sao cho tồn tại ánh xạ $f: A \to B$. Nếu $B \neq \varnothing$, gọi $b$ là một phần tử của $B$ và tập $C$ thỏa mãn $C \supseteq A$. Xây dựng quan hệ $g$ từ $C$ đến $B$ sao cho \begin{equation*}
+   \forall x \in C, \forall y \in B, \left(x\;g\;y \iff \left[\begin{aligned}         
+      x \in A &\land y = f(x) \\
+      x \notin A &\land y = b
+\end{aligned}
+\right.\right).
+\end{equation*} 
+Chứng minh rằng $g$ là ánh xạ thác triển của $f$.
+
+\solution
+
+Xét một phần tử $c \in C$. Có hai trường hợp có thể xảy ra,
+\begin{itemize}
+   \item Trường hợp \coloringCrimson{$c \in A$}: Do $f: A \to B$ là một ánh xạ và $c \in A$, tồn tại một phần tử $y_c \in B$ sao cho $y_c = f(c)$. Theo định nghĩa của $g$, $c \in A$ và $y_c = f(c)$ cho $c\;g\;y_c$. Vậy, xác định được $y_c$ để $c\;g\;y_c$.
+   
+   Tiếp theo, chúng ta chứng minh tại sao giá trị $y_c$ này là duy nhất. Giả sử có thêm $y_{cc}$ thỏa mãn $c\;g\;y_{cc}$. Theo định nghĩa $g$, chúng ta có $
+      \left[\begin{aligned}
+         c \in A &\land y_{cc} = f(c) \\
+         c \notin A &\land y_{cc} = b
+      \end{aligned}\right..
+   $ Do $c \in A$ nên $\overline{c \notin A \land y = b}$ và kéo theo $y_{cc} = f(c) = y_c$. Và vì thế, $y_c$ là duy nhất.
+
+   \item Trường hợp \coloringDodgerblue{$c \notin A$}: Vì $c \notin A$ và $b = b$, nên $c\;g\;b$. 
+   
+   Để chứng minh $c$ chỉ có mối quan hệ duy nhất với $b$, tương tự như trước, giả sử có $\yNom$ nữa sao cho $c\;g\;\yNom$. Chúng ta có $\neg c \in A$ nên $\overline{c \in A \land \yNom = f(c)}$, dẫn đến phải có $\yNom = b$.
+\end{itemize}
+
+Trong cả hai trường hợp, với mọi $c \in C$, tồn tại duy nhất một phần tử $y \in B$ sao cho $c\;g\;y$. Theo định nghĩa ánh xạ, $g$ là một ánh xạ từ $C$ đến $B$.
+
+Với mọi $x \in A$, $f(x) = g(x)$ theo chứng minh ở trên. Do đó, có thể viết $f$ dưới dạng:
+\begin{equation*}
+   \begin{array}[t]{rcl}
+      f: A & \to & B \\
+      x & \mapsto & g(x)
+   \end{array}.
+\end{equation*}
+Có $A\subseteq C$, từ định nghĩa, chúng ta có $g$ là ánh xạ thác triển của $f$. Điều phải chứng minh.
+
+\exercise Cho $A$ và $B$ là hai tập hợp. Xác định hai ánh xạ $f: A \to B$ và $g: A \to B$ sao cho 
+\begin{equation*}
+   \forall x \in A, f(x) = g(x). 
+\end{equation*}
+Chứng minh rằng $f = g$.
+
+\solution
+
+Với mọi $a$ là một phần tử thuộc $f$, tồn tại $b \in A$ và $c \in B$ sao cho $a = (b; c)$. Có 
+\begin{equation*}
+   c = f(b) = g(b)
+\end{equation*} 
+nên $(b; c)$ cũng thuộc $g$. Vì vậy, 
+$$
+   \forall a \in f, a \in g.
+$$
+Tương tự, $\forall a \in g, a \in f$. Do đó, $f = g$. Điều phải chứng minh.
+
 \exercise Cho $A$ và $B$ là hai tập hợp. $C$ có định nghĩa là
 \begin{equation*}
    C = \left\{x \in \mathfrak{P}(A) \times (A \times B)\;\middle|\;\exists y \in \mathfrak{P}(A), \exists z, \left(z \text{~là hàm số từ~}y\text{~sang~}B \land x = (y; z)\right)\right\}.
@@ -114,4 +195,24 @@ Vì $m \subseteq s$ và $\forall e \in m, n(e) = t(e)$, theo định nghĩa $R$,
 
 Ba tính chất cần thiết của một quan hệ thứ tự đã được chứng minh, tức là, điều phải chứng minh.
 
-\stepSubexercise 
+\stepSubexercise Nếu $\left[\begin{aligned}
+   A = \varnothing \\
+   B = \varnothing
+\end{aligned}\right.$ Khi đó, dựa vào kết quả của những bài tập trước, dễ thấy hàm số duy nhất từ một tập con nào đó của $A$ sang $B$ là $f_\varnothing = \varnothing$. Do đó, phần tử duy nhất trong $C$ là $(\varnothing; \varnothing)$.
+
+Gọi tập hợp chứa các phần tử cực đại là $P_{\text{li}}$. Tập này có nghĩa do tiên đề tách lấy từ $C$. Xét $(A; f_A)$ ($f_A$ là một ánh xạ từ $A$ sang $B$) và gọi nó là $k$. $k \in P_{\text{li}}$ là do giả thiết cách đặt $P_{\text{li}}$. Nếu như có phần tử $l$ cũng thuộc $P_{\text{li}}$ sao cho $k\;R\;l$, tồn tại $j$ và $o$ sao cho 
+\begin{itemize}
+   \item $j \in \mathfrak{P}(A)$,
+   \item $o$ là một hàm số từ $A$ sang $B$,
+   \item $l = (j; o)$.
+\end{itemize}
+
+Bởi $j \in \mathfrak{P}(A)$, nhưng lại có $A \subseteq j$ do $k\;R\;l$ nên $j = A$. Khi đó, 
+$$
+   \forall u \in A, f_A(u) = o(u).
+$$
+$f_A$ và $o$ là hai ánh xạ có cùng tập xác định là $A$ và tập đích là $B$, cho nên $f_A = o$.
+
+Vậy, $k = l$. Và từ đó, chúng ta có $k \in P_{\text{li}}$ theo định nghĩa phần tử cực đại.
+
+Chúng ta cũng sẽ khẳng định rằng mọi phần tử không thể viết dưới dạng $(A; f_A)$ thì không phải là phần tử cực đại. Thật vậy, nếu như có $u \in C$ sao cho không tồn tại $g_A: A \to B$ để $u = (A; g_A)$, $u$ sẽ có dạng $(v; w)$ với $v \neq A$ (do nếu $v = A$ thì $w$ sẽ cần phải là một ánh xạ từ $A$ đến $B$ để có thể thuộc $C$). 

@@ -367,7 +367,54 @@
 % ==========================================
 % 10. THÔNG TIN TÀI LIỆU (METADATA)
 % ==========================================
-\title{{\fontsize{72}{84}\selectfont \emphcyanbf{PFÉIV} \\ \huge La \emphcyanbf{P}hysique \emphcyanbf{F}ondamentale pour les \emphcyanbf{É}tudiants \emphcyanbf{I}diots au \emphcyanbf{V}ietnam}}
+\title{%
+\begin{tikzpicture}[
+      color=colorDodgerblue,
+      draw=colorDodgerblue,
+      fill=colorDodgerblue,
+      line width=4pt,
+      line cap=round,
+      scale=0.5
+   ]
+      % ---- Outer silhouette: base + walls + M-shaped roofline ----
+      \draw
+         (-5, 0)                 -- % bottom-left of base
+         (-5, 3.3)  coordinate (WL) -- % top of left wall
+         (-3.6, 5.0)              -- % left roof peak
+         (-2.2, 3.9)              -- % valley between left roof and central roof
+         (0, 6.4)   coordinate (APEX) -- % central roof apex
+         (2.2, 3.9)                -- % valley between central and right roof
+         (3.6, 5.0)                -- % right roof peak
+         (5, 3.3)   coordinate (WR) -- % top of right wall
+         (5, 0);                   % bottom-right of base
+
+      \draw (-5,0) -- (5,0);
+      \draw (-2.2, 3.9) -- (-2.2, 0);
+      \draw (2.2, 3.9) -- (2.2, 0);
+
+      % ---- Atom symbol on top of the roof ----
+      \begin{scope}[shift={($(APEX)+(0,1.55)$)}]
+         \draw[rotate=0]   (0,0) ellipse (1.05 and 0.42);
+         \draw[rotate=60]  (0,0) ellipse (1.05 and 0.42);
+         \draw[rotate=120] (0,0) ellipse (1.05 and 0.42);
+      \end{scope}
+
+      % ---- Circular window above the door ----
+      \draw (0,3.1) circle (0.55);
+
+      % ---- Door (arched, open at the bottom) ----
+      \draw
+         (-0.8, 0) --
+         (-0.8, 1.6) arc[start angle=180, end angle=0, radius=0.8] --
+         (0.8, 0);
+
+      % ---- Small square windows on the side wings ----
+      \fill (-3.9,2.0) rectangle (-3.3,2.6);
+      \fill (3.3,2.0) rectangle (3.9,2.6);
+   \end{tikzpicture} \hspace{0.5em}
+   {\fontsize{72}{84}\selectfont \emphcyanbf{PFÉIV}} \\[0.5em]
+   {\huge La \emphcyanbf{P}hysique \emphcyanbf{F}ondamentale pour les \emphcyanbf{É}tudiants \emphcyanbf{I}diots au \emphcyanbf{V}ietnam}\\[2em]
+}
 \author{Bùi Nhật Minh}
 
 % ==========================================
