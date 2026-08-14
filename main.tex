@@ -52,12 +52,12 @@
 % ==========================================
 % 4. ĐỊNH NGHĨA TÔNG MÀU
 % ==========================================
-\definecolor{colorCrimson}{RGB}{220, 24, 78}
+\definecolor{colorCrimson}{RGB}{220, 24, 24}
 \definecolor{colorDodgerblue}{RGB}{0, 120, 255}
 \definecolor{colorJade}{RGB}{0, 171, 77}
 \definecolor{colorWisteria}{RGB}{139, 66, 141}
 
-\definecolor{colorEmphasis}{RGB}{220, 24, 78}
+\definecolor{colorEmphasis}{RGB}{220, 24, 24}
 \definecolor{colorEmphasisCyan}{RGB}{0, 120, 255}
 \definecolor{colorEmphasisGreen}{RGB}{0, 171, 77}
 
@@ -218,6 +218,7 @@
 % Định dạng chữ
 \newcommand{\emphcolor}[1]{\textcolor{colorEmphasis}{\emph{#1}}}
 \newcommand{\emphcyanbf}[1]{\textcolor{colorEmphasisCyan}{\textbf{#1}}}
+\newcommand{\emphredbf}[1]{\textcolor{colorCrimson}{\textbf{#1}}}
 \newcommand{\defText}[1]{\textbf{#1}}
 \newcommand{\defMath}[1]{\bm{#1}}
 \newcommand{\dblquote}[1]{\textquotedblleft #1\textquotedblright}
@@ -376,31 +377,34 @@
       line cap=round,
       scale=0.5
    ]
-      % ---- Outer silhouette: base + walls + M-shaped roofline ----
-      \draw
-         (-5, 0)                 -- % bottom-left of base
-         (-5, 3.3)  coordinate (WL) -- % top of left wall
-         (-3.6, 5.0)              -- % left roof peak
-         (-2.2, 3.9)              -- % valley between left roof and central roof
-         (0, 6.4)   coordinate (APEX) -- % central roof apex
-         (2.2, 3.9)                -- % valley between central and right roof
-         (3.6, 5.0)                -- % right roof peak
-         (5, 3.3)   coordinate (WR) -- % top of right wall
-         (5, 0);                   % bottom-right of base
 
-      \draw (-5,0) -- (5,0);
+      % ---- Outer silhouette: base + walls + M-shaped roofline ----
+      \draw (5, 3.3) coordinate (WR) --
+      (5,0) -- (-5,0) -- 
+      (-5, 3.3) coordinate (WL);
+      
+      \draw[color=colorCrimson]
+      (WL) --
+      (-3.6, 5.0) --
+      (-2.2, 3.9) --
+      (0, 6.4)   coordinate (APEX) --
+      (2.2, 3.9) --
+      (3.6, 5.0) -- (WR);
+      
+      \draw(-5, 3.3) arc[start angle=106.86, end angle=73.14, radius=17.241];
+      
       \draw (-2.2, 3.9) -- (-2.2, 0);
       \draw (2.2, 3.9) -- (2.2, 0);
 
       % ---- Atom symbol on top of the roof ----
       \begin{scope}[shift={($(APEX)+(0,1.55)$)}]
-         \draw[rotate=0]   (0,0) ellipse (1.05 and 0.42);
-         \draw[rotate=60]  (0,0) ellipse (1.05 and 0.42);
-         \draw[rotate=120] (0,0) ellipse (1.05 and 0.42);
+         \draw[color=colorCrimson, rotate=0]   (0,0) ellipse (1.05 and 0.42);
+         \draw[color=colorCrimson, rotate=60]  (0,0) ellipse (1.05 and 0.42);
+         \draw[color=colorCrimson, rotate=120] (0,0) ellipse (1.05 and 0.42);
       \end{scope}
 
       % ---- Circular window above the door ----
-      \draw (0,3.1) circle (0.55);
+      \draw (0,3) circle (0.5);
 
       % ---- Door (arched, open at the bottom) ----
       \draw
@@ -412,8 +416,8 @@
       \fill (-3.9,2.0) rectangle (-3.3,2.6);
       \fill (3.3,2.0) rectangle (3.9,2.6);
    \end{tikzpicture} \hspace{0.5em}
-   {\fontsize{72}{84}\selectfont \emphcyanbf{PFÉIV}} \\[0.5em]
-   {\huge La \emphcyanbf{P}hysique \emphcyanbf{F}ondamentale pour les \emphcyanbf{É}tudiants \emphcyanbf{I}diots au \emphcyanbf{V}ietnam}\\[2em]
+   {\fontsize{72}{84}\selectfont \emphredbf{P}\emphcyanbf{FÉI}\emphredbf{V}} \\[0.5em]
+   {\huge La \emphredbf{P}hysique \emphcyanbf{F}ondamentale pour les \emphcyanbf{É}tudiants \emphcyanbf{I}diots au \emphredbf{V}ietnam}\\[2em]
 }
 \author{Bùi Nhật Minh}
 

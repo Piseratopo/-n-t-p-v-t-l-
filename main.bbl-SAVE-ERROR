@@ -50,23 +50,23 @@
     \endentry
     \entry{monier2000algèbre}{book}{}{}
       \name{author}{1}{}{%
-        {{hash=8d25273ff5d62f4d918082e3b2cd4982}{%
+        {{hash=af94658f1a5384ad7c9f149357259bec}{%
            family={Monier},
            familyi={M\bibinitperiod},
-           given={J.M.},
-           giveni={J\bibinitperiod}}}%
+           given={Jean-Marie},
+           giveni={J\bibinithyphendelim M\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Dunod}%
       }
-      \strng{namehash}{8d25273ff5d62f4d918082e3b2cd4982}
-      \strng{fullhash}{8d25273ff5d62f4d918082e3b2cd4982}
-      \strng{fullhashraw}{8d25273ff5d62f4d918082e3b2cd4982}
-      \strng{bibnamehash}{8d25273ff5d62f4d918082e3b2cd4982}
-      \strng{authorbibnamehash}{8d25273ff5d62f4d918082e3b2cd4982}
-      \strng{authornamehash}{8d25273ff5d62f4d918082e3b2cd4982}
-      \strng{authorfullhash}{8d25273ff5d62f4d918082e3b2cd4982}
-      \strng{authorfullhashraw}{8d25273ff5d62f4d918082e3b2cd4982}
+      \strng{namehash}{af94658f1a5384ad7c9f149357259bec}
+      \strng{fullhash}{af94658f1a5384ad7c9f149357259bec}
+      \strng{fullhashraw}{af94658f1a5384ad7c9f149357259bec}
+      \strng{bibnamehash}{af94658f1a5384ad7c9f149357259bec}
+      \strng{authorbibnamehash}{af94658f1a5384ad7c9f149357259bec}
+      \strng{authornamehash}{af94658f1a5384ad7c9f149357259bec}
+      \strng{authorfullhash}{af94658f1a5384ad7c9f149357259bec}
+      \strng{authorfullhashraw}{af94658f1a5384ad7c9f149357259bec}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
