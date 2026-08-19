@@ -110,30 +110,25 @@ Kết hợp hai kết quả bao hàm, suy ra $\mathfrak{P}(\{X; Y\}) = \{\varnot
             \draw[thick] (5.5,0) ellipse (3.2cm and 3.5cm);
             \node at (5.5, 3.9) {Tập lũy thừa $\mathfrak{P}\left(\{a; b\}\right)$};
 
-            % Tập rỗng
             \draw[thick, colorEmphasis] (5.5, 2) circle (0.7cm);
             \node[colorEmphasis] at (5.5, 2) {$\varnothing$};
             \draw[guide arrow, colorEmphasis, dashed] (-2.2, 1.7) to[bend left=15] (4.85, 2);
 
-            % Tập {a}
             \draw[thick, colorEmphasisCyan] (3.6, 0) ellipse (0.8cm and 0.6cm);
             \node[element, label=below:$a$] (a_right1) at (3.6, 0) {};
             \node[colorEmphasisCyan] at (3.6, 0.9) {$\{a\}$};
             \draw[guide arrow, colorEmphasisCyan, dashed] (-3.6, 0) to[bend right=25] (3.2, -0.5);
 
-            % Tập {b}
             \draw[thick, colorEmphasisGreen] (7.4, 0) ellipse (0.6cm and 0.8cm);
             \node[element, label=below:$b$] (b_right1) at (7.4, 0) {};
             \node[colorEmphasisGreen] at (8.3, 0) {$\{b\}$};
             \draw[guide arrow, colorEmphasisGreen, dashed] (-2.5, -1.6) to[out=-60, in=180] (6.8, -0.1);
 
-            % Tập {a, b}
             \draw[thick, colorWisteria, rotate around={-40:(5.5, -2)}] (5.5, -2) ellipse (1.2cm and 0.8cm);
             \node[element, label=left:$a$] (a_right2) at (5.1, -1.7) {};
             \node[element, label=right:$b$] (b_right2) at (5.9, -2.3) {};
             \node[colorWisteria] at (6.5, -1.2) {$\{a; b\}$};
             \draw[guide arrow, colorWisteria, dashed] (-1.6, -0.9) to[out=50, in=-150] (5.1, -2.6);
-
         \end{tikzpicture}
     \end{center}
     \caption{Minh họa tiên đề tập lũy thừa với $\mathfrak{P}\left(\{a; b\}\right) = \big\{\varnothing; \{a\}; \{b\}; \{a; b\}\big\}$.}

@@ -225,3 +225,48 @@ Do đó,
    A \subseteq B \land B \subseteq C & \implies A \subseteq C.
 \end{align*}
 Điều phải chứng minh.
+
+\exercise Cho vị từ $V()$. Chứng minh rằng 
+\begin{equation*}
+   \exists ! x, V(x) \implies \exists x, V(x) \land \forall y, \forall z, (V(y) \land V(z) \implies y = z).
+\end{equation*}
+($x$, $y$, $z$ là tập hợp.)
+
+\solution
+
+Giả sử $\exists ! x, V(x)$, tương đương với $\exists x, (V(x) \land \forall y, (V(y) \implies x = y))$. Cụ thể hóa $x$ thành $X$, chúng ta có $V(X)$ và $\forall y, (V(y) \implies X = y)$. Đổi hạng thức $y$ thành hạng thức $z$, được mệnh đề tương đương $\forall z, (V(z) \implies X = z)$. Bổ sung lượng từ rỗng,
+\begin{equation*}
+   \begin{cases}
+      \forall y, \forall z, (V(y) \implies X = y) \\ 
+      \forall y, \forall z, (V(z) \implies X = z)
+   \end{cases}.
+\end{equation*}
+Do lượng từ phổ quát có tính chất phân phối đối với phép hội nên suy ra 
+\begin{equation*}
+   \forall y, \forall z, \begin{cases}
+      V(y) \implies X = y \\
+      V(z) \implies X = z
+   \end{cases}.
+\end{equation*}
+
+Có $\forall y, \forall z, \begin{cases}
+   V(y) \land V(z) \implies V(y) \\
+   V(y) \land V(z) \implies V(z)
+\end{cases}$ theo quy tắc rút gọn. Kết hợp với tính chất bắc cầu của phép kéo theo để có \begin{equation*}
+   \forall y, \forall z, \begin{cases}
+      V(y) \land V(z) \implies X = y \\
+      V(y) \land V(z) \implies X = z
+   \end{cases}.
+\end{equation*}
+Sử dụng tính chất phân phối một lần nữa, \begin{equation*}
+   \forall y, \forall z, (V(y) \land V(z) \implies X = y \land X = z).
+\end{equation*}
+Do tính bắc cầu của phép đồng nhất, nên cuối cùng cũng suy ra được \begin{equation*}
+   \forall y, \forall z, (V(y) \land V(z) \implies y = z).
+\end{equation*}
+Kết hợp với $\exists x, V(x)$ có được do $V(X)$, khi đó \begin{equation*}
+   \exists x, V(x) \land \forall y, \forall z, (V(y) \land V(z) \implies y = z).
+\end{equation*}
+Vì vậy, chúng ta có điều phải chứng minh.
+
+

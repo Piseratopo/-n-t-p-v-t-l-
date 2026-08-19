@@ -6,7 +6,7 @@ Tài liệu "PFÉIV" cần được viết theo quy chuẩn chính tả như sau
 
 - Văn bản đúng quy tắc chính tả và ngữ pháp Việt Nam hiện hành.
 - Sử dụng ``` `` ``` và `''` để viết dấu ngoặc kép.
-- Đảm bảo kí hiệu thống nhất trong tài liệu, trong đó bao gồm tên, kiểu hoa/thường, kiểu phông, kích cỡ, vân vân. Khi có thể, sử dụng những định dạng đã có trong `main.tex`.
+- Đảm bảo định dạng kí hiệu thống nhất trong tài liệu, trong đó bao gồm kiểu hoa/thường, kiểu phông, kích cỡ, vân vân. Khi có thể, sử dụng những định dạng đã có trong `main.tex`.
 - Chỉ sử dụng màu đen và những màu đã được định nghĩa sẵn trong `main.tex` để viết và vẽ (ngoài trừ hình ảnh ngoài).
 - Đại từ nhân xưng: Khi cần ngôi thứ nhất, dùng "tác giả". Khi cần ngôi thứ hai, dùng "bạn đọc". Khi cần ngôi thứ nhất số nhiều mà bao gồm cả người đọc, dùng "chúng ta". Ví dụ điển hình: không viết `Ta có`, mà viết `Chúng ta có`.
 - Chú thích tên bảng và tên hình cần phải có dấu chấm cuối câu.
@@ -41,7 +41,9 @@ $$
 hoặc sử dụng lời văn ngắn gọn để thay thế.
 - Công thức toán viết liền đoạn hoặc đặt riêng một dòng vẫn là một phần cấu trúc ngữ pháp của câu văn. Do đó, ở cuối công thức trưng bày cần phải có dấu phẩy `,`, dấu chấm phẩy `;` hoặc dấu chấm `.` tùy thuộc vào vai trò của công thức đó trong câu.
 - Không viết chữ nghiêng mặc định của môi trường toán cho các từ ngữ giải thích hoặc tên viết tắt. Cần đưa chúng về phông đứng bằng lệnh `\text{}` hoặc `\mathrm{}`. Ví dụ: viết $x_{\text{max}}$ (`x_{\text{max}}`) hoặc $x_{\mathrm{max}}$ (`x_{\mathrm{max}}`) thay vì viết $x_{max}$ (chữ $max$ bị nghiêng và rời rạc).
-
+- Khi chứng minh tồn tại duy nhất, sử dụng cấu trúc như ở mệnh đề sau
+$$\exists x, \left(V(x) \land \forall y, (V(y) \implies y = x)\right).$$
+Hạn chế sử dụng $$\exists x, V(x) \land \forall y, \forall z, (V(y) \land V(z) \implies y = z).$$
 ## Lập trình $\LaTeX$
 
 - Đánh tên thành phần: Với những thành phần có `\label{}` thì đặt tên theo quy tắc sau: "Kiểu thành phần"`:`"Đường dẫn đến tệp chứ thành phần"`:`"Tên thành phần". Ví dụ: `fig:ham_so:ham_so_cap:x_2`. Viết thế này để tránh xung đột tên giữa các thành phần có cùng tên ở những tệp khác nhau.

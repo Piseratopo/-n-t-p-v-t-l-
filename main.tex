@@ -96,8 +96,8 @@
    element/.style={circle, fill=black, inner sep=1.2pt},
    element emphasis/.style={circle, fill=colorEmphasis, inner sep=1.5pt},
    direction arrow/.style={->, >={Stealth[scale=0.75]}},
-   guide arrow/.style={->, >={Stealth[scale=1.5]}, thick, shorten >= 3pt, shorten <= 3pt},
-   guide double arrow/.style={<->, >={Stealth[scale=1.5]}, thick, shorten >= 3pt, shorten <= 3pt},
+   guide arrow/.style={->, >={Stealth[scale=1.5]}, thick, shorten >= 2pt, shorten <= 2pt},
+   guide double arrow/.style={<->, >={Stealth[scale=1.5]}, thick, shorten >= 2pt, shorten <= 2pt},
    gradient arrow/.style={
       ->,
       >={Stealth[scale=1.5]}, 
@@ -197,7 +197,7 @@
       {\noindent\textbf{Lời giải bài~\ref{#1}}:}
    \IfNoValueTF{#1}
       {\label{sol\arabic{solution}}}
-      {\label{sol-#1}}
+      {\label{sol:#1}}
 }
 
 \newcounter{subexercise}
@@ -259,7 +259,6 @@
 \DeclareMathOperator{\Ran}{Ran}
 \DeclareMathOperator{\ran}{ran}
 \DeclareMathOperator*{\Sup}{Sup}
-\newcommand{\refeq}[1]{(\ref{#1})}
 \newcommand{\equationexplanation}[1]{&& \textcolor{colorEmphasis}{\left(\text{#1}\right)}}
 
 % Môi trường đặc biệt
@@ -436,8 +435,8 @@
 % \input{chapter/kiem_tra.tex}
 % \input{chapter/bai_tap_bo_sung.tex}
 % \input{chapter/khoa_hoc.tex}
-% \input{chapter/nen_tang_lo_gich.tex}
-\input{chapter/li_thuyet_tap_hop.tex}
+\input{chapter/nen_tang_lo_gich.tex}
+% \input{chapter/li_thuyet_tap_hop.tex}
 % \input{chapter/co_ban_xu_li_so_lieu.tex}
 % \input{chapter/chuyen_dong.tex}
 

@@ -8,12 +8,21 @@ Một \defText{ánh xạ} hay \defText{hàm số}\footnote{Cũng có thể gọi
    \defMath{\forall a \in x, \exists ! b \in y, a\;f\;b }.
    \label{eq:li_thuyet_tap_hop:tien_de:anh_xa:dinh_nghia}
 \end{equation}
-Kí hiệu thường xuyên sử dụng thay vì $a\;f\;b$ là $\defMath{b = f(a)}$. $b$ khi này được gọi là \defText{ảnh} của $a$ qua $f$ và $a$ được gọi là $\defText{tạo ảnh}$ của $b$ bởi $f$. Có một điểm cần lưu ý, đó là từ định nghĩa ánh xạ, chúng ta cần phải có tập xác định của $f$ thì phải bằng tập nguồn $x$. Ngoài ra, nếu chiếu theo định nghĩa này thì tập nguồn $x$ có thể rỗng, bởi khi đó $\forall a, \neg a \in x$ khiến cho \refeq{eq:li_thuyet_tap_hop:tien_de:anh_xa:dinh_nghia} luôn đúng. Tác giả sẽ chấp nhận tập nguồn rỗng, nhưng không phải tài liệu nào cũng sẽ đồng tình với tác giả.
+Kí hiệu thường xuyên sử dụng thay vì $a\;f\;b$ là $\defMath{b = f(a)}$. $b$ khi này được gọi là \defText{ảnh} của $a$ qua $f$ và $a$ được gọi là $\defText{tạo ảnh}$ của $b$ bởi $f$. Có một điểm cần lưu ý, đó là từ định nghĩa ánh xạ, chúng ta cần phải có tập xác định của $f$ thì phải bằng tập nguồn $x$. Ngoài ra, nếu chiếu theo định nghĩa này thì tập nguồn $x$ có thể rỗng, bởi khi đó $\forall a, \neg a \in x$ khiến cho \eqref{eq:li_thuyet_tap_hop:tien_de:anh_xa:dinh_nghia} luôn đúng. Tác giả sẽ chấp nhận tập nguồn rỗng, nhưng không phải tài liệu nào cũng sẽ đồng tình với tác giả.
 
-Từ $x$ và $y$, xây dựng tích đề các $x \times y$. Do mọi quan hệ đơn giản chỉ là tập con của $x \times y$ nên $\mathfrak{P}(x \times y)$ sẽ chứa toàn bộ các quan hệ trên $x \times y$. Và bởi vì mọi ánh xạ là quan hệ, chúng ta có tập hợp các ánh xạ từ $x$ đến $y$ là
+Chúng ta sẽ khẳng định với nhau một tính chất cơ bản của ánh xạ. Cho $f$ từ $x$ đến $y$. Nếu như có $a$ và $b$ thuộc $x$ sao cho $a = b$, chúng ta có $\begin{cases}
+   a\;f\;f(a) \\
+   b\;f\;f(b)
+\end{cases}$. Do $a = b$, $a\;f\;f(a)$ suy ra $b\;f\;f(a)$. Vì chỉ tồn tại một phần tử có quan hệ với $b$ theo định nghĩa của ánh xạ nên cần phải có $f(a) = f(b)$. Vì vậy, \begin{equation*}
+   \defMath{\forall a \in x, \forall b \in x, (a = b \implies f(a) = f(b)).}
+\end{equation*}
+Quan trọng, điều ngược lại là không đúng. Định nghĩa chỉ phát biểu là ``một $a \in x$ tương ứng với duy nhất một $b \in y$'', không khẳng định điều ngược lại.
+
+Từ $x$ và $y$, xây dựng tích Đề-các $x \times y$. Do mọi quan hệ đơn giản chỉ là tập con của $x \times y$ nên $\mathfrak{P}(x \times y)$ sẽ chứa toàn bộ các quan hệ trên $x \times y$. Và bởi vì mọi ánh xạ là quan hệ, chúng ta có tập hợp các ánh xạ từ $x$ đến $y$ là
 $$
-   \defMath{y^x = \big\{z \in \mathfrak{P}(x \times y)\;\big|\;z \text{\defText{~là một ánh xạ}} \big\}}.
+   \defMath{y^x = \big\{z \in \mathfrak{P}(x \times y)\;\big|\;z \text{\defText{~là một ánh xạ}} \big\}}\footnotemark.
 $$
+\footnotetext{Nhắc lại một chút, chúng ta có cộng tập hợp ($x + y = x \vartriangle y$), trừ tập hợp ($x - y = x \setminus y$), nhân tập hợp (tích Đề-các), chia tập hợp (tập thương), giờ lại có mũ tập hợp (tập hợp các hàm) nữa! Vậy liệu có khai căn hai tập hợp không? Cho đến giờ tác giả vẫn chưa thấy sự tồn tại của nó. Nếu bạn đọc biết, hãy trao đổi với tác giả!}
 
 Vì ánh xạ là một khái niệm thường xuyên được sử dụng, người ta đã sáng tạo nhiều cách để kí hiệu nó mà chứa nhiều thông tin nhất có thể. Đây là một trong những cách kí hiệu thường dùng:
 \[
@@ -23,25 +32,86 @@ Vì ánh xạ là một khái niệm thường xuyên được sử dụng, ngư
 \end{array}.
 \]
 
-Lấy một số ví dụ về ánh xạ:
-\begin{itemize}
-   \item Với tập hợp $A$ bất kì, kí hiệu $\begin{array}[t]{rcl}
-\defMath{\mathds{1}_A: A} & \defMath{\to} & \defMath{A} \\
-   \defMath{z} & \defMath{\mapsto} & \defMath{z}
-\end{array}$ là \defText{ánh xạ đồng nhất} của $A$. Ánh xạ này đôi khi còn được kí hiệu là $\defMath{\Id_A}$ hoặc $\defMath{\id_A}$.
-   \item Cho $A$ là một tập hợp và $E \in \mathfrak{P}(A)$. \defText{Ánh xạ nhúng chính tắc} từ $E$ vào $A$ là ánh xạ xác định bởi:\begin{equation*}
-      \begin{array}[t]{rcl}
-      \defMath{\mathbf{i}_{E; A}: E} & \defMath{\to} & \defMath{A} \\
-         \defMath{z} & \defMath{\mapsto} & \defMath{z}
-      \end{array}.
-   \end{equation*}
-   \item Cho $A$ và $E$ là hai tập hợp và hạng $x \in E$. \defText{Ánh xạ hằng} $x$ là ánh xạ, thường được kí hiệu trùng với hạng thức, có định nghĩa $\begin{array}[t]{rcl}
-      \defMath{x: A} & \defMath{\to} & \defMath{E} \\
-         \defMath{z} & \defMath{\mapsto} & \defMath{x}
-      \end{array}.$
-\end{itemize}
+Khi có định nghĩa về ánh xạ, chúng ta có thể thực hiện so sánh giữa ánh xạ. Trước hết, một mối quan hệ đáng quan tâm nhất đó chính là việc nhận biết hai ánh xạ có bằng nhau hay không. Cho $x$ và $y$ là tập hợp. Xác định ánh xạ $f: x \to y$ và $g: x\to y$. Giả sử $f = g$. Xét một $a \in x$. Chúng ta có $\begin{cases}
+   (a; f(a)) \in f \\
+   (a; g(a)) \in g
+\end{cases}$. Vì $f = g$ nên $(a; g(a))$ cũng thuộc $f$. $a$ có quan hệ $f$ tới cả $f(a)$ và $g(a)$. Do $f$ là ánh xạ, $g(a) = f(a)$.
 
-Cho một ánh xạ $f: x \to y$, $A$ là một tập con của $x$. Gọi $g$ là quan hệ từ $A$ đến $y$ thỏa mãn $a\;g\;b \iff f(a) = b$. Với mỗi $a$, $b = f(a)$ tồn tại và là duy nhất theo định nghĩa ánh xạ, do đó $g$ cũng xác định một ánh xạ. Một cách cảm quan, nếu $a \in A$ thì $f(a) = g(a)$. Có thể thấy, $g$ là một \defText{ánh xạ cảm sinh} (hay \defText{ánh xạ thu hẹp}) từ $x$ xuống $A$, và ngược lại, $f$ là một \defText{ánh xạ thác triển} (hay \defText{ánh xạ mở rộng}) từ $A$ ra $x$.
+Ngược lại, giả sử \begin{equation*}
+   \forall a \in x, f(a) = g(a). 
+\end{equation*}
+Với mọi $d$ là một phần tử thuộc $f$, tồn tại $b \in A$ và $c \in B$ sao cho $d = (b; c)$. Có 
+$c = f(b) = g(b)$ nên $(b; c)$ cũng thuộc $g$. Vì vậy, 
+$$
+   \forall d \in f, d \in g.
+$$
+Tương tự, $\forall d \in g, d \in f$. Do đó, kết hợp hai mệnh đề để có $f = g$. 
+
+Vậy, chúng ta có một tính chất, tuy đơn giản, hiển nhiên, nhưng vô cùng quan trọng của ánh xạ:
+\begin{equation*}
+   \defMath{\forall f \in y^x, \forall g \in y^x, (f = g \iff \forall a \in x, f(a) = g(a))}.
+\end{equation*}
+
+Lấy một số ví dụ về ánh xạ. Với tập hợp $x$ cho trước, gọi $E \in \mathfrak{P}(x)$. Xét quan hệ $\mathrm{i}_{E;x}$ xác định bởi \begin{equation*}
+   \forall a \in E, \forall b \in x, (a\;\mathrm{i}_{E;x}\;b \iff a = b).
+\end{equation*}
+Từ đây, với mọi $a$ thuộc $E$, hiển nhiên có được sự tồn tại phần tử có quan hệ $\mathrm{i}_{E;x}$ từ $a$ do $a\;\mathrm{i}_{E;x}\;a$. Nếu như có $b$ để cho $a\;\mathrm{i}_{E;x}\;b$, theo định nghĩa của $\mathrm{i}_{E;x}$, cần có $b = a$. Vì vậy, theo định nghĩa của tồn tại duy nhất, \begin{equation*}
+   \forall a \in E, \exists !b \in x, a\;\mathrm{i}_{E;x}\;b.
+\end{equation*}
+$\mathrm{i}_{E;x}$ là một ánh xạ. Cụ thể, nó có tên là \defText{ánh xạ nhúng chính tắc} với kí hiệu $\begin{array}[t]{rcl}
+\defMath{\mathrm{i}_{E;x}: E} & \defMath{\to} & \defMath{x} \\
+   \defMath{a} & \defMath{\mapsto} & \defMath{a}
+\end{array}$. Nếu $E = x$, chúng ta có \defText{ánh xạ đồng nhất} của $x$: $$\begin{array}[t]{rcl}
+\defMath{\mathds{1}_{x}: x} & \defMath{\to} & \defMath{x} \\
+   \defMath{a} & \defMath{\mapsto} & \defMath{a}
+\end{array}.$$ Ánh xạ này đôi khi còn được kí hiệu là $\defMath{\Id_x}$ hoặc $\defMath{\id_x}$.
+
+Gọi $y$ là một tập hợp khác rỗng để có thể có hạng thức $C \in y$. Xây dựng quan hệ $R_C$ qua khẳng định \begin{equation*}
+   \forall a \in x, \forall b \in y, (a\;R_C\;b \iff b = C).
+\end{equation*}
+Với $a$ bất kì thuộc $x$, tồn tại $b \in y$ để $a\;R_C\;b$ do $a\;R_C\;C$. Ngoài ra, nếu như có $b$ nào đó có tính chất $a\;R_C\;b$ thì do $a\;R_C\;b \iff b = C$, cần có $b = C$. Và vì vậy, chúng ta xác định được \defText{ánh xạ hằng} $C$. Ánh xạ này thường có tên trùng với hạng thức:
+$$\begin{array}[t]{rcl}
+   \defMath{C: x} & \defMath{\to} & \defMath{y} \\
+   \defMath{a} & \defMath{\mapsto} & \defMath{C}
+\end{array}.$$
+
+Cho một ánh xạ $f: x \to y$, $A$ là một tập con của $x$. Gọi $g$ là quan hệ từ $A$ đến $y$ thỏa mãn $a\;g\;b \iff f(a) = b$ với $a \in A$ và $b \in y$. Chúng ta có 
+\begin{equation*}
+   \begin{cases}
+      \forall a, (a \in A \implies a \in x) \\
+      \forall a, (a \in x \implies \exists ! b \in y, a\;f\;b) 
+   \end{cases},
+\end{equation*}
+suy ra $\forall a \in A, \exists ! b \in y, a\;f\;b$. Điều này tương đương $\forall a \in A, \exists b \in y, (a\;f\;b \land \forall c \in y, (a\;f\;c \implies c = b))$. Với mỗi $a$ thuộc $A$, gọi $B_a$ là hạng thức thỏa mãn \begin{equation*}
+   a\;f\;B_a \land \forall c \in y, (a\;f\;c \implies c = B_a).
+\end{equation*}
+Thêm vào đó,
+$\forall a \in A, \forall b \in y, (a\;f\;b \iff a\;g\;b)$ cho chúng ta \begin{equation*}
+   \begin{cases}
+      \forall a \in A, (a\;f\;B_a \iff a\;g\;B_a) \\
+      \forall a \in A, \forall c \in y, (a\;f\;c \iff a\;g\;c)
+   \end{cases}.
+\end{equation*}
+Một chút biến đổi lô-gích cơ bản để có
+\begin{itemize}
+   \item $\begin{cases}
+      \forall a \in A, a\;f\;B_a \\
+      \forall a \in A, (a\;f\;B_a \iff a\;g\;B_a)
+   \end{cases} \implies \forall a \in A, a\;g\;B_a$,
+   \item $\begin{cases}
+      \forall a \in A, \forall c \in y, (a\;f\;c \implies c = B_a) \\
+      \forall a \in A, \forall c \in y, (a\;f\;c \iff a\;g\;c)
+   \end{cases} \implies \forall a \in A, \forall c \in y, (a\;g\;c \implies c = B_a)$.
+\end{itemize} 
+Do vậy, với mỗi $a$, \begin{equation*}
+   a\;f\;B_a \land \forall c \in y, (a\;f\;c \implies c = B_a) \implies a\;g\;B_a \land \forall c \in y, (a\;g\;c \implies c = B_a).
+\end{equation*}
+Và vì thế, \begin{align*}
+   \forall a \in A, \exists ! b \in y, a\;f\;b &\implies \forall a \in A, \exists b \in y, (a\;g\;b \land \forall c \in y, (a\;g\;c \implies c = b)); \\
+   \forall a \in A, \exists ! b \in y, a\;f\;b &\implies \forall a, \exists ! b \in y, a\;g\;b.
+\end{align*}
+
+Vậy, $g$ xác định một ánh xạ, thường được kí hiệu là $f|_A$ và được gọi là \defText{ánh xạ cảm sinh} (hay \defText{ánh xạ thu hẹp}) từ $x$ xuống $A$, và ngược lại, $f$ là một \defText{ánh xạ thác triển} (hay \defText{ánh xạ mở rộng}) của $f|_A$ từ $A$ ra $x$.
 
 Cuối cùng, xét $y$ là một tập con của $x$ và một ánh xạ $f: x \to x$. $y$ được gọi là \defText{ổn định} đối với $f$ khi và chỉ khi \begin{equation*}
    \defMath{\forall z \in y, f(z) \in y}.
@@ -111,27 +181,9 @@ Với mọi $x \in A$, $f(x) = g(x)$ theo chứng minh ở trên. Do đó, có t
 \end{equation*}
 Có $A\subseteq C$, từ định nghĩa, chúng ta có $g$ là ánh xạ thác triển của $f$. Điều phải chứng minh.
 
-\exercise Cho $A$ và $B$ là hai tập hợp. Xác định hai ánh xạ $f: A \to B$ và $g: A \to B$ sao cho 
-\begin{equation*}
-   \forall x \in A, f(x) = g(x). 
-\end{equation*}
-Chứng minh rằng $f = g$.
-
-\solution
-
-Với mọi $a$ là một phần tử thuộc $f$, tồn tại $b \in A$ và $c \in B$ sao cho $a = (b; c)$. Có 
-\begin{equation*}
-   c = f(b) = g(b)
-\end{equation*} 
-nên $(b; c)$ cũng thuộc $g$. Vì vậy, 
-$$
-   \forall a \in f, a \in g.
-$$
-Tương tự, $\forall a \in g, a \in f$. Do đó, $f = g$. Điều phải chứng minh.
-
 \exercise Cho $A$ và $B$ là hai tập hợp. $C$ có định nghĩa là
 \begin{equation*}
-   C = \left\{x \in \mathfrak{P}(A) \times (A \times B)\;\middle|\;\exists y \in \mathfrak{P}(A), \exists z, \left(z \text{~là hàm số từ~}y\text{~sang~}B \land x = (y; z)\right)\right\}.
+   C = \left\{x \in \mathfrak{P}(A) \times (A \times B)\;\middle|\;\exists y \in \mathfrak{P}(A), \exists z \in B^y, x = (y; z)\right\}.
 \end{equation*}
 Định nghĩa trong $C$ quan hệ $R$ sao cho với mọi đôi có thứ tự $(c; d)$ và $(c'; d')$ trong $C$,
 \begin{equation*}
@@ -195,12 +247,18 @@ Vì $m \subseteq s$ và $\forall e \in m, n(e) = t(e)$, theo định nghĩa $R$,
 
 Ba tính chất cần thiết của một quan hệ thứ tự đã được chứng minh, tức là, điều phải chứng minh.
 
-\stepSubexercise Nếu $\left[\begin{aligned}
+\stepSubexercise Gọi tập hợp chứa các phần tử cực đại là $P_{li}$ và tập hợp các phần tử cực tiểu là $M_{al}$. Tập này có nghĩa do tiên đề tách lấy từ $C$.
+
+Xét trường hợp dễ dàng trước, nếu \coloringCrimson{$\left[\begin{aligned}
    A = \varnothing \\
    B = \varnothing
-\end{aligned}\right.$ Khi đó, dựa vào kết quả của những bài tập trước, dễ thấy hàm số duy nhất từ một tập con nào đó của $A$ sang $B$ là $f_\varnothing = \varnothing$. Do đó, phần tử duy nhất trong $C$ là $(\varnothing; \varnothing)$.
+\end{aligned}\right.$}, khi đó, dựa vào kết quả của những bài tập trước, hàm số duy nhất từ một tập con nào đó của $A$ sang $B$ là $\varnothing$ với tập xác định là $\varnothing$. Do đó, phần tử duy nhất trong $C$ là $(\varnothing; \varnothing)$. Có $(\varnothing; \varnothing)\;R\;(\varnothing; \varnothing)$ nên $(\varnothing; \varnothing)$ là phần tử cực đại duy nhất của $C$. Khi này, 
+$P_{li} = \{(\varnothing; \varnothing)\}$.
 
-Gọi tập hợp chứa các phần tử cực đại là $P_{\text{li}}$. Tập này có nghĩa do tiên đề tách lấy từ $C$. Xét $(A; f_A)$ ($f_A$ là một ánh xạ từ $A$ sang $B$) và gọi nó là $k$. $k \in P_{\text{li}}$ là do giả thiết cách đặt $P_{\text{li}}$. Nếu như có phần tử $l$ cũng thuộc $P_{\text{li}}$ sao cho $k\;R\;l$, tồn tại $j$ và $o$ sao cho 
+Còn nếu \coloringDodgerblue{$\begin{cases}
+   A \neq \varnothing \\
+   B \neq \varnothing
+\end{cases}$}, xét $(A; f_A)$ ($f_A$ là một ánh xạ từ $A$ sang $B$) và gọi nó là $k$. $k \in P_{li}$ là do giả thiết cách đặt $P_{li}$. Nếu như có phần tử $l$ cũng thuộc $P_{li}$ sao cho $k\;R\;l$, tồn tại $j$ và $o$ sao cho 
 \begin{itemize}
    \item $j \in \mathfrak{P}(A)$,
    \item $o$ là một hàm số từ $A$ sang $B$,
@@ -213,6 +271,311 @@ $$
 $$
 $f_A$ và $o$ là hai ánh xạ có cùng tập xác định là $A$ và tập đích là $B$, cho nên $f_A = o$.
 
-Vậy, $k = l$. Và từ đó, chúng ta có $k \in P_{\text{li}}$ theo định nghĩa phần tử cực đại.
+Vậy, $k = l$. Và từ đó, chúng ta có $k \in P_{li}$ theo định nghĩa phần tử cực đại.
 
-Chúng ta cũng sẽ khẳng định rằng mọi phần tử không thể viết dưới dạng $(A; f_A)$ thì không phải là phần tử cực đại. Thật vậy, nếu như có $u \in C$ sao cho không tồn tại $g_A: A \to B$ để $u = (A; g_A)$, $u$ sẽ có dạng $(v; w)$ với $v \neq A$ (do nếu $v = A$ thì $w$ sẽ cần phải là một ánh xạ từ $A$ đến $B$ để có thể thuộc $C$). 
+Chúng ta cũng sẽ khẳng định rằng mọi phần tử không thể viết dưới dạng $(A; f_A)$ thì không phải là phần tử cực đại. Thật vậy, nếu như có $u \in C$ sao cho không tồn tại $g_A: A \to B$ để $u = (A; g_A)$, $u$ sẽ có dạng $(v; w)$ với $v \neq A$ (do nếu $v = A$ thì $w$ sẽ cần phải là một ánh xạ từ $A$ đến $B$ để có thể thuộc $C$). Với $h_s$ là một phần tử thuộc $B$, xét quan hệ $w_{mr}$ định nghĩa bởi 
+\begin{equation*}
+   \forall x \in A, \forall y \in B,\left( x\;w_{mr}\;y \iff \left[\begin{aligned}
+      &x \in v \land y = w(x) \\
+      &x \notin v \land y = h_s
+   \end{aligned}\right.\right).
+\end{equation*}
+Chúng ta đã chứng minh được rằng $w_{mr}$ xác định một ánh xạ thác triển của $v$. Do đó,
+\begin{equation*}
+   \forall z \in v, v(z) = w_{mr}(z).
+\end{equation*}
+Được phép xây dựng cặp có thứ tự $(A; w_{mr})$. Có thể nhận ra rằng $(v; w)\;R\;(A; w_{mr})$ và $(v; w) \neq (A; w_{mr})$ (do $v \neq A$). Vì vậy, $u$ không phải phần tử cực đại và $u \notin P_{li}$.
+
+Chúng ta xác định được tập hợp chứa và chỉ chứa các phần tử cực đại của $C$ là 
+\begin{align*}
+   P_{li} &= \{t \in C \mid t \text{~là phần tử cực đại trong~} C\} \\
+   &=  \{t \in C \mid \exists \varphi \in B^A, t = (A; \varphi)\}.
+\end{align*}
+
+Có $\forall z \in C, (\varnothing; \varnothing)\;R\;z$ được chứng minh khá đơn giản (sử dụng tính chất $\varnothing$ là tập con của mọi tập hợp và không có phần tử nào thuộc $\varnothing$). Xét một phần tử $\alpha$ nào đó khác $(\varnothing; \varnothing)$ nhưng vẫn trong $C$. Tồn tại phần tử $\beta\;R\;\alpha$ nhưng $\beta \neq \alpha$ ($\beta$ có thể chính là $(\varnothing; \varnothing)$), nên $\alpha$ không là phần tử cực tiểu. 
+
+Vì vậy, $M_{al}$ chỉ nhận $(\varnothing; \varnothing)$ làm phần tử. Tổng hợp lại, kết luận được \begin{equation*}
+   \begin{cases}
+      P_{li} = \{t \in C \mid \exists \varphi \in B^A, t = (A; \varphi)\} \\
+      M_{al} = \{(\varnothing; \varnothing)\}
+   \end{cases}.
+\end{equation*}
+
+\subsection{Tích hai ánh xạ}
+
+Để xác định tích hai ánh xạ, chúng ta cần phải trước hết chứng minh một tính chất: Cho $f:x \to y$ và $g: y \to z$. Gọi quan hệ $h$ từ $x$ đến $z$ xác định bởi $h = g \circ f$. Theo định nghĩa quan hệ hợp, 
+\begin{equation*}
+   \forall a \in x, \forall c \in z, (a\;h\;c \iff \exists b \in y, \left(a\;f\;b \land b\;g\;c\right)).
+\end{equation*}
+
+Lấy $d \in x$ bất kì. Vì $f$ là một ánh xạ từ $x$ đến $y$, tồn tại $e \in y$ sao cho $d\;f\;e$. Vì $g$ là một ánh xạ từ $y$ đến $z$, lấy được $i \in z$ sao cho $e\;g\;i$. Từ đó, $\exists e \in y, \left(d\;f\;e \land e\;g\;i\right)$, cho nên $d\;h\;i$. 
+
+Giả sử tồn tại $j$ cũng thỏa mãn $d\;h\;j$. Có thể gọi thêm $k \in y$ sao cho
+\begin{equation*}
+   \begin{cases}
+      d\;f\;e \land e\;g\;i \\
+      d\;f\;k \land k\;g\;j
+   \end{cases}.
+\end{equation*}
+Vì $f$ là ánh xạ nên $e = k = f(d)$, dẫn đến $g(e) = g(k)$ và suy ra $i = j$. Do đó, $i$ là duy nhất.
+
+Kết hợp những gì chúng ta vừa suy luận ra, $\forall a\in x, \exists ! c \in z, a\;h\;c$. Vì vậy, $h$ đã được chứng minh là một ánh xạ, cụ thể hơn, là \defText{ánh xạ tích} (hoặc \defText{tích ánh xạ}) hợp thành bởi hai ánh xạ $f$ và $g$. 
+
+Xét giá trị $g(f(a))$ với $a \in x$. Có $a\;f\;f(a)$ và $f(a)\;g\;g(f(a))$ nên, theo định nghĩa của quan hệ tích, $a\;g\circ f\;g(f(a))$ (bắc cầu quan hệ qua $f(a)$). $g \circ f$ đã được xác định là một ánh xạ, do đó
+\begin{equation*}
+   \defMath{\forall a \in x, g(f(a)) = g\circ f(a)}.
+\end{equation*}
+
+Một cách viết khác viết ánh xạ tích là sử dụng \defText{biểu đồ giao hoán}. Áp dụng vào ánh xạ $h$ ở trên:
+\begin{center}
+\begin{tikzpicture}
+   \node (y) at (2, 3.2) {$y$};
+   \node (x) at (0, 0) {$x$};
+   \node (z) at (4, 0) {$z$};
+
+   \draw[guide arrow] (x) -- (y) node[midway, above left] {$f$};
+   \draw[guide arrow] (y) -- (z) node[midway, above right] {$g$};
+   \draw[guide arrow] (x) -- (z) node[midway, below] {$h$};
+\end{tikzpicture}
+\end{center}
+Tuy cách biểu diễn này mất nhiều diện tích giấy hơn cách viết thông thường, nó mang tính trực quan, thông dụng và dễ hiểu kể cả với người không chuyên ngành Toán.
+
+Giả sử chúng ta có $f: w \to x$, $g: x \to y$, $h: y \to z$ là các ánh xạ. Xét hai đối tượng $(h \circ g) \circ f$ và $h \circ (g \circ f)$, từ định nghĩa ánh xạ tích, có thể thấy được chúng đều là ánh xạ từ $w$ sang $z$. Nhìn theo một hướng khác, lại có $f$, $g$, $h$ là các quan hệ nên 
+\begin{equation*}
+   (h \circ g) \circ f = h \circ (g \circ f).
+\end{equation*}
+Ánh xạ, chúng ta thấy, có tính kết hợp. Điều này đồng nghĩa với việc chúng ta có thể viết $h \circ g \circ f$ mà không cần phải quan tâm tới thứ tự thực hiện tích ánh xạ.
+
+Một ánh xạ $f: x \to x$ là \defText{ánh xạ đối hợp} khi và chỉ khi \begin{equation*}
+   \defMath{f \circ f = \mathrm{i}_{E;x}}.
+\end{equation*}
+
+\exercise Cho các tập hợp $x$, $y$, $z$, $a$, $b$, $c$. Xác định những ánh xạ $d$, $e$, $f$, $g$, $u$, $v$, $w$ sao cho chúng ta có thể vẽ biểu đồ giao hoán như sau:
+\begin{center}
+   \begin{tikzpicture}[baseline=(current bounding box.center)]
+      \node (x) at (0, 2) {$x$};
+      \node (y) at (2, 2) {$y$};
+      \node (a) at (0, 0) {$a$};
+      \node (b) at (2, 0) {$b$};
+      \draw[guide arrow] (x) -- (y) node[midway, above] {$d$};
+      \draw[guide arrow] (y) -- (b) node[midway, right] {$v$};
+      \draw[guide arrow] (x) -- (a) node[midway, left] {$u$};
+      \draw[guide arrow] (a) -- (b) node[midway, below] {$e$};
+   \end{tikzpicture}
+   và
+   \begin{tikzpicture}[baseline=(current bounding box.center)]
+      \node (y) at (0, 2) {$y$};
+      \node (z) at (2, 2) {$z$};
+      \node (b) at (0, 0) {$b$};
+      \node (c) at (2, 0) {$c$};
+      \draw[guide arrow] (y) -- (z) node[midway, above] {$f$};
+      \draw[guide arrow] (z) -- (c) node[midway, right] {$w$};
+      \draw[guide arrow] (y) -- (b) node[midway, left] {$v$};
+      \draw[guide arrow] (b) -- (c) node[midway, below] {$g$};
+   \end{tikzpicture},
+\end{center}
+tức $\begin{cases}
+   v \circ d = e \circ u \\ 
+   w \circ f = g \circ v
+\end{cases}$. Chứng minh rằng chúng ta có biểu đồ giao hoán
+\begin{center}
+   \begin{tikzpicture}[baseline=(current bounding box.center)]
+      \node (x) at (0, 2) {$x$};
+      \node (z) at (2, 2) {$z$};
+      \node (a) at (0, 0) {$a$};
+      \node (c) at (2, 0) {$c$};
+      \draw[guide arrow] (x) -- (z) node[midway, above] {$f \circ d$};
+      \draw[guide arrow] (z) -- (c) node[midway, right] {$w$};
+      \draw[guide arrow] (x) -- (a) node[midway, left] {$u$};
+      \draw[guide arrow] (a) -- (c) node[midway, below] {$g \circ e$};
+   \end{tikzpicture},
+\end{center}
+có nghĩa là $w \circ f \circ d = g \circ e \circ u$.
+
+\solution
+
+Đề bài tương đối bày vẽ, nhưng lời giải thì tương đối ngắn gọn. Chúng ta có 
+\begin{align*}
+   w \circ f \circ d &= (w \circ f) \circ d \\
+   &= (g \circ v) \circ d \equationexplanation{$w \circ f = g \circ v$} \\
+   &= g \circ (v \circ d) \\
+   &= g \circ (e \circ u) \equationexplanation{$v \circ d = e \circ u$} \\
+   &= g \circ e \circ u.
+\end{align*}
+Điều phải chứng minh.
+
+\exercise Cho các tập hợp $x$, $y$, $z$. Xác định hai ánh xạ $f: x \to y$ và $g: x \to z$. Chứng minh rằng, để tồn tại $h: y \to z$ sao cho có biểu đồ giao hoán
+\begin{center}
+   \begin{tikzpicture}[baseline=(current bounding box.center)]
+      \node (y) at (1, 1) {$y$};
+      \node (x) at (0, 0) {$x$};
+      \node (z) at (2, 0) {$z$};
+      
+      \draw[guide arrow] (x) -- (y) node[midway, above left] {$f$};
+      \draw[guide arrow] (y) -- (z) node[midway, above right] {$h$};
+      \draw[guide arrow] (x) -- (z) node[midway, below] {$g$};
+   \end{tikzpicture},
+\end{center}
+điều kiện cần và đủ là \begin{equation*}
+   \begin{cases}
+      y = \varnothing \impliedby z = \varnothing \\
+      \forall (a; b) \in x^2, (f(a) = f(b) \implies g(a) = g(b))
+   \end{cases}.
+\end{equation*}
+
+\solution
+
+Xét chiều thuận, giả sử tồn tại $h: y \to z$ sao cho $h \circ f = g$. Khi này, có ngay được $y = \varnothing \impliedby z = \varnothing$ như một tính chất của ánh xạ $h$. Thêm vào đó, chúng ta có, với mọi $a$ và $b$ cùng thuộc $x$, 
+\begin{align*}
+   f(a) = f(b) &\implies h(f(a)) = h(f(b)); \\
+   f(a) = f(b) &\implies h \circ f(a) = h \circ f(b); \\
+   f(a) = f(b) &\implies g(a) = g(b).
+\end{align*}
+
+Chiều thuận đã được chứng minh đơn giản, nhưng chiều ngược lại sẽ khó khăn hơn. Nếu như chúng ta có \begin{equation*}
+   \begin{cases}
+      y = \varnothing \impliedby z = \varnothing \\
+      \forall (a; b) \in x^2, (f(a) = f(b) \implies g(a) = g(b))
+   \end{cases},
+\end{equation*}
+chúng ta sẽ cần xét một số trường hợp. Nếu \coloringCrimson{$y = \varnothing$}, vì có $f:x \to y$ nên dễ thấy $x = f = \varnothing$. $x = \varnothing$ cũng kéo theo $g = \varnothing$. Tồn tại $h = \varnothing$ thỏa mãn $h \circ f = g$.
+
+Còn trong trường hợp \coloringDodgerblue{$y \neq \varnothing$}, $z = \varnothing \implies y =\varnothing$ suy ra $z \neq \varnothing$. Xây dựng quan hệ $H$ thỏa mãn
+\begin{equation*}
+   \forall c \in y, \forall d \in z, \left(c\;H\;d \iff \left[\begin{aligned}
+      \exists &e \in x, \left(c = f(e) \land d = g(e)\right) \\
+      \nexists &e \in x, c = f(e) \land d = Z 
+   \end{aligned}\right.\right)
+\end{equation*} 
+với $Z \in z$ đã được cho trước.
+
+Chúng ta có $
+   \forall c \in y, \left[\begin{aligned}
+      \exists &e \in x, c = f(e) \\
+      \nexists &e \in x, c = f(e)
+   \end{aligned}\right..
+$ Nếu \coloringJade{$\exists e \in x, c = f(e)$}, tồn tại $i = g(e)$, dẫn đến $c\;H\;i$. Ngoài ra, giả sử có $j$ sao cho $c\;H\;j$, phải có $k \in x$ sao cho $c = f(k)$ và $j = g(k)$. Có $f(e) = f(k) = c$ nên $g(e) = g(k)$ hay $i = j$. Vì thế, tồn tại duy nhất một $d \in z$ sao cho $c\;H\;d$ trong trường hợp này. Còn nếu \coloringWisteria{$\overline{\exists e \in x, c = f(e)}$}, chúng ta thấy ngay được $c\;H\;Z$ và cũng chỉ có thể có $Z$ là có quan hệ $H$ với $c$. Kết hợp hai trường hợp, từ định nghĩa ánh xạ, chúng ta có 
+\begin{equation*}
+   \forall c \in y, \exists ! d \in z, c\;H\;d,
+\end{equation*}
+hoặc $H$ là một ánh xạ từ $y$ đến $z$.
+
+Chúng ta sẽ tính $H\circ f$. Với mọi $l \in x$, đặt $m = f(l)$. Có $H\circ f(l) = H(f(l)) = H(m)$. Theo định nghĩa của $H$, $H(m) = g(l)$ do $l$ là phần tử để cho $m = f(l)$ và $g(l) = g(l)$. Từ đó, chúng ta có $$\forall l \in x, H\circ f(l) = g(l),$$ và do đó, $H\circ f = g$. Ánh xạ $h$ có thể là $H$ trong trường hợp này.
+
+$y = \varnothing \lor y \neq \varnothing$ là luôn đúng, theo quy tắc chia trường hợp, việc tồn tại $h$ thỏa mãn \begin{tikzpicture}[baseline=(current bounding box.center)]
+   \node (y) at (1, 1) {$y$};
+   \node (x) at (0, 0) {$x$};
+   \node (z) at (2, 0) {$z$};
+   
+   \draw[guide arrow] (x) -- (y) node[midway, above left] {$f$};
+   \draw[guide arrow] (y) -- (z) node[midway, above right] {$h$};
+   \draw[guide arrow] (x) -- (z) node[midway, below] {$g$};
+\end{tikzpicture} đã được khẳng định. Kết hợp chứng minh hai chiều, chúng ta có điều phải chứng minh.
+
+\subsection{Những thuộc tính cơ bản nhất của ánh xạ}
+
+Một ánh xạ, tuy đã hẹp hơn so với quan hệ, nhưng vẫn còn nhiều vị trí mà chúng ta có thể lắp thêm điều kiện vào. Như bạn đọc đã biết, $f: x \to y$ có tính chất:
+\begin{equation*}
+   \forall a \in x, \forall b \in x, (f(a) = f(b) \implies a = b).
+\end{equation*}
+Thế nếu chúng ta cho điều ngược lại xảy ra thì sao? Khi đó, $f$ có tính \defText{đơn ánh}: \begin{equation*}
+   \defMath{\forall a \in x, \forall b \in x, (f(a) = f(b) \implies a = b)}.
+\end{equation*}
+
+\begin{figure}[H]
+   \begin{center}
+      \begin{tikzpicture}
+         \draw[thick, rounded corners=12pt] (-3.5, -2) rectangle (-1.5, 2);
+         \node at (-2.5, 2.3) {Tập nguồn $x$};
+
+         \draw[thick, rounded corners=12pt] (1.5, -3) rectangle (3.5, 2);
+         \node at (2.5, 2.3) {Tập đích $y$};
+
+         \node[element, label=left:$a_1$] (x1) at (-2.5, 1) {};
+         \node[element, label=left:$a_2$] (x2) at (-2.5, 0) {};
+         \node[element, label=left:$a_3$] (x3) at (-2.5, -1) {};
+
+         \node[element, label=right:$b_1$] (y1) at (2.5, 1) {};
+         \node[element, label=right:$b_2$] (y2) at (2.5, 0) {};
+         \node[element, label=right:$b_3$] (y3) at (2.5, -1) {};
+         \node[element, label=right:$b_4$] (y4) at (2.5, -2) {};
+
+         \draw[guide arrow, colorDodgerblue] (x1) -- (y2) node[midway, above] {$f$};
+         \draw[guide arrow, colorDodgerblue] (x2) -- (y1);
+         \draw[guide arrow, colorDodgerblue] (x3) -- (y4);
+
+         \draw[guide arrow, dashed, colorCrimson] (x1) to[bend left = 30] (y1);
+         \draw[guide arrow, dashed, colorCrimson] (x2) -- (y3) node[midway, below, sloped] {$g$};
+         \draw[guide arrow, dashed, colorCrimson] (x3) -- (y3);
+
+      \end{tikzpicture}
+   \end{center}
+   \caption{Minh họa ánh xạ \coloringDodgerblue{$f$} là đơn ánh và ánh xạ \coloringCrimson{$g$} không phải là đơn ánh.}
+\end{figure}
+
+Lấy một ví dụ, có $E \subseteq x$ thì chúng ta có ánh xạ nhúng chính tắc $\begin{array}[t]{rcl}
+   i_{E;x}: E & \to & x \\
+            z & \mapsto & z
+\end{array}$. Do $\forall z \in E, i_{E;x}(z) = z$, nên hiển nhiên rằng $\forall (y; z) \in E^2, (i_{E;x}(y) = i_{E;x}(z) \implies y = z)$. $i_{E;x}$ được khẳng định là một đơn ánh, và cũng có thể một phần vì lẽ đó mà $i_{E;x}$ còn có tên là \defText{đơn ánh chính tắc}.
+
+Không xét đơn ánh nữa, chúng ta hãy thử xem xét một điều kiện khác mà chúng ta có thể áp lên $f$. Để là ánh xạ $f$, $f$ phải là một quan hệ với tập nguồn bằng tập xác định, nhưng lại không yêu cầu tập đích bằng tập giá trị. Vậy, có lẽ chúng ta nên đặt $f$ sao cho tập đích và tập giá trị của $f$ phải bằng nhau. Trong trường hợp đó, $f$ được gọi là \defText{toàn ánh}:
+\begin{equation*}
+   \defMath{\forall b \in y, \exists a \in x, b = f(a)}.
+\end{equation*}
+
+\begin{figure}[H]
+   \begin{center}
+      \begin{tikzpicture}
+         \draw[thick, rounded corners=12pt] (-3.5, -3) rectangle (-1.5, 2);
+         \node at (-2.5, 2.3) {Tập nguồn $x$};
+
+         \draw[thick, rounded corners=12pt] (1.5, -2) rectangle (3.5, 2);
+         \node at (2.5, 2.3) {Tập đích $y$};
+
+         \node[element, label=left:$a_1$] (x1) at (-2.5, 1) {};
+         \node[element, label=left:$a_2$] (x2) at (-2.5, 0) {};
+         \node[element, label=left:$a_3$] (x3) at (-2.5, -1) {};
+         \node[element, label=left:$a_4$] (x4) at (-2.5, -2) {};
+
+         \node[element, label=right:$b_1$] (y1) at (2.5, 1) {};
+         \node[element, label=right:$b_2$] (y2) at (2.5, 0) {};
+         \node[element, label=right:$b_3$] (y3) at (2.5, -1) {};
+
+         \draw[guide arrow, colorDodgerblue] (x1) -- (y1) node[midway, above] {$f$};
+         \draw[guide arrow, colorDodgerblue] (x2) -- (y3);
+         \draw[guide arrow, colorDodgerblue] (x3) -- (y2);
+         \draw[guide arrow, colorDodgerblue] (x4) -- (y1);
+
+         \draw[guide arrow, dashed, colorCrimson] (x1) to[bend left = 30] (y1);
+         \draw[guide arrow, dashed, colorCrimson] (x2) -- (y2);
+         \draw[guide arrow, dashed, colorCrimson] (x3) to[bend right = 20] (y2) node[midway, above, sloped] {$g$};
+         \draw[guide arrow, dashed, colorCrimson] (x4) to[bend right = 10] (y1);
+      \end{tikzpicture}
+   \end{center}
+   \caption{Minh họa ánh xạ \coloringDodgerblue{$f$} là toàn ánh và ánh xạ \coloringCrimson{$g$} không phải là toàn ánh.}
+\end{figure}
+
+Trong khi tác giả đưa ra ví dụ cho ánh xạ toàn ánh, tác giả sẽ dẫn nhiều kết quả có được từ bài \ref{ex:li_thuyet_tap_hop:tien_de:quan_he:phan_hoach_tuong_duong}. Nếu bạn đọc cảm thấy lạ lẫm với một số lập luận, bạn đọc nên dành thời gian đọc lại bài tập đó. Cho $x$ là một tập hợp được trang bị quan hệ tương đương $\sim$. Xây dựng quan hệ $q$ từ $x$ đến tập thương $\frac{x}{\sim}$ thỏa mãn
+\begin{equation*}
+   \defMath{\forall y \in x, \forall z \in \frac{x}{\sim}, \big(y\;q\;z \iff z = [y]_\sim\big)}.
+\end{equation*}
+Với mọi $a \in x$, luôn luôn có thể xác định được lớp tương đương mô-đun $\sim$ --- gọi là $b$. Ngoài ra, lớp tương đương này phải thuộc tập thương $\frac{x}{\sim}$ theo định nghĩa. Do vậy, $a\;q\;b$. Suy ra,
+\begin{equation*}
+   \forall a \in x, \exists b \in \frac{x}{\sim}, a\;q\;b.
+\end{equation*}
+Giả sử ngoài $b$, $C$ cũng thỏa mãn $a\;q\;C$, có nghĩa là $C$ cũng là một lớp tương đương. Do $b$ và $C$ đều là lớp tương đương chứa $a$, $b = C = [a]_\sim$. Qua đó, $b$ đã được chứng minh là duy nhất. Vì vậy, thấy được rằng
+\begin{equation*}
+   \forall a \in x, \exists ! b \in \frac{x}{\sim}, a\;q\;b.
+\end{equation*}
+Do $\frac{x}{\sim}$ là một phân hoạch của $x$, mọi phần tử $B$ của $\frac{x}{\sim}$ đều tồn tại $A \in x$ sao cho $A \in B$. Từ đó, có ngay được $B = [A]_\sim$ nên $A\;q\;B$. Và vì thế,
+\begin{equation*}
+   \forall B \in \frac{x}{\sim}, \exists A \in x, A\;q\;B.
+\end{equation*}
+
+Tổng kết lại, $q$ không chỉ là một ánh xạ đơn thuần, $q$ còn có tính chất toàn ánh. Hơn thế nữa, người ta còn đặt tên cho $q$ là \defText{toàn ánh chính tắc}.
+
+% Bài \ref{ex:li_thuyet_tap_hop:tien_de:quan_he:phan_hoach_tuong_duong} đã chứng minh $\frac{x}{\sim}$ là một phân hoạch của $x$. Sử dụng kết quả này, theo định nghĩa của phân hoạch, chúng ta có với mọi $y \in x$, tồn tại $z \in \frac{x}{\sim}$ sao cho $y \in $
+
+Nếu $f$ vừa đơn ánh, vừa toàn ánh thì $f$ được gọi là \defText{song ánh}, tức là \begin{equation*}
+   \defMath{\forall b \in y, \exists ! a \in x, b = f(a).}
+\end{equation*} 

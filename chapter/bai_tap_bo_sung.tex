@@ -27,7 +27,30 @@
    \end{enumerate}
 \end{multicols}
 
+\exercise Cho các tập hợp $x$, $y$, $z$. Xác định hai ánh xạ $g: x \to z$ và $h: y \to z$. Chứng minh rằng, để tồn tại $f:x \to y$ sao cho có được biểu đồ giao hoán
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+   \node (y) at (1, 1) {$y$};
+   \node (x) at (0, 0) {$x$};
+   \node (z) at (2, 0) {$z$};
+   
+   \draw[guide arrow] (x) -- (y) node[midway, above left] {$f$};
+   \draw[guide arrow] (y) -- (z) node[midway, above right] {$h$};
+   \draw[guide arrow] (x) -- (z) node[midway, below] {$g$};
+\end{tikzpicture}, điều kiện cần và đủ là \begin{equation*}
+   \forall a \in x, \exists b \in y, g(a) = h(b).
+\end{equation*}
 
+% \solution
+
+% Giả sử tồn tại $f: x\to y$ thỏa mãn biểu đồ giao hoán. Khi này, chúng ta có \begin{equation*}
+%    \forall a \in x, g(a) = h(f(a)).
+% \end{equation*}
+% Do đó, với mỗi $a$ thuộc $x$, tồn tại $b$ thuộc $y$ ($b = f(a)$) sao cho $g(a) = h(b)$.
+
+% Dưới một góc nhìn khác, nếu như chúng ta được cho $\forall a \in x, \exists b \in y, g(a) = h(b)$. Xây dựng quan hệ $F$ với định nghĩa sau:
+% \begin{equation*}
+%    \forall c \in x, \forall d \in y, (c\;F\;d \iff g(c) = h(d)).
+% \end{equation*}
 
 \exercise Cho $E$ là một tập hợp, $n \in \mathbb{Z}^+$, $A_0, \dots, A_n$ là những bộ phận của $E$ sao cho:
 \[

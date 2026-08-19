@@ -76,7 +76,7 @@ Ngoài ra, chúng ta đã sử dụng khá nhiều ``$\forall a \in x, \forall b
 \setcounter{subexercise}{1}
 \arabic{subexercise}. Giả sử $A = \varnothing$ hoặc $B = \varnothing$. Để $z$ có thể thuộc $A \times B$, theo định nghĩa tích Đề-các, $z$ cần phải có dạng $(x; y)$ với $x \in A$ và $y \in B$, nhưng không thể tồn tại phần tử $z$ này do tối thiểu một trong hai tập $A$ và $B$ rỗng. Do đó, $A \times B = \varnothing$.
 
-Ngoài ra, nếu $A$ và $B$ đều không phải là tập rỗng. Khi đó, gọi $a$ và $b$ là hai phần tử nằm trong lần lượt tập hợp $A$ và $B$. Chúng ta có thể xây dựng $(a; b)$ và do \refeq{eq:li_thuyet_tap_hop:tien_de:quan_he:dieu_kien_thuoc_tich}, $A \times B$ tồn tại một phần tử và cho nên khác rỗng.
+Ngoài ra, nếu $A$ và $B$ đều không phải là tập rỗng. Khi đó, gọi $a$ và $b$ là hai phần tử nằm trong lần lượt tập hợp $A$ và $B$. Chúng ta có thể xây dựng $(a; b)$ và do \eqref{eq:li_thuyet_tap_hop:tien_de:quan_he:dieu_kien_thuoc_tich}, $A \times B$ tồn tại một phần tử và cho nên khác rỗng.
 
 $\begin{cases}
    \left[\begin{array}{l}
@@ -452,11 +452,11 @@ và \defText{quan hệ ngược} $R^{-1}$ sao cho
 \begin{equation*}
    \defMath{\forall (a; b) \in x \times y, \big(b\;R^{-1}\;a \iff a\;R\;b\big)}.
 \end{equation*}
-Nếu $u$ là một tập con của $x$ và $v$ là tập con của $y$, một quan hệ $R_{uv}$ được xác định bởi
+Nếu $u$ là một tập con của $x$ và $v$ là tập con của $y$, một quan hệ $R|_{u \times v}$ được xác định bởi
 \begin{equation*}
-   \defMath{\forall (a; b) \in u \times v, \big(a\;R_{uv}\;b \iff a\;R\;b\big)}  
+   \defMath{\forall (a; b) \in u \times v, \big(a\;R|_{u \times v}\;b \iff a\;R\;b\big)}  
 \end{equation*}
-có tên là \defText{quan hệ cảm sinh} (hay \defText{quan hệ sinh}, \defText{quan hệ thu hẹp}) bởi $R$ từ $x \times y$ xuống $u \times v$. Ngược lại, $R$ được gọi là \defText{quan hệ thác triển} (hay \defText{quan hệ mở rộng}) của $R_{uv}$ từ $u \times v$ lên $x \times y$.
+có tên là \defText{quan hệ cảm sinh} (hay \defText{quan hệ sinh}, \defText{quan hệ thu hẹp}) bởi $R$ từ $x \times y$ xuống $u \times v$. Ngược lại, $R$ được gọi là \defText{quan hệ thác triển} (hay \defText{quan hệ mở rộng}) của $R|_{u \times v}$ từ $u \times v$ lên $x \times y$.
 
 Vì nhiều lí do mà trong đó một sẽ được trình bày, \defText{đồ thị} của $R$ chính là tập $R$. Bạn đọc chắc sẽ không tin tác giả rằng định nghĩa này là đúng (đến tác giả nhiều lúc còn không tin), nhưng thực chất người ta đã định nghĩa đồ thị là như vậy. Lời giải thích thường được đưa ra nhất thường là: hình học được định nghĩa dựa trên đại số. Cụ thể trong đó, đồ thị hình học của $R$ chính là tập hợp các điểm $(a; b)$ thuộc $R$, hay hiểu theo cách khác, các phần tử của $R$. Vì vậy, đồ thị của $R$ là $R$.
 
@@ -571,6 +571,30 @@ Có nhân hai tập hợp thì cũng có thể chia hai tập hợp. Nếu $R$ l
    \defMath{x/R = \frac{x}{R} = \big\{y \in \mathfrak{P}(x)\;\big|\;\exists z \in x, y = [z]_R\big\}}.
 \end{equation*}
 
+\exercise Cho $w$, $x$, $y$, $z$ là tập hợp.
+\begin{enumerate}
+   \item Chứng minh rằng $\varnothing$ là một quan hệ từ $x$ đến $y$.
+   \item Gọi $R$ là quan hệ từ $w$ sang $x$ và $S$ là quan hệ từ $y$ sang $z$. Chứng minh rằng \begin{equation*}
+      \varnothing \circ R = S \circ \varnothing = \varnothing.
+   \end{equation*}
+\end{enumerate}
+
+\solution
+
+\resetSubexercise Điều phải chứng minh là hiển nhiên, do $\varnothing$ là tập con của mọi tập hợp.
+
+\stepSubexercise Giả sử phản chứng, $\varnothing \circ R$ khác rỗng, cần phải tồn tại $a \in \varnothing \circ R$. Theo định nghĩa quan hệ tích, $a = (b; c)$, trong đó, 
+\begin{itemize}
+   \item $b \in w$, 
+   \item $c \in y$, 
+   \item $\exists d \in x, (b\;R\;d \land d\;\varnothing\;c)$.
+\end{itemize}
+Mặc dù vậy, do $\varnothing$ là tập rỗng nên không tồn tại $d$ để $d\;\varnothing\;c$. Chúng ta có mâu thuẫn, do đó, giả thiết ban đầu của chúng ta là sai, hay nói cách khác, \begin{equation*}
+   \varnothing \circ R = \varnothing.
+\end{equation*}
+
+Cũng bằng phương pháp chứng minh phản chứng tương tự, chúng ta cũng có $S \circ \varnothing = \varnothing$. Vậy, điều phải chứng minh.
+
 \exercise Cho $w$, $x$, $y$, $z$ là những tập hợp. Gọi
 \begin{itemize}
    \item $P$ là quan hệ từ $w$ đến $x$,
@@ -657,7 +681,7 @@ Và vì vậy, $R$ có tính đối xứng. Sử dụng tính chất này của 
 \begin{equation*}
    \forall x \in \mathcal{U}, \forall z \in \mathcal{U}, (z\; R\;x\implies x\;R\;z).
 \end{equation*}
-Do đó, kết hợp với \refeq{eq:li_thuyet_tap_hop:tien_de:quan_he:qhbc},
+Do đó, kết hợp với \eqref{eq:li_thuyet_tap_hop:tien_de:quan_he:qhbc},
 \begin{equation*}
    \forall x \in \mathcal{U}, \forall y \in \mathcal{U}, \forall z \in \mathcal{U}, \left(x\;R\;y \land y\;R\;z \implies x\;R\;z\right),
 \end{equation*}
@@ -775,9 +799,9 @@ Chúng ta chứng minh điều kiện cần và đủ để quan hệ $D$ đối
    
 Qua các kết quả đã có, dễ thấy điều phải chứng minh.
 
-\exercise Chứng minh rằng với mọi quan hệ tương đương $\sim$ trên $\mathscr{E}$, tập thương $\frac{\mathscr{E}}{\sim}$ là một phân hoạch của $\mathscr{E}$.
+\exercise[ex:li_thuyet_tap_hop:tien_de:quan_he:phan_hoach_tuong_duong] Chứng minh rằng với mọi quan hệ tương đương $\sim$ trên $\mathscr{E}$, tập thương $\frac{\mathscr{E}}{\sim}$ là một phân hoạch của $\mathscr{E}$.
 
-\solution
+\solution[ex:li_thuyet_tap_hop:tien_de:quan_he:phan_hoach_tuong_duong]
 
 Nhắc lại về định nghĩa, $\frac{\mathscr{E}}{\sim} = \left\{x \in \mathfrak{P}(\mathscr{E}) \mid \exists y \in \mathscr{E}, x = [y]_\sim\right\}$. Do mọi phần tử trong $\frac{\mathscr{E}}{\sim}$ đều thuộc $\mathfrak{P}(\mathscr{E})$ nên $\frac{\mathscr{E}}{\sim} \subseteq \mathfrak{P}(\mathscr{E})$. Trước hết, có thể thấy rằng mọi phần tử trong $\frac{\mathscr{E}}{\sim}$ thì không rỗng, bởi vì, xét một phần tử $a$ ngẫu nhiên thuộc $\frac{\mathscr{E}}{\sim}$. Theo định nghĩa, tồn tại $b$ để $a = [b]_\sim$, và $[b]_\sim$ không thể rỗng do $b \sim b$, dẫn đến $b \in [b]_\sim$.
 
@@ -1065,7 +1089,7 @@ Do $\preccurlyeq$ là một thứ tự nên $y \preccurlyeq y$. Thêm vào đó,
    \label{eq:li_thuyet_tap_hop:tien_de:quan_he:22.2}
 \end{equation}
 
-Từ \refeq{eq:li_thuyet_tap_hop:tien_de:quan_he:22.1} và \refeq{eq:li_thuyet_tap_hop:tien_de:quan_he:22.2}, 
+Từ \eqref{eq:li_thuyet_tap_hop:tien_de:quan_he:22.1} và \eqref{eq:li_thuyet_tap_hop:tien_de:quan_he:22.2}, 
 $$\forall (x; y) \in X \times Y, (x; y)\,L\,(x; y).$$
 Một $u$ trong $X \times Y$ luôn có thể được viết lại thành $(v; w)$ sao cho $v \in X$ và $w \in Y$, do đó,
 $$\forall u \in X \times Y, u\;L\;u.$$
