@@ -95,7 +95,23 @@ Xét phủ định của $\forall z \in x, V(z)$, chúng ta có
 \end{align*}
 Tương tự, chúng ta cũng có $$
    \overline{\exists z \in x, V(z)} \iff \forall z \in x, \neg V(z).
-$$ Bạn đọc có thể thấy được tính chất này giống hệt tính chất phủ định thông thường trên các lượng từ.  
+$$ Bạn đọc có thể thấy được tính chất này giống hệt tính chất phủ định thông thường trên các lượng từ. 
+
+Còn một lượng từ nữa mà chúng ta còn cần phải nhắc lại. Định nghĩa:
+\begin{equation*}
+   \exists ! a \in x, V(a) \iff \exists ! a, (a \in x \land V(a)).
+\end{equation*}
+Chúng ta có biến đổi
+\begin{align*}
+   \exists ! a \in x, V(a) &\iff \exists ! a, (a \in x \land V(a)); \\
+   \exists ! a \in x, V(a) &\iff \exists a, \left(a \in x \land V(a) \land \forall b, (b \in x \land V(b) \implies b = a)\right) \\
+   & \qquad \coloringCrimson{\text{(định nghĩa tồn tại duy nhất)}}; \\
+   \exists ! a \in x, V(a) &\iff \exists a, \left(a \in x \land V(a) \land \forall b, (b \in x \implies (V(b) \implies b = a)) \right) \\
+   & \qquad \coloringCrimson{(P \land Q \implies R) \iff (P \implies (Q \implies R))}; \\
+   \exists ! a \in x, V(a) &\iff \exists a \in x, \left(V(a) \land \forall b, (b \in x \implies (V(b) \implies b = a)) \right); \\
+   \exists ! a \in x, V(a) &\iff \exists a \in x, \left(V(a) \land \forall b \in x, (V(b) \implies b = a) \right).
+\end{align*}
+Cấu trúc này tương đồng với cấu trúc trong định nghĩa của $\exists ! a, V(a)$. Đây là kết quả mà sau này sẽ được sử dụng thường xuyên.
 
 Quay trở lại với tập hợp $y$ trong tiên đề tách, chúng ta không thể kí hiệu bằng việc thêm một kí tự duy nhất như trước được nữa, mà do mỗi tập $y$ đều cần được xác định từ một vị từ $\cauF$, vì thế, chúng ta sẽ kí hiệu tập hợp $y$ như sau:
 \begin{equation*}

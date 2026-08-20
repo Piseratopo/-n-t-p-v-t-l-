@@ -79,13 +79,13 @@
 \def \pointSize {2pt}
 \def \guideLineLength {0.4}
 
-\pgfkeys{
-   /tikz/graph thickness/.style={very thick, smooth},
-   /tikz/guideline/.style={very thin},
-   /tikz/measuring arrow/.style={<->, >=latex},
-   /tikz/single measuring arrow/.style={->, >=latex},
-   /tikz/hollow point/.style={graph thickness, fill=white}
-}
+% \pgfkeys{
+%    /tikz/graph thickness/.style={very thick, smooth},
+%    /tikz/guideline/.style={very thin},
+%    /tikz/measuring arrow/.style={<->, >=latex},
+%    /tikz/single measuring arrow/.style={->, >=latex},
+%    /tikz/hollow point/.style={graph thickness, fill=white}
+% }
 \begin{tikzfadingfrompicture}[name=arrowGradient]
   \shade[left color=colorCrimson, right color=colorDodgerblue] (0,0) rectangle (2,2);
 \end{tikzfadingfrompicture}
@@ -369,52 +369,59 @@
 % ==========================================
 \title{%
 \begin{tikzpicture}[
-      color=colorDodgerblue,
-      draw=colorDodgerblue,
-      fill=colorDodgerblue,
-      line width=4pt,
+      line width=2pt,
       line cap=round,
       scale=0.5
    ]
+      \coordinate (BL) at (-4.8, 0);
+      \coordinate (BR) at (4.8, 0);
+      \coordinate (TL) at (-2.2, 6);
+      \coordinate (TR) at (2.2, 6);
+      \coordinate (APEX) at (0, 8.2);
 
-      % ---- Outer silhouette: base + walls + M-shaped roofline ----
-      \draw (5, 3.3) coordinate (WR) --
-      (5,0) -- (-5,0) -- 
-      (-5, 3.3) coordinate (WL);
-      
-      \draw[color=colorCrimson]
-      (WL) --
-      (-3.6, 5.0) --
-      (-2.2, 3.9) --
-      (0, 6.4)   coordinate (APEX) --
-      (2.2, 3.9) --
-      (3.6, 5.0) -- (WR);
-      
-      \draw(-5, 3.3) arc[start angle=106.86, end angle=73.14, radius=17.241];
-      
-      \draw (-2.2, 3.9) -- (-2.2, 0);
-      \draw (2.2, 3.9) -- (2.2, 0);
+      % \draw[color=colorDodgerblue]
+      %    (-1, 0) --
+      %    (-1, 2) arc[start angle=180, end angle=0, radius=1] --
+      %    (1, 0) -- cycle;
 
-      % ---- Atom symbol on top of the roof ----
-      \begin{scope}[shift={($(APEX)+(0,1.55)$)}]
-         \draw[color=colorCrimson, rotate=0]   (0,0) ellipse (1.05 and 0.42);
-         \draw[color=colorCrimson, rotate=60]  (0,0) ellipse (1.05 and 0.42);
-         \draw[color=colorCrimson, rotate=120] (0,0) ellipse (1.05 and 0.42);
+      \draw[line width = 4pt] (-5, 3.3) arc[start angle=106.86, end angle=73.14, radius=17.241];
+      
+      \draw[rounded corners=1pt] (2.2, 3.9) -- (2.2, 0) -- (4.5, 3.4) 
+      -- (4.8,0) -- (-4.8,0) 
+      -- (-4.5, 3.4) -- (-2.2, 0) -- (-2.2, 3.9);
+
+      \draw[color=colorDodgerblue, fill = colorDodgerblue!50, rounded corners=1pt] (BL) to[bend right = 30] (TL)
+      to[bend right = 30](TR) to [bend right = 30] (BR) 
+      -- (1, 0) 
+      -- (1, 2) arc[start angle=0, end angle=180, radius=1] 
+      -- (-1, 0) -- cycle;
+      
+      % \draw
+      % (-2.2, 3.9) -- (-2.2, 6) -- 
+      % (0, 8.2) coordinate (APEX) --
+      % (2.2, 6) -- (2.2, 3.9);
+
+      \draw[line width = 4pt] (-2.7, 5.5) -- (APEX) -- (2.7, 5.5);
+
+      \begin{scope}[shift={($(APEX)+(0,2.4)$)}]
+         \path[color=colorCrimson] (0,0) node[
+            star,
+            star points=5, 
+            draw,
+            fill=colorCrimson!50,
+            inner sep=0pt,
+            minimum size=4.8em
+         ] {};
+         \fill[color=white, rotate=0]   (0,0) ellipse (1.4 and 0.5);
+         \fill[color=white, rotate=60]  (0,0) ellipse (1.4 and 0.5);
+         \fill[color=white, rotate=120] (0,0) ellipse (1.4 and 0.5);
+         \draw[color=colorCrimson, rotate=0]   (0,0) ellipse (1.4 and 0.5);
+         \draw[color=colorCrimson, rotate=60]  (0,0) ellipse (1.4 and 0.5);
+         \draw[color=colorCrimson, rotate=120] (0,0) ellipse (1.4 and 0.5);
+         
       \end{scope}
 
-      % ---- Circular window above the door ----
-      \draw (0,3) circle (0.5);
-
-      % ---- Door (arched, open at the bottom) ----
-      \draw
-         (-0.8, 0) --
-         (-0.8, 1.6) arc[start angle=180, end angle=0, radius=0.8] --
-         (0.8, 0);
-
-      % ---- Small square windows on the side wings ----
-      \fill (-3.9,2.0) rectangle (-3.3,2.6);
-      \fill (3.3,2.0) rectangle (3.9,2.6);
-   \end{tikzpicture} \hspace{0.5em}
+   \end{tikzpicture} \\[1em]
    {\fontsize{72}{84}\selectfont \emphredbf{P}\emphcyanbf{FÉI}\emphredbf{V}} \\[0.5em]
    {\huge La \emphredbf{P}hysique \emphcyanbf{F}ondamentale pour les \emphcyanbf{É}tudiants \emphcyanbf{I}diots au \emphredbf{V}ietnam}\\[2em]
 }
@@ -435,8 +442,8 @@
 % \input{chapter/kiem_tra.tex}
 % \input{chapter/bai_tap_bo_sung.tex}
 % \input{chapter/khoa_hoc.tex}
-\input{chapter/nen_tang_lo_gich.tex}
-% \input{chapter/li_thuyet_tap_hop.tex}
+% \input{chapter/nen_tang_lo_gich.tex}
+\input{chapter/li_thuyet_tap_hop.tex}
 % \input{chapter/co_ban_xu_li_so_lieu.tex}
 % \input{chapter/chuyen_dong.tex}
 

@@ -98,9 +98,9 @@ Với cách kí hiệu hóa tương tự, chúng ta có
       Kết luận & $V(e)$
    \end{tabular}
 \end{center}
-với $e$ viết tắt cho ``Ê-mô-ri-ô''. Việc lập luận dẫn một cách tự nhiên đến với quy tắc tiếp theo --- \defText{quy tắc cụ thể hóa biến phổ quát} hoặc \defText{phép loại bỏ lượng từ phổ quát}:
+với $e$ viết tắt cho ``Ê-mô-ri-ô''. Việc lập luận dẫn một cách tự nhiên đến với quy tắc tiếp theo --- \defText{quy tắc cụ thể hóa lượng từ phổ quát} hoặc \defText{phép loại bỏ lượng từ phổ quát}:
 \begin{quotation}
-    $\defMath{\forall x, A(x) \implies A(e)}$ với $A()$ là một vị từ và $e$ là một hạng thức đã xác định, hay nói suồng sã hơn, nếu một tính chất đúng với toàn cục thì nó cũng đúng với bộ phận.  
+   $\defMath{\forall x, A(x) \implies A(e)}$ với $A()$ là một vị từ và $e$ là một hạng thức đã xác định, hay nói suồng sã hơn, nếu một tính chất đúng với toàn cục thì nó cũng đúng với bộ phận.  
 \end{quotation}
 
 Gọi hợp các giả thiết là $G$, với quy tắc này, chúng ta có
@@ -112,7 +112,11 @@ Kết luận được khẳng định từ giả thiết.
 
 \subsection{Cụ thể hóa lượng từ tồn tại và quy tắc tồn tại hóa}
 
-Bất cứ khi nào chúng ta nói rằng ``tồn tại một $x$ thỏa mãn một tính chất $A(x)$ nào đó'', điều đó có nghĩa rằng $x$ có thể là một $c$ nào đó có tính chất $A(c)$. Chúng ta không biết, và cũng không cần phải biết, $c$ có hình thù ra làm sao, tên tuổi như thế nào. Điều quan trọng là chúng ta có đồng thời $A(c)$ đúng đi kèm với hạng thức $c$. Vì việc gọi hạng thức thỏa mãn điều kiện nhất định được thực hiện thường xuyên và liên tục nên hành động này được đặt tên là \defText{cụ thể hóa lượng từ tồn tại}.
+Bất cứ khi nào chúng ta nói rằng ``tồn tại một $x$ thỏa mãn một tính chất $A(x)$ nào đó'', điều đó có nghĩa rằng $x$ có thể là một $c$ nào đó có tính chất $A(c)$. Chúng ta không biết, và cũng không cần phải biết, $c$ có hình thù ra làm sao, tên tuổi như thế nào. Điều quan trọng là chúng ta có đồng thời $A(c)$ đúng đi kèm với hạng thức $c$. Vì việc gọi hạng thức thỏa mãn điều kiện nhất định được thực hiện thường xuyên và liên tục nên hành động này được đặt tên là \defText{cụ thể hóa lượng từ tồn tại}:
+\begin{quotation}
+   Từ $\exists x, A(x)$ đúng, chúng ta có thể gọi một hạng thức $c$ \emph{chưa từng xuất hiện} trong lập luận trước đó và có thể giả thiết thêm rằng $A(c)$ đúng.
+\end{quotation}
+Điều kiện $c$ là một hạng thức mới có vai trò rất quan trọng, bởi nếu $c$ vô tình trùng với một hạng thức đã xuất hiện (đặc biệt khi hạng thức đó đang nằm trong tầm ảnh hưởng của lượng từ phổ quát), lập luận tiếp theo có thể mắc phải ngụy biện.
 
 Hãy nhìn theo chiều ngược lại, giả sử chúng ta có $A(x)$ đúng khi thay $x$ bởi $c$, điều này hiển nhiên cho chúng ta mệnh đề đúng là ``tồn tại một $x$ thỏa mãn tính chất $A(x)$''. Đây chính là \defText{quy tắc tồn tại hóa}:
 \begin{equation*}
@@ -186,8 +190,7 @@ với mọi vị từ $P()$.
 
 \solution
 
-\setcounter{subexercise}{1}
-\arabic{subexercise}. Do quy tắc cụ thể hóa, từ $\exists x, \exists y, A(x; y)$ chúng ta có thể gọi hạng thức $m$ thay thế cho $x$ sao cho $\exists y, A(m; y)$. Và cũng do quy tắc đó, có thể gọi $n$ thay cho $y$ để $A(m; n)$. Do tồn tại $m$ thỏa mãn $A(x; n)$ nên theo quy tắc tồn tại hóa, $\exists x, A(x; n)$. Và do $n$ làm $\exists x, A(x; y)$ đúng nên dẫn đến $\exists y, \exists x, A(x; y)$. Do vậy,
+\resetSubexercise Do cụ thể hóa lượng từ tồn tại, từ $\exists x, \exists y, A(x; y)$ chúng ta có thể gọi hạng thức $m$ thay thế cho $x$ sao cho $\exists y, A(m; y)$. Và cũng do quy tắc đó, có thể gọi $n$ thay cho $y$ để $A(m; n)$. Do tồn tại $m$ thỏa mãn $A(x; n)$ nên theo quy tắc tồn tại hóa, $\exists x, A(x; n)$. Và do $n$ làm $\exists x, A(x; y)$ đúng nên dẫn đến $\exists y, \exists x, A(x; y)$. Do vậy,
 \begin{equation*}
     \exists x, \exists y, A(x; y) \implies \exists y, \exists x, A(x; y).
 \end{equation*}
@@ -195,7 +198,7 @@ với mọi vị từ $P()$.
 Tương tự, chúng ta cũng có thể có được $\exists x, \exists y, A(x; y) \impliedby \exists y, \exists x, A(x; y)$. Do định nghĩa của phép tương đương, $\exists x, \exists y, A(x; y) \iff \exists y, \exists x, A(x; y)$. Điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}. Giả sử $\exists x, (A(x) \lor B(x))$. Theo quy tắc cụ thể hóa, tồn tại $c$ để $A(c) \lor B(c)$. Từ định nghĩa của phép tuyển, ít nhất một trong hai vị từ $A(c)$ và $B(c)$ đúng.
+\arabic{subexercise}. Giả sử $\exists x, (A(x) \lor B(x))$. Theo cụ thể hóa đối với lượng từ tồn tại, tồn tại $c$ để $A(c) \lor B(c)$. Từ định nghĩa của phép tuyển, ít nhất một trong hai vị từ $A(c)$ và $B(c)$ đúng.
 \begin{itemize}
    \item Nếu $A(c)$ đúng, thì theo quy tắc tồn tại hóa, $\exists x, A(x)$ đúng.
    \item Tương tự, nếu $B(c)$ đúng thì $\exists x, B(x)$ cũng đúng.
@@ -236,7 +239,7 @@ Kết hợp hai trường hợp, chúng ta có
     \overline{\forall x, A(x) \lor \forall y, B(y)} &\iff \exists x, \neg A(x) \land \exists y, \neg B(y) \equationexplanation{phủ định của lượng từ toàn cục}.
 \end{align*}
 
-Do đó, phải có $c$ và $d$ sao cho $\neg A(c)$ và $\neg B(d)$. Tuy nhiên, do $\forall x, \forall y, (A(x) \lor B(y))$, theo quy tắc cụ thể hóa, $A(c) \lor B(d)$ hay $\overline{\neg A(c) \land \neg B(d)}$ (theo định luật Đờ Moóc-gơn) phải đúng. Mâu thuẫn.
+Do đó, phải có $c$ và $d$ sao cho $\neg A(c)$ và $\neg B(d)$. Tuy nhiên, do $\forall x, \forall y, (A(x) \lor B(y))$, theo quy tắc cụ thể hóa lượng từ phổ quát, $A(c) \lor B(d)$ hay $\overline{\neg A(c) \land \neg B(d)}$ (theo định luật Đờ Moóc-gơn) phải đúng. Mâu thuẫn.
 
 Qua đó, theo chứng minh bằng phản chứng, 
 \begin{equation*}
@@ -247,7 +250,7 @@ Hai chiều của mệnh đề đều đã được khẳng định. Vậy, chú
 
 \stepcounter{subexercise}
 \arabic{subexercise}. Giả thiết rằng chúng ta có $\exists x, A(x) \land \exists y, B(y)$. 
-Theo quy tắc cụ thể hóa, có thể gọi hạng thức $c$ và $d$ để $A(c)$ và $B(d)$ đúng. 
+Cụ thể hóa đối với lượng từ tồn tại, có thể gọi hạng thức $c$ và $d$ để $A(c)$ và $B(d)$ đúng. 
 Với sự tồn tại của hạng thức $d$, áp dụng quy tắc tồn tại hóa, thu được $\exists y, (A(c) \land B(y))$.
 Với sự tồn tại của hạng thức $c$ thỏa mãn, tiếp tục sử dụng quy tắc tồn tại hóa đối với mệnh đề vừa nhận được, chúng ta đi đến $\exists x, \exists y, (A(x) \land B(y))$.
 Như vậy,
@@ -264,14 +267,14 @@ Hội của hai kết luận này mang lại $\exists x, A(x) \land \exists y, B
 Kết hợp hai chiều theo định nghĩa của phép tương đương, chúng ta có điều phải chứng minh.
 
 \stepcounter{subexercise}
-\arabic{subexercise}. Giả sử $\forall x, A(x) \land \exists y, B(y)$. Từ $\exists y, B(y)$, có thể gọi một hạng thức $d$ thỏa mãn $B(d)$ theo quy tắc cụ thể hóa. Để ý rằng $B(d)$ đã trở thành mệnh đề và không phụ thuộc vào $x$, theo quy tắc lượng từ rỗng, chúng ta có
+\arabic{subexercise}. Giả sử $\forall x, A(x) \land \exists y, B(y)$. Từ $\exists y, B(y)$, có thể gọi một hạng thức $d$ thỏa mãn $B(d)$ (cụ thể hóa lượng từ tồn tại). Để ý rằng $B(d)$ đã trở thành mệnh đề và không phụ thuộc vào $x$, theo quy tắc lượng từ rỗng, chúng ta có
 $$B(d) \iff \forall x, B(d).$$
 Qua đó, chúng ta có $\forall x, A(x) \land \forall x, B(d)$. Sử dụng tính chất phân phối để có $\forall x, (A(x) \land B(d))$. Tồn tại hóa để có $\forall x, \exists y, (A(x) \land B(y))$. Do vậy,
 \begin{equation*}
     \forall x, A(x) \land \exists y, B(y) \implies \forall x, \exists y, (A(x) \land B(y)).
 \end{equation*}
 
-Ngược lại, giả sử đã có $\forall x, \exists y, (A(x) \land B(y))$. Theo quy tắc cụ thể hóa, có thể gọi một hạng thức $c$ thỏa mãn $\forall x, (A(x) \land B(c))$. Tiếp tục làm ngược lại quá trình giải trước, chúng ta có
+Ngược lại, giả sử đã có $\forall x, \exists y, (A(x) \land B(y))$. Cụ thể hóa lượng từ tồn tại thành một hạng thức $c$ thỏa mãn $\forall x, (A(x) \land B(c))$. Tiếp tục làm ngược lại quá trình giải trước, chúng ta có
 \begin{align*}
    \forall x, (A(x) \land B(c)) &\implies \forall x, A(x) \land \forall x, B(c) \equationexplanation{tính chất phân phối}; \\
    \forall x, (A(x) \land B(c)) &\implies \forall x, A(x) \land B(c) \equationexplanation{tính chất lượng từ rỗng}; \\
@@ -313,7 +316,7 @@ Kết hợp hai trường hợp, chúng ta có:
     \overline{\exists x, A(x) \lor \forall y, B(y)} &\iff \forall x, \neg A(x) \land \exists y, \neg B(y) \equationexplanation{phủ định của lượng từ}.
 \end{align*}
 
-Từ giả thiết gốc $\exists x, \forall y, (A(x) \lor B(y))$, theo quy tắc cụ thể hóa, có một hạng thức $c$ sao cho $\forall y, (A(c) \lor B(y))$ là đúng. 
+Từ giả thiết gốc $\exists x, \forall y, (A(x) \lor B(y))$, cụ thể hóa lượng từ tồn tại, có được một hạng thức $c$ sao cho $\forall y, (A(c) \lor B(y))$ là đúng. 
 Do mệnh đề $\forall x, \neg A(x)$ đúng với mọi hạng thức, nó hiển nhiên đúng với $c$, tức $\neg A(c)$ đúng. 
 Với $\forall y, (A(c) \lor B(y))$, mà $A(c)$ lại sai, nên buộc $B(y)$ phải luôn đúng. Từ lập luận này có được khẳng định $\forall y, B(y)$.
 
@@ -700,9 +703,9 @@ Từ một giả thiết đúng làm nảy sinh ra một kết luận sai sẽ k
    \caption{Một con cá. Thật tiếc khi nó không phải là con cá lớn nhất.}
 \end{figure}
 
-\stepSubexercise Từ mệnh đề khởi điểm $\forall y, \exists x, A(x; y)$, theo thứ tự tác động của các lượng từ, thì ứng với mỗi một giá trị tùy biến của $y$, chúng ta mới bắt đầu tìm kiếm được sự tồn tại của $x$ tương ứng. Vì lẽ đó, thực chất hạng thức dùng để thay thế biến $x$ chắc chắn phải là một giá trị bị \emph{phụ thuộc} vào $y$ (tức là $c$ đóng vai trò như $c(y)$ thay đổi linh hoạt mỗi khi $y$ thay đổi).
+\stepSubexercise Từ mệnh đề $\forall y, \exists x, A(x; y)$, theo thứ tự tác động của các lượng từ, thì ứng với mỗi một giá trị $y$, chúng ta mới bắt đầu được phép cụ thể hóa $x$ tương ứng. Vì lẽ đó, thực chất hạng thức dùng để thay thế $x$ chắc chắn bị \emph{phụ thuộc} vào $y$ (tức là $c$ đóng vai trò như một hàm $c()$ với hạng thức $y$, thay đổi linh hoạt mỗi khi $y$ thay đổi).
 
-Người viết giả chứng minh này đã bỏ qua tính tuần tự, ngang nhiên gọi luôn một hằng số $c$ tĩnh duy nhất. Hành động này vô tình mang lượng từ tồn tại từ bề trong vượt qua lượng từ phổ quát ở ngoài, cưỡng ép hoán đổi bản chất của mệnh đề gốc thành $\exists x, \forall y, A(x; y)$. Đó là một ngụy biện lô-gích nghiêm trọng.
+Người viết giả chứng minh này đã bỏ qua tính tuần tự, ngang nhiên gọi luôn một hằng số $c$ không đổi duy nhất. Hành động này vô tình làm mất tính liên kết giữa $c$ và $y$, mang lượng từ tồn tại từ bên trong cưỡng ép vượt qua lượng từ phổ quát ở ngoài để đạt được điều phải chứng minh. Đó là một ngụy biện lô-gích hết sức nghiêm trọng.
 
 \exercise Cho vị từ $V()$. Chứng minh rằng 
 \begin{equation*}
@@ -730,3 +733,37 @@ Vì có $X$ để $V(X)$ và $\forall y, (V(y) \implies y = X)$, do đó, theo q
 hay $\exists ! x, V(x)$. Từ đó, dễ thấy điều phải chứng minh.
 
 Đây là một trong những cách phổ biến để chứng minh sự tồn tại duy nhất của một đối tượng nào đó: thay vì chứng minh mọi sự vật đều bằng một sự vật mẫu, người ta có thể chứng minh hai vật bất kì có chung tính chất thì bằng nhau. Một lưu ý quan trọng, nếu chúng ta bổ sung thêm các tiên đề tập hợp --- là điều mà chúng ta sẽ làm tiếp theo --- thì điều ngược lại của mệnh đề được cho cũng đúng. 
+
+\exercise Cho vị từ $V()$. Giả thiết rằng
+\begin{equation*}
+   \begin{cases}
+      \exists ! x, V(x) \\
+      \forall x, (V(x) \iff Q(x))
+   \end{cases}.
+\end{equation*}
+Chứng minh rằng $\exists ! x, Q(x)$.
+
+\solution
+
+Theo cấu trúc chứng minh tồn tại duy nhất, giả thiết $\exists ! x, V(x)$ có nghĩa là
+\begin{equation*}
+   \exists x, \left(V(x) \land \forall y, (V(y) \implies y = x)\right).
+\end{equation*}
+Cụ thể hóa lượng từ tồn tại $\exists x$, gọi hạng thức $X$ sao cho
+\begin{equation*}
+   V(X) \land \forall y, (V(y) \implies y = X).
+\end{equation*}
+
+Sử dụng quy tắc cụ thể hóa lượng từ phổ quát trong $\forall x, (V(x) \iff Q(x))$ bởi $X$, chúng ta có $V(X) \iff Q(X)$. Do có $V(X)$ đúng, nên để $V(X) \iff Q(X)$ cũng đúng thì $Q(X)$ cũng phải đúng.
+
+Xét $z$ tùy ý thỏa mãn $Q(z)$. Cụ thể hóa lượng từ phổ quát để có $V(z) \iff Q(z)$. Do $Q(z)$, suy ra $V(z)$. Kết hợp với $\forall y, (V(y) \implies y = X)$ đã có ở trên, $V(z) \implies z = X$, cho nên $z = X$. Vậy,
+\begin{equation*}
+   \forall z, (Q(z) \implies z = X).
+\end{equation*}
+
+Kết hợp $Q(X)$ và $\forall z, (Q(z) \implies z = X)$, bằng việc tồn tại hóa $X$, 
+\begin{equation*}
+   \exists x, \left(Q(x) \land \forall z, (Q(z) \implies z = x)\right),
+\end{equation*}
+hay $\exists ! x, Q(x)$. Điều phải chứng minh.
+

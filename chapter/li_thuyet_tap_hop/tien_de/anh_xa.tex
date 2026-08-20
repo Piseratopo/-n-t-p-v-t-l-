@@ -75,43 +75,16 @@ $$\begin{array}[t]{rcl}
    \defMath{a} & \defMath{\mapsto} & \defMath{C}
 \end{array}.$$
 
-Cho một ánh xạ $f: x \to y$, $A$ là một tập con của $x$. Gọi $g$ là quan hệ từ $A$ đến $y$ thỏa mãn $a\;g\;b \iff f(a) = b$ với $a \in A$ và $b \in y$. Chúng ta có 
+Cho một ánh xạ $f: x \to y$, $A$ là một tập con của $x$. Gọi $g$ là quan hệ từ $A$ đến $y$ thỏa mãn $a\;g\;b \iff a\;f\;b$ với $a \in A$ và $b \in y$. Vì $f$ là ánh xạ nên chúng ta cũng có $\exists ! b \in y, a\;f\;b$ với mọi $a \in A$. Sử dụng tính chất phân phối của lượng từ phổ quát với phép hội, chúng ta được 
 \begin{equation*}
-   \begin{cases}
-      \forall a, (a \in A \implies a \in x) \\
-      \forall a, (a \in x \implies \exists ! b \in y, a\;f\;b) 
-   \end{cases},
+   \forall a \in A, (\exists ! b \in y, a\;f\;b \land \forall b \in y, a\;g\;b \iff a\;f\;b).
 \end{equation*}
-suy ra $\forall a \in A, \exists ! b \in y, a\;f\;b$. Điều này tương đương $\forall a \in A, \exists b \in y, (a\;f\;b \land \forall c \in y, (a\;f\;c \implies c = b))$. Với mỗi $a$ thuộc $A$, gọi $B_a$ là hạng thức thỏa mãn \begin{equation*}
-   a\;f\;B_a \land \forall c \in y, (a\;f\;c \implies c = B_a).
+Do đó, 
+\begin{equation*}
+   \forall a \in A, \exists ! b \in y, a\;g\;b.
 \end{equation*}
-Thêm vào đó,
-$\forall a \in A, \forall b \in y, (a\;f\;b \iff a\;g\;b)$ cho chúng ta \begin{equation*}
-   \begin{cases}
-      \forall a \in A, (a\;f\;B_a \iff a\;g\;B_a) \\
-      \forall a \in A, \forall c \in y, (a\;f\;c \iff a\;g\;c)
-   \end{cases}.
-\end{equation*}
-Một chút biến đổi lô-gích cơ bản để có
-\begin{itemize}
-   \item $\begin{cases}
-      \forall a \in A, a\;f\;B_a \\
-      \forall a \in A, (a\;f\;B_a \iff a\;g\;B_a)
-   \end{cases} \implies \forall a \in A, a\;g\;B_a$,
-   \item $\begin{cases}
-      \forall a \in A, \forall c \in y, (a\;f\;c \implies c = B_a) \\
-      \forall a \in A, \forall c \in y, (a\;f\;c \iff a\;g\;c)
-   \end{cases} \implies \forall a \in A, \forall c \in y, (a\;g\;c \implies c = B_a)$.
-\end{itemize} 
-Do vậy, với mỗi $a$, \begin{equation*}
-   a\;f\;B_a \land \forall c \in y, (a\;f\;c \implies c = B_a) \implies a\;g\;B_a \land \forall c \in y, (a\;g\;c \implies c = B_a).
-\end{equation*}
-Và vì thế, \begin{align*}
-   \forall a \in A, \exists ! b \in y, a\;f\;b &\implies \forall a \in A, \exists b \in y, (a\;g\;b \land \forall c \in y, (a\;g\;c \implies c = b)); \\
-   \forall a \in A, \exists ! b \in y, a\;f\;b &\implies \forall a, \exists ! b \in y, a\;g\;b.
-\end{align*}
 
-Vậy, $g$ xác định một ánh xạ, thường được kí hiệu là $f|_A$ và được gọi là \defText{ánh xạ cảm sinh} (hay \defText{ánh xạ thu hẹp}) từ $x$ xuống $A$, và ngược lại, $f$ là một \defText{ánh xạ thác triển} (hay \defText{ánh xạ mở rộng}) của $f|_A$ từ $A$ ra $x$.
+Vậy, $g$ xác định một ánh xạ, thường được kí hiệu là $\defMath{f|_A}$ và được gọi là \defText{ánh xạ cảm sinh} (hay \defText{ánh xạ thu hẹp}) từ $x$ xuống $A$, và ngược lại, $f$ là một \defText{ánh xạ thác triển} (hay \defText{ánh xạ mở rộng}) của $f|_A$ từ $A$ ra $x$.
 
 Cuối cùng, xét $y$ là một tập con của $x$ và một ánh xạ $f: x \to x$. $y$ được gọi là \defText{ổn định} đối với $f$ khi và chỉ khi \begin{equation*}
    \defMath{\forall z \in y, f(z) \in y}.
@@ -323,7 +296,7 @@ Kết hợp những gì chúng ta vừa suy luận ra, $\forall a\in x, \exists 
 
 Xét giá trị $g(f(a))$ với $a \in x$. Có $a\;f\;f(a)$ và $f(a)\;g\;g(f(a))$ nên, theo định nghĩa của quan hệ tích, $a\;g\circ f\;g(f(a))$ (bắc cầu quan hệ qua $f(a)$). $g \circ f$ đã được xác định là một ánh xạ, do đó
 \begin{equation*}
-   \defMath{\forall a \in x, g(f(a)) = g\circ f(a)}.
+   \defMath{\forall a \in x, g(f(a)) = (g \circ f)(a)}.
 \end{equation*}
 
 Một cách viết khác viết ánh xạ tích là sử dụng \defText{biểu đồ giao hoán}. Áp dụng vào ánh xạ $h$ ở trên:
@@ -428,7 +401,7 @@ có nghĩa là $w \circ f \circ d = g \circ e \circ u$.
 Xét chiều thuận, giả sử tồn tại $h: y \to z$ sao cho $h \circ f = g$. Khi này, có ngay được $y = \varnothing \impliedby z = \varnothing$ như một tính chất của ánh xạ $h$. Thêm vào đó, chúng ta có, với mọi $a$ và $b$ cùng thuộc $x$, 
 \begin{align*}
    f(a) = f(b) &\implies h(f(a)) = h(f(b)); \\
-   f(a) = f(b) &\implies h \circ f(a) = h \circ f(b); \\
+   f(a) = f(b) &\implies (h \circ f)(a) = (h \circ f)(b); \\
    f(a) = f(b) &\implies g(a) = g(b).
 \end{align*}
 
@@ -460,7 +433,7 @@ $ Nếu \coloringJade{$\exists e \in x, c = f(e)$}, tồn tại $i = g(e)$, dẫ
 \end{equation*}
 hoặc $H$ là một ánh xạ từ $y$ đến $z$.
 
-Chúng ta sẽ tính $H\circ f$. Với mọi $l \in x$, đặt $m = f(l)$. Có $H\circ f(l) = H(f(l)) = H(m)$. Theo định nghĩa của $H$, $H(m) = g(l)$ do $l$ là phần tử để cho $m = f(l)$ và $g(l) = g(l)$. Từ đó, chúng ta có $$\forall l \in x, H\circ f(l) = g(l),$$ và do đó, $H\circ f = g$. Ánh xạ $h$ có thể là $H$ trong trường hợp này.
+Chúng ta sẽ tính $H\circ f$. Với mọi $l \in x$, đặt $m = f(l)$. Có $(H\circ f)(l) = H(f(l)) = H(m)$. Theo định nghĩa của $H$, $H(m) = g(l)$ do $l$ là phần tử để cho $m = f(l)$ và $g(l) = g(l)$. Từ đó, chúng ta có $$\forall l \in x, (H\circ f)(l) = g(l),$$ và do đó, $H\circ f = g$. Ánh xạ $h$ có thể là $H$ trong trường hợp này.
 
 $y = \varnothing \lor y \neq \varnothing$ là luôn đúng, theo quy tắc chia trường hợp, việc tồn tại $h$ thỏa mãn \begin{tikzpicture}[baseline=(current bounding box.center)]
    \node (y) at (1, 1) {$y$};
@@ -576,6 +549,124 @@ Tổng kết lại, $q$ không chỉ là một ánh xạ đơn thuần, $q$ còn
 
 % Bài \ref{ex:li_thuyet_tap_hop:tien_de:quan_he:phan_hoach_tuong_duong} đã chứng minh $\frac{x}{\sim}$ là một phân hoạch của $x$. Sử dụng kết quả này, theo định nghĩa của phân hoạch, chúng ta có với mọi $y \in x$, tồn tại $z \in \frac{x}{\sim}$ sao cho $y \in $
 
-Nếu $f$ vừa đơn ánh, vừa toàn ánh thì $f$ được gọi là \defText{song ánh}, tức là \begin{equation*}
+Nếu $f: x \to y$ thỏa mãn với mỗi một phần tử $a$ từ tập xác định, tồn tại duy nhất một phần tử $b$ từ tập đích sao cho $b = f(a)$ thì $f$ được gọi là \defText{song ánh}, tức là \begin{equation*}
    \defMath{\forall b \in y, \exists ! a \in x, b = f(a).}
 \end{equation*} 
+
+Xét quan hệ ngược $f^{-1}$ của một song ánh $f: x \to y$. Nhắc lại về định nghĩa, với mọi $a \in x$, $b \in y$, $b\;f^{-1}\;a \iff a\;f\;b$. Ngoài ra, do $f$ là song ánh, $\forall b \in y, \exists ! a \in x, b = f(a)$. Do đó, \begin{equation*}
+   \forall b \in y, \left(\forall a \in x, \left(b\;f^{-1}\;a \iff a\;f\;b\right) \land \exists ! a \in x, a \;f \;b\right),
+\end{equation*}
+suy ra \begin{equation*}
+   \forall b \in y, \exists ! a \in x, b\;f^{-1}\;a.
+\end{equation*}
+Khi này, chúng ta có $f^{-1}$ xác định một ánh xạ từ $y$ sang $x$. Ngoài ra, có $\forall a \in x, \exists ! b \in y, a\;f\;b$, tương đương với $\forall a \in x, \exists ! b \in y, b\;f^{-1}\;a$, và do đó, $f^{-1}$ song ánh theo định nghĩa.
+
+\begin{figure}[H]
+   \begin{center}
+      \begin{tikzpicture}
+         % Khung tập nguồn X
+         \draw[thick, rounded corners=12pt] (-3.5, -2.5) rectangle (-1.5, 2);
+         \node at (-2.5, 2.3) {Tập nguồn $X$};
+
+         % Khung tập đích Y (có 4 phần tử tương ứng để tạo song ánh)
+         \draw[thick, rounded corners=12pt] (1.5, -2.5) rectangle (3.5, 2);
+         \node at (2.5, 2.3) {Tập đích $Y$};
+
+         % Các phần tử tập nguồn
+         \node[element, label=left:$a_1$] (x1) at (-2.5, 1.25) {};
+         \node[element, label=left:$a_2$] (x2) at (-2.5, 0.4) {};
+         \node[element, label=left:$a_3$] (x3) at (-2.5, -0.4) {};
+         \node[element, label=left:$a_4$] (x4) at (-2.5, -1.25) {};
+
+         % Các phần tử tập đích
+         \node[element, label=right:$b_1$] (y1) at (2.5, 1.25) {};
+         \node[element, label=right:$b_2$] (y2) at (2.5, 0.4) {};
+         \node[element, label=right:$b_3$] (y3) at (2.5, -0.4) {};
+         \node[element, label=right:$b_4$] (y4) at (2.5, -1.25) {};
+
+         % Các đường ánh xạ 1-1 (song ánh)
+         \draw[guide arrow, colorDodgerblue] (x1) to[bend left] node[pos=0.5, above] {$f$} (y1);
+         \draw[guide arrow, colorDodgerblue] (x2) to[bend left] (y3);
+         \draw[guide arrow, colorDodgerblue] (x3) to[bend left] (y2);
+         \draw[guide arrow, colorDodgerblue] (x4) to[bend left] (y4);
+
+         \draw[guide arrow, colorCrimson] (y1) to[bend left] (x1);
+         \draw[guide arrow, colorCrimson] (y3) to[bend left] (x2);
+         \draw[guide arrow, colorCrimson] (y2) to[bend left] (x3);
+         \draw[guide arrow, colorCrimson] (y4) to[bend left] node[pos=0.5, below] {$f^{-1}$} (x4);
+      \end{tikzpicture}
+   \end{center}
+   \caption{Minh họa ánh xạ \coloringDodgerblue{$f$} là ánh xạ song ánh.}
+\end{figure}
+
+Nếu $x = y$, $f$ song ánh thì được gọi là một \defText{hoán vị} của $x$. Từ tiên đề tách, chúng ta có thể gọi tập hợp gồm các hoán vị của $x$:
+\begin{equation*}
+   \defMath{\Sigma_x = \big\{f \in x^x \big| f \text{\defText{ là một hoán vị}}\big\}}.
+\end{equation*}
+
+\exercise Cho các tập hợp $x$, $y$, và ánh xạ $f: x \to y$. Biết rằng $f$ đơn ánh và toàn ánh. Chứng minh rằng $f$ song ánh.
+
+\solution
+
+Từ định nghĩa toàn ánh, chúng ta có 
+\begin{equation*}
+   \forall b \in y, \exists a_y \in x, b = f(a_y).
+\end{equation*}
+Từ đó, chúng ta sẽ chứng minh với mỗi $b$, $a_y$ là duy nhất. Thật vậy, giả sử có $c \in x$ sao cho $b = f(c)$. Vì $f$ đơn ánh,
+\begin{equation*}
+   \forall d \in x, \forall e \in x, (f(d) = f(e) \implies d = e).
+\end{equation*} 
+Thay $d$ và $e$ lần lượt bởi $a_y$ và $c$, có được $f(a_y) = f(c) \implies a_y = c$. Mà, $f(a_y) = f(c) (= b)$ nên $a_y = c$.
+
+Vậy, $\forall b \in y, \exists a_y \in x, \left(b = f(a_y) \land \forall c \in x, (b = f(c) \implies c = a_y)\right)$, hay $\forall b \in y, \exists! a_y \in x, b = f(a_y)$. Qua định nghĩa, chúng ta có $f$ là một song ánh. Điều phải chứng minh.
+
+\exercise Cho các tập hợp $A$, $B$, $C$, và các ánh xạ $f: A \to B$, $g: B \to C$. Chứng minh rằng
+\begin{enumerate}
+   \item nếu $f$ và $g$ đơn ánh thì $g \circ f$ là một đơn ánh,
+   \item nếu $f$ và $g$ toàn ánh thì $g \circ f$ là một toàn ánh,
+   \item nếu $f$ và $g$ song ánh thì $g \circ f$ là một song ánh,
+   \item nếu $g \circ f$ đơn ánh thì $f$ là một đơn ánh,
+   \item nếu $g \circ f$ toàn ánh thì $g$ là một toàn ánh,
+   \item nếu $g \circ f$ song ánh và $f$ toàn ánh thì $f$ và $g$ đều là song ánh.
+\end{enumerate}
+
+\solution
+
+\resetSubexercise Hãy cho rằng $f$ và $g$ đều đơn ánh. Từ quy tắc phủ định ($(P \implies Q) \iff (\neg Q \implies \neg P)$), định nghĩa đơn ánh $f:A \to B$ có thể được viết tương đương là 
+\begin{equation*}
+   \forall (a; b) \in A^2, \left(a \neq b \implies f(a) \neq f(b)\right).
+\end{equation*}
+Tương tự, \begin{equation*}
+   \forall (a; b) \in B^2, \left(a \neq b \implies g(a) \neq g(b)\right).
+\end{equation*}
+Do đó, $f(a) \neq f(b) \implies g(f(a)) \neq g(f(b))$ với mọi $a$ và $b$ thuộc $A$. Theo tính chất bắc cầu của phép kéo theo, \begin{equation*}
+   \forall (a; b) \in A^2, \left(a \neq b \implies (g\circ f)(a) \neq (g\circ f)(b)\right),
+\end{equation*}
+và vì thế $g \circ f$ đơn ánh. Điều phải chứng minh.
+
+\stepSubexercise Giả sử $f$ và $g$ toàn ánh. Với mọi $c \in C$, tồn tại $d \in B$ sao cho $c = g(d)$. Vì $d \in B$, nên tồn tại $e \in A$ sao cho $d = f(e)$. Khi đó, $c = (g\circ f)(e)$, và vì vậy, \begin{equation*}
+   \forall c \in C, \exists e \in A, c = (g \circ f)(e).
+\end{equation*}
+$g \circ f$ đã được khẳng định là toàn ánh. Điều phải chứng minh.
+
+\stepSubexercise $f$ và $g$ song ánh tương đương với $f$ và $g$ vừa đơn ánh vừa toàn ánh. Chúng ta có $g \circ f$ đơn ánh và toàn ánh từ những kết quả trước, và do vậy, $g \circ f$ song ánh. Điều phải chứng minh.
+
+\stepSubexercise Nếu như $g\circ f$ là đơn ánh, $\forall (a; b) \in A^2, \left((g \circ f)(a) = (g \circ f)(b) \implies a = b\right)$. Thêm vào đó, với mọi $a$ và $b$ thuộc $A$, chúng ta có
+\begin{align*}
+   f(a) = f(b) &\implies g(f(a)) = g(f(b)); \\
+   f(a) = f(b) &\implies (g \circ f)(a) = (g \circ f)(b).
+\end{align*}
+Do vậy, $f(a) = f(b) \implies a = b$. Theo định nghĩa, $f$ đơn ánh. Điều phải chứng minh.
+
+\stepSubexercise Giả sử $g \circ f$ toàn ánh. Xét $c \in C$ tùy ý, tồn tại $d \in A$ sao cho $c = (g \circ f)(d) = g(f(d))$. Tồn tại hóa $f(d)$, chúng ta có sự tồn tại của $e \in A$ thỏa mãn $c = g(e)$ với mọi $c$. Dễ thấy điều phải chứng minh.
+
+\stepSubexercise $g \circ f$ song ánh cho chúng ta tính chất vừa đơn ánh vừa toàn ánh của $g \circ f$. Tính đơn ánh của $f$ đã được khẳng định và tính toàn ánh của $f$ thì được cho trước, do đó $f$ song ánh. Chúng ta cũng đã có $g$ toàn ánh. Vậy, nhiệm vụ còn lại của chúng ta là chứng minh $g$ đơn ánh.
+
+Giả sử phản chứng, $g$ không là một đơn ánh. Khi đó, tồn tại $i$ và $j$ trong $B$ sao cho $g(i) = g(j)$ mà $i \neq j$. Do tính toàn ánh của $f$, tồn tại $k$ và $l$ sao cho $f(k) = i$ và $f(l) = j$. Do $f$ cũng đơn ánh, $i \neq j$ kéo theo $k \neq l$. Vì $g \circ f$ đơn ánh nên $(g \circ f)(k) \neq (g \circ f)(l)$ từ $k \neq l$. Tuy nhiên,
+\begin{align*}
+   g(i) = g(j) &\implies g(f(k)) = g(f(l)); \\
+   g(i) = g(j) &\implies (g \circ f)(k) = (g \circ f)(l),
+\end{align*}
+tạo ra một mâu thuẫn. Do đó, điều đã giả sử là sai, và chúng ta kết luận được $g$ đơn ánh.
+
+Kết hợp các kết quả, điều phải chứng minh là hiển nhiên.
