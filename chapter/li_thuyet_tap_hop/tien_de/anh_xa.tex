@@ -320,7 +320,7 @@ Giả sử chúng ta có $f: w \to x$, $g: x \to y$, $h: y \to z$ là các ánh 
 Ánh xạ, chúng ta thấy, có tính kết hợp. Điều này đồng nghĩa với việc chúng ta có thể viết $h \circ g \circ f$ mà không cần phải quan tâm tới thứ tự thực hiện tích ánh xạ.
 
 Một ánh xạ $f: x \to x$ là \defText{ánh xạ đối hợp} khi và chỉ khi \begin{equation*}
-   \defMath{f \circ f = \mathrm{i}_{E;x}}.
+   \defMath{f \circ f = \mathds{1}_{x}}.
 \end{equation*}
 
 \exercise Cho các tập hợp $x$, $y$, $z$, $a$, $b$, $c$. Xác định những ánh xạ $d$, $e$, $f$, $g$, $u$, $v$, $w$ sao cho chúng ta có thể vẽ biểu đồ giao hoán như sau:
@@ -528,7 +528,7 @@ Không xét đơn ánh nữa, chúng ta hãy thử xem xét một điều kiện
    \caption{Minh họa ánh xạ \coloringDodgerblue{$f$} là toàn ánh và ánh xạ \coloringCrimson{$g$} không phải là toàn ánh.}
 \end{figure}
 
-Trong khi tác giả đưa ra ví dụ cho ánh xạ toàn ánh, tác giả sẽ dẫn nhiều kết quả có được từ bài \ref{ex:li_thuyet_tap_hop:tien_de:quan_he:phan_hoach_tuong_duong}. Nếu bạn đọc cảm thấy lạ lẫm với một số lập luận, bạn đọc nên dành thời gian đọc lại bài tập đó. Cho $x$ là một tập hợp được trang bị quan hệ tương đương $\sim$. Xây dựng quan hệ $q$ từ $x$ đến tập thương $\frac{x}{\sim}$ thỏa mãn
+Trong khi tác giả đưa ra ví dụ cho ánh xạ toàn ánh, tác giả sẽ dẫn nhiều kết quả có được từ \refex{ex:li_thuyet_tap_hop:tien_de:quan_he:phan_hoach_tuong_duong}. Nếu bạn đọc cảm thấy lạ lẫm với một số lập luận, bạn đọc nên dành thời gian đọc lại bài tập đó. Cho $x$ là một tập hợp được trang bị quan hệ tương đương $\sim$. Xây dựng quan hệ $q$ từ $x$ đến tập thương $\frac{x}{\sim}$ thỏa mãn
 \begin{equation*}
    \defMath{\forall y \in x, \forall z \in \frac{x}{\sim}, \big(y\;q\;z \iff z = [y]_\sim\big)}.
 \end{equation*}
@@ -546,8 +546,6 @@ Do $\frac{x}{\sim}$ là một phân hoạch của $x$, mọi phần tử $B$ c�
 \end{equation*}
 
 Tổng kết lại, $q$ không chỉ là một ánh xạ đơn thuần, $q$ còn có tính chất toàn ánh. Hơn thế nữa, người ta còn đặt tên cho $q$ là \defText{toàn ánh chính tắc}.
-
-% Bài \ref{ex:li_thuyet_tap_hop:tien_de:quan_he:phan_hoach_tuong_duong} đã chứng minh $\frac{x}{\sim}$ là một phân hoạch của $x$. Sử dụng kết quả này, theo định nghĩa của phân hoạch, chúng ta có với mọi $y \in x$, tồn tại $z \in \frac{x}{\sim}$ sao cho $y \in $
 
 Nếu $f: x \to y$ thỏa mãn với mỗi một phần tử $a$ từ tập xác định, tồn tại duy nhất một phần tử $b$ từ tập đích sao cho $b = f(a)$ thì $f$ được gọi là \defText{song ánh}, tức là \begin{equation*}
    \defMath{\forall b \in y, \exists ! a \in x, b = f(a).}
@@ -620,7 +618,7 @@ Thay $d$ và $e$ lần lượt bởi $a_y$ và $c$, có được $f(a_y) = f(c) 
 
 Vậy, $\forall b \in y, \exists a_y \in x, \left(b = f(a_y) \land \forall c \in x, (b = f(c) \implies c = a_y)\right)$, hay $\forall b \in y, \exists! a_y \in x, b = f(a_y)$. Qua định nghĩa, chúng ta có $f$ là một song ánh. Điều phải chứng minh.
 
-\exercise Cho các tập hợp $A$, $B$, $C$, và các ánh xạ $f: A \to B$, $g: B \to C$. Chứng minh rằng
+\exercise[ex:li_thuyet_tap_hop:tien_de:anh_xa:dtst] Cho các tập hợp $A$, $B$, $C$, và các ánh xạ $f: A \to B$, $g: B \to C$. Chứng minh rằng
 \begin{enumerate}
    \item nếu $f$ và $g$ đơn ánh thì $g \circ f$ là một đơn ánh,
    \item nếu $f$ và $g$ toàn ánh thì $g \circ f$ là một toàn ánh,
@@ -630,7 +628,7 @@ Vậy, $\forall b \in y, \exists a_y \in x, \left(b = f(a_y) \land \forall c \in
    \item nếu $g \circ f$ song ánh và $f$ toàn ánh thì $f$ và $g$ đều là song ánh.
 \end{enumerate}
 
-\solution
+\solution[ex:li_thuyet_tap_hop:tien_de:anh_xa:dtst]
 
 \resetSubexercise Hãy cho rằng $f$ và $g$ đều đơn ánh. Từ quy tắc phủ định ($(P \implies Q) \iff (\neg Q \implies \neg P)$), định nghĩa đơn ánh $f:A \to B$ có thể được viết tương đương là 
 \begin{equation*}
@@ -670,3 +668,149 @@ Giả sử phản chứng, $g$ không là một đơn ánh. Khi đó, tồn tạ
 tạo ra một mâu thuẫn. Do đó, điều đã giả sử là sai, và chúng ta kết luận được $g$ đơn ánh.
 
 Kết hợp các kết quả, điều phải chứng minh là hiển nhiên.
+
+\exercise Cho $f: A \to B$ là một ánh xạ. Chứng minh $f$ là song ánh khi và chỉ khi tồn tại $g: B \to A$ sao cho \begin{equation*}
+   \begin{cases}
+      g \circ f = \mathds{1}_A \\
+   f \circ g = \mathds{1}_B
+   \end{cases}.
+\end{equation*} Ngoài ra, chứng minh rằng với ánh xạ $g$ đó, $g = f^{-1}$.
+
+\solution
+
+Nếu $f$ là song ánh thì $f^{-1}$ cũng là một ánh xạ song ánh. Với mọi $a \in A$, tồn tại $b \in B$ để $a\;f\;b$. Khi đó, $b\;f^{-1}\;a$. Qua đó, theo định nghĩa quan hệ tích, $a\;f^{-1}\circ f\;a$. Tích của hai ánh xạ, nếu có, là một ánh xạ, và do đó \begin{equation*}
+   \forall a \in A, a = (f^{-1}\circ f)(a).
+\end{equation*}
+Hơn thế nữa, kết hợp định nghĩa của ánh xạ đồng nhất $\mathds{1}_A$, chúng ta có
+\begin{equation*}
+   \forall a \in A, (f^{-1}\circ f)(a) = \mathds{1}_A(a) \qquad \coloringCrimson{\text{(cùng bằng $a$)}}.
+\end{equation*}
+Suy ra $f^{-1}\circ f = \mathds{1}_A$. Chứng minh tương tự, chúng ta cũng có $f\circ f^{-1} = \mathds{1}_B$.
+
+Giả sử có ánh xạ $g: B \to A$ sao cho $g \circ f = \mathds{1}_A$ và $f \circ g = \mathds{1}_B$, chúng ta có $\forall d \in B, \exists ! c \in A, c = g(d) $. Với mọi $c \in A$ và $d \in B$, 
+\begin{align*}
+   f(c) = d &\implies g(f(c)) = g(d); \\
+   f(c) = d &\implies (g \circ f)(c) = g(d); \\
+   f(c) = d &\implies \mathds{1}_A(c) = g(d); \\
+   f(c) = d &\implies c = g(d).
+\end{align*}
+$c = g(d) \implies f(c) = d$ cũng có thể được chứng minh theo hướng tương tự, do đó, 
+\begin{equation*}
+   \forall c \in A, \forall d \in B, (f(c) = d \iff c = g(d)). 
+\end{equation*}
+Do vậy, $\forall d \in B, \exists ! c \in A, d = f(c)$. Lí do cho điều kiện cần và đủ để $f$ là song ánh đã được thể hiện rõ.
+
+Xét ánh xạ $e:B \to A$ tùy ý, với mọi $h \in B$, \begin{equation*}
+   e(h) = e(\mathds{1}_B(h)) = (e \circ \mathds{1}_B)(h).
+\end{equation*} 
+Cho nên, với mọi ánh xạ $e$ từ $B$ đến $A$, $e = e \circ \mathds{1}_B$. Tương tự, với mọi ánh xạ $j$ từ $B$ đến $A$, $j = \mathds{1}_A \circ j$, để từ đó, cuối cùng, chúng ta có được biến đổi:
+\begin{align*}
+   g &= g \circ \mathds{1}_B \\
+      &= g \circ (f \circ f^{-1}) \\
+      &= (g \circ f) \circ f^{-1} \\
+      &= \mathds{1}_A \circ f^{-1} \\
+      &= f^{-1}.
+\end{align*}
+Điều phải chứng minh.
+
+\exercise Cho $A$ và $B$ là hai tập hợp. Có các ánh xạ $f: A \to B$ và $g: B \to A$ sao cho $f \circ g \circ f$ song ánh. Chứng minh rằng $f$ và $g$ đều là song ánh.
+
+\solution
+
+Dễ thấy $f \circ g \circ f$ là ánh xạ từ $A$ đến $B$. Sử dụng kết quả của \refex{ex:li_thuyet_tap_hop:tien_de:anh_xa:dtst}, có $f \circ (g \circ f)$ toàn ánh nên $f$ là toàn ánh, và có $(f \circ g) \circ f$ song ánh với $f$ toàn ánh nên $f$ và $f \circ g$ đều là song ánh. Suy ra, $f^{-1}$ là một song ánh và có $f^{-1} \circ (f \circ g)$ cũng là song ánh. Chúng ta có \begin{equation*}
+   f^{-1} \circ (f \circ g) = (f^{-1} \circ f) \circ g = \mathds{1}_A \circ g = g
+\end{equation*}
+nên $g$ là song ánh. Điều phải chứng minh.
+
+\exercise Cho các tập hợp $x$, $y$, $z$ với các ánh xạ $f: x \to y$ và $g: y \to z$. Chứng minh
+\begin{enumerate}
+   \item nếu $g \circ f$ đơn ánh và $f$ toàn ánh thì $g$ là một đơn ánh,
+   \item nếu $g \circ f$ toàn ánh và $g$ đơn ánh thì $f$ là một toàn ánh.
+\end{enumerate}
+
+\solution
+
+\resetSubexercise Cho giả thiết, vì $g \circ f$ đơn ánh nên $f$ đơn ánh. Kết hợp với $f$ toàn ánh để có song ánh $f$. Chúng ta xây dựng được thêm một song ánh $f^{-1}$, và có được $$(g \circ f) \circ f^{-1} = g \circ (f \circ f^{-1}) = g$$ đơn ánh từ tích hai đơn ánh. Qua đó, điều phải chứng minh.
+
+\stepSubexercise Vì phần này có cách lập luận tương tự nên tác giả sẽ tóm tắt chứng minh. Vì $g \circ f$ toàn ánh và $g$ đơn ánh nên $g$ song ánh. Vì thế, có toàn ánh $g^{-1} \circ (g \circ f) = f$. Điều phải chứng minh.
+
+\exercise Gọi $A$ và $Z$ là hai tập hợp, $T$ là quan hệ tương đương trong $A$, $D$ là quan hệ tương đương trong $Z$. $Q$ là quan hệ xác định từ $A \times Z$ đến $A \times Z$ bởi
+\begin{equation*}
+   \forall (a; b) \in A \times Z, \forall (c; d) \in A \times Z, \left((a;b)\;R\;(c;d) \iff a\;T\;c \land b\;D\;d\right).
+\end{equation*}
+\begin{enumerate}
+   \item Chứng minh rằng $Q$ là một mối quan hệ tương đương.
+   \item Tìm một song ánh từ $A/T \times B/D$ vào $(A \times B)/Q$.
+\end{enumerate}
+
+\solution 
+
+\resetSubexercise Hiển nhiên rằng $Q$ là một mối quan hệ hai ngôi trong $A \times Z$. Gọi $e$ là một phần tử trong $A \times Z$, tồn tại $f$ và $g$ sao cho $f \in A$, $g \in Z$ và $e = (f; g)$. Do $T$ và $D$ lần lượt là các quan hệ tương đương trên $A$ và $Z$ nên $f\;T\;f \land g\;D\;g$, kéo theo $e\;Q\;e$. Do lập luận đúng với mọi $e$ nên chúng ta có tính phản xạ của $Q$.
+
+Gọi thêm $i = (j; k)$ cũng thuộc $A \times Z$. Nếu $e\;Q\;i$, chúng ta có $f\;T\;j\land g\;D\;k$, và tính đối xứng của $T$ và $D$ cho $j\;T\;f\land k\;D\;g$. Vì thế, $i\;Q\;e$. Chúng ta có thể chắc chắn rằng $Q$ đối xứng.
+
+Bổ sung $l = (m; n)$ trong $A \times Z$. Giả sử $\begin{cases}
+   e\;Q\;i \\
+   i\;Q\;l
+\end{cases}$, từ định nghĩa của $Q$ và một chút biến đổi lô-gích, dễ thấy rằng \begin{equation*}
+   \begin{cases}
+      f\;T\;j \\
+      j\;T\;m
+   \end{cases} \land \begin{cases}
+      g\;D\;k \\
+      k\;D\;n
+   \end{cases}.
+\end{equation*} Suy ra $f\;T\;m \land g\;D\;n$ do $T$ và $D$ đều có tính bắc cầu. Qua đó, $(f; g)\;Q\;(m; n)$ hay $e\;Q\;l$. $Q$ bắc cầu.
+
+Tổng kết lại, chúng ta có $Q$ là một quan hệ tương đương như điều chúng ta cần phải chứng minh.
+
+\stepSubexercise Gọi $F$ là quan hệ sao cho với mọi $o \in A/T \times Z/D$, $p \in (A \times Z)/Q$, $o\;F\;p$ khi và chỉ khi tồn tại $q \in A$ và $r \in Z$ sao cho $o = \left([q]_T; [r]_D\right)$ và $p = [(q; r)]_Q$.
+
+Với mọi $s \in A/T \times Z/D$, việc có $\alpha \in A$ và $\beta \in Z$ sao cho $s = \left([\alpha]_T; [\beta]_D\right)$ là hiển nhiên. Có $(\alpha; \beta) \in A \times Z$ nên $[(\alpha; \beta)]_Q \in (A \times Z)/Q$. Vì lí do đó,
+\begin{equation*}
+   \exists t \in (A \times Z)/Q, s\;F\;t. 
+\end{equation*} 
+Gọi $u$ là một phần tử thuộc $(A \times Z)/Q$ sao cho $s\;F\;u$ cũng xảy ra. Tồn tại $v \in A$ và $w \in Z$ sao cho $s = \left([v]_T; [w]_D\right)$ và $u = [(v; w)]_Q$. Từ đấy, chúng ta có $[\alpha]_T = [v]_T$ và $[\beta]_D = [w]_D$, suy ra $\begin{cases}
+   \alpha\;T\;v \\
+   \beta\;D\;w
+\end{cases}$. Theo định nghĩa của $Q$, $(\alpha; \beta)\;Q\;(v; w)$, và do đó, $[(\alpha; \beta)]_Q = [(v; w)]_Q$. Vậy, \begin{equation*}
+   \forall s \in A/T \times Z/D, \exists ! t \in (A \times Z)/Q, s\;F\;t.
+\end{equation*}
+$F$ là một ánh xạ có dạng $$\begin{array}{rcl}
+   F: A/T \times Z/D & \to & (A \times Z)/Q \\
+      ([\alpha]_T; [\beta]_D) & \mapsto & [(\alpha; \beta)]_Q
+\end{array}.$$ 
+
+Xét $x \in (A \times Z)/Q$ tùy ý, luôn luôn tồn tại $(y; z) \in A \times Z$ để $x = [(y; z)]_Q$. Dễ thấy $F(([y]_T; [z]_D)) = x$. Nếu như có một giá trị $\xNom$ nữa để $F\left(\xNom\right) = x$, $\xNom$ phải có dạng $\left(\left[\yNom\right]_T; \left[\zNom\right]_D\right)$. Bởi $F\left(\left(\left[\yNom\right]_T; \left[\zNom\right]_D\right)\right) = \left[\left(\yNom; \zNom\right)\right]_Q = x$ nên phải có $\left(\yNom; \zNom\right)\;Q\;(y; z)$. Suy ra, $\begin{cases}
+   \yNom\;T\;y \\
+   \zNom\;T\;z
+\end{cases}$, cho nên $\begin{cases}
+   \left[\yNom\right]_T = [y]_T \\
+   \left[\zNom\right]_D = [z]_D
+\end{cases}$ và vì vậy $\xNom = ([y]_T; [z]_D)$. Theo định nghĩa, vì chúng ta có \begin{equation*}
+   \forall x \in (A \times Z)/Q, \exists ! \delta \in A/T \times Z/D, F(\delta) = x
+\end{equation*}
+nên $F$ song ánh. Vậy, $F$ là một trong những đối tượng chúng ta cần tìm.
+
+\exercise Xây dựng một quan hệ $R$ từ $X^X$ đến $X^X$ với $X$ là một tập hợp sao cho \begin{equation*}
+   \forall f \in X^X, \forall g \in X^X, \left(f\;R\;g\iff \exists h \in X^X, \begin{cases}
+      h\text{~song ánh} \\
+      h \circ f = g \circ f
+   \end{cases}\right).
+\end{equation*}
+Chứng minh $R$ là một quan hệ tương đương trong $X^X$.
+
+\solution
+
+$R$ là một quan hệ hai ngôi trên $X^X$. Đơn ánh chính tắc $\begin{array}[t]{rcl}
+   i_{X;X}: X & \to & X \\
+         a & \mapsto & a
+\end{array}$, cũng toàn ánh, do với mọi $a \in X$, tồn tại $b \in X$ sao cho $i_{X;X}(a) = b$ (luôn có $i_{X;X}(a) = a$). Do vậy, $i_{X;X}$ là một song ánh.
+Ngoài ra, khi xét $f \in X^X$ tùy ý, với mọi $a \in X$, \begin{align*}
+   (i_{X;X} \circ f)(a) &= i_{X;X}(f(a)) \\
+   &= f(a) \\
+   &= f(i_{X;X}(a)) \\
+   &= (f \circ i_{X;X})(a).
+\end{align*} Kéo theo, $i_{X;X} \circ f = f \circ i_{X;X}$ với mọi $f$. Chúng ta có $f\;R\;f$, suy ra $R$ phản xạ.
+
+Gọi thêm $g \in X^X$. Nếu $f\;R\;g$, theo giả thiết, cần phải có ánh xạ, gọi là $b$ sao cho $b$ song ánh và $b \circ f = g \circ b$. Vì $b$ song ánh, $b^{-1}$ cũng là một song ánh.  

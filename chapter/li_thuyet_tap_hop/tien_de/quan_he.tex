@@ -595,6 +595,31 @@ Mặc dù vậy, do $\varnothing$ là tập rỗng nên không tồn tại $d$ �
 
 Cũng bằng phương pháp chứng minh phản chứng tương tự, chúng ta cũng có $S \circ \varnothing = \varnothing$. Vậy, điều phải chứng minh.
 
+\exercise Cho $w$, $x$, $y$, $z$ là tập hợp với các quan hệ $A$ từ $w$ đến $x$ và $B$ từ $y$ đến $z$. Gọi $P$ và $Q$ là quan hệ đều từ $x$ đến $y$. Chứng minh rằng
+\begin{equation*}
+   P = Q \implies \begin{cases}
+      P \circ A = Q \circ A \\
+      B \circ P = B \circ Q
+   \end{cases}.
+\end{equation*}
+
+\solution
+
+Giả sử $P = Q$. Hiển nhiên rằng $P \circ A$ và $Q \circ A$ đều là quan hệ từ $w$ sang $y$. Xét một phần tử $e \in w \times y$, có thể thấy tồn tại $(a; c) \in w \times y$ sao cho $e = (a; c)$. Theo định nghĩa quan hệ hợp, 
+\begin{equation*}
+   a\;P \circ A\;c \iff \exists b \in x, \left(a\;A\;b \land b\;P\;c\right).
+\end{equation*}
+Do $P = Q$, $b\;P\;c \implies b\;Q\;c$ với mọi $b \in x$, và vì thế 
+\begin{align*}
+   a\;P \circ A\;c &\implies \exists b \in x, \left(a\;A\;b \land b\;Q\;c\right); \\
+   a\;P \circ A\;c &\implies a\;Q \circ A\;c.
+\end{align*}
+Chứng minh tương tự, chúng ta cũng có $a\;Q \circ A\;c \implies a\;P \circ A\;c$. Do đó, \begin{equation*}
+   \forall e \in w \times y, (e \in P \circ A \iff e \in Q \circ A).
+\end{equation*}
+Và vì vậy, $P \circ A = Q \circ A$.
+
+
 \exercise Cho $w$, $x$, $y$, $z$ là những tập hợp. Gọi
 \begin{itemize}
    \item $P$ là quan hệ từ $w$ đến $x$,
