@@ -440,11 +440,14 @@ và \defText{tập giá trị} hay \defText{tập ảnh} là
    \end{center}
    \caption{Minh họa quan hệ $R \subseteq x \times y$ với các cặp $(a_1; b_1), (a_1; b_2), (a_3; b_3)$ thuộc $R$.}
 \end{figure}
-Cần phải phân biệt được tập nguồn với tập xác định, tập đích với tập giá trị. Tập xác định chỉ chứa những phần tử từ tập nguồn mà có giá trị quan hệ tương ứng ở tập đích. Tương tự, tập giá trị chỉ có những phần tử trong tập đích mà có giá trị quan hệ tương ứng ở tập nguồn. Mặc dù vậy, trong một số trường hợp đặc biệt, một quan hệ $R$ có thể có 
-\begin{itemize}
-   \item tập nguồn bằng tập xác định, khi đó, $R$ có tính chất \defText{toàn diện trái};
-   \item tập đích bằng tập giá trị, khi đó, $R$ là một quan hệ \defText{toàn diện phải}.
-\end{itemize}
+Cần phải phân biệt được tập nguồn với tập xác định, tập đích với tập giá trị. Tập xác định chỉ chứa những phần tử từ tập nguồn mà có giá trị quan hệ tương ứng ở tập đích. Tương tự, tập giá trị chỉ có những phần tử trong tập đích mà có giá trị quan hệ tương ứng ở tập nguồn. Mặc dù vậy, trong một số trường hợp đặc biệt, một quan hệ $R$ từ $x$ sang $y$ có thể có tập nguồn $x$ bằng tập xác định $\Dom(R)$, khi đó, $R$ có tính chất \defText{toàn diện trái}. Bởi vì $x \supseteq \Dom(R)$ đã có sẵn, $x = \Dom(R)$ xảy ra khi và chỉ khi $x \subseteq \Dom(R)$, có nghĩa là $\forall a \in x, a \in \Dom(R)$. Từ định nghĩa của tập xác định, $x = \Dom(R)$ có được nếu và chỉ nếu
+$$
+   \defMath{\forall a \in x, \exists b \in y, a\;R\;b}.
+$$
+Tương tự, khi tập đích $y$ bằng tập giá trị $\Im(R)$, khi đó, $R$ là một quan hệ \defText{toàn diện phải}:
+$$
+   \defMath{\forall b \in y, \exists a \in x, a\;R\;b}.
+$$
 
 Hãy lấy một ví dụ. Nếu $A$ là tập hợp thì $\in_A = \{x \in A \times \mathfrak{P}(A) \mid \exists B\in \mathfrak{P}(A), \exists b\in B, x = (b; B)\}$ là một quan hệ trên $A \times \mathfrak{P}(A)$. Có thể nhìn ra được rằng $\in_A$ có giá trị tương đương với $\in$ trên một phạm vi bé hơn, nhưng $\in$ không được coi là một quan hệ còn $\in_A$ thì có. Vì sao? Bởi vì, để $\in$ có thể là một quan hệ, cần tồn tại một $A$ là tập chứa tất cả các tập hợp và từ đó $\in$ sẽ là một tập con của $A$, nhưng tập này không tồn tại.
 
@@ -600,16 +603,23 @@ Mặc dù vậy, do $\varnothing$ là tập rỗng nên không tồn tại $d$ �
 Cũng bằng phương pháp chứng minh phản chứng tương tự, chúng ta cũng có $S \circ \varnothing = \varnothing$. Vậy, điều phải chứng minh.
 
 \exercise Cho $w$, $x$, $y$, $z$ là tập hợp với các quan hệ $A$ từ $w$ đến $x$ và $B$ từ $y$ đến $z$. Gọi $P$ và $Q$ là quan hệ đều từ $x$ đến $y$. Chứng minh rằng
-\begin{equation*}
-   P = Q \implies \begin{cases}
+\begin{enumerate}
+   \item $P = Q \implies \begin{cases}
       P \circ A = Q \circ A \\
       B \circ P = B \circ Q
-   \end{cases}.
-\end{equation*}
-
+   \end{cases}$;
+   \item $\begin{cases}
+      P \circ A = Q \circ A \\
+      A \text{~là một quan hệ toàn diện phải}
+   \end{cases} \implies P = Q$;
+   \item $\begin{cases}
+      B \circ P = B \circ Q \\
+      B \text{~là một quan hệ toàn diện trái}
+   \end{cases} \implies P = Q$.
+\end{enumerate}
 \solution
 
-Giả sử $P = Q$. Hiển nhiên rằng $P \circ A$ và $Q \circ A$ đều là quan hệ từ $w$ sang $y$. Xét một phần tử $e \in w \times y$, có thể thấy tồn tại $(a; c) \in w \times y$ sao cho $e = (a; c)$. Theo định nghĩa quan hệ hợp, 
+\resetSubexercise Giả sử $P = Q$. Hiển nhiên rằng $P \circ A$ và $Q \circ A$ đều là quan hệ từ $w$ sang $y$. Xét một phần tử $e \in w \times y$, có thể thấy tồn tại $(a; c) \in w \times y$ sao cho $e = (a; c)$. Theo định nghĩa quan hệ hợp, 
 \begin{equation*}
    a\;P \circ A\;c \iff \exists b \in x, \left(a\;A\;b \land b\;P\;c\right).
 \end{equation*}
@@ -632,6 +642,7 @@ Do đó, $f$ thuộc $B \circ P$ khi và chỉ khi $f$ cũng thuộc $B\circ Q$,
 
 Kết hợp các lập luận, chúng ta dễ dàng có được điều phải chứng minh.
 
+\stepSubexercise Giả sử chúng ta có giả thiết $P \circ A = Q \circ A$ và $A$ là quan hệ toàn diện phải. 
 
 \exercise Cho $w$, $x$, $y$, $z$ là những tập hợp. Gọi
 \begin{itemize}
