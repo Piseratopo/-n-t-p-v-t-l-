@@ -609,15 +609,24 @@ Giả sử $P = Q$. Hiển nhiên rằng $P \circ A$ và $Q \circ A$ đều là 
 \begin{equation*}
    a\;P \circ A\;c \iff \exists b \in x, \left(a\;A\;b \land b\;P\;c\right).
 \end{equation*}
-Do $P = Q$, $b\;P\;c \implies b\;Q\;c$ với mọi $b \in x$, và vì thế 
+Do $P = Q$, $b\;P\;c \iff b\;Q\;c$ với mọi $b \in x$, và vì thế 
 \begin{align*}
-   a\;P \circ A\;c &\implies \exists b \in x, \left(a\;A\;b \land b\;Q\;c\right); \\
-   a\;P \circ A\;c &\implies a\;Q \circ A\;c.
+   a\;P \circ A\;c &\iff \exists b \in x, \left(a\;A\;b \land b\;Q\;c\right); \\
+   a\;P \circ A\;c &\iff a\;Q \circ A\;c.
 \end{align*}
-Chứng minh tương tự, chúng ta cũng có $a\;Q \circ A\;c \implies a\;P \circ A\;c$. Do đó, \begin{equation*}
-   \forall e \in w \times y, (e \in P \circ A \iff e \in Q \circ A).
+Và vì vậy, $\forall e \in x \times y, (e \in P \circ A \iff e \in Q \circ A)$, hay $P \circ A = Q \circ A$.
+
+Ngoài ra, cũng có $B \circ P$ và $B \circ Q$ đều là quan hệ từ $x$ sang $z$. Gọi $f$ là một phần tử bất kì thuộc $x \times z$, $g \in x$ và $h \in z$ sao cho $f = (g; h)$. Có 
+\begin{equation*}
+   g\;B \circ P\;h \iff \exists i \in y, \left(g\;P\;i \land i\;B\;h\right),
 \end{equation*}
-Và vì vậy, $P \circ A = Q \circ A$.
+bởi vì $P = Q$, có thể có được \begin{align*}
+   g\;B \circ P\;h &\iff \exists i \in y, \left(g\;Q\;i \land i\;B\;h\right); \\
+   g\;B \circ P\;h &\iff g\;B\circ Q\;h.
+\end{align*}
+Do đó, $f$ thuộc $B \circ P$ khi và chỉ khi $f$ cũng thuộc $B\circ Q$, hoặc $B \circ P  = B \circ Q$.
+
+Kết hợp các lập luận, chúng ta dễ dàng có được điều phải chứng minh.
 
 
 \exercise Cho $w$, $x$, $y$, $z$ là những tập hợp. Gọi
