@@ -402,11 +402,11 @@ Kết hợp kết quả từ hai chiều, chúng ta có được điều phải 
    
 \subsection{Định nghĩa quan hệ}
 
-Một \defText{quan hệ} $R$ trên $x \times y$ được định nghĩa đơn giản là một tập con nào đó của $x \times y$. Thông thường, chúng ta viết $a R b$ nếu $(a; b) \in R$. Dễ thấy rằng không phải mọi phần tử trong $x$ sẽ có phần tử quan hệ tương ứng trong $y$ và ngược lại cũng như vậy. Do đó, chúng ta sẽ định nghĩa thêm những giá trị có thể có quan hệ. Cụ thể, định nghĩa \defText{tập nguồn} là $x$, \defText{tập đích} là $y$, \defText{tập xác định} là
+Một \defText{quan hệ} $R$ trên $x \times y$ được định nghĩa đơn giản là một tập con nào đó của $x \times y$. Thông thường, chúng ta viết $a\;R\;b$ nếu $(a; b) \in R$. Dễ thấy rằng không phải mọi phần tử trong $x$ sẽ có phần tử quan hệ tương ứng trong $y$ và ngược lại cũng như vậy. Do đó, chúng ta sẽ định nghĩa thêm những giá trị có thể có quan hệ. Cụ thể, với quan hệ $R$ từ $x$ vào $y$ đó, chúng ta có \defText{tập nguồn} là $x$, \defText{tập đích} là $y$, \defText{tập xác định} là
 \begin{equation*}
    \defMath{\dom(R) = \Dom(R) = \Def(R) = \mathbf{D}_R = \{a \in x \mid \exists b \in y, a\;R\;b\}}
 \end{equation*}
-và định nghĩa \defText{tập giá trị} là
+và \defText{tập giá trị} hay \defText{tập ảnh} là
 \begin{equation*}
    \defMath{\imf(R) = \Imf(R) = \ran(R) = \Ran(R) = \mathbf{T}_R = \{b \in y \mid \exists a \in x, a\;R\;b\}}.
 \end{equation*}
@@ -433,14 +433,18 @@ và định nghĩa \defText{tập giá trị} là
          \node[element, label=right:$b_4$] (y4) at (2, -2) {};
 
          % Mũi tên ánh xạ quan hệ R (một chiều từ x sang y)
-         \draw[guide arrow] (x1) -- (y1) node[midway, above, font=\small] {$R$};
-         \draw[guide arrow] (x1) -- (y2);
-         \draw[guide arrow] (x3) -- (y3);
+         \draw[guide arrow, color=colorCrimson] (x1) -- (y1) node[midway, above, font=\small] {$R$};
+         \draw[guide arrow, color=colorCrimson] (x1) -- (y2);
+         \draw[guide arrow, color=colorCrimson] (x3) -- (y3);
       \end{tikzpicture}
    \end{center}
    \caption{Minh họa quan hệ $R \subseteq x \times y$ với các cặp $(a_1; b_1), (a_1; b_2), (a_3; b_3)$ thuộc $R$.}
 \end{figure}
-Cần phải phân biệt được tập nguồn với tập xác định, tập đích với tập giá trị. Tập xác định chỉ chứa những phần tử từ tập nguồn mà có giá trị quan hệ tương ứng ở tập đích. Tương tự, tập giá trị chỉ có những phần tử trong tập đích mà có giá trị quan hệ tương ứng ở tập nguồn.
+Cần phải phân biệt được tập nguồn với tập xác định, tập đích với tập giá trị. Tập xác định chỉ chứa những phần tử từ tập nguồn mà có giá trị quan hệ tương ứng ở tập đích. Tương tự, tập giá trị chỉ có những phần tử trong tập đích mà có giá trị quan hệ tương ứng ở tập nguồn. Mặc dù vậy, trong một số trường hợp đặc biệt, một quan hệ $R$ có thể có 
+\begin{itemize}
+   \item tập nguồn bằng tập xác định, khi đó, $R$ có tính chất \defText{toàn diện trái};
+   \item tập đích bằng tập giá trị, khi đó, $R$ là một quan hệ \defText{toàn diện phải}.
+\end{itemize}
 
 Hãy lấy một ví dụ. Nếu $A$ là tập hợp thì $\in_A = \{x \in A \times \mathfrak{P}(A) \mid \exists B\in \mathfrak{P}(A), \exists b\in B, x = (b; B)\}$ là một quan hệ trên $A \times \mathfrak{P}(A)$. Có thể nhìn ra được rằng $\in_A$ có giá trị tương đương với $\in$ trên một phạm vi bé hơn, nhưng $\in$ không được coi là một quan hệ còn $\in_A$ thì có. Vì sao? Bởi vì, để $\in$ có thể là một quan hệ, cần tồn tại một $A$ là tập chứa tất cả các tập hợp và từ đó $\in$ sẽ là một tập con của $A$, nhưng tập này không tồn tại.
 
