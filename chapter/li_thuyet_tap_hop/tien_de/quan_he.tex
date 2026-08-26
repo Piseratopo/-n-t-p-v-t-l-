@@ -801,59 +801,6 @@ suy ra $R$ có tính bắc cầu.
 
 $R$ vừa có tính phản xạ, tính đối xứng, và tính bắc cầu, dẫn đến $R$ là một quan hệ tương đương, hay điều phải chứng minh.
 
-\exercise Cho $R$ là một quan hệ phản xạ và bắc cầu trên $\mathscr{U}$. $S$ là một quan hệ trên $\mathscr{U}$ được xác định bởi:
-\begin{equation*}
-   \forall (x;y) \in \mathscr{U}^2, \left(x\;S\;y \iff x\;R\;y \land y\;R\;x\right). 
-\end{equation*}
-Chứng minh rằng $S$ là một quan hệ tương đương.
-
-\solution
-
-Do $R$ có tính phản xạ nên $x\;R\;x$ với mọi $x$ (thuộc $\mathscr{U}$). Ngoài ra, từ định nghĩa của $S$, \begin{equation*}
-   x\;S\;x \iff x\;R\;x \land x\;R\;x
-\end{equation*}
-cũng đúng với mọi $x$. Do đó, $\forall x \in \mathscr{U}, x\;S\;x$, hay $S$ có tính phản xạ.
-
-Xét $(u; v) \in S$ với $(u; v) \in \mathscr{U}^2$. Khi này,
-\begin{align*}
-   u\;S\;v &\iff u\;R\;v \land v\;R\;u \equationexplanation{giả thiết};\\
-   u\;S\;v &\iff v\;R\;u \land u\;R\;v \equationexplanation{giao hoán của phép hội};\\
-   u\;S\;v &\iff v\;S\;u \equationexplanation{giả thiết}.
-\end{align*}
-Từ đó, chúng ta dễ thấy được tính đối xứng của $S$.
-
-Ngoài ra, giả sử có $(a; b)$ và $(b; c)$ (trong $\mathscr{U}^2$) cùng thuộc $S$. Chúng ta có:
-\begin{align*}
-   \begin{cases}
-      a\;S\;b\\
-      b\;S\;c
-   \end{cases} &\implies \begin{cases}
-      a\;R\;b \land b\;R\;a \\
-      b\;R\;c \land c\;R\;b
-   \end{cases} \equationexplanation{dễ thấy từ giả thiết};\\
-   \begin{cases}
-      a\;S\;b\\
-      b\;S\;c
-   \end{cases} &\implies \begin{cases}
-      a\;R\;b \land b\;R\;c \\
-      c\;R\;b \land b\;R\;a
-   \end{cases} \equationexplanation{kiểm chứng được từ giải tích mệnh đề};\\
-   \begin{cases}
-      a\;S\;b\\
-      b\;S\;c
-   \end{cases} &\implies \begin{cases}
-      a\;R\;c \\
-      c\;R\;a
-   \end{cases} \equationexplanation{tính bắc cầu của $R$}; \\
-   \begin{cases}
-      a\;S\;b\\
-      b\;S\;c
-   \end{cases} &\implies a\;S\;c;
-\end{align*}
-và vì vậy, $S$ có tính bắc cầu.
-
-Do $S$ đều có tính phản xạ, đối xứng và bắc cầu nên chúng ta có quan hệ tương đương $S$, hay nói theo cách khác, điều phải chứng minh.
-
 \exercise Một quan hệ cho trước có thể thiếu một số thuộc tính, do đó, người ta xây dựng quan hệ mới là mở rộng của nó với các tính chất cần thiết. Trong bài tập này, chúng ta sẽ nghiên cứu hai cách mở rộng đơn giản nhất. Gọi $D$ là một quan hệ trên $x$. \defText{Bao đóng phản xạ} của quan hệ $D$ này là 
 $$\defMath{D_f = D \cup \big\{y \in x^2 \;\big|\; \exists z \in x, y = (z; z)\big\}}.$$
 \defText{Bao đóng đối xứng} của $D$ có định nghĩa
@@ -1137,6 +1084,82 @@ Tồn tại giá trị nhỏ nhất của $\Maj_{(\mathscr{E}; \preccurlyeq)}(A)
    \Maj_{(\mathscr{E}; \preccurlyeq)}(B) = \{2\},
 \end{equation*}
 và do đó, biên trên của $B$ là $2$. Đây là một ví dụ thỏa mãn.
+
+\exercise Cho $R$ là một quan hệ phản xạ và bắc cầu trên $\mathscr{U}$. $S$ là một quan hệ trên $\mathscr{U}$ được xác định bởi:
+\begin{equation*}
+   \forall x \in \mathscr{U}, \forall y \in \mathscr{U}, \left(x\;S\;y \iff x\;R\;y \land y\;R\;x\right). 
+\end{equation*}
+\begin{enumerate}
+   \item Chứng minh rằng $S$ là một quan hệ tương đương.
+   \item Gọi $\preccurlyeq$ là một quan hệ hai ngôi trong tập thương $\mathscr{U}/S$ được định nghĩa bởi \begin{equation*}
+      \forall x \in \mathscr{U}/S, \forall y \in \mathscr{U}/S, \left(x \preccurlyeq y \iff \exists a \in x, \exists b \in y, a\;R\;b\right).
+   \end{equation*}
+   Chứng minh rằng $\preccurlyeq$ là quan hệ thứ tự trong $\mathscr{U}/S$.
+\end{enumerate}
+
+\solution
+
+\resetSubexercise Do $R$ có tính phản xạ nên $x\;R\;x$ với mọi $x$ (thuộc $\mathscr{U}$). Ngoài ra, từ định nghĩa của $S$, \begin{equation*}
+   x\;S\;x \iff x\;R\;x \land x\;R\;x
+\end{equation*}
+cũng đúng với mọi $x$. Do đó, $\forall x \in \mathscr{U}, x\;S\;x$, hay $S$ có tính phản xạ.
+
+Xét $(u; v) \in S$ với $(u; v) \in \mathscr{U}^2$. Khi này,
+\begin{align*}
+   u\;S\;v &\iff u\;R\;v \land v\;R\;u \equationexplanation{giả thiết};\\
+   u\;S\;v &\iff v\;R\;u \land u\;R\;v \equationexplanation{giao hoán của phép hội};\\
+   u\;S\;v &\iff v\;S\;u \equationexplanation{giả thiết}.
+\end{align*}
+Từ đó, chúng ta dễ thấy được tính đối xứng của $S$.
+
+Ngoài ra, giả sử có $(a; b)$ và $(b; c)$ (trong $\mathscr{U}^2$) cùng thuộc $S$. Chúng ta có:
+\begin{align*}
+   \begin{cases}
+      a\;S\;b\\
+      b\;S\;c
+   \end{cases} &\implies \begin{cases}
+      a\;R\;b \land b\;R\;a \\
+      b\;R\;c \land c\;R\;b
+   \end{cases} \equationexplanation{dễ thấy từ giả thiết};\\
+   \begin{cases}
+      a\;S\;b\\
+      b\;S\;c
+   \end{cases} &\implies \begin{cases}
+      a\;R\;b \land b\;R\;c \\
+      c\;R\;b \land b\;R\;a
+   \end{cases} \equationexplanation{kiểm chứng được từ giải tích mệnh đề};\\
+   \begin{cases}
+      a\;S\;b\\
+      b\;S\;c
+   \end{cases} &\implies \begin{cases}
+      a\;R\;c \\
+      c\;R\;a
+   \end{cases} \equationexplanation{tính bắc cầu của $R$}; \\
+   \begin{cases}
+      a\;S\;b\\
+      b\;S\;c
+   \end{cases} &\implies a\;S\;c;
+\end{align*}
+và vì vậy, $S$ có tính bắc cầu.
+
+Do $S$ đều có tính phản xạ, đối xứng và bắc cầu nên chúng ta có quan hệ tương đương $S$, hay nói theo cách khác, điều phải chứng minh.
+
+\stepSubexercise Xét $d$ là phần tử bất kì thuộc $\mathscr{U}/S$. Vì $\mathscr{U}/S$ là phân hoạch của $\mathscr{U}$ nên $d$ không rỗng, có nghĩa là tồn tại $e \in d$. Vì $R$ phản xạ nên $e\;R\;e$, dẫn đến $d \preccurlyeq d$. Vậy, $\preccurlyeq$ có tính phản xạ.
+
+Bổ sung thêm $g \in \mathscr{U}/S$ vào lập luận. Nếu $d \preccurlyeq g$ và $g \preccurlyeq d$, tồn tại $h$ và $k$ thuộc $d$ và $i$, $j$ thuộc $g$ sao cho $h\;R\;i$ và $j\;R\;k$. Cần nhớ lại rằng $d$ và $g$ đều là lớp tương đương mô-đun $S$, cho nên $\begin{cases}
+   (h; k) \in d^2 \\
+   (i; j) \in g^2
+\end{cases}$ kéo theo $h\;S\;k$ và $i\;S\;j$. Từ định nghĩa của $S$, chúng ta lại có $k\;R\;h$ và $i\;R\;j$. Khi đó, $h\;R\;j$ (do $h\;R\;i$ và $i\;R\;j$) và $j\;R\;h$ (do $j\;R\;k$ và $k\;R\;h$), suy ra $h\;S\;j$, và $j$ thuộc lớp tương đương $d$. $d$ và $g$ cùng thuộc phân hoạch $\mathscr{U}/S$ có chung phần tử $j$ nên $d = g$. Chúng ta có tính phản đối xứng của $\preccurlyeq$.
+
+Gọi thêm $l \in \mathscr{U}/S$ để có thể giả sử $d \preccurlyeq g$ và $g \preccurlyeq l$. Sử dụng lại $h \in d$ và $i \in g$ thỏa mãn $h\;R\;i$. Vì $g \preccurlyeq l$, tồn tại $m \in g$ và $n \in l$ sao cho $m\;R\;n$. $i$ và $m$ cùng thuộc $g$ nên có được $i\;R\;m$. Có 
+\begin{align*}
+   h\;R\;i \land i\;R\;m \land m\;R\;n &\implies h\;R\;m \land m\;R\;n; \\
+   h\;R\;i \land i\;R\;m \land m\;R\;n &\implies h\;R\;n.
+\end{align*}
+Do đó, có $h \in d$ và $n \in l$ để $h\;R\;n$, dẫn đến $d \preccurlyeq l$. Vì thế, $\preccurlyeq$ có tính bắc cầu.
+
+Kết luận lại, $\preccurlyeq$ là một quan hệ thứ tự. Điều phải chứng minh.
+
 
 \exercise Cho $A$ được sắp xếp thứ tự bởi $\preccurlyeq$. Xác định thứ tự nghiêm ngặt $\prec$ ứng với $\preccurlyeq$. Chứng minh rằng 
 \begin{enumerate}

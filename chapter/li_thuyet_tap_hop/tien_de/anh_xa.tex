@@ -1013,7 +1013,7 @@ Chúng ta có thể lấy ví dụ như sau:
 \end{itemize}
 
 Các tập hợp $0$, $1$, $A$, $B$, có thể được xây dựng từ tiên đề tập rỗng và tiên đề cặp. Từ đó, $$
-A \times A = B \times B = \{(0; 0); (0; 1); (1; 0); (1; 1)\}.
+A \times B = A^2 = B^2 = \{(0; 0); (0; 1); (1; 0); (1; 1)\}.
 $$
 $\preccurlyeq\;\subseteq A \times A$ và $\leq\;\subseteq B \times B$ nên $\preccurlyeq$ và $\leq$ là quan hệ hai ngôi trong lần lượt $A$ và $B$.
 
@@ -1046,4 +1046,90 @@ Do đó, $c \preccurlyeq d \land d \preccurlyeq e \implies c = d = e$. Khi này,
 
 Xét $f$, $g$, $h$ bất kì trong tập hợp $B$, nếu như đã có $f \leq g$ và $g \leq f$. Nếu $f \neq g$, nhận thấy rằng $(f; g) \in B^2$, nên $(f; g)$ chỉ có thể nhận giá trị là $(0; 1)$ hoặc $(1; 0)$. Tuy nhiên, dễ thấy, cả hai trường hợp đều mâu thuẫn với giả thiết đã có do $(1; 0) \notin \; \leq$. Theo chứng minh bằng phản chứng, có được $f = g$. Vì vậy, $B$ đã được khẳng định là có tính phản đối xứng.
 
-Thêm vào đó, giả sử $f \leq g$ và $g \leq h$.
+Thêm vào đó, giả sử $f \leq g$ và $g \leq h$. Các giá trị mà $(f; g)$ hay $(g; h)$ có thể nhận vào là $(0; 0)$, $(0; 1)$, $(1; 0)$. Để tránh phải viết quá nhiều trường hợp, chúng ta có thể kẻ bảng và đối chiếu xem những trường hợp nào khả thi.
+
+\begin{table}[H]
+   \centering
+   \caption{Bảng xét trường hợp của $(f; g)$ và $(g; h)$.}
+   \label{tab:li_thuyet_tap_hop:tien_de:anh_xa:xtt_fgh}
+   \begin{tblr}{
+      colspec = {Q[c,m,2cm] Q[c,m,2cm] Q[c,m,2cm] Q[c,m,2cm]},
+      rows = {28pt, m},
+      hlines,
+      hline{2} = {1.5pt},
+      vlines,
+      vline{2} = {1.5pt},
+   }
+   \diagbox[width=2.3cm, height=28pt]
+      {$(g; h)$}{$(f; g)$} & $(0; 0)$ & $(0; 1)$ & $(1; 1)$ \\
+      $(0; 0)$ & khả thi & không khả thi & không khả thi \\
+      $(0; 1)$ & khả thi & không khả thi & không khả thi \\
+      $(1; 1)$ & không khả thi & khả thi & khả thi \\
+   \end{tblr}
+\end{table}
+Trong mọi trường hợp khả thi, thấy được rằng, khi đó, luôn luôn xảy ra $f \leq h$. Qua đó, chúng ta có $\leq$ có tính bắc cầu.
+
+Nhìn chung, $\preccurlyeq$ và $\leq$ đều có tính phản xạ, tính phản đối xứng, và tính bắc cầu. Vậy, $\preccurlyeq$, $\leq$ là quan hệ thứ tự.
+
+Tiếp theo, chúng ta xét đến $f$. Có $f \subseteq A \times B$ nên $f$ là một quan hệ từ $A$ đến $B$. Để $f$ là một ánh xạ, với mỗi $i$ thuộc $A$, tồn tại duy nhất $j \in B$ sao cho $(i; j) \in f$. Thật vậy, dựa vào khẳng định  $\forall i, (i \in A \iff i = 0 \lor i = 1)$, chúng ta xét hai trường hợp:
+\begin{itemize}
+   \item Nếu \coloringCrimson{$i = 0$}, tồn tại $j = 0$ để $(i; j) \in f$. Giá trị $0$ này là duy nhất, vì nếu còn $j'$ sao cho $(0; j') \in f$, từ định nghĩa của $f$, $(0; j') = (0; 0)$ hoặc $(0; j') = (1; 1)$. Rõ ràng rằng, $(0; j) = (1; 1)$ là vô lí do $0 \neq 1$, nên $(0; j') = (0; 0)$ và suy ra $j' = 0$.
+   \item Nếu \coloringDodgerblue{$i = 1$}, bằng một lập luận tương tự, tồn tại duy nhất $j = 1$ thỏa mãn $(i; j) \in f$.
+\end{itemize}
+Vì vậy, $f$ là một ánh xạ.
+
+Với mọi $k$, $l$ thuộc $A$, $k \preccurlyeq l \implies k = l$. Do đó, $k \preccurlyeq l \implies f(k) = f(l)$ và từ đấy có $k \preccurlyeq l \implies f(k) \preccurlyeq f(l)$. $f$ là một hàm tăng. Ngoài ra, chúng ta có $\begin{cases}
+   0\;f\;0 \iff 0\;f^{-1}\;0 \\
+   1\;f\;1 \iff 1\;f^{-1}\;1 
+\end{cases}$ nên $f^{-1} = \{(0; 0); (1; 1)\} = f$ là một ánh xạ. Do đó, \begin{equation*}
+   \forall m \in B, \exists ! n \in A, m\;f^{-1}\;n. 
+\end{equation*}
+Điều này tương đương với $\forall m \in B, \exists ! n \in A, n\;f\;m$. Suy ra, $f$ song ánh.
+
+Xét $f^{-1}(0) = 0$ và $f^{-1}(1) = 1$. Nhận thấy giá trị đầu vào $0$ và $1$ có thể so sánh được với nhau ($0 \leq 1$), nhưng $\left(f^{-1}(0); f^{-1}(1)\right) \notin \; \preccurlyeq$ nên $f^{-1}(0) \centernot{\preccurlyeq} f^{-1}(1)$. Vì vậy, $f^{-1}$ không tăng. Đây là một ví dụ thỏa mãn.
+
+\exercise Cho tập hợp $A$ và $B$, các quan hệ thứ tự $\preccurlyeq$, $\leq$ lần lượt trong $A$ và $B$, và ánh xạ $f: A \to B$. Chứng minh rằng
+\begin{enumerate}
+   \item nếu $f$ tăng và đơn ánh thì $f$ tăng nghiêm ngặt;
+   \item nếu $f$ giảm và đơn ánh thì $f$ giảm nghiêm ngặt;
+   \item nếu $f$ tăng nghiêm ngặt hoặc giảm nghiêm ngặt, và quan hệ thứ tự $\preccurlyeq$ trong $A$ là toàn phần, thì $f$ đơn ánh.
+\end{enumerate}
+
+\solution 
+
+Gọi $\prec$ là quan hệ thứ tự nghiêm ngặt ứng với $\preccurlyeq$.
+
+\resetSubexercise Xét $a$ và $b$ tùy ý trong $A$. Chúng ta có 
+\begin{align*}
+   a \prec b &\implies a \preccurlyeq b; \\
+   a \prec b &\implies f(a) \preccurlyeq f(b) \equationexplanation{$f$ tăng}.
+\end{align*}
+Ngoài ra, 
+\begin{align*}
+   a \prec b &\implies a \neq b; \\
+   a \prec b &\implies f(a) \neq f(b) \equationexplanation{$f$ đơn ánh}.
+\end{align*}
+Do đó, \begin{align*}
+   a \prec b &\implies \begin{cases}
+      f(a) \preccurlyeq f(b) \\
+      f(a) \neq f(b) 
+   \end{cases}; \\
+   a \prec b &\implies f(a) \prec f(b).
+\end{align*}
+Chúng ta có $f$ tăng nghiêm ngặt. Điều phải chứng minh.
+
+\stepSubexercise Chứng minh tương tự phần trước. Với mọi $a, b$ thuộc $A$,
+\begin{align*}
+   a \prec b &\implies \begin{cases}
+      a \preccurlyeq b \\
+      a \neq b 
+   \end{cases}; \\
+   a \prec b &\implies \begin{cases}
+      f(b) \preccurlyeq f(a) \\
+      f(a) \neq f(b)
+   \end{cases}; \\
+   a \prec b &\implies f(b) \prec f(a). 
+\end{align*}
+Vậy, $f$ giảm nghiêm ngặt, là điều phải chứng minh.
+
+\stepSubexercise
