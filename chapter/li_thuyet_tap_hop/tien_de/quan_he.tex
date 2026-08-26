@@ -26,6 +26,78 @@ Vì vậy, từ tiên đề tách, chúng ta có thể khẳng định rằng đ
 \end{equation}
 Ngoài ra, chúng ta đã sử dụng khá nhiều ``$\forall a \in x, \forall b \in y,\dots$'' trong phần này và các phần trước đó. Sử dụng tích Đề-các, chúng ta cũng có thể kí hiệu một cách tương đương là $$\defMath{\forall (a; b) \in x \times y},\dots.$$ Tương tự với lượng từ tồn tại. Thêm vào đó, nếu hai tập cấu thành lên tích Đề-các là bằng nhau như $x \times x$, có thể kí hiệu nó lại là $x^2$. Nhìn về phía trước, giả sử gọi $a$ và $b$ là hai số thực, người ta có thể kí hiệu là ``$\forall (a; b) \in \mathbb{R}^2, \dots$'', nhưng thông thường, họ thường viết là ``$\forall a, b \in \mathbb{R},\dots$''.
 
+\exercise Gọi $x$, $y$, $z$ là các tập hợp. Đặt $A = \{x\}$ và $B = \{y; z\}$. Chứng minh rằng \begin{equation*}
+   \begin{cases}
+      A^2 = \{(x; x)\} \\
+      B^2 = \{(y; y); (y; z); (z; y); (z; z)\} \\
+      A \times B = \{(x; y); (x; z)\} \\
+      B \times A = \{(y; x); (z; x)\}
+   \end{cases}.
+\end{equation*}
+
+\solution
+
+Từ \eqref{eq:li_thuyet_tap_hop:tien_de:quan_he:dieu_kien_thuoc_tich}, có ngay $(x; x) \in A^2$ và $\{(x; x)\} \subseteq A^2$. Ngược lại, gọi $a$ là một phần tử tùy ý của $A^2$. Theo định nghĩa tích Đề-các, tồn tại $b$ và $c$ thuộc $A$ sao cho $a = (b; c)$. Phần tử duy nhất thuộc $A$ là $x$, cho nên $b = c = x$ và $a = (x; x)$. Do đó, $$\forall a \in A^2, a \in \{(x; x)\}$$
+và qua kết quả này, $A^2 \subseteq \{(x; x)\}$. Vậy, chúng ta chứng minh được mệnh đề đầu tiên: $A^2 = \{(x; x)\}$.
+
+Vì $y$ và $z$ thuộc $B$ nên $\begin{cases}
+   (y; y) \in B^2 \\
+   (y; z) \in B^2 \\
+   (z; y) \in B^2 \\
+   (z; z) \in B^2
+\end{cases}$, dẫn đến $\{(y; y); (y; z); (z; y); (z; z)\} \subseteq B^2$. Với $d$ là phần tử bất kì thuộc $B^2$, tồn tại $e$ và $f$ cùng thuộc $B$ để $d = (e; f)$. Từ đó, suy ra xảy ra một trong các trường hợp sau:
+\begin{itemize}
+   \item \coloringCrimson{$e = f = y$}, khi đó, $d = (y; y)$; 
+   \item \coloringDodgerblue{$e = y$ và $f = z$}, khi đó, $d = (y; z)$; 
+   \item \coloringJade{$e = z$ và $f = y$}, khi đó, $d = (z; y)$; 
+   \item \coloringWisteria{$e = f = z$}, khi đó, $d = (z; z)$.
+\end{itemize}
+Trong mọi trường hợp, đều có được $d \in \{(y; y); (y; z); (z; y); (z; z)\}$, nên $B^2 \subseteq \{(y; y); (y; z); (z; y); (z; z)\}$. Và vì thế, $B^2 = \{(y; y); (y; z); (z; y); (z; z)\}$.
+
+Vì $x \in A$ và $y$, $z$ cùng thuộc $B$ nên \begin{equation*}
+   \begin{cases}
+      (x; y) \in A \times B \\
+      (x; z) \in A \times B 
+   \end{cases} \land \begin{cases}
+      (y; x) \in B \times A \\
+      (z; x) \in B \times A
+   \end{cases}.
+\end{equation*}
+Do đó, \begin{equation*}
+   \begin{cases}
+      \{(x; y); (x; z)\} \subseteq A \times B \\
+      \{(y; x); (z; x)\} \subseteq B \times A
+   \end{cases}.
+\end{equation*}
+Mặt khác, gọi $g$ và $j$ là phần tử thuộc lần lượt $A \times B$ và $B \times A$. Khi đó, tồn tại $h, l$ cùng thuộc $A$, $i, k$ cùng thuộc $B$ để $g = (h; i)$ và $j = (k; l)$. $A$ chỉ có một phần tử là $x$, nên $h = l = x$. $B$ là tập hợp được xây dựng từ tiên đề cặp với $y$ và $z$, dẫn đến
+\begin{equation*}
+   \left[\begin{aligned}
+      i = y \\
+      i = z
+   \end{aligned}\right. \land \left[\begin{aligned}
+      k = y \\
+      k = z
+   \end{aligned}\right..
+\end{equation*} 
+Qua đó, \begin{equation*}
+   \left[\begin{aligned}
+      g = (h; i) = (x; y) \\
+      g = (h; i) = (x; z)
+   \end{aligned}\right. \land \left[\begin{aligned}
+      j = (k; l) = (y; x) \\
+      j = (k; l) = (z; x)
+   \end{aligned}\right.,
+\end{equation*}
+và vì vậy, $\begin{cases}
+   A \times B \subseteq \{(x; y); (x; z)\} \\
+   B \times A \subseteq \{(y; x); (z; x)\}
+\end{cases}$. Cuối cùng, chúng ta kết luận được $\begin{cases}
+   A \times B = \{(x; y); (x; z)\} \\
+   B \times A = \{(y; x); (z; x)\}
+\end{cases}$.
+
+Kết hợp các lập luận, chúng ta có điều phải chứng minh.
+
 \exercise Cho $A$, $B$, $C$, $D$ là các tập hợp. Chứng minh rằng
 \begin{multicols}{2}
    \begin{enumerate}
@@ -603,20 +675,13 @@ Mặc dù vậy, do $\varnothing$ là tập rỗng nên không tồn tại $d$ �
 Cũng bằng phương pháp chứng minh phản chứng tương tự, chúng ta cũng có $S \circ \varnothing = \varnothing$. Vậy, điều phải chứng minh.
 
 \exercise Cho $w$, $x$, $y$, $z$ là tập hợp với các quan hệ $A$ từ $w$ đến $x$ và $B$ từ $y$ đến $z$. Gọi $P$ và $Q$ là quan hệ đều từ $x$ đến $y$. Chứng minh rằng
-\begin{enumerate}
-   \item $P = Q \implies \begin{cases}
+\begin{equation*}
+   P = Q \implies \begin{cases}
       P \circ A = Q \circ A \\
       B \circ P = B \circ Q
-   \end{cases}$;
-   \item $\begin{cases}
-      P \circ A = Q \circ A \\
-      A \text{~là một quan hệ toàn diện phải}
-   \end{cases} \implies P = Q$;
-   \item $\begin{cases}
-      B \circ P = B \circ Q \\
-      B \text{~là một quan hệ toàn diện trái}
-   \end{cases} \implies P = Q$.
-\end{enumerate}
+   \end{cases}.
+\end{equation*}
+
 \solution
 
 \resetSubexercise Giả sử $P = Q$. Hiển nhiên rằng $P \circ A$ và $Q \circ A$ đều là quan hệ từ $w$ sang $y$. Xét một phần tử $e \in w \times y$, có thể thấy tồn tại $(a; c) \in w \times y$ sao cho $e = (a; c)$. Theo định nghĩa quan hệ hợp, 
@@ -641,8 +706,6 @@ bởi vì $P = Q$, có thể có được \begin{align*}
 Do đó, $f$ thuộc $B \circ P$ khi và chỉ khi $f$ cũng thuộc $B\circ Q$, hoặc $B \circ P  = B \circ Q$.
 
 Kết hợp các lập luận, chúng ta dễ dàng có được điều phải chứng minh.
-
-\stepSubexercise Giả sử chúng ta có giả thiết $P \circ A = Q \circ A$ và $A$ là quan hệ toàn diện phải. 
 
 \exercise Cho $w$, $x$, $y$, $z$ là những tập hợp. Gọi
 \begin{itemize}
@@ -1090,7 +1153,7 @@ và do đó, biên trên của $B$ là $2$. Đây là một ví dụ thỏa mãn
 \end{itemize}
 
 Từ $x \preccurlyeq y$ và $y \preccurlyeq z$, do quan hệ $\preccurlyeq$ có tính chất bắc cầu, suy ra $x \preccurlyeq z$. Bây giờ, cần chứng minh $x \neq z$. Bằng phương pháp phản chứng, giả sử rằng $x = z$. Khi đó, chúng ta được $z \preccurlyeq y$. Như vậy, đồng thời $y \preccurlyeq z$ và $z \preccurlyeq y$. Do quan hệ $\preccurlyeq$ có tính chất phản đối xứng, $y = z$.
-Điều này trực tiếp mâu thuẫn với giả thiết $y \neq z$ ở trên. Do đó, giả sử phản chứng là sai, tức là ta phải có $x \neq z$.
+Điều này trực tiếp mâu thuẫn với giả thiết $y \neq z$ ở trên. Do đó, giả sử phản chứng là sai, tức là chúng ta phải có $x \neq z$.
 
 Vì $x \preccurlyeq z$ và $x \neq z$, theo định nghĩa của quan hệ thứ tự nghiêm ngặt, thu được $x \prec z$. Từ đó, dễ có được điều phải chứng minh.
 

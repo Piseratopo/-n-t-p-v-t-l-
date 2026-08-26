@@ -813,4 +813,237 @@ Ngoài ra, khi xét $f \in X^X$ tùy ý, với mọi $a \in X$, \begin{align*}
    &= (f \circ i_{X;X})(a).
 \end{align*} Kéo theo, $i_{X;X} \circ f = f \circ i_{X;X}$ với mọi $f$. Chúng ta có $f\;R\;f$, suy ra $R$ phản xạ.
 
-Gọi thêm $g \in X^X$. Nếu $f\;R\;g$, theo giả thiết, cần phải có ánh xạ, gọi là $b$ sao cho $b$ song ánh và $b \circ f = g \circ b$. Vì $b$ song ánh, $b^{-1}$ cũng là một song ánh.  
+Gọi thêm $g \in X^X$. Nếu $f\;R\;g$, theo giả thiết, cần phải có ánh xạ, gọi là $b$ sao cho $b$ song ánh và $b \circ f = g \circ b$. Vì $b$ song ánh, $b^{-1}$ cũng là một song ánh. Do đó, 
+\begin{equation*}
+   b^{-1} \circ (b \circ f) \circ b^{-1} = b^{-1} \circ (g \circ b) \circ b^{-1};
+\end{equation*}
+tương đương $f \circ b^{-1} = b^{-1} \circ g$. Theo định nghĩa của quan hệ $R$, chúng ta có $g\;R\;f$. Dễ thấy, $R$ được khẳng định là có tính đối xứng.
+
+Bổ sung $h \in X^X$. Giả sử rằng $f\;R\;g \land g\;R\;h$, từ định nghĩa $R$, tồn tại song ánh $c: X \to X$ và $d: X \to X$ sao cho \begin{equation*}
+   \begin{cases}
+      c \circ f = g \circ c \\
+      d \circ g = h \circ d 
+   \end{cases}.
+\end{equation*}
+Từ đó, kéo theo được \begin{align*}
+   (d \circ c) \circ f &= d \circ (c \circ f) = d \circ (g \circ c) = (d \circ g) \circ c \\
+   &= (h \circ d) \circ c = h \circ (d \circ c). \\
+\end{align*} 
+Do $c$ và $d$ song ánh, $d \circ c$ cũng là một song ánh, dẫn đến $f\;R\;h$. Qua đó, chúng ta thấy được tính bắc cầu của $R$.
+
+Vì $R$ có tính phản xạ, đối xứng, và bắc cầu, $R$ là một quan hệ tương đương. Điều phải chứng minh.
+
+\subsection{Xu hướng của ánh xạ}
+
+Một quan hệ thứ tự $\preccurlyeq$ chỉ có khả năng so sánh hai phần tử, không có khả năng thể hiện xu hướng. Chẳng hạn, chúng ta có thể sử dụng $\preccurlyeq$ để so sánh giá trị của một cổ phiếu trên hai mốc thời gian, nhưng với một phép so sánh, chúng ta không có khả năng nhìn ra chu kì tăng hay giảm của nó. Để nhìn ra được xu hướng, chúng ta cần đưa quan hệ thứ tự vào ánh xạ.
+
+Cho $x$ và $y$ là tập hợp được sắp xếp thứ tự lần lượt bởi $\preccurlyeq$ và $\leq$ (với quan hệ thứ tự nghiêm ngặt tương ứng là $\prec$ và $<$). Một ánh xạ $f: x \to y$ là một ánh xạ 
+\begin{itemize}
+   \item \defText{tăng} (hoặc \defText{đồng biến}) khi và chỉ khi $$\defMath{\forall a \in x, \forall b \in x, (a \preccurlyeq b \implies f(a) \leq f(b))};$$
+   \item \defText{giảm} (hoặc \defText{nghịch biến}) khi và chỉ khi $$\defMath{\forall a \in x, \forall b \in x, (a \preccurlyeq b \implies f(b) \leq f(a))};$$
+   \item \defText{đơn điệu} khi và chỉ khi $f$ tăng hoặc giảm;
+   \item \defText{tăng nghiêm ngặt} (hoặc \defText{tăng ngặt}, \defText{tăng chặt}, \defText{đồng biến nghiêm ngặt}, \defText{đồng biến chặt}) khi và chỉ khi $$\defMath{\forall a \in x, \forall b \in x, (a \prec b \implies f(a) < f(b))};$$
+   \item \defText{giảm nghiêm ngặt} (hoặc \defText{giảm ngặt}, \defText{giảm chặt}, \defText{nghịch biến nghiêm ngặt}, \defText{nghịch biến chặt}) khi và chỉ khi $$\defMath{\forall a \in x, \forall b \in x, (a \prec b \implies f(b) < f(a))};$$
+   \item \defText{đơn điệu nghiêm ngặt} (hoặc \defText{đơn điệu ngặt}, \defText{đơn điệu chặt}) khi và chỉ khi $f$ tăng nghiêm ngặt hoặc giảm nghiêm ngặt.
+\end{itemize}
+
+\exercise Cho $x$ và $y$ là tập hợp. Xét $\preccurlyeq$ là một quan hệ thứ tự trong $y$. Gọi $T$ là một quan hệ hai ngôi trong $y^x$ sao cho 
+\begin{equation*}
+   \forall f \in y^x, \forall g \in y^x, \left(f\;T\;g \iff (\forall a \in x, f(a) \preccurlyeq g(a))\right).
+\end{equation*} 
+Chứng minh rằng $T$ là một quan hệ thứ tự trong $y^x$.
+
+\solution
+
+Gọi $f$ là một ánh xạ từ $x$ đến $y$. Hiển nhiên rằng, $f(a) = f(a)$ với mọi $a \in x$, cho nên \begin{equation*}
+   \forall a \in x, f(a) \preccurlyeq f(a).
+\end{equation*}
+Vì vậy, $f\;T\;f$ với mọi $f$. $T$ có tính chất phản xạ.
+
+Gọi thêm ánh xạ $g: x \to y$. Giả sử $f\;T\;g$ và $g\;T\;f$, chúng ta có khẳng định sau từ định nghĩa của $T$:
+\begin{equation*}
+   \begin{cases}
+      \forall a \in x, f(a) \preccurlyeq g(a) \\
+      \forall a \in x, g(a) \preccurlyeq f(a)
+   \end{cases}.
+\end{equation*}
+Sử dụng tính chất phân phối của lượng từ phổ quát với phép hội,
+\begin{equation*}
+   \forall a \in x, (f(a) \preccurlyeq g(a) \land g(a) \preccurlyeq f(a)).
+\end{equation*}
+Do $\preccurlyeq$ là một quan hệ thứ tự, $f(a) \preccurlyeq g(a) \land g(a) \preccurlyeq f(a)$ kéo theo $f(a) = g(a)$ với mọi $a$. Vì thế, $f = g$. Tính phản đối xứng của $f$ được chứng minh.
+
+Xét thêm ánh xạ $h: x \to y$. Giả sử $\begin{cases}
+   f\;T\;g \\
+   g\;T\;h
+\end{cases}$, một chút biến đổi cho chúng ta \begin{align*}
+   f\;T\;g \land g\;T\;h &\implies \begin{cases}
+      \forall a \in x, f(a) \preccurlyeq g(a) \\
+      \forall a \in x, g(a) \preccurlyeq h(a)
+   \end{cases} \equationexplanation{định nghĩa $T$}; \\
+   f\;T\;g \land g\;T\;h &\implies \forall a \in x, \begin{cases}
+      f(a) \preccurlyeq g(a) \\
+      g(a) \preccurlyeq h(a)
+   \end{cases} \equationexplanation{phân phối lượng từ $\forall$ với phép $\land$};\\
+   f\;T\;g \land g\;T\;h &\implies \forall a \in x, f(a) \preccurlyeq h(a) \equationexplanation{tính chất bắc cầu của $\preccurlyeq$}; \\
+   f\;T\;g \land g\;T\;h &\implies f \preccurlyeq h \equationexplanation{định nghĩa $T$}.
+\end{align*}
+Điều này đúng với mọi $f$, $g$, $h$ thuộc $y^x$, nên $T$ có tính bắc cầu.
+
+Vì $T$ phản xạ, phản đối xứng và bắc cầu nên $T$ là một quan hệ thứ tự, hay, điều phải chứng minh.
+
+\exercise Cho $x$ và $y$ là tập hợp. Xét $\preccurlyeq$ là một quan hệ thứ tự trong $y$ và $f: x \to y$ đơn ánh. Gọi $S$ là một quan hệ hai ngôi trong $x$ sao cho \begin{equation*}
+   \forall a \in x, \forall b \in x, (a\;S\;b \iff f(a) \preccurlyeq f(b)).
+\end{equation*}
+Chứng minh $S$ là một quan hệ thứ tự trong $x$.
+
+\solution
+
+Với mọi phần tử $a$, $b$, $c$ thuộc $x$, $f(a) = f(a)$, suy ra $f(a) \preccurlyeq f(a)$ hay $a\;S\;a$ với mọi $a \in x$. Kết luận được $S$ là một quan hệ có tính phản xạ.
+
+Ngoài ra, nếu có $a\;S\;b$ và $b\;S\;a$, suy luận được $f(a) \preccurlyeq f(b)$ và $f(b) \preccurlyeq f(a)$. Từ tính phản đối xứng của $\preccurlyeq$, $f(a) = f(b)$. Vì $f$ là một ánh xạ đơn ánh, $f(a) = f(b) \implies a = b$. Vì vậy, \begin{equation*}
+   \forall a \in x, \forall b \in x, \left(\begin{cases}
+      a\;S\;b \\
+      b\;S\;a
+   \end{cases}\implies a = b \right) .
+\end{equation*}
+$S$ có tính phản đối xứng.
+
+Cuối cùng, xét trường hợp $a\;S\;b$ và $b\;S\;c$. Có $f(a) \preccurlyeq f(b)$ và $f(b) \preccurlyeq f(c)$ nên $f(a) \preccurlyeq f(c)$. Do đó, $a\;S\;c$ theo định nghĩa của $S$. Do đó, $S$ bắc cầu.
+
+Vì $S$ phản xạ, phản đối xứng và bắc cầu nên $S$ là một quan hệ thứ tự. Điều phải chứng minh.
+
+\exercise Cho $A$, $B$ và $C$ là ba tập hợp. Gọi $\preccurlyeq_A$, $\preccurlyeq_B$, $\preccurlyeq_C$ lần lượt là quan hệ thứ tự trong $A$, $B$, và $C$. Gọi $f: A \to B$ và $g: B \to C$ là các ánh xạ.
+
+\begin{enumerate}
+   \item Nếu như $f$ và $g$ đều đơn điệu, chứng minh rằng $g \circ f$ đơn điệu và chỉ rõ xu hướng của $g \circ f$ (tức là, chỉ rõ khi nào $g \circ f$ là ánh xạ tăng, ánh xạ giảm). 
+   \item Nếu như $f$ và $g$ đều đơn điệu nghiêm ngặt, chứng minh rằng $g \circ f$ đơn điệu nghiêm ngặt và chỉ rõ xu hướng của $g \circ f$.
+\end{enumerate} 
+
+\solution 
+
+\resetSubexercise Một ánh xạ đơn điệu khi và chỉ khi ánh xạ đó tăng hoặc giảm. Từ đó, chúng ta có thể xét các trường hợp có thể của $f$ và $g$.
+
+Trường hợp \coloringCrimson{$f$ và $g$ cùng tăng}, với mọi $a$ và $b$ thuộc $A$, do $f$ tăng nên \begin{equation*}
+   a \preccurlyeq_A b \implies f(a) \preccurlyeq_B f(b).
+\end{equation*}
+Vì $g$ tăng nên 
+\begin{equation*}
+   f(a) \preccurlyeq_B f(c) \implies g(f(a)) \preccurlyeq_C g(f(b)).
+\end{equation*}
+Do đó, $a \preccurlyeq_A b \implies (g \circ f)(a) \preccurlyeq_C (g \circ f)(b)$ với mọi $a$, $b$ thuộc $A$. Chúng ta có $g \circ f$ tăng.
+
+Trong trường hợp \coloringDodgerblue{$f$ tăng và $g$ giảm}, với mọi $a$ và $b$ thuộc $A$, chúng ta có biến đổi 
+\begin{align*}
+   a \preccurlyeq_A b &\implies f(a) \preccurlyeq_B f(b); \\
+   a \preccurlyeq_A b &\implies g(f(b)) \preccurlyeq_C g(f(a)) \equationexplanation{$f(a) \preccurlyeq_B f(b) \implies g(f(b)) \preccurlyeq_C g(f(a))$};\\
+   a \preccurlyeq_A b &\implies (g \circ f)(b) \preccurlyeq_C (g \circ f)(a).
+\end{align*}
+Vì vậy, $g \circ f$ giảm.
+
+Tương tự, nếu \coloringJade{$f$ giảm và $g$ tăng}, với mọi $a$ và $b$ thuộc $A$,
+\begin{align*}
+   a \preccurlyeq_A b &\implies f(b) \preccurlyeq_B f(a);\\
+   a \preccurlyeq_A b &\implies g(f(b)) \preccurlyeq_C g(f(a)) \equationexplanation{$f(b) \preccurlyeq_B f(a) \implies g(f(b)) \preccurlyeq_C g(f(a))$};\\
+   a \preccurlyeq_A b &\implies (g \circ f)(b) \preccurlyeq_C (g \circ f)(a).
+\end{align*}
+Cho nên, $g \circ f$ giảm.
+
+Nếu \coloringWisteria{$f$ và $g$ cùng giảm}, với mọi $a$ và $b$ thuộc $A$,
+\begin{align*}
+   a \preccurlyeq_A b &\implies f(b) \preccurlyeq_B f(a);\\
+   a \preccurlyeq_A b &\implies g(f(a)) \preccurlyeq_C g(f(b));\\
+   a \preccurlyeq_A b &\implies (g \circ f)(a) \preccurlyeq_C (g \circ f)(b).
+\end{align*}
+Cuối cùng, $g \circ f$ tăng.
+
+Vì vậy, chứng minh được $g \circ f$ luôn đơn điệu. Thêm vào đó, xu hướng tăng hay giảm cụ thể của $g \circ f$ được thể hiện ở bảng \ref{tab:li_thuyet_tap_hop:tien_de:anh_xa:dd_ax_t}.
+
+\begin{table}[H]
+   \centering
+   \caption{Xu hướng của $g \circ f$ khi $f$ và $g$ cùng đơn điệu.}
+   \label{tab:li_thuyet_tap_hop:tien_de:anh_xa:dd_ax_t}
+   \begin{tblr}{
+      colspec = {Q[c,m,1cm] Q[c,m,1cm] Q[c,m,1cm]},
+      rows = {28pt, m},
+      hlines,
+      hline{2} = {1.5pt},
+      vlines,
+      vline{2} = {1.5pt},
+   }
+   \diagbox[width=1.3cm, height=28pt]
+      {$g$}{$f$} & {tăng} & {giảm} \\
+      {tăng} & {tăng} & {giảm} \\
+      {giảm} & {giảm} & {tăng} \\
+   \end{tblr}
+\end{table}
+
+\stepSubexercise Gọi quan hệ thứ tự nghiêm ngặt tương ứng với $\preccurlyeq_A$, $\preccurlyeq_B$, $\preccurlyeq_C$ là $\prec_A$, $\prec_B$, $\prec_C$. Lời giải của phần này là giống hệt so với phần vừa rồi, ngoại trừ việc phải thay thế các khái niệm tăng, giảm, đơn điệu thành các khái niệm nghiêm ngặt tương ứng và thay thế các quan hệ thứ tự thành các quan hệ thứ tự nghiêm ngặt $\prec_A$, $\prec_B$, $\prec_C$, và do đó, tác giả sẽ không lặp lại lập luận ở phần này. Tác giả hi vọng rằng, dựa vào phát hiện vừa rồi, bạn đọc có thể chứng minh được $g \circ f$ đơn điệu nghiêm ngặt và suy luận được xu hướng của $g \circ f$ như ở bảng \ref{tab:li_thuyet_tap_hop:tien_de:anh_xa:ddnn_ax_t}.
+
+\begin{table}[H]
+   \centering
+   \caption{Xu hướng của $g \circ f$ khi $f$ và $g$ cùng đơn điệu nghiêm ngặt.}
+   \label{tab:li_thuyet_tap_hop:tien_de:anh_xa:ddnn_ax_t}
+   \begin{tblr}{
+      colspec = {Q[c,m,3cm] Q[c,m,3cm] Q[c,m,3cm]},
+      rows = {28pt, m},
+      hlines,
+      hline{2} = {1.5pt},
+      vlines,
+      vline{2} = {1.5pt},
+   }
+   \diagbox[width=3.3cm, height=28pt]
+      {$g$}{$f$} & {tăng nghiêm ngặt} & {giảm nghiêm ngặt} \\
+      {tăng nghiêm ngặt} & {tăng nghiêm ngặt} & {giảm nghiêm ngặt} \\
+      {giảm nghiêm ngặt} & {giảm nghiêm ngặt} & {tăng nghiêm ngặt} \\
+   \end{tblr}
+\end{table}
+
+\exercise Lấy một ví dụ tập hợp $A$ và $B$, các quan hệ thứ tự $\preccurlyeq$, $\leq$ lần lượt trong $A$ và $B$, và ánh xạ $f: A \to B$ sao cho $f$ tăng và song ánh nhưng $f^{-1}$ không tăng.
+
+\solution
+
+Chúng ta có thể lấy ví dụ như sau:
+\begin{itemize}
+   \item $0 = \varnothing$ và $1 = \{0\}$ (dễ thấy, $0 \neq 1$);
+   \item $A = B = \{0; 1\}$;
+   \item $\preccurlyeq\;= \{(0; 0); (1; 1)\}$;
+   \item $\leq\;= \{(0; 0); (0; 1); (1; 1)\}$;
+   \item $f = \{(0; 0); (1; 1)\}$.
+\end{itemize}
+
+Các tập hợp $0$, $1$, $A$, $B$, có thể được xây dựng từ tiên đề tập rỗng và tiên đề cặp. Từ đó, $$
+A \times A = B \times B = \{(0; 0); (0; 1); (1; 0); (1; 1)\}.
+$$
+$\preccurlyeq\;\subseteq A \times A$ và $\leq\;\subseteq B \times B$ nên $\preccurlyeq$ và $\leq$ là quan hệ hai ngôi trong lần lượt $A$ và $B$.
+
+Để $A$ và $B$ có tính phản xạ, chúng ta cần chỉ ra $(a; a) \in \; \preccurlyeq$ với mọi $a$ thuộc $A$ và $(b; b) \in\;\leq$ với mọi $b$ thuộc $B$. Do $A = B = \{0; 1\}$, $a$ và $b$ chỉ có thể có giá trị là $0$ hoặc $1$. Kiểm tra trực tiếp, thấy được 
+\begin{center}
+   $\begin{cases}
+      (0; 0) \in\;\preccurlyeq \\
+      (1; 1) \in\;\preccurlyeq \\
+   \end{cases}$ và $
+   \begin{cases}
+      (0; 0) \in\;\leq \\
+      (1; 1) \in\;\leq \\
+   \end{cases}$
+\end{center}
+nên $\preccurlyeq$ và $\leq$ đều có tính phản xạ.
+
+Với mọi $c$, $d$, $e$ thuộc $A$, giả thiết rằng $c \preccurlyeq d$ và $d \preccurlyeq c$. Từ cách đặt $\preccurlyeq\;= \{(0; 0); (1; 1)\}$, thấy rằng nếu $(c; d) \in\;\preccurlyeq$ thì $(c; d) = (0; 0)$ hoặc $(c; d) = (1; 1)$. Do đó, $\left[\begin{aligned}
+   c = d = 0 \\
+   c = d = 1
+\end{aligned}\right.$. Vậy, chúng ta có $\preccurlyeq$ phản đối xứng.
+
+Mặt khác, nếu như $c \preccurlyeq d$ và $d \preccurlyeq e$. Từ trên, chúng ta đã có 
+\begin{equation*}
+   \begin{cases}
+      c \preccurlyeq d \implies c = d \\
+      d \preccurlyeq e \implies d = e
+   \end{cases}.
+\end{equation*}
+Do đó, $c \preccurlyeq d \land d \preccurlyeq e \implies c = d = e$. Khi này, $(c; e) = (c; c)$. Vì $\preccurlyeq$ có tính phản xạ nên $(c; c) \in \;\preccurlyeq$, và do đó, $c\preccurlyeq e$. $\preccurlyeq$ có tính bắc cầu.
+
+Xét $f$, $g$, $h$ bất kì trong tập hợp $B$, nếu như đã có $f \leq g$ và $g \leq f$. Nếu $f \neq g$, nhận thấy rằng $(f; g) \in B^2$, nên $(f; g)$ chỉ có thể nhận giá trị là $(0; 1)$ hoặc $(1; 0)$. Tuy nhiên, dễ thấy, cả hai trường hợp đều mâu thuẫn với giả thiết đã có do $(1; 0) \notin \; \leq$. Theo chứng minh bằng phản chứng, có được $f = g$. Vì vậy, $B$ đã được khẳng định là có tính phản đối xứng.
+
+Thêm vào đó, giả sử $f \leq g$ và $g \leq h$.
