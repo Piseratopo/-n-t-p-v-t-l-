@@ -1009,7 +1009,7 @@ Chúng ta có thể lấy ví dụ như sau:
    \item $A = B = \{0; 1\}$;
    \item $\preccurlyeq\;= \{(0; 0); (1; 1)\}$;
    \item $\leq\;= \{(0; 0); (0; 1); (1; 1)\}$;
-   \item $f = \{(0; 0); (1; 1)\}$.
+   \item $f = \mathds{1}_A$.
 \end{itemize}
 
 Các tập hợp $0$, $1$, $A$, $B$, có thể được xây dựng từ tiên đề tập rỗng và tiên đề cặp. Từ đó, $$
@@ -1044,14 +1044,14 @@ Mặt khác, nếu như $c \preccurlyeq d$ và $d \preccurlyeq e$. Từ trên, c
 \end{equation*}
 Do đó, $c \preccurlyeq d \land d \preccurlyeq e \implies c = d = e$. Khi này, $(c; e) = (c; c)$. Vì $\preccurlyeq$ có tính phản xạ nên $(c; c) \in \;\preccurlyeq$, và do đó, $c\preccurlyeq e$. $\preccurlyeq$ có tính bắc cầu.
 
-Xét $f$, $g$, $h$ bất kì trong tập hợp $B$, nếu như đã có $f \leq g$ và $g \leq f$. Nếu $f \neq g$, nhận thấy rằng $(f; g) \in B^2$, nên $(f; g)$ chỉ có thể nhận giá trị là $(0; 1)$ hoặc $(1; 0)$. Tuy nhiên, dễ thấy, cả hai trường hợp đều mâu thuẫn với giả thiết đã có do $(1; 0) \notin \; \leq$. Theo chứng minh bằng phản chứng, có được $f = g$. Vì vậy, $B$ đã được khẳng định là có tính phản đối xứng.
+Xét $x$, $y$, $z$ bất kì trong tập hợp $B$, nếu như đã có $x \leq y$ và $y \leq x$. Nếu $x \neq y$, nhận thấy rằng $(x; y) \in B^2$, nên $(x; y)$ chỉ có thể nhận giá trị là $(0; 1)$ hoặc $(1; 0)$. Tuy nhiên, dễ thấy, cả hai trường hợp đều mâu thuẫn với giả thiết đã có do $(1; 0) \notin \; \leq$. Theo chứng minh bằng phản chứng, có được $x = y$. Vì vậy, $B$ đã được khẳng định là có tính phản đối xứng.
 
-Thêm vào đó, giả sử $f \leq g$ và $g \leq h$. Các giá trị mà $(f; g)$ hay $(g; h)$ có thể nhận vào là $(0; 0)$, $(0; 1)$, $(1; 0)$. Để tránh phải viết quá nhiều trường hợp, chúng ta có thể kẻ bảng và đối chiếu xem những trường hợp nào khả thi.
+Thêm vào đó, giả sử $x \leq y$ và $y \leq z$. Các giá trị mà $(x; y)$ hay $(y; z)$ có thể nhận vào là $(0; 0)$, $(0; 1)$, $(1; 1)$ (hoặc $(1; 0)$ tùy thuộc vào các phần tử của quan hệ). Để tránh phải viết quá nhiều trường hợp, chúng ta có thể kẻ bảng và đối chiếu xem những trường hợp nào khả thi.
 
 \begin{table}[H]
    \centering
-   \caption{Bảng xét trường hợp của $(f; g)$ và $(g; h)$.}
-   \label{tab:li_thuyet_tap_hop:tien_de:anh_xa:xtt_fgh}
+   \caption{Bảng xét trường hợp của $(x; y)$ và $(y; z)$.}
+   \label{tab:li_thuyet_tap_hop:tien_de:anh_xa:xtt_xyz}
    \begin{tblr}{
       colspec = {Q[c,m,2cm] Q[c,m,2cm] Q[c,m,2cm] Q[c,m,2cm]},
       rows = {28pt, m},
@@ -1060,33 +1060,17 @@ Thêm vào đó, giả sử $f \leq g$ và $g \leq h$. Các giá trị mà $(f; 
       vlines,
       vline{2} = {1.5pt},
    }
-   \diagbox[width=2.3cm, height=28pt]
-      {$(g; h)$}{$(f; g)$} & $(0; 0)$ & $(0; 1)$ & $(1; 1)$ \\
+   {\diagbox[width=2.3cm, height=28pt]{$(y; z)$}{$(x; y)$}} & $(0; 0)$ & $(0; 1)$ & $(1; 1)$ \\
       $(0; 0)$ & khả thi & không khả thi & không khả thi \\
       $(0; 1)$ & khả thi & không khả thi & không khả thi \\
       $(1; 1)$ & không khả thi & khả thi & khả thi \\
    \end{tblr}
 \end{table}
-Trong mọi trường hợp khả thi, thấy được rằng, khi đó, luôn luôn xảy ra $f \leq h$. Qua đó, chúng ta có $\leq$ có tính bắc cầu.
+Trong mọi trường hợp khả thi, thấy được rằng, khi đó, luôn luôn xảy ra $x \leq z$. Qua đó, chúng ta có $\leq$ có tính bắc cầu. Vậy, nhìn chung,  $\preccurlyeq$ và $\leq$ đều  là quan hệ thứ tự.
 
-Nhìn chung, $\preccurlyeq$ và $\leq$ đều có tính phản xạ, tính phản đối xứng, và tính bắc cầu. Vậy, $\preccurlyeq$, $\leq$ là quan hệ thứ tự.
+Tiếp theo, chúng ta xét đến $f$. Có $f = \mathds{1}_A = i_{A;A}$ là một đơn ánh. Thêm vào đó, $f$ cũng toàn ánh, do mọi phần tử $l \in B$ đều tồn tại $k \in A$ sao cho $l = f(k)$ ($0 = f(0)$, $1 = f(1)$). Suy ra, $f$ song ánh.
 
-Tiếp theo, chúng ta xét đến $f$. Có $f \subseteq A \times B$ nên $f$ là một quan hệ từ $A$ đến $B$. Để $f$ là một ánh xạ, với mỗi $i$ thuộc $A$, tồn tại duy nhất $j \in B$ sao cho $(i; j) \in f$. Thật vậy, dựa vào khẳng định  $\forall i, (i \in A \iff i = 0 \lor i = 1)$, chúng ta xét hai trường hợp:
-\begin{itemize}
-   \item Nếu \coloringCrimson{$i = 0$}, tồn tại $j = 0$ để $(i; j) \in f$. Giá trị $0$ này là duy nhất, vì nếu còn $j'$ sao cho $(0; j') \in f$, từ định nghĩa của $f$, $(0; j') = (0; 0)$ hoặc $(0; j') = (1; 1)$. Rõ ràng rằng, $(0; j) = (1; 1)$ là vô lí do $0 \neq 1$, nên $(0; j') = (0; 0)$ và suy ra $j' = 0$.
-   \item Nếu \coloringDodgerblue{$i = 1$}, bằng một lập luận tương tự, tồn tại duy nhất $j = 1$ thỏa mãn $(i; j) \in f$.
-\end{itemize}
-Vì vậy, $f$ là một ánh xạ.
-
-Với mọi $k$, $l$ thuộc $A$, $k \preccurlyeq l \implies k = l$. Do đó, $k \preccurlyeq l \implies f(k) = f(l)$ và từ đấy có $k \preccurlyeq l \implies f(k) \preccurlyeq f(l)$. $f$ là một hàm tăng. Ngoài ra, chúng ta có $\begin{cases}
-   0\;f\;0 \iff 0\;f^{-1}\;0 \\
-   1\;f\;1 \iff 1\;f^{-1}\;1 
-\end{cases}$ nên $f^{-1} = \{(0; 0); (1; 1)\} = f$ là một ánh xạ. Do đó, \begin{equation*}
-   \forall m \in B, \exists ! n \in A, m\;f^{-1}\;n. 
-\end{equation*}
-Điều này tương đương với $\forall m \in B, \exists ! n \in A, n\;f\;m$. Suy ra, $f$ song ánh.
-
-Xét $f^{-1}(0) = 0$ và $f^{-1}(1) = 1$. Nhận thấy giá trị đầu vào $0$ và $1$ có thể so sánh được với nhau ($0 \leq 1$), nhưng $\left(f^{-1}(0); f^{-1}(1)\right) \notin \; \preccurlyeq$ nên $f^{-1}(0) \centernot{\preccurlyeq} f^{-1}(1)$. Vì vậy, $f^{-1}$ không tăng. Đây là một ví dụ thỏa mãn.
+Xét $f^{-1}(0) = 0$ và $f^{-1}(1) = 1$. Nhận thấy giá trị đầu vào $0$ và $1$ có thể so sánh được với nhau trong $B$ ($0 \leq 1$), nhưng $\left(f^{-1}(0); f^{-1}(1)\right) \notin \; \preccurlyeq$ nên $f^{-1}(0) \centernot{\preccurlyeq} f^{-1}(1)$. Vì vậy, $f^{-1}$ không tăng. Tóm lại, đây là một ví dụ thỏa mãn mà chúng ta cần tìm.
 
 \exercise Cho tập hợp $A$ và $B$, các quan hệ thứ tự $\preccurlyeq$, $\leq$ lần lượt trong $A$ và $B$, và ánh xạ $f: A \to B$. Chứng minh rằng
 \begin{enumerate}
@@ -1133,3 +1117,126 @@ Chúng ta có $f$ tăng nghiêm ngặt. Điều phải chứng minh.
 Vậy, $f$ giảm nghiêm ngặt, là điều phải chứng minh.
 
 \stepSubexercise
+Với mọi $a$, $b$ thuộc $A$, chúng ta có 
+\begin{align*}
+   a \neq b &\iff a \neq b \land (a \preccurlyeq b \lor b \preccurlyeq a) \equationexplanation{thứ tự $\preccurlyeq$ là toàn phần}; \\
+   a \neq b &\iff a \neq b \land a \preccurlyeq b \lor a \neq b \land b \preccurlyeq a \equationexplanation{định luật Đờ Moóc-gan}; \\
+   a \neq b &\iff a \prec b \lor b \prec a.
+\end{align*}
+
+Nếu $f$ tăng nghiêm ngặt, chúng ta có $\begin{cases}
+   a \prec b \implies f(a) \prec f(b) \\
+   b \prec a \implies f(b) \prec f(a)
+\end{cases}$, mà $f(a) \prec f(b)$ và $f(b) \prec f(a)$ đều dẫn đến $f(a) \neq f(b)$. Do đó, $$a \prec b \lor b \prec a \implies f(a) \neq f(b).$$
+Tương tự, $f$ giảm nghiêm ngặt sẽ suy ra $\begin{cases}
+   a \prec b \implies f(b) \prec f(a) \\
+   b \prec a \implies f(a) \prec f(b)
+\end{cases}$, từ đó cũng sẽ có $a \prec b \lor b \prec a \implies f(a) \neq f(b).$
+Kết hợp các trường hợp, chúng ta luôn có $$a \prec b \lor b \prec a \implies f(a) \neq f(b).$$ Và vì vậy, $a \neq b \implies f(a) \neq f(b)$ với mọi $a$ và $b$ trong $A$. $f$ là một đơn ánh, hay điều phải chứng minh.
+
+\exercise Cho tập hợp $X$ và ánh xạ $p: \mathfrak{P}(X) \to \mathfrak{P}(X)$. Chứng minh rằng \begin{equation*}
+   \forall (a; b) \in \mathfrak{P}(X)^2, \bigcup\left\{b; p(b); p(p(a))\right\} \subseteq p(a \cup b) \iff \forall (a; b) \in \mathfrak{P}(X)^2, \begin{cases}
+      a \subseteq p(a) \\
+      p(a) = p(p(a)) \\
+      a \subseteq b \implies p(a) \subseteq p(b)
+   \end{cases}.
+\end{equation*}
+
+\solution
+
+Giả sử chúng ta có $\forall (a; b) \in \mathfrak{P}(X)^2, \begin{cases}
+   a \subseteq p(a) \\
+   p(a) = p(p(a)) \\
+   a \subseteq b \implies p(a) \subseteq p(b)
+\end{cases}$, với mọi $c$ và $d$ thuộc $\mathfrak{P}(X)$, có:
+\begin{itemize}
+   \item $\begin{cases}
+      d \subseteq c \cup d \\
+      c \cup d \subseteq p(c \cup d)
+   \end{cases}$, nên $\begin{cases}
+      p(d) \subseteq p(c \cup d) \\
+      d \subseteq p(c \cup d)
+   \end{cases}$;
+   \item $\begin{cases}
+      p(c) = p(p(c)) \\
+      c \subseteq c \cup d
+   \end{cases}$ cho nên $\begin{cases}
+      p(c) = p(p(c)) \\
+      p(c) \subseteq p(c \cup d)
+   \end{cases}$ và do đó $p(p(c)) \subseteq p(c \cup d)$.
+\end{itemize}
+Tổng hợp lại, có được $\begin{cases}
+   d \subseteq p(c \cup d) \\
+   p(d) \subseteq p(c \cup d) \\
+   p(p(c)) \subseteq p(c \cup d)
+\end{cases}$, dễ dàng suy ra được $\bigcup\left\{d; p(d); p(p(c))\right\} \subseteq p(c \cup d)$. Đổi hạng thức phụ thuộc, chúng ta có kết quả \begin{equation*}
+   \forall a \in \mathfrak{P}(X), \forall b \in \mathfrak{P}(X), \bigcup\left\{b; p(b); p(p(a))\right\} \subseteq p(a \cup b).
+\end{equation*}
+
+Ngược lại, giả sử đã có $\forall (a; b) \in \mathfrak{P}(X)^2, \bigcup\left\{b; p(b); p(p(a))\right\} \subseteq p(a \cup b)$, với mọi $c$ thuộc $\mathfrak{P}(X)$, có
+$$\begin{cases}
+   \bigcup \{c; p(c); p(p(c))\} \subseteq p(c \cup c) \\
+   c \cup c = c \\
+   c \subseteq \bigcup \{c; p(c); p(p(c))\}
+\end{cases}$$ nên $c \subseteq p(c)$. Ngoài ra, với mọi phần tử $d$ và $e$ trong $\mathfrak{P}(X)$, nếu $d \subseteq e$ thì $$
+\begin{cases}
+   \bigcup \{d; p(d); p(p(e))\} \subseteq p(d \cup e) \\
+   d \cup e = e \\
+   p(d) \subseteq \bigcup \{d; p(d); p(p(e))\}
+\end{cases}
+$$ và từ đó $\begin{cases}
+   p(d) \subseteq p(d \cup e) \\
+   p(d \cup e) = p(e)
+\end{cases}$ để có được $p(d) \subseteq p(e)$ từ $d \subseteq e$.
+
+Sử dụng kết quả $\begin{cases}
+   \forall c \in \mathfrak{P}(X), c \subseteq p(c) \\
+   \forall (d; e) \in \mathfrak{P}(X)^2, (d \subseteq e \implies p(d) \subseteq p(e))
+\end{cases}$ và giả thiết ban đầu, với mọi $f \in \mathfrak{P}(X)$, chúng ta có
+$\begin{cases}
+   f \subseteq p(f) \\
+   \bigcup \{f; p(f); p(p(f))\} \subseteq p(f \cup f)
+\end{cases}$, dẫn đến, $\begin{cases}
+   p(f) \subseteq p(p(f)) \\
+   p(p(f)) \subseteq p(f)
+\end{cases}$, kéo theo $p(f) = p(p(f))$.
+
+Kết hợp các kết quả và đổi hạng thức phụ thuộc, chúng ta dễ dàng có được \begin{equation*}
+   \forall a \in \mathfrak{P}(X), \forall b \in \mathfrak{P}(X), \begin{cases}
+      a \subseteq p(a) \\
+      p(a) = p(p(a)) \\
+      a \subseteq b \implies p(a) \subseteq p(b)
+   \end{cases}.
+\end{equation*}
+
+Từ lập luận hai chiều, chúng ta có điều phải chứng minh.
+
+\exercise Cho tập hợp $x$ và $y$ lần lượt được trang bị bởi quan hệ thứ tự $\preccurlyeq_x$ và $\preccurlyeq_y$. Xác định $f: x \to y$ và $g: x \to y$ đều tăng. Gọi $A = \{a \in x \mid (g \circ f)(a) = a\}$, $B = \{b \in y \mid (f \circ g)(b) = b\}$ và trang bị trên chúng lần lượt các quan hệ thứ tự cảm sinh $\preccurlyeq_A = \preccurlyeq_x\!\!|_{A \times A}$ và $\preccurlyeq_B = \preccurlyeq_y\!\!|_{B \times B}$. Ngoài ra, xét quan hệ $F$ từ $A$ đến $B$, $G$ từ $B$ đến $A$ thỏa mãn \begin{equation*}
+   \forall a \in A, \forall b \in B, \begin{cases}
+      a\;F\;b \iff f(a) = b \\
+      b\;G\;a \iff g(b) = a
+   \end{cases}.
+\end{equation*}
+Chứng minh rằng $F$ và $G$ đều song ánh, đều tăng nghiêm ngặt, và $F = G^{-1}$.
+
+\solution
+
+Xét một phần tử $a$ tùy ý thuộc $A$. Theo cách gọi của $A$, $a = (g \circ f)(a) = g(f(a))$. Do đó, $f(a) = f(g(f(a))) = (f \circ g)(f(a))$. Kết hợp với việc $f(a) \in y$, $f(a) \in B$. Vì vậy, \begin{equation*}
+   \forall a \in A, f(a) \in B.
+\end{equation*}
+Hệ quả của nó là $\forall a \in A, \exists b \in B, a\;F\;b$. Giá trị $b$ này là duy nhất bởi nếu còn $c \in B$ để $a\;F\;c$ thì $c$ phải bằng $b$ vì cùng bằng $f(a)$. Suy ra, $F$ là một ánh xạ. Chứng minh tương tự, chúng ta cũng có ánh xạ $G$.
+
+Chúng ta có nhận xét như sau, với mọi $d \in A$ và $e \in B$, $d\;F\;e \iff d\;G^{-1}\;e$. Thật vậy, hiển nhiên rằng \begin{align*}
+   d\;F\;e &\iff e = f(d); \\
+   d\;F\;e &\iff g(e) = g(f(d)) = d; \\
+   d\;F\;e &\iff e\;G\;d; \\
+   d\;F\;e &\iff d\;G^{-1}\;e.
+\end{align*}
+Mọi $h$, nếu thuộc $F$ thì phải có dạng $(i; j) \in A \times B$. Từ nhận xét vừa rồi, chúng ta có ngay $h \in G^{-1}$. Điều ngược lại có thể được lập luận tương tự, và vì thế, $\forall h, (h \in F \iff h \in G^{-1})$. Vậy, $F = G^{-1}$, và cũng có $F^{-1} = \left(G^{-1}\right)^{-1} = G$. Có $G^{-1}$ là ánh xạ, chúng ta có \begin{equation*}
+   \forall a \in A, \exists ! b \in B, b = G^{-1}(a),
+\end{equation*}
+nói theo cách tương đương, 
+\begin{equation*}
+   \forall a \in A, \exists ! b \in B, a = G(b).
+\end{equation*}
+$G$ là song ánh, và $F$ cũng song ánh theo cách tương tự.
