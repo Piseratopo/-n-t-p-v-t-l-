@@ -1240,3 +1240,15 @@ nói theo cách tương đương,
    \forall a \in A, \exists ! b \in B, a = G(b).
 \end{equation*}
 $G$ là song ánh, và $F$ cũng song ánh theo cách tương tự.
+
+Gọi quan hệ thứ tự nghiêm ngặt cảm sinh từ $\preccurlyeq_A$ và $\preccurlyeq_B$ lần lượt là $\prec_A$ và $\prec_B$. Với mọi $i, j$ thuộc $A$, nếu $i \prec_A j$ thì $i \preccurlyeq_A j$ và $i \preccurlyeq_x j$. Do $f$ tăng nên $f(i) \preccurlyeq_y f(j)$. Ngoài ra, thấy được $\begin{cases}
+   f(i) \in B \\
+   f(j) \in B
+\end{cases}$ (đã có $\forall a \in A, f(a) \in B$) cho nên $f(i) \preccurlyeq_B f(j)$. Theo định nghĩa $F$, $F(i) = f(i)$ và $F(j) = f(j)$ và từ đó, $F(i) \preccurlyeq_B F(j)$. 
+
+Giả thiết $i \prec_A j$ cũng dẫn đến $i \neq j$. Sử dụng tính chất đơn ánh của $F$, có $F(i) \neq F(j)$. Kết hợp với $F(i) \preccurlyeq F(j)$, suy ra \begin{equation*}
+   \forall i \in B, \forall j \in B, (i \prec_A j \implies F(i) \prec_B F(j)).
+\end{equation*}
+Vậy, $F$ tăng nghiêm ngặt. Tương tự, chúng ta cũng có $G$ tăng nghiêm ngặt.
+
+Kết luận lại, chúng ta điều phải chứng minh.
