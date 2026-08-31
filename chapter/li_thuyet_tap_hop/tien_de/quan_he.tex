@@ -535,7 +535,7 @@ Nếu $u$ là một tập con của $x$ và $v$ là tập con của $y$, một q
 \begin{equation*}
    \defMath{\forall (a; b) \in u \times v, \big(a\;R|_{u \times v}\;b \iff a\;R\;b\big)}  
 \end{equation*}
-có tên là \defText{quan hệ cảm sinh} (hay \defText{quan hệ sinh}, \defText{quan hệ thu hẹp}) bởi $R$ từ $x \times y$ xuống $u \times v$. Ngược lại, $R$ được gọi là \defText{quan hệ thác triển} (hay \defText{quan hệ mở rộng}) của $R|_{u \times v}$ từ $u \times v$ lên $x \times y$. Từ định nghĩa này, chúng ta dễ dàng có hệ quả $R|_{u \times v} \subseteq R$.
+có tên là \defText{quan hệ cảm sinh} (hay \defText{quan hệ sinh}, \defText{quan hệ thu hẹp}) bởi $R$ từ $x \times y$ xuống $u \times v$. Ngược lại, $R$ được gọi là \defText{quan hệ thác triển} (hay \defText{quan hệ mở rộng}) của $R|_{u \times v}$ từ $u \times v$ lên $x \times y$.
 
 Vì nhiều lí do mà trong đó một sẽ được trình bày, \defText{đồ thị} của $R$ chính là tập $R$. Bạn đọc chắc sẽ không tin tác giả rằng định nghĩa này là đúng (đến tác giả nhiều lúc còn không tin), nhưng thực chất người ta đã định nghĩa đồ thị là như vậy. Lời giải thích thường được đưa ra nhất thường là: hình học được định nghĩa dựa trên đại số. Cụ thể trong đó, đồ thị hình học của $R$ chính là tập hợp các điểm $(a; b)$ thuộc $R$, hay hiểu theo cách khác, các phần tử của $R$. Vì vậy, đồ thị của $R$ là $R$.
 
@@ -649,6 +649,134 @@ Một phần tử bất kì thuộc $[a]_R$ được gọi là một \defText{đ
 Có nhân hai tập hợp thì cũng có thể chia hai tập hợp. Nếu $R$ là một quan hệ tương đương trên $x$, chúng ta định nghĩa \defText{tập thương} là tập hợp các lớp tương đương mô-đun $R$, tức \begin{equation*}
    \defMath{x/R = \frac{x}{R} = \big\{y \in \mathfrak{P}(x)\;\big|\;\exists z \in x, y = [z]_R\big\}}.
 \end{equation*}
+
+\exercise Gọi $R$ là một quan hệ từ tập hợp $x$ sang tập hợp $y$. Gọi $u \in \mathfrak{P}(x)$ và $v \in \mathfrak{P}(y)$. Xây dựng quan hệ cảm sinh $R|_{u \times v}$. Chứng minh rằng
+\begin{equation*}
+   R|_{u \times v} = R \cap (u \times v).
+\end{equation*}
+
+\solution
+
+Trước hết, quan hệ cảm sinh $R|_{u \times v}$ bởi quan hệ $R$ từ $x$ sang $y$ là một quan hệ từ $u$ sang $v$, nghĩa là $R|_{u \times v} \subseteq u \times v$.
+   
+Xét $c$ bất kì thuộc $x \times y$. Tồn tại $a \in x$ và $b \in y$ sao cho $(a; b) = c$. Chúng ta có thể xét hai trường hợp:
+
+Trường hợp \coloringCrimson{$c \notin u \times v$}.
+Vì quan hệ cảm sinh $R|_{u \times v}$ là một tập con của tích Đề-các $u \times v$, chúng ta suy ra $c \notin R|_{u \times v}$. Do đó, hiển nhiên 
+   $c \notin R \cap (u \times v)$.
+Do đó, mối quan hệ tương đương $c \in R|_{u \times v} \iff c \in R \cap (u \times v)$ được thỏa mãn.
+
+Trường hợp \coloringCrimson{$c \in u \times v$}. Chúng ta có:
+\begin{align*}
+   c \in R|_{u \times v} &\iff a\;R|_{u \times v}\;b; \\
+   c \in R|_{u \times v} &\iff a\;R\;b \equationexplanation{$R|_{u \times v}$ là quan hệ cảm sinh của $R$}; \\
+   c \in R|_{u \times v} &\iff c \in R; \\
+   c \in R|_{u \times v} &\iff c \in R \land c \in u \times v; \\
+   c \in R|_{u \times v} &\iff c \in R \cap (u \times v).
+\end{align*}
+
+Như vậy, trong mọi trường hợp, chúng ta luôn có
+\begin{equation*}
+   c \in R|_{u \times v} \iff c \in R \cap (u \times v).
+\end{equation*}
+Từ đó, $R|_{u \times v} = R \cap (u \times v).$ Đây chính là điều phải chứng minh.
+
+\exercise Cho $x$ và $y$ là các tập hợp và $R$ là quan hệ từ $x$ sang $y$. Gọi $A, B$ cùng thuộc $\mathfrak{P}(x)$ và $C, D$ cùng thuộc $\mathfrak{P}(y)$. Chứng minh rằng
+\begin{enumerate}
+   \item $A \subseteq B \implies \begin{cases}
+      \Dom\left(R|_{A \times y}\right) \subseteq \Dom\left(R|_{B \times y}\right) \\
+      \Imf\left(R|_{A \times y}\right) \subseteq \Imf\left(R|_{B \times y}\right) 
+   \end{cases}$;
+   \item $C \subseteq D \implies \begin{cases}
+      \Dom\left(R|_{x \times C}\right) \subseteq \Dom\left(R|_{x \times D}\right) \\
+      \Imf\left(R|_{x \times C}\right) \subseteq \Imf\left(R|_{x \times D}\right) 
+   \end{cases}$;
+   \item $\Dom\left(R|_{(A\cup B) \times y}\right) = \Dom\left(R|_{A \times y}\right) \cup \Dom\left(R|_{B \times y}\right)$;
+   \item $\Imf\left(R|_{(A\cup B) \times y}\right) = \Imf\left(R|_{A \times y}\right) \cup \Imf\left(R|_{B \times y}\right)$;
+   \item $\Dom\left(R|_{x \times (C \cup D)}\right) = \Dom\left(R|_{x \times C}\right) \cup \Dom\left(R|_{x \times D}\right)$;
+   \item $\Imf\left(R|_{x \times (C \cup D)}\right) = \Imf\left(R|_{x \times C}\right) \cup \Imf\left(R|_{x \times D}\right)$;
+   \item $\Dom\left(R|_{(A\cap B) \times y}\right) = \Dom\left(R|_{A \times y}\right) \cap \Dom\left(R|_{B \times y}\right)$;
+   \item $\Imf\left(R|_{(A\cap B) \times y}\right) \subseteq \Imf\left(R|_{A \times y}\right) \cap \Imf\left(R|_{B \times y}\right)$;
+   \item $\Dom\left(R|_{x \times (C \cap D)}\right) \subseteq \Dom\left(R|_{x \times C}\right) \cap \Dom\left(R|_{x \times D}\right)$;
+   \item $\Imf\left(R|_{x \times (C \cap D)}\right) = \Imf\left(R|_{x \times C}\right) \cap \Imf\left(R|_{x \times D}\right)$;
+   \item $\Dom\left(R|_{(A\setminus B) \times y}\right) = \Dom\left(R|_{A \times y}\right) \setminus \Dom\left(R|_{B \times y}\right)$;
+   \item $\Imf\left(R|_{(A\setminus B) \times y}\right) \supseteq \Imf\left(R|_{A \times y}\right) \setminus \Imf\left(R|_{B \times y}\right)$;
+   \item $\Dom\left(R|_{x \times (C \setminus D)}\right) \supseteq \Dom\left(R|_{x \times C}\right) \setminus \Dom\left(R|_{x \times D}\right)$;
+   \item $\Imf\left(R|_{x \times (C \setminus D)}\right) = \Imf\left(R|_{x \times C}\right) \setminus \Imf\left(R|_{x \times D}\right)$;
+   \item $\Dom\left(R|_{(A\vartriangle B) \times y}\right) = \Dom\left(R|_{A \times y}\right) \vartriangle \Dom\left(R|_{B \times y}\right)$;
+   \item $\Imf\left(R|_{(A\vartriangle B) \times y}\right) \supseteq \Imf\left(R|_{A \times y}\right) \vartriangle \Imf\left(R|_{B \times y}\right)$;
+   \item $\Dom\left(R|_{x \times (C \vartriangle D)}\right) \supseteq \Dom\left(R|_{x \times C}\right) \vartriangle \Dom\left(R|_{x \times D}\right)$;
+   \item $\Imf\left(R|_{x \times (C \vartriangle D)}\right) = \Imf\left(R|_{x \times C}\right) \vartriangle \Imf\left(R|_{x \times D}\right)$.
+\end{enumerate}
+   
+\solution
+
+\resetSubexercise Giả sử $A \subseteq B$. Xét phần tử $a \in \Dom\left(R|_{A \times y}\right)$, theo định nghĩa của tập xác định, tồn tại phần tử $b \in y$ sao cho bộ $(a; b) \in R|_{A \times y}$. Vì $R|_{A \times y} = R \cap (A \times y)$ nên chúng ta có $(a; b) \in R$ và $a \in A$. Do giả thiết $A \subseteq B$ kéo theo $a \in B$, dẫn đến bộ $(a; b) \in B \times y$. Từ đó, chúng ta có
+\begin{equation*}
+   (a; b) \in R \cap (B \times y)
+\end{equation*}
+hay $a\;R|_{B \times y}\;b$. Bởi vì tồn tại $b \in y$ sao cho $(a; b) \in R|_{B \times y}$, chúng ta suy ra $a \in \Dom\left(R|_{B \times y}\right)$. Vì vậy, $\Dom\left(R|_{A \times y}\right) \subseteq \Dom\left(R|_{B \times y}\right)$.
+
+Tiếp theo, xét phần tử $d \in \Imf\left(R|_{A \times y}\right)$, theo định nghĩa của tập giá trị, tồn tại phần tử $c \in x$ để $(c; d) \in R|_{A \times y}$. Điều này kéo theo $(c; d) \in R$ và $c \in A$, dẫn đến $c \in B$ và $(c; d) \in B \times y$. Từ đó, chúng ta có $c\;R|_{B \times y}\;d$. Suy ra $d \in \Imf\left(R|_{B \times y}\right)$. Vì vậy, $\Imf\left(R|_{A \times y}\right) \subseteq \Imf\left(R|_{B \times y}\right)$.
+
+Kết hợp hai lập luận, chúng ta có điều phải chứng minh.
+
+\stepSubexercise Giả sử $C \subseteq D$. Gọi $a$ bất kì thuộc $\Dom\left(R|_{x \times C}\right)$. Chúng ta có 
+
+\stepSubexercise Tương tự như trước, với mọi $b$:
+\begin{align*}
+   b \in \Imf\left(f|_{A \cap B}\right) &\iff \exists a \in A \cap B, b = f(a); \\
+   b \in \Imf\left(f|_{A \cap B}\right) &\iff \exists a, \begin{cases}
+      a \in A \land b = f(a) \\
+      a \in B \land b = f(a)
+   \end{cases}; \\
+   b \in \Imf\left(f|_{A \cap B}\right) &\implies \begin{cases}
+      \exists a, a \in A \land b = f(a) \\
+      \exists a, a \in B \land b = f(a)
+   \end{cases} \equationexplanation{cụ thể hóa rồi tồn tại hóa}; \\
+   b \in \Imf\left(f|_{A \cap B}\right) &\implies b \in \Imf(f|_A) \land b \in \Imf(f|_B); \\
+   b \in \Imf\left(f|_{A \cap B}\right) &\implies b \in \Imf(f|_A) \cap \Imf(f|_B).
+\end{align*}
+Chúng ta có $\Imf\left(f|_{A \cap B}\right) \subseteq \Imf(f|_A) \cap \Imf(f|_B)$. Điều phải chứng minh.
+
+\stepSubexercise Với mọi $b$, nếu $b \in \Imf(f|_A) \setminus \Imf(f|_B)$, có nghĩa là $b \in  \Imf(f|_A) \land b \notin \Imf(f|_B)$. Suy ra, \begin{equation*}
+   \exists a \in A, b = f(a) \land \overline{\exists a \in B, b = f(a)},
+\end{equation*}
+hay điều tương đương, \begin{equation*}
+      \exists a \in A, b = f(a) \land \forall a, (b = f(a) \implies a \notin B).
+\end{equation*}
+Cụ thể hóa, chúng ta thấy rằng có một phần tử $c \in A$ thỏa mãn $b = f(c)$ và $c \notin B$. Do đó, \begin{equation*}
+   \exists a \in A \setminus B, b = f(a),
+\end{equation*}
+kéo theo $b \in \Imf\left(f|_{A \setminus B}\right)$. Từ đó, dễ thấy điều phải chứng minh.
+
+\stepSubexercise Định nghĩa của $\vartriangle$ cho:
+\begin{equation*}
+   \Imf(f|_A) \vartriangle \Imf(f|_B) = (\Imf(f|_A) \setminus \Imf(f|_B)) \cup (\Imf(f|_B) \setminus \Imf(f|_A)).
+\end{equation*}
+Thêm vào đó, chúng ta đã chứng minh $\begin{cases}
+   \Imf(f|_A) \setminus \Imf(f|_B) \subseteq \Imf\left(f|_{A \setminus B}\right) \\
+   \Imf(f|_B) \setminus \Imf(f|_A) \subseteq \Imf\left(f|_{B \setminus A}\right)
+\end{cases}$, cho nên dễ thấy rằng
+\begin{equation*}
+   \left(\Imf(f|_A) \setminus \Imf(f|_B)\right) \cup \left(\Imf(f|_B) \setminus \Imf(f|_A)\right) \subseteq \Imf\left(f|_{A \setminus B}\right) \cup \Imf\left(f|_{B \setminus A}\right).
+\end{equation*}
+Ngoài ra, do $A \vartriangle B = (A \setminus B) \cup (B \setminus A)$ nên $\begin{cases}
+   A \setminus B \subseteq A \vartriangle B \\
+   B \setminus A \subseteq B \vartriangle A
+\end{cases}$. Qua đó, thấy được rằng \begin{equation*}
+   \Imf\left(f|_{A \setminus B}\right) \cup \Imf\left(f|_{B \setminus A}\right) \subseteq \Imf\left(f|_{A \vartriangle B}\right).
+\end{equation*}
+Vì vậy, dễ dàng có được $\Imf(f|_A) \vartriangle \Imf(f|_B) \subseteq \Imf\left(f|_{A \vartriangle B}\right)$, tức, điều phải chứng minh.
+
+\stepSubexercise Giả thiết rằng $C \subseteq D$. Xét $c$ thuộc tập giá trị của quan hệ $f^{-1}|_{C \times x}$. Từ cách đặt $c$, chúng ta có sự tồn tại của $d \in C$ sao cho $d\;f^{-1}|_{C \times x}\;c$. Mệnh đề này tương đương với $d\;f^{-1}\;c$. Ngoài ra, vì $d \in C$ và $C \subseteq D$, $d \in D$, suy ra $d\;f^{-1}|_{D \times x}\;c$, hay $c \in \Imf\left(f^{-1}|_{D \times x}\right)$. 
+
+Từ đó, chúng ta kết luận được $C \subseteq D \implies \Imf\left(f^{-1}|_{C \times x}\right) \subseteq \Imf\left(f^{-1}|_{D \times x}\right)$. Điều phải chứng minh.\footnote{Để ý rằng chứng minh này chỉ sử dụng $f^{-1}$ như một quan hệ. Thay $f^{-1}$ bởi quan hệ $R$ bất kì từ $y$ sang $x$, chúng ta cũng có khẳng định sau: \begin{quotation}
+   Cho $R$ là quan hệ từ $y$ sang $x$. Gọi $C$ và $D$ là hai tập con của $y$. Khi đó, \begin{equation*}
+      C \subseteq D \implies \Imf(R|_{C \times x})
+   \end{equation*}
+\end{quotation} }
+
 
 \exercise Cho $w$, $x$, $y$, $z$ là tập hợp.
 \begin{enumerate}

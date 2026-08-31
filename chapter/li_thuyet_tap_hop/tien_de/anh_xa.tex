@@ -209,6 +209,35 @@ Cụ thể hóa, chúng ta thấy rằng có một phần tử $c \in A$ thỏa 
 \end{equation*}
 kéo theo $b \in \Imf\left(f|_{A \setminus B}\right)$. Từ đó, dễ thấy điều phải chứng minh.
 
+\stepSubexercise Định nghĩa của $\vartriangle$ cho:
+\begin{equation*}
+   \Imf(f|_A) \vartriangle \Imf(f|_B) = (\Imf(f|_A) \setminus \Imf(f|_B)) \cup (\Imf(f|_B) \setminus \Imf(f|_A)).
+\end{equation*}
+Thêm vào đó, chúng ta đã chứng minh $\begin{cases}
+   \Imf(f|_A) \setminus \Imf(f|_B) \subseteq \Imf\left(f|_{A \setminus B}\right) \\
+   \Imf(f|_B) \setminus \Imf(f|_A) \subseteq \Imf\left(f|_{B \setminus A}\right)
+\end{cases}$, cho nên dễ thấy rằng
+\begin{equation*}
+   \left(\Imf(f|_A) \setminus \Imf(f|_B)\right) \cup \left(\Imf(f|_B) \setminus \Imf(f|_A)\right) \subseteq \Imf\left(f|_{A \setminus B}\right) \cup \Imf\left(f|_{B \setminus A}\right).
+\end{equation*}
+Ngoài ra, do $A \vartriangle B = (A \setminus B) \cup (B \setminus A)$ nên $\begin{cases}
+   A \setminus B \subseteq A \vartriangle B \\
+   B \setminus A \subseteq B \vartriangle A
+\end{cases}$. Qua đó, thấy được rằng \begin{equation*}
+   \Imf\left(f|_{A \setminus B}\right) \cup \Imf\left(f|_{B \setminus A}\right) \subseteq \Imf\left(f|_{A \vartriangle B}\right).
+\end{equation*}
+Vì vậy, dễ dàng có được $\Imf(f|_A) \vartriangle \Imf(f|_B) \subseteq \Imf\left(f|_{A \vartriangle B}\right)$, tức, điều phải chứng minh.
+
+\stepSubexercise Giả thiết rằng $C \subseteq D$. Xét $c$ thuộc tập giá trị của quan hệ $f^{-1}|_{C \times x}$. Từ cách đặt $c$, chúng ta có sự tồn tại của $d \in C$ sao cho $d\;f^{-1}|_{C \times x}\;c$. Mệnh đề này tương đương với $d\;f^{-1}\;c$. Ngoài ra, vì $d \in C$ và $C \subseteq D$, $d \in D$, suy ra $d\;f^{-1}|_{D \times x}\;c$, hay $c \in \Imf\left(f^{-1}|_{D \times x}\right)$. 
+
+Từ đó, chúng ta kết luận được $C \subseteq D \implies \Imf\left(f^{-1}|_{C \times x}\right) \subseteq \Imf\left(f^{-1}|_{D \times x}\right)$. Điều phải chứng minh.\footnote{Để ý rằng chứng minh này chỉ sử dụng $f^{-1}$ như một quan hệ. Thay $f^{-1}$ bởi quan hệ $R$ bất kì từ $y$ sang $x$, chúng ta cũng có khẳng định sau: \begin{quotation}
+   Cho $R$ là quan hệ từ $y$ sang $x$. Gọi $C$ và $D$ là hai tập con của $y$. Khi đó, \begin{equation*}
+      C \subseteq D \implies \Imf(R|_{C \times x})
+   \end{equation*}
+\end{quotation} }
+
+
+
 \exercise Cho $A$ và $B$ là hai tập hợp (và $B$ khác rỗng) sao cho tồn tại ánh xạ $f: A \to B$. Nếu $B \neq \varnothing$, gọi $b$ là một phần tử của $B$ và tập $C$ thỏa mãn $C \supseteq A$. Xây dựng quan hệ $g$ từ $C$ đến $B$ sao cho \begin{equation*}
    \forall x \in C, \forall y \in B, \left(x\;g\;y \iff \left[\begin{aligned}         
       x \in A &\land y = f(x) \\
