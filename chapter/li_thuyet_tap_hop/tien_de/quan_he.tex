@@ -482,6 +482,17 @@ và \defText{tập giá trị} hay \defText{tập ảnh} là
 \begin{equation*}
    \defMath{\imf(R) = \Imf(R) = \ran(R) = \Ran(R) = \mathbf{T}_R = \{b \in y \mid \exists a \in x, a\;R\;b\}}.
 \end{equation*}
+Từ tiên đề tách, $\forall a, (a \in \Dom(R) \iff a \in x \land \exists b \in y, a\;R\;b)$. Hơn nữa, \begin{align*}
+   \exists b \in y, a\;R\;b &\implies \exists b \in y, (a; b) \in x \times y \equationexplanation{$R \subseteq x \times y$};\\
+   \exists b \in y, a\;R\;b &\implies \exists b \in y, a \in x;\\
+   \exists b \in y, a\;R\;b &\implies a \in x.
+\end{align*}
+Do đó, \begin{equation*}
+   \forall a, \left(a \in \Dom(R) \iff \exists b \in y, a\;R\;b\right).
+\end{equation*}
+Tương tự, \begin{equation*}
+   \forall a, \left(a \in \Imf(R) \iff \exists b \in x, b\;R\;a\right).
+\end{equation*}
 
 \begin{figure}[H]
    \begin{center}
@@ -721,53 +732,166 @@ Tiếp theo, xét phần tử $d \in \Imf\left(R|_{A \times y}\right)$, theo đ�
 
 Kết hợp hai lập luận, chúng ta có điều phải chứng minh.
 
-\stepSubexercise Giả sử $C \subseteq D$. Gọi $a$ bất kì thuộc $\Dom\left(R|_{x \times C}\right)$. Chúng ta có 
-
-\stepSubexercise Tương tự như trước, với mọi $b$:
+\stepSubexercise Giả sử $C \subseteq D$. Khi đó, $x \times C \subseteq x \times D$ và $R \cap (x \times C) \subseteq R \cap (x \times D)$. Với mọi $a$, có:
 \begin{align*}
-   b \in \Imf\left(f|_{A \cap B}\right) &\iff \exists a \in A \cap B, b = f(a); \\
-   b \in \Imf\left(f|_{A \cap B}\right) &\iff \exists a, \begin{cases}
-      a \in A \land b = f(a) \\
-      a \in B \land b = f(a)
-   \end{cases}; \\
-   b \in \Imf\left(f|_{A \cap B}\right) &\implies \begin{cases}
-      \exists a, a \in A \land b = f(a) \\
-      \exists a, a \in B \land b = f(a)
-   \end{cases} \equationexplanation{cụ thể hóa rồi tồn tại hóa}; \\
-   b \in \Imf\left(f|_{A \cap B}\right) &\implies b \in \Imf(f|_A) \land b \in \Imf(f|_B); \\
-   b \in \Imf\left(f|_{A \cap B}\right) &\implies b \in \Imf(f|_A) \cap \Imf(f|_B).
+   a \in \Dom\left(R|_{x \times C}\right) &\iff \exists b, (b \in C \land (a; b) \in R \cap (x \times C)); \\
+   a \in \Dom\left(R|_{x \times C}\right) &\iff \exists b, (b \in D \land (a; b) \in R \cap (x \times D)); \\
+   a \in \Dom\left(R|_{x \times C}\right) &\iff a \in \Dom\left(R|_{x \times D}\right).
 \end{align*}
-Chúng ta có $\Imf\left(f|_{A \cap B}\right) \subseteq \Imf(f|_A) \cap \Imf(f|_B)$. Điều phải chứng minh.
+Ngoài ra, chúng ta cũng có biến đổi sau với mọi $a$:
+\begin{align*}
+   a \in \Imf\left(R|_{x \times C}\right) &\iff \exists b, (b \in x \land (b; a) \in R \cap (x \times C)); \\
+   a \in \Imf\left(R|_{x \times C}\right) &\iff \exists b, (b \in x \land (b; a) \in R \cap (x \times D)); \\
+   a \in \Imf\left(R|_{x \times C}\right) &\iff a \in \Imf\left(R|_{x \times D}\right).
+\end{align*}
+Qua đó, từ $C \subseteq D$, chúng ta suy ra được $\begin{cases}
+   \Dom\left(R|_{x \times C}\right) = \Dom\left(R|_{x \times D}\right) \\
+   \Imf\left(R|_{x \times C}\right) = \Imf\left(R|_{x \times D}\right)
+\end{cases}$. Điều phải chứng minh.
 
-\stepSubexercise Với mọi $b$, nếu $b \in \Imf(f|_A) \setminus \Imf(f|_B)$, có nghĩa là $b \in  \Imf(f|_A) \land b \notin \Imf(f|_B)$. Suy ra, \begin{equation*}
-   \exists a \in A, b = f(a) \land \overline{\exists a \in B, b = f(a)},
-\end{equation*}
-hay điều tương đương, \begin{equation*}
-      \exists a \in A, b = f(a) \land \forall a, (b = f(a) \implies a \notin B).
-\end{equation*}
-Cụ thể hóa, chúng ta thấy rằng có một phần tử $c \in A$ thỏa mãn $b = f(c)$ và $c \notin B$. Do đó, \begin{equation*}
-   \exists a \in A \setminus B, b = f(a),
-\end{equation*}
-kéo theo $b \in \Imf\left(f|_{A \setminus B}\right)$. Từ đó, dễ thấy điều phải chứng minh.
+\stepSubexercise Vì $A \subseteq x$ và $B \subseteq x$ nên $A \cup B \subseteq A \cup x$ và $A \cup x = x$. Do đó, $A \cup B \subseteq x$. Từ đó, khẳng định được quan hệ cảm sinh $R|_{(A \cup B) \times x}$ là xác định có nghĩa.
 
-\stepSubexercise Định nghĩa của $\vartriangle$ cho:
-\begin{equation*}
-   \Imf(f|_A) \vartriangle \Imf(f|_B) = (\Imf(f|_A) \setminus \Imf(f|_B)) \cup (\Imf(f|_B) \setminus \Imf(f|_A)).
+Với mọi $a$, \begin{align*}
+   a \in \Dom\left(R|_{(A \cup B) \times y}\right) &\iff \exists b \in y, (a; b) \in R \cap ((A \cup B) \times y); \\
+   a \in \Dom\left(R|_{(A \cup B) \times y}\right) &\iff \exists b \in y, (a; b) \in R \cap ((A \times y) \cup (B \times y)); \\
+   a \in \Dom\left(R|_{(A \cup B) \times y}\right) &\iff \exists b \in y, (a; b) \in (R \cap (A \times y)) \cup (R \cap (B \times y)); \\
+   a \in \Dom\left(R|_{(A \cup B) \times y}\right) &\iff \exists b \in y, \left((a; b) \in R \cap (A \times y) \lor (a; b) \in R \cap (B \times y)\right); \\
+   a \in \Dom\left(R|_{(A \cup B) \times y}\right) &\iff \left[\begin{aligned}
+      \exists b \in y, (a; b) \in R \cap (A \times y) \\
+      \exists b \in y, (a; b) \in R \cap (B \times y)
+   \end{aligned}\right. ; \\
+   a \in \Dom\left(R|_{(A \cup B) \times y}\right) &\iff  \left[\begin{aligned}
+      a \in \Dom\left(R|_{A \times y}\right) \\
+      a \in \Dom\left(R|_{B \times y}\right)
+   \end{aligned}\right.; \\
+   a \in \Dom\left(R|_{(A \cup B) \times y}\right) &\iff a \in \Dom\left(R|_{A \times y}\right) \cup \Dom\left(R|_{B \times y}\right).
+\end{align*}
+Vì vậy, $\Dom\left(R|_{(A \cup B) \times y}\right) = \Dom\left(R|_{A \times y}\right) \cup \Dom\left(R|_{B \times y}\right)$. Điều phải chứng minh.
+
+\stepSubexercise Vì $\begin{cases}
+   A \subseteq A \cup B \\
+   B \subseteq A \cup B
+\end{cases}$ nên $\begin{cases}
+   \Imf\left(R|_{A \times y}\right) \subseteq \Imf\left(R|_{(A \cup B) \times y}\right) \\
+   \Imf\left(R|_{B \times y}\right) \subseteq \Imf\left(R|_{(A \cup B) \times y}\right)
+\end{cases}$. Dẫn đến \begin{equation*}
+   \Imf\left(R|_{A \times y}\right) \cup \Imf\left(R|_{B \times y}\right) \subseteq \Imf\left(R|_{(A \cup B) \times y}\right).
 \end{equation*}
-Thêm vào đó, chúng ta đã chứng minh $\begin{cases}
-   \Imf(f|_A) \setminus \Imf(f|_B) \subseteq \Imf\left(f|_{A \setminus B}\right) \\
-   \Imf(f|_B) \setminus \Imf(f|_A) \subseteq \Imf\left(f|_{B \setminus A}\right)
-\end{cases}$, cho nên dễ thấy rằng
-\begin{equation*}
-   \left(\Imf(f|_A) \setminus \Imf(f|_B)\right) \cup \left(\Imf(f|_B) \setminus \Imf(f|_A)\right) \subseteq \Imf\left(f|_{A \setminus B}\right) \cup \Imf\left(f|_{B \setminus A}\right).
-\end{equation*}
-Ngoài ra, do $A \vartriangle B = (A \setminus B) \cup (B \setminus A)$ nên $\begin{cases}
-   A \setminus B \subseteq A \vartriangle B \\
-   B \setminus A \subseteq B \vartriangle A
-\end{cases}$. Qua đó, thấy được rằng \begin{equation*}
-   \Imf\left(f|_{A \setminus B}\right) \cup \Imf\left(f|_{B \setminus A}\right) \subseteq \Imf\left(f|_{A \vartriangle B}\right).
-\end{equation*}
-Vì vậy, dễ dàng có được $\Imf(f|_A) \vartriangle \Imf(f|_B) \subseteq \Imf\left(f|_{A \vartriangle B}\right)$, tức, điều phải chứng minh.
+
+Ngoài ra, lập luận tương tự như trước, với mọi $a$, 
+\begin{align*}
+   a \in \Imf\left(R|_{(A \cup B) \times y}\right) &\implies \exists b, (b; a) \in R \cap ((A \cup B) \times y); \\
+   a \in \Imf\left(R|_{(A \cup B) \times y}\right) &\implies \left[ \begin{aligned}
+      \exists b, (b; a) \in R \cap (A \times y) \\ 
+      \exists b, (b; a) \in R \cap (B \times y) 
+   \end{aligned}\right.; \\
+   a \in \Imf\left(R|_{(A \cup B) \times y}\right) &\implies \left[ \begin{aligned}
+      a \in \Imf\left(R|_{A \times y}\right) \\
+      a \in \Imf\left(R|_{B \times y}\right)
+   \end{aligned}\right.; \\
+   a \in \Imf\left(R|_{(A \cup B) \times y}\right) &\implies a \in \Imf\left(R|_{A \times y}\right) \cup \Imf\left(R|_{B \times y}\right).
+\end{align*}
+Qua đó, $R|_{(A \cup B) \times y} \subseteq \Imf\left(R|_{A \times y}\right) \cup \Imf\left(R|_{B \times y}\right)$. 
+
+Kết hợp và kết luận, dễ dàng có được điều phải chứng minh.
+
+\stepSubexercise Dễ thấy $C \cup D \subseteq y$ nên xác định được quan hệ cảm sinh $R|_{x \times (C \cup D)}$.
+
+Bạn đọc có thể lập luận tương tự như trước để chứng minh khẳng định được cho, tuy nhiên, tác giả sẽ trình bày một hướng giải mà không tái lại cách viết bằng việc sử dụng một hệ quả: 
+\begin{quotation}
+   Với $v \in \mathfrak{P}(x)$ và $w \in \mathfrak{P}(y)$, xây dựng quan hệ $R|_{v \times w}$ cảm sinh từ $R$ và $\left.R^{-1}\middle|_{w \times v}\right.$ cảm sinh từ quan hệ ngược $R^{-1}$. Chúng ta có \begin{equation*}
+      \begin{cases}
+         \Dom\left(R^{-1}\middle|_{w \times v}\right) = \Imf\left(R|_{v \times w}\right) \\
+         \Imf\left(R^{-1}\middle|_{w \times v}\right) = \Dom\left(R|_{v \times w}\right)
+      \end{cases}.
+   \end{equation*} 
+\end{quotation}
+
+Thật vậy, với mọi $a$, \begin{align*}
+   a \in \Dom\left(R^{-1}\middle|_{w \times v}\right) &\iff \exists b \in v, (a; b) \in R^{-1} \cap (w \times v); \\
+   a \in \Dom\left(R^{-1}\middle|_{w \times v}\right) &\iff \exists b \in v, \begin{cases}
+      (a; b) \in R^{-1} \\
+      (a; b) \in w \times v
+   \end{cases}; \\
+   a \in \Dom\left(R^{-1}\middle|_{w \times v}\right) &\iff \exists b \in v, \begin{cases}
+      (b; a) \in R \\
+      (b; a) \in v \times w
+   \end{cases}; \\
+   a \in \Dom\left(R^{-1}\middle|_{w \times v}\right) &\iff \exists b \in v, (b; a) \in R \cap (v \times w); \\
+   a \in \Dom\left(R^{-1}\middle|_{w \times v}\right) &\iff a \in \Imf\left(R|_{v \times w}\right).
+\end{align*}
+Do đó, $\Dom\left(R^{-1}\middle|_{w \times v}\right) = \Imf\left(R|_{v \times w}\right)$. Từ đó, chúng ta cũng có \begin{align*}
+   \Imf\left(R^{-1}\middle|_{w \times v}\right) &= \Dom\left(\left(R^{-1}\right)^{-1}\middle|_{v \times w}\right) \\
+   &= \Dom\left(R|_{v \times w}\right).
+\end{align*}
+Chúng ta đã chứng minh được hệ quả đã được đưa ra. Sử dụng kết quả này, chúng ta có
+\begin{align*}
+   \Dom\left(R|_{x \times (C \cup D)}\right) &= \Imf\left(R^{-1}\middle|_{(C \cup D) \times x}\right) \\
+   &= \Imf\left(R^{-1}\middle|_{C \times x}\right) \cup \Imf\left(R^{-1}\middle|_{D \times x}\right) \\
+   &= \Dom\left(R|_{x \times C}\right) \cup \Dom\left(R|_{x \times D}\right).
+\end{align*}
+Điều phải chứng minh.
+
+\stepSubexercise Chúng ta cũng có \begin{align*}
+   \Imf\left(R|_{x \times (C \cup D)}\right) &= \Dom\left(R^{-1}\middle|_{(C \cup D) \times x}\right) \\
+   &= \Dom\left(R^{-1}\middle|_{C \times x}\right) \cup \Dom\left(R^{-1}\middle|_{D \times x}\right) \\
+   &= \Imf\left(R|_{x \times C}\right) \cup \Imf\left(R|_{x \times D}\right).
+\end{align*}
+Điều phải chứng minh.
+
+\stepSubexercise Trước hết, chúng ta sẽ khẳng định rằng, với $v \in \mathfrak{P}(x)$ và $w \in \mathfrak{P}(y)$, $$\begin{cases}
+   \Dom\left(R|_{v\times y}\right) = \Dom(R) \cap v \\
+   \Imf\left(R|_{x \times w}\right) = \Imf(R) \cap w
+\end{cases}.$$
+Thật vậy, với mọi $a$, 
+\begin{align*}
+   a \in \Dom\left(R|_{v\times y}\right) &\iff \exists b \in y, (a; b) \in R \cap (v \times y); \\
+   a \in \Dom\left(R|_{v\times y}\right) &\iff \exists b \in y, \begin{cases}
+      (a; b) \in R \\
+      (a; b) \in v \times y
+   \end{cases}; \\
+   a \in \Dom\left(R|_{v\times y}\right) &\iff \exists b, \begin{cases}
+      (a; b) \in R \\
+      a \in v
+   \end{cases}. \\
+   a \in \Dom\left(R|_{v\times y}\right) &\iff \exists b, a\;R\;b \land a \in v \equationexplanation{cụ thể hóa và tồn tại hóa}; \\
+   a \in \Dom\left(R|_{v\times y}\right) &\iff a \in \Dom(R) \cap v.
+\end{align*}
+Từ đó, suy ra được $\Dom\left(R|_{v\times y}\right) = \Dom(R) \cap v$. Sử dụng kết quả này, chúng ta chứng minh được mệnh đề còn lại. \begin{align*}
+   \Imf\left(R|_{x \times w}\right) &= \Dom\left(R^{-1}\middle|_{w \times x}\right) \\
+      &= \Dom\left(R^{-1}\right) \cap w \\
+      &= \Imf(R) \cap w.
+\end{align*}
+
+Khi có được kết quả phụ, quay trở lại bài tập, có $\begin{cases}
+   A \cap B \subseteq A \\
+   A \subseteq x
+\end{cases}$ nên $A \cap B \subseteq x$. Xác định được quan hệ cảm sinh $R|_{(A \cap B) \times y}$. Khi đó, \begin{align*}
+   \Dom\left(R|_{(A \cap B) \times y}\right) &= \Dom(R) \cap ((A \cap B) \times y) \\
+      &= \Dom(R) \cap ((A \times y) \cap (B \times y)).
+\end{align*}
+
+Ngoài ra, với mọi $a$, 
+\begin{align*}
+   a \in \Dom(R) \cap ((A \times y) \cap (B \times y)) &\iff \begin{cases}
+      a \in \Dom(R) \\
+      a \in (A \times y) \cap (B \times y)
+   \end{cases}; \\
+   a \in \Dom(R) \cap ((A \times y) \cap (B \times y)) &\iff \begin{cases}
+      a \in \Dom(R) \\
+      a \in A \times y
+   \end{cases} \land \begin{cases}
+      a \in \Dom(R) \\
+      a \in B \times y
+   \end{cases}; \\
+   a \in \Dom(R) \cap ((A \times y) \cap (B \times y)) &\iff a \in \Dom(R) \cap (A \times y) \land a \in \Dom(R) \cap (B \times y); \\
+   a \in \Dom(R) \cap ((A \times y) \cap (B \times y)) &\iff a \in \left( \Dom(R) \cap (A \times y) \right) \cap \left( \Dom(R) \cap (B \times y) \right); \\
+\end{align*}
+Do đó, \begin{align*}
+   \Dom\left(R|_{(A \cap B) \times y}\right) &= \left( \Dom(R) \cap (A \times y) \right) \cap \left( \Dom(R) \cap (B \times y) \right) \\
+      &= \Dom\left(R|_{A \times y}\right) \cap \Dom\left(R|_{B \times y}\right).
+\end{align*}
+Điều phải chứng minh.
 
 \stepSubexercise Giả thiết rằng $C \subseteq D$. Xét $c$ thuộc tập giá trị của quan hệ $f^{-1}|_{C \times x}$. Từ cách đặt $c$, chúng ta có sự tồn tại của $d \in C$ sao cho $d\;f^{-1}|_{C \times x}\;c$. Mệnh đề này tương đương với $d\;f^{-1}\;c$. Ngoài ra, vì $d \in C$ và $C \subseteq D$, $d \in D$, suy ra $d\;f^{-1}|_{D \times x}\;c$, hay $c \in \Imf\left(f^{-1}|_{D \times x}\right)$. 
 
