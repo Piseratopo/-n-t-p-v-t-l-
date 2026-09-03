@@ -893,14 +893,107 @@ Do đó, \begin{align*}
 \end{align*}
 Điều phải chứng minh.
 
-\stepSubexercise Giả thiết rằng $C \subseteq D$. Xét $c$ thuộc tập giá trị của quan hệ $f^{-1}|_{C \times x}$. Từ cách đặt $c$, chúng ta có sự tồn tại của $d \in C$ sao cho $d\;f^{-1}|_{C \times x}\;c$. Mệnh đề này tương đương với $d\;f^{-1}\;c$. Ngoài ra, vì $d \in C$ và $C \subseteq D$, $d \in D$, suy ra $d\;f^{-1}|_{D \times x}\;c$, hay $c \in \Imf\left(f^{-1}|_{D \times x}\right)$. 
+\stepSubexercise Với mọi $a$, chúng ta có \begin{align*}
+   a \in \Imf\left(R|_{(A \cap B) \times y}\right) &\implies \exists b, (b; a) \in R \cap ((A \cap B) \times y); \\
+   a \in \Imf\left(R|_{(A \cap B) \times y}\right) &\implies \exists b, \begin{cases}
+      (b; a) \in R \\
+      (b; a) \in (A \cap B) \times y
+   \end{cases}; \\
+   a \in \Imf\left(R|_{(A \cap B) \times y}\right) &\implies \exists b, \begin{cases}
+      b\;R\;a \\
+      b \in A \cap B \\
+      a \in y
+   \end{cases}; \\
+   a \in \Imf\left(R|_{(A \cap B) \times y}\right) &\implies \exists b, \left(\begin{cases}
+      b\;R\;a \\
+      b \in A \\
+      a \in y
+   \end{cases} \land \begin{cases}
+      b\;R\;a \\
+      b \in B \\ 
+      a \in y
+   \end{cases}\right); \\
+   a \in \Imf\left(R|_{(A \cap B) \times y}\right) &\implies \exists b, \begin{cases}
+      b\;R\;a \\
+      b \in A \\
+      a \in y
+   \end{cases} \land \exists b, \begin{cases}
+      b\;R\;a \\
+      b \in B \\ 
+      a \in y
+   \end{cases}; \\
+   a \in \Imf\left(R|_{(A \cap B) \times y}\right) &\implies \exists b \in A, (b; a) \in R \cap (A \times y) \land \exists b \in B, (b; a) \in R \cap (B \times y); \\
+   a \in \Imf\left(R|_{(A \cap B) \times y}\right) &\implies a \in \Imf\left(R|_{A \times y}\right) \land a \in \Imf\left(R|_{B \times y}\right); \\
+   a \in \Imf\left(R|_{(A \cap B) \times y}\right) &\implies a \in \Imf\left(R|_{A \times y}\right) \cap \Imf\left(R|_{B \times y}\right).
+\end{align*}
+Từ đó, dễ thấy điều phải chứng minh.
 
-Từ đó, chúng ta kết luận được $C \subseteq D \implies \Imf\left(f^{-1}|_{C \times x}\right) \subseteq \Imf\left(f^{-1}|_{D \times x}\right)$. Điều phải chứng minh.\footnote{Để ý rằng chứng minh này chỉ sử dụng $f^{-1}$ như một quan hệ. Thay $f^{-1}$ bởi quan hệ $R$ bất kì từ $y$ sang $x$, chúng ta cũng có khẳng định sau: \begin{quotation}
-   Cho $R$ là quan hệ từ $y$ sang $x$. Gọi $C$ và $D$ là hai tập con của $y$. Khi đó, \begin{equation*}
-      C \subseteq D \implies \Imf(R|_{C \times x})
-   \end{equation*}
-\end{quotation} }
+\stepSubexercise Từ những kết quả trước đó, chúng ta có
+\begin{align*}
+   \Dom\left(R|_{x \times C}\right) &= \Imf\left(R^{-1}\middle|_{C \times x} \right), \\
+   \Dom\left(R|_{x \times D}\right) &= \Imf\left(R^{-1}\middle|_{D \times x} \right), \\
+   \Dom\left(R|_{x \times (C \cap D)}\right) &= \Imf\left(R^{-1}\middle|_{(C \cap D) \times x} \right)
+\end{align*} và $\Imf\left(R^{-1}\middle|_{(C \cap D) \times x} \right) \subseteq \Imf\left(R^{-1}\middle|_{C \times x} \right) \cap \Imf\left(R^{-1}\middle|_{D \times x} \right)$. Hiển nhiên rằng, \begin{equation*}
+   \Dom\left(R|_{x \times (C \cap D)}\right) \subseteq \Dom\left(R|_{x \times C}\right) \cap \Dom\left(R|_{x \times D}\right).
+\end{equation*}
+Điều phải chứng minh.
 
+\stepSubexercise \begin{align*}
+   \Imf\left(R|_{x \times (C \cap D)}\right) &= \Dom\left(R^{-1}\middle|_{(C \cap D) \times x}\right)\\
+      &= \Dom\left(R^{-1}\middle|_{C \times x}\right) \cap \Dom\left(R^{-1}\middle|_{D \times x}\right) \\
+      &= \Imf\left(R|_{x \times C}\right) \cap \Imf\left(R|_{x \times D}\right).
+\end{align*}
+Điều phải chứng minh.
+
+\stepSubexercise Với mọi $a$, chúng ta có \begin{align*}
+   a \in \Dom\left(R|_{(A \setminus B) \times y}\right) &\iff \exists b \in y, (a; b) \in R \cap ((A \setminus B) \times y);\\
+   a \in \Dom\left(R|_{(A \setminus B) \times y}\right) &\iff \exists b \in y, \begin{cases}
+      (a; b) \in R \\
+      (a; b) \in (A \setminus B) \times y
+   \end{cases}; \\
+   a \in \Dom\left(R|_{(A \setminus B) \times y}\right) &\implies \exists b \in y, \begin{cases}
+      (a; b) \in R \\
+      a \in A \setminus B
+   \end{cases}; \\
+   a \in \Dom\left(R|_{(A \setminus B) \times y}\right) &\implies \exists b \in y, 
+      (a; b) \in R \land a \in A \setminus B \equationexplanation{cụ thể hoá và tồn tại hoá}; \\
+   a \in \Dom\left(R|_{(A \setminus B) \times y}\right) &\implies \exists b \in y, (a; b) \in R \land a \in A \land a \notin B.
+\end{align*}
+Từ $\exists b \in y, (a; b) \in R$ và $a \in A$, suy ra được $\exists b \in y, (a; b) \in R \cap (A \times y)$ --- tương đương với $a \in \Dom\left(R|_{A \times y}\right)$. Ngoài ra, với mọi $a$, $a \notin B$ kéo theo $\forall b \in y, a \notin B$. Chúng ta có $\nexists b \in y, (a; b) \in R \cap (B \times y)$, tức là $a$ không bao giờ thuộc $\Dom\left(R|_{B \times y}\right)$ nếu $a \notin B$. Qua đó, sử dụng các kết quả của giải tích vị từ bậc nhất, suy ra được \begin{equation*}
+   a \in \Dom\left(R|_{(A \setminus B) \times y}\right) \implies a \in \Dom\left(R|_{A \times y}\right) \land \neg a \in \Dom\left(R|_{B \times y}\right).
+\end{equation*}
+Do đó, $\Dom\left(R|_{(A \setminus B) \times y}\right) \subseteq \Dom\left(R|_{A \times y}\right) \setminus \Dom\left(R|_{B \times y}\right).$
+
+Với mọi $c$, giả thiết rằng $c \in \Dom\left(R|_{A \times y}\right) \setminus \Dom\left(R|_{B \times y}\right)$. Tồn tại $d \in y$ sao cho $c\;R\;d$ và $(c; d) \in A \times y$, suy ra được $c \in A$. Chúng ta không thể có $c \in B$ do nếu điều đó xảy ra thì sẽ có $(c; d) \in B \times y$, dẫn đến $(c; d) \in R \cap (B \times y)$. Khi đó, $c \in \Dom\left(R|_{B \times y}\right)$, mâu thuẫn với giả thiết ban đầu. Vì vậy, $c \in A \setminus B$, nên $(c; d) \in R \cap ((A \setminus B) \times y)$ và cuối cùng, $c \in \Dom\left(R|_{(A \setminus B) \times y}\right)$. Từ đó, có $$\Dom\left(R|_{(A \setminus B) \times y}\right) \supseteq \Dom\left(R|_{A \times y}\right) \setminus \Dom\left(R|_{B \times y}\right).$$
+
+Từ hai kết quả đã có, dễ thấy điều phải chứng minh.
+
+\stepSubexercise Xét phần tử $b \in \Imf\left(R|_{A \times y}\right) \setminus \Imf\left(R|_{B \times y}\right)$. Theo định nghĩa của phép hiệu hai tập hợp, chúng ta có
+\begin{equation*}
+   b \in \Imf\left(R|_{A \times y}\right) \land b \notin \Imf\left(R|_{B \times y}\right).
+\end{equation*}
+Vì $b \in \Imf\left(R|_{A \times y}\right)$, tồn tại $a \in x$ sao cho bộ $(a; b) \in R|_{A \times y}$, kéo theo $(a; b) \in R \land a \in A$. Bây giờ, chúng ta chứng minh phần tử $a$ này không thuộc vào tập hợp $B$ bằng phương pháp phản chứng. Bởi, giả sử ngược lại rằng $a \in B$, có ngay được $(a; b) \in R \cap (B \times y)$, dẫn đến $b \in \Imf\left(R|_{B \times y}\right)$, mâu thuẫn. Vì thế, điều giả sử ở trên là sai, nghĩa là $a \notin B$. Dẫn đến, $a \in A \setminus B$, và khi đó, $(a; b) \in R \cap \left((A \setminus B) \times y\right)$.
+
+Kết luận lại, $$\forall b, b \in \Imf\left(R|_{A \times y}\right) \setminus \Imf\left(R|_{B \times y}\right) \implies b \in \Imf\left(R|_{(A \setminus B) \times y}\right).$$
+Và vì vậy, hiển nhiên có được điều phải chứng minh.
+
+\stepSubexercise Tương tự như một số phần trước đó, chúng ta có 
+\begin{align*}
+   \Dom\left(R|_{x \times (C \setminus D)} \right) &= \Imf\left(R^{-1}\middle|_{(C \setminus D) \times x}\right),\text{~và}\\
+   \Dom\left(R|_{x \times C} \right) \setminus \Dom\left(R|_{x \times D} \right) &= \Imf\left(R^{-1} \middle|_{C \times x}\right) \setminus \Imf\left(R^{-1} \middle|_{D \times x}\right).
+\end{align*}
+Ngoài ra, do $\Imf\left(R^{-1}\middle|_{(C \setminus D) \times x}\right) \supseteq \Imf\left(R^{-1} \middle|_{C \times x}\right) \setminus \Imf\left(R^{-1} \middle|_{D \times x}\right)$ nên \begin{equation*}
+   \Dom\left(R|_{x \times (C \setminus D)} \right) \supseteq \Dom\left(R|_{x \times C} \right) \setminus \Dom\left(R|_{x \times D} \right).
+\end{equation*}
+Điều phải chứng minh.
+
+\stepSubexercise 
+\begin{align*}
+   \Imf\left(R|_{x \times (C \setminus D)} \right) &= \Dom\left(R^{-1}\middle|_{(C \setminus D) \times x}\right) \\
+   &= \Dom\left(R^{-1} \middle|_{C \times x}\right) \setminus \Dom\left(R^{-1} \middle|_{D \times x}\right) \\
+   &= \Imf\left(R|_{x \times C} \right) \setminus \Imf\left(R|_{x \times D} \right).
+\end{align*}
+Điều phải chứng minh.
 
 \exercise Cho $w$, $x$, $y$, $z$ là tập hợp.
 \begin{enumerate}
