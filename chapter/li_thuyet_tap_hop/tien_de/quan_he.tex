@@ -1061,9 +1061,45 @@ Ngoài ra, bởi vì $\Imf\left(R^{-1}\middle|_{(C \vartriangle D) \times x}\rig
 
 \solution
 
-\resetSubexercise Giả thiết rằng $\forall a \in x, \forall b \in x, \forall c \in y, \left((a; c) \in R \land (b; c) \in R \implies a = b\right)$.
+\resetSubexercise Giả thiết rằng $\forall a \in x, \forall b \in x, \forall c \in y, \left(a\;R\;c \land b\;R\;c \implies a = b\right)$.
 
-Xét một $d$ tùy ý. Nếu $d \in \Imf\left(R|_{A \times y}\right) \cap \Imf\left(R|_{B \times y}\right)$.
+Xét một $d$ tùy ý. Nếu $d \in \Imf\left(R|_{A \times y}\right) \cap \Imf\left(R\middle|_{B \times y}\right)$. Khi đó, 
+\begin{itemize}
+   \item $d \in \Imf\left(R\middle|_{A \times y}\right)$, nên tồn tại $e \in A$ để $e\;R\;d$; và
+   \item $d \in \Imf\left(R\middle|_{B \times y}\right)$, dẫn đến tồn tại $f \in B$ sao cho $f\;R\;d$. 
+\end{itemize}
+Ngoài ra, dễ thấy $d \in y$. Bởi vì $A$ và $B$ đều thuộc $\mathfrak{P}(x)$ nên $e$ và $f$ đều thuộc $x$. Có hai phần tử $e$ và $f$ thuộc $x$, $d$ thuộc $y$ sao cho $\begin{cases}
+   e\;R\;d \\
+   f\;R\;d
+\end{cases}$ nên $e = f$. Suy ra $e \in B$, dẫn đến $e \in A \cap B$. Qua đó, có được $(e; d) \in R \cap ((A \cap B) \times y)$ hay $d \in \Imf\left(R\middle|_{(A \cap B) \times y}\right)$. Vì vậy, \begin{equation*}
+   \Imf\left(R\middle|_{A \times y}\right) \cap \Imf\left(R\middle|_{B \times y}\right) \subseteq \Imf\left(R\middle|_{(A \cap B) \times y}\right).
+\end{equation*}
+Kết hợp với $\Imf\left(R\middle|_{(A \cap B) \times y}\right) \subseteq \Imf\left(R\middle|_{A \times y}\right) \cap \Imf\left(R\middle|_{B \times y}\right)$, chúng ta kết luận được \begin{equation*}
+   \Imf\left(R\middle|_{(A \cap B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \cap \Imf\left(R\middle|_{B \times y}\right).
+\end{equation*}
+
+Nếu $d \in \Imf\left(R\middle|_{(A \setminus B) \times y}\right)$, tồn tại $g \in A \setminus B$ sao cho $g\;R\;d$. Vì $g \in A$ và $g\;R\;d$, có được $d \in \Imf\left(R\middle|_{A \times y}\right)$.
+
+Giả sử rằng $d \in \Imf\left(R\middle|_{B \times y}\right)$. Tồn tại $h \in B$ sao cho $h\;R\;d$. Do $g\;R\;d$ và $h\;R\;d$ nên $g = h$, dẫn đến việc $g \in B$, mâu thuẫn với $g \in A \setminus B$. Sử dụng chứng minh bằng phản chứng, chúng ta có $d \notin \Imf\left(R\middle|_{B \times y}\right)$, và vì vậy, \begin{equation*}
+   d \in \Imf\left(R\middle|_{A \times y}\right) \setminus \Imf\left(R\middle|_{B \times y}\right).
+\end{equation*}
+Do đó, $\Imf\left(R\middle|_{(A \setminus B) \times y}\right) \subseteq \Imf\left(R\middle|_{A \times y}\right) \setminus \Imf\left(R\middle|_{B \times y}\right)$. Thêm vào đó, do đã có $\Imf\left(R\middle|_{(A \setminus B) \times y}\right) \supseteq \Imf\left(R\middle|_{A \times y}\right) \setminus \Imf\left(R\middle|_{B \times y}\right)$, \begin{equation*}
+   \Imf\left(R\middle|_{(A \setminus B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \setminus \Imf\left(R\middle|_{B \times y}\right).
+\end{equation*}
+
+Mệnh đề còn lại không cần chứng minh phức tạp như vậy. Dựa vào những kết quả trước, kết hợp với giả thiết, chúng ta có thể biến đổi như sau:
+\begin{align*}
+   \Imf\left(R\middle|_{(A \vartriangle B) \times y}\right) &= \Imf\left(R\middle|_{((A \setminus B) \cup (B \setminus A)) \times y}\right) \\
+      &= \Imf\left(R\middle|_{(A \setminus B) \times y}\right) \cup \Imf\left(R\middle|_{(B \setminus A) \times y}\right) \\
+      &= \left(\Imf\left(R\middle|_{A \times y}\right) \setminus \Imf\left(R\middle|_{B \times y}\right)\right) \cup \left(\Imf\left(R\middle|_{B \times y}\right) \setminus \Imf\left(R\middle|_{A \times y}\right)\right) \\
+      &= \Imf\left(R\middle|_{A \times y}\right) \vartriangle \Imf\left(R\middle|_{B \times y}\right).
+\end{align*}
+
+Từ đó, dễ thấy điều phải chứng minh.
+
+\stepSubexercise Một cách tự nhiên để chứng minh là chia làm các trường hợp:
+
+Trường hợp \coloringCrimson{$\Imf\left(R\middle|_{(A \cap B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \cap \Imf\left(R\middle|_{B \times y}\right)$}.
 
 \exercise Cho $w$, $x$, $y$, $z$ là tập hợp.
 \begin{enumerate}
