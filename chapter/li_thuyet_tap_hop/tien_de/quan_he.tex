@@ -228,7 +228,7 @@ z \in A \times C
 \end{itemize}
 Cả hai trường hợp đều cho chúng ta $z \in A \times (B \cup C)$. Do vậy, $(A \times B) \cup (A \times C) \subseteq A \times (B \cup C)$.
 
-Gọi $w \in A \times (B \cup C)$. Tồn tại $u \in A$ và $v \in B\cup C$ sao cho $w = (u; v)$. $v \in B \cup C$ sẽ cho ra $v \in B$ hoặc $v \in C$. Từ đó, chúng ta sẽ có lần lượt hoặc $(u; v) \in A \times B$ hoặc $(u; v) \in A \times C$. Điều đó cho phép viết $w \in (A \times B) \cup (A \times C)$. Vì đó, $A \times (B \cup C) \subseteq (A \times B) \cup (A \times C)$.
+Gọi $w \in A \times (B \cup C)$. Tồn tại $u \in A$ và $v \in B\cup C$ sao cho $w = (u; v)$. $v \in B \cup C$ sẽ cho ra $v \in B$ hoặc $v \in C$. Từ đó, chúng ta sẽ có lần lượt hoặc $(u; v) \in A \times B$ hoặc $(u; v) \in A \times C$. Điều đó cho phép viết $w \in (A \times B) \cup (A \times C)$. Vì lí do đó, $A \times (B \cup C) \subseteq (A \times B) \cup (A \times C)$.
 
 Kết hợp hai chiều, chúng ta có điều phải chứng minh.
 
@@ -791,7 +791,7 @@ Ngoài ra, lập luận tương tự như trước, với mọi $a$,
    \end{aligned}\right.; \\
    a \in \Imf\left(R|_{(A \cup B) \times y}\right) &\implies a \in \Imf\left(R|_{A \times y}\right) \cup \Imf\left(R|_{B \times y}\right).
 \end{align*}
-Qua đó, $R|_{(A \cup B) \times y} \subseteq \Imf\left(R|_{A \times y}\right) \cup \Imf\left(R|_{B \times y}\right)$. 
+Qua đó, $\Imf\left(R|_{(A \cup B) \times y}\right) \subseteq \Imf\left(R|_{A \times y}\right) \cup \Imf\left(R|_{B \times y}\right)$. 
 
 Kết hợp và kết luận, dễ dàng có được điều phải chứng minh.
 
@@ -1004,7 +1004,66 @@ Ngoài ra, do $\Imf\left(R^{-1}\middle|_{(C \setminus D) \times x}\right) \supse
 \end{align*}
 Điều phải chứng minh.
 
-\stepSubexercise 
+\stepSubexercise Từ định nghĩa hiệu đối xứng, chúng ta có \begin{equation*}
+   \Imf\left(R|_{(A \vartriangle B) \times y}\right) = \Imf\left(R|_{((A \setminus B) \cup (B \setminus A)) \times y}\right),\end{equation*} 
+   và 
+   $$\Imf\left(R|_{A \times y}\right) \vartriangle \Imf\left(R|_{B \times y}\right) = \left( \Imf\left(R|_{A \times y}\right) \setminus \Imf\left(R|_{B \times y}\right)\right) \cup \left( \Imf\left(R|_{B \times y}\right) \setminus \Imf\left(R|_{A \times y}\right)\right).$$
+Thêm vào đó, chúng ta đã có những quan hệ 
+\begin{align*}
+   \Imf\left(R|_{((A \setminus B) \cup (B \setminus A)) \times y}\right) &= \Imf\left(R|_{(A \setminus B) \times y}\right) \cup \Imf\left(R|_{(B \setminus A) \times y}\right), \\
+   \Imf\left(R|_{(A \setminus B) \times y}\right) &\supseteq \Imf\left(R|_{A \times y}\right) \setminus \Imf\left(R|_{B \times y}\right), \\
+   \Imf\left(R|_{(B \setminus A) \times y}\right) &\supseteq \Imf\left(R|_{B \times y}\right) \setminus \Imf\left(R|_{A \times y}\right).
+\end{align*}
+Qua đó, \begin{align*}
+   \Imf\left(R|_{(A \vartriangle B) \times y}\right) &= \Imf\left(R|_{(A \setminus B) \times y}\right) \cup \Imf\left(R|_{(B \setminus A) \times y}\right); \\
+   \Imf\left(R|_{(A \vartriangle B) \times y}\right) &\supseteq \left( \Imf\left(R|_{A \times y}\right) \setminus \Imf\left(R|_{B \times y}\right)\right) \cup \left( \Imf\left(R|_{B \times y}\right) \setminus \Imf\left(R|_{A \times y}\right)\right); \\
+   \Imf\left(R|_{(A \vartriangle B) \times y}\right) &\supseteq \Imf\left(R|_{A \times y}\right) \vartriangle \Imf\left(R|_{B \times y}\right).
+\end{align*}
+Điều phải chứng minh.
+
+\stepSubexercise Đã khẳng định:
+\begin{align*}
+   \Dom\left(R|_{x \times (C \vartriangle D)}\right) &= \Imf\left(R^{-1}\middle|_{(C \vartriangle D) \times x}\right), \\
+   \Dom\left(R|_{x \times C}\right) &= \Imf\left(R^{-1}\middle|_{C \times x}\right),\text{~và} \\
+   \Dom\left(R|_{x \times D}\right) &= \Imf\left(R^{-1}\middle|_{D \times x}\right).
+\end{align*}
+Ngoài ra, bởi vì $\Imf\left(R^{-1}\middle|_{(C \vartriangle D) \times x}\right) \supseteq \Imf\left(R^{-1}\middle|_{C \times x}\right) \vartriangle \Imf\left(R^{-1}\middle|_{D \times x}\right)$ nên dễ thấy \begin{equation*}
+   \Dom\left(R|_{x \times (C \vartriangle D)}\right) \supseteq \Dom\left(R|_{x \times C}\right) \vartriangle \Dom\left(R|_{x \times D}\right).
+\end{equation*}
+Điều phải chứng minh.
+
+\stepSubexercise Sử dụng liên tiếp các biến đổi bằng nhau để có \begin{align*}
+   \Imf\left(R|_{x \times (C \vartriangle D)}\right) &= \Dom\left(R^{-1}\middle|_{(C \vartriangle D) \times x}\right) \\
+   &= \Dom\left(R^{-1}\middle|_{C \times x}\right) \vartriangle \Dom\left(R^{-1}\middle|_{D \times x}\right) \\
+   &= \Imf\left(R|_{x \times C}\right) \vartriangle \Imf\left(R|_{x \times D}\right).
+\end{align*}
+Điều phải chứng minh.
+
+\exercise Cho $x$ và $y$ là các tập hợp và $R$ là quan hệ từ $x$ sang $y$. Gọi $A, B$ cùng thuộc $\mathfrak{P}(x)$. Chứng minh rằng 
+\begin{enumerate}
+   \item $\begin{aligned}[t]
+      &\forall a \in x, \forall b \in x, \forall c \in y, \left((a; c) \in R \land (b; c) \in R \implies a = b\right) \\
+      &\qquad\implies \begin{cases}
+         \Imf\left(R\middle|_{(A \cap B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \cap \Imf\left(R\middle|_{B \times y}\right) \\
+         \Imf\left(R\middle|_{(A \setminus B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \setminus \Imf\left(R\middle|_{B \times y}\right) \\
+         \Imf\left(R\middle|_{(A \vartriangle B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \vartriangle \Imf\left(R\middle|_{B \times y}\right)
+      \end{cases};
+   \end{aligned}$ 
+   \item $\begin{aligned}[t]
+      &\left[\begin{aligned}
+         &\Imf\left(R\middle|_{(A \cap B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \cap \Imf\left(R\middle|_{B \times y}\right) \\
+         &\Imf\left(R\middle|_{(A \setminus B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \setminus \Imf\left(R\middle|_{B \times y}\right) \\
+         &\Imf\left(R\middle|_{(A \vartriangle B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \vartriangle \Imf\left(R\middle|_{B \times y}\right)
+      \end{aligned}\right. \\
+      &\qquad \implies \forall a \in x, \forall b \in x, \forall c \in y, \left((a; c) \in R \land (b; c) \in R \implies a = b\right).
+   \end{aligned}$
+\end{enumerate}
+
+\solution
+
+\resetSubexercise Giả thiết rằng $\forall a \in x, \forall b \in x, \forall c \in y, \left((a; c) \in R \land (b; c) \in R \implies a = b\right)$.
+
+Xét một $d$ tùy ý. Nếu $d \in \Imf\left(R|_{A \times y}\right) \cap \Imf\left(R|_{B \times y}\right)$.
 
 \exercise Cho $w$, $x$, $y$, $z$ là tập hợp.
 \begin{enumerate}
@@ -1111,7 +1170,7 @@ Thêm vào đó, $\forall (c;d) \in x \times y, \left(d\;A^{-1}\;c \iff c\;A\;d\
 \end{equation*}
 Dẫn đến $\left(A^{-1}\right)^{-1} = A$. Điều phải chứng minh.
 
-\stepSubexercise Có thể thấy tập nguồn và tập đích của $(B \circ A)^{-1}$ và $A^{-1}\circ B^{-1}$ đều là $z$ và $x$. Gọi $m$ là một phần tử thuộc $(B \circ A)^{-1}$. Khi này, tồn tại $(n; p) \in z \times x$ sao cho $n\;(B \circ A)^{-1}\;p$. Từ đó, có những suy luận sau
+\stepSubexercise Có thể thấy tập nguồn và tập đích của $(B \circ A)^{-1}$ và $A^{-1}\circ B^{-1}$ đều là $z$ và $x$. Gọi $m$ là một phần tử thuộc $(B \circ A)^{-1}$. Khi này, tồn tại $(n; p) \in z \times x$ sao cho $m = (n; p)$ và $n\;(B \circ A)^{-1}\;p$. Từ đó, có những suy luận sau
 \begin{align*}
    n\;(B \circ A)^{-1}\;p &\iff p\;B \circ A\;n; \\
    n\;(B \circ A)^{-1}\;p &\iff \exists q, \begin{cases}
@@ -1142,7 +1201,7 @@ Cụ thể hóa hạng thức $z$ bởi $y$, để có
 \begin{equation*}
    \forall x \in \mathcal{U}, \forall y \in \mathcal{U}, \left(x\;R\;y \land y\;R\;y \implies y\;R\;x\right).
 \end{equation*}
-Ngoài ra, do $R$ có tính phản xạ nên $y\;R\;y$ với mọi $y$ thuộc $\mathcal{U}$. Vì đó,\begin{equation*}
+Ngoài ra, do $R$ có tính phản xạ nên $y\;R\;y$ với mọi $y$ thuộc $\mathcal{U}$. Vì vậy,\begin{equation*}
    \forall x \in \mathcal{U}, \forall y \in \mathcal{U}, \left(x\;R\;y \implies y\;R\;x\right).
 \end{equation*}
 Và vì vậy, $R$ có tính đối xứng. Sử dụng tính chất này của $R$, chúng ta có
@@ -1369,7 +1428,7 @@ $\max_\preccurlyeq(\mathscr{E})$ là phần tử lớn nhất trong $\mathscr{E}
    \max_\preccurlyeq(\mathscr{E}) = \inf_{(\mathscr{E}; \preccurlyeq)}(\varnothing).
 \end{equation*}
 
-Chứng minh mệnh đề còn lại có thể được thực hiện một cách tương tự, cho nên tác giả sẽ tóm tắt phần lập luận. Có $\mathscr{E} = \Max_{(\mathscr{E}; \preccurlyeq)}(\varnothing)$. Nếu như $\mathscr{E}$ có phần tử nhỏ nhất thì phần tử đó cũng nhỏ nhất trong $\Max_{(\mathscr{E}; \preccurlyeq)}(\varnothing)$. Do vậy,
+Chứng minh mệnh đề còn lại có thể được thực hiện một cách tương tự, cho nên tác giả sẽ tóm tắt phần lập luận. Có $\mathscr{E} = \Maj_{(\mathscr{E}; \preccurlyeq)}(\varnothing)$. Nếu như $\mathscr{E}$ có phần tử nhỏ nhất thì phần tử đó cũng nhỏ nhất trong $\Maj_{(\mathscr{E}; \preccurlyeq)}(\varnothing)$. Do vậy,
 \begin{equation*}
    \min_\preccurlyeq(\mathscr{E}) = \sup_{(\mathscr{E}; \preccurlyeq)}(\varnothing).
 \end{equation*}
