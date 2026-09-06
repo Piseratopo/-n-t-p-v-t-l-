@@ -1039,29 +1039,29 @@ Ngoài ra, bởi vì $\Imf\left(R^{-1}\middle|_{(C \vartriangle D) \times x}\rig
 \end{align*}
 Điều phải chứng minh.
 
-\exercise Cho $x$ và $y$ là các tập hợp và $R$ là quan hệ từ $x$ sang $y$. Gọi $A, B$ cùng thuộc $\mathfrak{P}(x)$. Chứng minh rằng 
+\exercise Cho $x$ và $y$ là các tập hợp và $R$ là quan hệ từ $x$ sang $y$. Chứng minh rằng 
 \begin{enumerate}
-   \item $\begin{aligned}[t]
-      &\forall a \in x, \forall b \in x, \forall c \in y, \left((a; c) \in R \land (b; c) \in R \implies a = b\right) \\
+   \item $\forall A \in \mathfrak{P}(x), \forall B \in \mathfrak{P}(x), \left(\begin{aligned}
+      &\forall a \in x, \forall b \in x, \forall c \in y, \left(a\;R\;c \land b\;R\;c \implies a = b\right) \\
       &\qquad\implies \begin{cases}
          \Imf\left(R\middle|_{(A \cap B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \cap \Imf\left(R\middle|_{B \times y}\right) \\
          \Imf\left(R\middle|_{(A \setminus B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \setminus \Imf\left(R\middle|_{B \times y}\right) \\
          \Imf\left(R\middle|_{(A \vartriangle B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \vartriangle \Imf\left(R\middle|_{B \times y}\right)
-      \end{cases};
-   \end{aligned}$ 
+      \end{cases}
+   \end{aligned}\right)$; 
    \item $\begin{aligned}[t]
       &\left[\begin{aligned}
-         &\Imf\left(R\middle|_{(A \cap B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \cap \Imf\left(R\middle|_{B \times y}\right) \\
-         &\Imf\left(R\middle|_{(A \setminus B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \setminus \Imf\left(R\middle|_{B \times y}\right) \\
-         &\Imf\left(R\middle|_{(A \vartriangle B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \vartriangle \Imf\left(R\middle|_{B \times y}\right)
+         &\forall A \in \mathfrak{P}(x), \forall B \in \mathfrak{P}(x), \Imf\left(R\middle|_{(A \cap B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \cap \Imf\left(R\middle|_{B \times y}\right) \\
+         &\forall A \in \mathfrak{P}(x), \forall B \in \mathfrak{P}(x), \Imf\left(R\middle|_{(A \setminus B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \setminus \Imf\left(R\middle|_{B \times y}\right) \\
+         &\forall A \in \mathfrak{P}(x), \forall B \in \mathfrak{P}(x), \Imf\left(R\middle|_{(A \vartriangle B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \vartriangle \Imf\left(R\middle|_{B \times y}\right)
       \end{aligned}\right. \\
-      &\qquad \implies \forall a \in x, \forall b \in x, \forall c \in y, \left((a; c) \in R \land (b; c) \in R \implies a = b\right).
+      &\qquad \implies \forall a \in x, \forall b \in x, \forall c \in y, \left(a\;R\;c \land b\;R\;c \implies a = b\right).
    \end{aligned}$
 \end{enumerate}
 
 \solution
 
-\resetSubexercise Giả thiết rằng $\forall a \in x, \forall b \in x, \forall c \in y, \left(a\;R\;c \land b\;R\;c \implies a = b\right)$.
+\resetSubexercise Với mọi $A$ và $B$ cùng thuộc $\mathfrak{P}(x)$, giả thiết rằng $\forall a \in x, \forall b \in x, \forall c \in y, \left(a\;R\;c \land b\;R\;c \implies a = b\right)$.
 
 Xét một $d$ tùy ý. Nếu $d \in \Imf\left(R|_{A \times y}\right) \cap \Imf\left(R\middle|_{B \times y}\right)$. Khi đó, 
 \begin{itemize}
@@ -1099,7 +1099,70 @@ Từ đó, dễ thấy điều phải chứng minh.
 
 \stepSubexercise Một cách tự nhiên để chứng minh là chia làm các trường hợp:
 
-Trường hợp \coloringCrimson{$\Imf\left(R\middle|_{(A \cap B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \cap \Imf\left(R\middle|_{B \times y}\right)$}.
+Trường hợp đầu tiên, xét \coloringCrimson{$\forall A \in \mathfrak{P}(x), \forall B \in \mathfrak{P}(x), \Imf\left(R\middle|_{(A \cap B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \cap \Imf\left(R\middle|_{B \times y}\right)$}. Nếu như tồn tại $a$ và $b$ thuộc $x$ và $c$ thuộc $y$ sao cho $\begin{cases}
+   a\;R\;c \\
+   b\;R\;c
+\end{cases}$ nhưng $a \neq b$, thay $A$ và $B$ lần lượt bởi $\{a\}$ và $\{b\}$, dễ thấy $c \in \Imf\left(R\middle|_{\{a\} \times y}\right)$ và $c \in \Imf\left(R\middle|_{\{b\} \times y}\right)$. Do $\Imf\left(R\middle|_{(\{a\} \cap \{b\}) \times y}\right) = \Imf\left(R\middle|_{\{a\} \times y}\right) \cap \Imf\left(R\middle|_{\{b\} \times y}\right)$, chúng ta có $c \in \Imf\left(R\middle|_{(\{a\} \cap \{b\}) \times y}\right)$. Tuy nhiên, nhìn một hướng khác, nếu có phần tử $d \in \{a\} \cap \{b\}$ thì $d \in \{a\}$ và $d \in \{b\}$, dẫn đến $d = a$ và $d = b$. Nhưng, $a \neq b$, nên không tồn tại $d$, suy ra $\{a\} \cap \{b\} = \varnothing$. Vì thế, $R \cap ((\{a\} \cap \{b\}) \times y) = \varnothing$, và hiển nhiên kéo theo $\Imf\left(R\middle|_{(\{a\} \cap \{b\}) \times y}\right) = \varnothing$, mâu thuẫn với $c \in \Imf\left(R\middle|_{(\{a\} \cap \{b\}) \times y}\right)$ đã có từ trước.
+
+Do đó, $\overline{\exists a \in x, \exists b \in x, \exists c \in y, \left(\begin{cases}
+   a\;R\;c \\
+   b\;R\;c
+\end{cases} \land a \neq b \right)}$. Mệnh đề này có mối quan hệ đẳng giá với những mệnh đề sau:
+\begin{align*}
+   \overline{\exists a \in x, \exists b \in x, \exists c \in y, \left(\begin{cases}
+      a\;R\;c \\
+      b\;R\;c
+   \end{cases} \land a \neq b \right)} &\iff \forall a \in x, \overline{\exists b \in x, \exists c \in y, \left(\begin{cases}
+      a\;R\;c \\
+      b\;R\;c
+   \end{cases} \land a \neq b \right)}; \\
+   \overline{\exists a \in x, \exists b \in x, \exists c \in y, \left(\begin{cases}
+      a\;R\;c \\
+      b\;R\;c
+   \end{cases} \land a \neq b \right)} &\iff \forall a \in x, \forall b \in x, \overline{\exists c \in y, \left(\begin{cases}
+      a\;R\;c \\
+      b\;R\;c
+   \end{cases} \land a \neq b \right)}; \\
+   \overline{\exists a \in x, \exists b \in x, \exists c \in y, \left(\begin{cases}
+      a\;R\;c \\
+      b\;R\;c
+   \end{cases} \land a \neq b \right)} &\iff \forall a \in x, \forall b \in x, \forall c \in y,\overline{\begin{cases}
+      a\;R\;c \\
+      b\;R\;c
+   \end{cases} \land a \neq b}; \\
+   \overline{\exists a \in x, \exists b \in x, \exists c \in y, \left(\begin{cases}
+      a\;R\;c \\
+      b\;R\;c
+   \end{cases} \land a \neq b \right)} &\iff \forall a \in x, \forall b \in x, \forall c \in y,\left(\begin{cases}
+      a\;R\;c \\
+      b\;R\;c
+   \end{cases} \implies a = b\right).
+\end{align*}
+
+Tiếp theo, giả sử rằng \coloringDodgerblue{$\forall A \in \mathfrak{P}(x), \forall B \in \mathfrak{P}(x), \Imf\left(R\middle|_{(A \setminus B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \setminus \Imf\left(R\middle|_{B \times y}\right)$}. Xét khả năng tồn tại $a \in x$, $b \in x$, $c \in y$ để $a\;R\;c$ và $b\;R\;c$ nhưng $a \neq b$. Thay $A$ và $B$ lần lượt bởi $\{a; b\}$ và $\{b\}$. Tính toán $A \setminus B$, với mọi $d$, có được rằng:
+\begin{align*}
+   d \in \{a; b\} \setminus \{b\} &\iff d \in \{a; b\} \land d \notin \{b\}; \\
+   d \in \{a; b\} \setminus \{b\} &\iff \left[\begin{aligned}
+      d = a \\
+      d = b
+   \end{aligned}\right. \land d \neq b; \\
+   d \in \{a; b\} \setminus \{b\} &\iff d = a. 
+\end{align*}
+Vì lí do đó, $\{a; b\} \setminus \{b\} = \{a\}$.
+
+Vì $a\;R\;c$ và $b\;R\;c$, $c$ thuộc đồng thời các tập hợp $\Imf\left(R\middle|_{(\{a; b\} \setminus \{b\}) \times y}\right)$, $\Imf\left(R\middle|_{\{a; b\} \times y}\right)$, và $\Imf\left(R\middle|_{\{b\} \times y}\right)$. Qua đó, $c \in \Imf\left(R\middle|_{(\{a; b\} \setminus \{b\}) \times y}\right)$ và $c \notin \Imf\left(R\middle|_{\{a; b\} \times y}\right) \setminus \Imf\left(R\middle|_{\{b\} \times y}\right)$, mâu thuẫn với giả thiết ban đầu. Cho nên, khả năng đang xét không thể xảy ra.
+
+Cuối cùng, xét trường hợp \coloringJade{$\forall A \in \mathfrak{P}(x), \forall B \in \mathfrak{P}(x), \Imf\left(R\middle|_{(A \vartriangle B) \times y}\right) = \Imf\left(R\middle|_{A \times y}\right) \vartriangle \Imf\left(R\middle|_{B \times y}\right)$}. Chứng minh bằng phản chứng, xét giả thiết tồn tại $a$, $b$, $c$ theo cách tương tự, thay $A$ và $B$ lần lượt bởi $\{a; b\}$ và $\{b\}$. Với một chút quan sát, có: 
+\begin{align*}
+   \{a; b\} \vartriangle \{b\} &= \left(\{a; b\} \setminus \{b\}\right) \cup \left(\{b\} \setminus \{a; b\}\right) \\
+      &= \{a\} \cup \varnothing = \{a\}.
+\end{align*}
+Từ đây, suy luận được $\begin{cases}
+   c \in \Imf\left(R\middle|_{(A \vartriangle B) \times y}\right) \\
+   c \notin \Imf\left(R\middle|_{A \times y}\right) \vartriangle \Imf\left(R\middle|_{B \times y}\right) 
+\end{cases}$, mâu thuẫn.
+
+Tổng kết các phần, có ngay được điều phải chứng minh.
 
 \exercise Cho $w$, $x$, $y$, $z$ là tập hợp.
 \begin{enumerate}

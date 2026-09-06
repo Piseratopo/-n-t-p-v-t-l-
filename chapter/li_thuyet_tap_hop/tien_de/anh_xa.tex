@@ -116,6 +116,31 @@ Vì nếu $A \neq \varnothing$ thì $B \neq \varnothing$, nên, chúng ta cũng 
    A = \varnothing \\ B = \varnothing
 \end{aligned}\right. \implies A = \varnothing$. 
 
+\exercise Cho tập hợp $E$, $F$ và ánh xạ $f: E \to F$. Chứng minh rằng
+\begin{enumerate}
+   \item $\forall A \in \mathfrak{P}(E), A \subseteq \Imf\left(f^{-1}\middle|_{\Imf(f|_A) \times E}\right)$;
+   \item $\forall A \in \mathfrak{P}(F), \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{A \times E}\right)}\right) = \Imf(f) \cap A$.
+\end{enumerate}
+
+\solution
+
+\resetSubexercise Xét trong giới hạn của $\forall A \in \mathfrak{P}(E)$, với mọi $x$ thuộc $A$, tồn tại $y \in B$ sao cho $y = f(x)$. Qua đó, $y \in \Imf(f|_A)$ và $y\;f^{-1}\;x$. Kết hợp với $x = A$, chúng ta có \begin{equation*}
+   (y; x) \in \left.f^{-1}\middle|_{\Imf(f|_A) \times E}\right.,
+\end{equation*} 
+và do đó $x \in \Imf\left(f^{-1}\middle|_{\Imf(f|_A) \times E}\right)$. Vì vậy, $$
+\forall A \in \mathfrak{P}(E), \forall x \in A, x \in \Imf\left(f^{-1}\middle|_{\Imf(f|_A) \times E}\right).$$
+Điều phải chứng minh.
+
+\stepSubexercise Với mọi $A \in \mathfrak{P}(E)$, xét $y \in \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{A \times E}\right)}\right)$. Từ cách đặt đó, phải tồn tại $x \in \Imf\left(f^{-1}\middle|_{A \times E}\right)$ để $y = f(x)$. Với $x \in \Imf\left(f^{-1}\middle|_{A \times E}\right)$, có $w \in A$ để $w\;f^{-1}\;x$, hay $w = f(x)$. Dẫn đến $w = y$. Qua đó, \begin{equation*}
+   \begin{cases}
+      y \in A \\
+      y \in \Imf(f)
+   \end{cases},
+\end{equation*}
+dẫn ra $
+   \forall A \in \mathfrak{P}(E), \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{A \times E}\right)}\right) \subseteq  \Imf(f) \cap A.
+$
+
 \exercise Cho $A$ và $B$ là hai tập hợp (và $B$ khác rỗng) sao cho tồn tại ánh xạ $f: A \to B$. Nếu $B \neq \varnothing$, gọi $b$ là một phần tử của $B$ và tập $C$ thỏa mãn $C \supseteq A$. Xây dựng quan hệ $g$ từ $C$ đến $B$ sao cho \begin{equation*}
    \forall x \in C, \forall y \in B, \left(x\;g\;y \iff \left[\begin{aligned}         
       x \in A &\land y = f(x) \\
@@ -377,6 +402,21 @@ có nghĩa là $w \circ f \circ d = g \circ e \circ u$.
 \end{align*}
 Điều phải chứng minh.
 
+\exercise Cho $A$ và $B$ là các tập hợp. Gọi ánh xạ $f: A \to B$ và $g: B \to A$ thỏa mãn $f \circ g = \mathds{1}_B$. Chứng minh rằng \begin{equation*}
+   \Imf(g \circ f) = \Imf(g).
+\end{equation*}
+
+\solution
+
+Với mọi $y$ thuộc $\Imf(g \circ f)$, do $g \circ f$ là một quan hệ từ $A$ sang $B$, tồn tại $x \in E$ để $x\; g \circ f\;y$. Khi đó, $y = (g\circ f)(x) = g(f(x))$, dẫn đến tồn tại $z\in y$ (tồn tại hóa $f(x)$ thành $z$) để $y = g(z)$, và vì vậy $y \in \Imf(g)$. Do đó, $\Imf((g \circ f)) \subseteq \Imf(g)$.
+
+Với mọi $w$ thuộc $\Imf(g)$, có $v$ trong $B$ để $w = g(v)$. Bởi $f \circ g = \mathds{1}_B$, \begin{equation*}
+   w = g(v) = g((f\circ g)(v)) = (g \circ f \circ g)(v) = (g \circ f)(g(v)).
+\end{equation*}
+$g(v) \in x$ nên tồn tại $u \in x$ sao cho $w = (g \circ f)(u)$, hay $w \in \Imf(g \circ f)$. Kết luận được $\Imf(g) \subseteq \Imf(g \circ f)$.
+
+Từ hai chiều, chúng ta có điều phải chứng minh.
+ 
 \exercise Cho các tập hợp $x$, $y$, $z$. Xác định hai ánh xạ $f: x \to y$ và $g: x \to z$. Chứng minh rằng, để tồn tại $h: y \to z$ sao cho có biểu đồ giao hoán
 \begin{center}
    \begin{tikzpicture}[baseline=(current bounding box.center)]
