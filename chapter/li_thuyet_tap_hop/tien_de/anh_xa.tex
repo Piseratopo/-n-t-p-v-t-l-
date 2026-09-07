@@ -131,15 +131,25 @@ và do đó $x \in \Imf\left(f^{-1}\middle|_{\Imf(f|_A) \times E}\right)$. Vì v
 \forall A \in \mathfrak{P}(E), \forall x \in A, x \in \Imf\left(f^{-1}\middle|_{\Imf(f|_A) \times E}\right).$$
 Điều phải chứng minh.
 
-\stepSubexercise Với mọi $A \in \mathfrak{P}(E)$, xét $y \in \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{A \times E}\right)}\right)$. Từ cách đặt đó, phải tồn tại $x \in \Imf\left(f^{-1}\middle|_{A \times E}\right)$ để $y = f(x)$. Với $x \in \Imf\left(f^{-1}\middle|_{A \times E}\right)$, có $w \in A$ để $w\;f^{-1}\;x$, hay $w = f(x)$. Dẫn đến $w = y$. Qua đó, \begin{equation*}
+\stepSubexercise Với mọi $A \in \mathfrak{P}(F)$, xét $y \in \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{A \times E}\right)}\right)$. Từ cách đặt đó, phải tồn tại $x \in \Imf\left(f^{-1}\middle|_{A \times E}\right)$ để $y = f(x)$. Với $x \in \Imf\left(f^{-1}\middle|_{A \times E}\right)$, có $w \in A$ để $w\;f^{-1}\;x$, hay $w = f(x)$. Dẫn đến $w = y$. Qua đó, \begin{equation*}
    \begin{cases}
       y \in A \\
       y \in \Imf(f)
    \end{cases},
 \end{equation*}
 dẫn ra $
-   \forall A \in \mathfrak{P}(E), \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{A \times E}\right)}\right) \subseteq  \Imf(f) \cap A.
+   \forall A \in \mathfrak{P}(F), \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{A \times E}\right)}\right) \subseteq  \Imf(f) \cap A.
 $
+
+Xét $b \in \Imf(f) \cap A$. Tồn tại $a \in E$ sao cho $b = f(a)$, có nghĩa là $b\;f^{-1}\;a$. Kéo theo, \begin{equation*}
+   (b; a) \in \left.f^{-1}\middle|_{A \times E}\right..
+\end{equation*}  
+Vì vậy, $a \in \Imf\left(f^{-1}\middle|_{A \times E}\right)$. Thêm vào đó, kết hợp $a\;f\;b$, có được \begin{equation*}
+   (a; b) \in \left.f\middle|_{\Imf\left(f^{-1}\middle|_{A \times E}\right)}\right.,
+\end{equation*}
+dẫn đến $b \in \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{A \times E}\right)}\right)$. Qua đó, có thể khẳng định $\forall A \in \mathfrak{P}(F), \Imf(f) \cap A \subseteq \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{A \times E}\right)}\right)$.
+
+Tổng hợp các kết quả, dễ dàng nhận thấy điều phải chứng minh.
 
 \exercise Cho $A$ và $B$ là hai tập hợp (và $B$ khác rỗng) sao cho tồn tại ánh xạ $f: A \to B$. Nếu $B \neq \varnothing$, gọi $b$ là một phần tử của $B$ và tập $C$ thỏa mãn $C \supseteq A$. Xây dựng quan hệ $g$ từ $C$ đến $B$ sao cho \begin{equation*}
    \forall x \in C, \forall y \in B, \left(x\;g\;y \iff \left[\begin{aligned}         
@@ -872,6 +882,25 @@ Từ đó, kéo theo được \begin{align*}
 Do $c$ và $d$ song ánh, $d \circ c$ cũng là một song ánh, dẫn đến $f\;R\;h$. Qua đó, chúng ta thấy được tính bắc cầu của $R$.
 
 Vì $R$ có tính phản xạ, đối xứng, và bắc cầu, $R$ là một quan hệ tương đương. Điều phải chứng minh.
+
+\exercise Cho tập hợp $\xNom$ và $\yNom$, ánh xạ $f: \xNom \to \yNom$. Chứng minh rằng $f$ song ánh nếu và chỉ nếu $\forall A \in \mathfrak{P}\left(\xNom\right), \Imf\left(f|_{\xNom \setminus A}\right) = \yNom \setminus \Imf(f|_A)$.
+
+\solution
+
+Xét chiều thuận, giả sử \coloringCrimson{$f$ song ánh}. Với mọi $A \in \mathfrak{P}\left(\xNom\right)$ và $b$ tùy ý, nếu $b \in \Imf\left(f|_{\xNom \setminus A}\right)$, tồn tại $a \in \xNom \setminus A$ để $b = f(a)$. $b \in \yNom$ là hiển nhiên, nhưng $b$ lại không thuộc $\Imf(f|_A)$, do nếu điều đó xảy ra, có nghĩa là có $c \in A$ để $b = f(c)$. Vì $f$ song ánh và $f(a) = f(c) = b$, $a = c$, mặc dù $a \notin A$, mâu thuẫn. Vì thế, 
+\begin{equation*}
+   \forall A \in \mathfrak{P}\left(\xNom\right), \forall b, \left(b \in \Imf\left(f|_{\xNom \setminus A}\right) \implies b \in \yNom \setminus \Imf(f|_A)\right).
+\end{equation*}
+
+Nếu $b \in \yNom \setminus \Imf(f|_A)$, tồn tại $d \in \xNom$ để $b = f(d)$ do tính song ánh của $f$. Khẳng định $d \in A \implies b \in \Imf(f|_A)$ là đúng, cho nên từ $b \notin \Imf(f|_A)$, chúng ta suy ra $d \notin A$. Và vì vậy, $d \in \xNom \setminus A$, dẫn đến $b \in \Imf\left(f|_{\xNom \setminus A}\right)$. Do đó, 
+\begin{equation*}
+   \forall A \in \mathfrak{P}\left(\xNom\right), \forall b, \left(b \in \Imf\left(f|_{\xNom \setminus A}\right) \impliedby b \in \yNom \setminus \Imf(f|_A)\right).
+\end{equation*}
+
+Từ hai mệnh đề đã chứng minh, từ $f$ song ánh, kết luận được $
+   \forall A \in \mathfrak{P}\left(\xNom\right), \Imf\left(f|_{\xNom \setminus A}\right) = \yNom \setminus \Imf(f|_A).$
+
+Ngược lại, chúng ta giả thiết ban đầu có \coloringDodgerblue{$\forall A \in \mathfrak{P}\left(\xNom\right), \Imf\left(f|_{\xNom \setminus A}\right) = \yNom \setminus \Imf(f|_A)$}. Nếu như $f$ không toàn ánh, dễ thấy tồn tại $y \in \yNom$ sao cho $y \notin \Imf(f)$, dẫn đến $\yNom \setminus \Imf(f) \neq \varnothing$ bởi nó nhận $y$ làm phần tử. 
 
 \subsection{Xu hướng của ánh xạ}
 
