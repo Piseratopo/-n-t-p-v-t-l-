@@ -900,7 +900,32 @@ Nếu $b \in \yNom \setminus \Imf(f|_A)$, tồn tại $d \in \xNom$ để $b = f
 Từ hai mệnh đề đã chứng minh, từ $f$ song ánh, kết luận được $
    \forall A \in \mathfrak{P}\left(\xNom\right), \Imf\left(f|_{\xNom \setminus A}\right) = \yNom \setminus \Imf(f|_A).$
 
-Ngược lại, chúng ta giả thiết ban đầu có \coloringDodgerblue{$\forall A \in \mathfrak{P}\left(\xNom\right), \Imf\left(f|_{\xNom \setminus A}\right) = \yNom \setminus \Imf(f|_A)$}. Nếu như $f$ không toàn ánh, dễ thấy tồn tại $y \in \yNom$ sao cho $y \notin \Imf(f)$, dẫn đến $\yNom \setminus \Imf(f) \neq \varnothing$ bởi nó nhận $y$ làm phần tử. 
+Ngược lại, chúng ta giả thiết ban đầu có \coloringDodgerblue{$\forall A \in \mathfrak{P}\left(\xNom\right), \Imf\left(f|_{\xNom \setminus A}\right) = \yNom \setminus \Imf(f|_A)$}. Nếu như $f$ không toàn ánh, dễ thấy tồn tại $y \in \yNom$ sao cho $y \notin \Imf(f)$, dẫn đến $\yNom \setminus \Imf(f) \neq \varnothing$ bởi nó nhận $y$ làm phần tử. Ngoài ra, bởi vì $f|_\varnothing$ có tập xác định rỗng, $\Imf(f|_\varnothing) = \varnothing$. Tuy nhiên, từ giả thiết ban đầu, cụ thể hóa $A$ bởi $\xNom$, chúng ta có \begin{equation*}
+   \Imf\left(f|_{\xNom \setminus \xNom}\right) = \yNom \setminus \Imf(f|_\xNom),
+\end{equation*}
+tương đương với $\Imf(f|_\varnothing) = \yNom \setminus \Imf(f)$. Một tập hợp rỗng thì không thể bằng một tập hợp không rỗng, dẫn đến mâu thuẫn. Vì vậy, $f$ phải toàn ánh.
+
+Nếu $f$ không đơn ánh, khi đó, có $u$ và $v$ trong $\xNom$ sao cho $u \neq v$ nhưng $f(u) = f(v)$ --- đặt là $w$. Dễ thấy $w \in \Imf\left(f|_{\{u\}}\right)$, nên $w \notin \yNom \setminus \Imf\left(f|_{\{u\}}\right)$. Mặc dù vậy, có thể thấy $v \in \xNom \setminus \{u\}$, nên $w \in \Imf\left(f|_{\xNom \setminus \{u\}}\right)$. Dẫn đến $\Imf\left(f|_{\xNom \setminus \{u\}}\right) \neq \yNom \setminus \Imf\left(f|_{\{u\}}\right)$, mâu thuẫn với giả thiết ban đầu. Do đó, $f$ đơn ánh. Kết hợp với $f$ toàn ánh từ trước, chúng ta có tính song ánh của $f$.
+
+Qua đó, điều phải chứng minh là hiển nhiên.
+
+\exercise Cho ánh xạ $f$ từ $X$ đến $Y$ là hai tập cho trước. Với mỗi phần, chứng minh mệnh đề được đưa ra đẳng giá với mệnh đề ``$f$ toàn ánh''.
+\begin{enumerate}
+   \item $\forall B \in \mathfrak{P}(Y), \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{B \times X}\right)}\right) = B$.
+   \item $\forall B \in \mathfrak{P}(Y), \left(\Imf\left(f^{-1}\middle|_{B \times X}\right) = \varnothing \implies B = \varnothing\right)$.
+\end{enumerate}
+
+\solution
+
+\resetSubexercise Giả sử \coloringCrimson{$f$ toàn ánh}, với mọi phần tử $b$ trong $B \in \mathfrak{P}(Y)$ tùy ý, tồn tại $a \in X$ sao cho $f(a) = b$. Do đó, $a \in \Imf\left(f^{-1}\middle|_{B \times X}\right)$, dẫn đến $b \in \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{B \times X}\right)}\right)$. Chúng ta có \begin{equation*}
+   \forall B \in \mathfrak{P}(Y), B \subseteq \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{B \times X}\right)}\right).
+\end{equation*}
+Ngược lại, lấy $d \in \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{B \times X}\right)}\right)$, có $c \in \Imf\left(f^{-1}\middle|_{B \times X}\right)$ để $d = f(c)$. Qua đó, tồn tại $e \in B$ sao cho $e\;f^{-1}\;c$, từ đó $d = e = f(c)$ và có $d \in B$. Chúng ta có \begin{equation*}
+   \forall B \in \mathfrak{P}(Y), \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{B \times X}\right)}\right) \subseteq B.
+\end{equation*}
+Kết hợp lại, được $\forall B \in \mathfrak{P}(Y), \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{B \times X}\right)}\right) = B.$
+
+Tiếp theo, hãy giả thiết rằng \coloringDodgerblue{$\forall B \in \mathfrak{P}(Y), \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{B \times X}\right)}\right) = B$}. 
 
 \subsection{Xu hướng của ánh xạ}
 
