@@ -418,7 +418,7 @@ có nghĩa là $w \circ f \circ d = g \circ e \circ u$.
 
 \solution
 
-Với mọi $y$ thuộc $\Imf(g \circ f)$, do $g \circ f$ là một quan hệ từ $A$ sang $B$, tồn tại $x \in E$ để $x\; g \circ f\;y$. Khi đó, $y = (g\circ f)(x) = g(f(x))$, dẫn đến tồn tại $z\in y$ (tồn tại hóa $f(x)$ thành $z$) để $y = g(z)$, và vì vậy $y \in \Imf(g)$. Do đó, $\Imf((g \circ f)) \subseteq \Imf(g)$.
+Với mọi $y$ thuộc $\Imf(g \circ f)$, do $g \circ f$ là một quan hệ từ $A$ sang $B$, tồn tại $x \in A$ để $x\; g \circ f\;y$. Khi đó, $y = (g\circ f)(x) = g(f(x))$, dẫn đến tồn tại $z\in y$ (tồn tại hóa $f(x)$ thành $z$) để $y = g(z)$, và vì vậy $y \in \Imf(g)$. Do đó, $\Imf((g \circ f)) \subseteq \Imf(g)$.
 
 Với mọi $w$ thuộc $\Imf(g)$, có $v$ trong $B$ để $w = g(v)$. Bởi $f \circ g = \mathds{1}_B$, \begin{equation*}
    w = g(v) = g((f\circ g)(v)) = (g \circ f \circ g)(v) = (g \circ f)(g(v)).
@@ -499,7 +499,7 @@ $y = \varnothing \lor y \neq \varnothing$ là luôn đúng, theo quy tắc chia 
 
 Một ánh xạ, tuy đã hẹp hơn so với quan hệ, nhưng vẫn còn nhiều vị trí mà chúng ta có thể lắp thêm điều kiện vào. Như bạn đọc đã biết, $f: x \to y$ có tính chất:
 \begin{equation*}
-   \forall a \in x, \forall b \in x, (f(a) = f(b) \implies a = b).
+   \forall a \in x, \forall b \in x, (a = b \implies f(a) = f(b)).
 \end{equation*}
 Thế nếu chúng ta cho điều ngược lại xảy ra thì sao? Khi đó, $f$ có tính \defText{đơn ánh}: \begin{equation*}
    \defMath{\forall a \in x, \forall b \in x, (f(a) = f(b) \implies a = b)}.
@@ -901,7 +901,7 @@ Từ hai mệnh đề đã chứng minh, từ $f$ song ánh, kết luận đư�
    \forall A \in \mathfrak{P}\left(\xNom\right), \Imf\left(f|_{\xNom \setminus A}\right) = \yNom \setminus \Imf(f|_A).$
 
 Ngược lại, chúng ta giả thiết ban đầu có \coloringDodgerblue{$\forall A \in \mathfrak{P}\left(\xNom\right), \Imf\left(f|_{\xNom \setminus A}\right) = \yNom \setminus \Imf(f|_A)$}. Nếu như $f$ không toàn ánh, dễ thấy tồn tại $y \in \yNom$ sao cho $y \notin \Imf(f)$, dẫn đến $\yNom \setminus \Imf(f) \neq \varnothing$ bởi nó nhận $y$ làm phần tử. Ngoài ra, bởi vì $f|_\varnothing$ có tập xác định rỗng, $\Imf(f|_\varnothing) = \varnothing$. Tuy nhiên, từ giả thiết ban đầu, cụ thể hóa $A$ bởi $\xNom$, chúng ta có \begin{equation*}
-   \Imf\left(f|_{\xNom \setminus \xNom}\right) = \yNom \setminus \Imf(f|_\xNom),
+   \Imf\left(f|_{\xNom \setminus \xNom}\right) = \yNom \setminus \Imf(f|_{\xNom}),
 \end{equation*}
 tương đương với $\Imf(f|_\varnothing) = \yNom \setminus \Imf(f)$. Một tập hợp rỗng thì không thể bằng một tập hợp không rỗng, dẫn đến mâu thuẫn. Vì vậy, $f$ phải toàn ánh.
 
@@ -925,7 +925,20 @@ Ngược lại, lấy $d \in \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{B \t
 \end{equation*}
 Kết hợp lại, được $\forall B \in \mathfrak{P}(Y), \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{B \times X}\right)}\right) = B.$
 
-Tiếp theo, hãy giả thiết rằng \coloringDodgerblue{$\forall B \in \mathfrak{P}(Y), \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{B \times X}\right)}\right) = B$}. 
+Tiếp theo, hãy giả thiết rằng \coloringDodgerblue{$\forall B \in \mathfrak{P}(Y), \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{B \times X}\right)}\right) = B$}. Có $Y \in \mathfrak{P}(Y)$ nên cụ thể hóa $B$ thành $Y$, chúng ta có \begin{equation*}
+   \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{Y \times X}\right)}\right) = Y.
+\end{equation*}
+Với mọi $h \in y$, tồn tại $g \in X$ --- cụ thể, $g \in \Imf\left(f^{-1}\middle|_{Y \times X}\right)$ --- sao cho $g\;f\;h$. Do vậy, $f$ toàn ánh.
+
+Chúng ta đã khẳng định hai mệnh đề là đẳng giá với nhau. Điều phải chứng minh.
+
+\stepSubexercise Giả sử \coloringCrimson{$f$ toàn ánh}. Với mọi tập hợp $B \in \mathfrak{P}(Y)$, nếu như $B \neq \varnothing$ thì tồn tại $j \in B$. Vì $f$ toàn ánh, tồn tại $i \in X$ để $j = f(i)$. Có ngay $(j; i) \in f^{-1} \cap (B \times X)$ nên $(j; i) \in \left.f^{-1}\middle|_{B \times X}\right.$, dẫn đến $i \in \Imf\left(f^{-1}\middle|_{B \times X}\right)$. Khi này, $\Imf\left(f^{-1}\middle|_{B \times X}\right)$ khác rỗng. Tiểu kết, chúng ta đã lập luận rằng $$B \neq \varnothing \implies \Imf\left(f^{-1}\middle|_{B \times X}\right) \neq \varnothing$$ với mọi $B$ đang được quan tâm. Điều này khẳng định được $\forall B \in \mathfrak{P}(Y), \left(\Imf\left(f^{-1}\middle|_{B \times X}\right) = \varnothing \implies B = \varnothing\right)$.
+
+Ngược lại, giả thiết \coloringDodgerblue{$\forall B \in \mathfrak{P}(Y), \left(\Imf\left(f^{-1}\middle|_{B \times X}\right) = \varnothing \implies B = \varnothing\right)$}. Nếu như $f$ không phải là một toàn ánh, tồn tại $l \in Y$ sao cho với mọi $k \in X$, $f(k) \neq l$. Từ đó, $\forall k \in X, (l; k) \notin f^{-1}$, suy ra $\Imf\left(f^{-1}\middle|_{B \times \{l\}}\right) = \varnothing$. Thêm vào đó, từ giả thiết, thay $B$ bởi $\{l\}$, có khẳng định \begin{equation*}
+   \left(\Imf\left(f^{-1}\middle|_{\{l\} \times X}\right) = \varnothing \implies \{l\} = \varnothing\right)
+\end{equation*} cho nên $\{l\} = \varnothing$. Nhưng, điều này hiển nhiên sai, sinh ra mâu thuẫn. Theo chứng minh bằng phản chứng, từ giả thiết, chúng ta phải có $f$ toàn ánh.
+
+Từ những suy luận vừa rồi, chúng ta dễ dàng có được điều phải chứng minh.
 
 \subsection{Xu hướng của ánh xạ}
 
@@ -1341,8 +1354,17 @@ Gọi quan hệ thứ tự nghiêm ngặt cảm sinh từ $\preccurlyeq_A$ và $
 \end{cases}$ (đã có $\forall a \in A, f(a) \in B$) cho nên $f(i) \preccurlyeq_B f(j)$. Theo định nghĩa $F$, $F(i) = f(i)$ và $F(j) = f(j)$ và từ đó, $F(i) \preccurlyeq_B F(j)$. 
 
 Giả thiết $i \prec_A j$ cũng dẫn đến $i \neq j$. Sử dụng tính chất đơn ánh của $F$, có $F(i) \neq F(j)$. Kết hợp với $F(i) \preccurlyeq F(j)$, suy ra \begin{equation*}
-   \forall i \in B, \forall j \in B, (i \prec_A j \implies F(i) \prec_B F(j)).
+   \forall i \in A, \forall j \in A, (i \prec_A j \implies F(i) \prec_B F(j)).
 \end{equation*}
 Vậy, $F$ tăng nghiêm ngặt. Tương tự, chúng ta cũng có $G$ tăng nghiêm ngặt.
 
-Kết luận lại, chúng ta điều phải chứng minh.
+Kết luận lại, chúng ta có điều phải chứng minh.
+
+\subsection{Phân tích chính tắc của một ánh xạ}
+
+Mặc dù phần này không sử dụng đến ảnh hưởng của các phép so sánh lên trên ánh xạ, tác giả vẫn để phần này cuối cùng do tính ``thường thức'' của nó. Cụ thể, phần này cho ra một số kết quả đẹp và một cách nhìn khác khá thú vị về ánh xạ, nhưng khả năng ứng dụng kém, kể cả trong toán học thuần túy.
+
+Cho $x$ và $y$ là hai tập hợp. Gọi $\sim_x$ và $\sim_y$ lần lượt là quan hệ tương đương trong $x$ và $y$, và $f: x \to y$ là ánh xạ. $f$ \defText{tương thích} với $\sim_x$ và $\sim_y$ khi và chỉ khi \begin{equation*}
+   \defMath{\forall a \in x, \forall b \in x, (a \sim_x b \implies f(a)\sim_y f(b))}.
+\end{equation*}
+Gọi $p: E \to \frac{E}{\sim_x}$ và $q: F \to \frac{F}{\sim_y}$ đều là toàn ánh chính tắc. 
