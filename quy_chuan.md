@@ -10,6 +10,7 @@ Tài liệu "PFÉIV" cần được viết theo quy chuẩn chính tả như sau
 - Chỉ sử dụng màu đen và những màu đã được định nghĩa sẵn trong `main.tex` để viết và vẽ (ngoài trừ hình ảnh ngoài).
 - Đại từ nhân xưng: Khi cần ngôi thứ nhất, dùng "tác giả". Khi cần ngôi thứ hai, dùng "bạn đọc". Khi cần ngôi thứ nhất số nhiều mà bao gồm cả người đọc, dùng "chúng ta". Ví dụ điển hình: không viết `Ta có`, mà viết `Chúng ta có`.
 - Chú thích tên bảng và tên hình cần phải có dấu chấm cuối câu.
+- Kích thước của một "Tab" bằng $3$ dấu cách.
 
 ## Toán học
 

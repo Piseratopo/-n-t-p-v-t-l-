@@ -4,22 +4,43 @@ Khi làm quen với giải tích mệnh đề, chúng ta đã sử dụng bảng
 
 \subsection{Quy tắc thay thế mở rộng}
 
-Trong tầm ảnh hưởng của một lượng từ, chúng ta vẫn có thể biến đổi lô-gích như trong giải tích mệnh đề, coi các ``mệnh đề con'' nằm trọn trong tầm ảnh hưởng đó như những mệnh đề bình thường. Cụ thể, chúng ta chỉnh sửa và tối giản hai quy tắc thay thế thành một quy tắc chung:
+Trong phạm vi tác động của một lượng từ, chúng ta vẫn có thể áp dụng các phép biến đổi lô-gích tương tự như trong giải tích mệnh đề bằng cách xem các ``công thức con'' nằm trọn trong phạm vi đó như những mệnh đề thông thường. Cụ thể, hai quy tắc thay thế được rút gọn thành một để thành \defText{quy tắc thay thế mở rộng} như sau:
 \begin{quotation}
-   Giả sử \emph{trong giới hạn của tầm ảnh hưởng của một số lượng từ nhất định} trong một mệnh đề, chúng ta có được $A \iff B$, với $A$ và $B$ là những vị từ đi kèm với đầy đủ hạng thức (có thể là mệnh đề hoặc không). Khi đó, nếu thay đồng thời các $A$ trong $\lonF$ \emph{trong giới hạn của tầm ảnh hưởng đó} bởi $\coloringCrimson{(}B\coloringCrimson{)}$ để có được mệnh đề $\lonG$ thì có được $\lonF \iff \lonG$.
+   Cho một mệnh đề $\lonF$. Giả sử trong phạm vi ảnh hưởng của một số lượng từ nhất định xuất hiện trong $\lonF$, chúng ta có $A \iff B$, với $A$ và $B$ đều là công thức. Khi đó, nếu thay thế đồng thời các xuất hiện của $A$ trong phạm vi tác động đó bởi $\coloringCrimson{(}B\coloringCrimson{)}$ để nhận được mệnh đề $\lonG$, chúng ta được phép suy ra $\lonF \iff \lonG$.
 \end{quotation}
+
+Để minh họa cho quy tắc trên, chúng ta gọi một ví dụ bằng việc đặt các vị từ $P(x)$, $Q(x)$ và $R(x)$. Xét mệnh đề $\lonF$ có dạng:
+\begin{equation*}
+   \lonF \colon \forall x, \big( (P(x) \implies Q(x)) \lor R(x) \big).
+\end{equation*}
+Trong phạm vi tác động của lượng từ $\forall x$, công thức con $P(x) \implies Q(x)$ có thể xem như một phép kéo theo mệnh đề thông thường. Từ tính chất phản đảo,
+\begin{equation*}
+   (P(x) \implies Q(x)) \iff \neg P(x) \lor Q(x).
+\end{equation*}
+Áp dụng quy tắc thay thế mở rộng, chúng ta thay thế công thức $(P(x) \implies Q(x))$ bởi $\left(\neg P(x) \lor Q(x)\right)$ vào mệnh đề $\lonF$ để nhận được mệnh đề $\lonG$:
+\begin{equation*}
+   \lonG \colon \forall x, \big( (\neg P(x) \lor Q(x)) \lor R(x) \big).
+\end{equation*}
+Khi đó, chúng ta kết luận được rằng $\lonF \iff \lonG$, hay
+\begin{equation*}
+   \forall x, \big( (P(x) \implies Q(x)) \lor R(x) \big) \iff \forall x, \big( (\neg P(x) \lor Q(x)) \lor R(x) \big).
+\end{equation*}
 
 \subsection{Quy tắc đổi tên biến ràng buộc}
 
 Chúng ta sẽ đi đến một quy tắc lập luận tuy trông tương đối hiển nhiên nhưng có một vai trò vô cùng quan trọng.
 \begin{quotation}
-   \defText{Quy tắc đổi tên biến ràng buộc}: Cho một mệnh đề có hạng thức. Sẽ nhận được mệnh đề tương đương nếu thay thế mọi sự xuất hiện của một hạng thức nhất định bằng hạng thức khác.
+   \defText{Quy tắc đổi tên biến ràng buộc}: Cho một mệnh đề có chứa $\xNom$ --- trong đó $\xNom$ là một thành phần biểu diễn. Chúng ta nhận được mệnh đề mới đẳng giá với mệnh đề ban đầu nếu thay thế lượng từ ứng với $\xNom$ cùng tất cả các lần xuất hiện của $\xNom$ trong phạm vi tác động của lượng từ đó bằng $\xi$ cùng loại (cùng là hạng thức, vị từ hoặc hàm với $\xNom$), với điều kiện $\xi$ có thể nhận các tham số của $\xNom$ (nếu có), $\xi$ không xuất hiện tự do và $\xi$ không bị ràng buộc bởi bất kì lượng từ nào khác bên mệnh đề.
 \end{quotation}
 Ví dụ:
-\begin{equation*}
-   \forall x, A(x) \iff \forall y, A(y).
-\end{equation*}
-Sự khác biệt duy nhất giữa hai mệnh đề là sự thay thế hạng thức, hay chính xác hơn là cách kí hiệu hạng thức. Có thể thấy rõ ràng rằng về mặt ngữ nghĩa, hai mệnh đề là như nhau.
+\begin{multicols}{2}
+   \begin{itemize}
+      \item $\forall x, A(x) \iff \forall y, A(y)$,
+      \item $\exists f, f(a; b) \iff \exists g, g(a; b)$.
+   \end{itemize}
+\end{multicols}
+
+Sự khác biệt duy nhất giữa hai mệnh đề chỉ đơn giản là sự thay thế về cách kí hiệu hạng thức. Có thể thấy rõ ràng rằng về mặt ngữ nghĩa, mệnh đề trước và sau khi thay là như nhau.
 
 \subsection{Tính chất giao hoán của lượng từ phổ quát}
 
@@ -36,11 +57,7 @@ và qua đó, mệnh đề có thể viết lại là
    ``Với mọi hạt thóc $x$ và $y$ ở trong bình, khoảng cách giữa chúng đều nhỏ hơn nửa mét.''.
 \end{center}
 
-Do được xây dựng dựa trên nền tảng thế giới vật lí, lượng từ phổ quát trong lô-gích cũng có tính chất tương tự. Chúng ta luôn có \defText{tính chất giao hoán của lượng từ phổ quát} có thể được phát biểu là: khi một mệnh đề có chứa nhiều lượng từ ``với mọi'' liên tiếp nhau, việc thay đổi thứ tự của các đối tượng được xét đến không làm thay đổi ý nghĩa hay giá trị đúng/sai của mệnh đề đó. Tính chất này có thể được viết dưới dạng kí hiệu như sau
-\begin{equation*}
-   \defMath{\forall x, \forall y, L(x; y) \iff \forall y, \forall x, L(x; y)}
-\end{equation*}
-với $L()$ là một vị từ bất kì. Điều này cho phép viết $\defMath{\forall(x; y), L(x; y)}$ mà không làm mất nghĩa mệnh đề nhưng tác giả sẽ hạn chế viết như vậy do, thứ nhất, kí hiệu $\forall(x; y)$ trông khá giống kí hiệu vị từ, và thứ hai, ít tài liệu có kí hiệu này.
+Do được xây dựng dựa trên nền tảng thế giới vật lí, lượng từ phổ quát trong lô-gích cũng có tính chất tương tự. Chúng ta luôn có \defText{tính chất giao hoán của lượng từ phổ quát} có thể được phát biểu là: khi một mệnh đề có chứa nhiều lượng từ ``với mọi'' liên tiếp nhau, việc thay đổi thứ tự của các đối tượng được xét đến không làm thay đổi ý nghĩa hay giá trị đúng/sai của mệnh đề đó. Điều này cho phép viết $$\defMath{\forall(x; y), L(x; y)}$$ với ý nghĩa là $\forall x, \forall y, L(x; y)$ hoặc $\forall y, \forall x, L(x; y)$ mà không làm mất nghĩa mệnh đề\footnote{Nhưng, tác giả sẽ hạn chế viết như vậy do, thứ nhất, kí hiệu $\forall(x; y)$ trông khá giống kí hiệu vị từ, và thứ hai, ít tài liệu có kí hiệu này.}. 
 
 \subsection{Tính chất phân phối của lượng từ phổ quát đối với phép hội}
 
@@ -53,7 +70,7 @@ Chúng ta cần nhiều hơn những quy tắc trên để có thể nâng cao k
       Kết luận & ``Mọi sinh viên trường đại học Trăm khoa đều phải học vật lí.''
    \end{tabular}.
 \end{center}
-Gọi biểu diễn $K()$ cho vị từ ``(sinh viên) ngành kĩ thuật'', $V()$ cho vị từ ``(sinh viên) phải học vật lí'', $T()$ cho ``(sinh viên) trường đại học Trăm khoa''. Chúng ta kí hiệu hóa lập luận được đưa ra như sau:
+Gọi biểu diễn $K$ cho vị từ ``(sinh viên) ngành kĩ thuật'', $V$ cho vị từ ``(sinh viên) phải học vật lí'', $T$ cho ``(sinh viên) trường đại học Trăm khoa''. Chúng ta kí hiệu hóa lập luận được đưa ra như sau:
 \begin{center}
    \begin{tabular}{r|l}
       Giả thiết & $\forall x, (K(x) \implies V(x))$ \\
@@ -64,71 +81,75 @@ Gọi biểu diễn $K()$ cho vị từ ``(sinh viên) ngành kĩ thuật'', $V(
 \end{center}
 Kết hợp giả thiết thành một mệnh đề $G$:
 $$\forall x, (K(x) \implies V(x)) \land \forall x, (T(x) \implies K(x)).$$
-Để tiếp tục lập luận, chúng ta cần sự trợ giúp của một quy tắc lập luận mới --- \defText{tính chất phân phối của lượng từ phổ quát đối với phép hội}: 
-\begin{quotation}
-   Nếu hai mệnh đề con có cùng lượng từ và được kết nối bởi phép nối hội thì có thể kết hợp hai công thức nằm trong tầm ảnh hưởng của lượng từ thành một công thức bởi phép hội để tạo thành một mệnh đề tương đương, hay
-   $$\defMath{\forall x, A(x) \land \forall x, B(x) \iff \forall x, (A(x) \land B(x))}$$
-   với vị từ $A()$ và $B()$ bất kì.
+Để tiếp tục lập luận, chúng ta cần sự trợ giúp của một quy tắc lập luận mới --- \defText{tính chất phân phối của lượng từ phổ quát đối với phép hội}. Tính chất này được phát biểu thành lời là: \begin{quotation}
+   Với mọi cặp vị từ, mệnh đề lượng hóa phổ quát của một phép hội đẳng giá với phép hội của hai mệnh đề lượng hóa phổ quát tương ứng.
 \end{quotation}
-   Sử dụng quy tắc thay thế, thay $A(x)$ và $B(x)$ lần lượt bởi $K(x) \implies V(x)$ và $T(x) \implies K(x)$, chúng ta có:
+Về mặt hình thức, chúng ta biểu diễn bằng công thức:
+\begin{equation*}
+   \defMath{\forall P, \forall Q, \bigl( \forall x, (P(x) \land Q(x)) \iff (\forall x, P(x) \land \forall x, Q(x)) \bigr)}.
+\end{equation*}
+Sử dụng quy tắc thay thế, thay $A(x)$ và $B(x)$ lần lượt bởi $K(x) \implies V(x)$ và $T(x) \implies K(x)$, chúng ta có:
 $$G \iff \forall x, \big((K(x) \implies V(x)) \land (T(x) \implies K(x))\big).$$
 Có $(P \implies Q) \land (Q \implies R) \implies (P \implies R)$ đúng với mọi mệnh đề $P$, $Q$, $R$ cho nên
 $$G \implies \forall x, (T(x) \implies V(x)).$$
 Chúng ta đã kiểm chứng được kết luận.
 
-Bạn đọc có thể thấy sự thay thế là hơi khập khiễng, do quy tắc thay thế chỉ áp dụng được đối với mệnh đề, không phải công thức. Tuy nhiên, do các công thức như $A(x)$ và $K(x) \implies V(x)$ chỉ có một hạng thức $x$ phụ thuộc vào lượng từ $\forall x$, cho nên có thể coi hai công thức này là \defText{mệnh đề phụ thuộc vào lượng từ} và lập luận trên chúng như mệnh đề.
-
 \subsection{Cụ thể hóa lượng từ phổ quát}
 
-Xét một lập luận khác mà chúng ta dễ dàng cảm nhận là đúng:
+Xét một tam đoạn luận quen thuộc trong đời sống:
 \begin{center}
    \begin{tabular}{r|l}
-      Giả thiết & ``Mọi sinh viên ngành kĩ thuật đều phải học vật lí.''; \\
-      & ``Ê-mô-ri-ô là sinh viên ngành kĩ thuật.''.\\
+      Giả thiết & ``Mọi sinh viên ngành kĩ thuật đều phải học vật lí''; \\
+      & ``Ê-mô-ri-ô là sinh viên ngành kĩ thuật''. \\
       \headerDivider
-      Kết luận & ``Ê-mô-ri-ô phải học vật lí.''
-   \end{tabular}.
-\end{center}
-Với cách kí hiệu hóa tương tự, chúng ta có
-\begin{center}
-   \begin{tabular}{r|l}
-      Giả thiết & $\forall x, (K(x) \implies V(x))$ \\
-      & $K(e)$\\
-      \headerDivider
-      Kết luận & $V(e)$
+      Kết luận & ``Ê-mô-ri-ô phải học vật lí''.
    \end{tabular}
 \end{center}
-với $e$ viết tắt cho ``Ê-mô-ri-ô''. Việc lập luận dẫn một cách tự nhiên đến với quy tắc tiếp theo --- \defText{quy tắc cụ thể hóa lượng từ phổ quát} hoặc \defText{phép loại bỏ lượng từ phổ quát}:
+Kí hiệu $K(x)$ là vị từ ``$x$ là sinh viên ngành kĩ thuật'', $V(x)$ là vị từ ``$x$ phải học vật lí'', và kí hiệu $e$ là hằng cá thể đại diện cho ``Ê-mô-ri-ô''. Lập luận trên được hình thức hóa thành:
+\begin{center}
+   \begin{tabular}{r|l}
+      Giả thiết & $\forall x, (K(x) \implies V(x))$; \\
+      & $K(e)$. \\
+      \headerDivider
+      Kết luận & $V(e)$.
+   \end{tabular}
+\end{center}
+Tiến trình suy luận này dẫn một cách tự nhiên đến \defText{quy tắc cụ thể hóa lượng từ phổ quát} (còn gọi là \defText{quy tắc khử lượng từ phổ quát}):
 \begin{quotation}
-   $\defMath{\forall x, A(x) \implies A(e)}$ với $A()$ là một vị từ và $e$ là một hạng thức đã xác định, hay nói suồng sã hơn, nếu một tính chất đúng với toàn cục thì nó cũng đúng với bộ phận.  
+   Nếu $A(x)$ đúng với mọi đối tượng $x$, chúng ta có quyền suy ra $A(e)$ đúng với một $e$ cụ thể (miễn là việc thay thế là có nghĩa và không xung đột với các lượng từ khác):
+   \begin{equation*}
+      \defMath{\forall A, \bigl(\forall x, A(x) \implies A(e)\bigr)}.
+   \end{equation*}
 \end{quotation}
+Chúng ta có thể diễn đạt theo trực giác rằng nếu một khẳng định đúng với toàn thể một lớp đối tượng, thì khẳng định đó cũng đúng với từng cá thể cụ thể thuộc lớp đó.
 
-Gọi hợp các giả thiết là $G$, với quy tắc này, chúng ta có
+Gọi $G$ là mệnh đề hội của các giả thiết: $G \colon \forall x, (K(x) \implies V(x)) \land K(e)$. Bằng việc áp dụng quy tắc cụ thể hóa lượng từ phổ quát đối với cá thể $e$, chúng ta có:
 \begin{align*}
-   G &\implies (K(e) \implies V(e)) \land (K(e)); \\
-   G &\implies V(e) \equationexplanation{quy tắc khẳng định}.
+   G &\implies (K(e) \implies V(e)) \land K(e); \\
+   G &\implies V(e) \equationexplanation{theo quy tắc khẳng định}.
 \end{align*}
-Kết luận được khẳng định từ giả thiết.
+Như vậy, kết luận $V(e)$ đã được chứng minh chặt chẽ từ hệ giả thiết ban đầu.
 
 \subsection{Cụ thể hóa lượng từ tồn tại và quy tắc tồn tại hóa}
 
-Bất cứ khi nào chúng ta nói rằng ``tồn tại một $x$ thỏa mãn một tính chất $A(x)$ nào đó'', điều đó có nghĩa rằng $x$ có thể là một $c$ nào đó có tính chất $A(c)$. Chúng ta không biết, và cũng không cần phải biết, $c$ có hình thù ra làm sao, tên tuổi như thế nào. Điều quan trọng là chúng ta có đồng thời $A(c)$ đúng đi kèm với hạng thức $c$. Vì việc gọi hạng thức thỏa mãn điều kiện nhất định được thực hiện thường xuyên và liên tục nên hành động này được đặt tên là \defText{cụ thể hóa lượng từ tồn tại}:
+Bất cứ khi nào chúng ta nói rằng ``tồn tại một đối tượng $x$ thỏa mãn tính chất $A(x)$'', trong thực hành, chúng ta thường gọi ra một đại diện $c$ để tiếp tục lập luận. Tuy nhiên, nếu chỉ đơn thuần coi $c$ là một đối tượng độc lập xuất hiện tự do ngoài phạm vi của lượng từ, hệ thống lập luận sẽ dễ mắc phải ngụy biện. Để bảo đảm tính chặt chẽ và ngăn ngừa hiện tượng ``rò rỉ'' thành phần biểu diễn tự do, hành động gọi phần tử này được chuẩn hóa thông qua \defText{quy tắc cụ thể hóa lượng từ tồn tại} (hay còn gọi là \defText{quy tắc khử lượng từ tồn tại}):
 \begin{quotation}
-   Từ $\exists x, A(x)$ đúng, chúng ta có thể gọi một hạng thức $c$ \emph{chưa từng xuất hiện} trong lập luận trước đó và có thể giả thiết thêm rằng $A(c)$ đúng.
+   Giả sử chúng ta đã có mệnh đề $\exists x, A(x)$ đúng. Chúng ta sẽ xem xét lập luận cục bộ bằng cách đưa ra một đối tượng tạm thời $c$ (không gây xung đột với các lập luận đã có) và giả định $A(c)$ đúng. Nếu trong phạm vi lập luận này, chúng ta suy ra được kết luận $C$ và \emph{bản thân mệnh đề $C$ không phụ thuộc vào $c$}, thì chúng ta có quyền khẳng định mệnh đề $C$ đúng từ $\exists x, A(x)$.
 \end{quotation}
-Điều kiện $c$ là một hạng thức mới có vai trò rất quan trọng, bởi nếu $c$ vô tình trùng với một hạng thức đã xuất hiện (đặc biệt khi hạng thức đó đang nằm trong tầm ảnh hưởng của lượng từ phổ quát), lập luận tiếp theo có thể mắc phải ngụy biện.
 
-Hãy nhìn theo chiều ngược lại, giả sử chúng ta có $A(x)$ đúng khi thay $x$ bởi $c$, điều này hiển nhiên cho chúng ta mệnh đề đúng là ``tồn tại một $x$ thỏa mãn tính chất $A(x)$''. Đây chính là \defText{quy tắc tồn tại hóa}:
+Với cách tiếp cận này, đối tượng $c$ chỉ có tác dụng nội trong chứng minh phụ và biến mất khi đạt tới kết luận $C$, từ đó triệt tiêu nguy cơ $c$ trở thành một biến tự do ngoài ý muốn do không có lượng từ bao kèm.
+
+Ngược lại, nếu chúng ta tìm thấy một $c$ cụ thể thỏa mãn tính chất $A(c)$, chúng ta có quyền trừu tượng hóa để khẳng định sự tồn tại của một đối tượng như vậy. Đây chính là \defText{quy tắc tồn tại hóa} (còn gọi là \defText{quy tắc đưa vào lượng từ tồn tại}):
 \begin{equation*}
    \defMath{A(c) \implies \exists x, A(x).}
 \end{equation*}
-Biểu diễn dưới dạng lời văn: nếu chúng ta tìm thấy một sự vật có tính chất nào đó, thì chúng ta có thể khẳng định rằng tồn tại một sự vật thỏa mãn tính chất đang được quan tâm đó.
+Dưới dạng lời văn thông thường, nếu chúng ta đã xác định được một đối tượng cụ thể có tính chất đang xét, thì chúng ta có thể kết luận rằng tồn tại một đối tượng thỏa mãn tính chất đó.
 
 \subsection{Tính chất lượng từ rỗng}
 
 \ 
 
-Có bớt đi thì cũng sẽ phải có thêm vào. Với $A$ là một mệnh đề (không phụ thuộc vào hạng thức $x$),
+Có bớt đi thì cũng sẽ phải có thêm vào. Với $A$ là một mệnh đề không phụ thuộc vào hạng thức $x$,
 \begin{equation*}
    \begin{cases}
       \defMath{A \iff \forall x, A} \\
@@ -141,7 +162,7 @@ Có thể thấy được tại sao tính chất này có tên là \defText{tín
 
 Xét một ví dụ sau:
 \begin{center}
-    ``\emph{Tất cả} sinh viên trường đại học U-ni-véc-xi-ta-tô đều cần phải học những môn trong tổ hợp môn giáo dục quốc phòng và an ninh.''
+   ``\emph{Tất cả} sinh viên trường đại học U-ni-véc-xi-ta-tô đều cần phải học những môn trong tổ hợp môn giáo dục quốc phòng và an ninh.''
 \end{center}
 Đây là một mệnh đề có tính ``mạnh'', do nó có tính ảnh hưởng với mọi sinh viên trong trường. Thế, giả sử có một sinh viên không có cơ thể lành lặn lắm (có thể do tai nạn), chẳng có trường nào lại cho người khuyết tật đi nghĩa vụ cả. Khi này, mệnh đề này sẽ sai, và phủ định của mệnh đề này:
 \begin{center}
@@ -149,7 +170,7 @@ Xét một ví dụ sau:
 \end{center}
 là đúng.
 
-Tương tự với các mệnh đề khác trong giải tích vị từ bậc nhất, chúng ta có một quy tắc chung rằng, với mọi vị từ $A$,
+Tương tự với các mệnh đề khác trong giải tích vị từ, chúng ta có một quy tắc chung rằng, với mọi vị từ $A$,
 \begin{equation*}
     \defMath{\overline{\forall x, A(x)} \iff \exists x, \neg A(x)}.
 \end{equation*}
@@ -172,13 +193,12 @@ Như vậy, chúng ta cũng có một phép phủ định tương đương với
 
 \ 
 
-Không biết bạn đọc còn nhớ đến phép đồng nhất không. Hãy nhắc lại về ví dụ, ``Hồ Chí Minh'' là đồng nhất với ``chủ tịch nước đầu tiên của Việt Nam''. Do đó, mọi câu có cụm ``Hồ Chí Minh'' đều có thể thay với cụm từ tương đương ``chủ tịch nước đầu tiên của Việt Nam'' mà ngữ nghĩa không thay đổi. Tổng quát và chuẩn tắc hóa, chúng ta cần đưa ra quy tắc cho phép đồng nhất giống như quy tắc thay thế từ giải tích mệnh đề. Do giới hạn của giải tích vị từ bậc nhất, chúng ta sẽ chỉ xét một cách tổng quát hóa của \defText{nguyên lí không thể phân biệt của các đối tượng đồng nhất} mà hay được gọi tắt là thay thế bằng nhau. Cụ thể, chúng ta có
+Không biết bạn đọc còn nhớ đến phép đồng nhất không. Hãy nhắc lại về ví dụ, ``Hồ Chí Minh'' là đồng nhất với ``chủ tịch nước đầu tiên của Việt Nam''. Do đó, mọi câu có cụm ``Hồ Chí Minh'' đều có thể thay với cụm từ tương đương ``chủ tịch nước đầu tiên của Việt Nam'' mà ngữ nghĩa không thay đổi. Tổng quát và chuẩn tắc hóa, chúng ta cần đưa ra quy tắc cho phép đồng nhất giống như quy tắc thay thế từ giải tích mệnh đề. Cụ thể, chúng ta có \defText{nguyên lí không thể phân biệt của các đối tượng đồng nhất} mà thường được gọi tắt là \defText{quy tắc thay thế bằng nhau}:
 \begin{equation*}
-   \defMath{\forall x, \forall y, (x = y \implies (P(x) \iff P(y)))}
+   \defMath{\forall x, \forall y, \bigl(x = y \iff \forall P, (P(x) \iff P(y))\bigr)}.
 \end{equation*}
-với mọi vị từ $P()$.
 
-\exercise Cho hai vị từ $A()$ và $B()$. Chứng minh rằng, 
+\exercise Cho hai vị từ $A$ và $B$. Chứng minh rằng, 
 \begin{enumerate}
    \item $\exists x, \exists y, A(x; y) \iff \exists y, \exists x, A(x; y)$ (tính chất giao hoán của lượng từ tồn tại);
    \item $\exists x, (A(x) \lor B(x)) \iff \exists x, A(x) \lor \exists x, B(x)$ (tính chất phân phối của lượng từ tồn tại);
@@ -205,7 +225,7 @@ Tương tự, chúng ta cũng có thể có được $\exists x, \exists y, A(x;
 \end{itemize}
 Qua hai trường hợp như vậy, chúng ta có $\exists x, A(x) \lor \exists x, B(x)$. Như vậy, chúng ta đã khẳng định được $\exists x, (A(x) \lor B(x)) \implies \exists x, A(x) \lor \exists x, B(x)$.
 
-Ngược lại, giả sử chúng ta đã có $\exists x, A(x) \lor \exists x, B(x)$. Trong một trường hợp, chúng ta có $\exists x, A(x)$. Lấy $c$ thỏa mãn $A()$. Theo định nghĩa của phép tuyển, $A(c) \lor B(c)$. Do đó, theo quy tắc tồn tại hóa, $\exists x, (A(x) \lor B(x))$. Với một lập luận tương tự, chúng ta cũng có $\exists x, B(x) \implies \exists x, (A(x) \lor B(x))$. Do đó, $\exists x, A(x) \lor \exists x, B(x) \implies \exists x, (A(x) \lor B(x))$.
+Ngược lại, giả sử chúng ta đã có $\exists x, A(x) \lor \exists x, B(x)$. Trong một trường hợp, chúng ta có $\exists x, A(x)$. Lấy $c$ thỏa mãn $A$. Theo định nghĩa của phép tuyển, $A(c) \lor B(c)$. Do đó, theo quy tắc tồn tại hóa, $\exists x, (A(x) \lor B(x))$. Với một lập luận tương tự, chúng ta cũng có $\exists x, B(x) \implies \exists x, (A(x) \lor B(x))$. Do đó, $\exists x, A(x) \lor \exists x, B(x) \implies \exists x, (A(x) \lor B(x))$.
 
 Kết hợp hai chiều theo định nghĩa của phép tương đương, chúng ta có điều phải chứng minh.
 
@@ -287,7 +307,7 @@ Vậy, kết hợp hai chiều, điều phải chứng minh.
 \stepcounter{subexercise}
 \arabic{subexercise}. Giả sử đã có $\exists x, A(x) \lor \forall y, B(y)$. Xét hai trường hợp.
 
-\textcolor{colorEmphasisCyan}{Trường hợp 1 --- $\exists x, A(x)$}. Theo tính chất lượng từ rỗng (do $A()$ không phụ thuộc vào $y$), $\exists x, \forall y, A(x)$. Theo tính chất cộng, $P \implies P \lor Q$, cho nên
+\textcolor{colorEmphasisCyan}{Trường hợp 1 --- $\exists x, A(x)$}. Theo tính chất lượng từ rỗng (do $A$ không phụ thuộc vào $y$), $\exists x, \forall y, A(x)$. Theo tính chất cộng, $P \implies P \lor Q$, cho nên
 \begin{equation*}
     \exists x, \forall y, A(x) \implies \exists x, \forall y, (A(x) \lor B(y)).
 \end{equation*}
@@ -620,8 +640,8 @@ Theo chứng minh bằng phản chứng, dễ thấy có điều phải chứng 
    \item Chứng minh rằng \begin{equation*}
       \exists x, \forall y, A(x; y) \implies \forall y, \exists x, A(x; y)
    \end{equation*}
-   với mọi vị từ $A()$.
-   \item Chọn một vị từ $A()$ để mệnh đề sau sai
+   với mọi vị từ $A$.
+   \item Chọn một vị từ $A$ để mệnh đề sau sai
    \begin{equation*}
       \exists x, \forall y, A(x; y) \impliedby \forall y, \exists x, A(x; y).
    \end{equation*}
@@ -703,18 +723,18 @@ Từ một giả thiết đúng làm nảy sinh ra một kết luận sai sẽ k
    \caption{Một con cá. Thật tiếc khi nó không phải là con cá lớn nhất.}
 \end{figure}
 
-\stepSubexercise Từ mệnh đề $\forall y, \exists x, A(x; y)$, theo thứ tự tác động của các lượng từ, thì ứng với mỗi một giá trị $y$, chúng ta mới bắt đầu được phép cụ thể hóa $x$ tương ứng. Vì lẽ đó, thực chất hạng thức dùng để thay thế $x$ chắc chắn bị \emph{phụ thuộc} vào $y$ (tức là $c$ đóng vai trò như một hàm $c()$ với hạng thức $y$, thay đổi linh hoạt mỗi khi $y$ thay đổi).
+\stepSubexercise Từ mệnh đề $\forall y, \exists x, A(x; y)$, theo thứ tự tác động của các lượng từ, thì ứng với mỗi một giá trị $y$, chúng ta mới bắt đầu được phép cụ thể hóa $x$ tương ứng. Vì lẽ đó, thực chất hạng thức dùng để thay thế $x$ chắc chắn bị \emph{phụ thuộc} vào $y$ (tức là $c$ đóng vai trò như một hàm $c$ với hạng thức $y$, thay đổi linh hoạt mỗi khi $y$ thay đổi).
 
 Người viết giả chứng minh này đã bỏ qua tính tuần tự, ngang nhiên gọi luôn một hằng số $c$ không đổi duy nhất. Hành động này vô tình làm mất tính liên kết giữa $c$ và $y$, mang lượng từ tồn tại từ bên trong cưỡng ép vượt qua lượng từ phổ quát ở ngoài để đạt được điều phải chứng minh. Đó là một ngụy biện lô-gích hết sức nghiêm trọng.
 
-\exercise Cho vị từ $V()$. Chứng minh rằng 
+\exercise Cho vị từ $V$. Chứng minh rằng 
 \begin{equation*}
    \exists x, V(x) \land \forall y, \forall z, (V(y) \land V(z) \implies y = z) \implies \exists ! x, V(x).
 \end{equation*}
 
 \solution
 
-Giả sử $\exists x, V(x) \land \forall y, \forall z, (V(y) \land V(z) \implies y = z).$ Do $\exists x, V(x)$, có thể gọi $X$ là phần tử thỏa mãn $V()$. Cụ thể hóa $z$ trong $\forall y, \forall z, (V(y) \land V(z) \implies y = z)$ bởi $X$, chúng ta có 
+Giả sử $\exists x, V(x) \land \forall y, \forall z, (V(y) \land V(z) \implies y = z).$ Do $\exists x, V(x)$, có thể gọi $X$ là phần tử thỏa mãn $V$. Cụ thể hóa $z$ trong $\forall y, \forall z, (V(y) \land V(z) \implies y = z)$ bởi $X$, chúng ta có 
 \begin{equation*}
    \forall y, \left(V(y) \land V\left(X\right) \implies y = X\right).
 \end{equation*}
@@ -734,7 +754,7 @@ hay $\exists ! x, V(x)$. Từ đó, dễ thấy điều phải chứng minh.
 
 Đây là một trong những cách phổ biến để chứng minh sự tồn tại duy nhất của một đối tượng nào đó: thay vì chứng minh mọi sự vật đều bằng một sự vật mẫu, người ta có thể chứng minh hai vật bất kì có chung tính chất thì bằng nhau. Một lưu ý quan trọng, nếu chúng ta bổ sung thêm các tiên đề tập hợp --- là điều mà chúng ta sẽ làm tiếp theo --- thì điều ngược lại của mệnh đề được cho cũng đúng. 
 
-\exercise Cho vị từ $V()$. Giả thiết rằng
+\exercise Cho vị từ $V$. Giả thiết rằng
 \begin{equation*}
    \begin{cases}
       \exists ! x, V(x) \\

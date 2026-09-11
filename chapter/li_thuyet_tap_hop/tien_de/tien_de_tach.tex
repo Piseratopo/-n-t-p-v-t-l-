@@ -1,6 +1,6 @@
 \section{Tiên đề tách}
 
-Giả sử $x$ là một tập hợp và $\cauF()$ có nghĩa với toàn bộ các phần tử của $x$. Khi đó, tiên đề tách khẳng định rằng tồn tại một tập hợp $y$ bao gồm tất cả các phần tử $z \in x$ thỏa mãn $\cauF(z)$ và chỉ những phần tử đó. Nói cách khác,
+Giả sử $x$ là một tập hợp và $\cauF$ có nghĩa với toàn bộ các phần tử của $x$. Khi đó, tiên đề tách khẳng định rằng tồn tại một tập hợp $y$ bao gồm tất cả các phần tử $z \in x$ thỏa mãn $\cauF(z)$ và chỉ những phần tử đó. Nói cách khác,
 $$
    \defMath{\forall x, \exists y, \forall z, \left( z \in y \iff z \in x \land \text{\textbf{\cauF}}(z) \right)}.
 $$
@@ -51,7 +51,7 @@ $$
    \caption{Minh họa tiên đề tách (các phần tử của $x$ thỏa mãn tính chất $\textcolor{colorEmphasisCyan}{\cauF(}z\textcolor{colorEmphasisCyan}{)}$ được tách ra).}
 \end{figure}
 
-Tiên đề ngoại diên khẳng định tập hợp $y$ là duy nhất. Thực vậy, giả sử tồn tại hai tập hợp $y_1$ và $y_2$ thỏa mãn điều kiện của tiên đề tách với cùng tập hợp $x$ và vị từ $\cauF()$. Xét một $z$ bất kì. Khi đó, định nghĩa theo tiên đề cho chúng ta
+Tiên đề ngoại diên khẳng định tập hợp $y$ là duy nhất. Thực vậy, giả sử tồn tại hai tập hợp $y_1$ và $y_2$ thỏa mãn điều kiện của tiên đề tách với cùng tập hợp $x$ và vị từ $\cauF$. Xét một $z$ bất kì. Khi đó, định nghĩa theo tiên đề cho chúng ta
 \begin{equation*}
     \begin{cases}
         z \in y_1 \iff z \in x \land \cauF(z) \\
@@ -64,7 +64,7 @@ Theo tính bắc cầu của phép đẳng giá, chúng ta thu được
 \end{equation*}
 Theo tiên đề ngoại diên, $y_1 = y_2$. Gọi tập hợp đó là $y$. Một hệ quả khá hiển nhiên chính là $y \subseteq x$, bởi vì rõ ràng rằng, nếu $z \in y$, theo tiên đề tách, chúng ta phải có $z \in x$.
 
-Trước khi đi vào những vấn đề khác, chúng ta sẽ trình bày về một cách viết tắt các mệnh đề trong giải tích vị từ bậc nhất. Bạn đọc có thể để ý, trong định nghĩa, chúng ta có một mệnh đề dạng
+Trước khi đi vào những vấn đề khác, chúng ta sẽ trình bày về một cách viết tắt các mệnh đề trong giải tích vị từ. Bạn đọc có thể để ý, trong định nghĩa, chúng ta có một mệnh đề dạng
 $$
    \forall z, \left(z \in x \implies V(z)\right).
 $$
@@ -76,7 +76,7 @@ nhưng một cách phát biểu tự nhiên hơn sẽ là:
 \begin{center}
    ``Với mọi $z$ thuộc $x$, $V(z)$.''.
 \end{center}
-Từ cách nói đó, chúng ta có cách viết rút gọn với mọi tập hợp $x$ và vị từ $V()$ như sau:
+Từ cách nói đó, chúng ta có cách viết rút gọn với mọi tập hợp $x$ và vị từ $V$ như sau:
 \begin{equation*}
    \defMath{\forall z \in x, V(z)} \iff \forall z, \left(z \in x \implies V(z)\right).
 \end{equation*}
