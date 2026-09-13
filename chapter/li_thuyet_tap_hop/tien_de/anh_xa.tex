@@ -309,6 +309,23 @@ Vì vậy, $M_{al}$ chỉ nhận $(\varnothing; \varnothing)$ làm phần tử. 
    \end{cases}.
 \end{equation*}
 
+\exercise[ex:li_thuyet_tap_hop:tien_de:anh_xa:bst] Xét một tập hợp $x$ và $f: \mathfrak{P}(x) \to \mathfrak{P}(x)$ là một ánh xạ thỏa mãn nếu $$\forall A \in \mathfrak{P}(x), \forall B \in \mathfrak{P}(x), \left(A \subseteq B \implies f(A) \subseteq f(B)\right).$$ Chứng minh rằng tồn tại $G \in \mathfrak{P}(x)$ sao cho $f(G) = G$.
+
+\solution[ex:li_thuyet_tap_hop:tien_de:anh_xa:bst]
+
+Gọi $C = \{A \in \mathfrak{P}(x) \mid A \subseteq f(A)\}$ và $D = \bigcup C$. Xét $E \in C$ tùy ý. Với phần tử $a$ bất kì thuộc $E$, từ tiên đề hợp, do $a \in E$ và $E \in C$ nên $a \in \bigcup C$ hay $a \in D$. Do đó, $E \subseteq D$. Từ giả thiết của đề, có được $f(E) \subseteq f(D)$. Ngoài ra, từ cách xét $E$, $E \subseteq f(E)$. Sử dụng tính chất bắc cầu của $\subseteq$, \begin{equation*}
+   \forall E \in C, E \subseteq f(D).
+\end{equation*}
+
+Xét một phần tử $d$ bất kì thuộc $D$. Từ định nghĩa hợp của các tập hợp, tồn tại $E_d$ sao cho $d \in E_d$ và $E_d \in C$. Chúng ta có $E_d \subseteq f(D)$ từ kết quả vừa rồi, cho nên $d$ cũng nằm trong $f(D)$. Vì vậy, $D \subseteq f(D)$.
+
+Ứng dụng khẳng định vừa rồi, kết hợp với giả thiết, chúng ta có $f(D) \subseteq f(f(D))$. Qua đó, $f(D) \in C$ theo cách đặt. Bởi $\forall E \in C, E \subseteq D$, $f(D) \subseteq D$.
+
+Đã có $\begin{cases}
+   D \subseteq f(D) \\
+   f(D) \subseteq D
+\end{cases}$, suy ra $D = f(D)$. Sự tồn tại của $G$ theo yêu cầu đã được chứng minh.
+
 \subsection{Tích hai ánh xạ}
 
 Để xác định tích hai ánh xạ, chúng ta cần phải trước hết chứng minh một tính chất: Cho $f:x \to y$ và $g: y \to z$. Gọi quan hệ $h$ từ $x$ đến $z$ xác định bởi $h = g \circ f$. Theo định nghĩa quan hệ hợp, 
@@ -784,6 +801,14 @@ nên $g$ là song ánh. Điều phải chứng minh.
 
 \stepSubexercise Vì phần này có cách lập luận tương tự nên tác giả sẽ tóm tắt chứng minh. Vì $g \circ f$ toàn ánh và $g$ đơn ánh nên $g$ song ánh. Vì thế, có toàn ánh $g^{-1} \circ (g \circ f) = f$. Điều phải chứng minh.
 
+\exercise Gọi $f$ là ánh xạ từ tập hợp $A$ sang $\mathfrak{P}(A)$. Chứng minh rằng $f$ không toàn ánh.
+
+\solution 
+
+Gọi $B = \{a \in A \mid a \notin f(a)\}$. Dễ thấy $B \subseteq A$ và $B \in \mathfrak{P}(A)$ theo tiên đề tách. 
+
+Chúng ta sẽ chứng minh rằng $B$ không thuộc tập giá trị của $f$. Thật vậy, giả sử phản chứng rằng $B \in \Imf(f)$ và tồn tại $b$ để $B = f(b)$. Bây giờ, $b$ có thuộc $B$ không? Nếu có, thì $b \in f(b)$, theo định nghĩa của $B$, lại suy ra $b \notin B$. Nếu không, cũng theo định nghĩa của $B$, do $b \notin f(b)$, chúng ta lại cần phải có $b \in B$. Cả hai trường hợp đều suy ra mâu thuẫn. Vì vậy, không tồn tại $b$ để $B = f(b)$, và do đó $f$ không toàn ánh. Chúng ta có được điều phải chứng minh. Tên gọi của kết quả này là định lí Can-to\footnote{Georg Ferdinand Ludwig Philipp Cantor (1845 -- 1918).}.
+
 \exercise Gọi $A$ và $Z$ là hai tập hợp, $T$ là quan hệ tương đương trong $A$, $D$ là quan hệ tương đương trong $Z$. $Q$ là quan hệ xác định từ $A \times Z$ đến $A \times Z$ bởi
 \begin{equation*}
    \forall (a; b) \in A \times Z, \forall (c; d) \in A \times Z, \left((a;b)\;R\;(c;d) \iff a\;T\;c \land b\;D\;d\right).
@@ -939,6 +964,104 @@ Ngược lại, giả thiết \coloringDodgerblue{$\forall B \in \mathfrak{P}(Y)
 \end{equation*} cho nên $\{l\} = \varnothing$. Nhưng, điều này hiển nhiên sai, sinh ra mâu thuẫn. Theo chứng minh bằng phản chứng, từ giả thiết, chúng ta phải có $f$ toàn ánh.
 
 Từ những suy luận vừa rồi, chúng ta dễ dàng có được điều phải chứng minh.
+
+\exercise Gọi $\sigma$ là một hoán vị của tập $A$. Một tập con $B$ của $A$ được gọi là $\defMath{\sigma}$\defText{-bất biến} nếu $\Imf(\sigma|_B) = B$. Với $a \in A$, đặt \begin{equation*}
+   O_a = \bigcap\{b \in \mathfrak{P}(A) \mid a \in b \land b \text{~là $\sigma$-bất biến}\}.
+\end{equation*}
+\begin{enumerate}
+   \item Chứng minh rằng $O_a$ là $\sigma$-bất biến với mọi $a \in A$.
+   \item $O$ thuộc $\mathfrak{P}(A)$ được gọi là \defText{quỹ đạo} nếu tồn tại $a \in A$ để $O = O_a$. Chứng minh \begin{equation*}
+      \{O \in \mathfrak{P}(A) \mid O \text{~là một quỹ đạo}\}
+   \end{equation*}
+   là một phân hoạch của $A$.
+\end{enumerate}
+
+\solution 
+
+\resetSubexercise Xét $y$ tùy ý. Với mọi $a \in A$, nếu $y \in O_a$ thì $y \in A$, dẫn đến tồn tại $x \in A$ sao cho $y = \sigma(x)$. Ngoài ra, do $y \in O_a$ nên với mọi $b \in \mathfrak{P}(A)$, $a \in b \land b = \Imf(\sigma|_b)$ kéo theo $y \in b$. 
+
+\exercise Giả sử rằng giữa tập hợp $A$ và $B$ tồn tại $f: A \to B$ và $g: B \to A$ đều là đơn ánh. Chứng minh rằng tồn tại song ánh từ $A$ sang $B$.
+
+\solution
+
+Để ý rằng, với mọi $a \in \mathfrak{P}(A)$, $\Imf(f|_a)$ xác định, là tập con của $B$ và duy nhất (theo hệ quả của tiên đề tách). Do đó, chúng ta có thể xác định ánh xạ: \begin{equation*}
+   \begin{array}[t]{rcl}
+      F: \mathfrak{P}(A) & \to & \mathfrak{P}(B) \\
+      a & \mapsto & \Imf(f|_a)
+   \end{array}.
+\end{equation*}
+Tương tự, chúng ta cũng có ánh xạ $\begin{array}[t]{rcl}
+   G: \mathfrak{P}(B) & \to & \mathfrak{P}(A) \\
+   b & \mapsto & \Imf(g|_b)
+\end{array}$. Ngoài ra, $A \setminus a$ xác định duy nhất với mọi tập hợp $a$, cho nên có thể gọi ánh xạ \begin{equation*}
+   \begin{array}[t]{rcl}
+      A_{\complement}: \mathfrak{P}(A) & \to & \mathfrak{P}(A) \\
+      a & \mapsto & A \setminus a
+   \end{array}
+\end{equation*}
+và tương tự là $\begin{array}[t]{rcl}
+   B_{\complement}: \mathfrak{P}(B) & \to & \mathfrak{P}(B) \\
+   b & \mapsto & B \setminus b
+\end{array}$.
+
+Gọi $S = A_{\complement} \circ G \circ B_{\complement} \circ F$. Thứ nhất, đây là một ánh xạ từ $\mathfrak{P}(A)$ sang $\mathfrak{P}(A)$. Thứ hai, với mọi $x$ và $y$, nếu chúng đều thuộc $\mathfrak{P}(A)$, dựa vào các tính chất của quan hệ và phép tính trên tập hợp mà chúng ta đã chứng minh, thấy được:
+\begin{align*}
+   x \subseteq y &\implies \Imf(f|_x) \subseteq \Imf(f|_y); \\
+   x \subseteq y &\implies F(x) \subseteq F(y); \\
+   x \subseteq y &\implies B \setminus F(x) \supseteq B \setminus F(y); \\
+   x \subseteq y &\implies (B_{\complement} \circ F)(x) \supseteq (B_{\complement} \circ F)(y); \\
+   x \subseteq y &\implies \Imf\left(g\middle|_{(B_{\complement} \circ F)(x)}\right) \supseteq \Imf\left(g\middle|_{(B_{\complement} \circ F)(y)}\right); \\
+   x \subseteq y &\implies (G \circ B_{\complement} \circ F)(x) \supseteq (
+      G \circ B_{\complement} \circ F)(y);\\
+   x \subseteq y &\implies A \setminus (G \circ B_{\complement} \circ F)(x) \subseteq A \setminus (G \circ B_{\complement} \circ F)(y); \\
+   x \subseteq y &\implies (A_{\complement} \circ G \circ B_{\complement} \circ F)(x) \subseteq (A_{\complement} \circ G \circ B_{\complement} \circ F)(y); \\
+   x \subseteq y &\implies S(x) \subseteq S(y).
+\end{align*}
+Dựa vào \refex{ex:li_thuyet_tap_hop:tien_de:anh_xa:bst}, tồn tại $C \in \mathfrak{P}(A)$ để $S(C) = C$. Đặt $D = \Imf(f|_C) = F(C)$. Gọi $m = f|_{C \times D}$. Vì $f$ là ánh xạ đơn ánh nên dễ dàng thấy được $m$ cũng là đơn ánh. Ngoài ra, $m$ toàn ánh theo cách đặt $D$, nên $m$ song ánh. Thêm vào đó, có biến đổi 
+\begin{align*}
+   A \setminus C &= A \setminus (A_{\complement} \circ G \circ B_{\complement} \circ F)(C) = A \setminus (A \setminus (G \circ B_{\complement} \circ F)(C)); \\
+   &= (G \circ B_{\complement} \circ F)(C) = (G \circ B_{\complement})(F(C)); \\
+   &= (G \circ B_{\complement})(D) = G(B \setminus D) = \Imf\left(g|_{B \setminus D}\right).
+\end{align*}
+Gọi $n = g|_{(B \setminus D) \times (A \setminus C)}$. Tương tự như $m$, chúng ta cũng có $n$ là một song ánh, kéo theo có song ánh $n^{-1}$
+
+Xây dựng quan hệ $h$ thỏa mãn:
+$$
+\forall x \in A, \forall y \in B, \left(x\;h\;y \iff \left[\begin{aligned}
+   x \in C &\land y = m(x) \\
+   x \notin C &\land y = n^{-1}(x)
+\end{aligned}\right.\right).
+$$
+Trong cả hai trường hợp $x \in C$ và $x \notin C$, chỉ tồn tại duy nhất một $y$ để $x\;h\;y$ theo định nghĩa. Do vậy, $h$ là ánh xạ.
+
+Xét $i$ và $j$ cùng thuộc $A$ sao cho $i \neq j$. Chia làm các trường hợp:
+\begin{itemize}
+   \item \coloringCrimson{$i \in C$ và $j \in C$} cho chúng ta $\begin{cases}
+      h(i) = m(i) \\
+      h(j) = m(j)
+   \end{cases}$. Do $m$ song ánh nên $m(i) \neq m(j)$, dẫn đến $y(i) \neq y(j)$. Qua đó, $h(i) \neq h(j)$.
+   \item \coloringDodgerblue{$i \notin C$ và $j \notin C$} cho $h(i) = n^{-1}(i)$ và $h(j) = n^{-1}{j}$. Tương tự, vì $n^{-1}$ song ánh nên $h(i) \neq h(j)$.
+   \item \coloringJade{$i \in C$ và $j \notin C$}, chúng ta có $h(i) \in D \land h(j) \notin D$ nên $h(i) \neq h(j)$.
+   \item \coloringWisteria{$i \notin C$ và $j \in C$}, $h(i) \neq h(j)$ do $h(i) \notin D \land h(j) \in D$.
+\end{itemize}
+Mọi trường hợp đều suy ra $h(i) \neq h(j)$. Vì thế, $h$ đơn ánh.
+
+Với mọi $k$, nếu $k \in B$ thì $k \in D$ hoặc $k \notin D$. $k \in D$ kéo theo tồn tại $l$ sao cho $k = m(l)$, và $k \notin D$ thì kéo theo tồn tại $o$ sao cho $k = n^{-1}(o)$, cho nên luôn tồn tại $p \in A$ sao cho $k = h(p)$. Do đó, $h$ toàn ánh. Kết hợp với tính chất đơn ánh trước đó, $h$ song ánh.
+
+Vậy, tồn tại một song ánh từ $A$ sang $B$. Điều phải chứng minh. Một chút bổ sung, khẳng định này còn có tên là định lí Sờ-rơ-đơ\footnote{Friedrich Wilhelm Karl Ernst Schröder(1841 -- 1902).} -- Béc-nờ-xtain\footnote{Felix Bernstein(1878 -- 1956).}.
+
+\exercise Gọi $A$ là một tập khác rỗng và $g: \mathfrak{P}(A) \to A$ là ánh xạ. Chứng minh rằng $g$ không đơn ánh.
+
+\solution
+
+Gọi quan hệ $f$ từ $A$ sang $\mathfrak{P}(A)$ được định nghĩa như sau:
+$$
+\forall x \in A, \forall y \in \mathfrak{P}(A), \left(x\;f\;y \iff y = \{x\}\right).
+$$
+
+Dễ thấy với mỗi $x \in A$, xây dựng được duy nhất $\{x\}$ theo tiên đề cặp, cho nên tồn tại duy nhất $y \in \mathfrak{P}(A)$ sao cho $x\;f\;y$. Vì thế, $f$ là ánh xạ. Ngoài ra, với mọi $v$ và $w$ là phần tử của $A$, $v \neq w$ dẫn đến $\{v\} \neq \{w\}$ hay $f(v) \neq f(w)$. Do đó $f$ đơn ánh.
+
+Nếu $g$ cũng đơn ánh, theo định lí Sờ-rơ-đơ -- Béc-nơ-xtain, tồn tại song ánh từ $\mathfrak{P}(A)$ sang $A$, mâu thuẫn với định lí Can-to đã chứng minh trước đó. Vì vậy, $g$ không đơn ánh. Điều phải chứng minh.
 
 \subsection{Xu hướng của ánh xạ}
 
@@ -1367,4 +1490,4 @@ Mặc dù phần này không sử dụng đến ảnh hưởng của các phép 
 Cho $x$ và $y$ là hai tập hợp. Gọi $\sim_x$ và $\sim_y$ lần lượt là quan hệ tương đương trong $x$ và $y$, và $f: x \to y$ là ánh xạ. $f$ \defText{tương thích} với $\sim_x$ và $\sim_y$ khi và chỉ khi \begin{equation*}
    \defMath{\forall a \in x, \forall b \in x, (a \sim_x b \implies f(a)\sim_y f(b))}.
 \end{equation*}
-Gọi $p: E \to \frac{E}{\sim_x}$ và $q: F \to \frac{F}{\sim_y}$ đều là toàn ánh chính tắc. Giả sử \coloringCrimson{}
+Gọi $p: x \to \frac{x}{\sim_x}$ và $q: y \to \frac{y}{\sim_y}$ đều là toàn ánh chính tắc. Giả sử \coloringCrimson{}
