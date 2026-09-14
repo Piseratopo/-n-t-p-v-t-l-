@@ -8,6 +8,14 @@ Khi làm quen với giải tích mệnh đề, chúng ta đã sử dụng bảng
 \end{enumerate}
 Vì đây là mẹo, cho nên bạn đọc hãy coi như đây là gợi ý, không phải nguyên tắc và không phải lúc nào cũng sử dụng được.
 
+\subsection{Đẳng giá hằng đúng}
+
+Trước khi đi vào những quy tắc mà có liên quan đến lượng từ, chúng ta sẽ chính tắc hóa cách mà chúng ta sẽ sử dụng giải tích mệnh đề trên các lập luận sau này. Ngoài ra, cách chính tắc hóa đó cũng cần phải có khả năng phát triển lên, do thay thế là công việc thường xuyên được và cần phải thực hiện. Vì vậy, tranh thủ các khái niệm mới trong quá trình xây dựng ngôn ngữ, chúng ta mở rộng quy tắc thay thế thành \defText{quy tắc đẳng giá hằng đúng}:
+\begin{quotation}
+   Nếu công thức $P$ xuất hiện như một phần của công thức $R$, và nếu công thức $Q$ đẳng giá với $P$, và nếu công thức $S$ thu được từ $R$ bằng cách thay thế mọi lần xuất hiện của $P$ trong $R$ bởi $Q$, thì $R \iff S$.
+\end{quotation}
+Trong thực tiễn, chúng ta sẽ không gọi tên quy tắc này, do nó được thường xuyên sử dụng. Thay vào đó, chúng ta sẽ gọi tên lập luận để có $P \iff Q$, giúp rút gọn lời giải.
+
 \subsection{Cụ thể hóa lượng từ phổ quát}
 
 Lấy ví dụ, xét một ví dụ về lập luận theo cấu trúc tam đoạn luận cổ điển:
@@ -36,9 +44,9 @@ Từ đây, dễ dàng có được, $T(x) \implies V(x)$. Bổ sung lại lư�
 
 Giờ đây, chúng ta sẽ phát biểu chính xác các quy tắc chi phối các lượng từ phổ quát. Cụ thể, ở ví dụ trên, chúng ta đã sử dụng \defText{quy tắc cụ thể hóa lượng từ phổ quát} (hay \defText{quy tắc khử lượng từ phổ quát}, viết tắt là \defText{quy tắc cụ thể phổ quát} hay \defText{ctpq}), phát biểu như sau
 \begin{quotation}
-   Nếu công thức $S$ thu được từ công thức $R$ bằng cách thay thế một thuật ngữ $t$ vào mọi vị trí tự do của thành phần biểu diễn $v$ trong $R$, thì $S$ có thể được suy ra từ $\forall v, R$. Ngoài ra, $t$ ở trong $S$ là không bị \emph{đánh dấu}. (Khi nào thuật ngữ bị đánh dấu và ảnh hưởng của việc đánh dấu này lên quá trình lập luận sẽ được trình bày ở sau.)
+   Nếu công thức $S$ thu được từ công thức $R$ bằng cách thay thế một thành phần biểu diễn $t$ vào mọi vị trí tự do của thành phần biểu diễn $v$ trong $R$, và sau khi thay thế thì $t$ tự do trong $S$, thì $S$ có thể được suy ra từ $\forall v, R$. Ngoài ra, $t$ ở trong $S$ là \emphcolor{không bị đánh dấu}. (Khi nào thành phần biểu diễn bị đánh dấu và ảnh hưởng của việc đánh dấu này lên quá trình lập luận sẽ được trình bày ở sau.)
 \end{quotation}
-Ở ví dụ, quy tắc cụ thể hóa lượng từ phổ quát đã được sử dụng hai lần, và đều sử dụng thuật ngữ $x$ để thay thế vị trí tự do của thành phần biểu diễn, cũng tên là $x$. Tuy nhiên, chúng ta có thể thay bất cứ thuật ngữ nào chúng ta cần. Chẳng hạn, từ $\forall x, (K(x) \implies V(x))$, chúng ta có thể có $K(y) \implies V(y)$ hay $K(+(c; d)) \implies V(+(c; d))$.
+Ở ví dụ, quy tắc cụ thể hóa lượng từ phổ quát đã được sử dụng hai lần, và đều sử dụng $x$ để thay thế vị trí tự do của thành phần biểu diễn, cũng tên là $x$. Tuy nhiên, chúng ta có thể thay bất cứ thuật ngữ nào chúng ta cần. Chẳng hạn, từ $\forall x, (K(x) \implies V(x))$, chúng ta có thể có $K(y) \implies V(y)$ hay $K(+(c; d)) \implies V(+(c; d))$.
 
 \subsection{Tổng quát hóa lượng từ phổ quát}
 
@@ -63,7 +71,7 @@ Thấy ngay lập luận này là có vấn đề, bởi một sinh viên có th
 
 Từ đây, chúng ta có \defText{quy tắc tổng quát hóa lượng từ phổ quát} (hay \defText{quy tắc thêm lượng từ phổ quát}, viết tắt là \defText{quy tắc tổng quát phổ quát} hay \defText{tqpq}):
 \begin{quotation}
-   Từ công thức $S$, chúng ta có thể suy ra $\forall v, S$ nếu như $v$ không được đánh dấu trong $S$.
+   Từ công thức $S$, chúng ta có thể suy ra $\forall v, S$ nếu như $v$ không được đánh dấu trong $S$ và không có thành phần biểu diễn nào bị đánh dấu phụ thuộc vào $v$. (Cũng như thuật ngữ ``đánh dấu'', khái niệm ``đánh dấu phụ thuộc'' sẽ được nhắc đến sau này.)
 \end{quotation}
 
 \exercise Cho vị từ $A$, $B$ và $C$. Chứng minh 
@@ -136,16 +144,16 @@ Dấu $\le$ là sự kết hợp của dấu $<$ với dấu $=$ mà chúng ta c
 \end{itemize}
 Chứng minh rằng
 \begin{multicols}{2}
-    \begin{enumerate}
-        \item $\forall x, V_=(x; x)$;
-        \item $\forall x, \forall y, \big(V_=(x; y) \iff V_=(y; x)\big)$;
-        \item $\forall x, \forall y, \big(V_\le(x; y) \iff V_=(x; y) \lor V_<(x; y)\big)$;
-        \item $\forall x, \forall y, \big(V_<(x; y) \uparrow V_<(y; x)\big)$;
-        \item $\forall x, \forall y, \big(V_=(x; y) \iff V_<(x; y) \downarrow V_<(y; x)\big)$;
-        \item $\forall x, \forall y, \forall z, \big(V_=(x; y) \land V_=(y; z) \implies V_=(x; z)\big)$;
-        \item $\forall x, \forall y, \forall z, \big(V_\le(x; y) \land V_<(y; z) \implies V_<(x; z)\big)$;
-        \item $\forall x, \forall y, \forall z, \big(V_<(x; y) \land V_\le(y; z) \implies V_<(x; z)\big)$.
-    \end{enumerate}
+   \begin{enumerate}
+      \item $\forall x, V_=(x; x)$;
+      \item $\forall x, \forall y, \big(V_=(x; y) \iff V_=(y; x)\big)$;
+      \item $\forall x, \forall y, \big(V_\le(x; y) \iff V_=(x; y) \lor V_<(x; y)\big)$;
+      \item $\forall x, \forall y, \big(V_<(x; y) \uparrow V_<(y; x)\big)$;
+      \item $\forall x, \forall y, \big(V_=(x; y) \iff V_<(x; y) \downarrow V_<(y; x)\big)$;
+      \item $\forall x, \forall y, \forall z, \big(V_=(x; y) \land V_=(y; z) \implies V_=(x; z)\big)$;
+      \item $\forall x, \forall y, \forall z, \big(V_\le(x; y) \land V_<(y; z) \implies V_<(x; z)\big)$;
+      \item $\forall x, \forall y, \forall z, \big(V_<(x; y) \land V_\le(y; z) \implies V_<(x; z)\big)$.
+   \end{enumerate}
 \end{multicols}
 
 \solution
@@ -303,52 +311,56 @@ Chúng ta có điều phải chứng minh.
 \end{equation*}
 Sử dụng quy tắc đổi biến,
 \begin{equation*}
-    \begin{cases}
-        G \implies \forall y, \forall z, \big(V_=(y; z) \iff V_\le(y; z) \land V_\le(z; y)\big) \\
-        G \implies \forall x, \forall z, \big(V_=(x; z) \iff V_\le(x; z) \land V_\le(z; x)\big) 
-    \end{cases}.
+   \begin{cases}
+      G \implies \forall y, \forall z, \big(V_=(y; z) \iff V_\le(y; z) \land V_\le(z; y)\big) \\
+      G \implies \forall x, \forall z, \big(V_=(x; z) \iff V_\le(x; z) \land V_\le(z; x)\big) 
+   \end{cases}.
 \end{equation*}
-Sử dụng tính chất lượng từ rỗng và tính chất giao hoán của lượng từ để có các kết luận
+Vì $x$ không bị ảnh hưởng bởi $\forall y$ và $\forall z$ trong $\forall y, \forall z, \big(V_=(y; z) \iff V_\le(y; z) \land V_\le(z; y)\big)$ nên sử dụng tqpq,
+\begin{equation*}
+   \forall y, \forall z, \big(V_=(y; z) \iff V_\le(y; z) \land V_\le(z; y)\big) \implies \forall x, \forall y, \forall z, \big(V_=(y; z) \iff V_\le(y; z) \land V_\le(z; y)\big).
+\end{equation*}
+Thực hiện tương tự với các mệnh đề khác và sử dụng tính chất giao hoán của lượng từ để có các kết luận
 \begin{equation}
-    \begin{cases}
-        G \implies \forall x, \forall y, \forall z, \big(V_=(x; y) \iff V_\le(x; y) \land V_\le(y; x)\big) \\
-        G \implies \forall x, \forall y, \forall z, \big(V_=(y; z) \iff V_\le(y; z) \land V_\le(z; y)\big) \\
-        G \implies \forall x, \forall y, \forall z, \big(V_=(x; z) \iff V_\le(x; z) \land V_\le(z; x)\big) 
-    \end{cases}.
-    \label{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:quy_tac_suy_luan:3_1}
+   \begin{cases}
+      G \implies \forall x, \forall y, \forall z, \big(V_=(x; y) \iff V_\le(x; y) \land V_\le(y; x)\big) \\
+      G \implies \forall x, \forall y, \forall z, \big(V_=(y; z) \iff V_\le(y; z) \land V_\le(z; y)\big) \\
+      G \implies \forall x, \forall y, \forall z, \big(V_=(x; z) \iff V_\le(x; z) \land V_\le(z; x)\big) 
+   \end{cases}.
+   \label{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:quy_tac_suy_luan:3_1}
 \end{equation}
 
 Để tiện lợi cho việc viết, chúng ta sẽ phân tích riêng thành phần mệnh đề phụ thuộc. Từ các kết luận vừa đưa ra, với mọi $x$, $y$ và $z$, chúng ta có
 \begin{equation*}
-    V_=(x; y) \land V_=(y; z) \iff \big(V_\le(x; y) \land V_\le(y; x)\big) \land \big(V_\le(y; z) \land V_\le(z; y)\big).
+   V_=(x; y) \land V_=(y; z) \iff \big(V_\le(x; y) \land V_\le(y; x)\big) \land \big(V_\le(y; z) \land V_\le(z; y)\big).
 \end{equation*}
 Sử dụng kết hợp các tính chất giao hoán và kết hợp,
 \begin{equation}
-    V_=(x; y) \land V_=(y; z) \iff \big(V_\le(x; y) \land V_\le(y; z)\big) \land \big(V_\le(z; y) \land V_\le(y; x)\big).
-    \label{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:quy_tac_suy_luan:3_2}
+   V_=(x; y) \land V_=(y; z) \iff \big(V_\le(x; y) \land V_\le(y; z)\big) \land \big(V_\le(z; y) \land V_\le(y; x)\big).
+   \label{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:quy_tac_suy_luan:3_2}
 \end{equation}
 Từ giả thiết, với mọi $x$, $y$, $z$,
 \begin{equation}
     V_\le(x; y) \land V_\le(y; z) \implies V_\le(x; z).
-    \label{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:quy_tac_suy_luan:3_3}
+   \label{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:quy_tac_suy_luan:3_3}
 \end{equation}
 Thế $x$, $y$, $z$ lần lượt thành $z$, $y$, $x$, chúng ta có:
 \begin{equation*}
-    \forall z, \forall y, \forall x, \big(V_\le(z; y) \land V_\le(y; x) \implies V_\le(z; x)\big).
+   \forall z, \forall y, \forall x, \big(V_\le(z; y) \land V_\le(y; x) \implies V_\le(z; x)\big).
 \end{equation*}
 Từ tính chất giao hoán của các lượng từ toàn cục
 \begin{equation}
-    \forall x, \forall y, \forall z, \big(V_\le(z; y) \land V_\le(y; x) \implies V_\le(z; x)\big).
-    \label{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:quy_tac_suy_luan:3_4}
+   \forall x, \forall y, \forall z, \big(V_\le(z; y) \land V_\le(y; x) \implies V_\le(z; x)\big).
+   \label{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:quy_tac_suy_luan:3_4}
 \end{equation}
 
 \eqref{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:quy_tac_suy_luan:3_2}, \eqref{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:quy_tac_suy_luan:3_3} và \eqref{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:quy_tac_suy_luan:3_4} cho được với mọi $x$, $y$ và $z$:
 \begin{equation*}
-    V_=(x; y) \land V_=(y; z) \implies V_\le(x; z) \land V_\le(z; x).
+   V_=(x; y) \land V_=(y; z) \implies V_\le(x; z) \land V_\le(z; x).
 \end{equation*}
 Kết hợp với \eqref{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:quy_tac_suy_luan:3_1} để có
 \begin{equation*}
-    \forall x, \forall y, \forall z, \big(V_=(x; y) \land V_=(y; z) \implies V_=(x; z)\big).
+   \forall x, \forall y, \forall z, \big(V_=(x; y) \land V_=(y; z) \implies V_=(x; z)\big).
 \end{equation*}
 Điều phải chứng minh.
 
@@ -356,36 +368,36 @@ Kết hợp với \eqref{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:quy_tac_su
 \arabic{subexercise}.
 Trước khi chứng minh, chúng ta cần một số kết quả từ $G$:
 \begin{equation*}
-    \begin{cases}
-        \forall x, \forall y, \big(V_<(x; y) \iff \neg V_\le(y; x)\big) \\
-        \forall x, \forall y, \forall z, \big(V_\le(x; y) \land V_\le(y; z) \implies V_\le(x; z)\big)
-    \end{cases}.
+   \begin{cases}
+      \forall x, \forall y, \big(V_<(x; y) \iff \neg V_\le(y; x)\big) \\
+      \forall x, \forall y, \forall z, \big(V_\le(x; y) \land V_\le(y; z) \implies V_\le(x; z)\big)
+   \end{cases}.
 \end{equation*}
 Đổi hạng thức phụ thuộc,
 \begin{align*}
-    \begin{cases}
-        \forall y, \forall z, \big(V_<(y; z) \iff \neg V_\le(z; y)\big) \\
-        \forall z, \forall x, \forall y, \big(V_\le(z; x) \land V_\le(x; y) \implies V_\le(z; y)\big)
-    \end{cases}.
+   \begin{cases}
+      \forall y, \forall z, \big(V_<(y; z) \iff \neg V_\le(z; y)\big) \\
+      \forall z, \forall x, \forall y, \big(V_\le(z; x) \land V_\le(x; y) \implies V_\le(z; y)\big)
+   \end{cases}.
 \end{align*}
-Thêm lượng từ rỗng và sử dụng tính chất giao hoán trên lượng từ,
+Kết hợp với tqpq và tính chất giao hoán trên lượng từ,
 \begin{align*}
-    \begin{cases}
-        \forall x, \forall y, \forall z, \big(V_<(y; z) \iff \neg V_\le(z; y)\big) \\
+   \begin{cases}
+      \forall x, \forall y, \forall z, \big(V_<(y; z) \iff \neg V_\le(z; y)\big) \\
       \forall x, \forall y, \forall z, \big(V_\le(z; x) \land V_\le(x; y) \implies V_\le(z; y)\big)
-    \end{cases}.
+   \end{cases}.
 \end{align*}
 
 Do đó, dưới điều kiện $G$, 
 \begin{align*}
-    \forall x, \forall y, \forall z, \big(V_\le(x; y) \land V_<(y; z) \land V_\le(z; x)\big) &\iff \forall x, \forall y, \forall z, \big((V_\le(x; y) \land V_\le(z; x)) \land V_<(y; z) \big) \\ &\coloringCrimson{\left(\text{tính chất giao hoán và kết hợp của phép hội}\right)};\\
-    \forall x, \forall y, \forall z, \big(V_\le(x; y) \land V_<(y; z) \land V_\le(z; x)\big) &\implies \forall x, \forall y, \forall z, \big(V_\le(z; y) \land \neg V_\le(z; y)\big); \\
-    \forall x, \forall y, \forall z, \big(V_\le(x; y) \land V_<(y; z) \land V_\le(z; x)\big) &\implies \forall x, \forall y, \forall z, \mathbf{M} \\&\coloringCrimson{\left(\text{tính chất không mâu thuẫn}\right)}.
+   \forall x, \forall y, \forall z, \big(V_\le(x; y) \land V_<(y; z) \land V_\le(z; x)\big) &\iff \forall x, \forall y, \forall z, \big((V_\le(x; y) \land V_\le(z; x)) \land V_<(y; z) \big) \\ &\coloringCrimson{\left(\text{tính chất giao hoán và kết hợp của phép hội}\right)};\\
+   \forall x, \forall y, \forall z, \big(V_\le(x; y) \land V_<(y; z) \land V_\le(z; x)\big) &\implies \forall x, \forall y, \forall z, \big(V_\le(z; y) \land \neg V_\le(z; y)\big); \\
+   \forall x, \forall y, \forall z, \big(V_\le(x; y) \land V_<(y; z) \land V_\le(z; x)\big) &\implies \forall x, \forall y, \forall z, \mathbf{M} \\&\coloringCrimson{\left(\text{tính chất không mâu thuẫn}\right)}.
 \end{align*}
 
 Qua đó, chúng ta có mâu thuẫn $V_\le(x; y) \land V_<(y; z) \land V_\le(z; x)$ với mọi $x$, $y$ và $z$. Theo chứng minh bằng phản chứng, chúng ta phải có $\neg V_\le(z; x)$ hay $V_<(x; z)$ nếu có giả thiết $V_\le(x; y) \land V_<(y; z)$. Nói cách khác, từ phản chứng,
 $$
-    \forall x, \forall y, \forall z, \big(V_\le(x; y) \land V_<(y; z) \implies V_<(x; z)\big).
+   \forall x, \forall y, \forall z, \big(V_\le(x; y) \land V_<(y; z) \implies V_<(x; z)\big).
 $$
 Chúng ta có điều phải chứng minh.
 
@@ -399,79 +411,30 @@ $$
 $$
 Qua đó, có được liên tiếp các lập luận như sau:
 \begin{align*}
-    \forall x, \forall y, \forall z, \big(V_<(x; y) \land V_\le(y; z) \land \neg V_<(x; z)\big) &\iff \forall x, \forall y, \forall z, \big(\neg V_\le(y; x) \land V_\le(y; z) \land V_\le(z; x)\big) \\
-    \forall x, \forall y, \forall z, \big(V_<(x; y) \land V_\le(y; z) \land \neg V_<(x; z)\big) &\iff \forall x, \forall y, \forall z, \big(\neg V_\le(y; x) \land V_\le(y; x)\big) \\
-    \forall x, \forall y, \forall z, \big(V_<(x; y) \land V_\le(y; z) \land \neg V_<(x; z)\big) &\iff \forall x, \forall y, \forall z, \mathbf{M}.
+   \forall x, \forall y, \forall z, \big(V_<(x; y) \land V_\le(y; z) \land \neg V_<(x; z)\big) &\iff \forall x, \forall y, \forall z, \big(\neg V_\le(y; x) \land V_\le(y; z) \land V_\le(z; x)\big) \\
+   \forall x, \forall y, \forall z, \big(V_<(x; y) \land V_\le(y; z) \land \neg V_<(x; z)\big) &\iff \forall x, \forall y, \forall z, \big(\neg V_\le(y; x) \land V_\le(y; x)\big) \\
+   \forall x, \forall y, \forall z, \big(V_<(x; y) \land V_\le(y; z) \land \neg V_<(x; z)\big) &\iff \forall x, \forall y, \forall z, \mathbf{M}.
 \end{align*}
 Theo chứng minh bằng phản chứng, dễ thấy có điều phải chứng minh.
 
-\subsection{Cụ thể hóa lượng từ tồn tại và quy tắc tồn tại hóa}
+\subsection{Quy tắc cụ thể hóa và tồn tại hóa lượng từ tồn tại}
 
-Bất cứ khi nào chúng ta nói rằng ``tồn tại một đối tượng $x$ thỏa mãn tính chất $A(x)$'', trong thực hành, chúng ta thường gọi ra một đại diện $c$ để tiếp tục lập luận. Tuy nhiên, nếu chỉ đơn thuần coi $c$ là một đối tượng độc lập xuất hiện tự do ngoài phạm vi của lượng từ, hệ thống lập luận sẽ dễ mắc phải ngụy biện. Để bảo đảm tính chặt chẽ và ngăn ngừa hiện tượng ``rò rỉ'' thành phần biểu diễn tự do, hành động gọi phần tử này được chuẩn hóa thông qua bộ \defText{quy tắc cụ thể hóa lượng từ tồn tại} (hay còn gọi là \defText{quy tắc khử lượng từ tồn tại}) và \defText{quy tắc tồn tại hóa} (còn gọi là \defText{quy tắc đưa vào lượng từ tồn tại}):
+Khi xây dựng quy tắc cụ thể hóa lượng từ tồn tại, một ý tưởng tự nhiên là thực hiện thao tác tương tự như đối với lượng từ phổ quát: từ mệnh đề $\exists x, A(x)$, chúng ta đơn thuần loại bỏ lượng từ để nhận được $A(x)$. Tuy nhiên, nếu quy tắc này được áp dụng một cách tự do không giới hạn, nó sẽ nảy sinh lỗi ngụy biện trong suy luận. Dễ thấy, nguyên nhân cốt lõi là do thành phần biểu diễn $x$ từ ràng buộc đã trở thành một thành phẩn biểu diễn tự do. Để giải quyết vấn đề này, chúng ta có thể sử dụng phương pháp thường thấy trong thực hành toán học. Chúng ta gọi ra một đại diện $c$ sao cho $A(c)$, rồi tiếp tục lập luận trên $c$. Tuy nhiên, chúng ta vẫn phải đặt ra một số giới hạn để có thể làm như vậy. Sau khi đặt ra giới hạn đó, chúng ta có \defText{quy tắc cụ thể hóa lượng từ tồn tại} (hay \defText{quy tắc khử lượng từ tồn tại}, viết tắt là \defText{quy tắc cụ thể tồn tại} hoặc \defText{cttt}):
+
 \begin{quotation}
-   Giả sử chúng ta đã có mệnh đề $\exists x, A(x)$ đúng trong giới hạn của tầm ảnh hưởng của một(số) lượng từ nhất định, chúng ta sẽ xem xét lập luận cục bộ bằng cách đưa ra một đối tượng tạm thời $c$ nằm trong tầm ảnh hưởng và giả định $A(c)$ đúng. Nếu trong phạm vi lập luận này, chúng ta suy ra được kết luận $C$ và \emph{bản thân mệnh đề $C$ không phụ thuộc vào $c$}, thì chúng ta có quyền khẳng định mệnh đề $C$ đúng từ $\exists x, A(x)$.
+   Nếu công thức $S$ thu được từ công thức $R$ bằng cách thay thế một thành phần biểu diễn $c$ vào mọi vị trí tự do của thành phần biểu diễn $v$ trong $R$, thì từ $\exists v, R$ có thể suy ra $S$. Tuy nhiên, điều kiện bắt buộc là thành phần biểu diễn $c$ phải \emphcolor{chưa từng được sử dụng} ở bất kì đâu trong quá trình lập luận trước đó, và ngay khi được đưa vào, thành phần biểu diễn $c$ này bị \defText{đánh dấu phụ thuộc}. Cụ thể, $c$ không chỉ bị đánh dấu, mà nhãn đánh dấu này cũng phải ghi nhớ \emphcolor{toàn bộ các thành phần biểu diễn tự do} đang xuất hiện trong $R$. (Trong trường hợp không có thành phần biểu diễn tự do, $c$ được coi là chỉ bị đánh dấu.)
 \end{quotation}
+Việc đánh dấu $c$ đóng vai trò như một lời nhắc nhở rằng $c$ chỉ là một cái tên tạm thời đại diện cho một phần tử nào đó mà chúng ta biết là tồn tại, chứ không phải là một hằng cá thể tự do thực sự.
 
-Với cách tiếp cận này, đối tượng $c$ chỉ có tác dụng nội trong chứng minh phụ và biến mất khi đạt tới kết luận $C$, từ đó triệt tiêu nguy cơ $c$ trở thành một biến tự do ngoài ý muốn do không có lượng từ bao kèm.
-
-Ngược lại, nếu chúng ta tìm thấy một $c$ cụ thể thỏa mãn tính chất $A(c)$, chúng ta có quyền trừu tượng hóa để khẳng định sự tồn tại của một đối tượng như vậy. Đây chính là :
-\begin{equation*}
-   \defMath{A(c) \implies \exists x, A(x).}
-\end{equation*}
-Dưới dạng lời văn thông thường, nếu chúng ta đã xác định được một đối tượng cụ thể có tính chất đang xét, thì chúng ta có thể kết luận rằng tồn tại một đối tượng thỏa mãn tính chất đó.
-
-\subsection{Tính chất lượng từ rỗng}
-
-\ 
-
-Có bớt đi thì cũng sẽ phải có thêm vào. Với $A$ là một mệnh đề không phụ thuộc vào hạng thức $x$,
-\begin{equation*}
-   \begin{cases}
-      \defMath{A \iff \forall x, A} \\
-      \defMath{A \iff \exists x, A}
-   \end{cases}.
-\end{equation*}
-Có thể thấy được tại sao tính chất này có tên là \defText{tính chất lượng từ rỗng}, bởi vì nếu $A$ không có hạng thức $x$, các lượng từ ảnh hưởng đến $x$ sẽ không có giá trị trên $A$.
-
-\subsection{Phủ định trên mệnh đề có lượng từ}
-
-Xét một ví dụ sau:
-\begin{center}
-   ``\emph{Tất cả} sinh viên trường đại học U-ni-véc-xi-ta-tô đều cần phải học những môn trong tổ hợp môn giáo dục quốc phòng và an ninh.''
-\end{center}
-Đây là một mệnh đề có tính ``mạnh'', do nó có tính ảnh hưởng với mọi sinh viên trong trường. Thế, giả sử có một sinh viên không có cơ thể lành lặn lắm (có thể do tai nạn), chẳng có trường nào lại cho người khuyết tật đi nghĩa vụ cả. Khi này, mệnh đề này sẽ sai, và phủ định của mệnh đề này:
-\begin{center}
-    ``\emph{Tồn tại} một sinh viên trường đại học U-ni-véc-xi-ta-tô \emph{không} cần phải học những môn trong tổ hợp môn giáo dục quốc phòng và an ninh.''
-\end{center}
-là đúng.
-
-Tương tự với các mệnh đề khác trong giải tích vị từ, chúng ta có một quy tắc chung rằng, với mọi vị từ $A$,
-\begin{equation*}
-    \defMath{\overline{\forall x, A(x)} \iff \exists x, \neg A(x)}.
-\end{equation*}
-
-Do điều này đúng với mọi $A$ nên nó cũng phải đúng với $\neg A$:
-\begin{equation*}
-    \overline{\forall x, \neg A(x)} \iff \exists x, \neg (\neg A(x)).
-\end{equation*}
-Lấy phủ định cả hai vế,
-\begin{align*}
-    \overline{\overline{\forall x, \neg A(x)}} &\iff \overline{\exists x, \neg (\neg A(x))}. \\
-    \forall x, \neg A(x) &\iff \overline{\exists x, A(x)} \equationexplanation{phủ định kép}.
-\end{align*}
-Như vậy, chúng ta cũng có một phép phủ định tương đương với vị từ tồn tại
-\begin{equation*}
-    \defMath{\overline{\exists x, A(x)}\iff \forall x, \neg A(x)}.
-\end{equation*}
-
-\subsection{Nguyên lí không thể phân biệt của các đối tượng đồng nhất}
-
-\ 
-
-Không biết bạn đọc còn nhớ đến phép đồng nhất không. Hãy nhắc lại về ví dụ, ``Hồ Chí Minh'' là đồng nhất với ``chủ tịch nước đầu tiên của Việt Nam''. Do đó, mọi câu có cụm ``Hồ Chí Minh'' đều có thể thay với cụm từ tương đương ``chủ tịch nước đầu tiên của Việt Nam'' mà ngữ nghĩa không thay đổi. Tổng quát và chuẩn tắc hóa, chúng ta cần đưa ra quy tắc cho phép đồng nhất giống như quy tắc thay thế từ giải tích mệnh đề. Cụ thể, chúng ta có \defText{nguyên lí không thể phân biệt của các đối tượng đồng nhất} mà thường được gọi tắt là \defText{quy tắc thay thế bằng nhau}:
-\begin{equation*}
-   \defMath{\forall x, \forall y, \bigl(x = y \iff \forall P, (P(x) \iff P(y))\bigr)}.
-\end{equation*}
+Ngược lại, khi chúng ta đã có một tính chất đúng với một đối tượng cụ thể, chúng ta có quyền khẳng định sự tồn tại của thành phần mang tính chất đó. Đây là \defText{quy tắc tổng quát hóa lượng từ tồn tại} (hay \defText{quy tắc thêm lượng từ tồn tại}, viết tắt là \defText{quy tắc tổng quát tồn tại} hay \defText{tqtt}):
+\begin{quotation}
+   Nếu công thức $S$ thu được từ công thức $R$ bằng cách thay thế một biến $v$ vào các vị trí của một thành phần biểu diễn $c$ trong $R$, và 
+   \begin{itemize}
+      \item không tồn tại thành phần biểu diễn nào đang bị đánh dấu phụ thuộc vào $v$,
+      \item không có bất kì vị trí xuất hiện nào của $c$ trong $R$ nằm lọt vào phạm vi tác động của một lượng từ đang sử dụng thành phần biểu diễn $v$.
+      \item thành phần biểu diễn $v$ không được bị đánh dấu, nếu như $v$ xuất hiện tự do bên trong công thức $R$,
+   \end{itemize} thì $\exists v, S$ có thể được suy ra từ $R$. 
+\end{quotation}
 
 \exercise Cho hai vị từ $A$ và $B$. Chứng minh rằng, 
 \begin{enumerate}
@@ -713,6 +676,44 @@ Từ một giả thiết đúng làm nảy sinh ra một kết luận sai sẽ k
 \stepSubexercise Từ mệnh đề $\forall y, \exists x, A(x; y)$, theo thứ tự tác động của các lượng từ, thì ứng với mỗi một giá trị $y$, chúng ta mới bắt đầu được phép cụ thể hóa $x$ tương ứng. Vì lẽ đó, thực chất hạng thức dùng để thay thế $x$ chắc chắn bị \emph{phụ thuộc} vào $y$ (tức là $c$ đóng vai trò như một hàm $c$ với hạng thức $y$, thay đổi linh hoạt mỗi khi $y$ thay đổi).
 
 Người viết giả chứng minh này đã bỏ qua tính tuần tự, ngang nhiên gọi luôn một hằng số $c$ không đổi duy nhất. Hành động này vô tình làm mất tính liên kết giữa $c$ và $y$, mang lượng từ tồn tại từ bên trong cưỡng ép vượt qua lượng từ phổ quát ở ngoài để đạt được điều phải chứng minh. Đó là một ngụy biện lô-gích hết sức nghiêm trọng.
+
+\subsection{Phủ định trên công thức có lượng từ}
+
+Xét một ví dụ sau:
+\begin{center}
+   ``\emph{Tất cả} sinh viên trường đại học U-ni-véc-xi-ta-tô đều cần phải học những môn trong tổ hợp môn giáo dục quốc phòng và an ninh.''
+\end{center}
+Đây là một mệnh đề có tính ``mạnh'', do nó có tính ảnh hưởng với mọi sinh viên trong trường. Thế, giả sử có một sinh viên không có cơ thể lành lặn lắm (có thể do tai nạn), chẳng có trường nào lại cho người khuyết tật đi nghĩa vụ cả. Khi này, mệnh đề này sẽ sai, và phủ định của mệnh đề này:
+\begin{center}
+   ``\emph{Tồn tại} một sinh viên trường đại học U-ni-véc-xi-ta-tô \emph{không} cần phải học những môn trong tổ hợp môn giáo dục quốc phòng và an ninh.''
+\end{center}
+là đúng. Khái quát hóa, chúng ta có một quy tắc chung rằng, với mọi vị từ $A$,
+\begin{equation*}
+    \defMath{\overline{\forall x, A(x)} \iff \exists x, \neg A(x)}.
+\end{equation*}
+
+Do điều này đúng với mọi $A$ nên nó cũng phải đúng với $\neg A$:
+\begin{equation*}
+    \overline{\forall x, \neg A(x)} \iff \exists x, \neg (\neg A(x)).
+\end{equation*}
+Lấy phủ định cả hai vế,
+\begin{align*}
+    \overline{\overline{\forall x, \neg A(x)}} &\iff \overline{\exists x, \neg (\neg A(x))}. \\
+    \forall x, \neg A(x) &\iff \overline{\exists x, A(x)} \equationexplanation{phủ định kép}.
+\end{align*}
+Như vậy, chúng ta cũng có một phép phủ định tương đương với vị từ tồn tại
+\begin{equation*}
+    \defMath{\overline{\exists x, A(x)}\iff \forall x, \neg A(x)}.
+\end{equation*}
+
+\subsection{Nguyên lí không thể phân biệt của các đối tượng đồng nhất}
+
+\ 
+
+Không biết bạn đọc còn nhớ đến phép đồng nhất không. Hãy nhắc lại về ví dụ, ``Hồ Chí Minh'' là đồng nhất với ``chủ tịch nước đầu tiên của Việt Nam''. Do đó, mọi câu có cụm ``Hồ Chí Minh'' đều có thể thay với cụm từ tương đương ``chủ tịch nước đầu tiên của Việt Nam'' mà ngữ nghĩa không thay đổi. Tổng quát và chuẩn tắc hóa, chúng ta cần đưa ra quy tắc cho phép đồng nhất giống như quy tắc thay thế từ giải tích mệnh đề. Cụ thể, chúng ta có \defText{nguyên lí không thể phân biệt của các đối tượng đồng nhất} mà thường được gọi tắt là \defText{quy tắc thay thế bằng nhau}:
+\begin{equation*}
+   \defMath{\forall x, \forall y, \bigl(x = y \iff \forall P, (P(x) \iff P(y))\bigr)}.
+\end{equation*}
 
 \exercise Cho vị từ $V$. Chứng minh rằng 
 \begin{equation*}
