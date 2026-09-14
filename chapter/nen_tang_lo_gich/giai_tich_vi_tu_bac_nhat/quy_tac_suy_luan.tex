@@ -448,9 +448,19 @@ Ngược lại, khi chúng ta đã có một tính chất đúng với một đ�
 
 \solution
 
-\resetSubexercise Do cụ thể hóa lượng từ tồn tại, từ $\exists x, \exists y, A(x; y)$ chúng ta có thể gọi hạng thức $m$ thay thế cho $x$ sao cho $\exists y, A(m; y)$. Và cũng do quy tắc đó, có thể gọi $n$ thay cho $y$ để $A(m; n)$. Do tồn tại $m$ thỏa mãn $A(x; n)$ nên theo quy tắc tồn tại hóa, $\exists x, A(x; n)$. Và do $n$ làm $\exists x, A(x; y)$ đúng nên dẫn đến $\exists y, \exists x, A(x; y)$. Do vậy,
+\resetSubexercise Do cụ thể hóa lượng từ tồn tại cho lượng từ $\exists x$, từ $\exists x, \exists y, A(x; y)$ chúng ta có thể gọi hạng thức $m$ thay thế cho $x$ sao cho $\exists y, A(m; y)$. Vì công thức $\exists y, A(x; y)$ không chứa thành phần biểu diễn tự do nên $m$ chỉ bị đánh dấu mà không bị đánh dấu phụ thuộc. Cũng do cttt, có thể gọi $n$ thay cho $y$ để $A(m; n)$, nhưng do có $m$ tự do nên $n$ bị đánh dấu phụ thuộc vào $m$. 
+
+Tiếp theo, chúng ta có mong muốn áp dụng tqtt để thay $m$ bởi $x$. Xét các điều kiện để thực hiện tqtt:
+\begin{itemize}
+   \item không có thành phần biểu diễn phụ thuộc vào $x$ ($n$ chỉ bị đánh dấu phụ thuộc vào $m$);
+   \item sau khi thay $m$ bằng $x$, $x$ là tự do (hiển nhiên có không có lượng từ nào);
+   \item $x$ không xuất hiện trong $A(m; n)$ nên không xét trạng thái đánh dấu.
+\end{itemize}
+Các điều kiện được thỏa mãn, và chúng ta nhận được $\exists n, A(x; n)$.
+
+Do tồn tại $m$ thỏa mãn $A(x; n)$ nên theo quy tắc tồn tại hóa, $\exists x, A(x; n)$. Và do $n$ làm $\exists x, A(x; y)$ đúng nên dẫn đến $\exists y, \exists x, A(x; y)$. Do vậy,
 \begin{equation*}
-    \exists x, \exists y, A(x; y) \implies \exists y, \exists x, A(x; y).
+   \exists x, \exists y, A(x; y) \implies \exists y, \exists x, A(x; y).
 \end{equation*}
 
 Tương tự, chúng ta cũng có thể có được $\exists x, \exists y, A(x; y) \impliedby \exists y, \exists x, A(x; y)$. Do định nghĩa của phép tương đương, $\exists x, \exists y, A(x; y) \iff \exists y, \exists x, A(x; y)$. Điều phải chứng minh.
