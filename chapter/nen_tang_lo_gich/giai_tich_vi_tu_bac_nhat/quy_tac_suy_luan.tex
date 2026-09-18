@@ -77,7 +77,8 @@ Từ đây, chúng ta có \defText{quy tắc tổng quát hóa lượng từ ph�
 \exercise Cho vị từ $A$, $B$ và $C$. Chứng minh 
 \begin{enumerate}
    \item $\forall x, \forall y, A(x; y) \iff \forall y, \forall x, A(x; y)$ (tính chất giao hoán của lượng từ phổ quát);
-   \item $\forall x, (B(x) \land C(x)) \iff \forall x, B(x) \land \forall x, C(x)$ (tính chất phân phối của lượng từ phổ quát với phép hội).
+   \item $\forall x, (B(x) \land C(x)) \iff \forall x, B(x) \land \forall x, C(x)$ (tính chất phân phối của lượng từ phổ quát với phép hội);
+   \item $\forall x, B(x) \land \forall x, (B(x) \implies C(x)) \implies \forall x, C(x)$.
 \end{enumerate}
 
 \solution
@@ -123,6 +124,15 @@ Do $e$ không được đánh dấu, áp dụng quy tắc tqpq, chúng ta có đ
 Vậy, $\forall x, B(x) \land \forall x, C(x) \implies \forall x, (C(x) \land D(x))$.
 
 Kết hợp chứng minh hai chiều, hiển nhiên có điều phải chứng minh.
+
+\stepSubexercise Áp dụng tính chất phân phối của lượng từ phổ quát đối với phép hội, với giả thiết rằng $\forall x, B(x) \land \forall x, (B(x) \implies C(x))$, chúng ta có 
+\begin{equation*}
+   \forall x, (B(x) \land (B(x) \implies C(x))).
+\end{equation*}
+Sử dụng ctpq, thay $x$ và $y$ tự do thì sẽ được $$
+   B(y) \land (B(y) \implies C(y)).
+$$
+Từ giải tích mệnh đề, khẳng định vừa rồi chứng minh $C(y)$. Vì $y$ tự do, do quy tắc tqpq, kết luận được $\forall x, C(x)$. Điều phải chứng minh.
 
 \exercise Dấu $\le$ là một dấu có nhiều ứng dụng quan trọng trong toán học, nhưng khái niệm so sánh xuất hiện trong gần như toàn bộ mọi lĩnh vực trong đời sống. Nếu như Ê-mô-ri-ô viết
 \begin{center}
@@ -436,6 +446,35 @@ Ngược lại, khi chúng ta đã có một tính chất đúng với một đ�
    \end{itemize} thì $\exists v, S$ có thể được suy ra từ $R$. 
 \end{quotation}
 
+\subsection{Phủ định trên công thức có lượng từ}
+
+Xét một ví dụ sau:
+\begin{center}
+   ``\emph{Tất cả} sinh viên trường đại học U-ni-véc-xi-ta-tô đều cần phải học những môn trong tổ hợp môn giáo dục quốc phòng và an ninh.''
+\end{center}
+Đây là một mệnh đề có tính ``mạnh'', do nó có tính ảnh hưởng với mọi sinh viên trong trường. Thế, giả sử có một sinh viên không có cơ thể lành lặn lắm (có thể do tai nạn), chẳng có trường nào lại cho người khuyết tật đi nghĩa vụ cả. Khi này, mệnh đề này sẽ sai, và phủ định của mệnh đề này:
+\begin{center}
+   ``\emph{Tồn tại} một sinh viên trường đại học U-ni-véc-xi-ta-tô \emph{không} cần phải học những môn trong tổ hợp môn giáo dục quốc phòng và an ninh.''
+\end{center}
+là đúng. Khái quát hóa, chúng ta có một quy tắc chung rằng, với mọi vị từ $A$,
+\begin{equation*}
+    \defMath{\overline{\forall x, A(x)} \iff \exists x, \neg A(x)}.
+\end{equation*}
+
+Do điều này đúng với mọi $A$ nên nó cũng phải đúng với $\neg A$:
+\begin{equation*}
+    \overline{\forall x, \neg A(x)} \iff \exists x, \neg (\neg A(x)).
+\end{equation*}
+Lấy phủ định cả hai vế,
+\begin{align*}
+    \overline{\overline{\forall x, \neg A(x)}} &\iff \overline{\exists x, \neg (\neg A(x))}. \\
+    \forall x, \neg A(x) &\iff \overline{\exists x, A(x)} \equationexplanation{phủ định kép}.
+\end{align*}
+Như vậy, chúng ta cũng có một phép phủ định tương đương với vị từ tồn tại
+\begin{equation*}
+    \defMath{\overline{\exists x, A(x)}\iff \forall x, \neg A(x)}.
+\end{equation*}
+
 \exercise Cho hai vị từ $A$ và $B$. Chứng minh rằng, 
 \begin{enumerate}
    \item $\exists x, \exists y, A(x; y) \iff \exists y, \exists x, A(x; y)$ (tính chất giao hoán của lượng từ tồn tại);
@@ -443,7 +482,8 @@ Ngược lại, khi chúng ta đã có một tính chất đúng với một đ�
    \item $\forall x, A(x) \lor \forall y, B(y) \iff \forall x, \forall y, \left(A(x) \lor B(y)\right)$ (quy tắc chuyển đổi lượng từ, phần 1);
    \item $\exists x, A(x) \land \exists y, B(y) \iff \exists x, \exists y, (A(x) \land B(y))$ (quy tắc chuyển đổi lượng từ, phần 2);
    \item $\forall x, A(x) \land \exists y, B(y) \iff \forall x, \exists y, (A(x) \land B(y))$ (quy tắc chuyển đổi lượng từ, phần 3);
-   \item $\exists x, A(x) \lor \forall y, B(y) \iff \exists x, \forall y, (A(x) \lor B(y))$ (quy tắc chuyển đổi lượng từ, phần 4).
+   \item $\exists x, A(x) \lor \forall y, B(y) \iff \exists x, \forall y, (A(x) \lor B(y))$ (quy tắc chuyển đổi lượng từ, phần 4);
+   \item $\exists x, A(x) \land \forall x, (A(x) \implies B(x)) \implies \exists x, B(x)$.
 \end{enumerate}
 
 \solution
@@ -548,45 +588,29 @@ Thấy được rằng $A(c) \land B(d_c)$ kéo theo đồng thời $\forall x, 
 
 Vậy, kết hợp hai chiều, điều phải chứng minh.
 
-\stepSubexercise Xét hai trường hợp. Nếu \coloringDodgerblue{$\exists x, A(x)$}. Sử dụng cttt, thay $c$ vào $x$ để được $A(c)$. Theo tính chất cộng, $A(c) \implies A(c) \lor B(y)$ với $y$ là hạng thức tự do. Do đó, theo tqpq, suy ra được $\forall y, (A(c) \lor B(y))$ theo tqpq. Vì $c$ không có phụ thuộc bất cứ thành phần biểu diễn nào, $x$ tự do nếu thay $c$ bởi $x$, và $x$ không được sử dụng trong $\forall y, (A(c) \lor B(y))$, nên chúng ta suy ra được $\exists x, \forall y, (A(c) \lor B(y))$. Tiểu kết, 
+\stepSubexercise Xét hai trường hợp. Nếu \coloringCrimson{$\exists x, A(x)$}. Sử dụng cttt, thay $c$ vào $x$ để được $A(c)$. Theo tính chất cộng, $A(c) \implies A(c) \lor B(y)$ với $y$ là hạng thức tự do. Do đó, theo tqpq, suy ra được $\forall y, (A(c) \lor B(y))$ theo tqpq. Vì $c$ không có phụ thuộc bất cứ thành phần biểu diễn nào, $x$ tự do nếu thay $c$ bởi $x$, và $x$ không được sử dụng trong $\forall y, (A(c) \lor B(y))$, nên chúng ta suy ra được $\exists x, \forall y, (A(c) \lor B(y))$. Tiểu kết, 
 \begin{equation*}
    \exists x, A(x) \implies \exists x, \forall y, (A(c) \lor B(y)).
 \end{equation*}
 
-Còn nếu trong trường hợp \coloringCrimson{$\forall y, B(y)$}. Sử dụng ctpq, gọi $d$ sao cho $B(d)$. Vì tính chất cộng, suy ra $A(t) \lor B(d)$. Tương tự như trước, dễ thấy có thể sử dụng tqtt thay $t$ bằng $x$. Làm điều đó, chúng ta nhận được $\exists x, \forall y, B(y)$.
-\begin{align*}
-   \forall y, B(y) &\implies \exists x, \forall y, B(y) \equationexplanation{tqtt}; \\
-   \forall y, B(y) &\implies \exists x, \forall y, (A(x) \lor B(y)) \equationexplanation{tính chất cộng}.
-\end{align*}
+Còn nếu trong trường hợp \coloringDodgerblue{$\forall y, B(y)$}. Sử dụng ctpq, gọi $d$ sao cho $B(d)$. Vì tính chất cộng, suy ra $A(t) \lor B(d)$. Sử dụng tqpq, có $d$ tự do nên suy ra được $\forall y, (A(t) \lor B(y))$. Ngoài ra, tương tự như phần trước, dễ thấy có thể sử dụng tqtt thay $t$ bằng $x$. Làm điều đó, chúng ta nhận được $\exists x, \forall y, (A(x) \lor B(y))$.
 
-Kết hợp hai trường hợp, chúng ta có:
+Kết quả của hai trường hợp dễ dàng cho chúng ta:
 \begin{equation*}
-    \begin{cases}
-        \exists x, A(x) \implies \exists x, \forall y, (A(x) \lor B(y)) \\
-        \forall y, B(y) \implies \exists x, \forall y, (A(x) \lor B(y))
-    \end{cases}.
-\end{equation*}
-Điều này hiển nhiên cho chúng ta:
-\begin{equation*}
-    \exists x, A(x) \lor \forall y, B(y) \implies \exists x, \forall y, (A(x) \lor B(y)).
+   \exists x, A(x) \lor \forall y, B(y) \implies \exists x, \forall y, (A(x) \lor B(y)).
 \end{equation*}
 
-Để chứng minh cho chiều còn lại, giả sử $\exists x, \forall y, (A(x) \lor B(y))$. Bằng chứng minh phản chứng, giả thiết thêm rằng $\overline{\exists x, A(x) \lor \forall y, B(y)}$, dẫn đến:
-\begin{align*}
-    \overline{\exists x, A(x) \lor \forall y, B(y)} &\iff \overline{\exists x, A(x)} \land \overline{\forall y, B(y)} \equationexplanation{định luật Đờ Moóc-gơn}; \\
-    \overline{\exists x, A(x) \lor \forall y, B(y)} &\iff \forall x, \neg A(x) \land \exists y, \neg B(y) \equationexplanation{phủ định của lượng từ}.
-\end{align*}
-
-Từ giả thiết gốc $\exists x, \forall y, (A(x) \lor B(y))$, cụ thể hóa lượng từ tồn tại, có được một hạng thức $c$ sao cho $\forall y, (A(c) \lor B(y))$ là đúng. 
-Do mệnh đề $\forall x, \neg A(x)$ đúng với mọi hạng thức, nó hiển nhiên đúng với $c$, tức $\neg A(c)$ đúng. 
-Với $\forall y, (A(c) \lor B(y))$, mà $A(c)$ lại sai, nên buộc $B(y)$ phải luôn đúng. Từ lập luận này có được khẳng định $\forall y, B(y)$.
-
-Tuy nhiên, kết quả này mâu thuẫn với mệnh đề $\exists y, \neg B(y)$ (vốn là dạng tương đương của $\overline{\forall y, B(y)}$). Qua đó, phủ quyết sự sai lệch từ giả thiết phản chứng, khẳng định:
-\begin{equation*}
-    \exists x, \forall y, (A(x) \lor B(y)) \implies \exists x, A(x) \lor \forall y, B(y).
-\end{equation*}
+Để chứng minh cho chiều còn lại, giả sử $\exists x, \forall y, (A(x) \lor B(y))$ đúng. Khi đó, sử dụng cttt, gọi $d$ sao cho $\forall y, (A(d) \lor B(y))$. Theo ctpq, lấy $e$ là hạng thức tự do sao cho $A(d) \lor B(e)$. Xét hai trường hợp: 
+\begin{itemize}
+   \item $A(d)$. Dễ thấy các điều kiển của tqtt thỏa mãn để có $\exists x, A(x)$. Theo quy tắc cộng, $\exists x, A(x) \lor \forall y, B(y)$.
+   \item $B(e)$. Do $e$ tự do, $\forall y, B(y)$ có thể được nhận thấy do tqpq. Chúng ta cũng có theo cách tương tự rằng $\exists x, A(x) \lor \forall y, B(y)$.
+\end{itemize}
+Và do vậy, kết luận được $$
+   \exists x, \forall y, (A(x) \lor B(y)) \implies \exists x, A(x) \lor \forall y, B(y).
+$$
 
 Hai chiều của mệnh đề đều đã được khẳng định. Vậy, chúng ta hoàn toàn có điều phải chứng minh.
+
 
 \exercise 
 \begin{enumerate}
@@ -679,35 +703,6 @@ Từ một giả thiết đúng làm nảy sinh ra một kết luận sai sẽ k
 \stepSubexercise Từ mệnh đề $\forall y, \exists x, A(x; y)$, theo thứ tự tác động của các lượng từ, thì ứng với mỗi một giá trị $y$, chúng ta mới bắt đầu được phép cụ thể hóa $x$ tương ứng. Vì lẽ đó, thực chất hạng thức dùng để thay thế $x$ chắc chắn bị \emph{phụ thuộc} vào $y$ (tức là $c$ đóng vai trò như một hàm $c$ với hạng thức $y$, thay đổi linh hoạt mỗi khi $y$ thay đổi).
 
 Người viết giả chứng minh này đã bỏ qua tính tuần tự, ngang nhiên gọi luôn một hằng số $c$ không đổi duy nhất. Hành động này vô tình làm mất tính liên kết giữa $c$ và $y$, mang lượng từ tồn tại từ bên trong cưỡng ép vượt qua lượng từ phổ quát ở ngoài để đạt được điều phải chứng minh. Đó là một ngụy biện lô-gích hết sức nghiêm trọng.
-
-\subsection{Phủ định trên công thức có lượng từ}
-
-Xét một ví dụ sau:
-\begin{center}
-   ``\emph{Tất cả} sinh viên trường đại học U-ni-véc-xi-ta-tô đều cần phải học những môn trong tổ hợp môn giáo dục quốc phòng và an ninh.''
-\end{center}
-Đây là một mệnh đề có tính ``mạnh'', do nó có tính ảnh hưởng với mọi sinh viên trong trường. Thế, giả sử có một sinh viên không có cơ thể lành lặn lắm (có thể do tai nạn), chẳng có trường nào lại cho người khuyết tật đi nghĩa vụ cả. Khi này, mệnh đề này sẽ sai, và phủ định của mệnh đề này:
-\begin{center}
-   ``\emph{Tồn tại} một sinh viên trường đại học U-ni-véc-xi-ta-tô \emph{không} cần phải học những môn trong tổ hợp môn giáo dục quốc phòng và an ninh.''
-\end{center}
-là đúng. Khái quát hóa, chúng ta có một quy tắc chung rằng, với mọi vị từ $A$,
-\begin{equation*}
-    \defMath{\overline{\forall x, A(x)} \iff \exists x, \neg A(x)}.
-\end{equation*}
-
-Do điều này đúng với mọi $A$ nên nó cũng phải đúng với $\neg A$:
-\begin{equation*}
-    \overline{\forall x, \neg A(x)} \iff \exists x, \neg (\neg A(x)).
-\end{equation*}
-Lấy phủ định cả hai vế,
-\begin{align*}
-    \overline{\overline{\forall x, \neg A(x)}} &\iff \overline{\exists x, \neg (\neg A(x))}. \\
-    \forall x, \neg A(x) &\iff \overline{\exists x, A(x)} \equationexplanation{phủ định kép}.
-\end{align*}
-Như vậy, chúng ta cũng có một phép phủ định tương đương với vị từ tồn tại
-\begin{equation*}
-    \defMath{\overline{\exists x, A(x)}\iff \forall x, \neg A(x)}.
-\end{equation*}
 
 \subsection{Nguyên lí không thể phân biệt của các đối tượng đồng nhất}
 
