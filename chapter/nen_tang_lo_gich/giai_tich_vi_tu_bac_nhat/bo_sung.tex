@@ -1,24 +1,24 @@
-\section{Một số lời bình và bổ sung}
+\section{Cách viết tắt và mở rộng hệ thống lô-gích}
 
-\ % Lùi đầu dòng
+\subsection{Viết tắt các lập luận}
 
-Bạn đọc đã có thể cảm nhận rằng xây dựng và giải thích cách hoạt động của ngôn ngữ hình thức trong các phần trước khá là dài dòng. Điều này là hiển nhiên, khi chúng ta đang chuẩn tắc hóa các lập luận thông thường. Tuy nhiên, vẫn còn nhiều điều vẫn còn có thể được cải thiện và bổ sung thêm.
+Bạn đọc đã có thể cảm nhận rằng xây dựng và giải thích cách hoạt động của ngôn ngữ hình thức trong các phần trước khá là dài dòng. Điều này là hiển nhiên, khi chúng ta đang chuẩn tắc hóa các lập luận thông thường. Nhưng, trong thực hành sau này, chúng ta sẽ ít khi chỉ rõ một cách tường minh chúng ta đang sử dụng những tính chất hay quy tắc lập luận diễn dịch nào. Mặc định rằng, chúng ta coi như bạn đọc sẽ có thể tự đưa ra cơ sở cho từng bước lập luận, cũng giống như chúng ta không nghiên cứu một bài văn hay bài thơ mà cứ đâm đầu vào từng chữ cái một vậy.
 
-Quay trở lại tính chất phân phối của lượng từ phổ quát đối với phép hội,
-\begin{equation*}
-   \forall x, A(x) \land \forall x, B(x) \iff \forall x, (A(x) \land B(x)).
+Hãy xem xét cách viết tắt của một số cấu trúc chứng minh quen thuộc. Khi muốn khẳng định \begin{equation*}
+   \forall y, B(y) \implies C(y),
 \end{equation*}
-Có thể đưa ra lập luận như sau để chứng minh chiều xuôi tính chất này:
-\begin{quotation}
-   Giả sử $\forall x, A(x) \land \forall x, B(x)$ là đúng. Khi đó, với mọi $x$, $A(x)$ đúng và $B(x)$ đúng. Do đó, với mọi $x$, $A(x) \land B(x)$ đúng. Suy ra $\forall x, (A(x) \land B(x))$ đúng.
-\end{quotation}
-Theo tác giả, lập luận này đã mặc định chính nó khi thực hiện chứng minh. Nhưng nếu chúng ta cho phép xây dựng các quy tắc cụ thể hóa và tổng quát hóa theo một cách tương đương với lượng từ tồn tại, thì lập luận này hoàn toàn hợp lí\footnote{Các quy tắc này có tên tiếng Anh là \emph{Universal Specification / Universal Instantiation} và \emph{Universal Generalization}. Bạn đọc có thể đọc thêm trong~\cite{suppes2012introduction}.}.
+người ta thường bắt đầu với một trong những cách viết:
+\begin{itemize}
+   \item ``gọi $y$ sao cho $B(y)$'',
+   \item ``xét $y$ thỏa mãn $B(y)$'',
+   \item ``lấy $y$ để $B(y)$'',
+\end{itemize}
+hoặc nhiều cách khác. Một điều không hay lắm là khi có $\exists y, B(y)$, người ta cũng có thể dùng cách viết y hệt. Tác giả không có một phương pháp nào để có thể phân biệt ý của người viết. Bạn đọc cần phải dựa vào ngữ cảnh để xem ý tưởng đằng sau những câu như vậy.
 
-Một vài nhận xét khác cần phải để ý là chúng ta đang kí hiệu $\forall$ và $\exists$ tương đối tự do. Chẳng hạn, ở phương trình \eqref{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:thanh_to_cau_tao:ex-1} trên trang \pageref{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:thanh_to_cau_tao:ex-1}, chúng ta đã viết $\forall n$ với ý nghĩa ``\textit{với mọi người}''. Chúng ta đã sử dụng ngữ cảnh để xác định phạm vi của lượng từ, nhưng điều này không phải lúc nào cũng được hưởng ứng. Để chặt chẽ hóa vấn đề này, một số tài liệu (như~\cite{suppes2012introduction}) sẽ đưa thêm các luật chứng minh. Nó được gọi là \emph{luật} cũng không sai vì riêng việc viết và hiểu các luật này cũng tương đối vòng vo và trong đó cũng bao gồm nhiều hiểu biết ngầm định cơ bản hơn.
+\subsection{Mở rộng các lập luận}
 
-Có thể sẽ có câu hỏi rằng liệu có thể tối giản lại ngôn ngữ hình thức mà chúng ta vừa xây dựng. Bạn đọc mà tìm hiểu thì sẽ thấy rằng ngôn ngữ được xây dựng thuộc về giải tích vị từ bậc hai. Nếu bỏ đi khả năng kết hợp lượng từ với vị từ hay hàm, chúng ta sẽ có vị từ bậc nhất. Ngoài ra, khi nhận ra rằng có hai bậc lô-gích, một số nghi vấn có thể được đặt ra về vấn đề sự tồn tại của lô-gích trên các bậc cao hơn. Để trả lời cho câu hỏi đó, câu trả lời là có, nhưng khó tưởng tượng. Bạn đọc muốn tìm hiểu có thể xem sự xây dụng lô-gích bậc cao của Chớc\footnote{Alonzo Church (1903 - 1995).}.
+Có thể sẽ có câu hỏi rằng liệu có thể tối giản lại ngôn ngữ hình thức mà chúng ta vừa xây dựng. Bạn đọc mà tìm hiểu thì sẽ thấy rằng ngôn ngữ được xây dựng thuộc về giải tích vị từ bậc hai. Nếu bỏ đi khả năng kết hợp lượng từ với vị từ hay hàm, chúng ta sẽ có vị từ bậc nhất. Ngoài ra, khi nhận ra rằng có hai bậc lô-gích, một số nghi vấn có thể được đặt ra về vấn đề sự tồn tại của lô-gích trên các bậc cao hơn. Câu trả lời cho câu hỏi đó là có, nhưng khó tưởng tượng. Bạn đọc muốn tìm hiểu có thể xem sự xây dụng lô-gích bậc cao của Chớc\footnote{Alonzo Church (1903 - 1995).}.
 
-Hơn thế nữa, để ý rằng, chúng ta mới xây dựng các quy tắc và phương pháp lập luận trên một phạm vi toán học rộng nhất có thể. Chúng ta chưa đề cập tới bất kì tính chất nào của số hay hình. Chúng ta còn chưa có định nghĩa để khẳng định $$x = x.$$
-Cứ đi dần vào sâu toán học, hay thế giới vật lí, chúng ta sẽ nhận ra rằng không có một bộ tiên đề, quy luật hay chỉ dẫn nào có thể bao quát hết tất cả các tính chất.
+Hơn thế nữa, để ý rằng, chúng ta mới xây dựng các quy tắc và phương pháp lập luận trên một phạm vi toán học rộng nhất có thể. Chúng ta chưa đề cập tới bất kì tính chất nào của số hay hình. Chúng ta còn chưa có định nghĩa để khẳng định $$\forall x, x = x.$$
 
-Tuy nhiên, trong thực tế, các vấn đề được kể đến đó không cản bước chúng ta trong việc sử dụng toán học làm công cụ mô tả vũ trụ. Mặc dù không đi tìm được sự giải quyết triệt để tuyệt đối theo ý thích của các triết gia, hệ thống lô-gích thu được đã là quá đủ để tạo ra một cấu trúc đáng tin cậy và từ giờ, tác giả cũng sẽ công nhận phần lớn tính chất và hệ quả của lập luận diễn dịch thuần túy. Nhắc lại, chúng ta không đi tìm lời giải của tất cả mọi thứ. Đó không phải là phạm trù của khoa học. Chúng ta chỉ cần đi tìm câu trả lời cho những câu hỏi trong thế giới vật lí mà thôi, và chúng ta đã có một thứ ngữ pháp thỏa mãn giúp chúng ta thỏa mãn được yêu cầu đó. Việc của chúng ta bây giờ là, giống như bổ sung từ và cách sử dụng vào trong ngôn ngữ, bổ sung thêm kiến thức thực tiễn mà thôi.
+Cứ đi dần vào sâu toán học, hay thế giới vật lí, chúng ta sẽ nhận ra rằng không có một bộ tiên đề, quy luật hay chỉ dẫn nào có thể bao quát hết tất cả các tính chất. Tuy nhiên, trong thực tế, nhiệm vụ của chúng ta không phải là đi tìm cách chuẩn tắc hóa tất cả mọi thứ. Đó không phải là phạm trù của khoa học. Hãy nhớ rằng, chúng ta mới chỉ đi qua lập luận diễn dịch, còn cần phải xem xét làm sao để thực hiện lập luận quy nạp\footnote{Bạn đọc sẽ nhận ra rằng lập luận quy nạp sẽ phức tạp hơn lập luận diễn dịch nhiều, do nó cần phải dựa vào trải nghiệm cá nhân mà những cái đó có xác suất không phản ánh đúng thực tiễn (báo hiệu trước đến công cụ chúng ta cần phải xây dựng). Đấy cũng có thể là một lí do mà bạn đọc có thể biết đến ``thần đồng Toán học'' có thể giải được những bài toán khó (môn có tính tiền định cao), nhưng chắc chắn là không bao giờ có ``thần đồng Sinh học'' tự nhiên phát hiện được quy luật di truyền hay ``thần đồng Địa lí học'' giải thích được sự chuyển dịch của các dân tộc (những môn cần có khảo sát thực nghiệm kiểm chứng).}. Do đó, việc của chúng ta bây giờ, giống như bổ sung từ và cách sử dụng vào trong ngôn ngữ, để mở rộng các phương pháp lập luận phục vụ các mục đích sau này, là xây dựng các cấu trúc toán học mới và bổ sung thêm kiến thức thực tiễn.

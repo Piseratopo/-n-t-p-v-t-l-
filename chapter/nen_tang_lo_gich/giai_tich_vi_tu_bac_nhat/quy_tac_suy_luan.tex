@@ -44,8 +44,10 @@ Từ đây, dễ dàng có được, $T(x) \implies V(x)$. Bổ sung lại lư�
 
 Giờ đây, chúng ta sẽ phát biểu chính xác các quy tắc chi phối các lượng từ phổ quát. Cụ thể, ở ví dụ trên, chúng ta đã sử dụng \defText{quy tắc cụ thể hóa lượng từ phổ quát} (hay \defText{quy tắc khử lượng từ phổ quát}, viết tắt là \defText{quy tắc cụ thể phổ quát} hay \defText{ctpq}), phát biểu như sau
 \begin{quotation}
-   Nếu công thức $S$ thu được từ công thức $R$ bằng cách thay thế một thành phần biểu diễn $t$ vào mọi vị trí tự do của thành phần biểu diễn $v$ trong $R$, và sau khi thay thế thì $t$ tự do trong $S$, thì $S$ có thể được suy ra từ $\forall v, R$. Ngoài ra, $t$ ở trong $S$ là \emphcolor{không bị đánh dấu}. (Khi nào thành phần biểu diễn bị đánh dấu và ảnh hưởng của việc đánh dấu này lên quá trình lập luận sẽ được trình bày ở sau.)
+   Nếu công thức $S$ thu được từ công thức $R$ bằng cách thay thế một thành phần biểu diễn $t$ vào mọi vị trí tự do của thành phần biểu diễn $v$ trong $R$, và sau khi thay thế thì $t$ tự do trong $S$, thì $S$ có thể được suy ra từ $\forall v, R$.
 \end{quotation}
+Khái niệm ``đánh dấu'' sẽ được xác định cụ thể khi chúng ta đi đến với những quy tắc còn lại đối với lượng từ tồn tại. Nhưng để tiện cho việc sử dụng trong bài tập sắp tới, chúng ta chỉ cần biết là thành phần biểu diễn $t$ được thay thế vào có thể các thành phần biểu diễn đã xuất hiện trước đó trong lập luận, hoặc cũng có thể là thuật ngữ mới hoàn toàn và không bị đánh dấu.
+
 Ở ví dụ, quy tắc cụ thể hóa lượng từ phổ quát đã được sử dụng hai lần, và đều sử dụng $x$ để thay thế vị trí tự do của thành phần biểu diễn, cũng tên là $x$. Tuy nhiên, chúng ta có thể thay bất cứ thuật ngữ nào chúng ta cần. Chẳng hạn, từ $\forall x, (K(x) \implies V(x))$, chúng ta có thể có $K(y) \implies V(y)$ hay $K(+(c; d)) \implies V(+(c; d))$.
 
 \subsection{Tổng quát hóa lượng từ phổ quát}
@@ -71,11 +73,14 @@ Thấy ngay lập luận này là có vấn đề, bởi một sinh viên có th
 
 Từ đây, chúng ta có \defText{quy tắc tổng quát hóa lượng từ phổ quát} (hay \defText{quy tắc thêm lượng từ phổ quát}, viết tắt là \defText{quy tắc tổng quát phổ quát} hay \defText{tqpq}):
 \begin{quotation}
-   Từ công thức $S$, chúng ta có thể suy ra $\forall v, S$ nếu như $v$ không được đánh dấu trong $S$ và không có thành phần biểu diễn nào bị đánh dấu phụ thuộc vào $v$. (Cũng như thuật ngữ ``đánh dấu'', khái niệm ``đánh dấu phụ thuộc'' sẽ được nhắc đến sau này.)
+   Từ công thức $S$, chúng ta có thể suy ra $\forall v, S$ nếu như $v$ không được đánh dấu trong $S$ và không có thành phần biểu diễn nào bị đánh dấu phụ thuộc vào $v$.
 \end{quotation}
+Cũng như ``đánh dấu'', khái niệm ``đánh dấu phụ thuộc'' sẽ được nhắc đến sau này.
+
 
 \exercise Cho vị từ $A$, $B$ và $C$. Chứng minh 
 \begin{enumerate}
+   \item $\forall x, B(x) \iff \forall y, B(y)$;
    \item $\forall x, \forall y, A(x; y) \iff \forall y, \forall x, A(x; y)$ (tính chất giao hoán của lượng từ phổ quát);
    \item $\forall x, (B(x) \land C(x)) \iff \forall x, B(x) \land \forall x, C(x)$ (tính chất phân phối của lượng từ phổ quát với phép hội);
    \item $\forall x, B(x) \land \forall x, (B(x) \implies C(x)) \implies \forall x, C(x)$.
@@ -83,7 +88,12 @@ Từ đây, chúng ta có \defText{quy tắc tổng quát hóa lượng từ ph�
 
 \solution
 
-\resetSubexercise Sử dụng quy tắc cụ thể phổ quát, thay $x$ bởi $c$ để có 
+\resetSubexercise Từ $\forall x, B(x)$, sử dụng quy tắc cụ thể hóa lượng từ phổ quát, thay $x$ bởi hạng thức $z$ tự do để có $B(z)$. Vì $z$ không bị đánh dấu, sử dụng quy tắc tổng quát hóa lượng từ phổ quát, suy ra $\forall y, B(y)$ nếu thay $y$ vào $z$. Vì vậy, \begin{equation*}
+   \forall x, B(x) \implies \forall y, B(y).
+\end{equation*}
+Điều ngược lại --- $\forall x, B(x) \impliedby \forall y, B(y)$ --- được chứng minh tương tự. Qua đó, có điều phải chứng minh.
+
+\stepSubexercise Sử dụng quy tắc cụ thể phổ quát, thay $x$ bởi $c$ để có 
 \begin{equation*}
    \forall x, \forall y, A(x; y) \implies \forall y, A(c; y).
 \end{equation*}
@@ -188,8 +198,7 @@ Tiếp tục sử dụng các tính chất của giải tích mệnh đề,
 \end{align*}
 Điều phải chứng minh.
 
-\stepcounter{subexercise}
-\arabic{subexercise}. Từ giả thiết, có
+\stepSubexercise Từ giả thiết, có
 \begin{equation}
    G \implies \forall x, \forall y, \big(V_=(x; y) \iff V_\le(x; y) \land V_\le(y; x)\big).
    \label{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:quy_tac_suy_luan:2.1}
@@ -218,8 +227,7 @@ Tích hợp thêm tính chất bắc cầu, khi đó,
 \end{equation*}
 và chúng ta đạt được điều phải chứng minh.
 
-\stepcounter{subexercise}
-\arabic{subexercise}.
+\stepSubexercise
 Thực hiện biến đổi từ giả thiết
 \begin{equation*}
    \begin{cases}
@@ -250,8 +258,7 @@ Từ đó, chúng ta có thể kết luận được với mọi $x$ và $y$, $\
 \end{align*}
 Áp dụng tính chất giao hoán trên phép tương đương để có điều phải chứng minh.
 
-\stepcounter{subexercise}
-\arabic{subexercise}.
+\stepSubexercise
 Chúng ta có
 \begin{equation*}
     G \implies \forall x, \forall y, \big(V_\le(x; y) \lor V_\le(y; x)\big),
@@ -291,8 +298,7 @@ Từ các kết quả đã có, sử dụng thay thế tương đương để đ
 \end{equation*}
 Dễ thấy điều phải chứng minh.
 
-\stepcounter{subexercise}
-\arabic{subexercise}. Trước khi thực hiện biến đổi, chúng ta sẽ thực hiện một vài phân tích. Từ giả thiết, chúng ta có:
+\stepSubexercise Trước khi thực hiện biến đổi, chúng ta sẽ thực hiện một vài phân tích. Từ giả thiết, chúng ta có:
 \begin{equation*}
     \begin{cases}
         G \implies \forall x, \forall y, \big(V_=(x; y) \iff V_\le(x; y) \land V_\le(y; x)\big) \\
@@ -306,16 +312,15 @@ Thay thế hạng thức phụ thuộc trên mệnh đề thứ hai và hoán đ
 
 Sau khi có những điều cần thiết này, thực hiện biến đổi.
 \begin{align*}
-    G &\implies \forall x, \forall y, \big(V_=(x; y) \iff V_\le(y; x) \land V_\le(x; y)\big); \\
-    G &\implies \forall x, \forall y, \big(V_=(x; y) \iff \neg \neg V_\le(y; x) \land \neg \neg V_\le(x; y)\big) \equationexplanation{tính chất phủ định kép}; \\
-    G &\implies \forall x, \forall y, \big(V_=(x; y) \iff \neg V_<(x; y) \land \neg V_<(y; x)\big) \equationexplanation{thay thế tương đương}; \\
-    G &\implies \forall x, \forall y, \big(V_=(x; y) \iff \overline{V_<(x; y) \lor V_<(y; x)}\big) \equationexplanation{định luật Đờ Moóc-gơn};\\
-    G &\implies \forall x, \forall y, \big(V_=(x; y) \iff V_<(x; y) \downarrow V_<(y; x)\big) \equationexplanation{định nghĩa của phép phủ định tuyển}.
+   G &\implies \forall x, \forall y, \big(V_=(x; y) \iff V_\le(y; x) \land V_\le(x; y)\big); \\
+   G &\implies \forall x, \forall y, \big(V_=(x; y) \iff \neg \neg V_\le(y; x) \land \neg \neg V_\le(x; y)\big) \equationexplanation{tính chất phủ định kép}; \\
+   G &\implies \forall x, \forall y, \big(V_=(x; y) \iff \neg V_<(x; y) \land \neg V_<(y; x)\big) \equationexplanation{thay thế tương đương}; \\
+   G &\implies \forall x, \forall y, \big(V_=(x; y) \iff \overline{V_<(x; y) \lor V_<(y; x)}\big) \equationexplanation{định luật Đờ Moóc-gơn};\\
+   G &\implies \forall x, \forall y, \big(V_=(x; y) \iff V_<(x; y) \downarrow V_<(y; x)\big) \equationexplanation{định nghĩa của phép phủ định tuyển}.
 \end{align*}
 Chúng ta có điều phải chứng minh.
 
-\stepcounter{subexercise}
-\arabic{subexercise}. Chúng ta có định nghĩa
+\resetSubexercise Chúng ta có định nghĩa
 \begin{equation*}
    G \implies \forall x, \forall y, \big(V_=(x; y) \iff V_\le(x; y) \land V_\le(y; x)\big).
 \end{equation*}
@@ -374,8 +379,7 @@ Kết hợp với \eqref{eq:nen_tang_lo_gich:giai_tich_vi_tu_bac_nhat:quy_tac_su
 \end{equation*}
 Điều phải chứng minh.
 
-\stepcounter{subexercise}
-\arabic{subexercise}.
+\stepSubexercise
 Trước khi chứng minh, chúng ta cần một số kết quả từ $G$:
 \begin{equation*}
    \begin{cases}
@@ -411,8 +415,7 @@ $$
 $$
 Chúng ta có điều phải chứng minh.
 
-\stepcounter{subexercise}
-\arabic{subexercise}. Lập luận tương tự như phần \the\numexpr\value{subexercise}-1\relax, chúng ta có
+\stepSubexercise Lập luận tương tự như phần \the\numexpr\value{subexercise}-1\relax, chúng ta có
 $$
    \begin{cases}
       \forall x, \forall y, \forall z, \big(V_<(x; y) \iff \neg V_\le(y; x)\big) \\
@@ -427,7 +430,7 @@ Qua đó, có được liên tiếp các lập luận như sau:
 \end{align*}
 Theo chứng minh bằng phản chứng, dễ thấy có điều phải chứng minh.
 
-\subsection{Quy tắc cụ thể hóa và tồn tại hóa lượng từ tồn tại}
+\subsection{Quy tắc cụ thể hóa và tổng quát hóa lượng từ tồn tại}
 
 Khi xây dựng quy tắc cụ thể hóa lượng từ tồn tại, một ý tưởng tự nhiên là thực hiện thao tác tương tự như đối với lượng từ phổ quát: từ mệnh đề $\exists x, A(x)$, chúng ta đơn thuần loại bỏ lượng từ để nhận được $A(x)$. Tuy nhiên, nếu quy tắc này được áp dụng một cách tự do không giới hạn, nó sẽ nảy sinh lỗi ngụy biện trong suy luận. Dễ thấy, nguyên nhân cốt lõi là do thành phần biểu diễn $x$ từ ràng buộc đã trở thành một thành phẩn biểu diễn tự do. Để giải quyết vấn đề này, chúng ta có thể sử dụng phương pháp thường thấy trong thực hành toán học. Chúng ta gọi ra một đại diện $c$ sao cho $A(c)$, rồi tiếp tục lập luận trên $c$. Tuy nhiên, chúng ta vẫn phải đặt ra một số giới hạn để có thể làm như vậy. Sau khi đặt ra giới hạn đó, chúng ta có \defText{quy tắc cụ thể hóa lượng từ tồn tại} (hay \defText{quy tắc khử lượng từ tồn tại}, viết tắt là \defText{quy tắc cụ thể tồn tại} hoặc \defText{cttt}):
 
@@ -483,7 +486,8 @@ Như vậy, chúng ta cũng có một phép phủ định tương đương với
    \item $\exists x, A(x) \land \exists y, B(y) \iff \exists x, \exists y, (A(x) \land B(y))$ (quy tắc chuyển đổi lượng từ, phần 2);
    \item $\forall x, A(x) \land \exists y, B(y) \iff \forall x, \exists y, (A(x) \land B(y))$ (quy tắc chuyển đổi lượng từ, phần 3);
    \item $\exists x, A(x) \lor \forall y, B(y) \iff \exists x, \forall y, (A(x) \lor B(y))$ (quy tắc chuyển đổi lượng từ, phần 4);
-   \item $\exists x, A(x) \land \forall x, (A(x) \implies B(x)) \implies \exists x, B(x)$.
+   \item $\exists x, A(x) \land \forall y, (A(y) \implies B(y)) \implies \exists x, B(x)$; 
+   \item $\forall x, A(x) \land \exists y, (A(y) \implies B(y)) \implies \exists x, B(x)$.
 \end{enumerate}
 
 \solution
@@ -509,9 +513,9 @@ $$
 
 Tương tự, chúng ta cũng có thể có được $\exists x, \exists y, A(x; y) \impliedby \exists y, \exists x, A(x; y)$. Do định nghĩa của phép tương đương, $\exists x, \exists y, A(x; y) \iff \exists y, \exists x, A(x; y)$. Điều phải chứng minh.
 
-\stepSubexercise. Giả sử $\exists x, (A(x) \lor B(x))$. Theo quy tắc cụ thể hóa lượng từ tồn tại, gọi $c$ thay cho $x$ để $A(c) \lor B(c)$.
+\stepSubexercise Giả sử $\exists x, (A(x) \lor B(x))$. Theo quy tắc cụ thể hóa lượng từ tồn tại, gọi $c$ thay cho $x$ để $A(c) \lor B(c)$.
 \begin{itemize}
-   \item Nếu $A(c)$ đúng, dễ dàng nhận thấy nếu lập luận như trước, theo quy tắc tồn tại hóa lượng từ tồn tại, $\exists x, A(x)$ đúng.
+   \item Nếu $A(c)$ đúng, dễ dàng nhận thấy nếu lập luận như trước, theo quy tắc tổng quát hóa lượng từ tồn tại, $\exists x, A(x)$ đúng.
    \item Tương tự, nếu $B(c)$ đúng thì $\exists x, B(x)$ cũng đúng.
 \end{itemize}
 Qua hai trường hợp như vậy, chúng ta có $\exists x, A(x) \lor \exists x, B(x)$.  Sử dụng quy tắc chia trường hợp từ giải tích mệnh đề, chúng ta đã khẳng định được $\exists x, (A(x) \lor B(x)) \implies \exists x, A(x) \lor \exists x, B(x)$.
@@ -552,7 +556,7 @@ Qua đó, theo chứng minh bằng phản chứng,
 Hai chiều của mệnh đề đều đã được khẳng định. Vậy, chúng ta có điều phải chứng minh.
 
 \stepSubexercise Giả thiết rằng chúng ta có $\exists x, A(x) \land \exists y, B(y)$. Khi này, có $\exists x, A(x)$ và $\exists y, B(y)$ đồng thời xảy ra. Cttt, có thể gọi hạng thức $c$ và $d$ để $A(c)$ và $B(d)$ đúng. Kiểm tra điều kiện và áp dụng tqtt lên $A(c) \land B(d)$, thu được $\exists y, (A(c) \land B(y))$.
-Với sự tồn tại của hạng thức $c$ thỏa mãn, tiếp tục sử dụng quy tắc tồn tại hóa đối với mệnh đề vừa nhận được, chúng ta đi đến $\exists x, \exists y, (A(x) \land B(y))$.
+Với sự tồn tại của hạng thức $c$ thỏa mãn, tiếp tục sử dụng quy tắc tqtt đối với mệnh đề vừa nhận được, chúng ta đi đến $\exists x, \exists y, (A(x) \land B(y))$.
 Như vậy,
 \begin{equation*}
    \exists x, A(x) \land \exists y, B(y) \implies \exists x, \exists y, (A(x) \land B(y)).
@@ -611,6 +615,17 @@ $$
 
 Hai chiều của mệnh đề đều đã được khẳng định. Vậy, chúng ta hoàn toàn có điều phải chứng minh.
 
+\stepSubexercise Giả thiết rằng $\exists x, A(x) \land \forall y, (A(y) \implies B(y))$. Từ thành phần $\exists x, A(x)$, sử dụng cttt, chúng ta có thể gọi một hạng thức $c$ thỏa mãn $A(c)$. Từ $\forall y, (A(y) \implies B(y))$, do ctpq, thay $c$ vào $x$ ở công thức này để có $A(c) \implies B(c)$. Vì thế, từ giả thiết, chúng ta suy ra được \begin{equation*}
+   A(c) \land (A(c) \implies B(c)),
+\end{equation*}
+kéo theo $B(c)$. Kết hợp với quy tắc tqtt, chúng ta kết luận $\exists x, B(x)$. Do đó, dễ thấy điều phải chứng minh.
+
+\stepSubexercise Chứng minh tương tự phần trước, chúng ta giả sử rằng $\forall x, A(x) \land \exists y, (A(y) \implies B(y))$. 
+\begin{itemize}
+   \item Từ $\exists y, (A(y) \implies B(y))$, đánh dấu một $c$ sao cho $A(c) \implies B(c)$.
+   \item Từ $\forall x, A(x)$, có được $A(c)$.
+\end{itemize}
+Do đó, chúng ta có $B(c)$, kéo theo $\exists x, B(x)$. Điều phải chứng minh.
 
 \exercise 
 \begin{enumerate}
@@ -622,21 +637,21 @@ Hai chiều của mệnh đề đều đã được khẳng định. Vậy, chú
    \begin{equation*}
       \exists x, \forall y, A(x; y) \impliedby \forall y, \exists x, A(x; y).
    \end{equation*}
-   \item Xét một giả chứng minh cho $\exists x, \forall y, A(x, y) \impliedby \forall y, \exists x, A(x, y)$ như sau: \begin{quotation}
-      ``Giả sử $\forall y, \exists x, A(x; y)$. Chọn hạng thức $c$ để $A(c; y)$ đúng với mọi $y$. Từ đó, ta có $\exists x, \forall y, A(x; y)$ theo quy tắc tồn tại hóa.''.
+   \item Xét một giả chứng minh cho $\exists x, \forall y, A(x; y) \impliedby \forall y, \exists x, A(x; y)$ như sau: \begin{quotation}
+      ``Giả sử $\forall y, \exists x, A(x; y)$. Chọn hạng thức $c$ để $A(c; y)$ đúng với mọi $y$. Từ đó, ta có $\exists x, \forall y, A(x; y)$.''.
    \end{quotation}
    Tìm lỗi sai trong chứng minh này.
 \end{enumerate}
 
 \solution
 
-\resetSubexercise Giả sử $\exists x, \forall y, A(x; y)$. Theo quy tắc cụ thể hóa đối với lượng từ tồn tại, có thể gọi một hạng thức $c$ sao cho $\forall y, A(c; y)$ đúng.
+\resetSubexercise Giả sử $\exists x, \forall y, A(x; y)$. Theo quy tắc cụ thể hóa đối với lượng từ tồn tại, có thể gọi một hạng thức $c$ sao cho $\forall y, A(c; y)$ đúng. Sử dụng quy tắc cụ thể hóa lượng từ phổ quát, có $z$ tự do sao cho $A(c; z)$.
 
-Theo quy tắc tồn tại hóa, $A(c; y)$ dẫn đến $\exists x, A(x; y)$. Do đó, có được $\forall y, A(c; y) \implies \forall y, \exists x, A(x; y)$. Vậy, kéo theo:
+Theo quy tắc tổng quát hóa lượng từ tồn tại, $A(c; z)$ dẫn đến $\exists x, A(x; z)$. Do đó, từ quy tắc tổng quát hóa lượng từ phổ quát, có được $\forall y, \exists x, A(x; y)$. Vậy, chúng ta đã chứng minh được
 \begin{equation*}
-    \exists x, \forall y, A(x; y) \implies \forall y, \exists x, A(x; y).
+   \exists x, \forall y, A(x; y) \implies \forall y, \exists x, A(x; y)
 \end{equation*}
-Điều phải chứng minh.
+như yêu cầu.
 
 \stepSubexercise Giả sử đang xét tập hợp mọi loài cá sống trong đại dương, với con cá nào cũng luôn tồn tại một con cá khác lớn hơn nó. Chọn vị từ $A(x; y)$ biểu diễn cho quan hệ ``con cá $x$ lớn hơn con cá $y$''. Ngoài ra, chúng ta cũng nên giả sử rằng không tồn tại hai con cá $x$ và $y$ để có đồng thời cá $x$ lớn hơn cá $y$ và cả cá $y$ lớn hơn cá $x$.
 
@@ -700,9 +715,7 @@ Từ một giả thiết đúng làm nảy sinh ra một kết luận sai sẽ k
    \caption{Một con cá. Thật tiếc khi nó không phải là con cá lớn nhất.}
 \end{figure}
 
-\stepSubexercise Từ mệnh đề $\forall y, \exists x, A(x; y)$, theo thứ tự tác động của các lượng từ, thì ứng với mỗi một giá trị $y$, chúng ta mới bắt đầu được phép cụ thể hóa $x$ tương ứng. Vì lẽ đó, thực chất hạng thức dùng để thay thế $x$ chắc chắn bị \emph{phụ thuộc} vào $y$ (tức là $c$ đóng vai trò như một hàm $c$ với hạng thức $y$, thay đổi linh hoạt mỗi khi $y$ thay đổi).
-
-Người viết giả chứng minh này đã bỏ qua tính tuần tự, ngang nhiên gọi luôn một hằng số $c$ không đổi duy nhất. Hành động này vô tình làm mất tính liên kết giữa $c$ và $y$, mang lượng từ tồn tại từ bên trong cưỡng ép vượt qua lượng từ phổ quát ở ngoài để đạt được điều phải chứng minh. Đó là một ngụy biện lô-gích hết sức nghiêm trọng.
+\stepSubexercise Từ mệnh đề $\forall y, \exists x, A(x; y)$, người viết đã áp dụng quy tắc cụ thể hóa lượng từ phổ quát để có $\exists x, A(x; y)$. Lượt áp dụng này đúng, nhưng lượt áp dụng quy tắc cụ thể hóa lượng từ tồn tại, muốn có $A(c; y)$ thì cần phải đánh dấu $c$ phụ thuộc vào $y$. Khí áp dụng tổng quát hóa lượng từ phổ quát để có $\forall y, A(c; y)$, người viết chứng minh đã quên mất kiểm tra điều kiện $c$ đánh dấu phụ thuộc vào $y$. Dễ thấy điều kiện không thỏa mãn, nên không được áp dụng tqpq trong trường hợp này.
 
 \subsection{Nguyên lí không thể phân biệt của các đối tượng đồng nhất}
 
@@ -733,7 +746,7 @@ Khi có $V(X)$ đúng, chúng ta có $\forall y, (V(y) \implies V(y) \land V(X))
    \forall y, (V(y) \implies y = X).
 \end{equation*}
 
-Vì có $X$ để $V(X)$ và $\forall y, (V(y) \implies y = X)$, do đó, theo quy tắc tồn tại hóa, \begin{equation*}
+Vì có $X$ để $V(X)$ và $\forall y, (V(y) \implies y = X)$, do đó, theo tqtt, \begin{equation*}
    \exists x, (V(x) \land \forall y, (V(y) \implies y = x)),
 \end{equation*}
 hay $\exists ! x, V(x)$. Từ đó, dễ thấy điều phải chứng minh.
@@ -762,12 +775,12 @@ Cụ thể hóa lượng từ tồn tại $\exists x$, gọi hạng thức $X$ s
 
 Sử dụng quy tắc cụ thể hóa lượng từ phổ quát trong $\forall x, (V(x) \iff Q(x))$ bởi $X$, chúng ta có $V(X) \iff Q(X)$. Do có $V(X)$ đúng, nên để $V(X) \iff Q(X)$ cũng đúng thì $Q(X)$ cũng phải đúng.
 
-Xét $z$ tùy ý thỏa mãn $Q(z)$. Cụ thể hóa lượng từ phổ quát để có $V(z) \iff Q(z)$. Do $Q(z)$, suy ra $V(z)$. Kết hợp với $\forall y, (V(y) \implies y = X)$ đã có ở trên, $V(z) \implies z = X$, cho nên $z = X$. Vậy,
+Cũng cụ thể hóa lượng từ phổ quát từ $\forall x, (V(x) \iff Q(x))$ để có $V(z) \iff Q(z)$ với $z$ là hạng thức không bị đánh dấu nào đó. Khi đó, $Q(z) \implies V(z)$. Thêm vào đó, bởi $\forall y, (V(y) \implies y = X)$, có $V(z) \implies z = X$. Vậy, $Q(z) \implies z = X$. Sử dụng tổng quát hóa lượng từ phổ quát,
 \begin{equation*}
    \forall z, (Q(z) \implies z = X).
 \end{equation*}
 
-Kết hợp $Q(X)$ và $\forall z, (Q(z) \implies z = X)$, bằng việc tồn tại hóa $X$, 
+Kết hợp $Q(X)$ và $\forall z, (Q(z) \implies z = X)$, bằng việc sử dụng quy tắc tổng quát hóa lượng từ tồn tại, 
 \begin{equation*}
    \exists x, \left(Q(x) \land \forall z, (Q(z) \implies z = x)\right),
 \end{equation*}
