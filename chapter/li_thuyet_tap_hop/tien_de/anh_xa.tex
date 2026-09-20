@@ -966,7 +966,7 @@ Ngược lại, giả thiết \coloringDodgerblue{$\forall B \in \mathfrak{P}(Y)
 Từ những suy luận vừa rồi, chúng ta dễ dàng có được điều phải chứng minh.
 
 \exercise Gọi $\sigma$ là một hoán vị của tập $A$. Một tập con $B$ của $A$ được gọi là $\defMath{\sigma}$\defText{-bất biến} nếu $\Imf(\sigma|_B) = B$. Với $a \in A$, đặt \begin{equation*}
-   O_a = \bigcap\{b \in \mathfrak{P}(A) \mid a \in b \land b \text{~là $\sigma$-bất biến}\}.
+   O_a = \bigcap\left\{b \in \mathfrak{P}(A) \mid a \in b \land b \text{~là $\sigma$-bất biến}\right\}.
 \end{equation*}
 \begin{enumerate}
    \item Chứng minh rằng $O_a$ là $\sigma$-bất biến với mọi $a \in A$.
@@ -978,7 +978,9 @@ Từ những suy luận vừa rồi, chúng ta dễ dàng có được điều p
 
 \solution 
 
-\resetSubexercise Xét $y$ tùy ý. Với mọi $a \in A$, nếu $y \in O_a$ thì $y \in A$, dẫn đến tồn tại $x \in A$ sao cho $y = \sigma(x)$. Ngoài ra, do $y \in O_a$ nên với mọi $b \in \mathfrak{P}(A)$, $a \in b \land b = \Imf(\sigma|_b)$ kéo theo $y \in b$. 
+Đặt $\beNom = \left\{b \in \mathfrak{P}(A) \mid a \in b \land b \text{~là $\sigma$-bất biến}\right\}$. Khi đó, $O_a = \bigcap \beNom$.
+
+\resetSubexercise Xét $x$ bất kì sao cho $x \in O_a$. Có $O_a \subseteq A$ nên $x \in A$. Vì $\sigma$ là một song ánh từ $A$ đến chính nó nên tồn tại $w \in A$ thỏa mãn $\sigma(w) = x$.
 
 \exercise Giả sử rằng giữa tập hợp $A$ và $B$ tồn tại $f: A \to B$ và $g: B \to A$ đều là đơn ánh. Chứng minh rằng tồn tại song ánh từ $A$ sang $B$.
 
