@@ -965,12 +965,12 @@ Ngược lại, giả thiết \coloringDodgerblue{$\forall B \in \mathfrak{P}(Y)
 
 Từ những suy luận vừa rồi, chúng ta dễ dàng có được điều phải chứng minh.
 
-\exercise Gọi $\sigma$ là một hoán vị của tập $A$. Một tập con $B$ của $A$ được gọi là $\defMath{\sigma}$\defText{-bất biến} nếu $\Imf(\sigma|_B) = B$. Với $a \in A$, đặt \begin{equation*}
+\exercise Gọi $\sigma$ là một hoán vị của tập $A$ khác rỗng. Một tập con $B$ của $A$ được gọi là $\defMath{\sigma}$\defText{-bất biến} nếu và chỉ nếu $\Imf(\sigma|_B) = B$. Với $a \in A$, đặt \begin{equation*}
    O_a = \bigcap\left\{b \in \mathfrak{P}(A) \mid a \in b \land b \text{~là $\sigma$-bất biến}\right\}.
 \end{equation*}
 \begin{enumerate}
    \item Chứng minh rằng $O_a$ là $\sigma$-bất biến với mọi $a \in A$.
-   \item $O$ thuộc $\mathfrak{P}(A)$ được gọi là \defText{quỹ đạo} nếu tồn tại $a \in A$ để $O = O_a$. Chứng minh \begin{equation*}
+   \item $O$ thuộc $\mathfrak{P}(A)$ được gọi là \defText{quỹ đạo} nếu và chỉ nếu tồn tại $a \in A$ để $O = O_a$. Chứng minh \begin{equation*}
       \{O \in \mathfrak{P}(A) \mid O \text{~là một quỹ đạo}\}
    \end{equation*}
    là một phân hoạch của $A$.
@@ -978,9 +978,74 @@ Từ những suy luận vừa rồi, chúng ta dễ dàng có được điều p
 
 \solution 
 
-Đặt $\beNom = \left\{b \in \mathfrak{P}(A) \mid a \in b \land b \text{~là $\sigma$-bất biến}\right\}$. Khi đó, $O_a = \bigcap \beNom$.
+\resetSubexercise Từ định nghĩa, với mọi $B$ là $\sigma$-bất biến, $\Imf(\sigma|_B) = B$. Hơn nữa, có $\sigma$ là một hoán vị nên $\sigma^{-1}$ cũng là một hoán vị, do đó, 
+\begin{align*}
+   \Imf\left(\sigma^{-1}\middle|_B\right) &= \Imf\left(\sigma^{-1}\middle|_{\Imf(\sigma|_B)}\right) \\
+   &= \Imf\left(\sigma^{-1}\middle|_{\Imf\left((\sigma^{-1})^{-1}\middle|_B\right)}\right) \\
+   &= B \equationexplanation{sử dụng kết quả từ $\sigma^{-1}$ toàn ánh}.
+\end{align*} 
 
-\resetSubexercise Xét $x$ bất kì sao cho $x \in O_a$. Có $O_a \subseteq A$ nên $x \in A$. Vì $\sigma$ là một song ánh từ $A$ đến chính nó nên tồn tại $w \in A$ thỏa mãn $\sigma(w) = x$.
+Vì $\begin{cases}
+  \Imf(\sigma|_B) = B \\
+   \Imf\left(\sigma^{-1}\middle|_B\right) = B
+\end{cases}$ với $B$ là $\sigma$-bất biến, nên 
+\begin{equation}
+   \forall B, \left(B \text{~là $\sigma$-bất biến} \implies \forall p \in B, \begin{cases}
+      \sigma(p) \in B \\
+      \sigma^{-1}(p) \in B
+   \end{cases}\right).
+   \label{eq:li_thuyet_tap_hop:tien_de:anh_xa:tinh_chat_bat_bien}
+\end{equation}
+
+Đặt $\beNom = \left\{b \in \mathfrak{P}(A) \mid a \in b \land b \text{~là $\sigma$-bất biến}\right\}$. Khi đó, $O_a = \bigcap \beNom$. 
+
+Xét $x$ bất kì sao cho $x \in O_a$. Có $O_a \subseteq A$ nên $x \in A$. Vì $\sigma$ là một song ánh từ $A$ đến chính nó nên có $v \in A$ để $v = \sigma(x)$ và tồn tại $w \in A$ thỏa mãn $w = \sigma^{-1}(x)$.
+
+Bởi $x \in O_a$, $x \in y$ với mọi $y \in \beNom$. Theo cách đặt, các $y$ đó đều $\sigma$-bất biến. Sử dụng kết quả \eqref{eq:li_thuyet_tap_hop:tien_de:anh_xa:tinh_chat_bat_bien} vừa có, dễ thấy $v \in y$ và $w \in y$ với mọi $y \in \beNom$.
+
+Hiển nhiên rằng $A$ là $\sigma$-bất biến, và $a \in A$, nên $A \in \beNom$. Điều đó kéo theo $A \subseteq \bigcup \beNom$, dẫn đến $v$ và $w$ đồng thời là phần tử của $\bigcup \beNom$. Từ định nghĩa của $\bigcap$,
+$\begin{cases}
+      v \in \bigcap \beNom \\
+      w \in \bigcap \beNom
+   \end{cases}$,
+hay $\sigma(x)$ và $\sigma^{-1}(x)$ đồng thời thuộc $O_a$. Tóm lại, 
+\begin{equation*}
+   \begin{cases}
+      \forall x \in O_a, \sigma(x) \in O_a \\
+      \forall x \in O_a, \sigma^{-1}(x) \in O_a
+   \end{cases}.
+\end{equation*}
+
+Từ $\forall x \in O_a, \sigma^{-1}(x) \in O_a$, chúng ta có $\forall x \in O_a, x \in \Imf\left(\sigma\middle|_{O_a}\right)$, do $x$ là ảnh của $\sigma^{-1}(x)$. Do đó, $O_a \subseteq \Imf\left(\sigma\middle|_{O_a}\right)$. Chúng ta cũng bổ sung rằng, với mọi $z \in \Imf\left(\sigma\middle|_{O_a}\right)$, tồn tại $i$ trong $O_a$ để $\sigma(i) = z$. Từ kết quả vừa có --- $\forall x \in O_a, \sigma(x) \in O_a$ ---, $\sigma_i \in O_a$, nên $z \in O_a$. Vì thế, $\Imf\left(\sigma\middle|_{O_a}\right) \subseteq O_a$.
+
+Vậy, $O_a = \Imf\left(\sigma\middle|_{O_a}\right)$. Hiển nhiên $O_a$ là tập con của $A$, nên $O_a$ là $\sigma$-bất biến. Điều phải chứng minh.
+
+\stepSubexercise Đặt $Q = \{O \in \mathfrak{P}(A) \mid O \text{~là một quỹ đạo}\}$. Có ngay được $Q \subseteq \mathfrak{P}(A)$. Xét một phần tử $R$ tùy ý thuộc $Q$. Để $R$ là một quỹ đạo thì phải tồn tại để $r \in A$ để $R = O_r$. Gọi \begin{equation*}
+   \mathfrak{R} = \{b \in \mathfrak{P}(A) \mid r \in b \land r \text{~là $\sigma$-bất biến}\}.
+\end{equation*} Dễ thấy $R = \bigcap \mathfrak{R}$, và tương tự như ở phần trước, chúng ta có $\forall C \in \mathfrak{R}, r \in C$ và $r \in \bigcup \mathfrak{R}$, dẫn đến $r \in R$. Vì vậy, \begin{equation*}
+   \forall R \in Q, R \neq \varnothing.
+\end{equation*}
+
+Xét thêm $S$ cũng thuộc $Q$. Nếu như $R \cap S \neq \varnothing$, gọi $d$ là một trong các phần tử chung của $R$ và $S$. Có ngay được $\forall C \in \mathfrak{R}, d \in C$, sử dụng thêm đặc điểm của $\mathfrak{R}$, $\forall C \in \mathfrak{R}, (d \in C \land C \text{~là $\sigma$-bất biến})$. Nếu đặt $\mathfrak{D} = \{b \in \mathfrak{P}(A) \mid d \in b \land b\text{~là $\sigma$-bất biến}\}$, suy ra được $\forall C \in \mathfrak{R}, C \in \mathfrak{D}$, kéo theo $\mathfrak{R} \subseteq \mathfrak{D}$.
+
+Giả sử $\mathfrak{R} \subsetneq \mathfrak{D}$, tồn tại $D \in \mathfrak{D}$ sao cho $D \notin \mathfrak{R}$. Nhận thấy rằng $D$ thuộc $\mathfrak{P}(A)$ và $D$ là $\sigma$-bất biến, cho nên để $D$ không nằm trong $\mathfrak{R}$ thì $r \notin D$. Gọi $E$ là một phần tử của $\mathfrak{R}$, khi đó có $E$ cũng $\sigma$-bất biến và $r \in E$. Sử dụng kết quả đã có (từ \refex{ex:li_thuyet_tap_hop:tien_de:quan_he:bt_qhaxn}), do $\sigma$ là song ánh nên
+\begin{equation*}
+   \Imf\left(\sigma \middle|_{E\setminus D}\right) = \Imf(\sigma|_E) \setminus \Imf(\sigma|_D) = E \setminus D.
+\end{equation*}
+Do đó, $E \setminus D$ là $\sigma$-bất biến. Thêm vào đó, $r \in E\setminus D$ bởi $\begin{cases}
+   r \in E \\
+   r \notin D
+\end{cases}$, kéo theo $E \setminus D \in \mathfrak{R}$, dẫn đến $R \subseteq E \setminus D$. Tuy nhiên, theo cách gọi, $d$ nằm trong cả $E$ và $D$, dẫn đến $d \notin E \setminus D$ nhưng $d \in R$. Mâu thuẫn.
+
+Theo chứng minh bằng phản chứng, cần phải có $\overline{\mathfrak{R} \subsetneq \mathfrak{D}}$, hay $\mathfrak{R} \supseteq \mathfrak{D}$. Dẫn đến, $\mathfrak{R} = \mathfrak{D}$. Vì thế, chắc chắn rằng $R = O_d$. Tương tự, cũng chứng minh được $S = O_d$, cho nên $R \cap S \neq \varnothing \implies R = S$. Do vậy, \begin{equation*}
+   \forall R \in Q, \forall S \in Q, (R \neq S \implies R \cap S = \varnothing).
+\end{equation*}
+
+Điều kiện còn lại để khẳng định $Q$ là một phân hoạch là tương đối dễ để thể hiện. Thật vậy, với mọi $e \in A$, chúng ta xác định được quỹ đạo $O_a$, do đó, \begin{equation*}
+   \forall e \in A, \exists T \in Q, e \in T.
+\end{equation*}
+
+Qua đó, điều phải chứng minh.
 
 \exercise Giả sử rằng giữa tập hợp $A$ và $B$ tồn tại $f: A \to B$ và $g: B \to A$ đều là đơn ánh. Chứng minh rằng tồn tại song ánh từ $A$ sang $B$.
 
@@ -1492,4 +1557,4 @@ Mặc dù phần này không sử dụng đến ảnh hưởng của các phép 
 Cho $x$ và $y$ là hai tập hợp. Gọi $\sim_x$ và $\sim_y$ lần lượt là quan hệ tương đương trong $x$ và $y$, và $f: x \to y$ là ánh xạ. $f$ \defText{tương thích} với $\sim_x$ và $\sim_y$ khi và chỉ khi \begin{equation*}
    \defMath{\forall a \in x, \forall b \in x, (a \sim_x b \implies f(a)\sim_y f(b))}.
 \end{equation*}
-Gọi $p: x \to \frac{x}{\sim_x}$ và $q: y \to \frac{y}{\sim_y}$ đều là toàn ánh chính tắc. Giả sử \coloringCrimson{}
+Gọi $p: x \to \frac{x}{\sim_x}$ và $q: y \to \frac{y}{\sim_y}$ đều là toàn ánh chính tắc. Với một ánh xạ $g: x \to y$, giả sử xác định được $\varphi: \frac{x}{\sim_x} \to \frac{y}{\sim_y}$ sao cho $\varphi \circ p = q \circ g$, khi này, với mọi $a$ và $b$ cùng thuộc $x$, nếu như $a \sim_x b$ thì, từ định nghĩa của toàn ánh chính tắc và tính chất của lớp tương đương, $p(a) = p(b)$. Điều này kéo theo $\varphi(p(a)) = \varphi(p(b))$ hay $(\varphi \circ p)(a) = (\varphi \circ p)(b)$. Dựa vào những giả sử mà chúng ta đề ra, $(q \circ g)(a) = (q \circ g)(b)$ hay $q(g(a)) = q(g(b))$.
