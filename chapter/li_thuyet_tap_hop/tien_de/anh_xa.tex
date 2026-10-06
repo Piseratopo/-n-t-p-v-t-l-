@@ -1578,3 +1578,11 @@ Có $p(a_1) = p(a_2)$ nên $a_1$ và $a_2$ thuộc cùng một lớp tương đ�
 Tiếp theo, với mọi $a \in x$, đặt $B = \phi(p(a))$. Từ định nghĩa $\phi$, tồn tại $z \in A$ sao cho $p(z) = p(a)$ và $B = (q \circ g)(z)$. Do $p(z) = p(a)$ nên $z \sim_x a$. Vì $g$ tương thích với $\sim_x$ và $\sim_y$, có $g(z) \sim_y g(a)$, và từ việc $q$ là toàn ánh chính tắc, $(q \circ g)(z) = (q \circ g)(a)$ hay $B = (q \circ g)(a)$. Kết hợp lại, chúng ta có \begin{equation*}
    \forall a \in x, (\phi(p(a)) = (q \circ g)(a)).
 \end{equation*}
+
+Kết luận, chúng ta có \begin{equation*}
+   \exists \varphi, \varphi \text{~là ánh xạ~}\frac{x}{\sim_x} \to \frac{y}{\sim_y}\text{~thỏa mãn~}\varphi \circ p = q \circ g \iff g \text{~tương thích với $\sim_x$ và $\sim_y$}
+\end{equation*}
+và chúng ta sẽ chứng minh $\varphi$ này là duy nhất và bằng $\phi$ định nghĩa ở trên. Giả sử tồn tại $\phiNom$ cũng thỏa mãn tính chất của $\varphi$. Xét $k$ là một phần tử bất kì trong $\phiNom$, có thể viết $k = (i; j)$ sao cho $i \in \frac{x}{\sim_x}$, $j \in \frac{y}{\sim_y}$. Đặt $i = p(m)$, khi đó, do $\phiNom \circ p = q \circ g = \phi \circ p$, \begin{equation*}
+   j = \phiNom(i) = \phiNom(p(m)) = \phi(p(m)) = \phi(i),
+\end{equation*} 
+kéo theo $k \in \phi$. Vậy, $\phiNom \subseteq \phi$. Điều ngược lại chứng minh tương tự, dẫn đến $\phiNom = \phi$, khẳng định tính duy nhất của $\phi$.
