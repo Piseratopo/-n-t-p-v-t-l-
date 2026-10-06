@@ -1557,4 +1557,24 @@ Mặc dù phần này không sử dụng đến ảnh hưởng của các phép 
 Cho $x$ và $y$ là hai tập hợp. Gọi $\sim_x$ và $\sim_y$ lần lượt là quan hệ tương đương trong $x$ và $y$, và $f: x \to y$ là ánh xạ. $f$ \defText{tương thích} với $\sim_x$ và $\sim_y$ khi và chỉ khi \begin{equation*}
    \defMath{\forall a \in x, \forall b \in x, (a \sim_x b \implies f(a)\sim_y f(b))}.
 \end{equation*}
-Gọi $p: x \to \frac{x}{\sim_x}$ và $q: y \to \frac{y}{\sim_y}$ đều là toàn ánh chính tắc. Với một ánh xạ $g: x \to y$, giả sử xác định được $\varphi: \frac{x}{\sim_x} \to \frac{y}{\sim_y}$ sao cho $\varphi \circ p = q \circ g$, khi này, với mọi $a$ và $b$ cùng thuộc $x$, nếu như $a \sim_x b$ thì, từ định nghĩa của toàn ánh chính tắc và tính chất của lớp tương đương, $p(a) = p(b)$. Điều này kéo theo $\varphi(p(a)) = \varphi(p(b))$ hay $(\varphi \circ p)(a) = (\varphi \circ p)(b)$. Dựa vào những giả sử mà chúng ta đề ra, $(q \circ g)(a) = (q \circ g)(b)$ hay $q(g(a)) = q(g(b))$.
+Gọi $p: x \to \frac{x}{\sim_x}$ và $q: y \to \frac{y}{\sim_y}$ đều là toàn ánh chính tắc. Với một ánh xạ $g: x \to y$, giả sử xác định được $\varphi: \frac{x}{\sim_x} \to \frac{y}{\sim_y}$ sao cho $\varphi \circ p = q \circ g$, khi này, với mọi $a$ và $b$ cùng thuộc $x$, nếu như $a \sim_x b$ thì, từ định nghĩa của toàn ánh chính tắc và tính chất của lớp tương đương, $p(a) = p(b)$. Điều này kéo theo $\varphi(p(a)) = \varphi(p(b))$ hay $(\varphi \circ p)(a) = (\varphi \circ p)(b)$. Dựa vào những giả sử mà chúng ta đề ra, $(q \circ g)(a) = (q \circ g)(b)$ hay $q(g(a)) = q(g(b))$. Vì $q$ là toàn ánh chính tắc, có $g(a) \sim_y g(b)$ cần phải đúng. Và vậy, $g$ tương thích với $\sim_x$ và $\sim_y$. 
+
+Ngược lại, nếu $g$ tương thích với $\sim_x$ và $\sim_y$, định nghĩa quan hệ $\phi$ từ $\frac{x}{\sim_x}$ đến $\frac{y}{\sim_y}$ sao cho \begin{equation*}
+   \defMath{\forall A \in \frac{x}{\sim_x}, \forall B \in \frac{y}{\sim_y}, (A\;\phi\;B \iff \exists a \in A, \exists b \in B, (A = p(a) \land B = (q\circ g)(a)))}.
+\end{equation*}
+
+Trước hết, chúng ta chứng minh $\phi$ là một ánh xạ. Với mọi $A \in \frac{x}{\sim_x}$, tồn tại $a \in A$ để $A = p(a)$ do $p$ toàn ánh. Vì $g$ có tập xác định là $x$ nên $B = (q\circ g)(a)$ được xác định. Do đó, \begin{equation*}
+   \forall A \in \frac{x}{\sim_x}, \exists b \in \frac{y}{\sim_y}, A\;\phi\;B,
+\end{equation*}
+hay tập xác định của $\phi$ là $x$. Thêm vào đó, với một giá trị $A \in \frac{x}{\sim_x}$ nào đó, nếu chúng ta có $B$ và $C$ cùng thuộc $\frac{y}{\sim_y}$ sao cho $A\;\phi\;B$ và $A\;\phi\;C$ thì khi đó, do định nghĩa của $\phi$, tồn tại $a_1$, $a_2$ nằm trong $A$, $b$ nằm trong $B$ và $c$ nằm trong $C$ sao cho \begin{equation*}
+   \begin{cases}
+      A = p(a_1) = p(a_2) \\
+      B = (q \circ g)(a_1) \\
+      C = (q \circ g)(a_2)
+   \end{cases}.
+\end{equation*}
+Có $p(a_1) = p(a_2)$ nên $a_1$ và $a_2$ thuộc cùng một lớp tương đương. Do $g$ tương thích với $\sim_x$ và $\sim_y$, có $g(a_1) \sim_y g(a_2)$, và từ đó, $(q \circ g)(a_1) = (q \circ g)(a_2)$ hay $B = C$. Vậy, dễ thấy $\phi$ là một ánh xạ.
+
+Tiếp theo, với mọi $a \in x$, đặt $B = \phi(p(a))$. Từ định nghĩa $\phi$, tồn tại $z \in A$ sao cho $p(z) = p(a)$ và $B = (q \circ g)(z)$. Do $p(z) = p(a)$ nên $z \sim_x a$. Vì $g$ tương thích với $\sim_x$ và $\sim_y$, có $g(z) \sim_y g(a)$, và từ việc $q$ là toàn ánh chính tắc, $(q \circ g)(z) = (q \circ g)(a)$ hay $B = (q \circ g)(a)$. Kết hợp lại, chúng ta có \begin{equation*}
+   \forall a \in x, (\phi(p(a)) = (q \circ g)(a)).
+\end{equation*}
