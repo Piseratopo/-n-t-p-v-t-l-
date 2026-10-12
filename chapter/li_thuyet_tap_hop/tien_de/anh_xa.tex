@@ -116,6 +116,23 @@ Vì nếu $A \neq \varnothing$ thì $B \neq \varnothing$, nên, chúng ta cũng 
    A = \varnothing \\ B = \varnothing
 \end{aligned}\right. \implies A = \varnothing$. 
 
+\exercise Cho các tập hợp $A$, $B$ và quan hệ $R$ từ $A$ đến $B$. Giả sử tồn tại $C$ sao cho $B \subseteq C$. Gọi $i$ là ánh xạ nhúng chính tắc từ $B$ đến $C$. Chứng minh rằng
+\begin{equation*}
+   R = i \circ R.
+\end{equation*}
+
+\solution
+
+Với mọi $x$, nếu $x$ thuộc $R$, tồn tại $a \in A$ và $b \in B$ để $x = (a; b)$. Có $b \in B$ nên $b \in C$, do đó $b\;i\;b$. Kết hợp với $a\;R\;b$, chúng ta có $a\;i\circ R\;b$ hay $x \in i \circ R$. Do đó, $R \subseteq i \circ R$.
+
+Còn trong trường hợp $x \in i \circ R$, gọi $y \in A$ và $z \in C$ để $x = (y; z)$. Theo định nghĩa của quan hệ tích, tồn tại $w \in B$ sao cho $\begin{cases}
+   y\;R\;w \\
+   w\;i\;z
+\end{cases}$. Vì $i$ là ánh xạ nhúng chính tắc nên $w = z$, dẫn đến $y\;R\;z$ hay $x \in R$. Suy ra, $i \circ R \subseteq R$.
+
+Kết hợp lại, $R = i \circ R$. Chúng ta có điều phải chứng minh.
+
+
 \exercise Cho tập hợp $E$, $F$ và ánh xạ $f: E \to F$. Chứng minh rằng
 \begin{enumerate}
    \item $\forall A \in \mathfrak{P}(E), A \subseteq \Imf\left(f^{-1}\middle|_{\Imf(f|_A) \times E}\right)$;
@@ -1586,3 +1603,40 @@ và chúng ta sẽ chứng minh $\varphi$ này là duy nhất và bằng $\phi$ 
    j = \phiNom(i) = \phiNom(p(m)) = \phi(p(m)) = \phi(i),
 \end{equation*} 
 kéo theo $k \in \phi$. Vậy, $\phiNom \subseteq \phi$. Điều ngược lại chứng minh tương tự, dẫn đến $\phiNom = \phi$, khẳng định tính duy nhất của $\phi$. Chúng ta gọi ánh xạ $\phi$ duy nhất này thu được từ $g$ bằng cách \defText{chuyển sang tập thương} và kí hiệu là $\tilde{g}$. 
+
+Sau khi nghiên cứu về tính tương thích, hãy xét cách để phân tích một ánh xạ. Trước hết, chúng ta sẽ định nghĩa một quan hệ. Giả sử có ánh xạ $h: A \to B$, quan hệ $R_h$ từ $A$ đến chính nó được xác định như sau:
+\begin{equation*}
+   \forall x \in A, \forall y \in A, \left(x\;R_h\;y \iff h(x) = h(y)\right).
+\end{equation*} 
+Dễ thấy $R_h$ là một quan hệ tương đương. Thật vậy, với mọi $x$, $y$, $z$ thuộc $A$,
+\begin{itemize}
+   \item $h(x) = h(x)$ nên $x\;R_h\;x$ (tính phản xạ);
+   \item $h(x) = h(y) \iff h(y) = h(x)$, nên $x\;R_h\;y \iff y\;R_h\;x$ (tính đối xứng);
+   \item $\begin{cases}
+      h(x) = h(y) \\
+      h(y) = h(z)
+   \end{cases} \implies h(x) = h(z)$, nên $\begin{cases}
+      x\;R_h\;y \\
+      y\;R_h\;z
+   \end{cases} \iff x\;R_h\;z$ (tính bắc cầu).
+\end{itemize}
+Định nghĩa thêm quan hệ $=^*$ trong $\Imf(h)$ xác định bởi, 
+\begin{equation*}
+   \forall x \in \Imf(h), \forall y \in \Imf(h), (x =^* y \iff x = y).
+\end{equation*}
+Hiển nhiên rằng $=^*$ là một quan hệ tương đương trong $\Imf(h)$. Ngoài ra, 
+\begin{equation*}
+   \forall x \in A, \forall y \in A, \left(x\;R_h\;y \iff h(x) =^* h(y)\right).
+\end{equation*} 
+Vì lí do đó, $h$ tương thích với $R_h$ và $=^*$. Gọi $m: A \to \frac{A}{R_h}$ và $n: \Imf(h) \to \frac{\Imf(h)}{=^*}$ là toàn ánh chính tắc. Dễ thấy rằng $h$ xác định một ánh xạ từ $A$ đến $\Imf(h)$. Khi đó, $n \circ h$ có nghĩa và có \begin{equation}
+   \tilde{h} \circ m = n \circ h\footnotemark.
+   \label{eq:li_thuyet_tap_hop:tien_de:anh_xa:tch1.7}
+\end{equation}
+\footnotetext{Nhắc lại, $\tilde{h}: \frac{A}{R_h} \to \frac{\Imf(h)}{=^*}$ là $h$ chuyển sang tập thương.} Xét hai giá trị $a$ và $b$ cùng thuộc $\Imf(h)$ sao cho $n(a) = n(b)$. Từ định nghĩa của toàn ánh chính tắc, $a$ và $b$ thuộc cùng một lớp tương đương mô-đun $=^*$, dẫn đến $a =^* b$. Cách đặt $=^*$ cũng kéo theo $a = b$, dẫn đến sự khẳng định rằng $n$ đơn ánh. Vì vậy, $n$ là song ánh. Từ \eqref{eq:li_thuyet_tap_hop:tien_de:anh_xa:tch1.7}, có được: 
+\begin{equation*}
+   n^{-1} \circ \tilde{h} \circ m = n^{-1} \circ n \circ h = h.
+\end{equation*}
+Gọi $j: \Imf(h) \to B$ là đơn ánh chính tắc. Bởi vì $j \circ n^{-1} \circ \tilde{h} \circ m  = n^{-1} \circ \tilde{h} \circ m $ nên \begin{equation*}
+   j \circ n^{-1} \circ \tilde{h} \circ m = h.
+\end{equation*}
+Đặt $\hat{h} = n^{-1} \circ \tilde{h}$.
