@@ -1632,11 +1632,29 @@ Vì lí do đó, $h$ tương thích với $R_h$ và $=^*$. Gọi $m: A \to \frac
    \tilde{h} \circ m = n \circ h\footnotemark.
    \label{eq:li_thuyet_tap_hop:tien_de:anh_xa:tch1.7}
 \end{equation}
-\footnotetext{Nhắc lại, $\tilde{h}: \frac{A}{R_h} \to \frac{\Imf(h)}{=^*}$ là $h$ chuyển sang tập thương.} Xét hai giá trị $a$ và $b$ cùng thuộc $\Imf(h)$ sao cho $n(a) = n(b)$. Từ định nghĩa của toàn ánh chính tắc, $a$ và $b$ thuộc cùng một lớp tương đương mô-đun $=^*$, dẫn đến $a =^* b$. Cách đặt $=^*$ cũng kéo theo $a = b$, dẫn đến sự khẳng định rằng $n$ đơn ánh. Vì vậy, $n$ là song ánh. Từ \eqref{eq:li_thuyet_tap_hop:tien_de:anh_xa:tch1.7}, có được: 
+\footnotetext{Nhắc lại, $\tilde{h}: \frac{A}{R_h} \to \frac{\Imf(h)}{=^*}$ là $h$ chuyển sang tập thương.}Xét hai giá trị $a$ và $b$ cùng thuộc $\Imf(h)$ sao cho $n(a) = n(b)$. Từ định nghĩa của toàn ánh chính tắc, $a$ và $b$ thuộc cùng một lớp tương đương mô-đun $=^*$, dẫn đến $a =^* b$. Cách đặt $=^*$ cũng kéo theo $a = b$, dẫn đến sự khẳng định rằng $n$ đơn ánh. Vì vậy, $n$ là song ánh. Từ \eqref{eq:li_thuyet_tap_hop:tien_de:anh_xa:tch1.7}, có được: 
 \begin{equation*}
    n^{-1} \circ \tilde{h} \circ m = n^{-1} \circ n \circ h = h.
 \end{equation*}
 Gọi $j: \Imf(h) \to B$ là đơn ánh chính tắc. Bởi vì $j \circ n^{-1} \circ \tilde{h} \circ m  = n^{-1} \circ \tilde{h} \circ m $ nên \begin{equation*}
    j \circ n^{-1} \circ \tilde{h} \circ m = h.
 \end{equation*}
-Đặt $\hat{h} = n^{-1} \circ \tilde{h}$.
+
+Đặt $\hat{h} = n^{-1} \circ \tilde{h}$. Quan sát được rằng $h$ có thể được viết lại dưới dạng $h = j \circ \hat{h} \circ m$. Hãy gọi thêm một hàm $H: \frac{A}{R_h} \to \Imf(h)$ cũng thoả mãn $h = j \circ H \circ m$. 
+
+Hãy xem xét $\tilde{h}$ có tính chất đặc biệt nào không. Trước hết, từ những gì chúng ta đã nghiên cứu về tính tương thích, với mọi $X \in \frac A{R_h}$ và $Y \in \frac{\Imf(h)}{=^*}$, $Y = \tilde{h}(X)$ khi và chỉ khi tồn tại $x \in X$ và $y \in Y$ sao cho $X = m(x)$ và $Y = (n \circ h)(y)$. Với mọi $X_1$ và $X_2$, nếu chúng thoả mãn $\tilde{h}(X_1) = \tilde{h}(X_2)$, tồn tại $x_1$ và $x_2$ cùng thuộc $A$ để  $X_1 = m(x_1)$ và $X_2 = m(x_2)$. Khi đó, \begin{equation*}
+   (h \circ m)(x_1) = (h \circ m)(x_2).
+\end{equation*}
+Do \eqref{eq:li_thuyet_tap_hop:tien_de:anh_xa:tch1.7}, $(n \circ h)(x_1) = (n \circ h)(x_2)$. Vì $n$ song ánh nên $h(x_1) = h(x_2)$. Theo định nghĩa của quan hệ $R_h$, điều này có nghĩa là $x_1\;R_h\;x_2$, kéo theo hai lớp tương đương của chúng trùng nhau:
+\begin{center}
+   $m(x_1) = m(x_2)$ hay $X_1 = X_2$.
+\end{center}
+Vì vậy, $\forall X_1, \forall X_2, \left(\tilde{h}(X_1) = \tilde{h}(X_2) \implies X_1 = X_2\right)$. $\tilde{h}$ là đơn ánh.
+
+Lấy một phần tử $Z \in \frac{\Imf(h)}{=^*}$ bất kì. Do $n: \Imf(h) \to \frac{\Imf(h)}{=^*}$ là toàn ánh, tồn tại $z \in \Imf(h)$ sao cho $z = n(Z)$. Đồng thời, tồn tại $\& \in A$ sao cho $z = h(\&)$. Chọn $V = m(\&)$, có
+\begin{equation*}
+   \tilde{h}(V) = (\tilde{h} \circ m)(\&) = (n \circ h)(\&) = n(z) = Z.
+\end{equation*}
+Điều này chứng tỏ với mọi $Z \in \frac{\Imf(h)}{=^*}$, luôn tồn tại $V^* \in \frac{A}{R_h}$ để $\tilde{h}(V^*) = Z$. Do đó, $\tilde{h}$ toàn ánh.
+
+Từ các kết quả trên, $\tilde{h}$ là một song ánh. Bổ sung thêm $n$ song ánh thì dễ thấy $n^{-1} \circ \tilde{h}$ cũng song ánh. 
