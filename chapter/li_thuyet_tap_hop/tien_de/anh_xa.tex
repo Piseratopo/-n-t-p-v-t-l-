@@ -1640,7 +1640,12 @@ Gọi $j: \Imf(h) \to B$ là đơn ánh chính tắc. Bởi vì $j \circ n^{-1} 
    j \circ n^{-1} \circ \tilde{h} \circ m = h.
 \end{equation*}
 
-Đặt $\hat{h} = n^{-1} \circ \tilde{h}$. Quan sát được rằng $h$ có thể được viết lại dưới dạng $h = j \circ \hat{h} \circ m$. Hãy gọi thêm một hàm $H: \frac{A}{R_h} \to \Imf(h)$ cũng thoả mãn $h = j \circ H \circ m$. 
+Đặt $\hat{h} = n^{-1} \circ \tilde{h}$. Quan sát được rằng $h$ có thể được viết lại dưới dạng $h = j \circ \hat{h} \circ m$. Hãy gọi thêm một hàm $H: \frac{A}{R_h} \to \Imf(h)$ cũng thoả mãn $h = j \circ H \circ m$. Xét $p \in \frac{A}{R_h}$. Vì $m$ là toàn ánh chính tắc nên tồn tại $q$ để $p = m(q)$. Quan sát:
+\begin{itemize}
+   \item $h(q) = (j \circ H \circ m)(q) = (H \circ m)(q) = H(m(q)) = H(p)$, và
+   \item $h(q) = (j \circ \hat{h} \circ m)(q) = \hat{h}(p)$.
+\end{itemize}  
+Vậy $\forall p \in \frac{A}{R_h}, H(p) = \hat{h}(p)$. Do đó, $H = \hat{p}$. Chúng ta có được cách viết $h = j \circ \hat{h} \circ m$ là duy nhất.
 
 Hãy xem xét $\tilde{h}$ có tính chất đặc biệt nào không. Trước hết, từ những gì chúng ta đã nghiên cứu về tính tương thích, với mọi $X \in \frac A{R_h}$ và $Y \in \frac{\Imf(h)}{=^*}$, $Y = \tilde{h}(X)$ khi và chỉ khi tồn tại $x \in X$ và $y \in Y$ sao cho $X = m(x)$ và $Y = (n \circ h)(y)$. Với mọi $X_1$ và $X_2$, nếu chúng thoả mãn $\tilde{h}(X_1) = \tilde{h}(X_2)$, tồn tại $x_1$ và $x_2$ cùng thuộc $A$ để  $X_1 = m(x_1)$ và $X_2 = m(x_2)$. Khi đó, \begin{equation*}
    (h \circ m)(x_1) = (h \circ m)(x_2).
@@ -1657,4 +1662,55 @@ Lấy một phần tử $Z \in \frac{\Imf(h)}{=^*}$ bất kì. Do $n: \Imf(h) \t
 \end{equation*}
 Điều này chứng tỏ với mọi $Z \in \frac{\Imf(h)}{=^*}$, luôn tồn tại $V^* \in \frac{A}{R_h}$ để $\tilde{h}(V^*) = Z$. Do đó, $\tilde{h}$ toàn ánh.
 
-Từ các kết quả trên, $\tilde{h}$ là một song ánh. Bổ sung thêm $n$ song ánh thì dễ thấy $n^{-1} \circ \tilde{h}$ cũng song ánh. 
+Từ các kết quả trên, $\tilde{h}$ là một song ánh. Bổ sung thêm $n$ song ánh thì dễ thấy $n^{-1} \circ \tilde{h}$ cũng song ánh, kéo theo $\hat{h}$ là một song ánh. Cụ thể, $\hat{h}$ được gọi là \defText{song ánh chính tắc} của $h$. 
+
+Nếu bạn đọc đã lướt qua phần vừa rồi nhưng vẫn muốn biết ý nghĩa của toàn bộ lập luận ở trên, chúng ta vừa khẳng định rằng mọi ánh xạ $h$ đều có thể viết lại dưới dạng \begin{equation*}
+   h = j \circ \hat{h} \circ m
+\end{equation*}
+với $m$ là đơn ánh chính tắc, $j$ là toàn ánh chính tắc, và $\hat{h}$ là song ánh chính tắc. Thêm vào đó, cách biểu diễn này là duy nhất, và có tên gọi là \defText{biểu diễn phân tích chính tắc} (hoặc \defText{dạng phân tích chính tắc}) của một ánh xạ.
+
+\exercise Cho $A$, $B$, $C$ là tập hợp. Gọi $R$, $S$, $T$, theo thứ tự, là các quan hệ tương đương lần lượt trong $A$, trong $B$, trong $C$. Gọi $f: A \to B$ là ánh xạ tương thích với $R$ và $S$, $g:B \to C$ là ánh xạ tương thích với $S$ và $T$. Chứng minh rằng $g \circ f$ tương thích với $R$ và $T$ và $\widetilde{g \circ f} = \tilde{g} \circ \tilde{f}$.
+
+\solution
+
+Với mọi $u$ và $v$ thuộc $A$, chúng ta có \begin{equation*}
+   u\;R\;v \implies f(u)\;S\;f(v)
+\end{equation*}
+do $f$ tương thích với $R$ và $S$. Ngoài ra, do $g$ tương thích với $S$ và $T$, \begin{equation*}
+   f(u)\;S\;f(v) \implies g(f(u))\;T\;g(f(v)).
+\end{equation*}
+Tính bắc cầu của phép kéo theo cho chúng ta \begin{equation*}
+   \forall u \in A, \forall v \in A, \left(u\;R\;v \implies (g\circ f)(u)\;T\;(g\circ f)(v)\right).
+\end{equation*}
+Vì vậy, $g\circ f$ tương thích với $R$ và $T$.
+
+Nếu đặt $p: A \to A/R$ và $q: B \to B/S$ là toàn ánh chính tắc, có được $\tilde{f} \circ p = q \circ f$, dẫn đến \begin{equation*}
+   \left(\tilde{f} \circ p\right)(u) = (q \circ f)(u).
+\end{equation*}
+Ngoài ra, \begin{itemize}
+   \item $\left(\tilde{f} \circ p\right)(u) = \tilde{f}(p(u)) = \tilde{f}([u]_R)$, và
+   \item $(q \circ f)(u) = q(f(u)) = [f(u)]_S$.
+\end{itemize}
+Cho nên, $\forall u \in A, \tilde{f}([u]_R) = \left[f(u)\right]_S$. Một cách tương tự, $\forall w \in B, \tilde{g}([w]_S) = [g(w)]_T$. Cụ thể hóa $w$ bởi $f(u)$ và tổng quát hóa $u$, được 
+$$\forall u \in A, \tilde{g}([f(u)]_S) = [g(f(u))]_T.$$
+Kết hợp hai kết quả vừa có, \begin{equation*}
+   \forall u \in A, \tilde{g}\left(\tilde{f}([u]_R)\right) = [(g \circ f)(u)]_T
+\end{equation*}
+hay $\forall u \in A, \left(\tilde{g} \circ \tilde{f}\right)([u]_R) = [(g \circ f)(u)]_T$. Lập luận giống như những gì chúng ta vừa có, thấy được 
+\begin{equation*}
+   \forall u \in A, \widetilde{g \circ f}([u]_R) = [(g \circ f)(u)]_T.
+\end{equation*}
+Vì vậy, với mọi $u \in A$, $\widetilde{g \circ f}([u]_R) = \left(\tilde{g} \circ \tilde{f}\right)([u]_R)$. Nhắc lại rằng, mọi $U \in A/R$ đều có $u \in A$ để $U = [u]_R$, suy ra 
+\begin{equation*}
+   \forall U \in A/R, \widetilde{g \circ f}(U) = \left(\tilde{g} \circ \tilde{f}\right)(U).
+\end{equation*}
+Do vậy, $\widetilde{g \circ f} = \tilde{g} \circ \tilde{f}$. Điều phải chứng minh.
+
+\exercise Cho $\mathscr{E}$ là tập hợp và $A \in \mathfrak{P}(\mathscr{E})$. Xác định các biểu diễn phân tích chính tắc của 
+\begin{array}[t]{rcl}
+   f:\mathfrak{P}(\mathscr{E}) &\to & \mathfrak{P}(\mathscr{E}) \\
+   x &\mapsto &x \cap A
+\end{array} và \begin{array}[t]{rcl}
+   g:\mathfrak{P}(\mathscr{E}) &\to & \mathfrak{P}(\mathscr{E}) \\
+   x &\mapsto &x \cup A
+\end{array}.
