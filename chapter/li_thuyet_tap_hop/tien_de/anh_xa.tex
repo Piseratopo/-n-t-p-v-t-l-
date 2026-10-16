@@ -1,6 +1,6 @@
 \section{Ánh xạ}
 
-Ánh xạ là một tên gọi khác của hàm. Giống như định nghĩa của hàm trong giải tích vị từ, ánh xạ cũng có tính chất cơ bản là ứng với mỗi hạng thức hoặc nhóm hạng thức, ánh xạ sẽ cho ra và chỉ cho ra một đối tượng. Cách hiểu của ánh xạ này là tương đối mới, bởi từ trước thế kỉ \Rmnum{19}, ánh xạ được xem là một đối tượng được xác định bởi một công thức nào đó. Định nghĩa này thì đơn giản hơn và có tính ứng dụng tốt hơn định nghĩa hiện nay, nhưng đi kèm với đó là những sự tranh cãi về giới hạn trong việc mô tả công thức. Ngoài ra, hai ánh xạ có thể có định nghĩa khác nhau nhưng lại có thể hoàn toàn đồng nhất. Định nghĩa cũ vừa có tính dư thừa vừa không đủ bao quát, dẫn đến nhu câu đưa ra định nghĩa mới cho hàm, hay ánh xạ.
+Ánh xạ là một tên gọi khác của hàm. Giống như định nghĩa của hàm trong giải tích vị từ, ánh xạ cũng có tính chất cơ bản là ứng với mỗi hạng thức hoặc nhóm hạng thức, ánh xạ sẽ cho ra và chỉ cho ra một đối tượng. Cách hiểu của ánh xạ này là tương đối mới, bởi từ trước thế kỉ \Rmnum{19}, ánh xạ được xem là một đối tượng được xác định bởi một công thức nào đó. Định nghĩa này thì đơn giản hơn và có tính ứng dụng tốt hơn định nghĩa hiện nay, nhưng đi kèm với đó là những sự tranh cãi về giới hạn trong việc mô tả công thức. Ngoài ra, hai ánh xạ có thể có định nghĩa khác nhau nhưng lại có thể hoàn toàn đồng nhất. Định nghĩa cũ vừa có tính dư thừa vừa không đủ bao quát, dẫn đến nhu cầu đưa ra định nghĩa mới cho hàm, hay ánh xạ.
 
 \subsection{Định nghĩa ánh xạ}
 
@@ -40,7 +40,7 @@ Khi có định nghĩa về ánh xạ, chúng ta có thể thực hiện so sán
 Ngược lại, giả sử \begin{equation*}
    \forall a \in x, f(a) = g(a). 
 \end{equation*}
-Với mọi $d$ là một phần tử thuộc $f$, tồn tại $b \in A$ và $c \in B$ sao cho $d = (b; c)$. Có 
+Với mọi $d$ là một phần tử thuộc $f$, tồn tại $b \in x$ và $c \in y$ sao cho $d = (b; c)$. Có 
 $c = f(b) = g(b)$ nên $(b; c)$ cũng thuộc $g$. Vì vậy, 
 $$
    \forall d \in f, d \in g.
@@ -141,7 +141,7 @@ Kết hợp lại, $R = i \circ R$. Chúng ta có điều phải chứng minh.
 
 \solution
 
-\resetSubexercise Xét trong giới hạn của $\forall A \in \mathfrak{P}(E)$, với mọi $x$ thuộc $A$, tồn tại $y \in B$ sao cho $y = f(x)$. Qua đó, $y \in \Imf(f|_A)$ và $y\;f^{-1}\;x$. Kết hợp với $x = A$, chúng ta có \begin{equation*}
+\resetSubexercise Xét trong giới hạn của $\forall A \in \mathfrak{P}(E)$, với mọi $x$ thuộc $A$, tồn tại $y \in F$ sao cho $y = f(x)$. Qua đó, $y \in \Imf(f|_A)$ và $y\;f^{-1}\;x$. Kết hợp với $x = A$, chúng ta có \begin{equation*}
    (y; x) \in \left.f^{-1}\middle|_{\Imf(f|_A) \times E}\right.,
 \end{equation*} 
 và do đó $x \in \Imf\left(f^{-1}\middle|_{\Imf(f|_A) \times E}\right)$. Vì vậy, $$
@@ -832,7 +832,7 @@ Chúng ta sẽ chứng minh rằng $B$ không thuộc tập giá trị của $f$
 \end{equation*}
 \begin{enumerate}
    \item Chứng minh rằng $Q$ là một mối quan hệ tương đương.
-   \item Tìm một song ánh từ $A/T \times B/D$ vào $(A \times B)/Q$.
+   \item Tìm một song ánh từ $A/T \times Z/D$ vào $(A \times B)/Q$.
 \end{enumerate}
 
 \solution 
@@ -970,7 +970,7 @@ Kết hợp lại, được $\forall B \in \mathfrak{P}(Y), \Imf\left(f\middle|_
 Tiếp theo, hãy giả thiết rằng \coloringDodgerblue{$\forall B \in \mathfrak{P}(Y), \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{B \times X}\right)}\right) = B$}. Có $Y \in \mathfrak{P}(Y)$ nên cụ thể hóa $B$ thành $Y$, chúng ta có \begin{equation*}
    \Imf\left(f\middle|_{\Imf\left(f^{-1}\middle|_{Y \times X}\right)}\right) = Y.
 \end{equation*}
-Với mọi $h \in y$, tồn tại $g \in X$ --- cụ thể, $g \in \Imf\left(f^{-1}\middle|_{Y \times X}\right)$ --- sao cho $g\;f\;h$. Do vậy, $f$ toàn ánh.
+Với mọi $h \in Y$, tồn tại $g \in X$ --- cụ thể, $g \in \Imf\left(f^{-1}\middle|_{Y \times X}\right)$ --- sao cho $g\;f\;h$. Do vậy, $f$ toàn ánh.
 
 Chúng ta đã khẳng định hai mệnh đề là đẳng giá với nhau. Điều phải chứng minh.
 
@@ -1123,8 +1123,8 @@ Xét $i$ và $j$ cùng thuộc $A$ sao cho $i \neq j$. Chia làm các trường 
    \item \coloringCrimson{$i \in C$ và $j \in C$} cho chúng ta $\begin{cases}
       h(i) = m(i) \\
       h(j) = m(j)
-   \end{cases}$. Do $m$ song ánh nên $m(i) \neq m(j)$, dẫn đến $y(i) \neq y(j)$. Qua đó, $h(i) \neq h(j)$.
-   \item \coloringDodgerblue{$i \notin C$ và $j \notin C$} cho $h(i) = n^{-1}(i)$ và $h(j) = n^{-1}{j}$. Tương tự, vì $n^{-1}$ song ánh nên $h(i) \neq h(j)$.
+   \end{cases}$. Do $m$ song ánh nên $m(i) \neq m(j)$, dẫn đến $h(i) \neq h(j)$. Qua đó, $h(i) \neq h(j)$.
+   \item \coloringDodgerblue{$i \notin C$ và $j \notin C$} cho $h(i) = n^{-1}(i)$ và $h(j) = n^{-1}(j)$. Tương tự, vì $n^{-1}$ song ánh nên $h(i) \neq h(j)$.
    \item \coloringJade{$i \in C$ và $j \notin C$}, chúng ta có $h(i) \in D \land h(j) \notin D$ nên $h(i) \neq h(j)$.
    \item \coloringWisteria{$i \notin C$ và $j \in C$}, $h(i) \neq h(j)$ do $h(i) \notin D \land h(j) \in D$.
 \end{itemize}
@@ -1185,7 +1185,7 @@ Sử dụng tính chất phân phối của lượng từ phổ quát với phé
 \begin{equation*}
    \forall a \in x, (f(a) \preccurlyeq g(a) \land g(a) \preccurlyeq f(a)).
 \end{equation*}
-Do $\preccurlyeq$ là một quan hệ thứ tự, $f(a) \preccurlyeq g(a) \land g(a) \preccurlyeq f(a)$ kéo theo $f(a) = g(a)$ với mọi $a$. Vì thế, $f = g$. Tính phản đối xứng của $f$ được chứng minh.
+Do $\preccurlyeq$ là một quan hệ thứ tự, $f(a) \preccurlyeq g(a) \land g(a) \preccurlyeq f(a)$ kéo theo $f(a) = g(a)$ với mọi $a$. Vì thế, $f = g$. Tính phản đối xứng của $T$ được chứng minh.
 
 Xét thêm ánh xạ $h: x \to y$. Giả sử $\begin{cases}
    f\;T\;g \\
@@ -1645,7 +1645,7 @@ Gọi $j: \Imf(h) \to B$ là đơn ánh chính tắc. Bởi vì $j \circ n^{-1} 
    \item $h(q) = (j \circ H \circ m)(q) = (H \circ m)(q) = H(m(q)) = H(p)$, và
    \item $h(q) = (j \circ \hat{h} \circ m)(q) = \hat{h}(p)$.
 \end{itemize}  
-Vậy $\forall p \in \frac{A}{R_h}, H(p) = \hat{h}(p)$. Do đó, $H = \hat{p}$. Chúng ta có được cách viết $h = j \circ \hat{h} \circ m$ là duy nhất.
+Vậy $\forall p \in \frac{A}{R_h}, H(p) = \hat{h}(p)$. Do đó, $H = \hat{h}$. Chúng ta có được cách viết $h = j \circ \hat{h} \circ m$ là duy nhất.
 
 Hãy xem xét $\tilde{h}$ có tính chất đặc biệt nào không. Trước hết, từ những gì chúng ta đã nghiên cứu về tính tương thích, với mọi $X \in \frac A{R_h}$ và $Y \in \frac{\Imf(h)}{=^*}$, $Y = \tilde{h}(X)$ khi và chỉ khi tồn tại $x \in X$ và $y \in Y$ sao cho $X = m(x)$ và $Y = (n \circ h)(y)$. Với mọi $X_1$ và $X_2$, nếu chúng thoả mãn $\tilde{h}(X_1) = \tilde{h}(X_2)$, tồn tại $x_1$ và $x_2$ cùng thuộc $A$ để  $X_1 = m(x_1)$ và $X_2 = m(x_2)$. Khi đó, \begin{equation*}
    (h \circ m)(x_1) = (h \circ m)(x_2).
