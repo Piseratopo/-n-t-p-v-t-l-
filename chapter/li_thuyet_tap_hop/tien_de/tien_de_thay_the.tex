@@ -1,0 +1,22 @@
+\section{Tiên đề thay thế}
+
+Như đã đề cập, hàm là một khái niệm từ lô-gích diễn dịch nhưng có chức năng giống như ánh xạ. Xét một hàm $\hamNom$ chỉ nhận một hạng thức $a$ làm tham số. Viết lại định nghĩa của hàm:
+\begin{equation*}
+   \forall a, \exists! b, \hamNom(a) = b.
+\end{equation*}
+\defText{Tiên đề thay thế} phát biểu là 
+\begin{equation*}
+   \forall x, \exists y, \forall b, \left(b \in y \iff \exists a \in x, \hamNom(a) = b\right),
+\end{equation*}
+tức là tập hợp của các ảnh của một hàm $\hamNom(a)$ khi cho $a$ nhận các giá trị khác nhau trong $x$, là một tập hợp. Giả sử trong khi đã có $y$ thỏa mãn, cũng có tập $z$ cũng thỏa mãn tiên đề thay thế với cùng tập hợp $x$ và hàm $\hamNom$ cho trước, nghĩa là 
+\begin{align*}
+\forall b, \left(b \in y \iff \exists a \in x, \hamNom(a) = b\right), \\
+\forall b, \left(b \in z \iff \exists a \in x, \hamNom(a) = b\right).
+\end{align*}
+Lấy $c$ tùy ý. Từ hai mệnh đề trên, $c \in y$ và $c \in z$ cùng tương đương với $\exists a \in x, \hamNom(a) = c$. Theo tính bắc cầu của phép đẳng giá, dễ thấy rằng $c \in y \iff c \in z$. Áp dụng tổng quát hóa lượng từ phổ quát và tiên đề ngoại diên, dẫn đến $y = z$. Vì vậy, tập hợp tồn tại trong tiên đề thay thế là duy nhất.
+
+Kí hiệu một tập hợp được lấy ra từ tiên đề thay thế gần giống như tập hợp tương tự lấy ra từ tiên đề tách, nhưng mà đảo hai phần bao quanh dấu ``$\mid$'' với nhau:
+\begin{equation*}
+   y = \defMath{\big\{\mathbf{\textbf{\hamNom}}(a) \mid a \in x\big\}}.
+\end{equation*}
+Ngoài ra, cũng có thể hiểu theo rằng $y$ là tập ảnh của $\hamNom$ từ $x$, cho nên bạn đọc có thể sử dụng kí hiệu giống như trong ánh xạ: $\defMath{\Imf\left(\text{\defText{\hamNom}}|_x\right)}$. Trong trường hợp mà bạn đọc muốn kí hiệu theo cách khác hẳn để tránh bị nhầm lẫn, bạn đọc có thể sử dụng $\defMath{\text{\defText{\hamNom}}[x]}$.

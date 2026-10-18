@@ -8,7 +8,7 @@ Một \defText{ánh xạ} hay \defText{hàm số}\footnote{Cũng có thể gọi
    \defMath{\forall a \in x, \exists ! b \in y, a\;f\;b }.
    \label{eq:li_thuyet_tap_hop:tien_de:anh_xa:dinh_nghia}
 \end{equation}
-Kí hiệu thường xuyên sử dụng thay vì $a\;f\;b$ là $\defMath{b = f(a)}$. $b$ khi này được gọi là \defText{ảnh} của $a$ qua $f$ và $a$ được gọi là $\defText{tạo ảnh}$ của $b$ bởi $f$. Có một điểm cần lưu ý, đó là từ định nghĩa ánh xạ, chúng ta cần phải có tập xác định của $f$ thì phải bằng tập nguồn $x$. Ngoài ra, nếu chiếu theo định nghĩa này thì tập nguồn $x$ có thể rỗng, bởi khi đó $\forall a, \neg a \in x$ khiến cho \eqref{eq:li_thuyet_tap_hop:tien_de:anh_xa:dinh_nghia} luôn đúng. Tác giả sẽ chấp nhận tập nguồn rỗng, nhưng không phải tài liệu nào cũng sẽ đồng tình với tác giả.
+Kí hiệu thường xuyên sử dụng thay vì $a\;f\;b$ là $\defMath{b = f(a)}$. $b$ khi này được gọi là \defText{ảnh} của $a$ qua $f$ và $a$ được gọi là \defText{tạo ảnh} của $b$ bởi $f$. Có một điểm cần lưu ý, đó là từ định nghĩa ánh xạ, chúng ta cần phải có tập xác định của $f$ thì phải bằng tập nguồn $x$. Ngoài ra, nếu chiếu theo định nghĩa này thì tập nguồn $x$ có thể rỗng, bởi khi đó $\forall a, \neg a \in x$ khiến cho \eqref{eq:li_thuyet_tap_hop:tien_de:anh_xa:dinh_nghia} luôn đúng. Tác giả sẽ chấp nhận tập nguồn rỗng, nhưng không phải tài liệu nào cũng sẽ đồng tình với tác giả.
 
 Chúng ta sẽ khẳng định với nhau một tính chất cơ bản của ánh xạ. Cho $f$ từ $x$ đến $y$. Nếu như có $a$ và $b$ thuộc $x$ sao cho $a = b$, chúng ta có $\begin{cases}
    a\;f\;f(a) \\
@@ -115,6 +115,8 @@ Vì nếu $A \neq \varnothing$ thì $B \neq \varnothing$, nên, chúng ta cũng 
 \end{cases}$ nên $\left[\begin{aligned}
    A = \varnothing \\ B = \varnothing
 \end{aligned}\right. \implies A = \varnothing$. 
+
+Theo định nghĩa ánh xạ, suy ra được $f$ là một tập con của $A \times B$. Nếu tồn tại $z \in f$, thì phải có $x \in A$ và $y \in B$ sao cho $z = (x; y)$.  
 
 \exercise Cho các tập hợp $A$, $B$ và quan hệ $R$ từ $A$ đến $B$. Giả sử tồn tại $C$ sao cho $B \subseteq C$. Gọi $i$ là ánh xạ nhúng chính tắc từ $B$ đến $C$. Chứng minh rằng
 \begin{equation*}
@@ -571,9 +573,9 @@ Thế nếu chúng ta cho điều ngược lại xảy ra thì sao? Khi đó, $f
 \end{figure}
 
 Lấy một ví dụ, có $E \subseteq x$ thì chúng ta có ánh xạ nhúng chính tắc $\begin{array}[t]{rcl}
-   i_{E;x}: E & \to & x \\
+   \mathrm{i}_{E;x}: E & \to & x \\
             z & \mapsto & z
-\end{array}$. Do $\forall z \in E, i_{E;x}(z) = z$, nên hiển nhiên rằng $\forall (y; z) \in E^2, (i_{E;x}(y) = i_{E;x}(z) \implies y = z)$. $i_{E;x}$ được khẳng định là một đơn ánh, và cũng có thể một phần vì lẽ đó mà $i_{E;x}$ còn có tên là \defText{đơn ánh chính tắc}.
+\end{array}$. Do $\forall z \in E, \mathrm{i}_{E;x}(z) = z$, nên hiển nhiên rằng $\forall (y; z) \in E^2, (\mathrm{i}_{E;x}(y) = \mathrm{i}_{E;x}(z) \implies y = z)$. $\mathrm{i}_{E;x}$ được khẳng định là một đơn ánh, và cũng có thể một phần vì lẽ đó mà $\mathrm{i}_{E;x}$ còn có tên là \defText{đơn ánh chính tắc}.
 
 Không xét đơn ánh nữa, chúng ta hãy thử xem xét một điều kiện khác mà chúng ta có thể áp lên $f$. Để là ánh xạ $f$, $f$ phải là một quan hệ với tập nguồn bằng tập xác định, nhưng lại không yêu cầu tập đích bằng tập giá trị. Vậy, có lẽ chúng ta nên đặt $f$ sao cho tập đích và tập giá trị của $f$ phải bằng nhau. Trong trường hợp đó, $f$ được gọi là \defText{toàn ánh}:
 \begin{equation*}
@@ -646,13 +648,11 @@ Khi này, chúng ta có $f^{-1}$ xác định một ánh xạ từ $y$ sang $x$.
 \begin{figure}[H]
    \begin{center}
       \begin{tikzpicture}
-         % Khung tập nguồn X
          \draw[thick, rounded corners=12pt] (-3.5, -2.5) rectangle (-1.5, 2);
-         \node at (-2.5, 2.3) {Tập nguồn $X$};
+         \node at (-2.5, 2.3) {Tập nguồn $x$};
 
-         % Khung tập đích Y (có 4 phần tử tương ứng để tạo song ánh)
          \draw[thick, rounded corners=12pt] (1.5, -2.5) rectangle (3.5, 2);
-         \node at (2.5, 2.3) {Tập đích $Y$};
+         \node at (2.5, 2.3) {Tập đích $y$};
 
          % Các phần tử tập nguồn
          \node[element, label=left:$a_1$] (x1) at (-2.5, 1.25) {};
@@ -828,7 +828,7 @@ Chúng ta sẽ chứng minh rằng $B$ không thuộc tập giá trị của $f$
 
 \exercise Gọi $A$ và $Z$ là hai tập hợp, $T$ là quan hệ tương đương trong $A$, $D$ là quan hệ tương đương trong $Z$. $Q$ là quan hệ xác định từ $A \times Z$ đến $A \times Z$ bởi
 \begin{equation*}
-   \forall (a; b) \in A \times Z, \forall (c; d) \in A \times Z, \left((a;b)\;R\;(c;d) \iff a\;T\;c \land b\;D\;d\right).
+   \forall (a; b) \in A \times Z, \forall (c; d) \in A \times Z, \left((a; b)\;R\;(c; d) \iff a\;T\;c \land b\;D\;d\right).
 \end{equation*}
 \begin{enumerate}
    \item Chứng minh rằng $Q$ là một mối quan hệ tương đương.
@@ -895,15 +895,15 @@ Chứng minh $R$ là một quan hệ tương đương trong $X^X$.
 \solution
 
 $R$ là một quan hệ hai ngôi trên $X^X$. Đơn ánh chính tắc $\begin{array}[t]{rcl}
-   i_{X;X}: X & \to & X \\
+   \mathrm{i}_{X;X}: X & \to & X \\
          a & \mapsto & a
-\end{array}$, cũng toàn ánh, do với mọi $a \in X$, tồn tại $b \in X$ sao cho $i_{X;X}(a) = b$ (luôn có $i_{X;X}(a) = a$). Do vậy, $i_{X;X}$ là một song ánh.
+\end{array}$, cũng toàn ánh, do với mọi $a \in X$, tồn tại $b \in X$ sao cho $\mathrm{i}_{X;X}(a) = b$ (luôn có $\mathrm{i}_{X;X}(a) = a$). Do vậy, $\mathrm{i}_{X;X}$ là một song ánh.
 Ngoài ra, khi xét $f \in X^X$ tùy ý, với mọi $a \in X$, \begin{align*}
-   (i_{X;X} \circ f)(a) &= i_{X;X}(f(a)) \\
+   (\mathrm{i}_{X;X} \circ f)(a) &= \mathrm{i}_{X;X}(f(a)) \\
    &= f(a) \\
-   &= f(i_{X;X}(a)) \\
-   &= (f \circ i_{X;X})(a).
-\end{align*} Kéo theo, $i_{X;X} \circ f = f \circ i_{X;X}$ với mọi $f$. Chúng ta có $f\;R\;f$, suy ra $R$ phản xạ.
+   &= f(\mathrm{i}_{X;X}(a)) \\
+   &= (f \circ \mathrm{i}_{X;X})(a).
+\end{align*} Kéo theo, $\mathrm{i}_{X;X} \circ f = f \circ \mathrm{i}_{X;X}$ với mọi $f$. Chúng ta có $f\;R\;f$, suy ra $R$ phản xạ.
 
 Gọi thêm $g \in X^X$. Nếu $f\;R\;g$, theo giả thiết, cần phải có ánh xạ, gọi là $b$ sao cho $b$ song ánh và $b \circ f = g \circ b$. Vì $b$ song ánh, $b^{-1}$ cũng là một song ánh. Do đó, 
 \begin{equation*}
@@ -1033,7 +1033,7 @@ hay $\sigma(x)$ và $\sigma^{-1}(x)$ đồng thời thuộc $O_a$. Tóm lại,
    \end{cases}.
 \end{equation*}
 
-Từ $\forall x \in O_a, \sigma^{-1}(x) \in O_a$, chúng ta có $\forall x \in O_a, x \in \Imf\left(\sigma\middle|_{O_a}\right)$, do $x$ là ảnh của $\sigma^{-1}(x)$. Do đó, $O_a \subseteq \Imf\left(\sigma\middle|_{O_a}\right)$. Chúng ta cũng bổ sung rằng, với mọi $z \in \Imf\left(\sigma\middle|_{O_a}\right)$, tồn tại $i$ trong $O_a$ để $\sigma(i) = z$. Từ kết quả vừa có --- $\forall x \in O_a, \sigma(x) \in O_a$ ---, $\sigma_i \in O_a$, nên $z \in O_a$. Vì thế, $\Imf\left(\sigma\middle|_{O_a}\right) \subseteq O_a$.
+Từ $\forall x \in O_a, \sigma^{-1}(x) \in O_a$, chúng ta có $\forall x \in O_a, x \in \Imf\left(\sigma\middle|_{O_a}\right)$, do $x$ là ảnh của $\sigma^{-1}(x)$. Do đó, $O_a \subseteq \Imf\left(\sigma\middle|_{O_a}\right)$. Chúng ta cũng bổ sung rằng, với mọi $z \in \Imf\left(\sigma\middle|_{O_a}\right)$, tồn tại $i$ trong $O_a$ để $\sigma(i) = z$. Từ kết quả vừa có --- $\forall x \in O_a, \sigma(x) \in O_a$ ---, $\sigma(i) \in O_a$, nên $z \in O_a$. Vì thế, $\Imf\left(\sigma\middle|_{O_a}\right) \subseteq O_a$.
 
 Vậy, $O_a = \Imf\left(\sigma\middle|_{O_a}\right)$. Hiển nhiên $O_a$ là tập con của $A$, nên $O_a$ là $\sigma$-bất biến. Điều phải chứng minh.
 
@@ -1132,7 +1132,7 @@ Mọi trường hợp đều suy ra $h(i) \neq h(j)$. Vì thế, $h$ đơn ánh.
 
 Với mọi $k$, nếu $k \in B$ thì $k \in D$ hoặc $k \notin D$. $k \in D$ kéo theo tồn tại $l$ sao cho $k = m(l)$, và $k \notin D$ thì kéo theo tồn tại $o$ sao cho $k = n^{-1}(o)$, cho nên luôn tồn tại $p \in A$ sao cho $k = h(p)$. Do đó, $h$ toàn ánh. Kết hợp với tính chất đơn ánh trước đó, $h$ song ánh.
 
-Vậy, tồn tại một song ánh từ $A$ sang $B$. Điều phải chứng minh. Một chút bổ sung, khẳng định này còn có tên là định lí Sờ-rơ-đơ\footnote{Friedrich Wilhelm Karl Ernst Schröder(1841 -- 1902).} -- Béc-nờ-xtain\footnote{Felix Bernstein(1878 -- 1956).}.
+Vậy, tồn tại một song ánh từ $A$ sang $B$. Điều phải chứng minh. Một chút bổ sung, khẳng định này còn có tên là định lí Sờ-rơ-đơ\footnote{Friedrich Wilhelm Karl Ernst Schröder(1841 -- 1902).} -- Béc-nơ-xtain\footnote{Felix Bernstein(1878 -- 1956).}.
 
 \exercise Gọi $A$ là một tập khác rỗng và $g: \mathfrak{P}(A) \to A$ là ánh xạ. Chứng minh rằng $g$ không đơn ánh.
 
@@ -1382,7 +1382,7 @@ Thêm vào đó, giả sử $x \leq y$ và $y \leq z$. Các giá trị mà $(x; 
 \end{table}
 Trong mọi trường hợp khả thi, thấy được rằng, khi đó, luôn luôn xảy ra $x \leq z$. Qua đó, chúng ta có $\leq$ có tính bắc cầu. Vậy, nhìn chung,  $\preccurlyeq$ và $\leq$ đều  là quan hệ thứ tự.
 
-Tiếp theo, chúng ta xét đến $f$. Có $f = \mathds{1}_A = i_{A;A}$ là một đơn ánh. Thêm vào đó, $f$ cũng toàn ánh, do mọi phần tử $l \in B$ đều tồn tại $k \in A$ sao cho $l = f(k)$ ($0 = f(0)$, $1 = f(1)$). Suy ra, $f$ song ánh.
+Tiếp theo, chúng ta xét đến $f$. Có $f = \mathds{1}_A = \mathrm{i}_{A;A}$ là một đơn ánh. Thêm vào đó, $f$ cũng toàn ánh, do mọi phần tử $l \in B$ đều tồn tại $k \in A$ sao cho $l = f(k)$ ($0 = f(0)$, $1 = f(1)$). Suy ra, $f$ song ánh.
 
 Xét $f^{-1}(0) = 0$ và $f^{-1}(1) = 1$. Nhận thấy giá trị đầu vào $0$ và $1$ có thể so sánh được với nhau trong $B$ ($0 \leq 1$), nhưng $\left(f^{-1}(0); f^{-1}(1)\right) \notin \; \preccurlyeq$ nên $f^{-1}(0) \centernot{\preccurlyeq} f^{-1}(1)$. Vì vậy, $f^{-1}$ không tăng. Tóm lại, đây là một ví dụ thỏa mãn mà chúng ta cần tìm.
 
