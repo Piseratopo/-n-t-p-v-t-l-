@@ -1,6 +1,6 @@
 \section{Tiên đề thay thế}
 
-Như đã đề cập, hàm là một khái niệm từ lô-gích diễn dịch nhưng có chức năng giống như ánh xạ. Xét một hàm $\hamNom$ chỉ nhận một hạng thức $a$ làm tham số. Viết lại định nghĩa của hàm:
+Như đã đề cập, hàm là một khái niệm từ lô-gích diễn dịch nhưng có chức năng giống như ánh xạ. Xét một hàm $\hamNom$ chỉ nhận một hạng thức $a$ làm tham số. Một tính chất quan trọng của hàm cho chúng ta biết rằng
 \begin{equation*}
    \forall a, \exists! b, \hamNom(a) = b.
 \end{equation*}
@@ -20,3 +20,28 @@ Kí hiệu một tập hợp được lấy ra từ tiên đề thay thế gần
    y = \defMath{\big\{\mathbf{\textbf{\hamNom}}(a) \mid a \in x\big\}}.
 \end{equation*}
 Ngoài ra, cũng có thể hiểu theo rằng $y$ là tập ảnh của $\hamNom$ từ $x$, cho nên bạn đọc có thể sử dụng kí hiệu giống như trong ánh xạ: $\defMath{\Imf\left(\text{\defText{\hamNom}}|_x\right)}$. Trong trường hợp mà bạn đọc muốn kí hiệu theo cách khác hẳn để tránh bị nhầm lẫn, bạn đọc có thể sử dụng $\defMath{\text{\defText{\hamNom}}[x]}$.
+
+Tiên đề thay thế khác với tiên đề tách ở chỗ tiên đề thay thế cho phép lấy ra một tập hợp mới thông qua một hàm, trong khi tiên đề tách chỉ cho phép lấy ra một tập hợp con từ một tập hợp sẵn có. Do đó, tiên đề thay thế là một tiên đề mạnh hơn tiên đề tách, và được sử dụng trong nhiều bộ phận toán học khác nhau, nhưng trong khuân khổ của cuốn sách này, tác giả sẽ cố gắng hạn chế sử dụng tiên đề này.
+
+\exercise Lập luận rằng tiên đề tách có thể được suy ra từ tiên đề thay thế (và những tiên đề còn lại).
+
+\solution
+
+Giả sử chúng ta có tập $A$ và vị từ $V(x)$, chúng ta cần khẳng định sự tồn tại của $\{x \in A \mid V(x)\}$ sử dụng tiên đề thay thế. 
+
+Trong trường họp không có phần tử nào trong $A$ thỏa mãn $V(x)$, thì $\{x \in A \mid V(x)\} = \varnothing$, tồn tại theo tiên đề tập rỗng. Trong trường hợp còn lại, tồn tại $a_0 \in A$ sao cho $V(a_0)$. Xét định nghĩa một vị từ $Q$ như sau:
+\begin{equation*}
+   \forall x, \forall y, \left( Q(x; y) \iff V(x) \land y = x \lor \neg V(x) \land y = a_0 \right).
+\end{equation*}
+Chúng ta chứng minh rằng với mỗi $x$, chỉ tồn tại duy nhất một $y$ để $Q(x; y)$ thỏa mãn. Thật vậy, nếu $V(x)$, thì $y$ phải bằng $x$, và nếu $\neg V(x)$, thì $y$ không thể khác $a_0$. Do đó, chúng ta có thể định nghĩa hàm $\hamNom$ sao cho $$
+   \forall x, \forall y, \left(\hamNom(x) = y \iff Q(x; y)\right).
+$$
+
+Sử dụng tiên đề thay thế, tồn tại tập hợp $B = \left\{\hamNom(a) \mid a \in A\right\}$. Thấy được rằng, với mọi $a$, 
+\begin{itemize}
+   \item nếu $V(a)$, thì $\hamNom(a) = a$ dẫn đến $a \in B$. 
+   \item Và nếu $a \in B$, tồn tại $b$ sao cho $\hamNom(b) = a$. Do đó, $\left[\begin{array}{l}
+      V(b) \land a = b \\ \neg V(b) \land a = a_0
+   \end{array}\right.$, dẫn đến $V(a)$.
+\end{itemize}
+Tập hợp $B$ là tập hợp thỏa mãn $\forall a \in A, (a \in B \iff V(a))$, tức là thỏa mãn tiên đề tách. Vì vậy, tiên đề tách có thể được suy ra từ tiên đề thay thế.
