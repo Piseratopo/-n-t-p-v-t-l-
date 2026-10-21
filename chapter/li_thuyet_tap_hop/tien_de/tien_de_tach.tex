@@ -1468,5 +1468,29 @@ Vậy,
 
 Trong khi $A \cap B = \varnothing$, có $x \setminus A = B$ dẫn đến $B$ là tập con của $x$. Do đó, dễ thấy được sự tồn tại $y \in \mathfrak{P}(U)$ sao cho $x = B \cup y$. Nếu $y$ có phần tử $z$ không thuộc $A \cup B$, chúng ta có $z \notin A \land z \notin B$. Suy ra, $z \in (B \cup y) \setminus A$ hay $z \in x \setminus A$. Tuy nhiên $z \notin B$ mà $x \setminus A = B$, mâu thuẫn. Vì thế, mọi phần tử $z$ trong $y$ đều phải thuộc $A \cup B$, hay $y \subseteq A \cup B$. Tóm lại, 
 $$
-   \forall x, \left(x \setminus A = B \implies \exists y \in \mathfrak{P}(A \cup B), \right)
+   \forall x, \left(x \setminus A = B \implies \exists y \in \mathfrak{P}(A \cup B), x = B \cup y\right).
 $$
+
+Với mọi $x$ có dạng $x = B \cup y$ với $y \in \mathfrak{P}(A \cup B)$, chúng ta có
+\begin{align*}
+   x \setminus A &= (B \cup y) \setminus A \\
+      &= (B \setminus A) \cup (y \setminus A) \\
+      &= B \cup (y \setminus A) \equationexplanation{$A \cap B = \varnothing$}.
+\end{align*}
+Thêm vào đó, chúng ta có $y \subseteq A \cup B$. Do đó, $y \setminus A \subseteq (A \cup B) \setminus A$. Một chút biến đổi cho chúng ta 
+\begin{align*}
+   (A \cup B) \setminus A &= (A \setminus A) \cup (B \setminus A) \\
+      &= \varnothing \cup B = B. 
+\end{align*}
+Do đó, $y \setminus A \subseteq B$, dẫn đến $x \setminus A = B \cup (y \setminus A) = B$. Vì vậy,
+$$
+   \forall x, \left(x \setminus A = B \impliedby \exists y \in \mathfrak{P}(A \cup B), x = B \cup y\right).
+$$
+
+Kết luận, chúng ta có 
+\begin{itemize}
+   \item nếu $A \cap B \neq \varnothing$ thì không bao giờ có $x$ để mệnh đề được cho đúng;
+   \item nếu $A \cap B = \varnothing$, $x$ thỏa mãn mệnh đề khi và chỉ khi $x = B \cup y$ với $y \in \mathfrak{P}(A \cup B)$.
+\end{itemize}
+
+\stepSubexercise Giả sử tồn tại $x$ để có $A \setminus x = B$. Khi đó, cần phải có $B \subseteq A$. Đồng thời, xét một phần tử $z$ bất kì thuộc $A \setminus B$,  
