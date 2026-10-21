@@ -1,0 +1,9 @@
+\section{Tiên đề cơ sở}
+
+Tiên đề cơ sở phát biểu rằng nếu $x$ là một tập khác rỗng, thì tồn tại phần tử $a \in x$ sao cho $y$ không có phần tử chung với $x$. Dưới dạng kí hiệu toán học, chúng ta có 
+\begin{equation*}
+   \defMath{\forall x, \left(x \neq \varnothing \implies \exists y \in x, y \cap x = \varnothing\right)}.
+\end{equation*}
+Chúng ta sẽ chứng minh một tính chất rất cơ bản rằng một tập thì không thuộc chính nó. Với mọi $a$, tiên đề cặp cho phép xây dựng $\{a\}$. Theo tiên đề cơ sở, tồn tại một phần tử trong $\{a\}$ mà nó với $\{a\}$ rời nhau. Mà, chỉ có một phần tử $a$ là thuộc $\{a\}$ nên $a \cap \{a\} = \varnothing$. Hiển nhiên rằng, $a \notin a$.
+
+Tác giả sẽ xây dựng một tập hợp mà bạn đọc sau này sẽ thấy vô cùng hữu dụng. Nếu $x$ là tập hợp, đặt $x^+ = x \cap \{x\}$. Dễ thấy $x \subseteq x^+$. Ngoài ra, vì $x \in x+$ và $x \notin x$, $x \neq x$, dẫn đến $x \subsetneq x^+$.

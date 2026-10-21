@@ -8,7 +8,7 @@ Như đã đề cập, hàm là một khái niệm từ lô-gích diễn dịch 
 \begin{equation*}
    \forall x, \exists y, \forall b, \left(b \in y \iff \exists a \in x, \hamNom(a) = b\right),
 \end{equation*}
-tức là tập hợp của các ảnh của một hàm $\hamNom(a)$ khi cho $a$ nhận các giá trị khác nhau trong $x$, là một tập hợp. Giả sử trong khi đã có $y$ thỏa mãn, cũng có tập $z$ cũng thỏa mãn tiên đề thay thế với cùng tập hợp $x$ và hàm $\hamNom$ cho trước, nghĩa là 
+tức là khi cho $a$ nhận các giá trị khác nhau trong $x$ thì $\hamNom(a)$ cũng sẽ nhận một số giá trị. Tiên đề khẳng định sự tồn tại của tập hợp chứa và chỉ chứa các giá trị đó. Giả sử trong khi đã có $y$ thỏa mãn, có tập $z$ cũng thỏa mãn tiên đề thay thế với cùng tập hợp $x$ và hàm $\hamNom$ cho trước, nghĩa là 
 \begin{align*}
 \forall b, \left(b \in y \iff \exists a \in x, \hamNom(a) = b\right), \\
 \forall b, \left(b \in z \iff \exists a \in x, \hamNom(a) = b\right).
@@ -17,11 +17,11 @@ Lấy $c$ tùy ý. Từ hai mệnh đề trên, $c \in y$ và $c \in z$ cùng t�
 
 Kí hiệu một tập hợp được lấy ra từ tiên đề thay thế gần giống như tập hợp tương tự lấy ra từ tiên đề tách, nhưng mà đảo hai phần bao quanh dấu ``$\mid$'' với nhau:
 \begin{equation*}
-   y = \defMath{\big\{\mathbf{\textbf{\hamNom}}(a) \mid a \in x\big\}}.
+   y = \defMath{\big\{\text{\textbf{\hamNom}}(a) \mid a \in x\big\}}.
 \end{equation*}
-Ngoài ra, cũng có thể hiểu theo rằng $y$ là tập ảnh của $\hamNom$ từ $x$, cho nên bạn đọc có thể sử dụng kí hiệu giống như trong ánh xạ: $\defMath{\Imf\left(\text{\defText{\hamNom}}|_x\right)}$. Trong trường hợp mà bạn đọc muốn kí hiệu theo cách khác hẳn để tránh bị nhầm lẫn, bạn đọc có thể sử dụng $\defMath{\text{\defText{\hamNom}}[x]}$.
+Ngoài ra, cũng có thể hiểu rằng $y$ là tập ảnh của $\hamNom$ từ $x$, cho nên bạn đọc có thể sử dụng kí hiệu giống như trong ánh xạ: $\defMath{\Imf\left(\text{\defText{\hamNom}}|_x\right)}$. Trong trường hợp mà bạn đọc muốn kí hiệu theo cách khác hẳn để tránh bị nhầm lẫn, bạn đọc có thể sử dụng $\defMath{\text{\defText{\hamNom}}[x]}$.
 
-Tiên đề thay thế khác với tiên đề tách ở chỗ tiên đề thay thế cho phép lấy ra một tập hợp mới thông qua một hàm, trong khi tiên đề tách chỉ cho phép lấy ra một tập hợp con từ một tập hợp sẵn có. Do đó, tiên đề thay thế là một tiên đề mạnh hơn tiên đề tách, và được sử dụng trong nhiều bộ phận toán học khác nhau, nhưng trong khuân khổ của cuốn sách này, tác giả sẽ cố gắng hạn chế sử dụng tiên đề này.
+Tiên đề thay thế khác với tiên đề tách ở chỗ tiên đề thay thế cho phép lấy ra một tập hợp mới thông qua một hàm, trong khi tiên đề tách chỉ cho phép lấy ra một tập hợp con từ một tập hợp sẵn có. Do đó, tiên đề thay thế là một tiên đề mạnh hơn tiên đề tách, và được sử dụng trong nhiều bộ phận toán học khác nhau, nhưng trong khuôn khổ của cuốn sách này, tác giả sẽ cố gắng hạn chế sử dụng tiên đề này.
 
 \exercise Lập luận rằng tiên đề tách có thể được suy ra từ tiên đề thay thế (và những tiên đề còn lại).
 
@@ -29,7 +29,7 @@ Tiên đề thay thế khác với tiên đề tách ở chỗ tiên đề thay 
 
 Giả sử chúng ta có tập $A$ và vị từ $V(x)$, chúng ta cần khẳng định sự tồn tại của $\{x \in A \mid V(x)\}$ sử dụng tiên đề thay thế. 
 
-Trong trường họp không có phần tử nào trong $A$ thỏa mãn $V(x)$, thì $\{x \in A \mid V(x)\} = \varnothing$, tồn tại theo tiên đề tập rỗng. Trong trường hợp còn lại, tồn tại $a_0 \in A$ sao cho $V(a_0)$. Xét định nghĩa một vị từ $Q$ như sau:
+Trong trường hợp không có phần tử nào trong $A$ thỏa mãn $V(x)$, thì $\{x \in A \mid V(x)\} = \varnothing$, tồn tại theo tiên đề tập rỗng. Trong trường hợp còn lại, tồn tại $a_0 \in A$ sao cho $V(a_0)$. Xét định nghĩa một vị từ $Q$ như sau:
 \begin{equation*}
    \forall x, \forall y, \left( Q(x; y) \iff V(x) \land y = x \lor \neg V(x) \land y = a_0 \right).
 \end{equation*}

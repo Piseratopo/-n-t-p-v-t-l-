@@ -1390,3 +1390,37 @@ Tuy nhiên, điều này mâu thuẫn với giả thuyết $P$ là một phân h
 Tiếp theo, chúng ta chứng minh rằng $\mathscr{F} \cap \mathscr{G} = \varnothing$. Giả sử ngược lại, tồn tại $h$ sao cho $h$ thuộc đồng thời $\mathscr{F}$ và $\mathscr{G}$, theo cách đặt của hai tập hợp này, tồn tại $i \in A$ và $j \in B$ sao cho $h \in i \land h \in j$. Khi này $i \cap j \neq \varnothing$ do $h \in i \cap j$. Tuy nhiên, nhận ra rằng $i$ và $j$ theo cách gọi đều là phần tử thuộc phân hoạch $P$, nên khi kết hợp với $i \cap j \neq \varnothing$ thì có được $i = j$, khiến cho $A \cap B$ khác rỗng do có $i$ (hay $j$) trong nó. Mặc dù vậy, trong cách gọi của đề bài, $B = \complement_P(A)$ sẽ cho chúng ta $A \cap B = \varnothing$, tạo mâu thuẫn. 
 
 Từ chứng minh bằng phản chứng, chúng ta có $\mathscr{F} \cap \mathscr{G} = \varnothing$. Kết hợp với $\mathscr{F} \cup \mathscr{G} = \mathscr{E}$ chứng minh từ trước, chúng ta có điều phải chứng minh.
+
+\exercise Cho $U$ là tập hợp và các tập $A$, $B$ cùng thuộc $\mathfrak{P}(U)$. Với mỗi phần, tìm tất cả $x \in \mathfrak{P}(U)$ sao cho khẳng định được cho là đúng:
+\begin{multicols}{2}
+   \begin{enumerate}
+      \item $x \cup A = B$;
+      \item $x \cap A = B$;
+      \item $x \setminus A = B$;
+      \item $A \setminus x = B$;
+      \item $x \vartriangle A = B$.
+   \end{enumerate}
+\end{multicols}
+
+\solution
+
+\resetSubexercise Vì $A \subseteq x \cup A$ nên để khẳng định đúng thì phải có $A \subseteq B$. Nếu $A \nsubseteq B$ thì không tồn tại $x$ để thỏa mãn yêu cầu.
+
+Trong trường hợp $A$ đã là tập con của $B$, xét một phần tử $b \in B \setminus A$ bất kì. Có $b \in B$ nhưng $b \notin A$ nên $b \in x$. Do đó, $B \setminus A \subseteq x$. Nhận thấy rằng $(B \setminus A) \cup x = x$, nên tồn tại $y$ để $(B \setminus A) \cup y = x$ (tức, $x$ có dạng $(B \setminus A) \cup y$). Do $x \subseteq B$ nên $y$ cũng là tập con của $B$, dẫn đến $y \in \mathfrak{P}(B)$. Vì thế, \begin{equation*}
+   \forall x, \left(x \cup A = B \implies \exists y \in \mathfrak{P}(B), x = (B \setminus A) \cup y\right).
+\end{equation*}
+
+Nếu $x = (B \setminus A) \cup y$ với $y \in \mathfrak{P}(B)$, có 
+\begin{align*}
+   x \cup A &= ((B \setminus A) \cup y) \cup A \\
+         &= \bigcup \left\{B \setminus A; y; A\right\} = \bigcup \left\{B \setminus A; A; y\right\} \\ 
+         &= ((B \setminus A) \cup A) \cup y \\
+         &= B \cup y = B.
+\end{align*}
+Cho nên, khi $A \subseteq B$, chúng ta có khẳng định \begin{equation*}
+   \forall x, \left(\exists y \in \mathfrak{P}(B), x = (B \setminus A) \cup y \implies x \cup A = B\right).
+\end{equation*}
+
+Kết luận lại, $x$ thỏa mãn mệnh đề được cho khi và chỉ khi $x$ có dạng $(B \setminus A) \cup y$ với $y \in \mathfrak{P}(B)$.
+
+\stepSubexercise 
