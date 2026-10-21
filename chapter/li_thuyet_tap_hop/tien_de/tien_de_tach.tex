@@ -1421,6 +1421,56 @@ Cho nên, khi $A \subseteq B$, chúng ta có khẳng định \begin{equation*}
    \forall x, \left(\exists y \in \mathfrak{P}(B), x = (B \setminus A) \cup y \implies x \cup A = B\right).
 \end{equation*}
 
-Kết luận lại, $x$ thỏa mãn mệnh đề được cho khi và chỉ khi $x$ có dạng $(B \setminus A) \cup y$ với $y \in \mathfrak{P}(B)$.
+Kết luận lại, 
+\begin{itemize}
+   \item nếu $A \nsubseteq B$ thì không có giá trị nào cho $x$ để mệnh đề đã cho đúng;
+   \item còn nếu $A \subseteq B$, $x$ thỏa mãn mệnh đề đó khi và chỉ khi $x$ có dạng $(B \setminus A) \cup y$ với $y \in \mathfrak{P}(B)$.
+\end{itemize}
 
-\stepSubexercise 
+\stepSubexercise Do $B = x \cap A$ nên $B \subseteq A$, nên điều kiện để mệnh đề xảy ra là $B \subseteq A$. Nếu $B \nsubseteq A$ thì không tồn tại $x$ thỏa mãn.
+
+Khi $A \supseteq B$, vì $B = x \cap A$ nên $B \subseteq x$. Do đó, $x$ có thể được biểu diễn dưới dạng $x = B \cup y$ với $y \in \mathfrak{U}$ là một tập hợp nào đó.
+
+Thay $x = B \cup y$ vào giả thiết $x \cap A = B$, có:
+\begin{align*}
+   B &= (B \cup y) \cap A \\
+      &= (B \cap A) \cup (y \cap A)\\
+      &= B \cup (y \cap A).
+\end{align*}
+Do đó, $y \cap A \subseteq B$. Nếu tồn tại $y \subseteq U \setminus A$. Mặt khác, vì $U \setminus A \subseteq U \setminus (A \setminus B)$, nên $y$ đồng thời là tập con của $U \setminus (A \setminus B)$. 
+
+Vì vậy,
+\begin{equation*}
+   \forall x, \left(x \cap A = B \implies \exists y \in \mathfrak{P}(U \setminus A), x = B \cup y\right).
+\end{equation*}
+
+Nếu $x = B \cup y$ với $y \in \mathfrak{P}(U \setminus (A \setminus B))$, có 
+\begin{align*}
+   x \cap A &= (B \cup y) \cap A \\
+         &= (B \cap A) \cup (y \cap A) \\
+         &= B \cup (y \cap A).
+\end{align*}
+Vì $y \in \mathfrak{P}(U \setminus (A \setminus B))$ nên $y \subseteq (U \setminus A) \cup B$. Do đó, $y \cap A \subseteq ((U \setminus A) \cup B) \cap A$. Hơn nữa,
+\begin{align*}
+   ((U \setminus A) \cup B) \cap A &= ((U \setminus A) \cap A) \cup (B \cap A) \\
+   &= \varnothing \cup B = B.
+\end{align*}
+Cho nên $y \cap A \subseteq B$. Vậy nên $x \cap A = B \cup (y \cap A) = B$. Kết luận được, 
+$$
+   \forall x, \left(x \cap A = B \impliedby \exists y \in \mathfrak{P}(U \setminus (A \setminus B)), x = B \cup y\right).
+$$
+
+Vậy, 
+\begin{itemize}
+   \item nếu $A \nsupseteq B$ thì không tồn tại $x$ để mệnh đề được cho thỏa mãn;
+   \item còn nếu $A \supseteq B$, $x$ làm cho khẳng định đó đúng khi và chỉ khi $x = B \cup y$ với $y \in \mathfrak{P}(U \setminus (A \setminus B))$.
+\end{itemize}
+
+\stepSubexercise Theo định nghĩa của tập hợp, mọi phần tử của $x \setminus A$ đều không thuộc $A$. Do đó, $A$ và $B$ rời nhau có thể suy ra được từ $x \setminus A = B$. Nếu $A \cap B \neq \varnothing$, không tồn tại $x$ để mệnh đề ban đầu đúng.
+
+Trong khi $A \cap B = \varnothing$, có 
+\begin{align*}
+   (B \cup A) \setminus A &= (B \setminus A) \setminus (A \setminus A) \\
+                  &= B \setminus \varnothing = B.
+\end{align*}
+Do đó, tồn tại 
