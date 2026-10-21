@@ -1437,11 +1437,9 @@ Thay $x = B \cup y$ vào giả thiết $x \cap A = B$, có:
       &= (B \cap A) \cup (y \cap A)\\
       &= B \cup (y \cap A).
 \end{align*}
-Do đó, $y \cap A \subseteq B$. Nếu tồn tại $y \subseteq U \setminus A$. Mặt khác, vì $U \setminus A \subseteq U \setminus (A \setminus B)$, nên $y$ đồng thời là tập con của $U \setminus (A \setminus B)$. 
-
-Vì vậy,
+Do đó, $y \cap A \subseteq B$. Nếu tồn tại $z \in y$ sao cho $z \in A \setminus B$, thì $z \in y \cap A$ nhưng $z \notin B$, mâu thuẫn. Do đó, $z$ không thuộc $A \setminus B$ với mọi $z \in y$, có nghĩa, $y$ là tập con của $U \setminus (A \setminus B)$. Vì vậy,
 \begin{equation*}
-   \forall x, \left(x \cap A = B \implies \exists y \in \mathfrak{P}(U \setminus A), x = B \cup y\right).
+   \forall x, \left(x \cap A = B \implies \exists y \in \mathfrak{P}(U \setminus (A \setminus B)), x = B \cup y\right).
 \end{equation*}
 
 Nếu $x = B \cup y$ với $y \in \mathfrak{P}(U \setminus (A \setminus B))$, có 
@@ -1468,9 +1466,7 @@ Vậy,
 
 \stepSubexercise Theo định nghĩa của tập hợp, mọi phần tử của $x \setminus A$ đều không thuộc $A$. Do đó, $A$ và $B$ rời nhau có thể suy ra được từ $x \setminus A = B$. Nếu $A \cap B \neq \varnothing$, không tồn tại $x$ để mệnh đề ban đầu đúng.
 
-Trong khi $A \cap B = \varnothing$, có 
-\begin{align*}
-   (B \cup A) \setminus A &= (B \setminus A) \setminus (A \setminus A) \\
-                  &= B \setminus \varnothing = B.
-\end{align*}
-Do đó, tồn tại 
+Trong khi $A \cap B = \varnothing$, có $x \setminus A = B$ dẫn đến $B$ là tập con của $x$. Do đó, dễ thấy được sự tồn tại $y \in \mathfrak{P}(U)$ sao cho $x = B \cup y$. Nếu $y$ có phần tử $z$ không thuộc $A \cup B$, chúng ta có $z \notin A \land z \notin B$. Suy ra, $z \in (B \cup y) \setminus A$ hay $z \in x \setminus A$. Tuy nhiên $z \notin B$ mà $x \setminus A = B$, mâu thuẫn. Vì thế, mọi phần tử $z$ trong $y$ đều phải thuộc $A \cup B$, hay $y \subseteq A \cup B$. Tóm lại, 
+$$
+   \forall x, \left(x \setminus A = B \implies \exists y \in \mathfrak{P}(A \cup B), \right)
+$$
