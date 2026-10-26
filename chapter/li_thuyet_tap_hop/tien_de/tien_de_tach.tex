@@ -294,7 +294,7 @@ Ngoài ra, giả sử $\forall a \in \{A\}, z \in a$. Nhắc lại, $A \in \{A\}
 \begin{equation*}
    \forall z, \left(\forall a \in \{A\}, (z \in a) \implies z \in A\right).
 \end{equation*}
-Dẫn đến $\forall z, \left(\forall a \in \{A\}, (z \in a) \iff z \in A\right).$ và qua đó $\bigcap \{A\} = \{z \in A \mid z \in A\}$. 
+Dẫn đến $\forall z, \left(\forall a \in \{A\}, (z \in a) \iff z \in A\right)$ và qua đó $\bigcap \{A\} = \{z \in A \mid z \in A\}$. 
 
 Sử dụng ``$(z) \in A$'' là một vị từ theo hạng thức $z$, từ tiên đề tách, tồn tại tập $y$ để $\forall z, (z \in y \iff z \in y \land z \in A)$. Vậy $y$ có thể là tập nào? Tập $A$ là một ví dụ, do $\forall z, (z \in A \iff z \in A \land z \in A)$. Nhưng vì tính duy nhất của tập xác định từ tiên đề tách, dẫn đến
 \begin{equation*}
@@ -731,6 +731,7 @@ Qua đó, điều phải chứng minh.
          C \setminus A = C \setminus B
       \end{cases}$;
       \item $A \setminus (B\cap C) = (A \setminus B) \cup (A \setminus C)$;
+      \item $(A \cup B) \setminus C = (A \setminus C) \cup (B \setminus C)$;
       \item $A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C) = (A \setminus B) \setminus C$;
       \item $A \setminus (B \setminus C) = (A \setminus B) \cup (A \cap C)$;
       \item $(A \setminus B) \setminus (A \setminus C) = (A \setminus B) \cap C = (A \cap C) \setminus B$;
@@ -917,6 +918,16 @@ và dễ dàng suy ra được
    x \in A \setminus (B \cap C) &\iff x \in (A \setminus B) \cup (A \setminus C).
 \end{align*}
 Từ đó, dễ thấy điều phải chứng minh.
+
+\stepSubexercise Với mọi $x$, chúng ta có 
+\begin{align*}
+   x \in (A \cup B) \setminus C &\iff x \in A \cup B \land x \notin C; \\
+   x \in (A \cup B) \setminus C &\iff (x \in A \lor x \in B) \land x \notin C; \\
+   x \in (A \cup B) \setminus C &\iff (x \in A \land x \notin C) \lor (x \in B \land x \notin C); \\
+   x \in (A \cup B) \setminus C &\iff x \in A \setminus C \lor x \in B \setminus C; \\
+   x \in (A \cup B) \setminus C &\iff x \in (A \setminus C) \cup (B \setminus C).
+\end{align*}
+Và vì vậy, hai tập $(A \cup B) \setminus C$ và $(A \setminus C) \cup (B \setminus C)$ bằng nhau. Điều phải chứng minh.
 
 \stepcounter{subexercise}
 \arabic{subexercise}. Đầu tiên, cần phải chứng minh $A \setminus (B \cup C) = (A \setminus B) \cap (A \setminus C)$. Với lập luận tương tự như phần trước, với mọi $x$,
@@ -1493,4 +1504,39 @@ Kết luận, chúng ta có
    \item nếu $A \cap B = \varnothing$, $x$ thỏa mãn mệnh đề khi và chỉ khi $x = B \cup y$ với $y \in \mathfrak{P}(A \cup B)$.
 \end{itemize}
 
-\stepSubexercise Giả sử tồn tại $x$ để có $A \setminus x = B$. Khi đó, cần phải có $B \subseteq A$. Đồng thời, xét một phần tử $z$ bất kì thuộc $A \setminus B$, nếu $z$ không thuộc $x$ thì $z \in A \setminus x$ nhưng $z \notin B$, mâu thuẫn với mệnh đề ban đầu. Do vậy, $z$ phải là một phần tử của $x$, và qua đó, $A \setminus B \subseteq x$. Chúng ta viết được $x$ dưới dạng $x = A \setminus B \cup y$ với $y$ là một tập hợp nào đó.
+\stepSubexercise Giả sử tồn tại $x$ để có $A \setminus x = B$. Khi đó, cần phải có $B \subseteq A$. Đồng thời, xét một phần tử $z$ bất kì thuộc $A \setminus B$, nếu $z$ không thuộc $x$ thì $z \in A \setminus x$ nhưng $z \notin B$, mâu thuẫn với mệnh đề ban đầu. Do vậy, $z$ phải là một phần tử của $x$, và qua đó, $A \setminus B \subseteq x$. Chúng ta viết được $x$ dưới dạng $x = A \setminus B \cup y$ với $y$ là một tập hợp nào đó thuộc $\mathfrak{P}(U)$.
+
+$y$ không được phép có phần tử nào thuộc $B$, do nếu điều đó xảy ra, chúng ta lấy được $w \in y$ để có đồng thời $w \in B$. Vì chúng ta đang xét $A \setminus x = B$ nên $w \in A \setminus x$,  nhưng $w \in y$ kéo theo $w \in (A \setminus B) \cup y$, $w \in x$ và dân đến $w \notin A \setminus x$. Mâu thuẫn. Vậy nên, 
+\begin{equation*}
+   \forall w \in y, w \notin B,
+\end{equation*} 
+dẫn đến $y \in \mathfrak{P}(U \setminus B)$, hay $$
+   \forall x, \left(A \setminus x = B \implies \exists y \in \mathfrak{P}(U \setminus B), x = (A \setminus B) \cup y\right).
+$$
+
+Ngược lại (vẫn với giả thiết $B \subseteq A$), nếu như $x = (A \setminus B) \cup y$ với $y \in \mathfrak{P}(U \setminus B)$, xét 
+\begin{align*}
+   A \setminus x &= A \setminus ((A \setminus B) \cup y) \\
+      &= (A \setminus (A \setminus B)) \cap (A \setminus y) \\
+      &= ((A \setminus A) \cup (A \cap B)) \cap (A \setminus y) \\
+      &= (A \cap B) \cap (A \setminus y) \equationexplanation{$A \setminus A = \varnothing$}\\
+      &= B \cap (A \setminus y) \equationexplanation{$B \subseteq A$}.
+\end{align*}
+Ngoài ra, do $y \subseteq U \setminus B$ nên với mọi $b \in B$, $b \notin y$. Kết hợp với $\forall b \in B, b \in A$ ($B \subseteq A$), chúng ta có $\forall b \in B, b \in A \setminus y$. Vì thế, $B \subseteq A \setminus y$. Do đó, $$
+   \forall x, \left(\exists y \in \mathfrak{P}(U \setminus B), x = (A \setminus B) \cup y \implies A \setminus x = B \right).
+$$
+
+Chúng ta kết luận được:
+\begin{itemize}
+   \item nếu $A \nsupseteq B$, không tồn tại $x$ để mệnh đề $A \setminus x = B$ thỏa mãn;
+   \item và nếu $A \supseteq B$, $x$ thỏa mãn khi và chỉ khi $x = (A \setminus B) \cup y$ với $y \in \mathfrak{P}(U \setminus B)$.
+\end{itemize}
+
+\stepSubexercise Giả sử tồn tại $x \in \mathfrak{P}(U)$ để có $x \vartriangle A = B$. Từ những bài tập trước đó, chúng ta có thế suy ra được $x \vartriangle A = B \implies A \vartriangle B = x$. Kiểm tra ngược lại, với $x = A \vartriangle B$, chúng ta có:
+\begin{align*}
+   x \vartriangle A &= (A \vartriangle B) \vartriangle A \\
+      &= (B \vartriangle A) \vartriangle A \equationexplanation{tính giao hoán của hiệu đối xứng} \\
+      &= B \vartriangle (A \vartriangle A) \equationexplanation{tính kết hợp của hiệu đối xứng} \\
+      &= B \vartriangle \varnothing = B.
+\end{align*}
+Vì vậy, giá trị thỏa mãn và duy nhất để mệnh đề đúng là $x = A \vartriangle B$.

@@ -1,0 +1,9 @@
+\section{Tiên đề vô hạn}
+
+Sử dụng những tiên đề đã có, chúng ta có thể xây dựng rất nhiều, có thể là vô hạn, tập hợp, từ tập rỗng làm khởi nguyên. Mặc dù vậy, nếu chỉ sử dụng những tiên đề đó, chúng ta sẽ chỉ có các tập hợp hữu hạn. Muốn có thêm tập không giới hạn số lượng phần tử, chúng ta cần thêm một tiên đề nữa, phát biểu là 
+\begin{equation*}
+   \exists x, \left(\varnothing \in x \land \forall y \in x, y^+ \in x\right)\footnotemark.
+\end{equation*}
+\footnotetext{Nhắc lại rằng $y^+ = y \cup \{y\}$.}
+
+Khác với một số tiên đề mà chúng ta đã đề cập, tập hợp $x$ thỏa mãn tiên đề vô hạn, tức chứa tập rỗng và với mọi $y \in x$ thì $y^+$ cũng trong $x$, không phải là duy nhất. Những tập hợp như vậy được gọi là \defText{tập quy nạp} hoặc \defText{tập liền tiếp}.

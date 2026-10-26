@@ -1,9 +1,69 @@
 \section{Tiên đề cơ sở}
 
-Tiên đề cơ sở phát biểu rằng nếu $x$ là một tập khác rỗng, thì tồn tại phần tử $a \in x$ sao cho $y$ không có phần tử chung với $x$. Dưới dạng kí hiệu toán học, chúng ta có 
+Tiên đề cơ sở phát biểu rằng nếu $x$ là một tập khác rỗng, thì tồn tại phần tử $y \in x$ sao cho $y$ không có phần tử chung với $x$. Dưới dạng kí hiệu toán học, chúng ta có 
 \begin{equation*}
    \defMath{\forall x, \left(x \neq \varnothing \implies \exists y \in x, y \cap x = \varnothing\right)}.
 \end{equation*}
 Chúng ta sẽ chứng minh một tính chất rất cơ bản rằng một tập thì không thuộc chính nó. Với mọi $a$, tiên đề cặp cho phép xây dựng $\{a\}$. Theo tiên đề cơ sở, tồn tại một phần tử trong $\{a\}$ mà nó với $\{a\}$ rời nhau. Mà, chỉ có một phần tử $a$ là thuộc $\{a\}$ nên $a \cap \{a\} = \varnothing$. Hiển nhiên rằng, $a \notin a$.
 
-Tác giả sẽ xây dựng một tập hợp mà bạn đọc sau này sẽ thấy vô cùng hữu dụng. Nếu $x$ là tập hợp, đặt $x^+ = x \cap \{x\}$. Dễ thấy $x \subseteq x^+$. Ngoài ra, vì $x \in x+$ và $x \notin x$, $x \neq x$, dẫn đến $x \subsetneq x^+$.
+Tác giả sẽ xây dựng một tập hợp mà bạn đọc sau này sẽ thấy vô cùng hữu dụng. Nếu $x$ là tập hợp, đặt $x^+ = x \cup \{x\}$. Dễ thấy $x \subseteq x^+$. Ngoài ra, vì $x \in x^+$ và $x \notin x$, $x \neq x^+$ và dẫn đến $x \subsetneq x^+$.
+
+\exercise Cho $A$ và $B$ là tập hợp thỏa mãn $A \in B$. Chứng minh rằng 
+\begin{multicols}{2}
+   \begin{enumerate}
+      \item $B \notin A$;
+      \item $B \nsubseteq A$. 
+   \end{enumerate}   
+\end{multicols}
+
+\solution
+
+\resetSubexercise Dựa vào tiên đề cặp, dựng được tập $\{A; B\}$. Sử dụng tiên đề cơ sở, phải có phần tử $C$ trong $\{A; B\}$ sao cho $C \cap \{A; B\} = \varnothing$. Do tiên đề cặp, $C = A$ hoặc $C = B$. Mặt khác, $\begin{cases}
+   A \in B \\
+   A \in \{A; B\}
+\end{cases}$ nên $A \in B \cap \{A; B\}$, hay $B \cap \{A; B\} \neq \varnothing$. Suy ra, $A \cap \{A; B\} = \varnothing$. Chúng ta có $B \in \{A; B\}$, nếu có thêm cả $B \in A$ thì $A \cap \{A; B\}$ sẽ có phần tử $B$, nghịch lí. Vì vậy, $B \notin A$. Điều phải chứng minh.
+
+\stepSubexercise Giả sử phản chứng, nếu $B \subseteq A$ thật thì mọi phần tử thuộc $B$ sẽ thuộc $A$ (định nghĩa tập con). Do vậy, $A \in A$, là một điều phi lí. Qua đó, dễ thấy điều phải chứng minh.
+
+\exercise Chứng minh rằng không tồn tại tập hợp $x$ để $x = (A; x) \lor x = (x; A)$ với bất cứ tập $A$ nào.
+
+\solution
+
+Với mọi $A$, giả sử rằng có $x$ để $x = (A; x) \lor x = (x; A)$. Từ tiên đề cặp, $x \in \{x; A\}$, và từ định nghĩa của cặp có thứ tự, $\{x; A\} \in (A; x) \land \{x; A\} \in (x; A)$. Khi đó, suy ra được $x \in \{x; A\}$ và $\{x; A\} \in x$ xảy ra đồng thời, mâu thuẫn với hệ quả của tiên đề cơ sở. Qua đó, có ngay được điều phải chứng minh.
+
+\exercise Định nghĩa một tập hợp $x$ là vô đáy khi và chỉ khi 
+\begin{equation*}
+   \forall a \in x, \exists b \in x, b \in a,
+\end{equation*}
+nghĩa là, mọi phần tử của $x$ đều chứa một phần tử khác cũng thuộc $x$. Chứng minh rằng $x$ vô đáy khi và chỉ khi $x = \varnothing$.
+
+\solution
+
+$x = \varnothing$ dễ dàng kéo theo $x$ vô đáy. Còn trong trường hợp $x$ khác rỗng, chúng ta hãy giả sử rằng $x$ vô đáy. Theo tiên đề cơ sở, tồn tại phần tử $a \in x$ sao cho $a \cap x = \varnothing$. Tuy nhiên, theo định nghĩa vô đáy, cần phải tồn tại $b \in x$ sao cho $b \in a$, dẫn đến
+\begin{equation*}
+   b \in a \cap x,
+\end{equation*}  
+mâu thuẫn. Vậy, giả sử ban đầu là sai và chúng ta có
+\begin{equation*}
+   x \neq \varnothing \implies \overline{x\text{~vô đáy}}.
+\end{equation*}
+
+Kết hợp các kết quả, quan hệ đẳng giá cần được chứng minh là hiển nhiên.
+
+\exercise Cho $A$ và $B$ là tập hợp và $f: A \to B$ là ánh xạ. Chứng minh rằng $f \notin A$.
+
+\solution
+
+Giả sử phản chứng, $f \in A$. Vì $f$ thuộc tập xác định của $f$, xác định được 
+\begin{equation*}
+   y = f(f).
+\end{equation*}
+Từ định nghĩa của ánh xạ, chúng ta có $(f; y) \in f$.
+
+Xét tập hợp $B = \{f; \{f\}; (f; y)\}$. Theo tiên đề cơ sở, vì $B$ khác rỗng nên tồn tại $b \in B$ sao cho $b \cap B = \varnothing$. Tuy nhiên, để $b \in B$ thì $b$ nhận một trong các giá trị $f$, $\{f\}$ hoặc $(f; y)$. Khi đó,
+\begin{itemize}
+   \item nếu \coloringCrimson{$b = f$}, $b$ và $B$ có chung phần tử $(f; y)$;
+   \item nếu \coloringDodgerblue{$b = \{f\}$}, $b$ và $B$ có chung phần tử $f$;
+   \item nếu \coloringJade{$b = (f; y)$}, $b$ và $B$ có chung phần tử $\{f\}$.
+\end{itemize}
+Trong mọi trường hợp, $b \cap B \neq \varnothing$, dẫn đến mâu thuẫn. Qua đó, chúng ta thấy điều giả sử là sai, và vì vậy, điều phải chứng minh.
