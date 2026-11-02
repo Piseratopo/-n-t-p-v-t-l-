@@ -4,14 +4,26 @@ Sử dụng những tiên đề đã có, chúng ta có thể xây dựng rất 
 \begin{equation*}
    \exists x, \left(\varnothing \in x \land \forall y \in x, y^+ \in x\right)\footnotemark.
 \end{equation*}
-\footnotetext{Nhắc lại rằng $y^+ = y \cup \{y\}$.}
 
-Khác với một số tiên đề mà chúng ta đã đề cập, tập hợp $x$ thỏa mãn tiên đề vô hạn, tức chứa tập rỗng và với mọi $y \in x$ thì $y^+$ cũng trong $x$, không phải là duy nhất. Những tập hợp như vậy được gọi là \defText{tập quy nạp} hoặc \defText{tập liền tiếp}. 
+\footnotetext{Nhắc lại rằng $y^+ = y \cup \{y\}$.}Khác với một số tiên đề mà chúng ta đã đề cập, tập hợp $x$ thỏa mãn tiên đề vô hạn, tức chứa tập rỗng và với mọi $y \in x$ thì $y^+$ cũng trong $x$, không phải là duy nhất. Những tập hợp như vậy được gọi là \defText{tập quy nạp} hoặc \defText{tập liền tiếp}. 
 
 Sau khi giả định sự tồn tại của tập quy nạp, chúng ta sẽ chứng minh sự tồn tại của tập quy nạp nhỏ nhất. Nhưng trước hết, chúng ta sẽ chứng minh một tính chất của tập quy nạp:
 \begin{quotation}
    ``Cho $A$ là một tập hợp khác rỗng mà các phần tử của nó là tập quy nạp. Khi đó, $\bigcap A$ cũng là một tập quy nạp.''.
 \end{quotation}
-Trước hết, lấy phần tử $a \in A$ bất kì. Theo giả thiết, $a$ là tập quy nạp, dẫn đến $\varnothing \in a$. Vì khẳng định này đúng với mọi $a$ nên dễ thấy rằng $a \in \bigcap A$ theo định nghĩa của phép giao.
+Nhắc lại về định nghĩa của $\bigcap A$: \begin{equation*}
+   \bigcap A = \left\{z \in \bigcup A\,\middle|\,\forall a \in A, z \in a\right\}.
+\end{equation*}
+Vì $A$ khác rỗng nên tồn tại phần tử $b \in A$. Xét $z$ bất kì, nếu $\forall a \in A, z \in a$ thì $z \in b$, dẫn đến $\exists a \in A, z \in a$ hay $z \in \bigcup A$. Do đó,
+\begin{equation*}
+   \forall z, \left(z \in \bigcap A \iff \forall a \in A, z \in a\right).
+\end{equation*}
 
-Bây giờ, xét $e \in \bigcap A$.
+Trước hết, lấy phần tử $a \in A$ bất kì. Theo giả thiết, $a$ là tập quy nạp, dẫn đến $\varnothing \in a$. Vì khẳng định này đúng với mọi $a \in A$ nên $\varnothing \in \bigcap A$. Bây giờ, xét $e$ và giả sử $e \in \bigcap A$. Khi đó, $\forall a \in A, e \in a$. Vì mọi phần tử $a$ trong $A$ là tập quy nạp nên $\forall a \in A, \left(e \in a \implies e^+ \in a\right)$, dẫn đến $\forall a \in A, e^+ \in a$. Suy ra, $e^+ \in \bigcap A$. Qua đó, theo định nghĩa, $\bigcap A$ là một tập quy nạp.
+
+Gọi $S$ là một tập quy nạp. Xây dựng tập $\mathcal{M}$ được xác định là 
+\begin{equation*}
+   \mathcal{M} = \bigcap\left\{s \in \mathfrak{P}(S)\,\middle|\,s\text{~là tập quy nạp}\right\}.
+\end{equation*}
+Chúng ta có $\left\{s \in \mathfrak{P}(S)\,\middle|\,s\text{~là tập quy nạp}\right\} \neq \varnothing$ do $S \in \left\{s \in \mathfrak{P}(S)\,\middle|\,s\text{~là tập quy nạp}\right\}$. Theo tính chất vừa chứng minh, $\mathcal{M}$ là tập quy nạp. Ngoài ra, với mọi tập quy nạp $T$, có $S \cap T$ là một tập quy nạp trong $\mathfrak{P}(S)$, kéo theo $\mathcal{M} \subseteq S \cap T$. Vì vậy, $\mathcal{M} \subseteq T$ với mọi tập $T$ quy nạp, hay chúng ta có tập quy nạp $\mathcal{M}$ nhỏ nhất.
+

@@ -1,0 +1,75 @@
+\section{Số tự nhiên}
+
+Vào năm 1888, Đê-đơ-kin\footnote{Julius Wilhelm Richard Dedekind (1831 -- 1916).} đã đề xuất một hệ thống các tiên đề cho tập hợp số tự nhiên $\mathbb{N}$\footnote{Trong tài liệu này, chúng ta định nghĩa tập số tự nhiên bắt đầu từ số $0$.}. Cũng khoảng thời gian đó, hệ tiên đề Pê-a-nô\footnote{Giuseppe Peano (1858 -- 1932).} cũng đề cập về số tự nhiên được ra đời. Hệ tiên đề đó phát biểu rằng, tồn tại một tập hợp $P$ và một hàm $s$ (gọi là \defText{hàm liền tiếp}) thỏa mãn:
+\begin{itemize}
+   \item Tồn tại duy nhất một phần tử $0 \in P$;
+   \item Với mỗi $n \in P$ tồn tại duy nhất một liền sau $s(n)$ thuộc $P$;
+   \item Với mọi $n \in P$ thì $s(n) \neq 0$;
+   \item Nếu $m$ và $n$ cùng thuộc thuộc $P$, $s(m) = s(n) \implies m = n$;
+   \item Gọi $A$ là tập con của $P$, nếu $0 \in A$ và nếu có $n\in A \implies s(n) \in A$ thì $A = P$.
+\end{itemize}
+Có nhiều cách để chọn $P$ và $s$. Một bộ có thứ tự $(P; s)$ xây dựng được là một \defText{mẫu} hay \defText{mô hình} cho số tự nhiên. Để tiện cho lập luận và tính toán, một số tự nhiên thường được viết dưới dạng chuỗi các kí tự \coloringCrimson{$0$}, \coloringCrimson{$1$}, \coloringCrimson{$2$}, \coloringCrimson{$3$}, \coloringCrimson{$4$}, \coloringCrimson{$5$}, \coloringCrimson{$6$}, \coloringCrimson{$7$}, \coloringCrimson{$8$}, \coloringCrimson{$9$}, và để tính giá trị của $s(n)$ khi $n$ được cho dưới dạng chuỗi gồm các kí tự đó, chúng ta sử dụng quy ước gồm các ý tưởng chính là:
+\begin{itemize}
+   \item Khi cần tìm số liền tiếp, luôn xét kí tự cuối cùng của chuỗi tính từ bên phải.
+   \item Nếu chữ số cuối cùng chưa phải là \coloringCrimson{$9$}, thay thế chữ số đó bằng chữ số đứng ngay sau nó theo bảng \ref{tab:li_thuyet_tap_hop:xay_dung_so:so_tu_nhien:bang_chuyen_chu_so}.
+\begin{table}[H]
+   \centering
+   \begin{tblr}{
+   colspec = {c c || c c},
+   hlines,
+   vlines,
+   row{1} = {font=\bfseries},
+   cell{2-6}{1-4} = {fg=colorCrimson},
+   }
+   Chữ số hiện tại & Chữ số liền sau & Chữ số hiện tại & Chữ số liền sau \\
+   0 & 1 & 5 & 6 \\
+   1 & 2 & 6 & 7 \\
+   2 & 3 & 7 & 8 \\
+   3 & 4 & 8 & 9 \\
+   4 & 5 & 9 & 0 \\
+   \end{tblr}
+   \caption{Bảng chuyển đổi chữ số liền tiếp}
+   \label{tab:li_thuyet_tap_hop:xay_dung_so:so_tu_nhien:bang_chuyen_chu_so}
+\end{table}
+   \item Nếu chữ số đang xét là \coloringCrimson{$9$}, thay nó bằng \coloringCrimson{$0$}, và tiếp tục xét sang chữ số liền kề bên trái của nó.
+   \item Nếu tất cả các chữ số đều là \coloringCrimson{$9$}, chuỗi sẽ tăng độ dài thêm một chữ số mới (bắt đầu bằng \coloringCrimson{$1$} theo sau bởi toàn bộ các số \coloringCrimson{$0$}).
+\end{itemize}
+Ví dụ: $s(124) = 125$, $s(239) = 240$, $s(999) = 1000$.
+
+Quay trở lại về vấn đề chọn lựa mô hình số tự nhiên, sử dụng tập $\mathcal{M}$ được xây dựng trước đó và đặt $s$ thỏa mãn $s(n) = n^+$ với mọi $n \in \mathcal{M}$, chúng ta có $(M; s)$ là một mô hình thỏa mãn. Thật vậy, đặt $0 = \varnothing$. Dễ thấy nếu $n \in \mathcal{M}$ thì $n^+ \in \mathcal{M}$ là duy nhất. Vì $\forall n \in \mathcal{M}, n \in s(n)$ nên không thể có $s(n) = \varnothing$. Do đó, $\forall n \in \mathcal{M}, s(n) \neq 0$.
+
+Giả sử tồn tại $m$ và $n$ cùng thuộc $\mathcal{M}$ sao cho $s(m) = s(n)$ nhưng $m \neq n$. Theo định nghĩa, có $m \cup \{m\} = n \cup \{n\}$. Chúng ta có $m \in m^+$ nên $m \in n \cup \{n\}$, nhưng $m \notin \{n\}$ bởi $m \neq n$, nên $m \in n$. Với lập luận tương tự, $n \in m$. Tuy nhiên, điều này mâu thuẫn với tiên đề cơ sở. Do vậy, điều giả sử là sai, và vì vậy, \begin{equation*}
+   \forall m \in \mathcal{M}, \forall n \in \mathcal{M}, (s(m) = s(n) \implies m = n).
+\end{equation*}
+
+Gọi $A$ là tập con của $\mathcal{M}$ thỏa mãn $0 \in A$ và $\forall n \in A, s(n) \in A$. Theo định nghĩa, chúng ta có $A$ là một tập quy nạp. Vì $\mathcal{M}$ là tập quy nạp nhỏ nhất, $\mathcal{M} \subseteq A$. Do đó, $A = \mathcal{M}$. Toàn bộ các điều kiện cho một mô hình của số tự nhiên đã được chứng minh. Để tiện cho sau này, tác giả sẽ coi hai tập $\mathcal{M}$ và $\mathbb{N}$ là một.
+
+Tiên đề cuối cùng, còn được gọi là \defText{tiên đề quy nạp}, cho phép chúng ta chứng minh hầu hết các tính chất liên quan đến số tự nhiên. Giả sử chúng ta có vị từ $Q$ và $B \subseteq \mathbb{N}$ là tập hợp tất cả các số tự nhiên thỏa mãn $Q$. Nếu chúng ta chứng minh được $0 \in B$ và $Q(s(n))$ đúng mỗi khi có $Q(n)$, thì theo tiên đề quy nạp, chúng ta phải có $B = \mathbb{N}$ hay $Q$ đúng với mọi số tự nhiên. Chứng minh như vậy được gọi là \defText{chứng minh bằng quy nạp}. 
+
+\exercise Cho tập hợp $A$. Kí hiệu $2^A$ là tập hợp tất cả các hàm số từ $A$ đến $\{0; 1\}$. Với mỗi $B \in \mathfrak{P}(A)$, gọi \defText{hàm đặc trưng} $I_B: A \to \{0; 1\}$ được xác định bởi:
+\begin{itemize}
+   \item $I_B(x) = 1$ nếu $x \in B$, và 
+   \item  $I_B(x) = 0$ nếu $x \notin B$.
+\end{itemize}
+Xét ánh xạ $\begin{array}[t]{rcl}
+   \Phi : \mathfrak{P}(A) & \to & 2^A \\
+      B & \mapsto & I_B
+\end{array}$. Chứng minh rằng $\Phi$ là một song ánh.
+
+\solution
+
+Xét $B$ và $C$ là hai phần tử thuộc $\mathfrak{P}(A)$. Giả sử rằng $\Phi(B) = \Phi(C)$, tức là $I_B = I_C$. Khi đó, $\forall x \in A, I_B(x) = I_C(x)$. Xét $y$ là một phần tử, nếu $y \in B$ thì có $I_B(y) = 1$, dẫn đến $I_C(y) = 1$ và $y \in C$. Tương tự, $y \in C$ sẽ kéo theo $y \in B$. Vì vậy, \begin{equation*}
+   \forall y, y \in B \iff y \in C.
+\end{equation*}
+Do đó, $B = C$. Chúng ta có $\Phi$ là một ánh xạ đơn ánh.
+
+Lấy một hàm $f \in 2^A$ tùy ý. Đặt \begin{equation*}
+   D = \{x \in A \mid f(x) = 1\}.
+\end{equation*}
+Rõ ràng rằng $D \in \mathfrak{P}(A)$. Với mọi phần tử $y$ trong $A$, từ cách gọi $A$, $f(y)$ chỉ nhận một trong hai giá trị là $0$ hoặc $1$. Nếu $f(y) = 1$, theo cách xây dựng $D$, $y \in D$. Từ định nghĩa hàm đặc trưng, $I_D(y) = 1$, dẫn đến $f(y) = I_D$. Một cách tương tự, nếu $f(y) = 0$, chúng ta cũng sẽ có $I_D(y) = 0$ do $y \notin D$, và khi đó chúng ta cũng sẽ có $f(y) = I_D$. Vì vậy, 
+\begin{equation*}
+   \forall y \in A, f(y) = I_D(y).
+\end{equation*}
+Cho nên, tồn tại $D$ để $\Phi(D) = I_D = f$. Tính toàn ánh của $\Phi$ được chứng minh.
+
+Vì $\Phi$ vừa đơn ánh, vừa toàn ánh, nên $\Phi$ song ánh. Điều phải chứng minh.

@@ -1319,10 +1319,14 @@ $R$ vừa có tính phản xạ, tính đối xứng, và tính bắc cầu, d�
 $$\defMath{D_f = D \cup \big\{y \in x^2 \;\big|\; \exists z \in x, y = (z; z)\big\}}.$$
 \defText{Bao đóng đối xứng} của $D$ có định nghĩa
 $$\defMath{D_d = D \cup D^{-1}}.$$
+\defText{Bao đóng bắc cầu} của $D$ được xác định như \begin{equation*}
+   \defMath{D_b = \bigcap \Big\{ R \in \mathfrak{P}(x \times x)\,\Big|\,D \subseteq R \land R\text{\defText{~bắc cầu}}\Big\}}.
+\end{equation*} 
 Chứng minh rằng,
 \begin{enumerate}
    \item $D_f$ phản xạ, và, $D$ phản xạ khi và chỉ khi $D = D_f$;
-   \item $D_d$ đối xứng, và, $D$ đối xứng khi và chỉ khi $D = D_d$.
+   \item $D_d$ đối xứng, và, $D$ đối xứng khi và chỉ khi $D = D_d$;
+   \item $D_b$ bắc cầu, và, $D$ bắc cầu khi và chỉ khi $D = D_b$.
 \end{enumerate}
 
 \solution
@@ -1349,7 +1353,7 @@ Tiếp theo, chúng ta chứng minh điều kiện cần và đủ để quan h�
 
 Qua hai chiều, chúng ta có điều phải chứng minh.
 
-\stepSubexercise Lấy $c$ tùy ý thuộc vào quan hệ $D_d$. Vì $D_d$ là quan hệ từ $x$ sang $y$, tồn tại $a \in x$ và $b \in y$ sao cho $c = (a; b)$. Từ đó, $(a; b) \in D \cup D^{-1}$. Xét hai trường hợp có thể xảy ra:
+\stepSubexercise Lấy $c$ tùy ý thuộc vào quan hệ $D_d$. Vì $D_d$ là quan hệ hai ngôi trên $x$, tồn tại phần tử $a$ và $b$ của $x$ sao cho $c = (a; b)$. Từ đó, $(a; b) \in D \cup D^{-1}$. Xét hai trường hợp có thể xảy ra:
 \begin{itemize}
    \item Đầu tiên, nếu \coloringCrimson{$(a; b) \in D$}, theo định nghĩa của quan hệ ngược, điều này dẫn đến $(b; a) \in D^{-1}$. Vì tập hợp $D^{-1}$ là tập con của $D \cup D^{-1} = D_d$, chúng ta suy ra $(b; a) \in D_d$.
    \item Xét trường hợp còn lại, nếu \coloringDodgerblue{$(a; b) \in D^{-1}$}, điều này kéo theo cặp đảo thứ tự $(b; a)$ phải thuộc vào quan hệ gốc $D$. Vì tập hợp $D$ là tập con của $D \cup D^{-1} = D_d$, chúng ta cũng thu được $(b; a) \in D_d$.
@@ -1371,6 +1375,19 @@ Chúng ta chứng minh điều kiện cần và đủ để quan hệ $D$ đối
 \end{itemize}
    
 Qua các kết quả đã có, dễ thấy điều phải chứng minh.
+
+\stepSubexercise Nhận thấy rằng $D_b$ là một quan hệ hai ngôi trên $x$. Xét $g$, $h$ và $i$ bất kì sao cho $g\;D_b\;h$ và $h\;D_b\;i$. Đặt $\mathcal{B} = \left\{ R \in \mathfrak{P}(x \times x)\,\middle|\,D \subseteq R \land R\text{~bắc cầu}\right\}$. Từ $\begin{cases}
+   (g; h) \in D_b \\
+   (h; i) \in D_b
+\end{cases}$ và $D_b = \bigcap \mathcal{B}$, chúng ta có với mọi $R \in \mathcal{B}$, $(g; h) \in R \land (h; i) \in R$. Thêm vào đó, có $R$ là quan hệ bắc cầu nên $g\;R\;i$. Mệnh đề này đúng với mọi $R \in \mathcal{B}$, cho nên $g\;D_b\;i$. Do đó, $D_b$ là một quan hệ bắc cầu.
+
+Bây giờ, chúng ta chứng minh điều kiện cần và đủ để $D$ bắc cầu là $D = D_b$.
+\begin{itemize}
+   \item Giả sử $D$ bắc cầu. Rõ ràng, $D \subseteq D$, nên $D \in \mathcal{B}$. Có $D_b = \bigcap \mathcal{B}$, nên $D_b \subseteq D$. Ngoài ra, xét $j \in D$, với mọi $R \in \mathcal{B}$, có ngay $j \in R$ do $D \subseteq R$. Do đó, $j \in \bigcap \mathcal{B}$ hay $j \in D_b$ với mọi $j \in D$. Do đó, $D_b \supseteq D$. Kết hợp lại, có $D_b = D$.
+   \item Giả sử $D_b = D$ nghiệm đúng. Vì $D_b$ bắc cầu (đã chứng minh) nên $D$ cũng là một quan hệ bắc cầu.
+\end{itemize}
+
+Qua đó, dễ thấy điều phải chứng minh.
 
 \exercise[ex:li_thuyet_tap_hop:tien_de:quan_he:phan_hoach_tuong_duong] Chứng minh rằng với mọi quan hệ tương đương $\sim$ trên $\mathscr{E}$, tập thương $\frac{\mathscr{E}}{\sim}$ là một phân hoạch của $\mathscr{E}$.
 
