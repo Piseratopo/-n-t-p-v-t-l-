@@ -1,0 +1,34 @@
+\section{Họ}
+
+Cho một tập hợp $x$. \defText{Họ phần tử} của $x$ (gọi tắt là \defText{họ}) là một ánh xạ bất kì có tập dích là $x$. Nếu ánh xạ này là $\begin{array}[t]{rcl}  
+f: I & \to & x\\       
+   a & \mapsto & f(a) 
+\end{array}$ thì chúng ta kí hiệu họ phần tử này là $\defMath{(f_i)_{i \in I}}$, và tập nguồn $I$ được gọi là \defText{tập chỉ số} của họ phần tử đó.
+
+Dưới đây là định nghĩa của một số các cách viết quen thuộc. Cho $x$ là một tập hợp. Một họ $(f_i)_{i \in I}$ được xác định trong đó $\forall i \in I, f_i \in \mathfrak{P}(x)$. Khi đó, \begin{itemize}
+   \item \defText{hợp của họ}, kí hiệu là $\defMath{\bigcup_{i \in I}f_i}$, được định nghĩa bởi $$
+   \defMath{\bigcup_{i \in I}f_i = \{y \in x \mid \exists i \in I, y \in f_i\}};
+   $$
+   \item \defText{giao của họ}, kí hiệu là $\defMath{\bigcap_{i \in I}f_i}$, được định nghĩa bởi $$
+   \defMath{\bigcap_{i \in I}f_i = \{y \in x \mid \forall i \in I, y \in f_i\}}.$$
+\end{itemize}
+Như thế, theo định nghĩa này, với mọi $y \in x$, chúng ta có khẳng định
+\begin{multicols}{2}
+   \begin{itemize}
+      \item $y \in \bigcup_{i \in I}f_i \iff \exists i \in I, y \in f_i$;
+      \item $y \in \bigcap_{i \in I}f_i \iff \forall i \in I, y \in f_i$.
+   \end{itemize}
+\end{multicols}
+Ngoài ra, nếu xét tập chỉ số $I$ là một tập rỗng, thì chúng ta có $i \in I$ luôn sai với mọi $i$, do đó 
+\begin{multicols}{2}
+   \begin{itemize}
+      \item $\bigcup_{i \in \varnothing}f_i = \varnothing$;
+      \item $\bigcap_{i \in \varnothing}f_i = x$.
+   \end{itemize}
+\end{multicols}
+
+\exercise Cho tập hợp $x$. $A$ và $B$ là hai ánh xạ từ $I$ đến $\mathfrak{P}(x)$. Chứng minh rằng
+\begin{enumerate}
+   \item $\complement_x \left(\bigcup_{i \in I}A_i\right) = \bigcap_{i \in I}\complement_x(A_i)$;
+\end{enumerate} 
+
