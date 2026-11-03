@@ -27,8 +27,74 @@ Ngoài ra, nếu xét tập chỉ số $I$ là một tập rỗng, thì chúng t
    \end{itemize}
 \end{multicols}
 
-\exercise Cho tập hợp $x$. $A$ và $B$ là hai ánh xạ từ $I$ đến $\mathfrak{P}(x)$. Chứng minh rằng
-\begin{enumerate}
-   \item $\complement_x \left(\bigcup_{i \in I}A_i\right) = \bigcap_{i \in I}\complement_x(A_i)$;
-\end{enumerate} 
+\exercise Cho tập hợp $x$, $M$ là một tập con của $x$, $A$ và $B$ đều là ánh xạ từ $I$ đến $\mathfrak{P}(x)$. Chứng minh rằng
+\begin{multicols}{2}
+   \begin{enumerate}
+      \item $x \setminus \left(\bigcup_{i \in I}A_i\right) = \bigcap_{i \in I}(x \setminus A_i)$;
+      \item $x \setminus \left(\bigcap_{i \in I}A_i\right) = \bigcup_{i \in I}(x \setminus A_i)$;
+      \item $\left(\bigcap_{i \in I}A_i\right) \cap M = \bigcap_{i \in I}\left(A_i \cap M\right)$;
+      \item $\left(\bigcup_{i \in I}A_i\right) \cup M = \bigcup_{i \in I}\left(A_i \cup M\right)$;
+      \item $\left(\bigcup_{i \in I}A_i\right) \cap M = \bigcup_{i \in I}\left(A_i \cap M\right)$;
+      \item $\left(\bigcap_{i \in I}A_i\right) \cup M = \bigcap_{i \in I}\left(A_i \cup M\right)$;
+      \item $\forall i \in I, A_i \subseteq B_i \implies \begin{cases}
+         \bigcup_{i \in I} A_i \subseteq \bigcup_{i \in I}B_i \\
+         \bigcap_{i \in I} A_i \subseteq \bigcap_{i \in I}B_i \\
+      \end{cases}$;
+      \item $\bigcap_{i \in I}\left(A_i \setminus B_i\right) = \left(\bigcap_{i \in I}A_i\right) \setminus \left(\bigcup_{i \in I}B_i\right)$.
+   \end{enumerate} 
+\end{multicols}
+
+\solution 
+
+\resetSubexercise Với mỗi $i$ trong $I$, $A_i$ được xác định duy nhất, dẫn đến $x \setminus A_i$ cũng xác định duy nhất. Ngoài ra, có $\forall i \in I, x \setminus A_i \subseteq x$ nên $\left(x \setminus A_i\right)_{i \in I}$ là một họ phần tử của $x$.
+
+Trong trường hợp $I = \varnothing$, có ngay $\bigcup_{i \in I}A_i = \varnothing$ và $\bigcap_{i \in I}A_i = x$. Vì $x \setminus \varnothing = x$ nên chúng ta có điều phải chứng minh trong trường hợp này. Còn nếu $I \neq \varnothing$, với mọi $e$, chúng ta có 
+\begin{equation*}
+   e \in x \setminus \left(\bigcup_{i \in I}A_i\right) \iff e \in x \land e \notin \bigcup_{i \in I}A_i.
+\end{equation*}
+$e \in x \implies \forall i \in I, e \in x$ là hiển nhiên. Xét chiều ngược lại, giả sử $\forall i \in I, e \in x$. Do đang xét $I \neq \varnothing$, tồn tại $j \in I$, dẫn đến khi có $j \in I \implies e \in x$ từ cụ thể hóa lượng từ phổ quát, chúng ta suy ra được $e \in x$. Vì vậy, \begin{equation*}
+   e \in x \iff \forall i \in I, e \in x.
+\end{equation*} 
+Ngoài ra, do $e \in x$, chúng ta cũng có 
+\begin{align*}
+   e \notin \bigcup_{i \in I}A_i &\iff \overline{\exists i \in I, e \in A_i}; \\
+   e \notin \bigcup_{i \in I}A_i &\iff \forall i \in I, e \notin A_i.
+\end{align*}
+
+Do đó, \begin{align*}
+   e \in x \setminus \left(\bigcup_{i \in I}A_i\right) &\iff \forall i \in I, e \in x \land \forall i \in I, e \notin A_i; \\
+   e \in x \setminus \left(\bigcup_{i \in I}A_i\right) &\iff \forall i \in I, \left(e \in x \land e \notin A_i\right) \equationexplanation{tính chất phân phối của lượng từ $\forall$ với phép $\land$}; \\
+   e \in x \setminus \left(\bigcup_{i \in I}A_i\right) &\iff \forall i \in I, e \in x \setminus A_i; \\
+   e \in x \setminus \left(\bigcup_{i \in I}A_i\right) &\iff e \in \bigcap_{i \in I} \left(x \setminus A_i\right).
+\end{align*}
+
+Vậy, $x \setminus \left(\bigcup_{i \in I}A_i\right) = \bigcap_{i \in I} \left(x \setminus A_i\right)$ trong mọi trường hợp. Chúng ta có điều phải chứng minh.
+
+\stepSubexercise Với mọi $e$, \begin{equation*}
+   e \in x \setminus \left(\bigcap_{i \in I}A_i\right) \iff e \in x \land e \notin \bigcap_{i \in I}A_i.
+\end{equation*}
+Từ $e \in x$, có $e \notin \bigcap_{i \in I}A_i$ khi và chỉ khi tồn tại $i \in I$ để $e \notin A_i$. Với giá trị $i$ đó, $e \in x \land e \notin A_i$ hay $e \in x \setminus A_i$, cho nên \begin{equation*}
+   \exists i \in I, e \in x \setminus A_i,
+\end{equation*}
+có nghĩa là $e \in x \setminus \left(\bigcap_{i \in I}A_i\right) \implies e \in \bigcup_{i \in I} \left(x \setminus A_i\right)$. Ngược lại, nếu $e \in \bigcup_{i \in I} \left(x \setminus A_i\right)$, theo định nghĩa hợp của họ phần tử, tồn tại $i \in I$ để $e \in x \setminus A_i$. Suy ra, $e \in x \land e \notin A_i$, dẫn đến $\overline{\forall i \in I, e \in A_i}$. Vì thế, kéo theo được $e \in x \setminus \left(\bigcap_{i \in I}A_i\right)$. 
+
+Từ lập luận hai chiều, $e \in x \setminus \left(\bigcap_{i \in I}A_i\right) \iff e \in \bigcup_{i \in I} \left(x \setminus A_i\right)$. Điều phải chứng minh.
+
+\stepSubexercise Với mỗi $i$ trong $I$, $A_i \cap M$ là xác định duy nhất. Ngoài ra, có $\forall i \in I, A_i \cap M \subseteq x$ nên $\left(A_i \cap M\right)_{i \in I}$ là một họ phần tử của $x$.
+
+Với mọi $e$, \begin{align*}
+   e \in \left(\bigcap_{i \in I} A_i\right) \cap M &\iff e \in \bigcap_{i \in I} A_i \land e \in M; \\
+   e \in \left(\bigcap_{i \in I} A_i\right) \cap M &\iff e \in x \land \forall i \in I, e \in A_i \land e \in M; \\
+   e \in \left(\bigcap_{i \in I} A_i\right) \cap M &\iff e \in x \land \forall i \in I, \left(e \in A_i \land e \in M\right); \\
+   e \in \left(\bigcap_{i \in I} A_i\right) \cap M &\iff e \in \bigcap_{i \in I} \left(A_i \cap M\right).
+\end{align*}
+Vì vậy, $\left(\bigcap_{i \in I} A_i\right) \cap M = \bigcap_{i \in I} \left(A_i \cap M\right)$. Điều phải chứng minh.
+
+\exercise Cho tập hợp $x$, $A$ là ánh xạ từ $I$ đến $\mathfrak{P}(x)$, và $B$ là ánh xạ từ $J$ đến $\mathfrak{P}(x)$. Chứng minh rằng
+\begin{multicols}{2}
+   \begin{enumerate}
+      \item $\left(\bigcup_{i \in I}A_i\right) \cap \left(\bigcup_{j \in J}B_j\right) = \bigcup_{(i; j) \in I \times J}\left(A_i \cap B_j\right)$;
+      \item $\left(\bigcap_{i \in I}A_i\right) \cup \left(\bigcap_{j \in J}B_j\right) = \bigcap_{(i; j) \in I \times J}\left(A_i \cup B_j\right)$.
+   \end{enumerate}
+\end{multicols}
 
