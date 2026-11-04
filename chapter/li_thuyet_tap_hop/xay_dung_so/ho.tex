@@ -33,7 +33,7 @@ Ngoài ra, nếu xét tập chỉ số $I$ là một tập rỗng, thì chúng t
       \item $x \setminus \left(\bigcup_{i \in I}A_i\right) = \bigcap_{i \in I}(x \setminus A_i)$;
       \item $x \setminus \left(\bigcap_{i \in I}A_i\right) = \bigcup_{i \in I}(x \setminus A_i)$;
       \item $\left(\bigcap_{i \in I}A_i\right) \cap M = \bigcap_{i \in I}\left(A_i \cap M\right)$;
-      \item $\left(\bigcup_{i \in I}A_i\right) \cup M = \bigcup_{i \in I}\left(A_i \cup M\right)$;
+      \item $I \neq \varnothing \implies \left(\bigcup_{i \in I}A_i\right) \cup M = \bigcup_{i \in I}\left(A_i \cup M\right)$;
       \item $\left(\bigcup_{i \in I}A_i\right) \cap M = \bigcup_{i \in I}\left(A_i \cap M\right)$;
       \item $\left(\bigcap_{i \in I}A_i\right) \cup M = \bigcap_{i \in I}\left(A_i \cup M\right)$;
       \item $\forall i \in I, A_i \subseteq B_i \implies \begin{cases}
@@ -89,6 +89,53 @@ Với mọi $e$, \begin{align*}
    e \in \left(\bigcap_{i \in I} A_i\right) \cap M &\iff e \in \bigcap_{i \in I} \left(A_i \cap M\right).
 \end{align*}
 Vì vậy, $\left(\bigcap_{i \in I} A_i\right) \cap M = \bigcap_{i \in I} \left(A_i \cap M\right)$. Điều phải chứng minh.
+
+\stepSubexercise Với mỗi $i$ trong $I$, chúng ta xác định duy nhất một tập hợp $A_i \cup M$. Ngoài ra, $\forall i \in I, A_i \cup M \subseteq x$ nên $\left(A_i \cup M\right)_{i \in I}$ là một họ phần tử của $x$.
+
+Các lập luận dưới đây đã giả thiết rằng $I \neq \varnothing$. Xét một $e \in \left(\bigcup_{i \in I}A_i\right) \cup M$, điều này tương đương với $e \in \bigcup_{i \in I}A_i \lor e \in M$. Nếu \coloringCrimson{$e \in M$}, do $I \neq \varnothing$ nên tồn tại $i \in I$ để xác định được $A_i$, kéo theo $e \in A_i \cup M$. Do đó, $e \in \bigcup_{i \in I} (A_i \cup M)$. Còn nếu \coloringDodgerblue{$e \notin M$}, khi đó phải có $e \in \bigcup_{i \in I}A_i$, có nghĩa là $\exists i \in I, e \in A_i$. Với giá trị $i$ đó, cũng sẽ có $e \in A_i \cup M$. Vì thế, $e \in \bigcup_{i \in I}(A_i \cup M)$.
+Nhìn chung, có được 
+\begin{equation*}
+   \forall e \in \left(\bigcup_{i \in I}A_i\right) \cup M, e \in \bigcup_{i \in I}(A_i \cup M).
+\end{equation*}
+
+Ngược lại, giả sử $e \in \bigcup_{i \in I}(A_i \cup M)$. Tồn tại $i \in I$ sao cho $e \in A_i \cup M$. Khi này, $e \in A_i$ hoặc $e \in M$. Nếu $e \in A_i$ thì $e \in \bigcup_{i \in I}A_i$. Do đó, luôn có $e$ thuộc $\bigcup_{i \in I}A_i \cup M$. Vì vậy,
+\begin{equation*}
+   \forall e \in \bigcup_{i \in I}(A_i \cup M), e \in \bigcup_{i \in I}A_i \cup M.
+\end{equation*}
+
+Kết hợp lại, có $\forall e, \left(e \in \bigcup_{i \in I}(A_i \cup M) \iff e \in \bigcup_{i \in I}A_i \cup M\right)$ khi $I \neq \varnothing$, dẫn đến $I \neq \varnothing \implies \bigcup_{i \in I}(A_i \cup M) = \bigcup_{i \in I}A_i \cup M$. Điều phải chứng minh.
+
+\stepSubexercise Với mọi $e$,
+\begin{align*}
+   e \in \left(\bigcup_{i \in I}A_i\right) \cap M &\iff e \in \left(\bigcup_{i \in I}A_i\right) \land e \in M; \\
+   e \in \left(\bigcup_{i \in I}A_i\right) \cap M &\iff \exists i \in I, e \in A_i \land e \in M; \\
+   e \in \left(\bigcup_{i \in I}A_i\right) \cap M &\iff j \in I \land e \in A_j \land e \in M \equationexplanation{cụ thể hóa $\exists i$ bởi $j$}; \\
+   e \in \left(\bigcup_{i \in I}A_i\right) \cap M &\iff \exists i, (i \in I \land e \in A_i \land e \in M) \equationexplanation{tổng quát hóa}; \\
+   e \in \left(\bigcup_{i \in I}A_i\right) \cap M &\iff \exists i \in I, e \in A_i \cap M; \\
+   e \in \left(\bigcup_{i \in I}A_i\right) \cap M &\iff e \in \bigcup_{i \in I}(A_i \cap M).
+\end{align*}
+Vì thế, $\left(\bigcup_{i \in I}A_i\right) \cap M = \bigcup_{i \in I}(A_i \cap M)$. Điều phải chứng minh.
+
+\stepSubexercise Với mọi $e$,
+\begin{align*}
+   e \in \left(\bigcap_{i \in I} A_i\right) \cup M &\iff e \in \left(\bigcap_{i \in I} A_i\right) \lor e \in M; \\
+   e \in \left(\bigcap_{i \in I} A_i\right) \cup M &\iff \forall i \in I, e \in A_i \lor e \in M; \\
+   e \in \left(\bigcap_{i \in I} A_i\right) \cup M &\iff \forall i, (i \in I \implies e \in A_i) \lor e \in M; \\
+   e \in \left(\bigcap_{i \in I} A_i\right) \cup M &\iff \forall i , \left((i \in I \implies e \in A_i) \lor e \in M\right) \equationexplanation{cụ thể hóa và tồn tại hóa $\forall i$}; \\
+   e \in \left(\bigcap_{i \in I} A_i\right) \cup M &\iff \forall i , \left(i \in I \implies e \in A_i \lor e \in M\right) \equationexplanation{$(P \implies Q) \lor R \iff (P \implies Q \lor R)$}; \\
+   e \in \left(\bigcap_{i \in I} A_i\right) \cup M &\iff \forall i \in I, e \in A_i \cup M; \\
+   e \in \left(\bigcap_{i \in I} A_i\right) \cup M &\iff e \in \bigcup_{i \in I}(A_i \cup M).
+\end{align*}
+Do vậy, $\left(\bigcap_{i \in I} A_i\right) \cup M = \bigcup_{i \in I}(A_i \cup M)$. Chúng ta có điều phải chứng minh.
+
+\stepSubexercise Giả thiết rằng $\forall i \in I, A_i \subseteq B_i$. Với mọi $e$, nếu $e \in \bigcup_{i \in I}A_i$, tồn tại $i \in I$ để $e \in A_i$. Do $\forall i \in I, A_i \subseteq B_i$, với giá trị $i$ đó, $e \in B_i$, dẫn đến $\exists i \in I, e \in B_i$ hay $e \in \bigcup_{i \in I}B_i$. Qua đó, $\bigcup_{i \in I}A_i \subseteq \bigcup_{i \in I}B_i$.
+
+Nếu $e \in \bigcap_{i \in I}A_i$, $\forall i \in I, e \in A_i$. Kết hợp với $\forall i \in I, A_i \subseteq B_i$, chúng ta có $\forall i \in I, e \in B_i$, tức là $e \in \bigcap_{i \in I}B_i$. Vì lí do đó, $\bigcap_{i \in I}A_i \subseteq \bigcap_{i \in I}B_i$.
+
+Tổng hợp lại, từ $\forall i \in I, A_i \subseteq B_i$, chúng ta suy ra được $\begin{cases}
+   \bigcup_{i \in I} A_i \subseteq \bigcup_{i \in I}B_i \\
+   \bigcap_{i \in I} A_i \subseteq \bigcap_{i \in I}B_i \\
+\end{cases}$, điều phải chứng minh.
 
 \exercise Cho tập hợp $x$, $A$ là ánh xạ từ $I$ đến $\mathfrak{P}(x)$, và $B$ là ánh xạ từ $J$ đến $\mathfrak{P}(x)$. Chứng minh rằng
 \begin{multicols}{2}
