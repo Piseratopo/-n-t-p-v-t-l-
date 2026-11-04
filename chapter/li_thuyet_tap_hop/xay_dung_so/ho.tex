@@ -137,11 +137,28 @@ Tổng hợp lại, từ $\forall i \in I, A_i \subseteq B_i$, chúng ta suy ra 
    \bigcap_{i \in I} A_i \subseteq \bigcap_{i \in I}B_i \\
 \end{cases}$, điều phải chứng minh.
 
-\exercise Cho tập hợp $x$, $A$ là ánh xạ từ $I$ đến $\mathfrak{P}(x)$, và $B$ là ánh xạ từ $J$ đến $\mathfrak{P}(x)$. Chứng minh rằng
+\stepSubexercise Với mọi $i \in I$, chúng ta xác định được duy nhất một $A_i$ và $B_i$. Do đó, $A_i \setminus B_i$ cũng xác định duy nhất. Ngoài ra, $\forall i \in I, A_i \setminus B_i \subseteq x$ nên $\left(A_i \setminus B_i\right)_{i \in I}$ là một họ phần tử của $x$.
+
+Với mọi $e$, chúng ta có
+\begin{align*}
+   e \in \bigcap_{i \in I}\left(A_i \setminus B_i\right) &\iff e \in x \land \forall i \in I, e \in A_i \setminus B_i; \\
+   e \in \bigcap_{i \in I}\left(A_i \setminus B_i\right) &\iff e \in x \land \forall i \in I, (e \in A_i \land e \notin B_i); \\
+   e \in \bigcap_{i \in I}\left(A_i \setminus B_i\right) &\iff e \in x \land (\forall i \in I, e \in A_i) \land (\forall i \in I, e \notin B_i);\\
+   e \in \bigcap_{i \in I}\left(A_i \setminus B_i\right) &\iff e \in x \land (\forall i \in I, e \in A_i) \land \overline{\forall i \in I, e \in B_i};\\
+   e \in \bigcap_{i \in I}\left(A_i \setminus B_i\right) &\iff e \in \bigcap_{i \in I}A_i \land e  \notin \bigcup_{i \in I}B_i;\\
+   e \in \bigcap_{i \in I}\left(A_i \setminus B_i\right) &\iff e  \in \left(\bigcap_{i in I}A_i\right) \setminus \left(\bigcup_{i in I}B_i\right).
+\end{align*}
+
+Vì vậy, $\bigcap_{i \in I}\left(A_i \setminus B_i\right) = \left(\bigcap_{i \in I}A_i\right) \setminus \left(\bigcup_{i \in I}B_i\right)$. Điều phải chứng minh.
+
+\exercise Cho tập hợp $x$, $A$ là ánh xạ từ $I$ đến $\mathfrak{P}(x)$, và $B$ là ánh xạ từ $J$ đến $\mathfrak{P}(x)$. Đặt $K = I \times J$. Xác định ánh xạ $C : K \to \mathfrak{P}(x)$ và $D : K \to \mathfrak{P}(x)$ sao cho $C(k) = A_i \cap B_j$ và $D(k) = A_i \cup B_j$ với mọi $k = (i; j)$ thuộc $K$. Chứng minh rằng
 \begin{multicols}{2}
    \begin{enumerate}
-      \item $\left(\bigcup_{i \in I}A_i\right) \cap \left(\bigcup_{j \in J}B_j\right) = \bigcup_{(i; j) \in I \times J}\left(A_i \cap B_j\right)$;
-      \item $\left(\bigcap_{i \in I}A_i\right) \cup \left(\bigcap_{j \in J}B_j\right) = \bigcap_{(i; j) \in I \times J}\left(A_i \cup B_j\right)$.
+      \item $\bigcup_{k \in K}C_k = \left(\bigcup_{i \in I}A_i\right) \cap \left(\bigcup_{j \in J}B_j\right)$;
+      \item $\bigcap_{k \in K}D_k = \left(\bigcap_{i \in I}A_i\right) \cup \left(\bigcap_{j \in J}B_j\right)$.
    \end{enumerate}
-\end{multicols}
+\end{multicols} 
 
+\solution 
+
+\resetSubexercise 
