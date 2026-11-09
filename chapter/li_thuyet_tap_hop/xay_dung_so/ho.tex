@@ -121,7 +121,7 @@ Vì thế, $\left(\bigcup_{i \in I}A_i\right) \cap M = \bigcup_{i \in I}(A_i \ca
    e \in \left(\bigcap_{i \in I} A_i\right) \cup M &\iff e \in \left(\bigcap_{i \in I} A_i\right) \lor e \in M; \\
    e \in \left(\bigcap_{i \in I} A_i\right) \cup M &\iff \forall i \in I, e \in A_i \lor e \in M; \\
    e \in \left(\bigcap_{i \in I} A_i\right) \cup M &\iff \forall i, (i \in I \implies e \in A_i) \lor e \in M; \\
-   e \in \left(\bigcap_{i \in I} A_i\right) \cup M &\iff \forall i , \left((i \in I \implies e \in A_i) \lor e \in M\right) \equationexplanation{cụ thể hóa và tồn tại hóa $\forall i$}; \\
+   e \in \left(\bigcap_{i \in I} A_i\right) \cup M &\iff \forall i , \left((i \in I \implies e \in A_i) \lor e \in M\right) \equationexplanation{cụ thể hóa và tổng quát hóa $\forall i$}; \\
    e \in \left(\bigcap_{i \in I} A_i\right) \cup M &\iff \forall i , \left(i \in I \implies e \in A_i \lor e \in M\right) \equationexplanation{$(P \implies Q) \lor R \iff (P \implies Q \lor R)$}; \\
    e \in \left(\bigcap_{i \in I} A_i\right) \cup M &\iff \forall i \in I, e \in A_i \cup M; \\
    e \in \left(\bigcap_{i \in I} A_i\right) \cup M &\iff e \in \bigcup_{i \in I}(A_i \cup M).
@@ -146,7 +146,7 @@ Với mọi $e$, chúng ta có
    e \in \bigcap_{i \in I}\left(A_i \setminus B_i\right) &\iff e \in x \land (\forall i \in I, e \in A_i) \land (\forall i \in I, e \notin B_i);\\
    e \in \bigcap_{i \in I}\left(A_i \setminus B_i\right) &\iff e \in x \land (\forall i \in I, e \in A_i) \land \overline{\forall i \in I, e \in B_i};\\
    e \in \bigcap_{i \in I}\left(A_i \setminus B_i\right) &\iff e \in \bigcap_{i \in I}A_i \land e  \notin \bigcup_{i \in I}B_i;\\
-   e \in \bigcap_{i \in I}\left(A_i \setminus B_i\right) &\iff e  \in \left(\bigcap_{i in I}A_i\right) \setminus \left(\bigcup_{i in I}B_i\right).
+   e \in \bigcap_{i \in I}\left(A_i \setminus B_i\right) &\iff e  \in \left(\bigcap_{i \in I}A_i\right) \setminus \left(\bigcup_{i \in I}B_i\right).
 \end{align*}
 
 Vì vậy, $\bigcap_{i \in I}\left(A_i \setminus B_i\right) = \left(\bigcap_{i \in I}A_i\right) \setminus \left(\bigcup_{i \in I}B_i\right)$. Điều phải chứng minh.
@@ -161,4 +161,96 @@ Vì vậy, $\bigcap_{i \in I}\left(A_i \setminus B_i\right) = \left(\bigcap_{i \
 
 \solution 
 
-\resetSubexercise 
+\resetSubexercise Với mọi $e$, có $e \in \bigcup_{k \in K} C_k \iff \exists k \in K, e \in C_k$. Nếu $\exists k \in K, e \in C_k$, gọi $\mathcal{k} \in K$ sao cho $e \in C_\mathcal{k}$. Từ định nghĩa đề bài, có $\mathcal{i} \in I$ và $\mathcal{j} \in J$ sao cho $\begin{cases}
+   \mathcal{k} = \left(\mathcal{i}; \mathcal{j}\right) \\
+   e \in A_\mathcal{i} \cap B_\mathcal{j}
+\end{cases}$, dẫn đến $\exists i \in I, \exists j \in J, e \in A_i \cap B_j$. Chứng minh chiều ngược lại $$\exists i \in I, \exists j \in J, e \in A_i \cap B_j \implies \exists k \in K, e \in C_k$$ cũng có thể được làm một cách tương tự. Do đó,
+\begin{align*}
+   e \in \bigcup_{k \in K} C_k &\iff \exists i \in I, \exists j \in J, e \in A_i \cap B_j; \\
+   e \in \bigcup_{k \in K} C_k &\iff \exists i, \exists j, \left(i \in I \land j \in J \land e \in A_i \cap B_j\right); \\
+   e \in \bigcup_{k \in K} C_k &\iff \exists i, \exists j, \left(\left(i \in I \land e \in A_i\right) \land \left(j \in J \land e \in B_j\right)\right). \\
+\end{align*}
+
+Áp dụng kết quả đã có từ giải tích vị từ --- $\exists i, \exists j, (U(i) \land V(j)) \iff \exists i, U(i) \land \exists j, V(j)$ với $U$ và $V$ là vị từ ---, chúng ta có \begin{equation*}
+   \exists i, \exists j, \left(\left(i \in I \land e \in A_i\right) \land \left(j \in J \land e \in B_j\right)\right) \iff \begin{cases}
+      \exists i \in I, e \in A_i \\
+      \exists j \in J, e \in B_j
+   \end{cases}.
+\end{equation*}
+Qua đó, 
+\begin{align*}
+   e \in \bigcup_{k \in K} C_k &\iff \begin{cases}
+      \exists i \in I, e \in A_i \\
+      \exists j \in J, e \in B_j
+   \end{cases}; \\
+   e \in \bigcup_{k \in K} C_k &\iff \begin{cases}
+      e \in \bigcup_{i \in I}A_i \\
+      e \in \bigcup_{j \in J}B_j
+   \end{cases}; \\
+   e \in \bigcup_{k \in K} C_k &\iff e \in \left(\bigcup_{i \in I}A_i\right) \cap \left(\bigcup_{j \in J}B_j\right).
+\end{align*}
+
+Vì lí do đó, $\bigcup_{k \in K} C_k = \left(\bigcup_{i \in I}A_i\right) \cap \left(\bigcup_{j \in J}B_j\right)$. Điều phải chứng minh.
+
+\stepSubexercise Trước hết, chúng ta có $\forall e, \left(e \in \bigcap_{k \in K} D_k \iff e \in x \land \forall k \in K, e \in D_k\right)$. Để tiếp tục lập luận, chúng ta cần có khẳng định sau đúng với mọi $e$: \begin{equation*}
+   \forall k \in K, e \in D_k \iff \forall i \in I, \forall j \in J, e \in A_i \cup B_j.
+\end{equation*}
+Đầu tiên, giả sử rằng $\forall k \in K, e \in D_k$. Gọi $\mathcal{i}$, $\mathcal{j}$ sao cho $\mathcal{i} \in I \land \mathcal{j} \in J$. Đặt $\mathcal{k} = \left(\mathcal{i}; \mathcal{j}\right)$, khi đó, có được $\mathcal{k} \in K$, kéo theo $e \in D_\mathcal{k}$. Từ định nghĩa, $D_\mathcal{k} = A_\mathcal{i} \cup B_\mathcal{j}$, dẫn đến $e \in A_\mathcal{i} \cup B_\mathcal{j}$. Do $\mathcal{i}$ và $\mathcal{j}$ không bị đánh dấu nên áp dụng quy tắc tổng quát hóa lượng từ phổ quát, \begin{equation*}
+   \forall i, \forall j, \left(i \in I \land j \in J \implies e \in A_i \cup B_j\right),
+\end{equation*}
+viết lại dưới dạng quen thuộc hơn là $\forall i \in I, \forall j \in J, e \in A_i \cup B_j$.
+
+Ngược lại, giả thiết rằng $\forall i \in I, \forall j \in J, e \in A_i \cup B_j$. Gọi $\mathfrak{k}$ sao cho $\mathfrak{k} \in K$, $c \in I$ và $d \in J$ sao cho $\mathfrak{k} = (c; d)$. Từ giả thiết, $e \in A_c \cup B_d$, suy ra $e \in D_\mathfrak{k}$. Áp dụng tqpq, $\forall k \in K, e \in D_k$.
+
+Kết hợp lại, quan hệ đẳng giá đã được chứng minh. Từ đó, chúng ta có được, với mọi $e$,
+\begin{align*}
+   e \in \bigcap_{k \in K} D_k &\iff e \in x \land \forall i \in I, \forall j \in J, e \in A_i \cup B_j; \\
+   e \in \bigcap_{k \in K} D_k &\iff e \in x \land \forall i, \forall j, \left(i \in I \land j \in J \implies e \in A_i \lor e \in B_j\right); \\
+   e \in \bigcap_{k \in K} D_k &\iff e \in x \land \forall i, \forall j, \left(\overline{i \in I \land j \in J} \lor e \in A_i \lor e \in B_j\right) \\
+   &\qquad\coloringCrimson{\left((P \implies Q) \iff \neg P \lor Q\right)}; \\
+   e \in \bigcap_{k \in K} D_k &\iff e \in x \land \forall i, \forall j, \left(\neg i \in I \lor \neg j \in J \lor e \in A_i \lor e \in B_j\right); \\
+   e \in \bigcap_{k \in K} D_k &\iff e \in x \land \forall i, \forall j, \left( \left(\neg i \in I \lor e \in A_i\right) \lor \left(\neg j \in J \lor e \in B_j\right) \right); \\
+   e \in \bigcap_{k \in K} D_k &\iff e \in x \land \left(\forall i, \left(\neg i \in I \lor e \in A_i\right) \lor \forall j, \left(\neg j \in J \lor e \in B_j\right) \right) \\
+   &\qquad\coloringCrimson{\left(\forall i, \forall j, (U(i) \lor V(j)) \iff \forall i, U(i) \lor \forall j, V(j)\right)}; \\
+   e \in \bigcap_{k \in K} D_k &\iff e \in x \land \forall i, \left(\neg i \in I \lor e \in A_i\right) \lor e \in x \land \forall j, \left(\neg j \in J \lor e \in B_j\right); \\
+   e \in \bigcap_{k \in K} D_k &\iff e \in \bigcap_{i \in I} A_i \land e \in \bigcap_{j \in J} B_j; \\
+   e \in \bigcap_{k \in K} D_k &\iff e \in \left(\bigcap_{i \in I} A_i\right) \cap \left(\bigcap_{j \in J} B_j\right).
+\end{align*}
+Qua đó, $\bigcap_{k \in K} D_k = \left(\bigcap_{i \in I} A_i\right) \cap \left(\bigcap_{j \in J} B_j\right)$. Điều phải chứng minh.
+
+\exercise Cho $A$ và $B$ là hai tập hợp, $R$ là một quan hệ từ $A$ sang $B$. Với mọi họ $(m_i)_{i \in I}$ những tập con của $A$, chứng minh rằng $\Imf \left(R\middle|_{\bigcup_{i \in I}m_i} \right) = \bigcup_{i \in I} \left(\Imf(R|_{m_i})\right)$ và $\Imf \left(R\middle|_{\left(\bigcap_{i \in I}m_i\right)} \right) \subseteq \bigcap_{i \in I} \left(\Imf(R|_{m_i})\right)$.
+
+\solution
+
+Với mọi $i \in I$, chúng ta xác định được một và chỉ một $m_i$. Vì thế, $\Imf(R|_{m_i})$ là duy nhất. Ngoài ra, $\Imf(R|_{m_i}) \subseteq B$, kéo theo xác định được họ $\left(\Imf(R|_{m_i})\right)_{i \in I}$ của $B$.
+
+Xét $c$, giả sử $c \in \bigcup_{i \in I} \left(\Imf(R|_{m_i})\right)$. Có được rằng \begin{align*}
+   &\exists i \in I, c \in \Imf(R|m_i); \\
+   &\exists i \in I, \exists d \in m_i, d\;R\;c_i.
+\end{align*}
+Sử dụng cụ thể hóa lượng từ tồn tại, chúng ta có thể gọi $\mathfrak{i}$ và $\mathfrak{d}$ sao cho $\mathfrak{i} \in I \land \mathfrak{d} \in m_\mathfrak{i} \land \mathfrak{d}\;R\;c_\mathfrak{i}$. Từ đó, hiển nhiên rằng
+\begin{align*}
+   &\exists i \in I, \mathfrak{d} \in m_i \land \mathfrak{d}\;R\;c &\equationexplanation{tổng quát hóa $\mathfrak{i}$ thành $\exists i$}; \\
+   &\exists d, \left(\exists i \in I, d \in m_i \land d\;R\;c\right) &\equationexplanation{tổng quát hóa $\mathfrak{d}$ thành $\exists d$}; \\
+   &\exists d \in \bigcup_{i \in I}m_i, d\;R\;c.
+\end{align*}
+Do đó, suy ra được $c \in \Imf\left(R \middle|_{\bigcup_{i \in I}m_i}\right)$.
+
+Bây giờ, giả thiết rằng $c \in \Imf\left(R \middle|_{\bigcup_{i \in I}m_i}\right)$. Khi đó, \begin{align*}
+   &\exists d \in \bigcup_{i \in I}m_i, d\;R\;c; \\
+   &\exists d, \left(d \in \bigcup_{i \in I}m_i \land d\;R\;c\right); \\
+   &\exists d, \left(\exists i \in I, d \in m_i \land d\;R\;c\right); \\
+   &\exists d, \exists i \in I, \left(d \in m_i \land d\;R\;c\right) \equationexplanation{áp dụng liên tiếp cttt và tqtt}; \\
+   &\exists d, \exists i \in I, c \in \Imf(R|m_i).
+\end{align*}
+$d$ không xuất hiện trong $c \in \Imf(R|m_i)$ nên có khẳng định $\exists i \in I, c \in \Imf(R|m_i)$, dẫn đến $c \in \bigcup_{i \in I} \left(\Imf(R|_{m_i})\right)$. Vì vậy, $\Imf\left(R \middle|_{\bigcup_{i \in I}m_i}\right) = \bigcup_{i \in I} \left(\Imf(R|_{m_i})\right)$.
+
+Cuối cùng, hãy cho $c \in \Imf\left(R \middle|_{\bigcap_{i \in I}m_i}\right)$. Khi này, có $c \in B$ và tồn tại $d \in \bigcap_{i \in I}m_i \land d\;R\;c$. Từ đó, chúng ta có $\forall i \in I, d \in m_i \land d\;R\;c$. Vì $d\;R\;c \implies \forall i \in I, d\;R\;c$ nên \begin{equation*}
+   \forall i \in I, d \in m_i \land d\;R\;c \implies \forall i \in I, (d \in m_i \land d\;R\;c).
+\end{equation*}
+Từ đó, $\forall i \in I, c \in \Imf(R|_{m_i})$. Kết hợp với $c \in B$ để có $c \in \bigcap_{i \in I}(\Imf(R|_{m_i}))$. Qua đó, $\Imf \left(R\middle|_{\left(\bigcap_{i \in I}m_i\right)} \right)\subseteq \bigcap_{i \in I}(\Imf(R|_{m_i}))$. Chúng ta có điều phải chứng minh.
+
+\exercise Cho $A$ và $B$ là tập hợp, $f : A \to B$ là toàn ánh. Chứng minh rằng, nếu họ $(m_i)_{i \in I}$ là một phân hoạch của $B$, họ $\Imf\left(f^{-1}\middle|_{m_i}\right)_{i \in I}$ là một phân hoạch của $A$.
+
+\solution 
+

@@ -454,7 +454,7 @@ có nghĩa là $w \circ f \circ d = g \circ e \circ u$.
 
 \solution
 
-Với mọi $y$ thuộc $\Imf(g \circ f)$, do $g \circ f$ là một quan hệ từ $A$ sang $B$, tồn tại $x \in A$ để $x\; g \circ f\;y$. Khi đó, $y = (g\circ f)(x) = g(f(x))$, dẫn đến tồn tại $z\in y$ (tồn tại hóa $f(x)$ thành $z$) để $y = g(z)$, và vì vậy $y \in \Imf(g)$. Do đó, $\Imf((g \circ f)) \subseteq \Imf(g)$.
+Với mọi $y$ thuộc $\Imf(g \circ f)$, do $g \circ f$ là một quan hệ từ $A$ sang $B$, tồn tại $x \in A$ để $x\; g \circ f\;y$. Khi đó, $y = (g\circ f)(x) = g(f(x))$, dẫn đến tồn tại $z\in y$ (áp dụng tqtt từ $f(x)$ thành $z$) để $y = g(z)$, và vì vậy $y \in \Imf(g)$. Do đó, $\Imf((g \circ f)) \subseteq \Imf(g)$.
 
 Với mọi $w$ thuộc $\Imf(g)$, có $v$ trong $B$ để $w = g(v)$. Bởi $f \circ g = \mathds{1}_B$, \begin{equation*}
    w = g(v) = g((f\circ g)(v)) = (g \circ f \circ g)(v) = (g \circ f)(g(v)).
@@ -740,7 +740,7 @@ $g \circ f$ đã được khẳng định là toàn ánh. Điều phải chứng
 \end{align*}
 Do vậy, $f(a) = f(b) \implies a = b$. Theo định nghĩa, $f$ đơn ánh. Điều phải chứng minh.
 
-\stepSubexercise Giả sử $g \circ f$ toàn ánh. Xét $c \in C$ tùy ý, tồn tại $d \in A$ sao cho $c = (g \circ f)(d) = g(f(d))$. Tồn tại hóa $f(d)$, chúng ta có sự tồn tại của $e \in A$ thỏa mãn $c = g(e)$ với mọi $c$. Dễ thấy điều phải chứng minh.
+\stepSubexercise Giả sử $g \circ f$ toàn ánh. Xét $c \in C$ tùy ý, tồn tại $d \in A$ sao cho $c = (g \circ f)(d) = g(f(d))$. Áp dụng tổng quát hóa lượng từ tồn tại, chúng ta có $\exists e \in A, c = g(e)$ với mọi $c$. Dễ thấy điều phải chứng minh.
 
 \stepSubexercise $g \circ f$ song ánh cho chúng ta tính chất vừa đơn ánh vừa toàn ánh của $g \circ f$. Tính đơn ánh của $f$ đã được khẳng định và tính toàn ánh của $f$ thì được cho trước, do đó $f$ song ánh. Chúng ta cũng đã có $g$ toàn ánh. Vậy, nhiệm vụ còn lại của chúng ta là chứng minh $g$ đơn ánh.
 
