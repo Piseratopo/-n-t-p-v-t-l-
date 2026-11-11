@@ -256,5 +256,24 @@ Từ đó, $\forall i \in I, c \in \Imf(R|_{m_i})$. Kết hợp với $c \in B$ 
 
 Dễ thấy, với mỗi $i \in I$, $\Imf\left(f^{-1}\middle|_{m_i}\right)$ xác định duy nhất và nó là một tập con của $A$. Chúng ta đặt $H = \left(\Imf\left(f^{-1}\middle|_{m_i}\right)\right)_{i \in I}$.
 
-Xét từ $H$ một phần tử $h$ tùy ý, tồn tại $i \in I$ sao cho $h = \Imf\left(f^{-1}\middle|_{m_i}\right)$.  
+Xét từ $H$ một phần tử $h$ tùy ý, tồn tại $i \in I$ sao cho $h = \Imf\left(f^{-1}\middle|_{m_i}\right)$. Nhận thấy rằng $m_i$ là một phần tử trong một phân hoạch của $B$, $m_i$ phải có phần tử. Gọi một phần tử trong đó là $b$. Do $f$ toàn ánh, tồn tại $a$ sao cho $b = f(a)$, hay, $b\;f^{-1}\;a$. Từ đó, có $a \in h$, suy ra \begin{equation*}
+   \forall h \in H, h \neq \varnothing.
+\end{equation*}
+
+Từ $H$ lấy các phần tử $c$ và $d$ sao cho $c \neq d$, tồn tại $i$ và $j$ cùng thuộc $I$ sao cho $
+   \begin{cases}
+      c = \Imf\left(f^{-1}\middle|_{m_i}\right) \\
+      d = \Imf\left(f^{-1}\middle|_{m_j}\right)
+   \end{cases}
+$. Bởi $c$ và $d$ là hai tập khác nhau nên $i \neq j$, dẫn đến $m_i \neq m_j$. Ngoài ra, $m_i$ và $m_j$ thuộc cùng một phân hoạch nên $m_i$ và $m_j$ không có phần tử chung. Tuy nhiên, trong trường hợp mà $c$ và $d$ có chung phần tử $e$, bởi $
+   \begin{cases}
+      c = \Imf\left(f^{-1}\middle|_{m_i}\right) \\
+      d = \Imf\left(f^{-1}\middle|_{m_j}\right)
+   \end{cases}
+$, phải có $\begin{cases}
+   f(e) \in m_i \\
+   f(e) \in m_j
+\end{cases}$, dẫn đến mâu thuẫn. Do đó trường hợp này không thể xảy ra, có nghĩa là \begin{equation*}
+   \forall c \in H, \forall d \in H, (c \neq d \implies c \cap d = \varnothing).
+\end{equation*}
 
