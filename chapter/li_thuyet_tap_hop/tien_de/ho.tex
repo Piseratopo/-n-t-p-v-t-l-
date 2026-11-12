@@ -218,14 +218,14 @@ Kết hợp lại, quan hệ đẳng giá đã được chứng minh. Từ đó,
 \end{align*}
 Qua đó, $\bigcap_{k \in K} D_k = \left(\bigcap_{i \in I} A_i\right) \cap \left(\bigcap_{j \in J} B_j\right)$. Điều phải chứng minh.
 
-\exercise Cho $A$ và $B$ là hai tập hợp, $R$ là một quan hệ từ $A$ sang $B$. Với mọi họ $(m_i)_{i \in I}$ những tập con của $A$, chứng minh rằng $\Imf \left(R\middle|_{\bigcup_{i \in I}m_i} \right) = \bigcup_{i \in I} \left(\Imf(R|_{m_i \times B})\right)$ và $\Imf \left(R\middle|_{\left(\bigcap_{i \in I}m_i\right)} \right) \subseteq \bigcap_{i \in I} \left(\Imf(R|_{m_i \times B})\right)$.
+\exercise Cho $A$ và $B$ là hai tập hợp, $R$ là một quan hệ từ $A$ sang $B$. Với mọi họ $(m_i)_{i \in I}$ những tập con của $A$, chứng minh rằng $\Imf \left(R\middle|_{\bigcup_{i \in I}(m_i) \times B} \right) = \bigcup_{i \in I} \left(\Imf(R|_{m_i \times B})\right)$ và $\Imf \left(R\middle|_{\left(\bigcap_{i \in I}m_i\right) \times B} \right) \subseteq \bigcap_{i \in I} \left(\Imf(R|_{m_i \times B})\right)$.
 
 \solution
 
 Với mọi $i \in I$, chúng ta xác định được một và chỉ một $m_i$. Vì thế, $\Imf(R|_{m_i \times B})$ là duy nhất. Ngoài ra, $\Imf(R|_{m_i \times B}) \subseteq B$, kéo theo xác định được họ $\left(\Imf(R|_{m_i \times B})\right)_{i \in I}$ của $B$.
 
 Xét $c$, giả sử $c \in \bigcup_{i \in I} \left(\Imf(R|_{m_i \times B})\right)$. Có được rằng \begin{align*}
-   &\exists i \in I, c \in \Imf(R|m_i); \\
+   &\exists i \in I, c \in \Imf(R|_{m_i \times B}); \\
    &\exists i \in I, \exists d \in m_i, d\;R\;c_i.
 \end{align*}
 Sử dụng cụ thể hóa lượng từ tồn tại, chúng ta có thể gọi $\mathfrak{i}$ và $\mathfrak{d}$ sao cho $\mathfrak{i} \in I \land \mathfrak{d} \in m_\mathfrak{i} \land \mathfrak{d}\;R\;c_\mathfrak{i}$. Từ đó, hiển nhiên rằng
@@ -234,41 +234,42 @@ Sử dụng cụ thể hóa lượng từ tồn tại, chúng ta có thể gọi
    &\exists d, \left(\exists i \in I, d \in m_i \land d\;R\;c\right) &\equationexplanation{tổng quát hóa $\mathfrak{d}$ thành $\exists d$}; \\
    &\exists d \in \bigcup_{i \in I}m_i, d\;R\;c.
 \end{align*}
-Do đó, suy ra được $c \in \Imf\left(R \middle|_{\bigcup_{i \in I}m_i}\right)$.
+Do đó, suy ra được $c \in \Imf\left(R \middle|_{\bigcup_{i \in I}(m_i) \times B}\right)$.
 
-Bây giờ, giả thiết rằng $c \in \Imf\left(R \middle|_{\bigcup_{i \in I}m_i}\right)$. Khi đó, \begin{align*}
+Bây giờ, giả thiết rằng $c \in \Imf\left(R \middle|_{\bigcup_{i \in I}(m_i) \times B}\right)$. Khi đó, \begin{align*}
    &\exists d \in \bigcup_{i \in I}m_i, d\;R\;c; \\
    &\exists d, \left(d \in \bigcup_{i \in I}m_i \land d\;R\;c\right); \\
    &\exists d, \left(\exists i \in I, d \in m_i \land d\;R\;c\right); \\
    &\exists d, \exists i \in I, \left(d \in m_i \land d\;R\;c\right) \equationexplanation{áp dụng liên tiếp cttt và tqtt}; \\
-   &\exists d, \exists i \in I, c \in \Imf(R|m_i).
+   &\exists d, \exists i \in I, c \in \Imf(R|_{m_i \times B}).
 \end{align*}
-$d$ không xuất hiện trong $c \in \Imf(R|m_i)$ nên có khẳng định $\exists i \in I, c \in \Imf(R|m_i)$, dẫn đến $c \in \bigcup_{i \in I} \left(\Imf(R|_{m_i \times B})\right)$. Vì vậy, $\Imf\left(R \middle|_{\bigcup_{i \in I}m_i}\right) = \bigcup_{i \in I} \left(\Imf(R|_{m_i \times B})\right)$.
+$d$ không xuất hiện trong $c \in \Imf(R|_{m_i \times B})$ nên có khẳng định $\exists i \in I, c \in \Imf(R|_{m_i \times B})$, dẫn đến $c \in \bigcup_{i \in I} \left(\Imf(R|_{m_i \times B})\right)$. Vì vậy, $\Imf\left(R \middle|_{\bigcup_{i \in I}(m_i) \times B}\right) = \bigcup_{i \in I} \left(\Imf(R|_{m_i \times B})\right)$.
 
-Cuối cùng, hãy cho $c \in \Imf\left(R \middle|_{\bigcap_{i \in I}m_i}\right)$. Khi này, có $c \in B$ và tồn tại $d \in \bigcap_{i \in I}m_i \land d\;R\;c$. Từ đó, chúng ta có $\forall i \in I, d \in m_i \land d\;R\;c$. Vì $d\;R\;c \implies \forall i \in I, d\;R\;c$ nên \begin{equation*}
+Cuối cùng, hãy cho $c \in \Imf\left(R \middle|_{\left(\bigcap_{i \in I}m_i\right) \times B}\right)$. Khi này, có $c \in B$ và tồn tại $d \in \bigcap_{i \in I}m_i \land d\;R\;c$. Từ đó, chúng ta có $\forall i \in I, d \in m_i \land d\;R\;c$. Vì $d\;R\;c \implies \forall i \in I, d\;R\;c$ nên 
+\begin{equation*}
    \forall i \in I, d \in m_i \land d\;R\;c \implies \forall i \in I, (d \in m_i \land d\;R\;c).
 \end{equation*}
-Từ đó, $\forall i \in I, c \in \Imf(R|_{m_i \times B})$. Kết hợp với $c \in B$ để có $c \in \bigcap_{i \in I}(\Imf(R|_{m_i \times B}))$. Qua đó, $\Imf \left(R\middle|_{\left(\bigcap_{i \in I}m_i\right)} \right)\subseteq \bigcap_{i \in I}(\Imf(R|_{m_i \times B}))$. Chúng ta có điều phải chứng minh.
+Từ đó, $\forall i \in I, c \in \Imf(R|_{m_i \times B})$. Kết hợp với $c \in B$ để có $c \in \bigcap_{i \in I}(\Imf(R|_{m_i \times B}))$. Qua đó, $\Imf \left(R\middle|_{\left(\bigcap_{i \in I}m_i\right) \times B} \right)\subseteq \bigcap_{i \in I}(\Imf(R|_{m_i \times B}))$. Chúng ta có điều phải chứng minh.
 
-\exercise Cho $A$ và $B$ là tập hợp, $f : A \to B$ là toàn ánh. Chứng minh rằng, nếu họ $(m_i)_{i \in I}$ là một phân hoạch của $B$, họ $\left(\Imf\left(f^{-1}\middle|_{m_i}\right)\right)_{i \in I}$ là một phân hoạch của $A$.
+\exercise Cho $A$ và $B$ là tập hợp, $f : A \to B$ là toàn ánh. Chứng minh rằng, nếu họ $(m_i)_{i \in I}$ là một phân hoạch của $B$, họ $\left(\Imf\left(f^{-1}\middle|_{m_i \times A}\right)\right)_{i \in I}$ là một phân hoạch của $A$.
 
 \solution 
 
-Dễ thấy, với mỗi $i \in I$, $\Imf\left(f^{-1}\middle|_{m_i}\right)$ xác định duy nhất và nó là một tập con của $A$. Chúng ta đặt $H = \left(\Imf\left(f^{-1}\middle|_{m_i}\right)\right)_{i \in I}$.
+Dễ thấy, với mỗi $i \in I$, $\Imf\left(f^{-1}\middle|_{m_i \times A}\right)$ xác định duy nhất và nó là một tập con của $A$. Chúng ta đặt $H = \left(\Imf\left(f^{-1}\middle|_{m_i \times A}\right)\right)_{i \in I}$.
 
-Xét từ $H$ một phần tử $h$ tùy ý, tồn tại $i \in I$ sao cho $h = \Imf\left(f^{-1}\middle|_{m_i}\right)$. Nhận thấy rằng $m_i$ là một phần tử trong một phân hoạch của $B$, $m_i$ phải có phần tử. Gọi một phần tử trong đó là $b$. Do $f$ toàn ánh, tồn tại $a$ sao cho $b = f(a)$, hay, $b\;f^{-1}\;a$. Từ đó, có $a \in h$, suy ra \begin{equation*}
+Xét từ $H$ một phần tử $h$ tùy ý, tồn tại $i \in I$ sao cho $h = \Imf\left(f^{-1}\middle|_{m_i \times A}\right)$. Nhận thấy rằng $m_i$ là một phần tử trong một phân hoạch của $B$, $m_i$ phải có phần tử. Gọi một phần tử trong đó là $b$. Do $f$ toàn ánh, tồn tại $a$ sao cho $b = f(a)$, hay, $b\;f^{-1}\;a$. Từ đó, có $a \in h$, suy ra \begin{equation*}
    \forall h \in H, h \neq \varnothing.
 \end{equation*}
 
 Từ $H$ lấy các phần tử $c$ và $d$ sao cho $c \neq d$, tồn tại $i$ và $j$ cùng thuộc $I$ sao cho $
    \begin{cases}
-      c = \Imf\left(f^{-1}\middle|_{m_i}\right) \\
-      d = \Imf\left(f^{-1}\middle|_{m_j}\right)
+      c = \Imf\left(f^{-1}\middle|_{m_i \times A}\right) \\
+      d = \Imf\left(f^{-1}\middle|_{m_j \times A}\right)
    \end{cases}
 $. Bởi $c$ và $d$ là hai tập khác nhau nên $i \neq j$, dẫn đến $m_i \neq m_j$. Ngoài ra, $m_i$ và $m_j$ thuộc cùng một phân hoạch nên $m_i$ và $m_j$ không có phần tử chung. Tuy nhiên, trong trường hợp mà $c$ và $d$ có chung phần tử $e$, bởi $
    \begin{cases}
-      c = \Imf\left(f^{-1}\middle|_{m_i}\right) \\
-      d = \Imf\left(f^{-1}\middle|_{m_j}\right)
+      c = \Imf\left(f^{-1}\middle|_{m_i \times A}\right) \\
+      d = \Imf\left(f^{-1}\middle|_{m_j \times A}\right)
    \end{cases}
 $, phải có $\begin{cases}
    f(e) \in m_i \\
@@ -277,7 +278,7 @@ $, phải có $\begin{cases}
    \forall c \in H, \forall d \in H, (c \neq d \implies c \cap d = \varnothing).
 \end{equation*}
 
-Vì $(m_i)_{i \in I}$ là một phân hoạch của $B$, với mọi $a \in A$, tồn tại $i \in I$ sao cho $f(a) \in m_i$. Do đó, $a \in \Imf\left(f^{-1}\middle|_{m_i}\right)$, dẫn đến \begin{equation*}
+Vì $(m_i)_{i \in I}$ là một phân hoạch của $B$, với mọi $a \in A$, tồn tại $i \in I$ sao cho $f(a) \in m_i$. Do đó, $a \in \Imf\left(f^{-1}\middle|_{m_i \times A}\right)$, dẫn đến \begin{equation*}
    \forall a \in A, \exists h \in H, a \in h.
 \end{equation*}
 

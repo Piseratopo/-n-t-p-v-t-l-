@@ -1,12 +1,9 @@
 # Những việc cần làm
 
-## Khoa học
-
-- Thêm phần giới thiệu về khoa học.
 
 ## Toán học
 
-- Hoàn thành giới thiệu các ví dụ của tiên đề tách.
+- Ánh xạ (dòng 997, trang 81)
 
 ## Vật lí
 

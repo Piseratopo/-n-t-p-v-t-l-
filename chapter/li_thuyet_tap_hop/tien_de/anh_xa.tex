@@ -982,6 +982,30 @@ Ngược lại, giả thiết \coloringDodgerblue{$\forall B \in \mathfrak{P}(Y)
 
 Từ những suy luận vừa rồi, chúng ta dễ dàng có được điều phải chứng minh.
 
+\exercise Cho ánh xạ $f$ từ $A$ sang $B$. Gọi $C$ và $D$ lần lượt là tập con của $A$ và $B$. Chứng minh rằng \begin{equation*}
+   \Imf\left(f|_{C \cap \Imf\left(f^{-1}\middle|_{D \times A}\right)}\right) = \Imf(f|_C) \cap D.
+\end{equation*}
+
+\solution
+
+Gọi $x$ là một phần tử tùy ý thuộc $\Imf\left(f|_{C \cap \Imf\left(f^{-1}\middle|_{D \times A}\right)}\right)$. Tồn tại $y \in C \cap \Imf\left(f^{-1}\middle|_{D \times A}\right)$ sao cho $f(y) = x$. Vì $y \in \Imf\left(f^{-1}\middle|_{D \times A}\right)$, tồn tại $z \in D$ sao cho $(z; y) \in f^{-1}$, tức là $f(y) = z$. Do đó, $x = z \in D$. Mặt khác, vì $y \in C$, chúng ta có $x = f(y) \in \Imf(f|_C)$. Vậy $x \in \Imf(f|_C) \cap D$.
+
+Ngược lại, nếu $x \in \Imf(f|_C) \cap D$, tồn tại $y \in C$ sao cho $f(y) = x$. Vì $x \in D$, có $(x; y) \in f^{-1}$, dẫn đến $y \in \Imf\left(f^{-1}\middle|_{D \times A}\right)$. Suy ra, $y \in C \cap \Imf\left(f^{-1}\middle|_{D \times A}\right)$, và vì vậy $x \in \Imf\left(f|_{C \cap \Imf\left(f^{-1}\middle|_{D \times A}\right)}\right)$.
+
+Từ lập luận hai chiều, chúng ta có điều phải chứng minh.
+
+\exercise Với $A$ và $B$ là tập hợp cùng thuộc $\mathfrak{P}(E)$, xác định ánh xạ $f: \mathfrak{E} \to \mathfrak{A} \times \mathfrak{B}$ thỏa mãn \begin{equation*}
+   \forall x \in \mathfrak{P}(E), f(x) = (x \cap A; x \cap B).
+\end{equation*}
+Tìm điều kiện cần và đủ của $A$ và $B$ để $f$ đơn ánh. Trả lời câu hỏi tương tự cho tính toàn ánh của $f$. Thêm vào đó, khi $f$ là một song ánh, xác định ánh xạ ngược $f^{-1}$.
+
+\solution
+
+Giả sử $f$ đơn ánh, điều này có thể được hiểu là \begin{equation*}
+   \forall \xNom \in \mathfrak{P}(E), \forall \yNom \in \mathfrak{P}(E), \left(f(\xNom) = f(\yNom) \implies \xNom = \yNom\right).
+\end{equation*}
+Xét $\xNom = A \cup B$ và $\yNom = E$.
+
 \exercise Gọi $\sigma$ là một hoán vị của tập $A$ khác rỗng. Một tập con $B$ của $A$ được gọi là $\defMath{\sigma}$\defText{-bất biến} nếu và chỉ nếu $\Imf(\sigma|_B) = B$. Với $a \in A$, đặt \begin{equation*}
    O_a = \bigcap\left\{b \in \mathfrak{P}(A) \mid a \in b \land b \text{~là $\sigma$-bất biến}\right\}.
 \end{equation*}
