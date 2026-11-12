@@ -218,13 +218,13 @@ Kết hợp lại, quan hệ đẳng giá đã được chứng minh. Từ đó,
 \end{align*}
 Qua đó, $\bigcap_{k \in K} D_k = \left(\bigcap_{i \in I} A_i\right) \cap \left(\bigcap_{j \in J} B_j\right)$. Điều phải chứng minh.
 
-\exercise Cho $A$ và $B$ là hai tập hợp, $R$ là một quan hệ từ $A$ sang $B$. Với mọi họ $(m_i)_{i \in I}$ những tập con của $A$, chứng minh rằng $\Imf \left(R\middle|_{\bigcup_{i \in I}m_i} \right) = \bigcup_{i \in I} \left(\Imf(R|_{m_i})\right)$ và $\Imf \left(R\middle|_{\left(\bigcap_{i \in I}m_i\right)} \right) \subseteq \bigcap_{i \in I} \left(\Imf(R|_{m_i})\right)$.
+\exercise Cho $A$ và $B$ là hai tập hợp, $R$ là một quan hệ từ $A$ sang $B$. Với mọi họ $(m_i)_{i \in I}$ những tập con của $A$, chứng minh rằng $\Imf \left(R\middle|_{\bigcup_{i \in I}m_i} \right) = \bigcup_{i \in I} \left(\Imf(R|_{m_i \times B})\right)$ và $\Imf \left(R\middle|_{\left(\bigcap_{i \in I}m_i\right)} \right) \subseteq \bigcap_{i \in I} \left(\Imf(R|_{m_i \times B})\right)$.
 
 \solution
 
-Với mọi $i \in I$, chúng ta xác định được một và chỉ một $m_i$. Vì thế, $\Imf(R|_{m_i})$ là duy nhất. Ngoài ra, $\Imf(R|_{m_i}) \subseteq B$, kéo theo xác định được họ $\left(\Imf(R|_{m_i})\right)_{i \in I}$ của $B$.
+Với mọi $i \in I$, chúng ta xác định được một và chỉ một $m_i$. Vì thế, $\Imf(R|_{m_i \times B})$ là duy nhất. Ngoài ra, $\Imf(R|_{m_i \times B}) \subseteq B$, kéo theo xác định được họ $\left(\Imf(R|_{m_i \times B})\right)_{i \in I}$ của $B$.
 
-Xét $c$, giả sử $c \in \bigcup_{i \in I} \left(\Imf(R|_{m_i})\right)$. Có được rằng \begin{align*}
+Xét $c$, giả sử $c \in \bigcup_{i \in I} \left(\Imf(R|_{m_i \times B})\right)$. Có được rằng \begin{align*}
    &\exists i \in I, c \in \Imf(R|m_i); \\
    &\exists i \in I, \exists d \in m_i, d\;R\;c_i.
 \end{align*}
@@ -243,12 +243,12 @@ Bây giờ, giả thiết rằng $c \in \Imf\left(R \middle|_{\bigcup_{i \in I}m
    &\exists d, \exists i \in I, \left(d \in m_i \land d\;R\;c\right) \equationexplanation{áp dụng liên tiếp cttt và tqtt}; \\
    &\exists d, \exists i \in I, c \in \Imf(R|m_i).
 \end{align*}
-$d$ không xuất hiện trong $c \in \Imf(R|m_i)$ nên có khẳng định $\exists i \in I, c \in \Imf(R|m_i)$, dẫn đến $c \in \bigcup_{i \in I} \left(\Imf(R|_{m_i})\right)$. Vì vậy, $\Imf\left(R \middle|_{\bigcup_{i \in I}m_i}\right) = \bigcup_{i \in I} \left(\Imf(R|_{m_i})\right)$.
+$d$ không xuất hiện trong $c \in \Imf(R|m_i)$ nên có khẳng định $\exists i \in I, c \in \Imf(R|m_i)$, dẫn đến $c \in \bigcup_{i \in I} \left(\Imf(R|_{m_i \times B})\right)$. Vì vậy, $\Imf\left(R \middle|_{\bigcup_{i \in I}m_i}\right) = \bigcup_{i \in I} \left(\Imf(R|_{m_i \times B})\right)$.
 
 Cuối cùng, hãy cho $c \in \Imf\left(R \middle|_{\bigcap_{i \in I}m_i}\right)$. Khi này, có $c \in B$ và tồn tại $d \in \bigcap_{i \in I}m_i \land d\;R\;c$. Từ đó, chúng ta có $\forall i \in I, d \in m_i \land d\;R\;c$. Vì $d\;R\;c \implies \forall i \in I, d\;R\;c$ nên \begin{equation*}
    \forall i \in I, d \in m_i \land d\;R\;c \implies \forall i \in I, (d \in m_i \land d\;R\;c).
 \end{equation*}
-Từ đó, $\forall i \in I, c \in \Imf(R|_{m_i})$. Kết hợp với $c \in B$ để có $c \in \bigcap_{i \in I}(\Imf(R|_{m_i}))$. Qua đó, $\Imf \left(R\middle|_{\left(\bigcap_{i \in I}m_i\right)} \right)\subseteq \bigcap_{i \in I}(\Imf(R|_{m_i}))$. Chúng ta có điều phải chứng minh.
+Từ đó, $\forall i \in I, c \in \Imf(R|_{m_i \times B})$. Kết hợp với $c \in B$ để có $c \in \bigcap_{i \in I}(\Imf(R|_{m_i \times B}))$. Qua đó, $\Imf \left(R\middle|_{\left(\bigcap_{i \in I}m_i\right)} \right)\subseteq \bigcap_{i \in I}(\Imf(R|_{m_i \times B}))$. Chúng ta có điều phải chứng minh.
 
 \exercise Cho $A$ và $B$ là tập hợp, $f : A \to B$ là toàn ánh. Chứng minh rằng, nếu họ $(m_i)_{i \in I}$ là một phân hoạch của $B$, họ $\left(\Imf\left(f^{-1}\middle|_{m_i}\right)\right)_{i \in I}$ là một phân hoạch của $A$.
 
@@ -277,3 +277,8 @@ $, phải có $\begin{cases}
    \forall c \in H, \forall d \in H, (c \neq d \implies c \cap d = \varnothing).
 \end{equation*}
 
+Vì $(m_i)_{i \in I}$ là một phân hoạch của $B$, với mọi $a \in A$, tồn tại $i \in I$ sao cho $f(a) \in m_i$. Do đó, $a \in \Imf\left(f^{-1}\middle|_{m_i}\right)$, dẫn đến \begin{equation*}
+   \forall a \in A, \exists h \in H, a \in h.
+\end{equation*}
+
+Kết hợp các kết quả đã có, hiển nhiên có được điều phải chứng minh.
