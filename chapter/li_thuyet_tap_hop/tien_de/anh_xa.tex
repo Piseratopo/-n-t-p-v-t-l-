@@ -1036,6 +1036,23 @@ Dưới một góc độ khác, xét $A \cap B = \varnothing$. Mọi phần tử
 Vì $U \subseteq A$ ($U \in \mathfrak{P}(A)$) nên $U \cap A = U$. Hơn nữa, kết hợp với việc $A \cap B = \varnothing$, có $U \cap B = \varnothing$. Do đó, \begin{equation*}
    \xNom \cap A = U \cup \varnothing = U.
 \end{equation*}
+Tương tự, có được $\xNom \cap B = V$, do đó $f\left(\xNom\right) = (U; V)$. Chúng ta khẳng được tính toàn ánh của $f$. Vì vậy, 
+\begin{center}
+   $f$ toàn ánh khi và chỉ khi $A \cap B = \varnothing$.
+\end{center}
+Lập luận này cũng nhanh chóng cho chúng ta ánh xạ ngược $f^{-1}$ khi $f$ song ánh. Với mọi $U \in \mathfrak{P}(A)$ và $V \in \mathfrak{P}(B)$, $f(U \cup V) = (U; V)$, cho nên $f^{-1}((U; V)) = U \cup V$. 
+
+\exercise Cho $E$ là một tập hợp và $A, B \in \mathfrak{P}(E)$. Xét ánh xạ $f: \mathfrak{P}(E) \to \mathfrak{P}(E) \times \mathfrak{P}(E)$. Trong mỗi trường hợp sau, hãy tìm điều kiện cần và đủ của $A$ và $B$ để $f$ là đơn ánh, toàn ánh:
+\begin{multicols}{2}
+   \begin{enumerate}
+      \item $f(x) = (x \setminus A;\, x \setminus B)$ với mọi $x \in \mathfrak{P}(E)$;
+      \item $f(x) = (A \setminus x;\, B \setminus x)$ với mọi $x \in \mathfrak{P}(E)$.
+   \end{enumerate}
+\end{multicols}
+
+\solution
+
+\resetSubexercise 
 
 \exercise Gọi $\sigma$ là một hoán vị của tập $A$ khác rỗng. Một tập con $B$ của $A$ được gọi là $\defMath{\sigma}$\defText{-bất biến} nếu và chỉ nếu $\Imf(\sigma|_B) = B$. Với $a \in A$, đặt \begin{equation*}
    O_a = \bigcap\left\{b \in \mathfrak{P}(A) \mid a \in b \land b \text{~là $\sigma$-bất biến}\right\}.
