@@ -994,7 +994,7 @@ Ngược lại, nếu $x \in \Imf(f|_C) \cap D$, tồn tại $y \in C$ sao cho $
 
 Từ lập luận hai chiều, chúng ta có điều phải chứng minh.
 
-\exercise Với $A$ và $B$ là tập hợp cùng thuộc $\mathfrak{P}(E)$, xác định ánh xạ $f: \mathfrak{E} \to \mathfrak{A} \times \mathfrak{B}$ thỏa mãn \begin{equation*}
+\exercise Với $A$ và $B$ là tập hợp cùng thuộc $\mathfrak{P}(E)$, xác định ánh xạ $f: \mathfrak{P}(E) \to \mathfrak{P}(A) \times \mathfrak{P}(B)$ thỏa mãn \begin{equation*}
    \forall x \in \mathfrak{P}(E), f(x) = (x \cap A; x \cap B).
 \end{equation*}
 Tìm điều kiện cần và đủ của $A$ và $B$ để $f$ đơn ánh. Trả lời câu hỏi tương tự cho tính toàn ánh của $f$. Thêm vào đó, khi $f$ là một song ánh, xác định ánh xạ ngược $f^{-1}$.
@@ -1002,9 +1002,40 @@ Tìm điều kiện cần và đủ của $A$ và $B$ để $f$ đơn ánh. Tr�
 \solution
 
 Giả sử $f$ đơn ánh, điều này có thể được hiểu là \begin{equation*}
-   \forall \xNom \in \mathfrak{P}(E), \forall \yNom \in \mathfrak{P}(E), \left(f(\xNom) = f(\yNom) \implies \xNom = \yNom\right).
+   \forall \xNom \in \mathfrak{P}(E), \forall \yNom \in \mathfrak{P}(E), \left(f\left(\xNom\right) = f\left(\yNom\right) \implies \xNom = \yNom\right).
 \end{equation*}
-Xét $\xNom = A \cup B$ và $\yNom = E$.
+Cụ thể hóa lượng từ phổ quát bởi $\xNom = A \cup B$ và $\yNom = E$. Hiển nhiên rằng \begin{equation*}
+   \begin{cases}
+      \xNom \cap A = (A \cup B) \cap A = A = E \cap A = \yNom \cap A \\
+      \xNom \cap B = (A \cup B) \cap B = B = E \cap B = \yNom \cap B
+   \end{cases}
+\end{equation*}
+nên $f\left(\xNom\right) = f\left(\yNom\right)$. Suy ra $\xNom = \yNom$ hay $A \cup B = E$.
+
+Ngược lại, giả sử $A \cup B = E$. Nếu như $f\left(\xNom\right) = f\left(\yNom\right)$, thì 
+\begin{align*}
+   \xNom &= \xNom \cap E = \xNom \cap (A \cup B) \\
+      &= \left(\xNom \cap A\right) \cup \left(\xNom \cap B\right) \\
+      &= \left(\yNom \cap A\right) \cup \left(\yNom \cap B\right) \equationexplanation{có được từ $f\left(\xNom\right) = f\left(\yNom\right)$}\\
+      &= \yNom \cap (A \cup B) = \yNom \cap E = \yNom.
+\end{align*}
+Khi đó, chúng ta suy ra được $f$ đơn ánh. Vì vậy,
+\begin{center}
+$f$ đơn ánh khi và chỉ khi $A \cup B = E$.
+\end{center}
+
+Tiếp theo, chúng ta hãy quan sát xem dưới điều kiện nào thì có $f$ toàn ánh. Giả thiết rằng $f$ đang có tính chất này. Xét cặp có thự tự $(A; \varnothing)$ thuộc $\mathfrak{P}(A) \times \mathfrak{P}(B)$, cần phải có $\xNom$ sao cho \begin{equation*}
+   (\xNom \cap A; \xNom \cap B) = (A; \varnothing).
+\end{equation*}
+Qua đó, có được $A \subseteq \xNom$ và $\xNom \cap B = \varnothing$. Nếu $A$ và $B$ có chung phần tử $c$ thì $\xNom$ cũng phải có $c$ do $A \subseteq \xNom$, nhưng khi đó sẽ tạo ra mâu thuẫn do $\xNom \cap B = \varnothing$. Dẫn đến, $A \cap B = \varnothing$.
+
+Dưới một góc độ khác, xét $A \cap B = \varnothing$. Mọi phần tử trong $\mathfrak{P}(A) \times \mathfrak{P}(B)$ có dạng $(U; V)$. Chọn $\xNom = U \cup V$, chúng ta có được \begin{align*}
+   \xNom \cap A &= (U \cup V) \cap A \\
+      &= (U \cap A) \cup (U \cap B).
+\end{align*}
+Vì $U \subseteq A$ ($U \in \mathfrak{P}(A)$) nên $U \cap A = U$. Hơn nữa, kết hợp với việc $A \cap B = \varnothing$, có $U \cap B = \varnothing$. Do đó, \begin{equation*}
+   \xNom \cap A = U \cup \varnothing = U.
+\end{equation*}
 
 \exercise Gọi $\sigma$ là một hoán vị của tập $A$ khác rỗng. Một tập con $B$ của $A$ được gọi là $\defMath{\sigma}$\defText{-bất biến} nếu và chỉ nếu $\Imf(\sigma|_B) = B$. Với $a \in A$, đặt \begin{equation*}
    O_a = \bigcap\left\{b \in \mathfrak{P}(A) \mid a \in b \land b \text{~là $\sigma$-bất biến}\right\}.
