@@ -1042,17 +1042,67 @@ Tương tự, có được $\xNom \cap B = V$, do đó $f\left(\xNom\right) = (U
 \end{center}
 Lập luận này cũng nhanh chóng cho chúng ta ánh xạ ngược $f^{-1}$ khi $f$ song ánh. Với mọi $U \in \mathfrak{P}(A)$ và $V \in \mathfrak{P}(B)$, $f(U \cup V) = (U; V)$, cho nên $f^{-1}((U; V)) = U \cup V$. 
 
-\exercise Cho $E$ là một tập hợp và $A, B \in \mathfrak{P}(E)$. Xét ánh xạ $f: \mathfrak{P}(E) \to \mathfrak{P}(E) \times \mathfrak{P}(E)$. Trong mỗi trường hợp sau, hãy tìm điều kiện cần và đủ của $A$ và $B$ để $f$ là đơn ánh, toàn ánh:
-\begin{multicols}{2}
-   \begin{enumerate}
-      \item $f(x) = (x \setminus A;\, x \setminus B)$ với mọi $x \in \mathfrak{P}(E)$;
-      \item $f(x) = (A \setminus x;\, B \setminus x)$ với mọi $x \in \mathfrak{P}(E)$.
-   \end{enumerate}
-\end{multicols}
+\exercise Cho $E$ là một tập hợp và $A, B \in \mathfrak{P}(E)$. Xét ánh xạ $f: \mathfrak{P}(E) \to \mathfrak{P}(E \setminus A) \times \mathfrak{P}(E \setminus B)$ được định nghĩa là \begin{center}
+   $f(x) = (x \setminus A;\, x \setminus B)$ với mọi $x \in \mathfrak{P}(E)$.
+\end{center}
+Tìm điều kiện cần và đủ của $A$ và $B$ để $f$ là đơn ánh, toàn ánh.
 
 \solution
 
-\resetSubexercise 
+Nếu $A \cap B = \varnothing$, xét một phần tử $e$ bất kì thuộc $A$. Có ngay được $e \in E$ và $e \notin B$ nên $e \in E \setminus B$. Khẳng định này đúng với mọi $e$ nên $A \subseteq E \setminus B$. Tương tự, chúng ta cũng có $B \subseteq E \setminus A$. 
+
+Với mọi $x$ và $y$ sao cho $f(x) = f(y)$, chúng ta có $\begin{cases}
+   x \setminus A = y \setminus A \\
+   x \setminus B = y \setminus B
+\end{cases}$, dẫn đến \begin{align*}
+   x &= (x \setminus A) \cup (x \cap A) \\
+   &= (x \setminus A) \cup ((x \cap A) \setminus (B \cap A)) \equationexplanation{$A \cap B = \varnothing$}\\
+   &= (x \setminus A) \cup ((x \setminus B) \cap A) \\
+   &= (y \setminus A) \cup ((y \setminus B) \cap A) \\
+   &= (y \setminus A) \cup ((y \cap A) \setminus (B \cap A)) = (y \setminus A) \cup (y \cap A) = y.
+\end{align*}
+Qua đó, $f$ đơn ánh.
+
+Trái lại, nếu $A$ và $B$ có chung phần tử $e$ nào đó. Dễ thấy rằng $\varnothing \setminus A = \varnothing \setminus B = \varnothing$ và $\{e\} \setminus A = \{e\} \setminus B = \varnothing$. Do đó, $f(\varnothing) = f(\{e\})$ nhưng $\varnothing \neq \{e\}$, suy ra $f$ không đơn ánh. Vì vậy, \begin{center}
+   $f$ đơn ánh khi và chỉ khi $A \cap B = \varnothing$.
+\end{center}
+
+Đặt $\aNom = E \setminus A$ và $\bNom = E \setminus B$. Khi đó, có 
+\begin{equation*}
+   \begin{cases}
+      x \cap \aNom = x \cap (E \setminus A) = (x \cap E) \setminus A = x \setminus A \\
+      x \cap \bNom  = x \cap (E \setminus B)= (x \cap E) \setminus B = x \setminus B
+   \end{cases},
+\end{equation*}
+kéo theo $f(x) = \left(x \cap \aNom; x \cap \bNom\right)$. Nhận thấy rằng tập đích của $f$ có thể được viết lại là $\mathfrak{P}\left(\aNom\right) \times \mathfrak{P}\left(\bNom\right)$, nên nếu sử dụng bài tập trước, $f$ toàn ánh khi và chỉ khi $\aNom \cap \bNom = \varnothing$. Ngoài ra, \begin{align*}
+   \aNom \cap \bNom = \varnothing &\iff (E \setminus A) \cap (E \setminus B) = \varnothing; \\ 
+   \aNom \cap \bNom = \varnothing &\iff E \setminus (A \cup B) = \varnothing; \\
+   \aNom \cap \bNom = \varnothing &\iff E \subseteq A \cup B.
+\end{align*}
+Thêm vào đó, $A \cup B \subseteq E$ do $A$ và $B$ đều là tập con của $E$, nên \begin{equation*}
+   \aNom \cap \bNom = \varnothing \iff E = A \cup B.
+\end{equation*}
+Vì thế, $f$ toàn ánh khi và chỉ khi $E = A \cup B$.
+
+\exercise Cho $E$ là một tập hợp và $A, B \in \mathfrak{P}(E)$. Xét ánh xạ $f: \mathfrak{P}(E) \to \mathfrak{P}(A) \times \mathfrak{P}(B)$ được định nghĩa là \begin{center}
+   $f(x) = (A \setminus x;\, B \setminus x)$ với mọi $x \in \mathfrak{P}(E)$.
+\end{center}
+Tìm điều kiện cần và đủ của $A$ và $B$ để $f$ là đơn ánh, toàn ánh.
+
+\solution 
+
+Giả sử $A \cup B = E$. Ngoài ra, chúng ta cũng giả sử rằng có $x$ và $y$ thỏa mãn $f(x) = f(y)$. Với mọi $a$, mệnh đề $a \in A \cap x$ lần lượt tương đương với \begin{align*}
+   &a \in A \land a \in x, \\
+   &(a \in A \land a \notin A) \lor (a \in A \land a \in x), \\
+   &a \in A \land (a \notin A \lor a \in x), \\
+   &a \in A \land \overline{(a \in A \land a \notin x)}, \\
+   &a \in A \land a \notin A \setminus x, \\
+   &a \in A \setminus (A \setminus x).
+\end{align*}
+Do đó, $A \cap x = A \setminus (A \setminus x)$. Khi đó, sử dụng $f(x) = f(y)$, có được \begin{equation*}
+   A \cap x = A \setminus (A \setminus y) = A \cap y.
+\end{equation*}
+Tương tự, $B \cap x = B \cap y$. Từ các bài tập trước, suy ra được $x = y$. Vậy, khi này $f$ là một đơn ánh.
 
 \exercise Gọi $\sigma$ là một hoán vị của tập $A$ khác rỗng. Một tập con $B$ của $A$ được gọi là $\defMath{\sigma}$\defText{-bất biến} nếu và chỉ nếu $\Imf(\sigma|_B) = B$. Với $a \in A$, đặt \begin{equation*}
    O_a = \bigcap\left\{b \in \mathfrak{P}(A) \mid a \in b \land b \text{~là $\sigma$-bất biến}\right\}.

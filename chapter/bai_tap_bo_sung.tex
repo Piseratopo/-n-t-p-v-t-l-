@@ -60,5 +60,23 @@ Kí hiệu $B_1 = A_1 \setminus A_0, \dots, B_n = A_n \setminus A_{n-1}$. Chứn
 
 \exercise Cho các tập $A$, $B$, $C$ thỏa mãn $A \in B$ và $B \in C$. Chứng minh rằng $C \notin A$ và $C \nsubseteq A$. Mở rộng với chuỗi hữu hạn các tập hợp.
 
+\exercise Cho $E$ là một tập hợp, $n$ là số nguyên dương ($n \ge 2$) và $A_1, A_2, \dots, A_n$ là các tập con của $E$. Với mỗi ánh xạ dưới đây, hãy tìm điều kiện cần và đủ của họ các tập hợp $(A_i)_{i=1}^n$ để ánh xạ đó là đơn ánh, và điều kiện cần và đủ để ánh xạ đó là toàn ánh:
+\begin{enumerate}
+   \item Ánh xạ $f_1 : \mathfrak{P}(E) \to \prod_{i=1}^n \mathfrak{P}(A_i)$ xác định bởi
+   \begin{equation*}
+      \forall x \in \mathfrak{P}(E), \quad f_1(x) = (x \cap A_1,\, x \cap A_2,\, \dots,\, x \cap A_n);
+   \end{equation*}
+
+   \item Ánh xạ $f_2 : \mathfrak{P}(E) \to \prod_{i=1}^n \mathfrak{P}(E \setminus A_i)$ xác định bởi
+   \begin{equation*}
+      \forall x \in \mathfrak{P}(E), \quad f_2(x) = (x \setminus A_1,\, x \setminus A_2,\, \dots,\, x \setminus A_n);
+   \end{equation*}
+
+   \item Ánh xạ $f_3 : \mathfrak{P}(E) \to \prod_{i=1}^n \mathfrak{P}(A_i)$ xác định bởi
+   \begin{equation*}
+      \forall x \in \mathfrak{P}(E), \quad f_3(x) = (A_1 \setminus x,\, A_2 \setminus x,\, \dots,\, A_n \setminus x).
+   \end{equation*}
+\end{enumerate}
+
 \setcounter{exercise}{0}
 
