@@ -1042,7 +1042,7 @@ Tương tự, có được $\xNom \cap B = V$, do đó $f\left(\xNom\right) = (U
 \end{center}
 Lập luận này cũng nhanh chóng cho chúng ta ánh xạ ngược $f^{-1}$ khi $f$ song ánh. Với mọi $U \in \mathfrak{P}(A)$ và $V \in \mathfrak{P}(B)$, $f(U \cup V) = (U; V)$, cho nên $f^{-1}((U; V)) = U \cup V$. 
 
-\exercise Cho $E$ là một tập hợp và $A, B \in \mathfrak{P}(E)$. Xét ánh xạ $f: \mathfrak{P}(E) \to \mathfrak{P}(E \setminus A) \times \mathfrak{P}(E \setminus B)$ được định nghĩa là \begin{center}
+\exercise Cho $E$ là một tập hợp và $A, B$ cùng thuộc $\mathfrak{P}(E)$. Xét ánh xạ $f: \mathfrak{P}(E) \to \mathfrak{P}(E \setminus A) \times \mathfrak{P}(E \setminus B)$ được định nghĩa là \begin{center}
    $f(x) = (x \setminus A;\, x \setminus B)$ với mọi $x \in \mathfrak{P}(E)$.
 \end{center}
 Tìm điều kiện cần và đủ của $A$ và $B$ để $f$ là đơn ánh, toàn ánh.
@@ -1084,7 +1084,7 @@ Thêm vào đó, $A \cup B \subseteq E$ do $A$ và $B$ đều là tập con củ
 \end{equation*}
 Vì thế, $f$ toàn ánh khi và chỉ khi $E = A \cup B$.
 
-\exercise Cho $E$ là một tập hợp và $A, B \in \mathfrak{P}(E)$. Xét ánh xạ $f: \mathfrak{P}(E) \to \mathfrak{P}(A) \times \mathfrak{P}(B)$ được định nghĩa là \begin{center}
+\exercise Cho $E$ là một tập hợp và $A, B$ cùng thuộc $\mathfrak{P}(E)$. Xét ánh xạ $f: \mathfrak{P}(E) \to \mathfrak{P}(A) \times \mathfrak{P}(B)$ được định nghĩa là \begin{center}
    $f(x) = (A \setminus x;\, B \setminus x)$ với mọi $x \in \mathfrak{P}(E)$.
 \end{center}
 Tìm điều kiện cần và đủ của $A$ và $B$ để $f$ là đơn ánh, toàn ánh.
@@ -1103,6 +1103,60 @@ Do đó, $A \cap x = A \setminus (A \setminus x)$. Khi đó, sử dụng $f(x) =
    A \cap x = A \setminus (A \setminus y) = A \cap y.
 \end{equation*}
 Tương tự, $B \cap x = B \cap y$. Từ các bài tập trước, suy ra được $x = y$. Vậy, khi này $f$ là một đơn ánh.
+
+Nếu $A \cup B \neq E$, vì $A \cup B \subseteq E$ nên $A \cup B \subsetneq E$. Tồn tại phần tử $e \in E \setminus (A \cup B)$. Sử dụng tính chất $e \notin A$ và $e \notin B$, được:
+\begin{itemize}
+   \item $A \setminus \varnothing = A = A \setminus \{e\}$;
+   \item $B \setminus \varnothing = B = B \setminus \{e\}$.
+\end{itemize}
+Do đó, $f(\varnothing) = f(\{e\})$, nhưng rõ ràng rằng $\varnothing \neq \{e\}$, nên $f$ không đơn ánh. Vì vậy, 
+\begin{center}
+   $f$ đơn ánh $\iff A \cup B = E$.
+\end{center}
+
+Xét trường hợp $A \cap B \neq \varnothing$, gọi $m$ là phần tử thuộc tập hợp này. Xét cặp có thứ tự $(\varnothing; B) \in \mathfrak{P}(A) \times \mathfrak{P}(B)$. Nếu tồn tại $x$ để $f(x) = (\varnothing; B)$ thì $A \setminus x = \varnothing$, kéo theo $A \subseteq x$. Khi đó, $m \in x$. Chúng ta cũng có $m \in B$, nên $m \notin B \setminus x$. Tuy nhiên, từ $f(x) =  (\varnothing; B)$, cần phải có $B \setminus x = B$, có nghĩa là $m \in B\setminus x \iff m \in B$, tạo ra một mâu thuẫn. Do đó, $f$ không toàn ánh trong trường hợp này.
+
+Còn nếu $A \cap B = \varnothing$, xét một giá trị $W \in \mathfrak{P}(A) \times \mathfrak{P}(B)$. Phải có $U$ và $V$ lần lượt là tập con của $A$ và $B$ sao cho $W = (U; V)$. Hãy tính giá trị của $f((A \setminus U) \cup (B \setminus V))$:
+\begin{equation*}
+   A \setminus x = A \setminus ((A \setminus U) \cup (B \setminus V)) = (A \setminus (A \setminus U)) \cap (A \setminus (B \setminus V)).
+\end{equation*}
+Vì $U \subseteq A$, $A \setminus (A \setminus U) = U$. Vì $A \cap B = \varnothing$, $A \cap (B \setminus V)$ cũng rỗng, nên $A \setminus (B \setminus V) = A$. Do đó, \begin{equation*}
+   A \setminus x = U \cap A = U.
+\end{equation*}
+Tương tự, $B \setminus x = V$. Vì thế, $f(x) = W$. Do đó, với mọi $W \in \mathfrak{P}(A) \times \mathfrak{P}(B)$, luôn tồn tại $x$ sao cho $f(x) = W$, hay, $f$ toàn ánh. Qua đó, \begin{center}
+   $f$ toàn ánh nếu và chỉ nếu $A \cap B = \varnothing$.
+\end{center}
+
+\exercise Cho $E$ là một tập hợp khác rỗng và $A, B$ cùng thuộc $\mathfrak{P}(E)$. Xét ánh xạ sau:
+\begin{equation*}
+   \begin{array}[t]{rcl}
+      f: \mathfrak{P}(E) & \to & \mathfrak{P}(E) \times \mathfrak{P}(E) \\
+      x &\mapsto &(x \vartriangle A; x \vartriangle B).
+   \end{array}
+\end{equation*}
+Chứng minh rằng $f$ đơn ánh nhưng không toàn ánh.
+
+\solution
+
+Xét hai giá trị $m$ và $n$ cùng là tập con của $E$ sao cho $f(m) = f(n)$, chúng ta có:
+\begin{align*}
+   m \vartriangle A &= n \vartriangle A; \\
+   (m \vartriangle A) \vartriangle A &= (n \vartriangle A) \vartriangle A; \\
+   m \vartriangle (A \vartriangle A) &= n \vartriangle (A \vartriangle A) \equationexplanation{tính kết hợp của $\vartriangle$}; \\
+   m \vartriangle \varnothing &= n \vartriangle \varnothing; \\
+   m &= n.
+\end{align*}
+Do đó, $f$ đơn ánh.
+
+Giả sử phản chứng, $f$ có khả năng toàn ánh. Khi đó, mọi cặp $(U; V) \in \mathfrak{P}(A) \times \mathfrak{P}(B)$ phải có ảnh tạo bởi một phần tử $p$ nào đó. Khi đó, $\begin{cases}
+   p \vartriangle A = U \\
+   p \vartriangle B = V 
+\end{cases}$. Điều này kéo theo $p = U \vartriangle A = V \vartriangle B$. Qua đó, chúng ta có thể nhanh chóng nhận ra rằng $U \vartriangle V = A \vartriangle B$. Do $U$ và $V$ được chọn tùy ý nên \begin{equation*}
+   \forall U \in \mathfrak{P}(A), \forall V \in \mathfrak{P}(B), U \vartriangle V = A \vartriangle B.
+\end{equation*}
+Mặc dù vậy, điều này là không khả thi. Nếu cụ thể hóa $U$ và $V$ đều bằng $\varnothing$ thì $A \vartriangle B = \varnothing \vartriangle \varnothing = \varnothing$. Trong khi đó, nếu cụ thể $U = \varnothing$ và $V = \{e\}$ với $e$ là một phần tử trong tập $E$ khác rỗng, thì $A \vartriangle B = \varnothing \vartriangle \{e\} = \{e\}$, khác giá trị $\varnothing$ trước đó, tạo ra nghịch lí. Cho nên, chúng phải phủ định giả sử ban đầu, tức là, $f$ không toàn ánh.
+
+Kết hợp các lập luận, hiển nhiên có được điều phải chứng minh.
 
 \exercise Gọi $\sigma$ là một hoán vị của tập $A$ khác rỗng. Một tập con $B$ của $A$ được gọi là $\defMath{\sigma}$\defText{-bất biến} nếu và chỉ nếu $\Imf(\sigma|_B) = B$. Với $a \in A$, đặt \begin{equation*}
    O_a = \bigcap\left\{b \in \mathfrak{P}(A) \mid a \in b \land b \text{~là $\sigma$-bất biến}\right\}.
