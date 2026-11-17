@@ -1158,7 +1158,47 @@ Mặc dù vậy, điều này là không khả thi. Nếu cụ thể hóa $U$ v�
 
 Kết hợp các lập luận, hiển nhiên có được điều phải chứng minh.
 
-\exercise 
+\exercise ho $E$ là một tập hợp và $A, B$ là hai tập con thuộc $\mathfrak{P}(E)$. Với mỗi ánh xạ dưới đây, hãy tìm điều kiện cần và đủ của $A$ và $B$ để ánh xạ đó là đơn ánh, và điều kiện cần và đủ để ánh xạ đó là toàn ánh:
+\begin{enumerate}
+   \item Ánh xạ $\begin{array}[t]{rcc}
+      f : \mathfrak{P}(E) &\longrightarrow &\mathfrak{P}(A) \times \mathfrak{P}(E \setminus B) \\
+      x &\longmapsto &(x \cap A; x \setminus B);
+   \end{array}$
+
+   \item Ánh xạ $\begin{array}[t]{rcc}
+      g : \mathfrak{P}(E) &\longrightarrow &\mathfrak{P}(A) \times \mathfrak{P}(B) \\
+      x &\longmapsto &(x \cap A; B \setminus x);
+   \end{array}$
+
+   \item Ánh xạ $\begin{array}[t]{rcc}
+      h : \mathfrak{P}(E) &\longrightarrow &\mathfrak{P}(E \setminus A) \times \mathfrak{P}(B) \\
+      x &\longmapsto &(x \setminus A; B \setminus x);
+   \end{array}$
+\end{enumerate}
+
+\solution 
+
+\resetSubexercise Một phần tử thuộc $x \subseteq E$ thì cũng thuộc $E$, do đó, $x \setminus B = x \cap (E \setminus B)$. Vậy, $f(x) = (x \cap A; x \cap (E \setminus B))$. Sử dụng bài tập trước đó, $f$ đơn ánh khi và chỉ khi $A \cup (E \setminus B) = E$, và $f$ toàn ánh nếu và chỉ nếu $A \cap (E \setminus B) = \varnothing$.
+
+Từ $A \cup (E \setminus B) = E$, xét $b$ là một phần tử thuộc $B$. Vì $B \subseteq E$ nên $b \in E$, tức $b \in A \cup (E \setminus B)$. Ngoài ra, $b \in B$ kéo theo $b \notin E \setminus B$. Cho nên, $b \in A$. Vì vậy, $B \subseteq A$.
+
+Còn từ $B \subseteq A$, chắc chắn rằng $A \cup (E \setminus B) \subseteq E$. Gọi $e \in E$ tùy ý. 
+\begin{itemize}
+   \item Nếu $e \in A$ thì hiển nhiên, $e \in A \cup (E \setminus B)$.
+   \item Nếu $e \notin A$, do $B \subseteq A$, $e \notin B$, dẫn đến $e \in E \setminus B$. Chúng ta cũng có $e \in A \cup (E \setminus B)$.
+\end{itemize} 
+
+Qua đó, chúng ta chứng minh được $A \cup (E \setminus B) = E \iff B \subseteq A$, và vì lí do đó, $f$ đơn ánh khi và chỉ khi $B \subseteq A$.
+
+Từ $A \cap (E \setminus B) = \varnothing$, có 
+\begin{align*}
+   \varnothing &= A \cap (E \setminus B) \\
+      &= (A \cap E) \setminus B \\
+      &= A \setminus B \equationexplanation{$A \subseteq E \implies A \cap E = A$}.
+\end{align*}
+Điều này tương đương với $A \subseteq B$. Vì vậy, $f$ toàn ánh nếu và chỉ nếu $A \subseteq B$.
+
+\stepSubexercise 
 
 \exercise Gọi $\sigma$ là một hoán vị của tập $A$ khác rỗng. Một tập con $B$ của $A$ được gọi là $\defMath{\sigma}$\defText{-bất biến} nếu và chỉ nếu $\Imf(\sigma|_B) = B$. Với $a \in A$, đặt \begin{equation*}
    O_a = \bigcap\left\{b \in \mathfrak{P}(A) \mid a \in b \land b \text{~là $\sigma$-bất biến}\right\}.
