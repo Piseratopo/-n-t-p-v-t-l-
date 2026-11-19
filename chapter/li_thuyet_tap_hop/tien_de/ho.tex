@@ -3,7 +3,13 @@
 Cho một tập hợp $x$. \defText{Họ phần tử} của $x$ (gọi tắt là \defText{họ}) là một ánh xạ bất kì có tập dích là $x$. Nếu ánh xạ này là $\begin{array}[t]{rcl}  
 f: I & \to & x\\       
    a & \mapsto & f(a) 
-\end{array}$ thì chúng ta kí hiệu họ phần tử này là $\defMath{(f_i)_{i \in I}}$, và tập nguồn $I$ được gọi là \defText{tập chỉ số} của họ phần tử đó.
+\end{array}$ thì chúng ta kí hiệu họ phần tử này là $\defMath{(f_i)_{i \in I}}$, và tập nguồn $I$ được gọi là \defText{tập chỉ số} của họ phần tử đó. Nếu $J$ là một tập con của $I$, chúng ta có thể xác định ra một \defText{họ con} thông qua ánh xạ thu hẹp $f|_J$. 
+
+Xét một trường hợp khi $I$ là tập con của $A$, gọi $j$ là đơn ánh chính tắc từ $I$ đến $A$. Khi đó, chúng ta có thể xác định được họ $(j_i)_{i \in I}$. Để ý rằng,
+\begin{equation*}
+   \defMath{(j_i)_{i \in I} = \mathcal{G}(j) = (i)_{i \in I}},
+\end{equation*}
+với sự nhắc lại $\mathcal{G}(j)$ là đồ thị của $j$. Họ này được gọi là \defText{họ chính tắc} của $j$.
 
 Dưới đây là định nghĩa của một số các cách viết quen thuộc. Cho $x$ là một tập hợp. Một họ $(f_i)_{i \in I}$ được xác định trong đó $\forall i \in I, f_i \in \mathfrak{P}(x)$. Khi đó, \begin{itemize}
    \item \defText{hợp của họ}, kí hiệu là $\defMath{\bigcup_{i \in I}f_i}$, được định nghĩa bởi $$
