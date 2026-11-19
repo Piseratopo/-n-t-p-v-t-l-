@@ -33,6 +33,42 @@ Ngoài ra, nếu xét tập chỉ số $I$ là một tập rỗng, thì chúng t
    \end{itemize}
 \end{multicols}
 
+Gọi $F = \bigcup_{i \in I}f_i$. Chúng ta gọi \defText{tích Đề-các} của họ $(f_i)_{i \in I}$ là tập hợp
+$$
+\defMath{\prod_{i \in I}f_i = \left\{g \in F^I \mid \forall i \in I, g(i) \in f_i\right\}}.
+$$
+
+\exercise Cho tập hợp $x$. Cho $A$ là một ánh xạ từ $I$ đến $\mathfrak{P}(x)$. Giả thiết rằng tồn tại $L$ và một ánh xạ $l: L \to \mathfrak{I}$ sao cho $I = \bigcup_{\lambda \in L}l_\lambda$. Chứng minh rằng, khi đó,
+\begin{multicols}{2}
+   \begin{enumerate}
+      \item $\bigcup_{i \in I} A_i = \bigcup_{\lambda \in L} \left(\bigcup_{i \in l_\lambda} A_i\right)$;
+      \item $\bigcap_{i \in I} A_i = \bigcap_{\lambda \in L} \left(\bigcap_{i \in l_\lambda} A_i\right)$.
+   \end{enumerate}
+\end{multicols}
+
+\solution
+
+Với mọi $\lambda \in L$, $l_\lambda$ được xác định duy nhất và là tập con của $I$, kéo theo việc $(A_i)_{i \in l_\lambda}$. Do đó, $\bigcup_{i \in l_\lambda}$ và $\bigcap_{i \in l_\lambda}$ cũng được xác định duy nhất. Qua đó, có thể gọi các họ $\left(\bigcup_{i \in l_\lambda}\right)_{\lambda \in L}$ và $\left(\bigcap_{i \in l_\lambda}\right)_{\lambda \in L}$ và khẳng định rằng $\bigcup_{\lambda \in L} \left(\bigcup_{i \in l_\lambda} A_i\right)$ và $\bigcap_{\lambda \in L} \left(\bigcap_{i \in l_\lambda} A_i\right)$ có nghĩa.
+
+\resetSubexercise Xét $a \in \bigcup_{i \in I} A_i$ tùy ý. Khi đó, tồn tại $j \in I$ sao cho $a \in A_j$. Do $I = \bigcup_{\lambda \in L} l_\lambda$, tồn tại $\lambda \in L$ để $j \in l_\lambda$. Suy ra $a \in \bigcup_{i \in l_\lambda} A_i$, dẫn đến $a \in \bigcup_{\lambda \in L} \left(\bigcup_{i \in l_\lambda} A_i\right)$. Kết luận được \begin{equation*}
+   \bigcup_{i \in I} A_i \subseteq \bigcup_{\lambda \in L} \left(\bigcup_{i \in l_\lambda} A_i\right).
+\end{equation*}
+
+Xem xét quan hệ bao hàm ngược lại, lấy $a \in \bigcup_{\lambda \in L} \left(\bigcup_{i \in l_\lambda} A_i\right)$ ngẫu nhiên. Khi đó, tồn tại $\lambda \in L$ sao cho $a \in \bigcup_{i \in l_\lambda} A_i$. Suy ra, tồn tại $j \in l_\lambda$ sao cho $a \in A_j$. Vì $l_\lambda \subseteq I$ nên $j$ cũng thuộc $I$, dẫn đến $a \in \bigcup_{i \in I} A_i$. Và, qua đó, \begin{equation*}
+   \bigcup_{\lambda \in L} \left(\bigcup_{i \in l_\lambda} A_i\right) \subseteq \bigcup_{i \in I} A_i.
+\end{equation*} 
+
+Kết hợp hai chiều, chúng ta có $\bigcup_{i \in I} A_i = \bigcup_{\lambda \in L} \left(\bigcup_{j \in l_\lambda} A_j\right)$. Điều phải chứng minh.
+
+\stepSubexercise Hãy cho rằng $a \in \bigcap_{i \in I} A_i$. Khi đó, chúng ta có $\forall i \in I, a \in A_i$.
+Vì với mọi $\lambda \in L$, $l_\lambda$ là tập con của $I$, cho nên chúng ta có được $$\forall i \in l_\lambda, a \in A_i.$$
+Do đó, $\forall \lambda \in L, a \in \bigcap_{i \in l_\lambda} A_j$, hay $a \in \bigcap_{\lambda \in L}\left(\bigcap_{i \in l_\lambda} A_i\right)$. Qua đó, \begin{equation*}
+   \bigcap_{i \in I} A_i \subseteq \bigcap_{\lambda \in L} \left(\bigcap_{i \in l_\lambda} A_i\right).
+\end{equation*}
+
+Giả sử rằng $a \in \bigcap_{\lambda \in L} \left(\bigcap_{i \in l_\lambda} A_i\right)$. Lấy $j \in I$ tùy ý, vì $I = \bigcup_{\lambda \in L} l_\lambda$ nên tồn tại $\lambda \in L$ sao cho $j \in l_\lambda$. Mặt khác, từ giả thiết, chúng ta có $a \in \bigcap_{i \in l_\lambda} A_i$, dẫn ra $a \in A_j$. Tổng quát hóa lượng từ tồn tại, chúng ta có được $$\forall i \in I, a \in A_i.$$
+Qua đó, $a \in \bigcap_{i \in I}A_i$.
+
 \exercise Cho tập hợp $x$, $M$ là một tập con của $x$, $A$ và $B$ đều là ánh xạ từ $I$ đến $\mathfrak{P}(x)$. Chứng minh rằng
 \begin{multicols}{2}
    \begin{enumerate}
