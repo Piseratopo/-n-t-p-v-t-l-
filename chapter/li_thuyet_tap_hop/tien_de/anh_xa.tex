@@ -1198,7 +1198,67 @@ Từ $A \cap (E \setminus B) = \varnothing$, có
 \end{align*}
 Điều này tương đương với $A \subseteq B$. Vì vậy, $f$ toàn ánh nếu và chỉ nếu $A \subseteq B$.
 
-\stepSubexercise 
+\stepSubexercise Giả sử $g$ đơn ánh. Hãy tính một số giá trị của $g$:
+\begin{align*}
+   g(A \cup B) &= ((A \cup B) \cap A; B \setminus (A \cup B)) \\
+   &= (A; \varnothing) \equationexplanation{$A \subseteq A \cup B$ và $B \subseteq A \cup B$},
+\end{align*}
+và \begin{align*}
+   g(E) &= (E \cap A; B \setminus E) \\
+   &= (A; \varnothing) \equationexplanation{$A \subseteq E$ và $B \subseteq E$}.
+\end{align*}
+Do đó, $g(A \cup B) = g(E)$. Vì $g$ đơn ánh nên $A \cup B = E$.
+
+Giả sử $A \cup B = E$, xét các phần tử $\xNom$ và $\yNom$ cùng thuộc $\mathfrak{P}(E)$ sao cho $g\left(\xNom\right) = g\left(\yNom\right)$, khi đó, $\begin{cases}
+   A \cap \xNom = A \cap \yNom \\
+   B \setminus \xNom = B \setminus \yNom
+\end{cases}$. Lấy $x$ tùy ý thuộc vào $\xNom$. Chia làm hai trường hợp:
+\begin{itemize}
+   \item Nếu \coloringCrimson{$x \in A$}, có $x \in A \cap \xNom$. Vì $A \cap \xNom = A \cap \yNom$, $x \in A \cap \yNom$. Từ đó, có được $x \in \yNom$.
+   \item Nếu \coloringDodgerblue{$x \notin A$}, có $x \in \xNom$ nên phải có $x \in E$. Ngoài ra, $A \cup B = E$ dẫn đến $x \in B$, kéo theo $x \notin B \setminus \xNom$. Vì $B \setminus \xNom = B \setminus \yNom$, $x$ không thể nằm trong $B \setminus \yNom$. Vì đã có $x \in B$, cần phải có $x \in \yNom$.
+\end{itemize}
+Trong mọi trường hợp $x \in \yNom$, nên $\xNom \subseteq \yNom$. Chứng minh tương tự, cũng có được $\xNom \supseteq \yNom$. Vì vậy, $\xNom = \yNom$ từ $g\left(\xNom\right) = g\left(\yNom\right)$, hay, $g$ đơn ánh. Vì vậy, \begin{center}
+   $g$ đơn ánh $\iff A \cup B = E$.
+\end{center}
+
+Giả sử $g$ toàn ánh. Xét phần tử $(\varnothing; B) \in \mathfrak{P}(A) \times \mathfrak{P}(B)$, vì $g$ toàn ánh nên phải tồn tại $m \in \mathfrak{P}(E)$ sao cho $g(m) = (\varnothing; B)$. Khi đó, $\begin{cases}
+   m \cap A = \varnothing \\
+   B \setminus m = B
+\end{cases}$. Từ phương trình thứ hai, $B \setminus m = B$ dẫn đến $B \cap m = \varnothing$. Ta có:
+\begin{align*}
+   (A \cap B) \cap m &= (A \cap m) \cap B \\
+   &= \varnothing \cap B = \varnothing.
+\end{align*}
+Giả sử tồn tại $e \in A \cap B$. Xét phần tử $(\{e\}; B) \in \mathfrak{P}(A) \times \mathfrak{P}(B)$ (do $\{e\} \subseteq A$). Vì $g$ toàn ánh, tồn tại $x_1 \in \mathfrak{P}(E)$ để $g(x_1) = (\{e\}; B)$, tức là $\begin{cases}
+   x_1 \cap A = \{e\} \\
+   B \setminus x_1 = B
+\end{cases}$. Từ $x_1 \cap A = \{e\}$, suy ra $e \in x_1$. Tuy nhiên, từ $B \setminus x_1 = B$, suy ra $B \cap x_1 = \varnothing$, kéo theo $e \notin x_1$ (do $e \in B$), mâu thuẫn. Do đó, không thể tồn tại phần tử nào thuộc $A \cap B$, hay $A \cap B = \varnothing$.
+
+Giả sử $A \cap B = \varnothing$. Với mỗi $W \in \mathfrak{P}(A) \times \mathfrak{P}(B)$ tùy ý, luôn tồn tại $U$ và $V$ để $W = (U; V)$. Chọn phần tử $x = U \cup (B \setminus V)$. Khi đó, thực hiện biến đổi $x \cap A$, được
+\begin{align*}
+   x \cap A &= (U \cup (B \setminus V)) \cap A \\
+   &= (U \cap A) \cup ((B \setminus V) \cap A).
+\end{align*}
+Vì $U \in \mathfrak{P}(A)$ nên $U \cap A = U$. Lại có $B \setminus V \subseteq B$ và $A \cap B = \varnothing$ nên $(B \setminus V) \cap A = \varnothing$. Do đó, $x \cap A = U \cup \varnothing = U$.
+
+Biến đổi $B \setminus x$, được
+\begin{align*}
+   B \setminus x &= B \setminus (U \cup (B \setminus V)) \\
+   &= (B \setminus U) \cap (B \setminus (B \setminus V)).
+\end{align*}
+Vì $A \cap B = \varnothing$ và $U \subseteq A$ nên $B \cap U = \varnothing$, dẫn đến $B \setminus U = B$. Lại có $V \subseteq B$ nên $B \setminus (B \setminus V) = V$. Do đó, $B \setminus x = B \cap V = V$.
+Như vậy, $g(x) = (x \cap A; B \setminus x) = (U; V)$. Vì với mỗi $W \in \mathfrak{P}(A) \times \mathfrak{P}(B)$ đều tồn tại $x \in \mathfrak{P}(E)$ thỏa mãn $g(x) = W$, nên $g$ toàn ánh. Vì vậy, \begin{center}
+   $g$ toàn ánh $\iff A \cap B = \varnothing$.
+\end{center}
+
+\stepSubexercise Với mọi $x \in \mathfrak{E}$, $x \setminus A = x \cap (E \setminus A)$. Từ đó, có thể viết lại $h$ dưới dạng tương đương là \begin{equation*}
+   \begin{array}{rcl}
+      h: \mathfrak{P}(X) &\to &\mathfrak{P}(E \setminus A) \times \mathfrak{P}(B) \\
+      x &\mapsto &\left(x \cap (E \setminus A); B \setminus x\right).
+   \end{array}
+\end{equation*}
+
+
 
 \exercise Gọi $\sigma$ là một hoán vị của tập $A$ khác rỗng. Một tập con $B$ của $A$ được gọi là $\defMath{\sigma}$\defText{-bất biến} nếu và chỉ nếu $\Imf(\sigma|_B) = B$. Với $a \in A$, đặt \begin{equation*}
    O_a = \bigcap\left\{b \in \mathfrak{P}(A) \mid a \in b \land b \text{~là $\sigma$-bất biến}\right\}.

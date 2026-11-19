@@ -3,7 +3,7 @@
 
 ## Toán học
 
-- Ánh xạ (dòng 1159, trang 84)
+- Ánh xạ (dòng 1261, trang 85)
 
 ## Vật lí
 
