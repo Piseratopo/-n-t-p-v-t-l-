@@ -347,4 +347,23 @@ $. Chứng minh rằng
 
 \resetSubexercise Xét $b$ bất kì thuộc $\prod_{i \in I}B_i$. Từ định nghĩa tích Đề-các, có được $\forall i \in I, b(i) \in B_i$. Mà, từ giả thiết, $\forall i \in I, B_i \subseteq A_i$, nên $\forall i \in I, b(i) \in A_i$. Do đó, $b \in \prod_{i \in I}A_i$. Qua đó, chúng ta có được $\prod_{i \in I}B_i \subseteq \prod_{i \in I}A_i$, tức điều phải chứng minh.
 
-\stepSubexercise
+
+
+
+
+\stepSubexercise Với mọi $i \in I$, $B_i$ và $C_i$ đều xác định duy nhất. Cho nên, tồn tại một và chỉ một $B_i \cap C_i$ ứng với mỗi $i$. Vì thế, $\left(B_i \cap C_i\right)_{i \in I}$ được định nghĩa tốt. 
+
+Với mọi $f$ thuộc $\left(\prod_{i \in I}B_i\right) \cap \left(\prod_{i \in I}C_i\right)$, từ định nghĩa phép giao, có được $\begin{cases}
+   f \in \left(\prod_{i \in I}B_i\right) \\
+   f \in \left(\prod_{i \in I}C_i\right)
+\end{cases}$. Từ định nghĩa tích Đề-các, có \begin{equation*}
+   \begin{cases}
+      \forall i \in I, f(i) \in B_i \\
+      \forall i \in I, f(i) \in C_i
+   \end{cases}.
+\end{equation*}
+Sử dụng tính chất phân phối của lượng từ phổ quát với phép hội, suy ra được $\forall i \in I, \left( f(i) \in B_i \land f(i) \in C_i \right)$, dẫn đến $\forall i \in I, f(i) \in B_i \cap C_i$. Từ định nghĩa, có $f \in \prod_{i \in I}(B_i \cap C_i)$. Chúng ta đã khẳng định được $\begin{cases}
+   \left(\prod_{i \in I}B_i\right) \cap \left(\prod_{i \in I}C_i\right) \subseteq \prod_{i \in I}(B_i \cap C_i).
+\end{cases}$
+
+Xét $g$ thuộc $\prod_{i \in I}(B_i \cap C_i)$ tùy ý. Từ định nghĩa tích Đề-các, có được $\forall i \in I, g \in B_i \cap C_i$, hay $\forall i \in I, \left(g \in B_i \land g \in C_i\right)$. Chiều ngược lại của tính chất phân phối vừa đề cập cũng đúng
