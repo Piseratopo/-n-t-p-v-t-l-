@@ -38,7 +38,7 @@ $$
 \defMath{\prod_{i \in I}f_i = \left\{g \in F^I \mid \forall i \in I, g(i) \in f_i\right\}}.
 $$
 
-\exercise Cho tập hợp $x$. Cho $A$ là một ánh xạ từ $I$ đến $\mathfrak{P}(x)$. Giả thiết rằng tồn tại $L$ và một ánh xạ $l: L \to \mathfrak{I}$ sao cho $I = \bigcup_{\lambda \in L}l_\lambda$. Chứng minh rằng, khi đó,
+\exercise Cho tập hợp $x$. Cho $A$ là một ánh xạ từ $I$ đến $\mathfrak{P}(x)$. Giả thiết rằng tồn tại $L$ và một ánh xạ $l: L \to \mathfrak{P}(I)$ sao cho $I = \bigcup_{\lambda \in L}l_\lambda$. Chứng minh rằng, khi đó,
 \begin{multicols}{2}
    \begin{enumerate}
       \item $\bigcup_{i \in I} A_i = \bigcup_{\lambda \in L} \left(\bigcup_{i \in l_\lambda} A_i\right)$;
@@ -67,7 +67,11 @@ Do đó, $\forall \lambda \in L, a \in \bigcap_{i \in l_\lambda} A_j$, hay $a \i
 \end{equation*}
 
 Giả sử rằng $a \in \bigcap_{\lambda \in L} \left(\bigcap_{i \in l_\lambda} A_i\right)$. Lấy $j \in I$ tùy ý, vì $I = \bigcup_{\lambda \in L} l_\lambda$ nên tồn tại $\lambda \in L$ sao cho $j \in l_\lambda$. Mặt khác, từ giả thiết, chúng ta có $a \in \bigcap_{i \in l_\lambda} A_i$, dẫn ra $a \in A_j$. Tổng quát hóa lượng từ tồn tại, chúng ta có được $$\forall i \in I, a \in A_i.$$
-Qua đó, $a \in \bigcap_{i \in I}A_i$.
+Qua đó, $a \in \bigcap_{i \in I}A_i$, hay $$
+   \bigcap_{\lambda \in L} \left(\bigcap_{i \in l_\lambda} A_i\right) \subseteq \bigcap_{i \in I} A_i.
+$$
+
+Kết hợp hai chiều, dễ dàng có được điều phải chứng minh.
 
 \exercise Cho tập hợp $x$, $M$ là một tập con của $x$, $A$ và $B$ đều là ánh xạ từ $I$ đến $\mathfrak{P}(x)$. Chứng minh rằng
 \begin{multicols}{2}
@@ -325,3 +329,22 @@ Vì $(m_i)_{i \in I}$ là một phân hoạch của $B$, với mọi $a \in A$, 
 \end{equation*}
 
 Kết hợp các kết quả đã có, hiển nhiên có được điều phải chứng minh.
+
+\exercise Cho tập hợp $x$ và $A$ là ánh xạ từ $I$ đến $\mathfrak{P}(x)$. Gọi $B$ và $C$ đồng thời là ánh xạ với cùng tập nguồn tập nguồn và tập đích với $A$. Biết rằng, $
+   \forall i \in I, \begin{cases}
+      B_i \subseteq A_i \\
+      C_i \subseteq A_i
+   \end{cases}
+$. Chứng minh rằng 
+\begin{multicols}{2}
+   \begin{enumerate}
+      \item $\prod_{i \in I}B_i \subseteq \prod_{i \in I}A_i$;
+      \item $\prod_{i \in I}(B_i \cap C_i) = \left(\prod_{i \in I}B_i\right) \cap \left(\prod_{i \in I}C_i\right)$.
+   \end{enumerate}
+\end{multicols}
+
+\solution 
+
+\resetSubexercise Xét $b$ bất kì thuộc $\prod_{i \in I}B_i$. Từ định nghĩa tích Đề-các, có được $\forall i \in I, b(i) \in B_i$. Mà, từ giả thiết, $\forall i \in I, B_i \subseteq A_i$, nên $\forall i \in I, b(i) \in A_i$. Do đó, $b \in \prod_{i \in I}A_i$. Qua đó, chúng ta có được $\prod_{i \in I}B_i \subseteq \prod_{i \in I}A_i$, tức điều phải chứng minh.
+
+\stepSubexercise
