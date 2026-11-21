@@ -1253,6 +1253,44 @@ Từ các kết quả đã chứng minh từ trước, chúng ta có
    \item $h$ toàn ánh nếu và chỉ nếu $(E \setminus A) \cap B = \varnothing$, tức là $B \subseteq A$.
 \end{itemize}
 
+\exercise Cho một tập hợp $E$ và $A$ và $B$ là hai tập hợp được lấy từ $\mathfrak{P}(E)$. Định nghĩa ánh xạ $$\begin{array}{rcl}
+   f: \mathfrak{P}(E) &\to &\mathfrak{P}(E) \\
+   x &\mapsto &(A \cap x) \cup (B \cap (E \setminus x))
+\end{array}.$$ Tìm tất cả các giá trị của $x \in \mathfrak{P}(E)$ để có $f(x) = \varnothing$.
+
+\solution 
+
+Giả sử tồn tại $x$ để $f(x) = \varnothing$. Khi đó, 
+\begin{equation*}
+   (A \cap x) \cup (B \cap (E \setminus x)) = \varnothing.
+\end{equation*}
+Theo tính chất của phép hợp, có $\begin{cases}
+   A \cap x \subseteq \varnothing \\
+   B \cap (E \setminus x) \subseteq \varnothing
+\end{cases}$. Từ đó, sử dụng tính chất của tập rỗng, dễ thấy được $\begin{cases}
+   A \cap x = \varnothing \\
+   B \cap (E \setminus x) = \varnothing
+\end{cases}$. Biến đổi từng bộ phận, từ $A \cap x = \varnothing$, tức là $A$ và $x$ không có phần tử chung, mọi phần tử trong $x$ đều không thuộc $A$, mà $x \subseteq E$ nên $x \subseteq E \setminus A$. Từ $B \cap (E \setminus x) = \varnothing$, không có phần tử chung giữa $B$ và $E \setminus x$. Nhận thấy rằng $B \subseteq E$, nên để $B \cap (E \setminus x) = \varnothing$ thì mọi phần tử trong $B$ cũng phải nằm trong $x$, dẫn đến $B \subseteq x$. Một hệ quả chúng ta có thể suy ra được là $B \subseteq E \setminus A$. 
+
+Xét hai trường hợp. Trường hợp \coloringCrimson{$A \cap B \neq \varnothing$}, khi đó có phần tử $e$ nằm trong cả $A$ và $B$, dẫn đến $e \in B \land e \notin E \setminus A$. Từ đó, $B \nsubseteq E \setminus A$, sinh ra mâu thuẫn với hệ quả trước đó.
+
+Trong trường hợp còn lại --- \coloringDodgerblue{$A \cap B = \varnothing$} ---, khi đó, mọi phần tử thuộc $B$ thì không thuộc $A$, cho nên $B \subseteq E \setminus A$ xảy ra là tất yếu. Chúng ta có mối quan hệ kéo theo \begin{equation*}
+   f(x) = A \cap B = \varnothing \implies B \subseteq x \land x \subseteq E \setminus A.
+\end{equation*}
+
+Bây giờ, chúng ta sẽ chứng minh rằng $B \subseteq x \land x \subseteq E \setminus A$ suy ra được $f(x) = \varnothing$ trong trường hợp $A \cap B = \varnothing$. Thật vậy, từ $B \subseteq x$, chúng ta có $\forall b \in B, b \in x$, dẫn đến $\forall b \in B, b \notin E \setminus x$, suy ra $B \cap (E \setminus x) = \varnothing$. Thêm vào đó, $x \subseteq E \setminus A$ dẫn đến $\forall y \in x, y \notin A$, dễ dàng kéo theo được $A \cap x = \varnothing$. Từ đó,
+\begin{equation*}
+   f(x) = (A \cap x) \cup (B \cap (E \setminus x)) = \varnothing \cup \varnothing = \varnothing.
+\end{equation*}
+
+Bài toán đã có thể kết thúc ở đó, nhưng chúng ta hãy đi tìm một cách viết tường minh cho $x$. Vì $B \subseteq x$ và $x \subseteq E \setminus A$, tồn tại $C \in \mathfrak{P}(E \setminus A)$ sao cho $x = B \cup C$. Nhìn theo hướng ngược lại, giả thiết rằng $x$ có thể được viết dưới dạng $B \cup C$ với $C \in \mathfrak{P}(E \setminus A)$. Có $B \cup C \supseteq B$ nên $x \supseteq B$. Vì $B \subseteq E \setminus A \land C \subseteq E \setminus A$, $x \subseteq E \setminus A$. Từ tính chất vừa chứng minh, $f(x) = \varnothing$.
+
+Kết luận:
+\begin{itemize}
+   \item Khi $A \cap B \neq \varnothing$, không tồn tại $x$ thỏa mãn yêu cầu đề bài.
+   \item Khi $A \cap B = \varnothing$, mọi $x$ thỏa mãn là các tập có dạng $B \cup C$ với $C \in \mathfrak{P}(E \setminus A)$.
+\end{itemize}
+
 \exercise Gọi $\sigma$ là một hoán vị của tập $A$ khác rỗng. Một tập con $B$ của $A$ được gọi là $\defMath{\sigma}$\defText{-bất biến} nếu và chỉ nếu $\Imf(\sigma|_B) = B$. Với $a \in A$, đặt \begin{equation*}
    O_a = \bigcap\left\{b \in \mathfrak{P}(A) \mid a \in b \land b \text{~là $\sigma$-bất biến}\right\}.
 \end{equation*}
