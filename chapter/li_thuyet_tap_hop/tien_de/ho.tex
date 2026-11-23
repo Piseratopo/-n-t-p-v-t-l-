@@ -1,9 +1,9 @@
 \section{Họ}
 
-Cho một tập hợp $x$. \defText{Họ phần tử} của $x$ (gọi tắt là \defText{họ}) là một ánh xạ bất kì có tập dích là $x$. Nếu ánh xạ này là $\begin{array}[t]{rcl}  
+Cho một tập hợp $x$. \defText{Họ phần tử} của $x$ (gọi tắt là \defText{họ}) là một ánh xạ bất kì có tập đích là $x$. Nếu ánh xạ này là $\begin{array}[t]{rcl}  
 f: I & \to & x\\       
    a & \mapsto & f(a) 
-\end{array}$ thì chúng ta kí hiệu họ phần tử này là $\defMath{(f_i)_{i \in I}}$, và tập nguồn $I$ được gọi là \defText{tập chỉ số} của họ phần tử đó. Nếu $J$ là một tập con của $I$, chúng ta có thể xác định ra một \defText{họ con} thông qua ánh xạ thu hẹp $f|_J$. 
+\end{array}$ thì chúng ta kí hiệu họ phần tử này là $\defMath{(f_i)_{i \in I}}$, và tập nguồn $I$ được gọi là \defText{tập chỉ số} của họ phần tử đó. Ứng với một $i \in I$ là một giá trị $f(i) \in x$, khi này $i$ được gọi là \defText{chỉ số} hoặc \defText{nhãn}, $f(i)$ còn được kí hiệu là $f_i$. Nếu $J$ là một tập con của $I$, chúng ta có thể xác định ra một \defText{họ con} thông qua ánh xạ thu hẹp $f|_J$. 
 
 Xét một trường hợp khi $I$ là tập con của $A$, gọi $j$ là đơn ánh chính tắc từ $I$ đến $A$. Khi đó, chúng ta có thể xác định được họ $(j_i)_{i \in I}$. Để ý rằng,
 \begin{equation*}
@@ -25,17 +25,22 @@ Như thế, theo định nghĩa này, với mọi $y \in x$, chúng ta có khẳ
       \item $y \in \bigcap_{i \in I}f_i \iff \forall i \in I, y \in f_i$.
    \end{itemize}
 \end{multicols}
-Ngoài ra, nếu xét tập chỉ số $I$ là một tập rỗng, thì chúng ta có $i \in I$ luôn sai với mọi $i$, do đó 
-\begin{multicols}{2}
-   \begin{itemize}
-      \item $\bigcup_{i \in \varnothing}f_i = \varnothing$;
-      \item $\bigcap_{i \in \varnothing}f_i = x$.
-   \end{itemize}
-\end{multicols}
+\noindent Ngoài ra, nếu xét tập chỉ số $I$ là một tập rỗng, thì chúng ta có $i \in I$ luôn sai với mọi $i$, vì thế 
+\begin{center}
+   $\defMath{\bigcup_{i \in \varnothing}f_i = \varnothing}$ và $\defMath{\bigcap_{i \in \varnothing}f_i = x}$.
+\end{center}
 
 Gọi $F = \bigcup_{i \in I}f_i$. Chúng ta gọi \defText{tích Đề-các} của họ $(f_i)_{i \in I}$ là tập hợp
 $$
 \defMath{\prod_{i \in I}f_i = \left\{g \in F^I \mid \forall i \in I, g(i) \in f_i\right\}}.
+$$
+Dễ thấy, nếu tồn tại $j \in I$ để $f_j = \varnothing$, không tồn tại $g$ nào để $\forall i \in I, g(i) \in f_i$ do $g(j) \notin f_j$. Vì vậy, 
+\begin{equation*}
+   \defMath{\exists i \in I, f_i = \varnothing \implies \prod_{i \in I}f_i = \varnothing}.
+\end{equation*}
+
+Giả sử rằng $I$ là một tập rỗng, ánh xạ duy nhất tồn tại từ $I$ đến $F$ là ánh xạ $\varnothing$. Và vì $I$ rỗng, luôn có $i \in I \implies \varnothing(i) \in f_i$. Cho nên, cần phải có $$
+   \defMath{\prod_{i = \varnothing} = \{\varnothing\}}.
 $$
 
 \exercise Cho tập hợp $x$. Cho $A$ là một ánh xạ từ $I$ đến $\mathfrak{P}(x)$. Giả thiết rằng tồn tại $L$ và một ánh xạ $l: L \to \mathfrak{P}(I)$ sao cho $I = \bigcup_{\lambda \in L}l_\lambda$. Chứng minh rằng, khi đó,
@@ -330,6 +335,55 @@ Vì $(m_i)_{i \in I}$ là một phân hoạch của $B$, với mọi $a \in A$, 
 
 Kết hợp các kết quả đã có, hiển nhiên có được điều phải chứng minh.
 
+\exercise[ex:li_thuyet_tap_hop:tien_de:ho:liet_ke] Gọi $0$, $1$, $2$ là các tập hợp xác định từ trước. Đặt $I = \{0; 1; 2\}$. Xây dựng ánh xạ $f$ từ $I$ vào $A = \left\{a; b; \xNom; \alpha; \beta; \gamma\right\}$ dựa theo bảng sau:
+\begin{table}[H]
+   \centering
+   \caption{Định nghĩa ánh xạ $f$ trong bài \ref{ex:li_thuyet_tap_hop:tien_de:ho:liet_ke}}
+   \begin{tblr}{
+      colspec = {c c c c},
+      hlines,
+      vlines,
+   }
+      $i$    & $0$        & $1$     & $2$ \\
+      $f(i)$ & $\{a; b\}$ & $\left\{\xNom\right\}$ & $\{\alpha; \beta; \gamma\}$ \\
+   \end{tblr}
+\end{table}
+\noindent Xác định các phần tử của $(f_i)_{i \in I}$ và $\prod_{i \in I} f_i$.
+
+\solution[ex:li_thuyet_tap_hop:tien_de:ho:liet_ke] 
+
+Trước hết, hãy xét các phần tử của họ $(f_i)_{i \in I}$. Theo định nghĩa họ tập hợp, $(f_i)_{i \in I}$ là một cách viết khác của ánh xạ $f$, cho nên các phần tử của $(f_i)_{i \in I}$ là $(0; \{a; b\})$, $\left(1; \left\{\xNom\right\}\right)$ và $(2; \{\alpha; \beta; \gamma\})$. Vì vậy, \begin{equation*}
+   (f_i)_{i \in I} = \left\{(0; \{a; b\}); \left(1; \left\{\xNom\right\}\right); (2; \{\alpha; \beta; \gamma\})\right\}.
+\end{equation*}
+
+Sau đó, hãy xác định các phần tử của tích $\prod_{i \in I} f_i$. Nhận thấy rằng $A = \bigcup_{i \in I}f_i$. Nhắc lại định nghĩa, \(
+   \prod_{i \in I} f_i = \{g \in A^I \mid \forall i \in I,\, g(i) \in f_i\}
+\), tức là, mỗi ánh xạ $g: I \to A$ đều phải thỏa mãn $\begin{cases}
+   g(0) \in \{a; b\} \\
+   g(1) \in \left\{\xNom\right\} \\
+   g(2) \in \{\alpha; \beta; \gamma\}
+\end{cases}$. 
+Qua đó, chúng ta có những ánh xạ từ $g_1$ đến $g_6$ khả thi được liệt kê trong bảng \ref{tab:li_thuyet_tap_hop:tien_de:ho:bang_liet_ke}.
+
+\begin{table}[H]
+   \centering
+   \caption{Định nghĩa các ánh xạ thuộc tích Đề-các $\prod_{i \in I} f_i$.}
+   \label{tab:li_thuyet_tap_hop:tien_de:ho:bang_liet_ke}
+   \begin{tblr}{
+      colspec = {c c c c},
+      hlines,
+      vlines,
+   }
+      Ánh xạ & $0$ & $1$     & $2$ \\
+      $g_1$  & $a$ & $\xNom$ & $\alpha$ \\
+      $g_2$  & $a$ & $\xNom$ & $\beta$  \\
+      $g_3$  & $a$ & $\xNom$ & $\gamma$ \\
+      $g_4$  & $b$ & $\xNom$ & $\alpha$ \\
+      $g_5$  & $b$ & $\xNom$ & $\beta$  \\
+      $g_6$  & $b$ & $\xNom$ & $\gamma$ \\
+   \end{tblr}
+\end{table}
+
 \exercise Cho tập hợp $x$ và $A$ là ánh xạ từ $I$ đến $\mathfrak{P}(x)$. Gọi $B$ và $C$ đồng thời là ánh xạ với cùng tập nguồn tập nguồn và tập đích với $A$. Biết rằng, $
    \forall i \in I, \begin{cases}
       B_i \subseteq A_i \\
@@ -339,17 +393,15 @@ $. Chứng minh rằng
 \begin{multicols}{2}
    \begin{enumerate}
       \item $\prod_{i \in I}B_i \subseteq \prod_{i \in I}A_i$;
-      \item $\prod_{i \in I}(B_i \cap C_i) = \left(\prod_{i \in I}B_i\right) \cap \left(\prod_{i \in I}C_i\right)$.
+      \item $\prod_{i \in I}(B_i \cap C_i) = \left(\prod_{i \in I}B_i\right) \cap \left(\prod_{i \in I}C_i\right)$;
+      \item $\prod_{i \in I}(B_i \cup C_i) \supseteq \left(\prod_{i \in I}B_i\right) \cup \left(\prod_{i \in I}C_i\right)$;
+      \item $I \neq \varnothing \\ \implies \prod_{i \in I}(B_i \setminus C_i) \subseteq \left(\prod_{i \in I}B_i\right) \setminus \left(\prod_{i \in I}C_i\right)$.
    \end{enumerate}
 \end{multicols}
 
 \solution 
 
 \resetSubexercise Xét $b$ bất kì thuộc $\prod_{i \in I}B_i$. Từ định nghĩa tích Đề-các, có được $\forall i \in I, b(i) \in B_i$. Mà, từ giả thiết, $\forall i \in I, B_i \subseteq A_i$, nên $\forall i \in I, b(i) \in A_i$. Do đó, $b \in \prod_{i \in I}A_i$. Qua đó, chúng ta có được $\prod_{i \in I}B_i \subseteq \prod_{i \in I}A_i$, tức điều phải chứng minh.
-
-
-
-
 
 \stepSubexercise Với mọi $i \in I$, $B_i$ và $C_i$ đều xác định duy nhất. Cho nên, tồn tại một và chỉ một $B_i \cap C_i$ ứng với mỗi $i$. Vì thế, $\left(B_i \cap C_i\right)_{i \in I}$ được định nghĩa tốt. 
 
@@ -362,8 +414,37 @@ Với mọi $f$ thuộc $\left(\prod_{i \in I}B_i\right) \cap \left(\prod_{i \in
       \forall i \in I, f(i) \in C_i
    \end{cases}.
 \end{equation*}
-Sử dụng tính chất phân phối của lượng từ phổ quát với phép hội, suy ra được $\forall i \in I, \left( f(i) \in B_i \land f(i) \in C_i \right)$, dẫn đến $\forall i \in I, f(i) \in B_i \cap C_i$. Từ định nghĩa, có $f \in \prod_{i \in I}(B_i \cap C_i)$. Chúng ta đã khẳng định được $\begin{cases}
+Sử dụng tính chất phân phối của lượng từ phổ quát với phép hội, suy ra được $\forall i \in I, \left( f(i) \in B_i \land f(i) \in C_i \right)$, dẫn đến $\forall i \in I, f(i) \in B_i \cap C_i$. Từ định nghĩa, có $f \in \prod_{i \in I}(B_i \cap C_i)$. Chúng ta đã khẳng định được \begin{equation*}
    \left(\prod_{i \in I}B_i\right) \cap \left(\prod_{i \in I}C_i\right) \subseteq \prod_{i \in I}(B_i \cap C_i).
-\end{cases}$
+\end{equation*}
 
-Xét $g$ thuộc $\prod_{i \in I}(B_i \cap C_i)$ tùy ý. Từ định nghĩa tích Đề-các, có được $\forall i \in I, g \in B_i \cap C_i$, hay $\forall i \in I, \left(g \in B_i \land g \in C_i\right)$. Chiều ngược lại của tính chất phân phối vừa đề cập cũng đúng
+Xét $g$ thuộc $\prod_{i \in I}(B_i \cap C_i)$ tùy ý. Từ định nghĩa tích Đề-các, có được $\forall i \in I, g(i) \in B_i \cap C_i$, hay $\forall i \in I, \left(g(i) \in B_i \land g \in C_i\right)$. Chiều ngược lại của tính chất phân phối vừa đề cập cũng đúng, cho nên có được $\begin{cases}
+   \forall i \in I, g(i) \in B_i \\
+   \forall i \in I, g(i) \in C_i
+\end{cases}$. Tiếp tục áp dụng định nghĩa của tích Đề-các một lần nữa, có được $g \in \prod_{i \in I}B_i \land g \in \prod_{i \in I}C_i$, đồng nghĩa với $g \in \left(\prod_{i \in I}B_i\right) \cap \left(\prod_{i \in I}C_i\right)$. Vì vậy, 
+\begin{equation*}
+   \prod_{i \in I}(B_i \cap C_i) \subseteq \left(\prod_{i \in I}B_i\right) \cap \left(\prod_{i \in I}C_i\right).
+\end{equation*}
+
+Từ đó, có ngay được $\prod_{i \in I}(B_i \cap C_i) = \left(\prod_{i \in I}B_i\right) \cap \left(\prod_{i \in I}C_i\right)$. Điều phải chứng minh.
+
+\stepSubexercise Với mọi $i \in I$, $B_i$ và $C_i$ đều xác định duy nhất. Cho nên, tồn tại một và chỉ một $B_i \cup C_i$ ứng với mỗi $i$. Vì thế, $\left(B_i \cup C_i\right)_{i \in I}$ được định nghĩa tốt. 
+
+Với mọi phần tử $b$ thuộc $\left(\prod_{i \in I}B_i\right) \cup \left(\prod_{i \in I}C_i\right)$, chúng ta có $
+   \left[\begin{aligned}
+      \forall i \in I, b(i) \in B_i \\
+      \forall i \in I, b(i) \in C_i
+   \end{aligned}\right.
+$. Cả hai đều suy ra khả năng đều suy ra được $\forall i \in I, \left(b(i) \in B_i \cup b(i) \in C_i\right)$, hay $\forall i \in I, b(i) \in B_i \cup C_i$. Do đó, \begin{equation*}
+   \forall b \in \left(\prod_{i \in I}B_i\right) \cup \left(\prod_{i \in I}C_i\right), b \in \prod_{i \in I}\left(B_i \cup C_i\right).
+\end{equation*} 
+
+Vì vậy, $\left(\prod_{i \in I}B_i\right) \cup \left(\prod_{i \in I}C_i\right) \subseteq \prod_{i \in I}\left(B_i \cup C_i\right)$. Qua đó, có được điều phải chứng minh.
+
+\stepSubexercise Tương tự như các phần trước, chúng ta có thể khẳng định $\left(B_i \setminus C_i\right)_{i \in I}$ có nghĩa. Dưới điều kiện $I \neq \varnothing$, gọi $b \in \prod_{i \in I}\left(B_i \setminus C_i\right)$. Khi đó, $\forall i \in I, \left(b(i) \in B_i \land b \notin C_i\right)$. Tính chất phân phối quen thuộc cho chúng ta $\forall i \in I, b(i) \in B_i \land \forall i \in I, b(i) \notin C_i$. Vì $I$ không phải là tập hợp rỗng, chúng ta có thể gọi ra phần tử $j$ từ $I$ sao cho $b(j) \notin C(j)$ để có $\overline{\forall i \in I, b(i) \in C_i}$. Từ đó, có $\begin{cases}
+   \forall i \in I, b(i) \in B_i \\
+   \overline{\forall i \in I, b(i) \in C_i}
+\end{cases}$, đồng nhất với $\begin{cases}
+   b \in \prod_{i = I}B_i \\
+   b \notin \prod_{i = I}C_i
+\end{cases}$. Suy ra, $b \in \left(\prod_{i = I}B_i\right) \setminus \left(\prod_{i = I}C_i\right)$. Hiển nhiên rằng lập luận này kéo theo $\prod_{i \in I}\left(B_i \setminus C_i\right) \subseteq \left(\prod_{i = I}B_i\right) \setminus \left(\prod_{i = I}C_i\right)$ khi $I \neq \varnothing$. Điều phải chứng minh.
