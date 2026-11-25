@@ -363,7 +363,7 @@ Sau đó, hãy xác định các phần tử của tích $\prod_{i \in I} f_i$. 
    g(1) \in \left\{\xNom\right\} \\
    g(2) \in \{\alpha; \beta; \gamma\}
 \end{cases}$. 
-Qua đó, chúng ta có những ánh xạ từ $g_1$ đến $g_6$ khả thi được liệt kê trong bảng \ref{tab:li_thuyet_tap_hop:tien_de:ho:bang_liet_ke}.
+Sử dụng quy tắc chia trường hợp, chúng ta dễ dàng có những ánh xạ từ $g_1$ đến $g_6$ khả thi được liệt kê trong bảng \ref{tab:li_thuyet_tap_hop:tien_de:ho:bang_liet_ke}.
 
 \begin{table}[H]
    \centering
@@ -384,7 +384,18 @@ Qua đó, chúng ta có những ánh xạ từ $g_1$ đến $g_6$ khả thi đư
    \end{tblr}
 \end{table}
 
-Chúng ta sẽ khẳng định rằng tất cả ánh xạ thỏa mãn thì là một trong những ánh xạ kể trên. 
+\noindent Kí hiệu dưới dạng tập hợp thông thường, chúng ta có \begin{equation*}
+   \begin{aligned}
+       \prod_{i = I}f_i = \left\{
+	       \big\{(0; a); \left(1; \xNom\right); (2; \alpha)\big\};
+	       \big\{(0; a); \left(1; \xNom\right); (2; \beta)\big\};
+	       \big\{(0; a); \left(1; \xNom\right); (2; \gamma)\big\}; \\
+	       \big\{(0; b); \left(1; \xNom\right); (2; \alpha)\big\};
+	       \big\{(0; b); \left(1; \xNom\right); (2; \beta)\big\};
+	       \big\{(0; b); \left(1; \xNom\right); (2; \gamma)\big\}
+       \right\}.
+   \end{aligned}
+\end{equation*}
 
 \exercise Cho tập hợp $x$ và $A$ là ánh xạ từ $I$ đến $\mathfrak{P}(x)$. Gọi $B$ và $C$ đồng thời là ánh xạ với cùng tập nguồn tập nguồn và tập đích với $A$. Biết rằng, $
    \forall i \in I, \begin{cases}
@@ -450,3 +461,13 @@ Vì vậy, $\left(\prod_{i \in I}B_i\right) \cup \left(\prod_{i \in I}C_i\right)
    b \in \prod_{i = I}B_i \\
    b \notin \prod_{i = I}C_i
 \end{cases}$. Suy ra, $b \in \left(\prod_{i = I}B_i\right) \setminus \left(\prod_{i = I}C_i\right)$. Hiển nhiên rằng lập luận này kéo theo $\prod_{i \in I}\left(B_i \setminus C_i\right) \subseteq \left(\prod_{i = I}B_i\right) \setminus \left(\prod_{i = I}C_i\right)$ khi $I \neq \varnothing$. Điều phải chứng minh.
+
+\exercise Cho $K$, $L$, $X$ là các tập hợp. Đặt $I$ là một ánh xạ từ $L$ vào $K$, $f$ là ánh xạ từ $K$ vào $X$. Chứng minh rằng 
+\begin{enumerate}
+   \item $\bigcup_{l \in L} \left(\bigcap_{i \in I_l}f_i\right) = \bigcap_{j \in \prod_{l \in L}I_l} \left(\bigcup_{l \in L}f_{I_l}\right)$;
+   \item $\bigcap_{l \in L} \left(\bigcup_{i \in I_l}f_i\right) = \bigcup_{j \in \prod_{l \in L}I_l} \left(\bigcap_{l \in L}f_{I_l}\right)$.
+\end{enumerate}
+
+\solution
+
+\resetSubexercise 
