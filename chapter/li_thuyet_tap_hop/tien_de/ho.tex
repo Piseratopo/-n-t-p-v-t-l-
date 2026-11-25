@@ -384,18 +384,21 @@ Sử dụng quy tắc chia trường hợp, chúng ta dễ dàng có những án
    \end{tblr}
 \end{table}
 
-\noindent Kí hiệu dưới dạng tập hợp thông thường, chúng ta có \begin{equation*}
+\noindent Kí hiệu dưới dạng tập hợp thông thường, chúng ta có
+\begin{align*}
+   \prod_{i \in I} f_i
+   = \left\{
    \begin{aligned}
-       \prod_{i = I}f_i = \left\{
-	       \big\{(0; a); \left(1; \xNom\right); (2; \alpha)\big\};
-	       \big\{(0; a); \left(1; \xNom\right); (2; \beta)\big\};
-	       \big\{(0; a); \left(1; \xNom\right); (2; \gamma)\big\}; \\
-	       \big\{(0; b); \left(1; \xNom\right); (2; \alpha)\big\};
-	       \big\{(0; b); \left(1; \xNom\right); (2; \beta)\big\};
-	       \big\{(0; b); \left(1; \xNom\right); (2; \gamma)\big\}
-       \right\}.
+      &\big\{(0; a); (1; \xNom); (2; \alpha)\big\}; 
+       \big\{(0; a); (1; \xNom); (2; \beta)\big\}; 
+       \big\{(0; a); (1; \xNom); (2; \gamma)\big\}; \\
+      &\big\{(0; b); (1; \xNom); (2; \alpha)\big\}; 
+       \big\{(0; b); (1; \xNom); (2; \beta)\big\};
+       \big\{(0; b); (1; \xNom); (2; \gamma)\big\}
    \end{aligned}
-\end{equation*}
+   \right\}.
+\end{align*}
+
 
 \exercise Cho tập hợp $x$ và $A$ là ánh xạ từ $I$ đến $\mathfrak{P}(x)$. Gọi $B$ và $C$ đồng thời là ánh xạ với cùng tập nguồn tập nguồn và tập đích với $A$. Biết rằng, $
    \forall i \in I, \begin{cases}
@@ -462,12 +465,14 @@ Vì vậy, $\left(\prod_{i \in I}B_i\right) \cup \left(\prod_{i \in I}C_i\right)
    b \notin \prod_{i = I}C_i
 \end{cases}$. Suy ra, $b \in \left(\prod_{i = I}B_i\right) \setminus \left(\prod_{i = I}C_i\right)$. Hiển nhiên rằng lập luận này kéo theo $\prod_{i \in I}\left(B_i \setminus C_i\right) \subseteq \left(\prod_{i = I}B_i\right) \setminus \left(\prod_{i = I}C_i\right)$ khi $I \neq \varnothing$. Điều phải chứng minh.
 
-\exercise Cho $K$, $L$, $X$ là các tập hợp. Đặt $I$ là một ánh xạ từ $L$ vào $K$, $f$ là ánh xạ từ $K$ vào $X$. Chứng minh rằng 
-\begin{enumerate}
-   \item $\bigcup_{l \in L} \left(\bigcap_{i \in I_l}f_i\right) = \bigcap_{j \in \prod_{l \in L}I_l} \left(\bigcup_{l \in L}f_{I_l}\right)$;
-   \item $\bigcap_{l \in L} \left(\bigcup_{i \in I_l}f_i\right) = \bigcup_{j \in \prod_{l \in L}I_l} \left(\bigcap_{l \in L}f_{I_l}\right)$.
-\end{enumerate}
-
+\exercise Cho $K$, $L$, $X$ là các tập hợp. Đặt $I$ là một ánh xạ từ $L$ vào $K$ và $f$ là một ánh xạ từ $K$ vào $X$. Chứng minh rằng
+\begin{multicols}{2}
+   \begin{enumerate}
+      \item $\displaystyle \bigcup_{l \in L} \left(\bigcap_{i \in I_l} f_i\right) = \bigcap_{j \in \prod_{l \in L} I_l} \left(\bigcup_{l \in L} f_{j_l}\right)$;
+      \item $\displaystyle \bigcap_{l \in L} \left(\bigcup_{i \in I_l} f_i\right) = \bigcup_{j \in \prod_{l \in L} I_l} \left(\bigcap_{l \in L} f_{j_l}\right)$.
+   \end{enumerate}
+\end{multicols}
+   
 \solution
 
-\resetSubexercise 
+\resetSubexercise Gọi $e$ là một phần tử thuộc $\bigcup_{l \in L} \left(\bigcap_{i \in I_l} f_i\right)$. Cần phải tồn tại $\lambda \in L$ sao cho $e \in \bigcap_{i \in I_{\lambda}} f_i$.
