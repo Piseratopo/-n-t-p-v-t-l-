@@ -465,21 +465,4 @@ Vì vậy, $\left(\prod_{i \in I}B(i)\right) \cup \left(\prod_{i \in I}C(i)\righ
    b \notin \prod_{i = I}C(i)
 \end{cases}$. Suy ra, $b \in \left(\prod_{i = I}B(i)\right) \setminus \left(\prod_{i = I}C(i)\right)$. Hiển nhiên rằng lập luận này kéo theo $\prod_{i \in I}\left(B(i) \setminus C(i)\right) \subseteq \left(\prod_{i = I}B(i)\right) \setminus \left(\prod_{i = I}C(i)\right)$ khi $I \neq \varnothing$. Điều phải chứng minh.
 
-\exercise Cho $K$, $L$, $X$ là các tập hợp. Đặt $I$ là một ánh xạ từ $L$ vào $K$ và $f$ là một ánh xạ từ $K$ vào $X$. Chứng minh rằng
-\begin{multicols}{2}
-   \begin{enumerate}
-      \item $\displaystyle \bigcup_{l \in L} \left(\bigcap_{i \in I(l)} f(i)\right) = \bigcap_{j \in \prod_{l \in L} I(l)} \left(\bigcup_{l \in L} f(j(l))\right)$;
-      \item $\displaystyle \bigcap_{l \in L} \left(\bigcup_{i \in I(l)} f(i)\right) = \bigcup_{j \in \prod_{l \in L} I(l)} \left(\bigcap_{l \in L} f(j(l))\right)$.
-   \end{enumerate}
-\end{multicols}
-   
-\solution
 
-\resetSubexercise Gọi $e$ là một phần tử thuộc $\bigcup_{l \in L} \left(\bigcap_{i \in I(l)} f(i)\right)$. Tồn tại $\lambda \in L$ sao cho $e \in \bigcap_{i \in I(\lambda)}f(i)$, dẫn đến \begin{equation}
-   \forall i \in I(\lambda), e \in f(i). 
-   \label{eq:li_thuyet_tap_hop:tien_de:ho:bt_giao_hop_tich_1}
-\end{equation}
-
-Xét $j$ tuỳ ý trong $\prod_{l \in L}I(l)$. Từ định nghĩa, cần phải có $\forall i \in L, j(i) \in I(i)$, kéo theo tồn tại $\alpha \in L$ sao cho $j(\alpha) \in I(\lambda)$. Sử dụng \eqref{eq:li_thuyet_tap_hop:tien_de:ho:bt_giao_hop_tich_1}, $e \in f(j(\alpha))$. Qua đó, chúng ta có được $e \in \bigcup_{l \in L}, f(j(l))$. Khẳng định này đúng với mọi $j$ ($j$ tùy ý), nên $e \in \bigcap_{j \in \prod_{l \in L}I_l} \left(\bigcup_{l \in L}f(j(i))\right)$. Kết luận được, $$
-   \bigcup_{l \in L}\left(\bigcap_{i \in I(i)}f(i)\right) = \bigcap_{j \in \prod_{l \in L}I_l} \left(\bigcup_{l \in L}f(j(i))\right). 
-$$

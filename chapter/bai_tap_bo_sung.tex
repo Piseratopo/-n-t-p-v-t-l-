@@ -78,5 +78,24 @@ Kí hiệu $B_1 = A_1 \setminus A_0, \dots, B_n = A_n \setminus A_{n-1}$. Chứn
    \end{equation*}
 \end{enumerate}
 
+\exercise Cho $K$, $L$, $X$ là các tập hợp. Đặt $I$ là một ánh xạ từ $L$ vào $\mathfrak{P}(K)$ và $f$ là một ánh xạ từ $K$ vào $\mathfrak{P}(X)$. Chứng minh rằng
+\begin{multicols}{2}
+   \begin{enumerate}
+      \item $\displaystyle \bigcup_{l \in L} \left(\bigcap_{i \in I(l)} f(i)\right) = \bigcap_{j \in \prod_{l \in L} I(l)} \left(\bigcup_{l \in L} f(j(l))\right)$;
+      \item $\displaystyle \bigcap_{l \in L} \left(\bigcup_{i \in I(l)} f(i)\right) = \bigcup_{j \in \prod_{l \in L} I(l)} \left(\bigcap_{l \in L} f(j(l))\right)$.
+   \end{enumerate}
+\end{multicols}
+   
+\solution
+
+\resetSubexercise Gọi $e$ là một phần tử thuộc $\bigcup_{l \in L} \left(\bigcap_{i \in I(l)} f(i)\right)$. Tồn tại $\lambda \in L$ sao cho $e \in \bigcap_{i \in I(\lambda)}f(i)$, dẫn đến \begin{equation}
+   \forall i \in I(\lambda), e \in f(i). 
+   \label{eq:li_thuyet_tap_hop:tien_de:ho:bt_giao_hop_tich_1}
+\end{equation}
+
+Xét $j$ tuỳ ý trong $\prod_{l \in L}I(l)$. Từ định nghĩa, cần phải có $\forall l \in L, j(l) \in I(l)$, kéo theo $j(\lambda) \in I(\lambda)$. Sử dụng \eqref{eq:li_thuyet_tap_hop:tien_de:ho:bt_giao_hop_tich_1}, $e \in f(j(\lambda))$. Qua đó, chúng ta có được $e \in \bigcup_{l \in L} f(j(l))$. Khẳng định này đúng với mọi $j$ ($j$ tùy ý), nên $e \in \bigcap_{j \in \prod_{l \in L}I(l)} \left(\bigcup_{l \in L}f(j(l))\right)$. Kết luận được, $$
+   \bigcup_{l \in L}\left(\bigcap_{i \in I(l)}f(i)\right) \subseteq \bigcap_{j \in \prod_{l \in L}I(l)} \left(\bigcup_{l \in L}f(j(l))\right). 
+$$
+
 \setcounter{exercise}{0}
 

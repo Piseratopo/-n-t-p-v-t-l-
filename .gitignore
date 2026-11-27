@@ -8,4 +8,7 @@ venv/
 *.bbl
 *.blg
 *.fdb_latexmk
+*.bcf
+*.xml
+*.synctex*
 *.pdf
