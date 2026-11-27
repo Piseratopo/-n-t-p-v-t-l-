@@ -36,7 +36,7 @@ Có nhiều cách để chọn $P$ và $s$. Một bộ có thứ tự $(P; s)$ x
 \end{itemize}
 Ví dụ: $s(124) = 125$, $s(239) = 240$, $s(999) = 1000$.
 
-Quay trở lại về vấn đề chọn lựa mô hình số tự nhiên, sử dụng tập $\mathcal{M}$ được xây dựng trước đó và đặt $s$ thỏa mãn $s(n) = n^+$ với mọi $n \in \mathcal{M}$, chúng ta có $(M; s)$ là một mô hình thỏa mãn. Thật vậy, đặt $0 = \varnothing$. Dễ thấy nếu $n \in \mathcal{M}$ thì $n^+ \in \mathcal{M}$ là duy nhất. Vì $\forall n \in \mathcal{M}, n \in s(n)$ nên không thể có $s(n) = \varnothing$. Do đó, $\forall n \in \mathcal{M}, s(n) \neq 0$.
+Quay trở lại về vấn đề chọn lựa mô hình số tự nhiên, sử dụng tập quy nạp nhỏ nhất $\mathcal{M}$ được xây dựng khi chúng ta nghiên cứu về tiên đề vô hạn và đặt $s$ thỏa mãn $s(n) = n^+$ với mọi $n \in \mathcal{M}$, chúng ta có $(M; s)$ là một mô hình thỏa mãn. Thật vậy, đặt $0 = \varnothing$. Dễ thấy nếu $n \in \mathcal{M}$ thì $n^+ \in \mathcal{M}$ là duy nhất. Vì $\forall n \in \mathcal{M}, n \in s(n)$ nên không thể có $s(n) = \varnothing$. Do đó, $\forall n \in \mathcal{M}, s(n) \neq 0$.
 
 Giả sử tồn tại $m$ và $n$ cùng thuộc $\mathcal{M}$ sao cho $s(m) = s(n)$ nhưng $m \neq n$. Theo định nghĩa, có $m \cup \{m\} = n \cup \{n\}$. Chúng ta có $m \in m^+$ nên $m \in n \cup \{n\}$, nhưng $m \notin \{n\}$ bởi $m \neq n$, nên $m \in n$. Với lập luận tương tự, $n \in m$. Tuy nhiên, điều này mâu thuẫn với tiên đề cơ sở. Do vậy, điều giả sử là sai, và vì vậy, \begin{equation*}
    \forall m \in \mathcal{M}, \forall n \in \mathcal{M}, (s(m) = s(n) \implies m = n).
