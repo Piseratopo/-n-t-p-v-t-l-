@@ -25,7 +25,7 @@ Như thế, theo định nghĩa này, với mọi $y \in x$, chúng ta có khẳ
       \item $y \in \bigcap_{i \in I}f(i) \iff \forall i \in I, y \in f(i)$.
    \end{itemize}
 \end{multicols}
-\noindent Ngoài ra, nếu xét tập chỉ số $I$ là một tập rỗng, thì chúng ta có $i \in I$ luôn sai với mọi $i$, vì thế 
+\noindent Ngoài ra, nếu xét tập chỉ số $I$ là một tập rỗng (với tập nền $x$ đã cố định), thì chúng ta có $i \in I$ luôn sai với mọi $i$, vì thế 
 \begin{center}
    $\defMath{\bigcup_{i \in \varnothing}f(i) = \varnothing}$ và $\defMath{\bigcap_{i \in \varnothing}f(i) = x}$.
 \end{center}
@@ -39,8 +39,8 @@ Dễ thấy, nếu tồn tại $j \in I$ để $f(j) = \varnothing$, không tồ
    \defMath{\exists i \in I, f(i) = \varnothing \implies \prod_{i \in I}f(i) = \varnothing}.
 \end{equation*}
 
-Giả sử rằng $I$ là một tập rỗng, ánh xạ duy nhất tồn tại từ $I$ đến $F$ là ánh xạ $\varnothing$. Và vì $I$ rỗng, luôn có $i \in I \implies \varnothing(i) \in f(i)$. Cho nên, cần phải có $$
-   \defMath{\prod_{i = \varnothing} = \{\varnothing\}}.
+Giả sử rằng $I$ là một tập rỗng, ánh xạ duy nhất tồn tại từ $I$ đến $F$ là ánh xạ $\varnothing$. Và vì $I$ rỗng, luôn có $\forall i, \left(i \in I \implies \varnothing(i) \in f(i)\right)$. Cho nên, cần phải có $$
+   \defMath{\prod_{i \in \varnothing} f(i) = \{\varnothing\}}.
 $$
 
 \exercise Cho tập hợp $x$. Cho $A$ là một ánh xạ từ $I$ đến $\mathfrak{P}(x)$. Giả thiết rằng tồn tại $L$ và một ánh xạ $l: L \to \mathfrak{P}(I)$ sao cho $I = \bigcup_{\lambda \in L}l(\lambda)$. Chứng minh rằng, khi đó,
@@ -53,7 +53,7 @@ $$
 
 \solution
 
-Với mọi $\lambda \in L$, $l(\lambda)$ được xác định duy nhất và là tập con của $I$, kéo theo việc $(A(i))_{i \in l(\lambda)}$. Do đó, $\bigcup_{i \in l(\lambda)}$ và $\bigcap_{i \in l(\lambda)}$ cũng được xác định duy nhất. Qua đó, có thể gọi các họ $\left(\bigcup_{i \in l(\lambda)}\right)_{\lambda \in L}$ và $\left(\bigcap_{i \in l(\lambda)}\right)_{\lambda \in L}$ và khẳng định rằng $\bigcup_{\lambda \in L} \left(\bigcup_{i \in l(\lambda)} A(i)\right)$ và $\bigcap_{\lambda \in L} \left(\bigcap_{i \in l(\lambda)} A(i)\right)$ có nghĩa.
+Với mọi $\lambda \in L$, $l(\lambda)$ được xác định duy nhất và là tập con của $I$, kéo theo việc $(A(i))_{i \in l(\lambda)}$ được xác định duy nhất và là họ phần tử của $\mathfrak{P}(x)$. Do đó, $\bigcup_{i \in l(\lambda)} A(i)$ và $\bigcap_{i \in l(\lambda)} A(i)$ cũng được xác định duy nhất và đều thuộc $\mathfrak{P}(x)$. Qua đó, có thể gọi các họ $\left(\bigcup_{i \in l(\lambda)} A(i)\right)_{\lambda \in L}$ và $\left(\bigcap_{i \in l(\lambda)} A(i)\right)_{\lambda \in L}$ của $\mathfrak{P}(x)$ và khẳng định rằng $\bigcup_{\lambda \in L} \left(\bigcup_{i \in l(\lambda)} A(i)\right)$ và $\bigcap_{\lambda \in L} \left(\bigcap_{i \in l(\lambda)} A(i)\right)$ có nghĩa.
 
 \resetSubexercise Xét $a \in \bigcup_{i \in I} A(i)$ tùy ý. Khi đó, tồn tại $j \in I$ sao cho $a \in A(j)$. Do $I = \bigcup_{\lambda \in L} l(\lambda)$, tồn tại $\lambda \in L$ để $j \in l(\lambda)$. Suy ra $a \in \bigcup_{i \in l(\lambda)} A(i)$, dẫn đến $a \in \bigcup_{\lambda \in L} \left(\bigcup_{i \in l(\lambda)} A(i)\right)$. Kết luận được \begin{equation*}
    \bigcup_{i \in I} A(i) \subseteq \bigcup_{\lambda \in L} \left(\bigcup_{i \in l(\lambda)} A(i)\right).
@@ -65,14 +65,14 @@ Xem xét quan hệ bao hàm ngược lại, lấy $a \in \bigcup_{\lambda \in L}
 
 Kết hợp hai chiều, chúng ta có $\bigcup_{i \in I} A(i) = \bigcup_{\lambda \in L} \left(\bigcup_{j \in l(\lambda)} A(j)\right)$. Điều phải chứng minh.
 
-\stepSubexercise Hãy cho rằng $a \in \bigcap_{i \in I} A(i)$. Khi đó, chúng ta có $\forall i \in I, a \in A(i)$.
-Vì với mọi $\lambda \in L$, $l(\lambda)$ là tập con của $I$, cho nên chúng ta có được $$\forall i \in l(\lambda), a \in A(i).$$
-Do đó, $\forall \lambda \in L, a \in \bigcap_{i \in l(\lambda)} A(j)$, hay $a \in \bigcap_{\lambda \in L}\left(\bigcap_{i \in l(\lambda)} A(i)\right)$. Qua đó, \begin{equation*}
+\stepSubexercise Hãy cho rằng $a \in \bigcap_{i \in I} A(i)$. Khi đó, chúng ta có $a \in x$ và $\forall i \in I, a \in A(i)$.
+Vì với mọi $\lambda \in L$, $l(\lambda)$ là tập con của $I$, cho nên $$\forall i \in l(\lambda), a \in A(i).$$
+Do đó, kết hợp với $a \in x$, chúng ta có $\forall \lambda \in L, a \in \bigcap_{i \in l(\lambda)} A(i)$, hay $a \in \bigcap_{\lambda \in L}\left(\bigcap_{i \in l(\lambda)} A(i)\right)$. Qua đó, \begin{equation*}
    \bigcap_{i \in I} A(i) \subseteq \bigcap_{\lambda \in L} \left(\bigcap_{i \in l(\lambda)} A(i)\right).
 \end{equation*}
 
-Giả sử rằng $a \in \bigcap_{\lambda \in L} \left(\bigcap_{i \in l(\lambda)} A(i)\right)$. Lấy $j \in I$ tùy ý, vì $I = \bigcup_{\lambda \in L} l(\lambda)$ nên tồn tại $\lambda \in L$ sao cho $j \in l(\lambda)$. Mặt khác, từ giả thiết, chúng ta có $a \in \bigcap_{i \in l(\lambda)} A(i)$, dẫn ra $a \in A(j)$. Tổng quát hóa lượng từ tồn tại, chúng ta có được $$\forall i \in I, a \in A(i).$$
-Qua đó, $a \in \bigcap_{i \in I}A(i)$, hay $$
+Giả sử rằng $a \in \bigcap_{\lambda \in L} \left(\bigcap_{i \in l(\lambda)} A(i)\right)$, khi đó có $a \in x$. Lấy $j \in I$ tùy ý. Một mặt, vì $I = \bigcup_{\lambda \in L} l(\lambda)$ nên tồn tại $\lambda \in L$ sao cho $j \in l(\lambda)$. Mặt khác, từ giả thiết, chúng ta có $a \in \bigcap_{i \in l(\lambda)} A(i)$, dẫn ra $a \in A(j)$. Tổng quát hóa lượng từ phổ quát, $\forall i \in I, a \in A(i).$
+Qua đó, kết hợp với $a \in x$, chúng ta có $a \in \bigcap_{i \in I}A(i)$, hay $$
    \bigcap_{\lambda \in L} \left(\bigcap_{i \in l(\lambda)} A(i)\right) \subseteq \bigcap_{i \in I} A(i).
 $$
 
@@ -84,10 +84,10 @@ Kết hợp hai chiều, dễ dàng có được điều phải chứng minh.
       \item $x \setminus \left(\bigcup_{i \in I}A(i)\right) = \bigcap_{i \in I}(x \setminus A(i))$;
       \item $x \setminus \left(\bigcap_{i \in I}A(i)\right) = \bigcup_{i \in I}(x \setminus A(i))$;
       \item $\left(\bigcap_{i \in I}A(i)\right) \cap M = \bigcap_{i \in I}\left(A(i) \cap M\right)$;
-      \item $I \neq \varnothing \implies \left(\bigcup_{i \in I}A(i)\right) \cup M = \bigcup_{i \in I}\left(A(i) \cup M\right)$;
+      \item $I \neq \varnothing \\ \implies \left(\bigcup_{i \in I}A(i)\right) \cup M = \bigcup_{i \in I}\left(A(i) \cup M\right)$;
       \item $\left(\bigcup_{i \in I}A(i)\right) \cap M = \bigcup_{i \in I}\left(A(i) \cap M\right)$;
       \item $\left(\bigcap_{i \in I}A(i)\right) \cup M = \bigcap_{i \in I}\left(A(i) \cup M\right)$;
-      \item $\forall i \in I, A(i) \subseteq B(i) \implies \begin{cases}
+      \item $\forall i \in I, A(i) \subseteq B(i) \\ \implies \begin{cases}
          \bigcup_{i \in I} A(i) \subseteq \bigcup_{i \in I}B(i) \\
          \bigcap_{i \in I} A(i) \subseteq \bigcap_{i \in I}B(i) \\
       \end{cases}$;
@@ -97,16 +97,16 @@ Kết hợp hai chiều, dễ dàng có được điều phải chứng minh.
 
 \solution 
 
-\resetSubexercise Với mỗi $i$ trong $I$, $A(i)$ được xác định duy nhất, dẫn đến $x \setminus A(i)$ cũng xác định duy nhất. Ngoài ra, có $\forall i \in I, x \setminus A(i) \subseteq x$ nên $\left(x \setminus A(i)\right)_{i \in I}$ là một họ phần tử của $x$.
+\resetSubexercise Với mỗi $i$ trong $I$, $A(i)$ được xác định duy nhất, dẫn đến $x \setminus A(i)$ cũng xác định duy nhất. Ngoài ra, có $\forall i \in I, x \setminus A(i) \subseteq x$ nên $\left(x \setminus A(i)\right)_{i \in I}$ là một họ phần tử của $\mathfrak{P}(x)$.
 
-Trong trường hợp $I = \varnothing$, có ngay $\bigcup_{i \in I}A(i) = \varnothing$ và $\bigcap_{i \in I}A(i) = x$. Vì $x \setminus \varnothing = x$ nên chúng ta có điều phải chứng minh trong trường hợp này. Còn nếu $I \neq \varnothing$, với mọi $e$, chúng ta có 
+Trong trường hợp $I = \varnothing$, có ngay $\bigcup_{i \in I}A(i) = \varnothing$ và $\bigcap_{i \in I}(x \setminus A(i)) = x$. Vì $x \setminus \varnothing = x$ nên chúng ta có điều phải chứng minh trong trường hợp này. Còn nếu $I \neq \varnothing$, với mọi $e$, chúng ta có 
 \begin{equation*}
    e \in x \setminus \left(\bigcup_{i \in I}A(i)\right) \iff e \in x \land e \notin \bigcup_{i \in I}A(i).
 \end{equation*}
 $e \in x \implies \forall i \in I, e \in x$ là hiển nhiên. Xét chiều ngược lại, giả sử $\forall i \in I, e \in x$. Do đang xét $I \neq \varnothing$, tồn tại $j \in I$, dẫn đến khi có $j \in I \implies e \in x$ từ cụ thể hóa lượng từ phổ quát, chúng ta suy ra được $e \in x$. Vì vậy, \begin{equation*}
    e \in x \iff \forall i \in I, e \in x.
 \end{equation*} 
-Ngoài ra, do $e \in x$, chúng ta cũng có 
+Ngoài ra, do $\forall i \in I, A(i) \subseteq x$, mệnh đề $e \in \bigcup_{i \in I}A(i) \iff \exists i \in I, e \in A(i)$ đúng với mọi $e$, nên chúng ta cũng có 
 \begin{align*}
    e \notin \bigcup_{i \in I}A(i) &\iff \overline{\exists i \in I, e \in A(i)}; \\
    e \notin \bigcup_{i \in I}A(i) &\iff \forall i \in I, e \notin A(i).
@@ -114,7 +114,7 @@ Ngoài ra, do $e \in x$, chúng ta cũng có
 
 Do đó, \begin{align*}
    e \in x \setminus \left(\bigcup_{i \in I}A(i)\right) &\iff \forall i \in I, e \in x \land \forall i \in I, e \notin A(i); \\
-   e \in x \setminus \left(\bigcup_{i \in I}A(i)\right) &\iff \forall i \in I, \left(e \in x \land e \notin A(i)\right) \equationexplanation{tính chất phân phối của lượng từ $\forall$ với phép $\land$}; \\
+   e \in x \setminus \left(\bigcup_{i \in I}A(i)\right) &\iff \forall i \in I, \left(e \in x \land e \notin A(i)\right) \equationexplanation{tính chất phân phối của lượng từ $\forall$ với $\land$}; \\
    e \in x \setminus \left(\bigcup_{i \in I}A(i)\right) &\iff \forall i \in I, e \in x \setminus A(i); \\
    e \in x \setminus \left(\bigcup_{i \in I}A(i)\right) &\iff e \in \bigcap_{i \in I} \left(x \setminus A(i)\right).
 \end{align*}
@@ -124,14 +124,14 @@ Vậy, $x \setminus \left(\bigcup_{i \in I}A(i)\right) = \bigcap_{i \in I} \left
 \stepSubexercise Với mọi $e$, \begin{equation*}
    e \in x \setminus \left(\bigcap_{i \in I}A(i)\right) \iff e \in x \land e \notin \bigcap_{i \in I}A(i).
 \end{equation*}
-Từ $e \in x$, có $e \notin \bigcap_{i \in I}A(i)$ khi và chỉ khi tồn tại $i \in I$ để $e \notin A(i)$. Với giá trị $i$ đó, $e \in x \land e \notin A(i)$ hay $e \in x \setminus A(i)$, cho nên \begin{equation*}
+Giả sử $e \in x \setminus \left(\bigcap_{i \in I}A(i)\right)$, khi đó $e \in x$ và $e \notin \bigcap_{i \in I}A(i)$. Từ $e \in x$, có $e \notin \bigcap_{i \in I}A(i)$ khi và chỉ khi tồn tại $i \in I$ để $e \notin A(i)$. Với giá trị $i$ đó, $e \in x \land e \notin A(i)$ hay $e \in x \setminus A(i)$, cho nên \begin{equation*}
    \exists i \in I, e \in x \setminus A(i),
 \end{equation*}
 có nghĩa là $e \in x \setminus \left(\bigcap_{i \in I}A(i)\right) \implies e \in \bigcup_{i \in I} \left(x \setminus A(i)\right)$. Ngược lại, nếu $e \in \bigcup_{i \in I} \left(x \setminus A(i)\right)$, theo định nghĩa hợp của họ phần tử, tồn tại $i \in I$ để $e \in x \setminus A(i)$. Suy ra, $e \in x \land e \notin A(i)$, dẫn đến $\overline{\forall i \in I, e \in A(i)}$. Vì thế, kéo theo được $e \in x \setminus \left(\bigcap_{i \in I}A(i)\right)$. 
 
 Từ lập luận hai chiều, $e \in x \setminus \left(\bigcap_{i \in I}A(i)\right) \iff e \in \bigcup_{i \in I} \left(x \setminus A(i)\right)$. Điều phải chứng minh.
 
-\stepSubexercise Với mỗi $i$ trong $I$, $A(i) \cap M$ là xác định duy nhất. Ngoài ra, có $\forall i \in I, A(i) \cap M \subseteq x$ nên $\left(A(i) \cap M\right)_{i \in I}$ là một họ phần tử của $x$.
+\stepSubexercise Với mỗi $i$ trong $I$, $A(i) \cap M$ là xác định duy nhất. Ngoài ra, có $\forall i \in I, A(i) \cap M \subseteq x$ nên $\left(A(i) \cap M\right)_{i \in I}$ là một họ phần tử của $\mathfrak{P}(x)$.
 
 Với mọi $e$, \begin{align*}
    e \in \left(\bigcap_{i \in I} A(i)\right) \cap M &\iff e \in \bigcap_{i \in I} A(i) \land e \in M; \\
@@ -141,7 +141,7 @@ Với mọi $e$, \begin{align*}
 \end{align*}
 Vì vậy, $\left(\bigcap_{i \in I} A(i)\right) \cap M = \bigcap_{i \in I} \left(A(i) \cap M\right)$. Điều phải chứng minh.
 
-\stepSubexercise Với mỗi $i$ trong $I$, chúng ta xác định duy nhất một tập hợp $A(i) \cup M$. Ngoài ra, $\forall i \in I, A(i) \cup M \subseteq x$ nên $\left(A(i) \cup M\right)_{i \in I}$ là một họ phần tử của $x$.
+\stepSubexercise Với mỗi $i$ trong $I$, chúng ta xác định duy nhất một tập hợp $A(i) \cup M$. Ngoài ra, $\forall i \in I, A(i) \cup M \subseteq x$ nên $\left(A(i) \cup M\right)_{i \in I}$ là một họ phần tử của $\mathfrak{P}(x)$.
 
 Các lập luận dưới đây đã giả thiết rằng $I \neq \varnothing$. Xét một $e \in \left(\bigcup_{i \in I}A(i)\right) \cup M$, điều này tương đương với $e \in \bigcup_{i \in I}A(i) \lor e \in M$. Nếu \coloringCrimson{$e \in M$}, do $I \neq \varnothing$ nên tồn tại $i \in I$ để xác định được $A(i)$, kéo theo $e \in A(i) \cup M$. Do đó, $e \in \bigcup_{i \in I} (A(i) \cup M)$. Còn nếu \coloringDodgerblue{$e \notin M$}, khi đó phải có $e \in \bigcup_{i \in I}A(i)$, có nghĩa là $\exists i \in I, e \in A(i)$. Với giá trị $i$ đó, cũng sẽ có $e \in A(i) \cup M$. Vì thế, $e \in \bigcup_{i \in I}(A(i) \cup M)$.
 Nhìn chung, có được 
@@ -149,53 +149,48 @@ Nhìn chung, có được
    \forall e \in \left(\bigcup_{i \in I}A(i)\right) \cup M, e \in \bigcup_{i \in I}(A(i) \cup M).
 \end{equation*}
 
-Ngược lại, giả sử $e \in \bigcup_{i \in I}(A(i) \cup M)$. Tồn tại $i \in I$ sao cho $e \in A(i) \cup M$. Khi này, $e \in A(i)$ hoặc $e \in M$. Nếu $e \in A(i)$ thì $e \in \bigcup_{i \in I}A(i)$. Do đó, luôn có $e$ thuộc $\bigcup_{i \in I}A(i) \cup M$. Vì vậy,
+Ngược lại, giả sử $e \in \bigcup_{i \in I}(A(i) \cup M)$. Tồn tại $i \in I$ sao cho $e \in A(i) \cup M$. Khi này, $e \in A(i)$ hoặc $e \in M$. Nếu $e \in A(i)$ thì $e \in \bigcup_{i \in I}A(i)$. Do đó, luôn có $e$ thuộc $\left(\bigcup_{i \in I}A(i)\right) \cup M$. Vì vậy,
 \begin{equation*}
-   \forall e \in \bigcup_{i \in I}(A(i) \cup M), e \in \bigcup_{i \in I}A(i) \cup M.
+   \forall e \in \bigcup_{i \in I}(A(i) \cup M), e \in \left(\bigcup_{i \in I}A(i)\right) \cup M.
 \end{equation*}
 
-Kết hợp lại, có $\forall e, \left(e \in \bigcup_{i \in I}(A(i) \cup M) \iff e \in \bigcup_{i \in I}A(i) \cup M\right)$ khi $I \neq \varnothing$, dẫn đến $I \neq \varnothing \implies \bigcup_{i \in I}(A(i) \cup M) = \bigcup_{i \in I}A(i) \cup M$. Điều phải chứng minh.
+Kết hợp lại, có $\forall e, \left(e \in \bigcup_{i \in I}(A(i) \cup M) \iff e \in \left(\bigcup_{i \in I}A(i)\right) \cup M\right)$ khi $I \neq \varnothing$, dẫn đến $I \neq \varnothing \implies \bigcup_{i \in I}(A(i) \cup M) = \left(\bigcup_{i \in I}A(i)\right) \cup M$. Điều phải chứng minh.
 
-\stepSubexercise Với mọi $e$,
-\begin{align*}
-   e \in \left(\bigcup_{i \in I}A(i)\right) \cap M &\iff e \in \left(\bigcup_{i \in I}A(i)\right) \land e \in M; \\
-   e \in \left(\bigcup_{i \in I}A(i)\right) \cap M &\iff \exists i \in I, e \in A(i) \land e \in M; \\
-   e \in \left(\bigcup_{i \in I}A(i)\right) \cap M &\iff j \in I \land e \in A(j) \land e \in M \equationexplanation{cụ thể hóa $\exists i$ bởi $j$}; \\
-   e \in \left(\bigcup_{i \in I}A(i)\right) \cap M &\iff \exists i, (i \in I \land e \in A(i) \land e \in M) \equationexplanation{tổng quát hóa}; \\
-   e \in \left(\bigcup_{i \in I}A(i)\right) \cap M &\iff \exists i \in I, e \in A(i) \cap M; \\
-   e \in \left(\bigcup_{i \in I}A(i)\right) \cap M &\iff e \in \bigcup_{i \in I}(A(i) \cap M).
-\end{align*}
+\stepSubexercise Với mọi $e$, nếu $e \in \left(\bigcup_{i \in I}A(i)\right) \cap M$, thì $e \in \bigcup_{i \in I}A(i)$ và $e \in M$. Theo định nghĩa hợp của họ, tồn tại $j \in I$ sao cho $e \in A(j)$. Kết hợp với $e \in M$, chúng ta có $e \in A(j) \cap M$, dẫn đến $\exists i \in I, e \in A(i) \cap M$, hay $e \in \bigcup_{i \in I}(A(i) \cap M)$.
+
+Ngược lại, nếu $e \in \bigcup_{i \in I}(A(i) \cap M)$, thì tồn tại $j \in I$ sao cho $e \in A(j) \cap M$, tức là $e \in A(j)$ và $e \in M$. Do $j \in I$ và $e \in A(j)$ nên $e \in \bigcup_{i \in I}A(i)$, kết hợp với $e \in M$ suy ra $e \in \left(\bigcup_{i \in I}A(i)\right) \cap M$.
+
 Vì thế, $\left(\bigcup_{i \in I}A(i)\right) \cap M = \bigcup_{i \in I}(A(i) \cap M)$. Điều phải chứng minh.
 
-\stepSubexercise Với mọi $e$,
+\stepSubexercise Vì $M \subseteq x$ nên với mọi $e$, chúng ta có $e \in M \iff e \in x \land e \in M$. Do đó, với mọi $e$,
 \begin{align*}
    e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff e \in \left(\bigcap_{i \in I} A(i)\right) \lor e \in M; \\
-   e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff \forall i \in I, e \in A(i) \lor e \in M; \\
-   e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff \forall i, (i \in I \implies e \in A(i)) \lor e \in M; \\
-   e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff \forall i , \left((i \in I \implies e \in A(i)) \lor e \in M\right) \equationexplanation{cụ thể hóa và tổng quát hóa $\forall i$}; \\
-   e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff \forall i , \left(i \in I \implies e \in A(i) \lor e \in M\right) \equationexplanation{$(P \implies Q) \lor R \iff (P \implies Q \lor R)$}; \\
-   e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff \forall i \in I, e \in A(i) \cup M; \\
-   e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff e \in \bigcup_{i \in I}(A(i) \cup M).
+   e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff \left(e \in x \land \forall i \in I, e \in A(i)\right) \lor \left(e \in x \land e \in M\right); \\
+   e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff e \in x \land \left(\forall i, (i \in I \implies e \in A(i)) \lor e \in M\right); \\
+   e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff e \in x \land \forall i , \left((i \in I \implies e \in A(i)) \lor e \in M\right) \equationexplanation{quy tắc chuyển đổi lượng từ}; \\
+   e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff e \in x \land \forall i , \left(i \in I \implies e \in A(i) \lor e \in M\right) \equationexplanation{$(P \implies Q) \lor R \iff (P \implies Q \lor R)$}; \\
+   e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff e \in x \land \forall i \in I, e \in A(i) \cup M; \\
+   e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff e \in \bigcap_{i \in I}(A(i) \cup M).
 \end{align*}
-Do vậy, $\left(\bigcap_{i \in I} A(i)\right) \cup M = \bigcup_{i \in I}(A(i) \cup M)$. Chúng ta có điều phải chứng minh.
+Do vậy, $\left(\bigcap_{i \in I} A(i)\right) \cup M = \bigcap_{i \in I}(A(i) \cup M)$. Chúng ta có điều phải chứng minh.
 
 \stepSubexercise Giả thiết rằng $\forall i \in I, A(i) \subseteq B(i)$. Với mọi $e$, nếu $e \in \bigcup_{i \in I}A(i)$, tồn tại $i \in I$ để $e \in A(i)$. Do $\forall i \in I, A(i) \subseteq B(i)$, với giá trị $i$ đó, $e \in B(i)$, dẫn đến $\exists i \in I, e \in B(i)$ hay $e \in \bigcup_{i \in I}B(i)$. Qua đó, $\bigcup_{i \in I}A(i) \subseteq \bigcup_{i \in I}B(i)$.
 
-Nếu $e \in \bigcap_{i \in I}A(i)$, $\forall i \in I, e \in A(i)$. Kết hợp với $\forall i \in I, A(i) \subseteq B(i)$, chúng ta có $\forall i \in I, e \in B(i)$, tức là $e \in \bigcap_{i \in I}B(i)$. Vì lí do đó, $\bigcap_{i \in I}A(i) \subseteq \bigcap_{i \in I}B(i)$.
+Nếu $e \in \bigcap_{i \in I}A(i)$, chúng ta có $e \in x$ và $\forall i \in I, e \in A(i)$. Kết hợp với $\forall i \in I, A(i) \subseteq B(i)$, có $e \in x$ và $\forall i \in I, e \in B(i)$, tức là $e \in \bigcap_{i \in I}B(i)$. Vì lí do đó, $\bigcap_{i \in I}A(i) \subseteq \bigcap_{i \in I}B(i)$.
 
 Tổng hợp lại, từ $\forall i \in I, A(i) \subseteq B(i)$, chúng ta suy ra được $\begin{cases}
    \bigcup_{i \in I} A(i) \subseteq \bigcup_{i \in I}B(i) \\
    \bigcap_{i \in I} A(i) \subseteq \bigcap_{i \in I}B(i) \\
 \end{cases}$, điều phải chứng minh.
 
-\stepSubexercise Với mọi $i \in I$, chúng ta xác định được duy nhất một $A(i)$ và $B(i)$. Do đó, $A(i) \setminus B(i)$ cũng xác định duy nhất. Ngoài ra, $\forall i \in I, A(i) \setminus B(i) \subseteq x$ nên $\left(A(i) \setminus B(i)\right)_{i \in I}$ là một họ phần tử của $x$.
+\stepSubexercise Với mọi $i \in I$, chúng ta xác định được duy nhất một $A(i)$ và $B(i)$. Do đó, $A(i) \setminus B(i)$ cũng xác định duy nhất. Ngoài ra, $\forall i \in I, A(i) \setminus B(i) \subseteq x$ nên $\left(A(i) \setminus B(i)\right)_{i \in I}$ là một họ phần tử của $\mathfrak{P}(x)$.
 
 Với mọi $e$, chúng ta có
 \begin{align*}
    e \in \bigcap_{i \in I}\left(A(i) \setminus B(i)\right) &\iff e \in x \land \forall i \in I, e \in A(i) \setminus B(i); \\
    e \in \bigcap_{i \in I}\left(A(i) \setminus B(i)\right) &\iff e \in x \land \forall i \in I, (e \in A(i) \land e \notin B(i)); \\
    e \in \bigcap_{i \in I}\left(A(i) \setminus B(i)\right) &\iff e \in x \land (\forall i \in I, e \in A(i)) \land (\forall i \in I, e \notin B(i));\\
-   e \in \bigcap_{i \in I}\left(A(i) \setminus B(i)\right) &\iff e \in x \land (\forall i \in I, e \in A(i)) \land \overline{\forall i \in I, e \in B(i)};\\
+   e \in \bigcap_{i \in I}\left(A(i) \setminus B(i)\right) &\iff e \in x \land (\forall i \in I, e \in A(i)) \land \overline{\exists i \in I, e \in B(i)};\\
    e \in \bigcap_{i \in I}\left(A(i) \setminus B(i)\right) &\iff e \in \bigcap_{i \in I}A(i) \land e  \notin \bigcup_{i \in I}B(i);\\
    e \in \bigcap_{i \in I}\left(A(i) \setminus B(i)\right) &\iff e  \in \left(\bigcap_{i \in I}A(i)\right) \setminus \left(\bigcup_{i \in I}B(i)\right).
 \end{align*}
@@ -264,60 +259,60 @@ Kết hợp lại, quan hệ đẳng giá đã được chứng minh. Từ đó,
    e \in \bigcap_{k \in K} D(k) &\iff e \in x \land \left(\forall i, \left(\neg i \in I \lor e \in A(i)\right) \lor \forall j, \left(\neg j \in J \lor e \in B(j)\right) \right) \\
    &\qquad\coloringCrimson{\left(\forall i, \forall j, (U(i) \lor V(j)) \iff \forall i, U(i) \lor \forall j, V(j)\right)}; \\
    e \in \bigcap_{k \in K} D(k) &\iff e \in x \land \forall i, \left(\neg i \in I \lor e \in A(i)\right) \lor e \in x \land \forall j, \left(\neg j \in J \lor e \in B(j)\right); \\
-   e \in \bigcap_{k \in K} D(k) &\iff e \in \bigcap_{i \in I} A(i) \land e \in \bigcap_{j \in J} B(j); \\
-   e \in \bigcap_{k \in K} D(k) &\iff e \in \left(\bigcap_{i \in I} A(i)\right) \cap \left(\bigcap_{j \in J} B(j)\right).
+   e \in \bigcap_{k \in K} D(k) &\iff e \in \bigcap_{i \in I} A(i) \lor e \in \bigcap_{j \in J} B(j); \\
+   e \in \bigcap_{k \in K} D(k) &\iff e \in \left(\bigcap_{i \in I} A(i)\right) \cup \left(\bigcap_{j \in J} B(j)\right).
 \end{align*}
-Qua đó, $\bigcap_{k \in K} D(k) = \left(\bigcap_{i \in I} A(i)\right) \cap \left(\bigcap_{j \in J} B(j)\right)$. Điều phải chứng minh.
+Qua đó, $\bigcap_{k \in K} D(k) = \left(\bigcap_{i \in I} A(i)\right) \cup \left(\bigcap_{j \in J} B(j)\right)$. Điều phải chứng minh.
 
-\exercise Cho $A$ và $B$ là hai tập hợp, $R$ là một quan hệ từ $A$ sang $B$. Với mọi họ $(m(i))_{i \in I}$ những tập con của $A$, chứng minh rằng $\Imf \left(R\middle|_{\bigcup_{i \in I}(m(i)) \times B} \right) = \bigcup_{i \in I} \left(\Imf(R|_{m(i) \times B})\right)$ và $\Imf \left(R\middle|_{\left(\bigcap_{i \in I}m(i)\right) \times B} \right) \subseteq \bigcap_{i \in I} \left(\Imf(R|_{m(i) \times B})\right)$.
+\exercise Cho $A$ và $B$ là hai tập hợp, $R$ là một quan hệ từ $A$ sang $B$. Với mọi họ $(m(i))_{i \in I}$ những tập con của $A$, chứng minh rằng $\Imf \left(R\middle|_{\left(\bigcup_{i \in I}m(i)\right) \times B} \right) = \bigcup_{i \in I} \left(\Imf(R|_{m(i) \times B})\right)$ và $\Imf \left(R\middle|_{\left(\bigcap_{i \in I}m(i)\right) \times B} \right) \subseteq \bigcap_{i \in I} \left(\Imf(R|_{m(i) \times B})\right)$.
 
 \solution
 
-Với mọi $i \in I$, chúng ta xác định được một và chỉ một $m(i)$. Vì thế, $\Imf(R|_{m(i) \times B})$ là duy nhất. Ngoài ra, $\Imf(R|_{m(i) \times B}) \subseteq B$, kéo theo xác định được họ $\left(\Imf(R|_{m(i) \times B})\right)_{i \in I}$ của $B$.
+Với mọi $i \in I$, chúng ta xác định được một và chỉ một $m(i)$. Vì thế, $\Imf(R|_{m(i) \times B})$ là duy nhất. Ngoài ra, $\Imf(R|_{m(i) \times B}) \subseteq B$, kéo theo xác định được họ $\left(\Imf(R|_{m(i) \times B})\right)_{i \in I}$ của $\mathfrak{P}(B)$.
 
 Xét $c$, giả sử $c \in \bigcup_{i \in I} \left(\Imf(R|_{m(i) \times B})\right)$. Có được rằng \begin{align*}
    &\exists i \in I, c \in \Imf(R|_{m(i) \times B}); \\
-   &\exists i \in I, \exists d \in m(i), d\;R\;c_i.
+   &\exists i \in I, \exists d \in m(i), d\;R\;c.
 \end{align*}
-Sử dụng cụ thể hóa lượng từ tồn tại, chúng ta có thể gọi $\mathfrak{i}$ và $\mathfrak{d}$ sao cho $\mathfrak{i} \in I \land \mathfrak{d} \in m(\mathfrak{i}) \land \mathfrak{d}\;R\;c_\mathfrak{i}$. Từ đó, hiển nhiên rằng
+Sử dụng cụ thể hóa lượng từ tồn tại, chúng ta có thể gọi $\mathfrak{i}$ và $\mathfrak{d}$ sao cho $\mathfrak{i} \in I \land \mathfrak{d} \in m(\mathfrak{i}) \land \mathfrak{d}\;R\;c$. Từ đó, hiển nhiên rằng
 \begin{align*}
-   &\exists i \in I, \mathfrak{d} \in m(i) \land \mathfrak{d}\;R\;c &\equationexplanation{tổng quát hóa $\mathfrak{i}$ thành $\exists i$}; \\
-   &\exists d, \left(\exists i \in I, d \in m(i) \land d\;R\;c\right) &\equationexplanation{tổng quát hóa $\mathfrak{d}$ thành $\exists d$}; \\
+   &\left(\exists i \in I, \mathfrak{d} \in m(i)\right) \land \mathfrak{d}\;R\;c &\equationexplanation{tổng quát hóa $\mathfrak{i}$ thành $\exists i$}; \\
+   &\exists d, \left(\left(\exists i \in I, d \in m(i)\right) \land d\;R\;c\right) &\equationexplanation{tổng quát hóa $\mathfrak{d}$ thành $\exists d$}; \\
    &\exists d \in \bigcup_{i \in I}m(i), d\;R\;c.
 \end{align*}
-Do đó, suy ra được $c \in \Imf\left(R \middle|_{\bigcup_{i \in I}(m(i)) \times B}\right)$.
+Do đó, suy ra được $c \in \Imf\left(R \middle|_{\left(\bigcup_{i \in I}m(i)\right) \times B}\right)$.
 
-Bây giờ, giả thiết rằng $c \in \Imf\left(R \middle|_{\bigcup_{i \in I}(m(i)) \times B}\right)$. Khi đó, \begin{align*}
+Bây giờ, giả thiết rằng $c \in \Imf\left(R \middle|_{\left(\bigcup_{i \in I}m(i)\right) \times B}\right)$. Khi đó, \begin{align*}
    &\exists d \in \bigcup_{i \in I}m(i), d\;R\;c; \\
    &\exists d, \left(d \in \bigcup_{i \in I}m(i) \land d\;R\;c\right); \\
-   &\exists d, \left(\exists i \in I, d \in m(i) \land d\;R\;c\right); \\
+   &\exists d, \left(\left(\exists i \in I, d \in m(i)\right) \land d\;R\;c\right); \\
    &\exists d, \exists i \in I, \left(d \in m(i) \land d\;R\;c\right) \equationexplanation{áp dụng liên tiếp cttt và tqtt}; \\
    &\exists d, \exists i \in I, c \in \Imf(R|_{m(i) \times B}).
 \end{align*}
-$d$ không xuất hiện trong $c \in \Imf(R|_{m(i) \times B})$ nên có khẳng định $\exists i \in I, c \in \Imf(R|_{m(i) \times B})$, dẫn đến $c \in \bigcup_{i \in I} \left(\Imf(R|_{m(i) \times B})\right)$. Vì vậy, $\Imf\left(R \middle|_{\bigcup_{i \in I}(m(i)) \times B}\right) = \bigcup_{i \in I} \left(\Imf(R|_{m(i) \times B})\right)$.
+$d$ không xuất hiện trong $c \in \Imf(R|_{m(i) \times B})$ nên có khẳng định $\exists i \in I, c \in \Imf(R|_{m(i) \times B})$, dẫn đến $c \in \bigcup_{i \in I} \left(\Imf(R|_{m(i) \times B})\right)$. Vì vậy, $\Imf\left(R \middle|_{\left(\bigcup_{i \in I}m(i)\right) \times B}\right) = \bigcup_{i \in I} \left(\Imf(R|_{m(i) \times B})\right)$.
 
-Cuối cùng, hãy cho $c \in \Imf\left(R \middle|_{\left(\bigcap_{i \in I}m(i)\right) \times B}\right)$. Khi này, có $c \in B$ và tồn tại $d \in \bigcap_{i \in I}m(i) \land d\;R\;c$. Từ đó, chúng ta có $\forall i \in I, d \in m(i) \land d\;R\;c$. Vì $d\;R\;c \implies \forall i \in I, d\;R\;c$ nên 
+Cuối cùng, hãy cho $c \in \Imf\left(R \middle|_{\left(\bigcap_{i \in I}m(i)\right) \times B}\right)$. Khi này, có $c \in B$ và tồn tại $d \in \bigcap_{i \in I}m(i)$ sao cho $d\;R\;c$. Từ đó, chúng ta có $\forall i \in I, d \in m(i) \land d\;R\;c$. Vì $d\;R\;c \implies \forall i \in I, d\;R\;c$ nên 
 \begin{equation*}
    \forall i \in I, d \in m(i) \land d\;R\;c \implies \forall i \in I, (d \in m(i) \land d\;R\;c).
 \end{equation*}
 Từ đó, $\forall i \in I, c \in \Imf(R|_{m(i) \times B})$. Kết hợp với $c \in B$ để có $c \in \bigcap_{i \in I}(\Imf(R|_{m(i) \times B}))$. Qua đó, $\Imf \left(R\middle|_{\left(\bigcap_{i \in I}m(i)\right) \times B} \right)\subseteq \bigcap_{i \in I}(\Imf(R|_{m(i) \times B}))$. Chúng ta có điều phải chứng minh.
 
-\exercise Cho $A$ và $B$ là tập hợp, $f : A \to B$ là toàn ánh. Chứng minh rằng, nếu họ $(m(i))_{i \in I}$ là một phân hoạch của $B$, họ $\left(\Imf\left(f^{-1}\middle|_{m(i) \times A}\right)\right)_{i \in I}$ là một phân hoạch của $A$.
+\exercise Cho $A$ và $B$ là tập hợp, $f : A \to B$ là toàn ánh. Chứng minh rằng, nếu tập ảnh $\Imf(m)$ của họ $(m(i))_{i \in I}$ là một phân hoạch của $B$, thì tập ảnh $\Imf(H)$ của họ $H = \left(\Imf\left(f^{-1}\middle|_{m(i) \times A}\right)\right)_{i \in I}$ là một phân hoạch của $A$.
 
 \solution 
 
-Dễ thấy, với mỗi $i \in I$, $\Imf\left(f^{-1}\middle|_{m(i) \times A}\right)$ xác định duy nhất và nó là một tập con của $A$. Chúng ta đặt $H = \left(\Imf\left(f^{-1}\middle|_{m(i) \times A}\right)\right)_{i \in I}$.
+Dễ thấy, với mỗi $i \in I$, $\Imf\left(f^{-1}\middle|_{m(i) \times A}\right)$ xác định duy nhất và nó là một tập con của $A$, nên $H = \left(\Imf\left(f^{-1}\middle|_{m(i) \times A}\right)\right)_{i \in I}$ là một họ phần tử của $\mathfrak{P}(A)$ và $\Imf(H) \in \mathfrak{P}(\mathfrak{P}(A))$.
 
-Xét từ $H$ một phần tử $h$ tùy ý, tồn tại $i \in I$ sao cho $h = \Imf\left(f^{-1}\middle|_{m(i) \times A}\right)$. Nhận thấy rằng $m(i)$ là một phần tử trong một phân hoạch của $B$, $m(i)$ phải có phần tử. Gọi một phần tử trong đó là $b$. Do $f$ toàn ánh, tồn tại $a$ sao cho $b = f(a)$, hay, $b\;f^{-1}\;a$. Từ đó, có $a \in h$, suy ra \begin{equation*}
-   \forall h \in H, h \neq \varnothing.
+Xét từ $\Imf(H)$ một phần tử $h$ tùy ý, tồn tại $i \in I$ sao cho $h = \Imf\left(f^{-1}\middle|_{m(i) \times A}\right)$. Nhận thấy rằng $m(i)$ là một phần tử trong phân hoạch $\Imf(m)$ của $B$, $m(i)$ phải có phần tử. Gọi một phần tử trong đó là $b$. Do $f$ toàn ánh, tồn tại $a \in A$ sao cho $b = f(a)$, hay, $b\;f^{-1}\;a$. Từ đó, có $a \in h$, suy ra \begin{equation*}
+   \forall h \in \Imf(H), h \neq \varnothing.
 \end{equation*}
 
-Từ $H$ lấy các phần tử $c$ và $d$ sao cho $c \neq d$, tồn tại $i$ và $j$ cùng thuộc $I$ sao cho $
+Từ $\Imf(H)$ lấy các phần tử $c$ và $d$ sao cho $c \neq d$, tồn tại $i$ và $j$ cùng thuộc $I$ sao cho $
    \begin{cases}
       c = \Imf\left(f^{-1}\middle|_{m(i) \times A}\right) \\
       d = \Imf\left(f^{-1}\middle|_{m(j) \times A}\right)
    \end{cases}
-$. Bởi $c$ và $d$ là hai tập khác nhau nên $i \neq j$, dẫn đến $m(i) \neq m(j)$. Ngoài ra, $m(i)$ và $m(j)$ thuộc cùng một phân hoạch nên $m(i)$ và $m(j)$ không có phần tử chung. Tuy nhiên, trong trường hợp mà $c$ và $d$ có chung phần tử $e$, bởi $
+$. Bởi $c$ và $d$ là hai tập khác nhau nên $m(i) \neq m(j)$ (vì nếu $m(i) = m(j)$ thì $c = d$, mâu thuẫn). Ngoài ra, $m(i)$ và $m(j)$ thuộc cùng một phân hoạch $\Imf(m)$ nên $m(i)$ và $m(j)$ không có phần tử chung. Tuy nhiên, trong trường hợp mà $c$ và $d$ có chung phần tử $e$, bởi $
    \begin{cases}
       c = \Imf\left(f^{-1}\middle|_{m(i) \times A}\right) \\
       d = \Imf\left(f^{-1}\middle|_{m(j) \times A}\right)
@@ -326,16 +321,16 @@ $, phải có $\begin{cases}
    f(e) \in m(i) \\
    f(e) \in m(j)
 \end{cases}$, dẫn đến mâu thuẫn. Do đó trường hợp này không thể xảy ra, có nghĩa là \begin{equation*}
-   \forall c \in H, \forall d \in H, (c \neq d \implies c \cap d = \varnothing).
+   \forall c \in \Imf(H), \forall d \in \Imf(H), (c \neq d \implies c \cap d = \varnothing).
 \end{equation*}
 
-Vì $(m(i))_{i \in I}$ là một phân hoạch của $B$, với mọi $a \in A$, tồn tại $i \in I$ sao cho $f(a) \in m(i)$. Do đó, $a \in \Imf\left(f^{-1}\middle|_{m(i) \times A}\right)$, dẫn đến \begin{equation*}
-   \forall a \in A, \exists h \in H, a \in h.
+Vì $\Imf(m)$ là một phân hoạch của $B$, với mọi $a \in A$, có $f(a) \in B$ nên tồn tại $i \in I$ sao cho $f(a) \in m(i)$. Do đó, $a \in \Imf\left(f^{-1}\middle|_{m(i) \times A}\right)$ với $\Imf\left(f^{-1}\middle|_{m(i) \times A}\right) \in \Imf(H)$, dẫn đến \begin{equation*}
+   \forall a \in A, \exists h \in \Imf(H), a \in h.
 \end{equation*}
 
 Kết hợp các kết quả đã có, hiển nhiên có được điều phải chứng minh.
 
-\exercise[ex:li_thuyet_tap_hop:tien_de:ho:liet_ke] Gọi $0$, $1$, $2$ là các tập hợp xác định từ trước. Đặt $I = \{0; 1; 2\}$. Xây dựng ánh xạ $f$ từ $I$ vào $A = \left\{a; b; \xNom; \alpha; \beta; \gamma\right\}$ dựa theo bảng sau:
+\exercise[ex:li_thuyet_tap_hop:tien_de:ho:liet_ke] Gọi $0$, $1$, $2$ là các tập hợp đôi một khác nhau xác định từ trước. Đặt $I = \{0; 1; 2\}$ và $A = \left\{a; b; \xNom; \alpha; \beta; \gamma\right\}$. Xây dựng ánh xạ $f$ từ $I$ vào $\mathfrak{P}(A)$ dựa theo bảng sau:
 \begin{table}[H]
    \centering
    \caption{Định nghĩa ánh xạ $f$ trong bài \ref{ex:li_thuyet_tap_hop:tien_de:ho:liet_ke}}
@@ -417,52 +412,52 @@ $. Chứng minh rằng
 
 \solution 
 
-\resetSubexercise Xét $b$ bất kì thuộc $\prod_{i \in I}B(i)$. Từ định nghĩa tích Đề-các, có được $\forall i \in I, b(i) \in B(i)$. Mà, từ giả thiết, $\forall i \in I, B(i) \subseteq A(i)$, nên $\forall i \in I, b(i) \in A(i)$. Do đó, $b \in \prod_{i \in I}A(i)$. Qua đó, chúng ta có được $\prod_{i \in I}B(i) \subseteq \prod_{i \in I}A(i)$, tức điều phải chứng minh.
+\resetSubexercise Đặt $F_B = \bigcup_{i \in I}B(i)$ và $F_A = \bigcup_{i \in I}A(i)$. Từ giả thiết $\forall i \in I, B(i) \subseteq A(i)$, suy ra $F_B \subseteq F_A$. Xét $b$ bất kì thuộc $\prod_{i \in I}B(i)$. Từ định nghĩa tích Đề-các, $b \in F_B^I$ (là một ánh xạ từ $I$ đến $F_B$) và $\forall i \in I, b(i) \in B(i)$. Vì $F_B \subseteq F_A$ nên $b \subseteq I \times F_B \subseteq I \times F_A$ và với mỗi $i \in I$ tồn tại duy nhất $y \in F_A$ sao cho $(i; y) \in b$, suy ra $b \in F_A^I$. Hơn nữa, kết hợp $\forall i \in I, b(i) \in B(i)$ với $\forall i \in I, B(i) \subseteq A(i)$, chúng ta có $\forall i \in I, b(i) \in A(i)$. Do đó, $b \in \prod_{i \in I}A(i)$. Qua đó, chúng ta có được $\prod_{i \in I}B(i) \subseteq \prod_{i \in I}A(i)$, tức điều phải chứng minh.
 
-\stepSubexercise Với mọi $i \in I$, $B(i)$ và $C(i)$ đều xác định duy nhất. Cho nên, tồn tại một và chỉ một $B(i) \cap C(i)$ ứng với mỗi $i$. Vì thế, $\left(B(i) \cap C(i)\right)_{i \in I}$ được định nghĩa tốt. 
+\stepSubexercise Với mọi $i \in I$, $B(i)$ và $C(i)$ đều xác định duy nhất. Cho nên, tồn tại một và chỉ một $B(i) \cap C(i)$ ứng với mỗi $i$. Vì thế, $\left(B(i) \cap C(i)\right)_{i \in I}$ được định nghĩa tốt. Đặt $F_{B \cap C} = \bigcup_{i \in I}(B(i) \cap C(i))$.
 
 Với mọi $f$ thuộc $\left(\prod_{i \in I}B(i)\right) \cap \left(\prod_{i \in I}C(i)\right)$, từ định nghĩa phép giao, có được $\begin{cases}
    f \in \left(\prod_{i \in I}B(i)\right) \\
    f \in \left(\prod_{i \in I}C(i)\right)
-\end{cases}$. Từ định nghĩa tích Đề-các, có \begin{equation*}
+\end{cases}$. Từ định nghĩa tích Đề-các, $f$ là một ánh xạ có tập nguồn $I$ và có \begin{equation*}
    \begin{cases}
       \forall i \in I, f(i) \in B(i) \\
       \forall i \in I, f(i) \in C(i)
    \end{cases}.
 \end{equation*}
-Sử dụng tính chất phân phối của lượng từ phổ quát với phép hội, suy ra được $\forall i \in I, \left( f(i) \in B(i) \land f(i) \in C(i) \right)$, dẫn đến $\forall i \in I, f(i) \in B(i) \cap C(i)$. Từ định nghĩa, có $f \in \prod_{i \in I}(B(i) \cap C(i))$. Chúng ta đã khẳng định được \begin{equation*}
+Sử dụng tính chất phân phối của lượng từ phổ quát với phép hội, suy ra được $\forall i \in I, \left( f(i) \in B(i) \land f(i) \in C(i) \right)$, dẫn đến $\forall i \in I, f(i) \in B(i) \cap C(i)$. Vì với mọi $i \in I$, $f(i) \in B(i) \cap C(i) \subseteq F_{B \cap C}$ nên $f \in F_{B \cap C}^I$. Từ định nghĩa, có $f \in \prod_{i \in I}(B(i) \cap C(i))$. Chúng ta đã khẳng định được \begin{equation*}
    \left(\prod_{i \in I}B(i)\right) \cap \left(\prod_{i \in I}C(i)\right) \subseteq \prod_{i \in I}(B(i) \cap C(i)).
 \end{equation*}
 
-Xét $g$ thuộc $\prod_{i \in I}(B(i) \cap C(i))$ tùy ý. Từ định nghĩa tích Đề-các, có được $\forall i \in I, g(i) \in B(i) \cap C(i)$, hay $\forall i \in I, \left(g(i) \in B(i) \land g \in C(i)\right)$. Chiều ngược lại của tính chất phân phối vừa đề cập cũng đúng, cho nên có được $\begin{cases}
+Xét $g$ thuộc $\prod_{i \in I}(B(i) \cap C(i))$ tùy ý. Từ định nghĩa tích Đề-các, $g \in F_{B \cap C}^I$ và có được $\forall i \in I, g(i) \in B(i) \cap C(i)$, hay $\forall i \in I, \left(g(i) \in B(i) \land g(i) \in C(i)\right)$. Chiều ngược lại của tính chất phân phối vừa đề cập cũng đúng, cho nên có được $\begin{cases}
    \forall i \in I, g(i) \in B(i) \\
    \forall i \in I, g(i) \in C(i)
-\end{cases}$. Tiếp tục áp dụng định nghĩa của tích Đề-các một lần nữa, có được $g \in \prod_{i \in I}B(i) \land g \in \prod_{i \in I}C(i)$, đồng nghĩa với $g \in \left(\prod_{i \in I}B(i)\right) \cap \left(\prod_{i \in I}C(i)\right)$. Vì vậy, 
+\end{cases}$. Ngoài ra, do $F_{B \cap C} \subseteq \bigcup_{i \in I}B(i)$ và $F_{B \cap C} \subseteq \bigcup_{i \in I}C(i)$ nên $g \in \left(\bigcup_{i \in I}B(i)\right)^I$ và $g \in \left(\bigcup_{i \in I}C(i)\right)^I$. Tiếp tục áp dụng định nghĩa của tích Đề-các một lần nữa, có được $g \in \prod_{i \in I}B(i) \land g \in \prod_{i \in I}C(i)$, đồng nghĩa với $g \in \left(\prod_{i \in I}B(i)\right) \cap \left(\prod_{i \in I}C(i)\right)$. Vì vậy, 
 \begin{equation*}
    \prod_{i \in I}(B(i) \cap C(i)) \subseteq \left(\prod_{i \in I}B(i)\right) \cap \left(\prod_{i \in I}C(i)\right).
 \end{equation*}
 
 Từ đó, có ngay được $\prod_{i \in I}(B(i) \cap C(i)) = \left(\prod_{i \in I}B(i)\right) \cap \left(\prod_{i \in I}C(i)\right)$. Điều phải chứng minh.
 
-\stepSubexercise Với mọi $i \in I$, $B(i)$ và $C(i)$ đều xác định duy nhất. Cho nên, tồn tại một và chỉ một $B(i) \cup C(i)$ ứng với mỗi $i$. Vì thế, $\left(B(i) \cup C(i)\right)_{i \in I}$ được định nghĩa tốt. 
+\stepSubexercise Với mọi $i \in I$, $B(i)$ và $C(i)$ đều xác định duy nhất. Cho nên, tồn tại một và chỉ một $B(i) \cup C(i)$ ứng với mỗi $i$. Vì thế, $\left(B(i) \cup C(i)\right)_{i \in I}$ được định nghĩa tốt. Đặt $F_{B \cup C} = \bigcup_{i \in I}(B(i) \cup C(i))$.
 
-Với mọi phần tử $b$ thuộc $\left(\prod_{i \in I}B(i)\right) \cup \left(\prod_{i \in I}C(i)\right)$, chúng ta có $
+Với mọi phần tử $b$ thuộc $\left(\prod_{i \in I}B(i)\right) \cup \left(\prod_{i \in I}C(i)\right)$, chúng ta có $b$ là ánh xạ thuộc $\left(\bigcup_{i \in I}B(i)\right)^I$ hoặc $\left(\bigcup_{i \in I}C(i)\right)^I$ (nên trong cả hai khả năng đều có $b \in F_{B \cup C}^I$) và $
    \left[\begin{aligned}
       \forall i \in I, b(i) \in B(i) \\
       \forall i \in I, b(i) \in C(i)
    \end{aligned}\right.
-$. Cả hai đều suy ra khả năng đều suy ra được $\forall i \in I, \left(b(i) \in B(i) \cup b(i) \in C(i)\right)$, hay $\forall i \in I, b(i) \in B(i) \cup C(i)$. Do đó, \begin{equation*}
+$. Cả hai khả năng đều suy ra được $\forall i \in I, \left(b(i) \in B(i) \lor b(i) \in C(i)\right)$, hay $\forall i \in I, b(i) \in B(i) \cup C(i)$. Kết hợp với $b \in F_{B \cup C}^I$, có \begin{equation*}
    \forall b \in \left(\prod_{i \in I}B(i)\right) \cup \left(\prod_{i \in I}C(i)\right), b \in \prod_{i \in I}\left(B(i) \cup C(i)\right).
 \end{equation*} 
 
 Vì vậy, $\left(\prod_{i \in I}B(i)\right) \cup \left(\prod_{i \in I}C(i)\right) \subseteq \prod_{i \in I}\left(B(i) \cup C(i)\right)$. Qua đó, có được điều phải chứng minh.
 
-\stepSubexercise Tương tự như các phần trước, chúng ta có thể khẳng định $\left(B(i) \setminus C(i)\right)_{i \in I}$ có nghĩa. Dưới điều kiện $I \neq \varnothing$, gọi $b \in \prod_{i \in I}\left(B(i) \setminus C(i)\right)$. Khi đó, $\forall i \in I, \left(b(i) \in B(i) \land b \notin C(i)\right)$. Tính chất phân phối quen thuộc cho chúng ta $\forall i \in I, b(i) \in B(i) \land \forall i \in I, b(i) \notin C(i)$. Vì $I$ không phải là tập hợp rỗng, chúng ta có thể gọi ra phần tử $j$ từ $I$ sao cho $b(j) \notin C(j)$ để có $\overline{\forall i \in I, b(i) \in C(i)}$. Từ đó, có $\begin{cases}
+\stepSubexercise Tương tự như các phần trước, chúng ta có thể khẳng định $\left(B(i) \setminus C(i)\right)_{i \in I}$ có nghĩa. Dưới điều kiện $I \neq \varnothing$, gọi $b \in \prod_{i \in I}\left(B(i) \setminus C(i)\right)$. Khi đó, $b \in \left(\bigcup_{i \in I}(B(i) \setminus C(i))\right)^I \subseteq \left(\bigcup_{i \in I}B(i)\right)^I$ và $\forall i \in I, \left(b(i) \in B(i) \land b(i) \notin C(i)\right)$. Tính chất phân phối quen thuộc cho chúng ta $\forall i \in I, b(i) \in B(i) \land \forall i \in I, b(i) \notin C(i)$. Vì $I$ không phải là tập hợp rỗng, chúng ta có thể gọi ra phần tử $j$ từ $I$ sao cho $b(j) \notin C(j)$ để có $\overline{\forall i \in I, b(i) \in C(i)}$. Từ đó, kết hợp với $b \in \left(\bigcup_{i \in I}B(i)\right)^I$, từ $\begin{cases}
    \forall i \in I, b(i) \in B(i) \\
    \overline{\forall i \in I, b(i) \in C(i)}
-\end{cases}$, đồng nhất với $\begin{cases}
-   b \in \prod_{i = I}B(i) \\
-   b \notin \prod_{i = I}C(i)
-\end{cases}$. Suy ra, $b \in \left(\prod_{i = I}B(i)\right) \setminus \left(\prod_{i = I}C(i)\right)$. Hiển nhiên rằng lập luận này kéo theo $\prod_{i \in I}\left(B(i) \setminus C(i)\right) \subseteq \left(\prod_{i = I}B(i)\right) \setminus \left(\prod_{i = I}C(i)\right)$ khi $I \neq \varnothing$. Điều phải chứng minh.
+\end{cases}$ chúng ta suy ra $\begin{cases}
+   b \in \prod_{i \in I}B(i) \\
+   b \notin \prod_{i \in I}C(i)
+\end{cases}$. Suy ra, $b \in \left(\prod_{i \in I}B(i)\right) \setminus \left(\prod_{i \in I}C(i)\right)$. Hiển nhiên rằng lập luận này kéo theo $\prod_{i \in I}\left(B(i) \setminus C(i)\right) \subseteq \left(\prod_{i \in I}B(i)\right) \setminus \left(\prod_{i \in I}C(i)\right)$ khi $I \neq \varnothing$. Điều phải chứng minh.
 
 

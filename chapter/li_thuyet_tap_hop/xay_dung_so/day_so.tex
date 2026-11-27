@@ -1,3 +1,27 @@
 \section{Dãy số}
 
 Thông thường, tập $\mathbb{N}$ sẽ được viết dưới dạng $\{0; 1; 2; \dots\}$. Nếu tương ứng, một số hoặc tất cả, các phần tử theo thứ tự của $\mathbb{N}$ vào các phần tử bên trong $x$, chúng ta sẽ tạo ra một \defText{dãy số}. Chính xác hơn, nếu $f$ là một ánh xạ nối từ $\mathbb{N}$ vào $x$, định nghĩa họ $(f(i))_{i \in \mathbb{N}}$ là \defText{dãy số vô hạn} (trong $x$). 
+
+Tiên đề quy nạp cho phép chúng ta chứng minh nhiều kết quả hữu ích liên quan đến dãy số, trong đó là khả năng xác định chuỗi bằng phương pháp \defText{truy hồi}.
+
+\begin{quotation}
+    Cho $x$ là một tập khác rỗng và $f: x \to x$ là một ánh xạ. Lấy $\bar{a} \in x$. Khi đó, tồn tại duy nhất một dãy số vô hạn $(f(i))_{i \in \mathbb{N}}$ trong $x$ sao cho \begin{equation*}
+        \begin{cases}
+            f(0) = \bar{a}\\
+            \forall i \in \mathbb{N}, f(s(i)) = f(f(i))
+        \end{cases}.
+    \end{equation*}
+\end{quotation}
+
+Để chứng minh tính chất này, chúng ta cần nhắc lại rằng một dãy số vô hạn chính là một họ, một họ thì là một ánh xạ, một ánh xạ là một quan hệ, và quan hệ đang xét là một tập con của $\mathbb{N} \times x$. Do đó, xét tập hợp tất cả các quan hệ trên $\mathbb{N} \times x$ --- chính là tập $\mathfrak{P}(\mathbb{N} \times x)$ ---, gọi $R$ trong tập hợp đó có \defText{tính chất truy hồi} nếu và chỉ nếu $R$ thỏa mãn:
+\begin{itemize}
+    \item $0\;R\;\bar{a}$;
+    \item $\forall i \in \mathbb{N}, \left(i\;R\;a \implies s(i)\;R\;f(a)\right)$.
+\end{itemize}
+
+Gọi $\mathcal{R}$ là tập hợp tất cả các quan hệ trong $\mathfrak{P}(\mathbb{N} \times x)$ có tính chất truy hồi. $\mathcal{R}$ không rỗng vì $\mathbb{N} \times x \in \mathcal{R}$ (kiểm chứng được do $\forall i \in \mathbb{N}, \forall a \in x, (i; a) \in \mathbb{N} \times x$). Đặt $g = \bigcap \mathcal{R}$. Trước hết, chúng ta sẽ khẳng định $\Dom(g) = \mathbb{N}$ bằng quy nạp. Do $\left(0; \bar{a}\right)$ là một phần tử của mọi quan hệ trong $\mathcal{R}$, nên $\left(0; \bar{a}\right) \in g$, cho nên $0 \in \Dom(g)$. Giả sử $i \in \Dom(g)$, tức là tồn tại $a \in x$ sao cho $(i; a) \in g$. Vì $g \subseteq R$ với mọi $R \in \mathcal{R}$, nên $(i; a) \in R$ với mọi $R \in \mathcal{R}$. Do đó, $(s(i); f(a)) \in R$ với mọi $R \in \mathcal{R}$, và do đó $(s(i); f(a)) \in g$, cho nên $s(i) \in \Dom(g)$. Vậy, $\Dom(g) = \mathbb{N}$.
+
+Tiếp theo đó, cần phải chứng minh rằng với mọi $i \in \mathbb{N}$, tồn tại duy nhất $a \in x$ sao cho $(i; a) \in g$. Một lần nữa, chúng ta hãy sử dụng quy nạp, tuy nhiên việc nhìn ra tập hợp được sử dụng để quy nạp sẽ khó hơn trước. Đặt 
+$$T = \{i \in \mathbb{N} \mid (i; a) \in g \land (i; b) \in g \implies a = b\}.$$
+
+Đã có $\left(0; \bar{a}\right) \in g$. Giả sử tồn tại $\aNom$ sao cho $\left(0; \aNom\right) \in g$ và $\aNom \neq a$. Đặt $\gNom = g \setminus \left\{\left(0; \aNom\right)\right\}$. Có $\left(0; \bar{a}\right) \in \gNom$ là hiển nhiên. Nếu $(i; c) \in \gNom$ thì $(i; c) \in g$ do $\gNom \subseteq g$. Từ tính chất truy hồi của $g$, chúng ta có $(s(i); f(c)) \in g$. $(s(i); f(c)) \neq \left(0; \aNom\right)$ vì $s(i) \neq 0$ từ tính chất của số tự nhiên. Do đó $(s(i); f(c)) \notin \left\{\left(0; \aNom\right)\right\}$, dẫn đến $(s(i); f(c)) \in \gNom$.
