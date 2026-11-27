@@ -79,34 +79,32 @@ $$
 Kết hợp hai chiều, dễ dàng có được điều phải chứng minh.
 
 \exercise Cho tập hợp $x$, $M$ là một tập con của $x$, $A$ và $B$ đều là ánh xạ từ $I$ đến $\mathfrak{P}(x)$. Chứng minh rằng
-\begin{multicols}{2}
-   \begin{enumerate}
-      \item $x \setminus \left(\bigcup_{i \in I}A(i)\right) = \bigcap_{i \in I}(x \setminus A(i))$;
-      \item $x \setminus \left(\bigcap_{i \in I}A(i)\right) = \bigcup_{i \in I}(x \setminus A(i))$;
-      \item $\left(\bigcap_{i \in I}A(i)\right) \cap M = \bigcap_{i \in I}\left(A(i) \cap M\right)$;
-      \item $I \neq \varnothing \\ \implies \left(\bigcup_{i \in I}A(i)\right) \cup M = \bigcup_{i \in I}\left(A(i) \cup M\right)$;
-      \item $\left(\bigcup_{i \in I}A(i)\right) \cap M = \bigcup_{i \in I}\left(A(i) \cap M\right)$;
-      \item $\left(\bigcap_{i \in I}A(i)\right) \cup M = \bigcap_{i \in I}\left(A(i) \cup M\right)$;
-      \item $\forall i \in I, A(i) \subseteq B(i) \\ \implies \begin{cases}
-         \bigcup_{i \in I} A(i) \subseteq \bigcup_{i \in I}B(i) \\
-         \bigcap_{i \in I} A(i) \subseteq \bigcap_{i \in I}B(i) \\
-      \end{cases}$;
-      \item $\bigcap_{i \in I}\left(A(i) \setminus B(i)\right) = \left(\bigcap_{i \in I}A(i)\right) \setminus \left(\bigcup_{i \in I}B(i)\right)$.
-   \end{enumerate} 
-\end{multicols}
+\begin{enumerate}
+   \item $x \setminus \left(\bigcup_{i \in I}A(i)\right) = \bigcap_{i \in I}(x \setminus A(i))$;
+   \item $x \setminus \left(\bigcap_{i \in I}A(i)\right) = \bigcup_{i \in I}(x \setminus A(i))$;
+   \item $I \neq \varnothing \implies \left(\bigcap_{i \in I}A(i)\right) \cap M = \bigcap_{i \in I}\left(A(i) \cap M\right)$;
+   \item $I \neq \varnothing \implies \left(\bigcup_{i \in I}A(i)\right) \cup M = \bigcup_{i \in I}\left(A(i) \cup M\right)$;
+   \item $\left(\bigcup_{i \in I}A(i)\right) \cap M = \bigcup_{i \in I}\left(A(i) \cap M\right)$;
+   \item $\left(\bigcap_{i \in I}A(i)\right) \cup M = \bigcap_{i \in I}\left(A(i) \cup M\right)$;
+   \item $\forall i \in I, A(i) \subseteq B(i) \implies \begin{cases}
+      \bigcup_{i \in I} A(i) \subseteq \bigcup_{i \in I}B(i) \\
+      \bigcap_{i \in I} A(i) \subseteq \bigcap_{i \in I}B(i) \\
+   \end{cases}$;
+   \item $\bigcap_{i \in I}\left(A(i) \setminus B(i)\right) = \left(\bigcap_{i \in I}A(i)\right) \setminus \left(\bigcup_{i \in I}B(i)\right)$.
+\end{enumerate} 
 
 \solution 
 
 \resetSubexercise Với mỗi $i$ trong $I$, $A(i)$ được xác định duy nhất, dẫn đến $x \setminus A(i)$ cũng xác định duy nhất. Ngoài ra, có $\forall i \in I, x \setminus A(i) \subseteq x$ nên $\left(x \setminus A(i)\right)_{i \in I}$ là một họ phần tử của $\mathfrak{P}(x)$.
 
-Trong trường hợp $I = \varnothing$, có ngay $\bigcup_{i \in I}A(i) = \varnothing$ và $\bigcap_{i \in I}(x \setminus A(i)) = x$. Vì $x \setminus \varnothing = x$ nên chúng ta có điều phải chứng minh trong trường hợp này. Còn nếu $I \neq \varnothing$, với mọi $e$, chúng ta có 
+Trong trường hợp $I = \varnothing$, có ngay $\bigcup_{i \in I}A(i) = \varnothing$ và $\bigcap_{i \in I}(x \setminus A(i)) = x$. Vì $x \setminus \varnothing = x$ nên dễ dàng có được điều phải chứng minh trong trường hợp này. Còn nếu $I \neq \varnothing$, với mọi $e$, chúng ta có 
 \begin{equation*}
    e \in x \setminus \left(\bigcup_{i \in I}A(i)\right) \iff e \in x \land e \notin \bigcup_{i \in I}A(i).
 \end{equation*}
 $e \in x \implies \forall i \in I, e \in x$ là hiển nhiên. Xét chiều ngược lại, giả sử $\forall i \in I, e \in x$. Do đang xét $I \neq \varnothing$, tồn tại $j \in I$, dẫn đến khi có $j \in I \implies e \in x$ từ cụ thể hóa lượng từ phổ quát, chúng ta suy ra được $e \in x$. Vì vậy, \begin{equation*}
    e \in x \iff \forall i \in I, e \in x.
 \end{equation*} 
-Ngoài ra, do $\forall i \in I, A(i) \subseteq x$, mệnh đề $e \in \bigcup_{i \in I}A(i) \iff \exists i \in I, e \in A(i)$ đúng với mọi $e$, nên chúng ta cũng có 
+Ngoài ra, do $\forall i \in I, A(i) \subseteq x$, mệnh đề $e \in \bigcup_{i \in I}A(i) \iff \exists i \in I, e \in A(i)$ đúng với mọi $e$, nên cũng có 
 \begin{align*}
    e \notin \bigcup_{i \in I}A(i) &\iff \overline{\exists i \in I, e \in A(i)}; \\
    e \notin \bigcup_{i \in I}A(i) &\iff \forall i \in I, e \notin A(i).
@@ -132,6 +130,10 @@ có nghĩa là $e \in x \setminus \left(\bigcap_{i \in I}A(i)\right) \implies e 
 Từ lập luận hai chiều, $e \in x \setminus \left(\bigcap_{i \in I}A(i)\right) \iff e \in \bigcup_{i \in I} \left(x \setminus A(i)\right)$. Điều phải chứng minh.
 
 \stepSubexercise Với mỗi $i$ trong $I$, $A(i) \cap M$ là xác định duy nhất. Ngoài ra, có $\forall i \in I, A(i) \cap M \subseteq x$ nên $\left(A(i) \cap M\right)_{i \in I}$ là một họ phần tử của $\mathfrak{P}(x)$.
+
+Giả thiết rằng $I \neq \varnothing$, phải tồn tại $j \in I$. Nếu có thêm $\forall i \in I, e \in M$, do mệnh đề này cần phải đúng với $j$, khẳng định được $e \in M$. Chiều suy ra $\forall i \in I, e \in M$ từ $e \in M$ là dễ nhìn. Cho nên, \begin{equation*}
+   \forall i \in I, e \in M \iff e \in M.
+\end{equation*}
 
 Với mọi $e$, \begin{align*}
    e \in \left(\bigcap_{i \in I} A(i)\right) \cap M &\iff e \in \bigcap_{i \in I} A(i) \land e \in M; \\
