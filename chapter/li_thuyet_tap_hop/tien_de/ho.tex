@@ -396,18 +396,16 @@ Sử dụng quy tắc chia trường hợp, chúng ta dễ dàng có những án
       C(i) \subseteq A(i)
    \end{cases}
 $. Chứng minh rằng 
-\begin{multicols}{2}
-   \begin{enumerate}
-      \item $\prod_{i \in I}B(i) \subseteq \prod_{i \in I}A(i)$;
-      \item $\prod_{i \in I}(B(i) \cap C(i)) = \left(\prod_{i \in I}B(i)\right) \cap \left(\prod_{i \in I}C(i)\right)$;
-      \item $\prod_{i \in I}(B(i) \cup C(i)) \supseteq \left(\prod_{i \in I}B(i)\right) \cup \left(\prod_{i \in I}C(i)\right)$;
-      \item $I \neq \varnothing \\ \implies \prod_{i \in I}(B(i) \setminus C(i)) \subseteq \left(\prod_{i \in I}B(i)\right) \setminus \left(\prod_{i \in I}C(i)\right)$.
-   \end{enumerate}
-\end{multicols}
+\begin{enumerate}
+   \item $\prod_{i \in I}B(i) \subseteq \prod_{i \in I}A(i)$;
+   \item $\prod_{i \in I}(B(i) \cap C(i)) = \left(\prod_{i \in I}B(i)\right) \cap \left(\prod_{i \in I}C(i)\right)$;
+   \item $\prod_{i \in I}(B(i) \cup C(i)) \supseteq \left(\prod_{i \in I}B(i)\right) \cup \left(\prod_{i \in I}C(i)\right)$;
+   \item $I \neq \varnothing \implies \prod_{i \in I}(B(i) \setminus C(i)) \subseteq \left(\prod_{i \in I}B(i)\right) \setminus \left(\prod_{i \in I}C(i)\right)$.
+\end{enumerate}
 
 \solution 
 
-\resetSubexercise Đặt $F_B = \bigcup_{i \in I}B(i)$ và $F_A = \bigcup_{i \in I}A(i)$. Từ giả thiết $\forall i \in I, B(i) \subseteq A(i)$, suy ra $F_B \subseteq F_A$. Xét $b$ bất kì thuộc $\prod_{i \in I}B(i)$. Từ định nghĩa tích Đề-các, $b \in F_B^I$ (là một ánh xạ từ $I$ đến $F_B$) và $\forall i \in I, b(i) \in B(i)$. Vì $F_B \subseteq F_A$ nên $b \subseteq I \times F_B \subseteq I \times F_A$ và với mỗi $i \in I$ tồn tại duy nhất $y \in F_A$ sao cho $(i; y) \in b$, suy ra $b \in F_A^I$. Hơn nữa, kết hợp $\forall i \in I, b(i) \in B(i)$ với $\forall i \in I, B(i) \subseteq A(i)$, chúng ta có $\forall i \in I, b(i) \in A(i)$. Do đó, $b \in \prod_{i \in I}A(i)$. Qua đó, chúng ta có được $\prod_{i \in I}B(i) \subseteq \prod_{i \in I}A(i)$, tức điều phải chứng minh.
+\resetSubexercise Đặt $F = \bigcup_{i \in I}A(i)$ và $G = \bigcup_{i \in I}B(i)$. Từ giả thiết $\forall i \in I, B(i) \subseteq A(i)$, có $G \subseteq F$. Xét $b$ bất kì thuộc $\prod_{i \in I}B(i)$, từ định nghĩa tích Đề-các, $b \in G^I$ và $\forall i \in I, b(i) \in B(i)$. Sử dụng $G \subseteq F$, dễ thấy có thể coi như $b: I \to F$ là một thác triển của $b: I \to G$, suy ra, $b \in F^I$. Hơn nữa, kết hợp $\forall i \in I, b(i) \in B(i)$ với $\forall i \in I, B(i) \subseteq A(i)$, chúng ta có $\forall i \in I, b(i) \in A(i)$. Do đó, $b \in \prod_{i \in I}A(i)$. Qua đó, chúng ta có được $\prod_{i \in I}B(i) \subseteq \prod_{i \in I}A(i)$, tức điều phải chứng minh.
 
 \stepSubexercise Với mọi $i \in I$, $B(i)$ và $C(i)$ đều xác định duy nhất. Cho nên, tồn tại một và chỉ một $B(i) \cap C(i)$ ứng với mỗi $i$. Vì thế, $\left(B(i) \cap C(i)\right)_{i \in I}$ được định nghĩa tốt. Đặt $F_{B \cap C} = \bigcup_{i \in I}(B(i) \cap C(i))$.
 
