@@ -135,7 +135,7 @@ Giả thiết rằng $I \neq \varnothing$, phải tồn tại $j \in I$. Nếu c
    \forall i \in I, e \in M \iff e \in M.
 \end{equation*}
 
-Với mọi $e$, \begin{align*}
+Từ kết quả, với mọi $e$, \begin{align*}
    e \in \left(\bigcap_{i \in I} A(i)\right) \cap M &\iff e \in \bigcap_{i \in I} A(i) \land e \in M; \\
    e \in \left(\bigcap_{i \in I} A(i)\right) \cap M &\iff e \in x \land \forall i \in I, e \in A(i) \land e \in M; \\
    e \in \left(\bigcap_{i \in I} A(i)\right) \cap M &\iff e \in x \land \forall i \in I, \left(e \in A(i) \land e \in M\right); \\
@@ -145,7 +145,7 @@ Vì vậy, $\left(\bigcap_{i \in I} A(i)\right) \cap M = \bigcap_{i \in I} \left
 
 \stepSubexercise Với mỗi $i$ trong $I$, chúng ta xác định duy nhất một tập hợp $A(i) \cup M$. Ngoài ra, $\forall i \in I, A(i) \cup M \subseteq x$ nên $\left(A(i) \cup M\right)_{i \in I}$ là một họ phần tử của $\mathfrak{P}(x)$.
 
-Các lập luận dưới đây đã giả thiết rằng $I \neq \varnothing$. Xét một $e \in \left(\bigcup_{i \in I}A(i)\right) \cup M$, điều này tương đương với $e \in \bigcup_{i \in I}A(i) \lor e \in M$. Nếu \coloringCrimson{$e \in M$}, do $I \neq \varnothing$ nên tồn tại $i \in I$ để xác định được $A(i)$, kéo theo $e \in A(i) \cup M$. Do đó, $e \in \bigcup_{i \in I} (A(i) \cup M)$. Còn nếu \coloringDodgerblue{$e \notin M$}, khi đó phải có $e \in \bigcup_{i \in I}A(i)$, có nghĩa là $\exists i \in I, e \in A(i)$. Với giá trị $i$ đó, cũng sẽ có $e \in A(i) \cup M$. Vì thế, $e \in \bigcup_{i \in I}(A(i) \cup M)$.
+Các lập luận dưới đây đã giả thiết rằng $I \neq \varnothing$. Xét một $e \in \left(\bigcup_{i \in I}A(i)\right) \cup M$, điều này tương đương với $e \in \bigcup_{i \in I}A(i) \lor e \in M$. Nếu $e \in M$, do $I \neq \varnothing$ nên tồn tại $i \in I$ để xác định được $A(i)$. Với $i$ đó, $e \in A(i) \cup M$. Do đó, $e \in \bigcup_{i \in I} (A(i) \cup M)$. Còn nếu $e \notin M$, khi đó phải có $e \in \bigcup_{i \in I}A(i)$, có nghĩa là $\exists i \in I, e \in A(i)$. Với giá trị $i$ đó, cũng sẽ có $e \in A(i) \cup M$. Vì thế, $e \in \bigcup_{i \in I}(A(i) \cup M)$.
 Nhìn chung, có được 
 \begin{equation*}
    \forall e \in \left(\bigcup_{i \in I}A(i)\right) \cup M, e \in \bigcup_{i \in I}(A(i) \cup M).
@@ -169,8 +169,9 @@ Vì thế, $\left(\bigcup_{i \in I}A(i)\right) \cap M = \bigcup_{i \in I}(A(i) \
    e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff e \in \left(\bigcap_{i \in I} A(i)\right) \lor e \in M; \\
    e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff \left(e \in x \land \forall i \in I, e \in A(i)\right) \lor \left(e \in x \land e \in M\right); \\
    e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff e \in x \land \left(\forall i, (i \in I \implies e \in A(i)) \lor e \in M\right); \\
-   e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff e \in x \land \forall i , \left((i \in I \implies e \in A(i)) \lor e \in M\right) \equationexplanation{quy tắc chuyển đổi lượng từ}; \\
-   e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff e \in x \land \forall i , \left(i \in I \implies e \in A(i) \lor e \in M\right) \equationexplanation{$(P \implies Q) \lor R \iff (P \implies Q \lor R)$}; \\
+   e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff e \in x \land \forall i , \left((i \in I \implies e \in A(i)) \lor e \in M\right); \\
+   e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff e \in x \land \forall i , \left(i \in I \implies e \in A(i) \lor e \in M\right) \\
+   &\qquad \coloringCrimson{\left((P \implies Q) \lor R \iff (P \implies Q \lor R)\right)}; \\
    e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff e \in x \land \forall i \in I, e \in A(i) \cup M; \\
    e \in \left(\bigcap_{i \in I} A(i)\right) \cup M &\iff e \in \bigcap_{i \in I}(A(i) \cup M).
 \end{align*}
@@ -246,7 +247,7 @@ Vì lí do đó, $\bigcup_{k \in K} C(k) = \left(\bigcup_{i \in I}A(i)\right) \c
 Đầu tiên, giả sử rằng $\forall k \in K, e \in D(k)$. Gọi $\mathcal{i}$, $\mathcal{j}$ sao cho $\mathcal{i} \in I \land \mathcal{j} \in J$. Đặt $\mathcal{k} = \left(\mathcal{i}; \mathcal{j}\right)$, khi đó, có được $\mathcal{k} \in K$, kéo theo $e \in D(\mathcal{k})$. Từ định nghĩa, $D(\mathcal{k}) = A(\mathcal{i}) \cup B(\mathcal{j})$, dẫn đến $e \in A(\mathcal{i}) \cup B(\mathcal{j})$. Do $\mathcal{i}$ và $\mathcal{j}$ không bị đánh dấu nên áp dụng quy tắc tổng quát hóa lượng từ phổ quát, \begin{equation*}
    \forall i, \forall j, \left(i \in I \land j \in J \implies e \in A(i) \cup B(j)\right),
 \end{equation*}
-viết lại dưới dạng quen thuộc hơn là $\forall i \in I, \forall j \in J, e \in A(i) \cup B(j)$.
+có thể viết lại được dưới dạng quen thuộc hơn là $\forall i \in I, \forall j \in J, e \in A(i) \cup B(j)$.
 
 Ngược lại, giả thiết rằng $\forall i \in I, \forall j \in J, e \in A(i) \cup B(j)$. Gọi $\mathfrak{k}$ sao cho $\mathfrak{k} \in K$, $c \in I$ và $d \in J$ sao cho $\mathfrak{k} = (c; d)$. Từ giả thiết, $e \in A(c) \cup B(d)$, suy ra $e \in D(\mathfrak{k})$. Áp dụng tqpq, $\forall k \in K, e \in D(k)$.
 
@@ -291,12 +292,9 @@ Bây giờ, giả thiết rằng $c \in \Imf\left(R \middle|_{\left(\bigcup_{i \
    &\exists d, \exists i \in I, \left(d \in m(i) \land d\;R\;c\right) \equationexplanation{áp dụng liên tiếp cttt và tqtt}; \\
    &\exists d, \exists i \in I, c \in \Imf(R|_{m(i) \times B}).
 \end{align*}
-$d$ không xuất hiện trong $c \in \Imf(R|_{m(i) \times B})$ nên có khẳng định $\exists i \in I, c \in \Imf(R|_{m(i) \times B})$, dẫn đến $c \in \bigcup_{i \in I} \left(\Imf(R|_{m(i) \times B})\right)$. Vì vậy, $\Imf\left(R \middle|_{\left(\bigcup_{i \in I}m(i)\right) \times B}\right) = \bigcup_{i \in I} \left(\Imf(R|_{m(i) \times B})\right)$.
+$d$ không xuất hiện trong ``$c \in \Imf(R|_{m(i) \times B})$'' nên có khẳng định $\exists i \in I, c \in \Imf(R|_{m(i) \times B})$, dẫn đến $c \in \bigcup_{i \in I} \left(\Imf(R|_{m(i) \times B})\right)$. Vì vậy, $\Imf\left(R \middle|_{\left(\bigcup_{i \in I}m(i)\right) \times B}\right) = \bigcup_{i \in I} \left(\Imf(R|_{m(i) \times B})\right)$.
 
-Cuối cùng, hãy cho $c \in \Imf\left(R \middle|_{\left(\bigcap_{i \in I}m(i)\right) \times B}\right)$. Khi này, có $c \in B$ và tồn tại $d \in \bigcap_{i \in I}m(i)$ sao cho $d\;R\;c$. Từ đó, chúng ta có $\forall i \in I, d \in m(i) \land d\;R\;c$. Vì $d\;R\;c \implies \forall i \in I, d\;R\;c$ nên 
-\begin{equation*}
-   \forall i \in I, d \in m(i) \land d\;R\;c \implies \forall i \in I, (d \in m(i) \land d\;R\;c).
-\end{equation*}
+Cuối cùng, hãy cho $c \in \Imf\left(R \middle|_{\left(\bigcap_{i \in I}m(i)\right) \times B}\right)$. Khi này, có $c \in B$ và tồn tại $d \in \bigcap_{i \in I}m(i)$ sao cho $d\;R\;c$. Từ đó, chúng ta có $\forall i \in I, d \in m(i) \land d\;R\;c$. Vì $d\;R\;c \implies \forall i \in I, d\;R\;c$ nên từ $\forall i \in I, d \in m(i) \land d\;R\;c$ suy ra được $\forall i \in I, (d \in m(i) \land d\;R\;c).$
 Từ đó, $\forall i \in I, c \in \Imf(R|_{m(i) \times B})$. Kết hợp với $c \in B$ để có $c \in \bigcap_{i \in I}(\Imf(R|_{m(i) \times B}))$. Qua đó, $\Imf \left(R\middle|_{\left(\bigcap_{i \in I}m(i)\right) \times B} \right)\subseteq \bigcap_{i \in I}(\Imf(R|_{m(i) \times B}))$. Chúng ta có điều phải chứng minh.
 
 \exercise Cho $A$ và $B$ là tập hợp, $f : A \to B$ là toàn ánh. Chứng minh rằng, nếu tập ảnh $\Imf(m)$ của họ $(m(i))_{i \in I}$ là một phân hoạch của $B$, thì tập ảnh $\Imf(H)$ của họ $H = \left(\Imf\left(f^{-1}\middle|_{m(i) \times A}\right)\right)_{i \in I}$ là một phân hoạch của $A$.
@@ -309,12 +307,7 @@ Xét từ $\Imf(H)$ một phần tử $h$ tùy ý, tồn tại $i \in I$ sao cho
    \forall h \in \Imf(H), h \neq \varnothing.
 \end{equation*}
 
-Từ $\Imf(H)$ lấy các phần tử $c$ và $d$ sao cho $c \neq d$, tồn tại $i$ và $j$ cùng thuộc $I$ sao cho $
-   \begin{cases}
-      c = \Imf\left(f^{-1}\middle|_{m(i) \times A}\right) \\
-      d = \Imf\left(f^{-1}\middle|_{m(j) \times A}\right)
-   \end{cases}
-$. Bởi $c$ và $d$ là hai tập khác nhau nên $m(i) \neq m(j)$ (vì nếu $m(i) = m(j)$ thì $c = d$, mâu thuẫn). Ngoài ra, $m(i)$ và $m(j)$ thuộc cùng một phân hoạch $\Imf(m)$ nên $m(i)$ và $m(j)$ không có phần tử chung. Tuy nhiên, trong trường hợp mà $c$ và $d$ có chung phần tử $e$, bởi $
+Từ $\Imf(H)$ lấy các phần tử $c$ và $d$ sao cho $c \neq d$, tồn tại $i$ và $j$ cùng thuộc $I$ sao cho $c = \Imf\left(f^{-1}\middle|_{m(i) \times A}\right)$ và $d = \Imf\left(f^{-1}\middle|_{m(j) \times A}\right)$. Bởi $c$ và $d$ là hai tập khác nhau nên $m(i) \neq m(j)$. Ngoài ra, $m(i)$ và $m(j)$ thuộc cùng một phân hoạch $\Imf(m)$ nên $m(i)$ và $m(j)$ không có phần tử chung. Xét trường hợp mà $c$ và $d$ có chung phần tử $e$, bởi $
    \begin{cases}
       c = \Imf\left(f^{-1}\middle|_{m(i) \times A}\right) \\
       d = \Imf\left(f^{-1}\middle|_{m(j) \times A}\right)

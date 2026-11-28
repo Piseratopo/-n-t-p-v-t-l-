@@ -3,7 +3,7 @@
 
 ## Toán học
 
-- Ánh xạ (dòng 1261, trang 85)
+- Kiểm tra bài tập về phần họ
 
 ## Vật lí
 
